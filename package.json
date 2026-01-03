@@ -16,7 +16,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@astrojs/node": "^9.0.0",
-    "better-sqlite3": "^12.5.0"
+    "@astrojs/node": "^9.0.0"
   }
 }
