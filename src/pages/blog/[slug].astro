@@ -2,13 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import db from '../../lib/db';
 
-const { slug } = Astro.params;
-
-const post = db.prepare('SELECT * FROM posts WHERE slug = ?').get(slug) as any;
-
-if (!post) {
-  return Astro.redirect('/404');
+export async function getStaticPaths() {
+  const posts = db.prepare('SELECT * FROM posts').all() as any[];
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
+
+const { post } = Astro.props;
 
 // Fetch related posts (same category, not same id)
 const relatedPosts = db.prepare('SELECT * FROM posts WHERE category = ? AND id != ? LIMIT 3').all(post.category, post.id) as any[];
