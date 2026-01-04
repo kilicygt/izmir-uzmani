@@ -8,3 +8,4 @@ const db = {
 
 // BURASI ÇOK ÖNEMLİ: "default" olarak dışarı aktarıyoruz
 export default db;
+// guncelleme
