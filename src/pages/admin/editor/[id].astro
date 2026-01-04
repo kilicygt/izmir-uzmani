@@ -1,0 +1,254 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import db from '../../../lib/db';
+import fs from 'node:fs';
+import path from 'node:path';
+
+if (!Astro.cookies.has('admin_session')) {
+  return Astro.redirect('/admin/login');
+}
+
+const { id } = Astro.params;
+const isNew = id === 'new';
+
+let post = {
+  title: '',
+  slug: '',
+  category: '',
+  image: '',
+  excerpt: '',
+  content: '',
+  seo_title: '',
+  seo_description: ''
+};
+
+if (!isNew && id) {
+  const result = await db.execute({
+    sql: 'SELECT * FROM posts WHERE id = ?',
+    args: [id]
+  });
+  if (result.rows.length > 0) {
+    post = result.rows[0] as any;
+  } else {
+    return Astro.redirect('/admin/dashboard');
+  }
+}
+
+let error = '';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const title = formData.get('title') as string;
+    let slug = formData.get('slug') as string;
+    const category = formData.get('category') as string;
+    const excerpt = formData.get('excerpt') as string;
+    const content = formData.get('content') as string;
+    const seo_title = formData.get('seo_title') as string;
+    const seo_description = formData.get('seo_description') as string;
+    
+    // Image Path
+    let imagePath = post.image; // Keep existing or default to empty
+    const imageUri = formData.get('image_uri') as string; // Optional URL field
+    if (imageUri) {
+        imagePath = imageUri;
+    }
+
+    if (!slug) {
+        slug = title.toLowerCase().trim()
+            .replace(/İ/g, "i").replace(/I/g, "i")
+            .replace(/Ğ/g, "g").replace(/ğ/g, "g")
+            .replace(/Ü/g, "u").replace(/ü/g, "u")
+            .replace(/Ş/g, "s").replace(/ş/g, "s")
+            .replace(/Ö/g, "o").replace(/ö/g, "o")
+            .replace(/Ç/g, "c").replace(/ç/g, "c")
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    }
+
+    if (isNew) {
+      await db.execute({
+        sql: 'INSERT INTO posts (title, slug, category, image, excerpt, content, seo_title, seo_description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        args: [title, slug, category, imagePath, excerpt, content, seo_title, seo_description]
+      });
+    } else {
+      await db.execute({
+        sql: 'UPDATE posts SET title = ?, slug = ?, category = ?, image = ?, excerpt = ?, content = ?, seo_title = ?, seo_description = ? WHERE id = ?',
+        args: [title, slug, category, imagePath, excerpt, content, seo_title, seo_description, id]
+      });
+    }
+
+    return Astro.redirect('/admin/dashboard');
+  } catch (e: any) {
+    error = 'Hata: ' + e.message;
+  }
+}
+
+const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Diğer'];
+---
+
+<Layout title={isNew ? 'Yeni Yazı Ekle' : 'Yazıyı Düzenle'}>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  
+  <div class="container mx-auto px-4 py-8 max-w-5xl">
+    <div class="flex items-center justify-between mb-8">
+        <h1 class="text-3xl font-bold text-dark">{isNew ? 'Yeni Yazı Ekle' : 'Yazıyı Düzenle'}</h1>
+        <a href="/admin/dashboard" class="flex items-center gap-2 text-gray-500 hover:text-primary transition font-bold uppercase text-xs tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+            Geri Dön
+        </a>
+    </div>
+
+    {error && (
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded mb-6 shadow-sm">
+            {error}
+        </div>
+    )}
+
+    <form method="POST" id="post-form" class="space-y-8">
+        <!-- Main Content Card -->
+        <div class="bg-white p-8 rounded-card shadow-xl border border-gray-100">
+            <h2 class="text-lg font-bold text-dark mb-6 flex items-center gap-2">
+                <span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                Genel Bilgiler
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="col-span-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Başlık</label>
+                    <input type="text" name="title" value={post.title} required class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all text-xl font-bold" placeholder="Yazı başlığı..." />
+                </div>
+
+                <div class="col-span-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">URL Uzantısı (Slug)</label>
+                    <div class="flex items-center gap-2 bg-gray-50 rounded-xl px-4 py-1 border border-gray-100 italic text-sm text-gray-400">
+                        <span>/blog/</span>
+                        <input type="text" name="slug" value={post.slug} class="bg-transparent border-none outline-none focus:ring-0 flex-grow py-2 text-dark font-medium" placeholder="yazi-basligi (Opsiyonel)" />
+                    </div>
+                </div>
+
+                <div class="col-span-1">
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Kategori</label>
+                    <select name="category" required class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all">
+                        <option value="">Seçiniz</option>
+                        {categories.map(c => (
+                            <option value={c} selected={post.category === c}>{c}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div class="col-span-1">
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Kapak Görseli URL</label>
+                    <div class="flex gap-4 items-center">
+                        <input type="text" name="image_uri" value={post.image} placeholder="https://..." class="flex-grow px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all text-sm" />
+                        {post.image && (
+                            <div class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden border border-gray-100">
+                                <img src={post.image} class="w-full h-full object-cover" />
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                <div class="col-span-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-4 tracking-widest">İçerik</label>
+                    <div id="editor-container" class="bg-gray-50 rounded-xl overflow-hidden min-h-[400px]">
+                        <div id="editor" set:html={post.content}></div>
+                    </div>
+                    <input type="hidden" name="content" id="content-input" />
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Settings Card -->
+        <div class="bg-white p-8 rounded-card shadow-xl border border-gray-100">
+            <h2 class="text-lg font-bold text-dark mb-6 flex items-center gap-2">
+                <span class="w-1.5 h-6 bg-secondary rounded-full"></span>
+                SEO & Özet Ayarları
+            </h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">SEO Başlığı (Meta Title)</label>
+                    <input type="text" name="seo_title" value={post.seo_title} class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-secondary/10 focus:border-secondary outline-none transition-all" placeholder="Google'da görünecek başlık..." />
+                    <p class="text-[10px] text-gray-400 mt-1 italic font-medium">Boş bırakılırsa normal başlık kullanılır.</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">SEO Açıklaması (Meta Description)</label>
+                    <textarea name="seo_description" rows="2" class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-secondary/10 focus:border-secondary outline-none transition-all resize-none" placeholder="Google arama sonuçlarında çıkacak kısa açıklama...">{post.seo_description}</textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Kısa Açıklama (Özet - Liste Sayfaları İçin)</label>
+                    <textarea name="excerpt" rows="3" required class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-secondary/10 focus:border-secondary outline-none transition-all resize-none" placeholder="Sitede listelenirken görünecek kısa açıklama...">{post.excerpt}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end pt-4">
+             <button type="submit" class="px-12 py-4 bg-primary text-white font-black uppercase text-sm tracking-widest rounded-btn hover:bg-secondary transition-all shadow-xl transform active:scale-95 duration-300">
+                {isNew ? 'Hemen Yayınla' : 'Değişiklikleri Kaydet'}
+            </button>
+        </div>
+    </form>
+  </div>
+</Layout>
+
+<script is:inline src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script is:inline>
+    // Quill Toolbar Settings
+    const toolbarOptions = [
+        [{ 'header': [1, 2, 3, false] }],
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'align': [] }],
+        ['link', 'image'],
+        ['clean']
+    ];
+
+    // Initialize Quill
+    const quill = new Quill('#editor', {
+        modules: {
+            toolbar: toolbarOptions
+        },
+        theme: 'snow'
+    });
+
+    // Handle Form Submission
+    const form = document.querySelector('#post-form');
+    const contentInput = document.querySelector('#content-input');
+
+    form.addEventListener('submit', (e) => {
+        // Get HTML content from Quill
+        const html = quill.root.innerHTML;
+        contentInput.value = html;
+        
+        // Final sanity check before submitting
+        if (quill.getText().trim().length === 0) {
+            alert('Lütfen içerik giriniz.');
+            e.preventDefault();
+            return;
+        }
+    });
+</script>
+
+<style is:global>
+    .ql-toolbar.ql-snow {
+        border: none !important;
+        background: #f9fafb !important;
+        padding: 12px !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+    .ql-container.ql-snow {
+        border: none !important;
+        font-family: inherit !important;
+        font-size: 16px !important;
+    }
+    .ql-editor {
+        min-height: 400px !important;
+        padding: 24px !important;
+        line-height: 1.6 !important;
+    }
+</style>

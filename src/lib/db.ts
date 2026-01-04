@@ -1,11 +1,15 @@
-const db = {
-  prepare: () => ({
-    all: () => [],
-    get: () => null,
-    run: () => null
-  })
-};
+import { createClient } from '@libsql/client';
 
-// BURASI ÇOK ÖNEMLİ: "default" olarak dışarı aktarıyoruz
-export default db;
-// guncelleme
+const url = import.meta.env.TURSO_DATABASE_URL;
+const authToken = import.meta.env.TURSO_AUTH_TOKEN;
+
+if (!url || !authToken) {
+  throw new Error('TURSO_DATABASE_URL and TURSO_AUTH_TOKEN must be set in environment variables');
+}
+
+const client = createClient({
+  url,
+  authToken,
+});
+
+export default client;

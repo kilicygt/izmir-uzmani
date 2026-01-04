@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import db from '../../lib/db';
+
+let error = '';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    const username = formData.get('username') as string;
+    const password = formData.get('password') as string;
+
+    const result = await db.execute({
+      sql: 'SELECT * FROM users WHERE username = ? AND password = ?',
+      args: [username, password]
+    });
+
+    if (result.rows.length > 0) {
+      Astro.cookies.set('admin_session', 'active', { path: '/', httpOnly: true });
+      return Astro.redirect('/admin/dashboard');
+    } else {
+      error = 'Geçersiz kullanıcı adı veya şifre';
+    }
+  } catch (e: any) {
+    error = 'Bir hata oluştu: ' + e.message;
+  }
+}
+---
+
+<Layout title="Admin Girişi">
+  <div class="min-h-[80vh] flex items-center justify-center bg-gray-50">
+    <div class="max-w-md w-full bg-white p-8 rounded-card shadow-xl border border-gray-100">
+      <div class="text-center mb-8">
+          <h1 class="text-3xl font-bold text-dark">Giriş Yap</h1>
+          <p class="text-gray-500 text-sm mt-2">İzmir Uzmanı Yönetim Paneli</p>
+      </div>
+
+      {error && (
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded mb-6 text-sm">
+          {error}
+        </div>
+      )}
+
+      <form method="POST" class="space-y-6">
+        <div>
+          <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Kullanıcı Adı</label>
+          <input type="text" name="username" required class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all" />
+        </div>
+        <div>
+          <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Şifre</label>
+          <input type="password" name="password" required class="w-full px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all" />
+        </div>
+        <button type="submit" class="w-full py-4 bg-primary text-white font-black uppercase text-sm tracking-widest rounded-btn hover:bg-secondary transition-all shadow-lg transform active:scale-95 duration-300">
+          Giriş Yap
+        </button>
+      </form>
+    </div>
+  </div>
+</Layout>

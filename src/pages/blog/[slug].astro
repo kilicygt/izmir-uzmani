@@ -1,31 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, getEntry } from 'astro:content';
+import db from '../../lib/db';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+const { slug } = Astro.params;
+
+const result = await db.execute({
+  sql: 'SELECT * FROM posts WHERE slug = ?',
+  args: [slug]
+});
+
+const post = result.rows[0] as any;
+
+if (!post) {
+  return Astro.redirect('/404');
 }
 
-const { post } = Astro.props;
-const { Content } = await post.render();
-
 // Fetch related posts (same category, not same id)
-const allPosts = await getCollection('blog');
-const relatedPosts = allPosts
-    .filter(p => p.data.category === post.data.category && p.slug !== post.slug)
-    .slice(0, 3)
-    .map(p => ({ id: p.slug, ...p.data, slug: p.slug }));
-
-// For the rest of the file, we use post.data
-const postData = {
-    id: post.slug,
-    ...post.data,
-    slug: post.slug
-};
+const relatedResult = await db.execute({
+  sql: 'SELECT * FROM posts WHERE category = ? AND id != ? LIMIT 3',
+  args: [post.category, post.id]
+});
+const relatedPosts = relatedResult.rows as any[];
 ---
 
 <Layout 

@@ -1,98 +1,38 @@
 /* empty css                                     */
-import { e as createComponent, r as renderTemplate } from '../chunks/astro/server_BmgwVtGw.mjs';
+import { f as createComponent, k as renderComponent, l as renderScript, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_oNzcvkI7.mjs';
 import 'piccolore';
-import 'clsx';
+import { $ as $$Layout } from '../chunks/Layout_Ds4gT47M.mjs';
+import { c as client } from '../chunks/db_CQPV1YBr.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`const featuredPosts = posts.slice(0, 3);
-const latestPosts = posts.slice(0, 8); // Display more on home now that it's a list 
-<Layout title="İzmir Uzmanı - Şehri Keşfet">
-	<!-- Hero Slider -->
-    <section class="max-w-[1400px] mx-auto pt-8 pb-12 px-4">
-        <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar">
-            {featuredPosts.length > 0 ? featuredPosts.map((post) => (
-                <div class="snap-center shrink-0 w-[90vw] md:w-[80vw] lg:w-[70vw] h-[50vh] relative rounded-card overflow-hidden shadow-xl group">
-                    <img src={post.image || \`https://picsum.photos/seed/\${post.id}/1200/800\`} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8 md:p-12 text-white">
-                        <span class="inline-block px-4 py-1.5 bg-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">{post.category}</span>
-                        <h2 class="text-2xl md:text-4xl font-bold leading-tight mb-2 group-hover:text-primary transition-colors">{post.title}</h2>
-                        <p class="text-white/80 line-clamp-2 md:text-lg mb-6 max-w-2xl">{post.excerpt}</p>
-                         <a href={\`/blog/\${post.slug}\`} class="inline-block px-8 py-3 bg-white text-dark rounded-btn font-bold hover:bg-primary hover:text-white transition shadow-lg transform active:scale-95">Devamını Oku</a>
-                    </div>
-                </div>
-            )) : (
-                 <div class="w-full h-[50vh] bg-gray-100 rounded-card flex items-center justify-center text-gray-400">
-                    Öne çıkan içerik yok.
-                 </div>
-            )}
-        </div>
-    </section>
-
-    <!-- Latest Posts (Vertical List View) -->
-    <section class="py-4 px-4 max-w-5xl mx-auto">
-        <h2 class="text-center text-3xl font-bold text-dark mb-12 relative inline-block left-1/2 -translate-x-1/2">
-            Son Yazılar
-            <span class="absolute -bottom-3 left-1/4 w-1/2 h-1 bg-primary rounded-full"></span>
-        </h2>
-        
-        <div class="flex flex-col gap-12">
-            {latestPosts.length > 0 ? latestPosts.map((post) => (
-                <article class="bg-white rounded-card overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group flex flex-col md:flex-row h-auto min-h-[300px] border border-gray-50">
-                    <!-- Image Side (Left on Desktop) -->
-                    <div class="md:w-5/12 relative overflow-hidden h-64 md:h-auto">
-                         <img src={post.image || \`https://picsum.photos/seed/\${post.id}/800/600\`} alt={post.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
-                         <div class="absolute top-4 left-4">
-                             <span class="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-primary shadow-sm uppercase">{post.category}</span>
-                         </div>
-                    </div>
-                    
-                    <!-- Content Side (Right on Desktop) -->
-                    <div class="p-8 md:w-7/12 flex flex-col justify-center">
-                        <div class="flex items-center gap-2 mb-4 text-xs text-gray-400 uppercase tracking-widest font-semibold">
-                             <span>{new Date(post.created_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                        </div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-dark mb-4 leading-tight group-hover:text-primary transition">{post.title}</h3>
-                        <p class="text-gray-500 line-clamp-3 mb-6 leading-relaxed">{post.excerpt}</p>
-                        <div class="mt-auto">
-                            <a href={\`/blog/\${post.slug}\`} class="inline-flex items-center gap-2 px-6 py-2.5 bg-gray-50 text-dark rounded-btn text-sm font-bold hover:bg-primary hover:text-white transition shadow-sm border border-gray-100 group-hover:border-primary">
-                                Devamını Oku
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            )) : (
-                <div class="py-12 text-center text-gray-500">
-                    Henüz yazı bulunmuyor.
-                </div>
-            )}
-        </div>
-    </section>
-
-    <!-- Instagram Feed Placeholder -->
-    <section class="py-12 bg-[#F0F8FF] mt-12 border-t border-blue-100">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold text-dark mb-2">Instagram'da Bizi Takip Edin</h3>
-            <p class="text-gray-500 mb-8">@izmiruzmani</p>
-            
-            <div class="flex gap-4 overflow-x-auto pb-4 snap-x">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div class="snap-center shrink-0 w-64 h-64 bg-white rounded-card shadow-md overflow-hidden relative">
-                         <img src={\`https://picsum.photos/seed/insta\${i}/400/400\`} alt="Instagram" class="w-full h-full object-cover" />
-                    </div>
-                ))}
-            </div>
-
-            <div class="mt-8">
-                <a href="https://www.instagram.com/izmiruzmani/" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-btn font-bold shadow-lg hover:opacity-90 transition transform hover:-translate-y-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                    Instagram'da Takip Et
-                </a>
-            </div>
-        </div>
-    </section>
-</Layout>`;
+const $$Index = createComponent(async ($$result, $$props, $$slots) => {
+  const result = await client.execute("SELECT * FROM posts ORDER BY created_at DESC");
+  const posts = result.rows;
+  const featuredPosts = posts.slice(0, 3);
+  const latestPosts = posts.slice(0, 8);
+  const eventPostsFromDb = posts.filter((p) => p.category === "Etkinlikler");
+  const mockEvents = [
+    { id: "mock1", title: "\u0130zmir Filarmoni Konseri", category: "Etkinlikler", image: "https://picsum.photos/seed/event1/400/600", created_at: "2026-01-15", slug: "izmir-filarmoni-konseri" },
+    { id: "mock2", title: "Uluslararas\u0131 Fuar", category: "Etkinlikler", image: "https://picsum.photos/seed/event2/400/600", created_at: "2026-01-18", slug: "uluslararasi-fuar" },
+    { id: "mock3", title: "Modern Sanat Sergisi", category: "Etkinlikler", image: "https://picsum.photos/seed/event3/400/600", created_at: "2026-01-20", slug: "sanat-sergisi" },
+    { id: "mock4", title: "Caz Festivali 2026", category: "Etkinlikler", image: "https://picsum.photos/seed/event4/400/600", created_at: "2026-01-22", slug: "caz-festivali" },
+    { id: "mock5", title: "Tiyatro: Hamlet", category: "Etkinlikler", image: "https://picsum.photos/seed/event5/400/600", created_at: "2026-01-25", slug: "tiyatro-hamlet" }
+  ];
+  const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPostsFromDb, ...mockEvents].slice(0, 10);
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "\u0130zmir Uzman\u0131 - \u015Eehri Ke\u015Ffet" }, { "default": async ($$result2) => renderTemplate`  ${maybeRenderHead()}<section class="max-w-[1400px] mx-auto pt-6 pb-8 px-4"> <div id="hero-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar scroll-smooth"> ${featuredPosts.length > 0 ? featuredPosts.map((post) => renderTemplate`<div class="snap-center shrink-0 w-full relative rounded-card overflow-hidden shadow-xl group h-[50vh] md:h-[60vh]"> <img${addAttribute(post.image || `https://picsum.photos/seed/${post.id}/1200/800`, "src")}${addAttribute(post.title, "alt")} class="w-full h-full object-cover group-hover:scale-105 transition duration-700"> <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 md:p-12 text-white"> <span class="inline-block px-4 py-1.5 bg-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">${post.category}</span> <h2 class="text-2xl md:text-5xl font-bold leading-tight mb-4 group-hover:text-primary transition-colors max-w-4xl">${post.title}</h2> <p class="text-white/90 line-clamp-2 md:text-xl mb-8 max-w-2xl">${post.excerpt}</p> <a${addAttribute(`/blog/${post.slug}`, "href")} class="inline-block px-8 py-3 bg-white text-dark rounded-btn font-bold hover:bg-primary hover:text-white transition shadow-lg transform active:scale-95">Devamını Oku</a> </div> </div>`) : renderTemplate`<div class="w-full h-[50vh] bg-gray-100 rounded-card flex items-center justify-center text-gray-400">
+Öne çıkan içerik yok.
+</div>`} </div> </section>  <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-12"> <!-- Left: Latest Posts --> <main class="w-full lg:w-3/4"> <h2 class="text-3xl font-bold text-dark mb-8 flex items-center gap-3"> <span class="w-2 h-8 bg-primary rounded-full"></span>
+Son Yazılar
+</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> ${latestPosts.length > 0 ? latestPosts.map((post) => renderTemplate`<article class="bg-white rounded-card overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group flex flex-col h-full border border-gray-50"> <div class="relative overflow-hidden h-48 shrink-0"> <img${addAttribute(post.image || `https://picsum.photos/seed/${post.id}/800/600`, "src")}${addAttribute(post.title, "alt")} class="w-full h-full object-cover group-hover:scale-110 transition duration-700"> <div class="absolute top-4 left-4"> <span class="px-2 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-bold text-primary shadow-sm uppercase">${post.category}</span> </div> </div> <div class="p-5 flex flex-col flex-grow"> <div class="flex items-center gap-2 mb-2 text-[10px] text-gray-400 uppercase tracking-widest font-semibold"> <span>${new Date(post.created_at).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}</span> </div> <h3 class="text-lg font-bold text-dark mb-2 leading-tight group-hover:text-primary transition line-clamp-2">${post.title}</h3> <p class="text-gray-500 line-clamp-3 mb-4 leading-relaxed flex-grow text-xs">${post.excerpt}</p> <div class="mt-auto"> <a${addAttribute(`/blog/${post.slug}`, "href")} class="inline-flex items-center gap-2 text-primary font-bold hover:underline text-sm">
+Devamını Oku
+<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg> </a> </div> </div> </article>`) : renderTemplate`<div class="col-span-full py-12 text-center text-gray-500">
+Henüz yazı bulunmuyor.
+</div>`} </div> </main> <!-- Right: Sidebar --> <aside class="w-full lg:w-1/4 space-y-8"> <!-- Instagram Widget --> <div class="bg-white rounded-card p-6 shadow-lg border border-gray-100"> <div class="flex items-center gap-3 mb-6"> <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 text-white flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> </div> <div> <h3 class="font-bold text-dark">Instagram</h3> <p class="text-xs text-gray-500">@izmiruzmani</p> </div> <a href="https://instagram.com/izmiruzmani" target="_blank" class="ml-auto text-xs font-bold text-primary hover:underline">Takip Et</a> </div> <a href="https://instagram.com/izmiruzmani" target="_blank" class="block relative group overflow-hidden rounded-lg"> <!-- Placeholder image - User should replace this with actual screenshot --> <img src="/instagram-preview.jpg" alt="İzmir Uzmanı Instagram" class="w-full h-auto object-cover group-hover:opacity-90 transition" onError="this.src='https://placehold.co/400x400/FaFaFa/999999?text=Instagram+Görseli+Buraya';"> </a> </div> <!-- Categories Widget --> <div class="bg-primary text-white rounded-card p-6 shadow-lg relative overflow-hidden"> <div class="relative z-10"> <h3 class="text-xl font-bold mb-4">Keşfetmeye Başla</h3> <ul class="space-y-2"> ${["Yeme-\u0130\xE7me", "Etkinlikler", "Gezi", "Oteller", "M\xFCzeler"].map((cat) => renderTemplate`<li> <a${addAttribute(`/blog?cat=${cat}`, "href")} class="block py-2 px-4 rounded-lg bg-white/10 hover:bg-white/20 transition flex items-center justify-between"> ${cat} <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg> </a> </li>`)} </ul> </div> <!-- Decorative Circle --> <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div> </div> </aside> </div>  <section class="max-w-[1400px] mx-auto pt-12 pb-16 px-4 border-t border-gray-100"> <div class="flex items-center justify-between mb-8"> <h2 class="text-3xl font-bold text-dark flex items-center gap-3"> <span class="w-2 h-8 bg-secondary rounded-full"></span>
+İzmir Etkinlikleri
+</h2> <a href="/etkinlikler" class="px-6 py-2 bg-gray-100 text-dark rounded-full text-sm font-bold hover:bg-primary hover:text-white transition shadow-sm">Tümünü Gör</a> </div> <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar scroll-smooth"> ${eventPosts.map((post) => {
+    const postDate = new Date(post.created_at);
+    return renderTemplate`<article class="snap-start shrink-0 w-[70%] sm:w-[45%] md:w-[30%] lg:w-[19.5%] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group"> <a${addAttribute(`/blog/${post.slug}`, "href")} class="block flex flex-col h-full"> <div class="aspect-[3/4] overflow-hidden bg-gray-100 relative"> <img${addAttribute(post.image || `https://picsum.photos/seed/${post.id}/300/400`, "src")} class="w-full h-full object-cover group-hover:scale-105 transition duration-500"> <div class="absolute top-2 left-2"> <div class="bg-white/95 backdrop-blur-sm rounded px-2 py-1 text-center shadow-md"> <span class="block text-[8px] font-black text-primary uppercase leading-none">${postDate.toLocaleDateString("tr-TR", { month: "short" })}</span> <span class="block text-sm font-black text-dark leading-none mt-1">${postDate.getDate()}</span> </div> </div> </div> <div class="p-3 flex flex-col flex-grow"> <h3 class="text-xs font-bold text-dark leading-tight group-hover:text-primary transition line-clamp-2 mb-2">${post.title}</h3> <div class="mt-auto flex items-center justify-between pt-2 border-t border-gray-50"> <span class="text-[9px] text-gray-400 font-bold uppercase">${post.category}</span> <div class="text-primary group-hover:text-secondary transition transform group-hover:translate-x-1"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg> </div> </div> </div> </a> </article>`;
+  })} </div> </section> ` })} ${renderScript($$result, "C:/Users/Yi\u011Fit/Desktop/\u0130zmir Uzman\u0131 Website/src/pages/index.astro?astro&type=script&index=0&lang.ts")}`;
 }, "C:/Users/Yi\u011Fit/Desktop/\u0130zmir Uzman\u0131 Website/src/pages/index.astro", void 0);
 
 const $$file = "C:/Users/Yiğit/Desktop/İzmir Uzmanı Website/src/pages/index.astro";

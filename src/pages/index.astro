@@ -1,22 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import db from '../lib/db';
 
-// Fetch posts from content collection
-const allBlogPosts = await getCollection('blog');
-
-// Map to match old DB structure for easier transition
-const posts = allBlogPosts.map(p => ({
-    id: p.slug,
-    ...p.data,
-    slug: p.slug
-})).sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+// Fetch posts from Turso
+const result = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
+const posts = result.rows as any[];
 
 const featuredPosts = posts.slice(0, 3);
 const latestPosts = posts.slice(0, 8);
 
 // Fetch event posts for the slider
-const eventPostsFromCollection = posts.filter(p => p.category === 'Etkinlikler');
+const eventPostsFromDb = posts.filter(p => p.category === 'Etkinlikler');
 
 // Mock events if needed
 const mockEvents = [
@@ -27,7 +21,7 @@ const mockEvents = [
     { id: 'mock5', title: 'Tiyatro: Hamlet', category: 'Etkinlikler', image: 'https://picsum.photos/seed/event5/400/600', created_at: '2026-01-25', slug: 'tiyatro-hamlet' },
 ];
 
-const eventPosts = eventPostsFromCollection.length >= 5 ? eventPostsFromCollection : [...eventPostsFromCollection, ...mockEvents].slice(0, 10);
+const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPostsFromDb, ...mockEvents].slice(0, 10);
 ---
 
 <Layout title="İzmir Uzmanı - Şehri Keşfet">
