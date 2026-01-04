@@ -2,7 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import db from '../../lib/db';
 
-const posts = db.prepare('SELECT * FROM posts ORDER BY created_at DESC').all() as any[];
+const result = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
+const posts = result.rows as any[];
 ---
 
 <Layout title="Blog - İzmir Uzmanı">
