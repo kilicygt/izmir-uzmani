@@ -55,6 +55,7 @@ if (Astro.request.method === 'POST') {
         // Upload to Vercel Blob
         const blob = await put(imageFile.name, imageFile, {
             access: 'public',
+            token: import.meta.env.BLOB_READ_WRITE_TOKEN
         });
         imagePath = blob.url;
     } else if (imageUri) {
