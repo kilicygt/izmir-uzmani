@@ -1,12 +1,6 @@
----
 import Layout from '../../../layouts/Layout.astro';
 import db from '../../../lib/db';
-import fs from 'node:fs';
-import path from 'node:path';
-
-if (!Astro.cookies.has('admin_session')) {
-  return Astro.redirect('/admin/login');
-}
+import { put } from '@vercel/blob';
 
 const { id } = Astro.params;
 const isNew = id === 'new';
@@ -47,10 +41,18 @@ if (Astro.request.method === 'POST') {
     const seo_title = formData.get('seo_title') as string;
     const seo_description = formData.get('seo_description') as string;
     
-    // Image Path
-    let imagePath = post.image; // Keep existing or default to empty
-    const imageUri = formData.get('image_uri') as string; // Optional URL field
-    if (imageUri) {
+    // Image Handling
+    const imageFile = formData.get('image_file') as File;
+    const imageUri = formData.get('image_uri') as string;
+    let imagePath = post.image;
+
+    if (imageFile && imageFile.size > 0) {
+        // Upload to Vercel Blob
+        const blob = await put(imageFile.name, imageFile, {
+            access: 'public',
+        });
+        imagePath = blob.url;
+    } else if (imageUri) {
         imagePath = imageUri;
     }
 
@@ -106,7 +108,7 @@ const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı
         </div>
     )}
 
-    <form method="POST" id="post-form" class="space-y-8">
+    <form method="POST" id="post-form" class="space-y-8" enctype="multipart/form-data">
         <!-- Main Content Card -->
         <div class="bg-white p-8 rounded-card shadow-xl border border-gray-100">
             <h2 class="text-lg font-bold text-dark mb-6 flex items-center gap-2">
@@ -139,14 +141,21 @@ const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı
                 </div>
 
                 <div class="col-span-1">
-                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Kapak Görseli URL</label>
-                    <div class="flex gap-4 items-center">
-                        <input type="text" name="image_uri" value={post.image} placeholder="https://..." class="flex-grow px-4 py-3 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all text-sm" />
-                        {post.image && (
-                            <div class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden border border-gray-100">
-                                <img src={post.image} class="w-full h-full object-cover" />
-                            </div>
-                        )}
+                    <label class="block text-xs font-black text-gray-400 uppercase mb-2 tracking-widest">Kapak Görseli</label>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-4">
+                            <input type="file" name="image_file" accept="image/*" class="flex-grow text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-black file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all cursor-pointer" />
+                            {post.image && (
+                                <div class="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden border border-gray-100 shrink-0">
+                                    <img src={post.image} class="w-full h-full object-cover" />
+                                </div>
+                            )}
+                        </div>
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-100"></div></div>
+                            <div class="relative flex justify-center text-[10px] uppercase font-bold"><span class="bg-white px-2 text-gray-300 tracking-widest">veya URL kullan</span></div>
+                        </div>
+                        <input type="text" name="image_uri" value={post.image?.startsWith('http') ? post.image : ''} placeholder="https://..." class="w-full px-4 py-2 border border-gray-100 rounded-xl bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all text-xs" />
                     </div>
                 </div>
 
