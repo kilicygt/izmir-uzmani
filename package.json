@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.0.0",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/vercel": "^9.0.2",
     "@libsql/client": "^0.15.15",
     "@vercel/blob": "^2.0.0",

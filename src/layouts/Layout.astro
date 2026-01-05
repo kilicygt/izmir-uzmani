@@ -21,14 +21,29 @@ const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı
 <html lang="tr">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={metaDescription} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{siteTitle}</title>
+		<meta name="description" content={metaDescription} />
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:image" content={new URL("/instagram-preview.jpg", Astro.site)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={siteTitle} />
+		<meta property="twitter:description" content={metaDescription} />
+		<meta property="twitter:image" content={new URL("/instagram-preview.jpg", Astro.site)} />
 	</head>
 	<body>
-        <!-- Mobile Menu Overlay -->
+		<!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#111111] translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
             <div class="flex flex-col h-full">
                 <div class="flex items-center justify-between p-6 border-b border-white/10">
