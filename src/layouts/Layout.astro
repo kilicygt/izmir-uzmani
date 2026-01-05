@@ -14,6 +14,7 @@ const siteTitle = seoTitle || title;
 const metaDescription = seoDescription || description || "İzmir Uzmanı - İzmir Şehir Rehberi";
 const weatherData = await getWeatherForecast();
 
+const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Oteller', 'Müzeler', 'Diğer'];
 ---
 
 <!doctype html>
@@ -39,7 +40,14 @@ const weatherData = await getWeatherForecast();
                 
                 <nav class="flex flex-col p-8 gap-6">
                     <a href="/" class="text-2xl font-bold text-white hover:text-secondary transition">Anasayfa</a>
-                    <a href="/blog" class="text-2xl font-bold text-white hover:text-secondary transition">Blog</a>
+                    <div class="flex flex-col gap-4">
+                        <a href="/blog" class="text-2xl font-bold text-white hover:text-secondary transition">Blog</a>
+                        <div class="grid grid-cols-2 gap-2 pl-4">
+                            {categories.map(cat => (
+                                <a href={`/blog/kategori/${cat}`} class="text-xs font-bold text-white/60 hover:text-secondary transition uppercase tracking-widest">{cat}</a>
+                            ))}
+                        </div>
+                    </div>
                     <a href="/etkinlikler" class="text-2xl font-bold text-white hover:text-secondary transition">Etkinlikler</a>
                     <a href="/iletisim" class="text-2xl font-bold text-white hover:text-secondary transition">İletişim</a>
                 </nav>
@@ -103,11 +111,18 @@ const weatherData = await getWeatherForecast();
                     </a>
                     
                     <!-- Dropdown Menu -->
-                    <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-[100]">
-                        <a href="/blog?cat=Yeme-İçme" class="block px-4 py-2 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition font-medium">Yeme-İçme</a>
-                        <a href="/blog?cat=Gezi" class="block px-4 py-2 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition font-medium">Gezi</a>
-                        <div class="border-t border-gray-50 my-1 mx-2"></div>
-                        <a href="/blog" class="block px-4 py-2 text-xs text-gray-400 hover:text-primary transition italic">Tümünü Gör...</a>
+                    <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-[100]">
+                        <div class="grid grid-cols-1 gap-1">
+                            {categories.map(cat => (
+                                <a href={`/blog/kategori/${cat}`} class="block px-6 py-2 text-sm text-gray-600 hover:bg-primary/5 hover:text-primary transition font-bold">
+                                    {cat}
+                                </a>
+                            ))}
+                            <div class="border-t border-gray-50 my-2 mx-4"></div>
+                            <a href="/blog" class="block px-6 py-1 text-xs text-primary hover:text-secondary transition font-black uppercase tracking-widest italic">
+                                Tüm Yazılar →
+                            </a>
+                        </div>
                     </div>
                 </div>
 

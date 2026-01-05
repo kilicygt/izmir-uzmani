@@ -123,7 +123,7 @@ const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPo
                     <ul class="space-y-3">
                         {['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Oteller', 'Müzeler'].map(cat => (
                             <li>
-                                <a href={`/blog?cat=${cat}`} class="group/item block py-3 px-4 rounded-xl bg-gray-50/50 hover:bg-primary border border-gray-100 hover:border-primary transition-all duration-300 flex items-center justify-between shadow-sm hover:shadow-primary/20">
+                                <a href={`/blog/kategori/${cat}`} class="group/item block py-3 px-4 rounded-xl bg-gray-50/50 hover:bg-primary border border-gray-100 hover:border-primary transition-all duration-300 flex items-center justify-between shadow-sm hover:shadow-primary/20">
                                     <span class="font-bold text-gray-600 group-hover/item:text-white transition-colors">{cat}</span>
                                     <div class="w-8 h-8 rounded-full bg-white text-primary flex items-center justify-center group-hover/item:bg-white/20 group-hover/item:text-white transition-all transform group-hover/item:translate-x-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M9 5l7 7-7 7" /></svg>
