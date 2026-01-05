@@ -6,9 +6,6 @@ if (!Astro.cookies.has('admin_session')) {
   return Astro.redirect('/admin/login');
 }
 
-const result = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
-const posts = result.rows as any[];
-
 if (Astro.request.method === 'POST') {
   try {
     const formData = await Astro.request.formData();
@@ -20,12 +17,15 @@ if (Astro.request.method === 'POST') {
         sql: 'DELETE FROM posts WHERE id = ?',
         args: [id]
       });
-      return Astro.redirect('/admin/dashboard');
+      return Astro.redirect('/admin/dashboard?deleted=true');
     }
   } catch (e: any) {
     console.error('Silme hatası:', e.message);
   }
 }
+
+const result = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
+const posts = result.rows as any[];
 
 const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Diğer'];
 ---
@@ -86,7 +86,7 @@ const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı
                                 </span>
                             </td>
                             <td class="px-6 py-5 text-right">
-                                <div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="flex justify-end gap-2">
                                     <a href={`/admin/editor/${post.id}`} class="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
                                     </a>
