@@ -93,7 +93,7 @@ if (Astro.request.method === 'POST') {
   }
 }
 
-const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Diğer'];
+const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Oteller', 'Müzeler', 'Diğer'];
 ---
 
 <Layout title={isNew ? 'Yeni Yazı Ekle' : 'Yazıyı Düzenle'}>
@@ -243,7 +243,7 @@ const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı
     // Initialize Quill
     const quill = new Quill('#editor', {
         modules: {
-            toolbar: false // Disable default toolbar
+            toolbar: toolbarOptions
         },
         theme: 'snow'
     });
