@@ -1,7 +1,7 @@
 import db from '../lib/db';
 
 export async function GET({ site }: { site: URL }) {
-    const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Oteller', 'Müzeler', 'Diğer'];
+    const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
     const baseUrl = site.origin;
 
     // Static Pages

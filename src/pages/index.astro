@@ -125,7 +125,7 @@ const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPo
                         Keşfetmeye Başla
                     </h3>
                     <ul class="space-y-3">
-                        {['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Oteller', 'Müzeler'].map(cat => (
+                        {['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'].map(cat => (
                             <li>
                                 <a href={`/blog/kategori/${cat}`} class="group/item block py-3 px-4 rounded-xl bg-gray-50/50 hover:bg-primary border border-gray-100 hover:border-primary transition-all duration-300 flex items-center justify-between shadow-sm hover:shadow-primary/20">
                                     <span class="font-bold text-gray-600 group-hover/item:text-white transition-colors">{cat}</span>

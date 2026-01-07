@@ -3,7 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import db from '../../../lib/db';
 
 export async function getStaticPaths() {
-  const categories = ['Yeme-İçme', 'Etkinlikler', 'Gezi', 'Sanat', 'Gece Hayatı', 'Diğer', 'Oteller', 'Müzeler'];
+  const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
   return categories.map(cat => ({
     params: { category: cat },
     props: { categoryName: cat }
