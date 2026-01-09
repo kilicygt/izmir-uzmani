@@ -280,7 +280,14 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
             setTimeout(() => {
                 bubbleMenu.style.opacity = '1';
                 bubbleMenu.style.pointerEvents = 'auto';
-                bubbleMenu.style.top = (bounds.top - 60) + 'px';
+                const isTooHigh = bounds.top < 60;
+                if (isTooHigh) {
+                    bubbleMenu.classList.add('below');
+                    bubbleMenu.style.top = (bounds.bottom + 10) + 'px';
+                } else {
+                    bubbleMenu.classList.remove('below');
+                    bubbleMenu.style.top = (bounds.top - 60) + 'px';
+                }
                 bubbleMenu.style.left = (bounds.left + bounds.width / 2) + 'px';
             }, 0);
         } else {
@@ -333,5 +340,13 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
         border-width: 6px 6px 0;
         border-style: solid;
         border-color: #1a1a1a transparent transparent transparent;
+        transition: all 0.2s;
+    }
+
+    #bubble-menu.below::after {
+        bottom: auto;
+        top: -6px;
+        border-width: 0 6px 6px;
+        border-color: transparent transparent #1a1a1a transparent;
     }
 </style>

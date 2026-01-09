@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import db from '../../lib/db';
+import { getWeatherForecast } from '../../lib/weather';
 
 const { slug } = Astro.params;
 
@@ -21,6 +22,8 @@ const relatedResult = await db.execute({
   args: [post.category, post.id]
 });
 const relatedPosts = relatedResult.rows as any[];
+
+const weatherData = await getWeatherForecast();
 ---
 
 <Layout 
@@ -74,6 +77,28 @@ const relatedPosts = relatedResult.rows as any[];
                             <span class="text-xs text-gray-400">{new Date(rp.created_at).toLocaleDateString('tr-TR')}</span>
                         </div>
                     </a>
+                ))}
+            </div>
+        </div>
+
+        <!-- Weather Widget -->
+        <div class="bg-white p-6 rounded-card border border-gray-100 shadow-sm sticky top-[450px]">
+            <h3 class="text-xl font-bold text-dark mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                İzmir Haftalık Hava Durumu
+            </h3>
+            <div class="space-y-3">
+                {weatherData.map((data) => (
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-gray-50/50 border border-gray-100/50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center" set:html={data.icon}></div>
+                            <span class="font-bold text-gray-600 text-sm">{data.day}</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-gray-400 font-medium">{data.condition}</span>
+                            <span class="font-black text-dark">{data.temp}°</span>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
