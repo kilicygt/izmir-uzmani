@@ -57,7 +57,7 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
         <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#111111] translate-x-full transition-transform duration-300 md:hidden overflow-y-auto">
             <div class="flex flex-col h-full">
                 <div class="flex items-center justify-between p-6 border-b border-white/10">
-                    <img src="/logo.png" alt="Logo" class="h-10 w-auto brightness-0 invert" />
+                    <img src="/logo.png" alt="Logo" class="h-12 w-auto object-contain brightness-0 invert" />
                     <button id="mobile-menu-close" class="p-2 text-white hover:bg-white/10 rounded-lg transition">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
@@ -118,7 +118,7 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
         <div class="container mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo Left -->
             <a href="/" class="hover:opacity-80 transition flex items-center shrink-0">
-                <img src="/logo.png" alt="İzmir Uzmanı" class="h-14 w-auto object-contain" />
+                <img src="/logo.png" alt="İzmir Uzmanı" class="h-16 w-auto object-contain" />
             </a>
             
             <!-- Navigation Right -->
@@ -181,22 +181,22 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
                 <!-- Branding -->
                 <div>
                     <div class="mb-6">
-                        <img src="/logo.png" alt="İzmir Uzmanı" class="h-12 w-auto object-contain brightness-0 invert" />
+                        <img src="/logo.png" alt="İzmir Uzmanı" class="h-14 w-auto object-contain brightness-0 invert" />
                     </div>
                     <p class="text-gray-400 leading-relaxed">
                         İzmir'in en kapsamlı şehir rehberi. Gezilecek yerler, tadılacak lezzetler ve kaçırılmayacak etkinlikler burada.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
+                <!-- Legal Links -->
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Hızlı Bağlantılar</h4>
+                    <h4 class="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Kurumsal</h4>
                     <ul class="space-y-3">
                          {[
-                             { name: 'Anasayfa', href: '/' },
-                             { name: 'Blog', href: '/blog' },
-                             { name: 'Etkinlikler', href: '/blog?cat=Etkinlikler' },
-                             { name: 'İletişim', href: '/iletisim' }
+                             { name: 'Hakkımızda', href: '/hakkimizda' },
+                             { name: 'Gizlilik Politikası', href: '/gizlilik-politikasi' },
+                             { name: 'Çerez Politikası', href: '/cerez-politikasi' },
+                             { name: 'Kullanım Koşulları', href: '/kullanim-kosullari' }
                          ].map((item) => (
                                 <li>
                                     <a href={item.href} class="text-gray-400 hover:text-secondary transition flex items-center gap-2">
@@ -226,13 +226,35 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
 
             <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; {new Date().getFullYear()} İzmir Uzmanı. Tüm hakları saklıdır.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white transition">Gizlilik Politikası</a>
-                    <a href="#" class="hover:text-white transition">Kullanım Şartları</a>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/gizlilik-politikasi" class="hover:text-white transition">Gizlilik Politikası</a>
+                    <a href="/kullanim-kosullari" class="hover:text-white transition">Kullanım Şartları</a>
+                    <a href="/cerez-politikasi" class="hover:text-white transition">Çerez Politikası</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:right-auto md:left-6 md:max-w-md bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 z-[200] transform transition-all duration-500 translate-y-20 opacity-0 hidden">
+        <div class="flex flex-col gap-4">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+                </div>
+                <div class="flex-grow">
+                    <h5 class="font-bold text-dark mb-1">Çerez Politikası</h5>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Sizlere daha iyi bir deneyim sunmak için çerezleri kullanıyoruz.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/cerez-politikasi" class="text-xs font-bold text-gray-400 hover:text-primary transition underline decoration-dotted underline-offset-4">Detaylı Bilgi</a>
+                <button id="accept-cookies" class="flex-grow py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition shadow-lg shadow-primary/20">Kabul Et</button>
+            </div>
+        </div>
+    </div>
 	</body>
 </html>
 
@@ -250,6 +272,29 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
         closeBtn.addEventListener('click', () => {
             menu.classList.add('translate-x-full');
             document.body.style.overflow = '';
+        });
+    }
+
+    // Cookie Consent Logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    if (cookieBanner && acceptBtn) {
+        const cookiesAccepted = localStorage.getItem('cookies-accepted');
+        
+        if (!cookiesAccepted) {
+            cookieBanner.classList.remove('hidden');
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-20', 'opacity-0');
+            }, 100);
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookies-accepted', 'true');
+            cookieBanner.classList.add('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                cookieBanner.classList.add('hidden');
+            }, 500);
         });
     }
 </script>

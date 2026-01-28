@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hakkımızda - İzmir Uzmanı">
+  <div class="bg-primary/5 py-20 text-center relative overflow-hidden">
+    <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6">Hakkımızda</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            İzmir Uzmanı, bu güzel şehrin her köşesini keşfetmek, gizli kalmış lezzetlerini bulmak ve en güncel etkinliklerini sizlerle paylaşmak için kuruldu.
+        </p>
+    </div>
+    
+    <!-- Decorative blobs -->
+    <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2"></div>
+  </div>
+
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-card border border-gray-100 shadow-xl overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="aspect-square bg-gray-100 relative group">
+                    <img 
+                        src="/saat-kulesi.png" 
+                        alt="İzmir Saat Kulesi" 
+                        class="w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <span class="text-primary font-black uppercase tracking-widest text-xs mb-4">Editörün Notu</span>
+                    <h2 class="text-3xl font-bold text-dark mb-6">Merhaba, Ben İzmir Uzmanı!</h2>
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-lg">
+                        <p>
+                            Doğma büyüme bir İzmirli olarak, bu şehrin sadece bir lokasyon değil, bir yaşam biçimi olduğuna inanıyorum. Kordon'da gün batımından Kemeraltı'nın dar sokaklarına kadar her yerin ayrı bir hikayesi var.
+                        </p>
+                        <p>
+                            Bu blogda, İzmir'in en iyi mekanlarını, kaçırılmaması gereken rotalarını ve kültürel etkinliklerini tarafsız ve samimi bir dille aktarmaya çalışıyorum. 
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 flex gap-4">
+                        <a href="/iletisim" class="px-6 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition shadow-lg shadow-primary/20">Bana Ulaşın</a>
+                        <a href="https://instagram.com/izmiruzmani" target="_blank" class="w-12 h-12 flex items-center justify-center border-2 border-gray-100 rounded-full text-gray-400 hover:text-primary hover:border-primary transition group">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-4">Güvenilir İçerik</h3>
+                <p class="text-gray-500">Tüm mekanlar ve rotalar bizzat deneyimlenerek kaleme alınır.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-4">Şehir Rehberi</h3>
+                <p class="text-gray-500">İzmir'de yaşamı kolaylaştıran pratik bilgiler ve güncel haberler.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-4">Geniş Kitle</h3>
+                <p class="text-gray-500">İzmir tutkunlarından oluşan binlerce kişilik bir topluluk.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</Layout>
