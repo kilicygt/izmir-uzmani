@@ -30,7 +30,7 @@ const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPo
     <section class="max-w-[1400px] mx-auto pt-6 pb-8 px-4">
         <div id="hero-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 no-scrollbar scroll-smooth">
             {featuredPosts.length > 0 ? featuredPosts.map((post) => (
-                <div class="snap-center shrink-0 w-full relative rounded-card overflow-hidden shadow-xl group h-[50vh] md:h-[60vh]">
+                <div class="snap-start shrink-0 w-full relative rounded-card overflow-hidden shadow-xl group h-[50vh] md:h-[60vh]">
                     <img src={post.image || `https://picsum.photos/seed/${post.id}/1200/800`} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 md:p-12 text-white">
                         <span class="inline-block px-4 py-1.5 bg-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">{post.category}</span>
@@ -199,16 +199,23 @@ const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPo
     // Auto Scroll Slider
     const slider = document.getElementById('hero-slider');
     if (slider) {
-        let scrollAmount = 0;
-        const scrollStep = slider.clientWidth; // Scroll one full width
-        const scrollSpeed = 4000; // 4 seconds
+        const scrollSpeed = 5000; // 5 seconds for better readability
 
         setInterval(() => {
-            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-                // If at end, scroll back to start smoothly
-                 slider.scrollTo({ left: 0, behavior: 'smooth' });
+            const firstChild = slider.firstElementChild as HTMLElement;
+            const secondChild = firstChild?.nextElementSibling as HTMLElement;
+            
+            // Calculate step dynamically: item width + gap
+            let scrollStep = slider.clientWidth;
+            if (firstChild && secondChild) {
+                scrollStep = secondChild.offsetLeft - firstChild.offsetLeft;
+            }
+
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                // If at end, scroll back to start
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
-                 slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
             }
         }, scrollSpeed);
     }
