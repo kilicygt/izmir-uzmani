@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import db from '../lib/db';
+import AdUnit from '../components/AdUnit.astro';
 
 // Fetch posts from Turso
 const result = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
@@ -47,6 +48,11 @@ const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPo
             )}
         </div>
     </section>
+    
+    <!-- Ad Space: Homepage Top -->
+    <div class="container mx-auto px-4 mb-4">
+        <AdUnit type="horizontal" />
+    </div>
 
     <!-- Main Content & Sidebar Layout -->
     <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-12">
