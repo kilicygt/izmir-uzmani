@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import db from '../lib/db';
 import AdUnit from '../components/AdUnit.astro';
+import PharmacyCard from '../components/PharmacyCard.astro';
 
 // Fetch posts from Turso
 const result = await db.execute('SELECT * FROM posts ORDER BY created_at DESC');
@@ -148,6 +149,9 @@ const eventPosts = eventPostsFromDb.length >= 5 ? eventPostsFromDb : [...eventPo
                     <div class="absolute -top-10 -left-10 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
                 </div>
                 </div>
+
+                <!-- Pharmacy Finder Widget -->
+                <PharmacyCard />
             </div>
 
         </aside>
