@@ -34,7 +34,7 @@ const weatherData = await getWeatherForecast();
     description={post.excerpt}
 >
   <div class="h-[40vh] md:h-[60vh] relative">
-    <img src={post.image || `https://picsum.photos/seed/${post.id}/1200/600`} alt={post.title} class="w-full h-full object-cover" />
+    <img src={post.image || `https://picsum.photos/seed/${post.id}/1200/600`} alt={post.title} class="w-full h-full object-cover" loading="eager" />
     <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center p-4">
         <div class="text-white max-w-4xl">
              <span class="inline-block px-4 py-1 bg-primary text-white rounded-full text-sm font-semibold mb-4">{post.category}</span>
@@ -100,7 +100,7 @@ const weatherData = await getWeatherForecast();
                 {relatedPosts.map((rp) => (
                     <a href={`/blog/${rp.slug}`} class="flex gap-4 group">
                         <div class="w-20 h-20 shrink-0 bg-gray-200 rounded-lg overflow-hidden">
-                             <img src={rp.image || `https://picsum.photos/seed/${rp.id}/200/200`} class="w-full h-full object-cover group-hover:scale-105 transition" />
+                             <img src={rp.image || `https://picsum.photos/seed/${rp.id}/200/200`} class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy" />
                         </div>
                         <div>
                             <h4 class="font-bold text-dark group-hover:text-primary transition line-clamp-2 text-sm mb-1">{rp.title}</h4>

@@ -65,19 +65,23 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
                     </button>
                 </div>
                 
-                <nav class="flex flex-col p-8 gap-6">
-                    <a href="/" class="text-2xl font-bold text-white hover:text-secondary transition">Anasayfa</a>
-                    <div class="flex flex-col gap-4">
-                        <a href="/blog" class="text-2xl font-bold text-white hover:text-secondary transition">Blog</a>
-                        <div class="grid grid-cols-2 gap-2 pl-4">
+                <nav class="flex flex-col p-8 gap-8">
+                    <a href="/" class="text-3xl font-bold text-white hover:text-secondary transition">Anasayfa</a>
+                    <div class="flex flex-col gap-6">
+                        <a href="/blog" class="text-3xl font-bold text-white hover:text-secondary transition">Blog</a>
+                        <div class="grid grid-cols-2 gap-4 pl-4">
                             {categories.map(cat => (
-                                <a href={`/blog/kategori/${cat}`} class="text-xs font-bold text-white/60 hover:text-secondary transition uppercase tracking-widest">{cat}</a>
+                                <a href={`/blog/kategori/${cat}`} class="text-sm font-bold text-white/60 hover:text-secondary transition uppercase tracking-widest">{cat}</a>
                             ))}
                         </div>
                     </div>
-                    <a href="/etkinlikler" class="text-2xl font-bold text-white hover:text-secondary transition">Etkinlikler</a>
-                    <a href="/iletisim" class="text-2xl font-bold text-white hover:text-secondary transition">İletişim</a>
+                    <a href="/etkinlikler" class="text-3xl font-bold text-white hover:text-secondary transition">Etkinlikler</a>
+                    <a href="/iletisim" class="text-3xl font-bold text-white hover:text-secondary transition">İletişim</a>
                 </nav>
+
+                {Astro.url.pathname === '/' && (
+                    <h1 class="sr-only">İzmir Uzmanı - İzmir Şehir Rehberi, Gezilecek Yerler ve Etkinlikler</h1>
+                )}
                 
                 <div class="mt-auto p-8 border-t border-white/10">
                     <p class="text-sm text-white/50 mb-4 tracking-wider uppercase font-bold">Hava Durumu</p>
@@ -125,14 +129,14 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
             
             <!-- Navigation Right -->
             <nav class="hidden md:flex gap-8 items-center">
-                <a href="/" class="text-sm font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition relative group">
+                <a href="/" class="text-base font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition relative group">
                     Anasayfa
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full"></span>
                 </a>
 
                 <!-- Blog Dropdown -->
                 <div class="relative group">
-                    <a href="/blog" class="text-sm font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition flex items-center gap-1 group">
+                    <a href="/blog" class="text-base font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition flex items-center gap-1 group">
                         Blog
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
                     </a>
@@ -153,12 +157,12 @@ const categories = ['Gezi', 'Yeme-İçme', 'Etkinlikler', 'Diğer'];
                     </div>
                 </div>
 
-                <a href="/etkinlikler" class="text-sm font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition relative group">
+                <a href="/etkinlikler" class="text-base font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition relative group">
                     Etkinlikler
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full"></span>
                 </a>
 
-                <a href="/iletisim" class="text-sm font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition relative group">
+                <a href="/iletisim" class="text-base font-bold text-gray-600 hover:text-primary uppercase tracking-wide transition relative group">
                     İletişim
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all group-hover:w-full"></span>
                 </a>

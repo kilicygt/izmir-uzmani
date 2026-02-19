@@ -35,7 +35,7 @@ const posts = result.rows as any[];
         {posts.map((post) => (
             <article class="bg-white rounded-card overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col h-full border border-gray-100">
                 <div class="h-56 bg-gray-100 relative overflow-hidden shrink-0">
-                    <img src={post.image || `https://picsum.photos/seed/${post.id}/800/600`} alt={post.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+                    <img src={post.image || `https://picsum.photos/seed/${post.id}/800/600`} alt={post.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-700" loading="lazy" />
                     <div class="absolute top-4 left-4">
                         <span class="px-3 py-1 bg-white/95 backdrop-blur-sm rounded-full text-[10px] font-black text-primary shadow-sm uppercase tracking-wider">{post.category}</span>
                     </div>

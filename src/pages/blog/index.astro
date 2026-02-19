@@ -17,7 +17,7 @@ const posts = result.rows as any[];
         {posts.map((post) => (
             <article class="bg-white rounded-card overflow-hidden shadow-lg hover:shadow-xl transition group flex flex-col h-full">
                 <div class="h-48 bg-gray-200 relative overflow-hidden shrink-0">
-                    <img src={post.image || `https://picsum.photos/seed/${post.id}/800/600`} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    <img src={post.image || `https://picsum.photos/seed/${post.id}/800/600`} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="flex items-center gap-2 mb-3">
