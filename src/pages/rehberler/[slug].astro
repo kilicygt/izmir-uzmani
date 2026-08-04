@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function catColor(cat: string) {
+  const map: Record<string, string> = {
+    'Kafeler': '#ff7c11',
+    'Semtler': '#062f96',
+    'Gece Hayatı': '#ff7c11',
+    'Keşfet': '#062f96',
+    'Etkinlikler': '#062f96',
+  };
+  return map[cat] ?? '#062f96';
+}
+
+const allPosts = await getCollection('blog');
+const related = allPosts
+  .filter(p => p.slug !== post.slug && p.data.category === post.data.category)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const pubDateStr = post.data.pubDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  activePage="rehberler"
+>
+
+  <!-- ARTICLE HEADER -->
+  <section class="art-header">
+    <div class="art-container anim">
+      <p class="breadcrumb">
+        <a href="/" class="bc-link">Ana Sayfa</a>
+        · <a href="/rehberler" class="bc-link">Rehberler</a>
+        · {post.data.category}
+      </p>
+      <span class="cat-badge" style={`background:${catColor(post.data.category)}`}>{post.data.category}</span>
+      <h1 class="art-title">{post.data.title}</h1>
+      <div class="art-meta">
+        <span>{pubDateStr}</span>
+        <span class="dot"></span>
+        <span>{post.data.readTime} okuma</span>
+        <span class="dot"></span>
+        <span>İzmir Uzmanı Ekibi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED IMAGE -->
+  <section class="img-section">
+    <div class="img-container">
+      <div class="art-img">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      </div>
+      <p class="img-caption">İzmir · Fotoğraf: İzmir Uzmanı</p>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <article class="art-body">
+    <div class="art-content">
+      <Content />
+      <!-- TAGS -->
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="tags">
+          <span class="tags-label">Etiketler:</span>
+          {post.data.tags.map(tag => (
+            <span class="tag">#{tag}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  </article>
+
+  <!-- RELATED -->
+  {related.length > 0 && (
+    <section class="related-section">
+      <div class="container">
+        <h2 class="related-heading">Benzer Rehberler</h2>
+        <div class="related-grid">
+          {related.map(rp => (
+            <article class="related-card">
+              <a href={`/rehberler/${rp.slug}`}>
+                <div class="related-img">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                </div>
+                <div class="related-body">
+                  <span class="cat-badge" style={`background:${catColor(rp.data.category)};font-size:11px;padding:3px 11px`}>{rp.data.category}</span>
+                  <h3 class="related-title">{rp.data.title}</h3>
+                  <p class="related-date">{rp.data.pubDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+</Layout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .anim { animation: fadeUp 0.5s ease both; }
+
+  /* HEADER */
+  .art-header { background: #fff9f3; padding: 48px 20px 0; }
+  .art-container { max-width: 720px; margin: 0 auto; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 16px; }
+  .bc-link { color: #062f96; transition: opacity 0.15s; }
+  .bc-link:hover { opacity: 0.7; color: #062f96; }
+  .cat-badge {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 4px 14px; border-radius: 20px; color: #fff; margin-bottom: 20px;
+  }
+  .art-title {
+    font-size: clamp(24px,4vw,40px); font-weight: 600; color: #1a1a1a;
+    line-height: 1.25; margin-bottom: 20px;
+  }
+  .art-meta {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding-bottom: 28px; border-bottom: 1px solid #ede5db;
+    font-size: 13px; color: #999;
+  }
+  .dot { width: 4px; height: 4px; background: #d4ccc4; border-radius: 50%; display: inline-block; }
+
+  /* IMAGE */
+  .img-section { background: #fff9f3; padding: 32px 20px; }
+  .img-container { max-width: 860px; margin: 0 auto; }
+  .art-img {
+    background: linear-gradient(135deg,#ede5db 0%,#d4c8bc 100%);
+    border-radius: 14px; aspect-ratio: 16/9;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .img-caption { font-size: 12px; color: #aaa; margin-top: 10px; text-align: center; }
+
+  /* BODY */
+  .art-body { padding: 0 20px 64px; }
+  .art-content {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  /* Markdown content styles */
+  .art-content :global(p) {
+    font-size: 17px; color: #333; line-height: 1.85; margin-bottom: 24px;
+    text-align: justify; text-wrap: pretty;
+  }
+  .art-content :global(h2) {
+    font-size: 19px; font-weight: 600; color: #1a1a1a; margin: 36px 0 16px;
+  }
+  .art-content :global(h3) {
+    font-size: 17px; font-weight: 600; color: #1a1a1a; margin: 28px 0 12px;
+  }
+  .art-content :global(blockquote) {
+    margin: 40px 0; padding: 24px 28px;
+    background: #f0e8df; border-left: 3px solid #062f96; border-radius: 0 12px 12px 0;
+  }
+  .art-content :global(blockquote p) {
+    font-size: 18px; font-weight: 500; color: #1a1a1a; line-height: 1.6;
+    font-style: italic; margin-bottom: 0;
+  }
+  .art-content :global(ul), .art-content :global(ol) {
+    padding-left: 24px; margin-bottom: 24px;
+  }
+  .art-content :global(li) {
+    font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 8px;
+  }
+  .art-content :global(a) { color: #062f96; text-decoration: underline; }
+  .art-content :global(strong) { font-weight: 600; color: #1a1a1a; }
+
+  .tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 40px; padding-top: 32px; border-top: 1px solid #ede5db;
+    align-items: center;
+  }
+  .tags-label { font-size: 13px; color: #999; margin-right: 8px; }
+  .tag {
+    font-size: 12px; color: #555; padding: 5px 14px;
+    border-radius: 20px; border: 1.5px solid #e0d8d0;
+  }
+
+  /* RELATED */
+  .related-section { background: #f0e8df; padding: clamp(40px,5vw,64px) 20px; }
+  .related-heading { font-size: 20px; font-weight: 600; color: #1a1a1a; margin-bottom: 28px; }
+  .related-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 700px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .related-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .related-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+  .related-card a { display: block; color: inherit; }
+  .related-img {
+    background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
+    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+  }
+  .related-body { padding: 18px; }
+  .related-title { font-size: 14px; font-weight: 600; color: #1a1a1a; line-height: 1.45; margin-bottom: 8px; margin-top: 10px; }
+  .related-date { font-size: 12px; color: #999; }
+</style>

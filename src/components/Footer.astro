@@ -1,0 +1,114 @@
+---
+---
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          İzmir<span class="logo-blue">Uzmanı</span><span class="logo-dot"></span>
+        </div>
+        <p>İzmir'in en iyi mekan, etkinlik ve deneyimlerini yerel gözüyle keşfet.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <p class="footer-label">Sayfalar</p>
+          <div class="footer-col">
+            <a href="/rehberler">Rehberler</a>
+            <a href="/etkinlikler">Etkinlikler</a>
+            <a href="/hakkinda">Hakkında</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-label">Sosyal</p>
+          <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 İzmirUzmanı. Tüm hakları saklıdır.</p>
+      <p>İzmir'den sevgiyle</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #f0e8df;
+    padding: clamp(40px, 5vw, 64px) 20px 32px;
+    border-top: 1px solid rgba(0,0,0,0.07);
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .footer-brand { max-width: 260px; }
+  .footer-brand p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+  }
+  .logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .logo-blue { color: #062f96; }
+  .logo-dot {
+    width: 5px;
+    height: 5px;
+    background: #ff7c11;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    flex-shrink: 0;
+  }
+  .footer-links {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .footer-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 16px;
+  }
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a, .ig-link {
+    font-size: 14px;
+    color: #555;
+    transition: color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-col a:hover, .ig-link:hover { color: #1a1a1a; }
+  .footer-bottom {
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer-bottom p { font-size: 13px; color: #aaa; }
+</style>

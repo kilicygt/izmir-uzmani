@@ -1,0 +1,438 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featuredPost = sorted.find(p => p.data.featured) ?? sorted[0];
+const recentPosts = sorted.filter(p => p.slug !== featuredPost?.slug).slice(0, 4);
+const gridPosts = sorted.slice(0, 3);
+const trendPosts = sorted.slice(0, 3);
+
+function catColor(cat: string) {
+  const map: Record<string, string> = {
+    'Kafeler': '#ff7c11',
+    'Semtler': '#062f96',
+    'Gece Hayatı': '#ff7c11',
+    'Keşfet': '#062f96',
+    'Etkinlikler': '#062f96',
+  };
+  return map[cat] ?? '#062f96';
+}
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+const events = [
+  { date: '3 Ağu', day: 'Paz', title: 'Kordon Açık Pazar', cat: 'Pazar', catColor: '#ff7c11' },
+  { date: '5 Ağu', day: 'Sal', title: 'Açık Hava Sinema: Türk Klasikleri', cat: 'Sinema', catColor: '#062f96' },
+  { date: '7 Ağu', day: 'Per', title: 'Alsancak Sokak Festivali', cat: 'Festival', catColor: '#ff7c11' },
+  { date: '9 Ağu', day: 'Cmt', title: 'Tarihi Konak Müze Turu', cat: 'Kültür', catColor: '#062f96' },
+];
+
+const igPhotos = [
+  'linear-gradient(135deg,#e8d5c4,#c9b8a8)',
+  'linear-gradient(135deg,#c4d5e8,#a8b8c9)',
+  'linear-gradient(135deg,#e8c4c4,#c9a8a8)',
+  'linear-gradient(135deg,#c4e8d5,#a8c9b8)',
+  'linear-gradient(135deg,#e4d4b8,#c8b89c)',
+  'linear-gradient(135deg,#d4c4e8,#b8a8c9)',
+];
+---
+
+<Layout title="Ana Sayfa" description="İzmir'i yerel gözüyle keşfet — kafeler, etkinlikler, semtler ve daha fazlası.">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blob-a"></div>
+    <div class="hero-blob-b"></div>
+    <div class="hero-blob-c"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">İzmir Rehberi · 2026</p>
+      <h1 class="hero-title">İzmir'i<br/>keşfetmenin<br/>en iyi yolu</h1>
+      <p class="hero-subtitle">Yerel gözüyle kafeler, etkinlikler, semtler ve daha fazlası. Her hafta yeni içerik.</p>
+      <div class="hero-cta">
+        <a href="/rehberler" class="btn-primary">Rehberleri Keşfet</a>
+        <a href="#etkinlikler" class="btn-outline">Bu Hafta Etkinlikler</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="featured" class="featured-section">
+    <div class="container">
+      <p class="section-eyebrow">Öne Çıkan</p>
+      <div class="featured-grid">
+        <!-- Big card -->
+        {featuredPost && (
+          <article>
+            <a href={`/rehberler/${featuredPost.slug}`} class="featured-card-link">
+              <div class="card-img-lg">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <span class="cat-badge" style={`background:${catColor(featuredPost.data.category)};margin-bottom:14px`}>{featuredPost.data.category}</span>
+              <h2 class="featured-title">{featuredPost.data.title}</h2>
+              <p class="featured-desc">{featuredPost.data.description}</p>
+              <p class="card-meta">{formatDate(featuredPost.data.pubDate)} · {featuredPost.data.readTime} okuma</p>
+            </a>
+          </article>
+        )}
+        <!-- Recent list -->
+        <div class="recent-list">
+          {recentPosts.map(post => (
+            <a href={`/rehberler/${post.slug}`} class="recent-item">
+              <div class="recent-thumb">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <div class="recent-body">
+                <span class="cat-badge" style={`background:${catColor(post.data.category)};font-size:10px;padding:3px 10px;margin-bottom:7px`}>{post.data.category}</span>
+                <p class="recent-title">{post.data.title}</p>
+                <p class="recent-date">{formatDate(post.data.pubDate)}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY BAND -->
+  <section class="cat-band">
+    <div class="container">
+      <div class="cat-scroll" id="cat-scroll">
+        {['Tümü', 'Kafeler', 'Etkinlikler', 'Semtler', 'Gece Hayatı', 'Keşfet'].map((c, i) => (
+          <button class:list={['cat-btn', { active: i === 0 }]} data-cat={c}>{c}</button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TREND -->
+  <section class="trend-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Şu An Trend</h2>
+        <span style="font-size:18px;line-height:1">🔥</span>
+      </div>
+      <div class="trend-grid">
+        {trendPosts.map((post, i) => (
+          <a href={`/rehberler/${post.slug}`} class="trend-card">
+            <span class="trend-num">0{i + 1}</span>
+            <div class="trend-body">
+              <span class="cat-badge" style={`background:${catColor(post.data.category)};font-size:10px;padding:3px 10px;margin-bottom:8px`}>{post.data.category}</span>
+              <p class="trend-title">{post.data.title}</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDES GRID -->
+  <section class="guides-section" id="rehberler">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Son Rehberler</h2>
+        <a href="/rehberler" class="see-all">Tümünü Gör →</a>
+      </div>
+      <div class="card-grid" id="card-grid">
+        {gridPosts.map(post => (
+          <article class="guide-card" data-cat={post.data.category}>
+            <a href={`/rehberler/${post.slug}`}>
+              <div class="card-img-sm">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <div class="card-body">
+                <span class="cat-badge" style={`background:${catColor(post.data.category)};margin-bottom:12px`}>{post.data.category}</span>
+                <h3 class="card-title">{post.data.title}</h3>
+                <p class="card-desc">{post.data.description}</p>
+                <p class="card-meta">{formatDate(post.data.pubDate)} · {post.data.readTime} okuma</p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="etkinlikler" class="events-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Bu Hafta İzmir'de</h2>
+        <a href="/etkinlikler" class="see-all">Tümünü Gör →</a>
+      </div>
+      <div class="events-list">
+        {events.map(ev => (
+          <a href="/etkinlikler" class="event-row">
+            <div class="event-date">
+              <p class="event-day-num">{ev.date}</p>
+              <p class="event-day-name">{ev.day}</p>
+            </div>
+            <div class="event-divider"></div>
+            <p class="event-title">{ev.title}</p>
+            <span class="cat-badge" style={`background:${ev.catColor};font-size:11px`}>{ev.cat}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="ig-section">
+    <div class="container" style="text-align:center">
+      <h2 class="ig-heading">Instagram'da Takip Et</h2>
+      <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-handle">@izmiruzmani</a>
+      <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-grid">
+        {igPhotos.map(bg => (
+          <div class="ig-cell" style={`background:${bg}`}>
+            <div class="ig-overlay">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ig-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,0)" stroke="none"/></svg>
+            </div>
+          </div>
+        ))}
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(72px, 14vw, 128px) 20px clamp(64px, 10vw, 96px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #fff9f3 0%, #f5e8d8 60%, #fff9f3 100%);
+    background-size: 100% 200%;
+    animation: heroGrad 16s ease infinite;
+  }
+  .hero-blob-a {
+    position: absolute; top: -60px; right: -60px;
+    width: clamp(280px,44vw,500px); height: clamp(280px,44vw,500px);
+    border-radius: 50%; background: rgba(255,124,17,0.10);
+    filter: blur(64px); pointer-events: none; animation: floatA 10s ease-in-out infinite;
+  }
+  .hero-blob-b {
+    position: absolute; bottom: -80px; left: -60px;
+    width: clamp(240px,38vw,440px); height: clamp(240px,38vw,440px);
+    border-radius: 50%; background: rgba(6,47,150,0.07);
+    filter: blur(56px); pointer-events: none; animation: floatB 13s ease-in-out infinite;
+  }
+  .hero-blob-c {
+    position: absolute; top: 30%; right: 8%;
+    width: clamp(100px,14vw,180px); height: clamp(100px,14vw,180px);
+    border-radius: 50%; background: rgba(255,124,17,0.06);
+    filter: blur(30px); pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 680px; }
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #062f96; margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both 0.05s;
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 9vw, 92px);
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both 0.15s;
+  }
+  .hero-subtitle {
+    font-size: 17px; color: #666; max-width: 420px; margin: 0 auto 40px;
+    line-height: 1.75; animation: fadeUp 0.6s ease both 0.28s;
+  }
+  .hero-cta {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.6s ease both 0.4s;
+  }
+  .btn-primary {
+    background: #062f96; color: #fff; font-size: 14px; font-weight: 500;
+    padding: 13px 26px; border-radius: 8px; display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #041e6e; color: #fff; }
+  .btn-outline {
+    background: transparent; color: #1a1a1a; font-size: 14px; font-weight: 500;
+    padding: 12px 26px; border-radius: 8px; display: inline-block;
+    border: 1.5px solid #d4ccc4; transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: #999; color: #1a1a1a; }
+
+  /* FEATURED */
+  .featured-section { background: #f0e8df; padding: clamp(48px,6vw,72px) 20px; }
+  .section-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #999; margin-bottom: 28px;
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 768px) {
+    .featured-grid { grid-template-columns: 1fr 340px; gap: 56px; }
+  }
+  .card-img-lg {
+    background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
+    border-radius: 14px; aspect-ratio: 16/10; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .featured-card-link { display: block; color: inherit; }
+  .featured-title {
+    font-size: clamp(20px,2.5vw,28px); font-weight: 600; color: #1a1a1a;
+    line-height: 1.3; margin-bottom: 10px;
+  }
+  .featured-desc { font-size: 14px; color: #666; line-height: 1.65; margin-bottom: 14px; }
+  .card-meta { font-size: 12px; color: #999; }
+
+  .recent-list { display: flex; flex-direction: column; }
+  .recent-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: opacity 0.15s;
+  }
+  .recent-item:hover { opacity: 0.7; }
+  .recent-thumb {
+    width: 68px; height: 68px; flex-shrink: 0;
+    background: linear-gradient(135deg,#ede5db,#ddd0c4);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  }
+  .recent-body { flex: 1; min-width: 0; }
+  .recent-title { font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.4; margin-bottom: 5px; }
+  .recent-date { font-size: 12px; color: #999; }
+
+  /* CATEGORY BAND */
+  .cat-band {
+    background: #fff9f3; padding: 20px;
+    border-bottom: 1px solid #ede5db;
+  }
+  .cat-scroll {
+    display: flex; gap: 8px; overflow-x: auto;
+    padding-bottom: 2px; scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .cat-scroll::-webkit-scrollbar { display: none; }
+  .cat-btn {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+    padding: 8px 18px; border-radius: 20px; cursor: pointer; white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    background: #fff; color: #555; border: 1.5px solid #e0d8d0;
+  }
+  .cat-btn.active { background: #062f96; color: #fff; border-color: #062f96; }
+  .cat-btn:hover:not(.active) { border-color: #999; }
+
+  /* TREND */
+  .trend-section { background: #fff9f3; padding: clamp(40px,5vw,64px) 20px; }
+  .section-head {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 28px;
+  }
+  .section-title { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; }
+  .see-all { font-size: 14px; color: #062f96; font-weight: 500; transition: opacity 0.15s; margin-left: auto; }
+  .see-all:hover { opacity: 0.7; color: #062f96; }
+  .trend-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 700px) { .trend-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .trend-card {
+    display: flex; align-items: center; gap: 20px;
+    background: #f0e8df; border-radius: 12px; padding: 20px 24px;
+    transition: box-shadow 0.2s;
+  }
+  .trend-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); color: inherit; }
+  .trend-num {
+    font-size: clamp(36px,5vw,52px); font-weight: 700;
+    color: rgba(6,47,150,0.15); font-family: 'Fraunces', serif;
+    line-height: 1; flex-shrink: 0; min-width: 56px;
+  }
+  .trend-body { flex: 1; min-width: 0; }
+  .trend-title { font-size: 15px; font-weight: 500; color: #1a1a1a; line-height: 1.4; }
+
+  /* GUIDES GRID */
+  .guides-section { background: #fff9f3; padding: clamp(48px,6vw,72px) 20px; }
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 700px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .card-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .guide-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .guide-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
+  .guide-card a { display: block; color: inherit; }
+  .card-img-sm {
+    background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
+    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+  }
+  .card-body { padding: 20px; }
+  .card-title { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.45; margin-bottom: 8px; }
+  .card-desc { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 16px; }
+
+  /* EVENTS */
+  .events-section { background: #f0e8df; padding: clamp(48px,6vw,72px) 20px; }
+  .events-list {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .event-row {
+    display: flex; align-items: center; gap: 20px;
+    padding: 18px 24px; border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background 0.15s; color: inherit;
+  }
+  .event-row:last-child { border-bottom: none; }
+  .event-row:hover { background: #faf7f4; }
+  .event-date { flex-shrink: 0; min-width: 52px; text-align: center; }
+  .event-day-num { font-size: 16px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
+  .event-day-name { font-size: 11px; color: #999; margin-top: 2px; }
+  .event-divider { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
+  .event-title { flex: 1; font-size: 15px; font-weight: 500; color: #1a1a1a; min-width: 0; }
+
+  /* INSTAGRAM */
+  .ig-section { background: #fff9f3; padding: clamp(48px,6vw,72px) 20px; }
+  .ig-heading { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+  .ig-handle {
+    font-size: 13px; color: #062f96; font-weight: 500; display: inline-block; margin-bottom: 28px;
+  }
+  .ig-handle:hover { opacity: 0.75; color: #062f96; }
+  .ig-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 6px; max-width: 720px; margin: 0 auto;
+  }
+  .ig-cell {
+    position: relative; aspect-ratio: 1; border-radius: 4px; overflow: hidden; cursor: pointer;
+  }
+  .ig-overlay {
+    position: absolute; inset: 0; background: rgba(0,0,0,0);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .ig-cell:hover .ig-overlay { background: rgba(0,0,0,0.25); }
+  .ig-icon { transition: stroke 0.2s; }
+  .ig-cell:hover .ig-icon { stroke: rgba(255,255,255,1); }
+</style>
+
+<script>
+  // Category filter
+  const catBtns = document.querySelectorAll('.cat-btn');
+  const cards = document.querySelectorAll('.guide-card');
+
+  catBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-cat');
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        (card as HTMLElement).style.display = (cat === 'Tümü' || cat === cardCat) ? '' : 'none';
+      });
+    });
+  });
+</script>

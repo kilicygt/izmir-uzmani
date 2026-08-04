@@ -1,0 +1,137 @@
+---
+---
+<div class="weather-strip-wrap">
+  <div class="weather-inner">
+    <div id="weather-strip" class="weather-strip">
+      <!-- JS ile doldurulacak; önce 5 iskelet göster -->
+      {Array.from({ length: 5 }).map(() => (
+        <div class="wd-skeleton">
+          <div class="sk-icon"></div>
+          <div class="sk-day"></div>
+          <div class="sk-temp"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .weather-strip-wrap {
+    background: #f0e8df;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  .weather-inner { max-width: 1200px; margin: 0 auto; }
+  .weather-strip {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .weather-strip::-webkit-scrollbar { display: none; }
+
+  /* Skeleton */
+  .wd-skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 9px 18px;
+    flex-shrink: 0;
+    margin: 6px 3px;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  .sk-icon { width: 16px; height: 16px; background: #d4ccc4; border-radius: 50%; }
+  .sk-day { width: 28px; height: 8px; background: #d4ccc4; border-radius: 4px; }
+  .sk-temp { width: 24px; height: 10px; background: #d4ccc4; border-radius: 4px; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+  /* Actual weather day cards (injected by JS) */
+  :global(.wd) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 9px 18px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    margin: 6px 3px;
+  }
+  :global(.wd.today) { background: rgba(255,255,255,0.5); }
+  :global(.wd .wd-label) { font-size: 10px; color: #888; white-space: nowrap; }
+  :global(.wd .wd-label.bold) { font-weight: 600; }
+  :global(.wd .wd-temp) { font-size: 12px; color: #1a1a1a; font-weight: 500; }
+  :global(.wd .wd-temp.bold) { font-weight: 600; }
+</style>
+
+<script>
+  const WMO_TYPE = {
+    0: 'sun', 1: 'sun', 2: 'partly', 3: 'cloud',
+    45: 'cloud', 48: 'cloud',
+    51: 'rain', 53: 'rain', 55: 'rain',
+    61: 'rain', 63: 'rain', 65: 'rain',
+    71: 'snow', 73: 'snow', 75: 'snow', 77: 'snow',
+    80: 'rain', 81: 'rain', 82: 'rain',
+    95: 'storm', 96: 'storm', 99: 'storm',
+  };
+
+  function iconFor(code) {
+    const t = WMO_TYPE[code] ?? 'cloud';
+    const color = (t === 'sun' || t === 'partly') ? '#f59e0b' : '#94a3b8';
+    let path = '';
+    if (t === 'sun') {
+      path = `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+    } else if (t === 'partly') {
+      path = `<path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/>`;
+    } else if (t === 'rain' || t === 'storm') {
+      path = `<line x1="16" y1="13" x2="16" y2="21"/><line x1="8" y1="13" x2="8" y2="21"/><line x1="12" y1="15" x2="12" y2="23"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/>`;
+    } else {
+      path = `<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>`;
+    }
+    return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
+  }
+
+  const TR_DAYS = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'];
+
+  async function loadWeather() {
+    const strip = document.getElementById('weather-strip');
+    if (!strip) return;
+    try {
+      const res = await fetch(
+        'https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14' +
+        '&current=temperature_2m,weathercode' +
+        '&daily=temperature_2m_max,weathercode' +
+        '&forecast_days=5&timezone=Europe%2FIstanbul'
+      );
+      const data = await res.json();
+
+      // Bugün: anlık sıcaklık + anlık weathercode
+      const currentTemp = Math.round(data.current.temperature_2m);
+      const currentCode = data.current.weathercode;
+
+      // Kalan 4 gün: daily max (index 1-4)
+      const { time, weathercode, temperature_2m_max } = data.daily;
+
+      strip.innerHTML = time.map((dateStr, i) => {
+        const d = new Date(dateStr);
+        const label = i === 0 ? 'Bugün' : TR_DAYS[d.getDay()];
+        const temp  = i === 0 ? currentTemp : Math.round(temperature_2m_max[i]);
+        const code  = i === 0 ? currentCode : weathercode[i];
+        const isBold = i === 0;
+        return `<div class="wd${i === 0 ? ' today' : ''}">
+          ${iconFor(code)}
+          <span class="wd-label${isBold ? ' bold' : ''}">${label}</span>
+          <span class="wd-temp${isBold ? ' bold' : ''}">${temp}°C</span>
+        </div>`;
+      }).join('');
+    } catch {
+      strip.innerHTML = '<span style="padding:12px 20px;font-size:12px;color:#aaa">Hava verisi yüklenemedi</span>';
+    }
+  }
+
+  loadWeather();
+</script>

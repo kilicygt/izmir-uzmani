@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const allGroups = [
+  {
+    header: '3–9 Ağustos · Bu Hafta',
+    key: 'Bu Hafta',
+    events: [
+      { date: 'Paz 3 Ağu', time: '09:00', title: 'Kordon Açık Pazar', cat: 'Pazar', catColor: '#ff7c11', venue: 'Kordon, Alsancak' },
+      { date: 'Sal 5 Ağu', time: '21:00', title: 'Açık Hava Sinema: Türk Klasikleri', cat: 'Sinema', catColor: '#062f96', venue: 'Kültürpark' },
+      { date: 'Per 7 Ağu', time: '18:00', title: 'Alsancak Sokak Festivali', cat: 'Festival', catColor: '#ff7c11', venue: 'Alsancak' },
+      { date: 'Cmt 9 Ağu', time: '10:00', title: 'Tarihi Konak Müze Turu', cat: 'Kültür', catColor: '#062f96', venue: 'Konak' },
+    ],
+  },
+  {
+    header: '10–16 Ağustos · Gelecek Hafta',
+    key: 'Bu Ay',
+    events: [
+      { date: 'Paz 10 Ağu', time: '11:00', title: 'Bostanlı Kayık Turu', cat: 'Tur', catColor: '#ff7c11', venue: 'Bostanlı İskele' },
+      { date: 'Sal 12 Ağu', time: '20:00', title: 'Jazz Gecesi: Açık Sahne', cat: 'Müzik', catColor: '#062f96', venue: 'Alsancak Bar Sokak' },
+      { date: 'Cum 15 Ağu', time: '19:00', title: 'Kemeraltı Gece Turu', cat: 'Tur', catColor: '#ff7c11', venue: 'Kemeraltı' },
+      { date: 'Cmt 16 Ağu', time: '10:00', title: 'Foça Günübirlik Kaçamağı', cat: 'Doğa', catColor: '#062f96', venue: 'Foça' },
+    ],
+  },
+  {
+    header: '17–31 Ağustos · Bu Ay',
+    key: 'Bu Ay',
+    events: [
+      { date: 'Paz 17 Ağu', time: '09:00', title: 'Urla Zeytinyağı Festivali', cat: 'Festival', catColor: '#ff7c11', venue: 'Urla' },
+      { date: 'Per 21 Ağu', time: '20:30', title: 'İzmir Klasik Müzik Günleri', cat: 'Müzik', catColor: '#062f96', venue: 'Ahmet Adnan Saygun ASM' },
+      { date: 'Cmt 23 Ağu', time: '18:00', title: 'Kadifekale Gün Batımı Pikniği', cat: 'Doğa', catColor: '#ff7c11', venue: 'Kadifekale' },
+      { date: 'Paz 31 Ağu', time: '10:00', title: 'Aylık Kitap Takası', cat: 'Kültür', catColor: '#062f96', venue: 'Alsancak Kitapçı Sokak' },
+    ],
+  },
+];
+---
+
+<Layout title="Etkinlikler" activePage="etkinlikler" description="İzmir'deki konser, festival, tur ve kültür etkinlikleri.">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container anim">
+      <p class="breadcrumb"><a href="/" class="bc-link">Ana Sayfa</a> · Etkinlikler</p>
+      <h1 class="page-title">Etkinlikler</h1>
+      <p class="page-desc">İzmir'deki konser, festival, tur ve kültür etkinlikleri.</p>
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <div class="filter-bar">
+    <div class="container">
+      {['Bu Hafta', 'Bu Ay', 'Tümü'].map((f, i) => (
+        <button class:list={['filter-btn', { active: i === 0 }]} data-filter={f}>{f}</button>
+      ))}
+    </div>
+  </div>
+
+  <!-- EVENT GROUPS -->
+  <section class="events-section">
+    <div class="container">
+      <div class="event-groups" id="event-groups">
+        {allGroups.map((group, gi) => (
+          <div class="event-group" data-group={gi === 0 ? 'Bu Hafta' : 'Bu Ay'}>
+            <p class="group-header">{group.header}</p>
+            <div class="events-list">
+              {group.events.map(ev => (
+                <a href="#" class="event-row">
+                  <div class="event-date">
+                    <p class="ev-date">{ev.date}</p>
+                    <p class="ev-time">{ev.time}</p>
+                  </div>
+                  <div class="event-divider"></div>
+                  <div class="event-info">
+                    <p class="ev-title">{ev.title}</p>
+                    <p class="ev-venue">{ev.venue}</p>
+                  </div>
+                  <span class="cat-badge" style={`background:${ev.catColor};font-size:11px;white-space:nowrap`}>{ev.cat}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .anim { animation: fadeUp 0.5s ease both; }
+
+  .page-header { background: #f0e8df; padding: 48px 20px; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 10px; }
+  .bc-link { color: #062f96; transition: opacity 0.15s; }
+  .bc-link:hover { opacity: 0.7; color: #062f96; }
+  .page-title { font-size: clamp(28px,4vw,40px); font-weight: 600; color: #1a1a1a; margin-bottom: 8px; }
+  .page-desc { font-size: 15px; color: #666; }
+
+  .filter-bar {
+    background: #fff9f3; padding: 16px 20px;
+    border-bottom: 1px solid #ede5db;
+    display: flex;
+  }
+  .filter-bar .container { display: flex; gap: 8px; }
+  .filter-btn {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+    padding: 8px 20px; border-radius: 20px; cursor: pointer;
+    background: #fff; color: #555; border: 1.5px solid #e0d8d0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .filter-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .filter-btn:hover:not(.active) { border-color: #999; }
+
+  .events-section { background: #fff9f3; padding: clamp(40px,5vw,64px) 20px; }
+  .event-groups { display: flex; flex-direction: column; gap: 40px; }
+
+  .event-group[hidden] { display: none; }
+
+  .group-header {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #999; margin-bottom: 16px;
+  }
+  .events-list {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .event-row {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 24px; border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background 0.15s; color: inherit; flex-wrap: wrap;
+  }
+  .event-row:last-child { border-bottom: none; }
+  .event-row:hover { background: #faf7f4; }
+  .event-date { flex-shrink: 0; min-width: 72px; }
+  .ev-date { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
+  .ev-time { font-size: 12px; color: #999; margin-top: 1px; }
+  .event-divider { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
+  .event-info { flex: 1; min-width: 160px; }
+  .ev-title { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
+  .ev-venue { font-size: 12px; color: #999; }
+  .cat-badge {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 20px; letter-spacing: 0.03em; color: #fff;
+  }
+</style>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const groups = document.querySelectorAll('.event-group');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.getAttribute('data-filter');
+      groups.forEach(g => {
+        const gf = g.getAttribute('data-group');
+        if (f === 'Tümü') {
+          g.removeAttribute('hidden');
+        } else if (f === 'Bu Hafta') {
+          gf === 'Bu Hafta' ? g.removeAttribute('hidden') : g.setAttribute('hidden', '');
+        } else {
+          g.removeAttribute('hidden');
+        }
+      });
+    });
+  });
+</script>

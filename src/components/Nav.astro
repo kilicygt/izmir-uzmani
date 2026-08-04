@@ -1,0 +1,207 @@
+---
+interface Props {
+  activePage?: 'rehberler' | 'etkinlikler' | 'hakkinda';
+}
+const { activePage } = Astro.props;
+---
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      İzmir<span class="logo-blue">Uzmanı</span><span class="logo-dot"></span>
+    </a>
+    <div class="nav-right">
+      <div class="desktop-links">
+        <a href="/rehberler" class:list={['nav-link', { active: activePage === 'rehberler' }]}>Rehberler</a>
+        <a href="/etkinlikler" class:list={['nav-link', { active: activePage === 'etkinlikler' }]}>Etkinlikler</a>
+        <a href="/hakkinda" class:list={['nav-link', { active: activePage === 'hakkinda' }]}>Hakkında</a>
+      </div>
+      <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-btn" aria-label="Instagram">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <button id="menu-toggle" class="hamburger" aria-label="Menüyü aç">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <button id="menu-close" aria-label="Menüyü kapat">×</button>
+  <a href="/rehberler">Rehberler</a>
+  <a href="/etkinlikler">Etkinlikler</a>
+  <a href="/hakkinda">Hakkında</a>
+  <div class="mobile-social">
+    <a href="https://instagram.com/izmiruzmani" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
+</div>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff9f3;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    letter-spacing: -0.02em;
+  }
+  .logo:hover { color: #1a1a1a; }
+  .logo-blue { color: #062f96; }
+  .logo-dot {
+    width: 5px;
+    height: 5px;
+    background: #ff7c11;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    flex-shrink: 0;
+    margin-bottom: 1px;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .desktop-links {
+    display: none;
+    align-items: center;
+    gap: 32px;
+    margin-right: 8px;
+  }
+  @media (min-width: 768px) {
+    .desktop-links { display: flex; }
+    .hamburger { display: none; }
+  }
+  .nav-link {
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-link:hover, .nav-link.active { color: #1a1a1a; }
+  .nav-link.active { font-weight: 600; }
+  .ig-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    transition: color 0.15s;
+  }
+  .ig-btn:hover { color: #062f96; }
+  .hamburger {
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  /* Mobile Menu */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: #fff9f3;
+    padding: 72px 28px 32px;
+    flex-direction: column;
+    gap: 0;
+  }
+  #mobile-menu.open { display: flex; }
+  #menu-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #1a1a1a;
+    font-size: 30px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  #mobile-menu > a {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    padding: 16px 0;
+    border-bottom: 1px solid #e8e0d8;
+    display: block;
+  }
+  #mobile-menu > a:last-of-type { border-bottom: none; }
+  #mobile-menu > a:hover { color: #062f96; }
+  .mobile-social {
+    margin-top: 32px;
+  }
+  .mobile-social a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #666;
+    border-bottom: none !important;
+    font-weight: 400;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('menu-close');
+  const menu = document.getElementById('mobile-menu');
+
+  function closeMenu() {
+    menu?.classList.remove('open');
+  }
+
+  // Hamburger: toggle açık/kapalı
+  toggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu?.classList.toggle('open');
+  });
+
+  // × butonu
+  closeBtn?.addEventListener('click', closeMenu);
+
+  // Overlay arka planına tıklanınca kapat (link/butona değil, direkt overlay'e)
+  menu?.addEventListener('click', (e) => {
+    if (e.target === menu) closeMenu();
+  });
+
+  // Sayfa geri kalanına tıklanınca kapat
+  document.addEventListener('click', (e) => {
+    if (menu?.classList.contains('open') && !menu.contains(e.target as Node)) {
+      closeMenu();
+    }
+  });
+</script>
