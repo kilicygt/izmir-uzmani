@@ -3,70 +3,22 @@ backend:
   repo: kilicygt/izmir-uzmani
   branch: main
   base_url: https://izmiruzmani.com
-  auth_endpoint: api/auth
+  auth_endpoint: /api/auth
 
 media_folder: public/images/uploads
 public_folder: /images/uploads
 
-locale: tr
-
 collections:
   - name: blog
     label: Blog Yazıları
-    label_singular: Blog Yazısı
     folder: src/content/blog
     create: true
-    delete: true
     slug: "{{slug}}"
-    extension: md
-    format: frontmatter
     fields:
-      - label: Başlık
-        name: title
-        widget: string
-        hint: Yazının başlığı
-
-      - label: Açıklama
-        name: description
-        widget: string
-        hint: Kısa özet (kart ve meta description için)
-
-      - label: Yayın Tarihi
-        name: pubDate
-        widget: datetime
-        format: "YYYY-MM-DD"
-        date_format: "DD.MM.YYYY"
-        time_format: false
-
-      - label: Kategori
-        name: category
-        widget: select
-        options:
-          - Kafeler
-          - Semtler
-          - Gece Hayatı
-          - Keşfet
-          - Etkinlikler
-
-      - label: Okuma Süresi
-        name: readTime
-        widget: string
-        default: "5 dk"
-        hint: "Örn: 5 dk"
-
-      - label: Etiketler
-        name: tags
-        widget: list
-        required: false
-        hint: Virgülle ayrılmış etiketler
-
-      - label: Öne Çıkan Yazı
-        name: featured
-        widget: boolean
-        default: false
-        required: false
-        hint: Ana sayfada büyük kart olarak gösterilir
-
-      - label: İçerik
-        name: body
-        widget: markdown
+      - {label: Başlık, name: title, widget: string}
+      - {label: Açıklama, name: description, widget: string}
+      - {label: Yayın Tarihi, name: pubDate, widget: datetime}
+      - {label: Kategori, name: category, widget: string}
+      - {label: Etiketler, name: tags, widget: list}
+      - {label: Öne Çıkan, name: featured, widget: boolean, default: false}
+      - {label: İçerik, name: body, widget: markdown}
