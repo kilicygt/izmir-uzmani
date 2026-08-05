@@ -8,10 +8,6 @@ node_modules/
 # Astro
 .astro/
 
-# TinaCMS
-tina/__generated__/
-public/admin/
-
 # env
 .env
 .env.*
