@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "eyebrow": "İzmir Rehberi · 2026",
+    "title": "İzmir'i\nkeşfetmenin\nen iyi yolu",
+    "subtitle": "Yerel gözüyle kafeler, etkinlikler, semtler ve daha fazlası. Her hafta yeni içerik.",
+    "ctaPrimary": "Rehberleri Keşfet",
+    "ctaSecondary": "Bu Hafta Etkinlikler"
+  },
+  "about": {
+    "heroTitle": "Hakkında",
+    "heroDesc": "İzmir'i seven insanlar tarafından, İzmir'i sevenlere.",
+    "storyHeading": "İzmir Uzmanı, 2024 yılında bu şehri gerçekten bilen insanların sesini duyurmak için kuruldu.",
+    "storyParagraphs": [
+      "Şehir rehberlerinin çoğu aynı mekanları, aynı rotaları gösterir. Oysa İzmir çok daha derin — her mahallenin kendine ait ritmi, her sokağın ayrı bir hikayesi var. Biz bu hikayeleri anlatmak istedik.",
+      "Kafeler, etkinlikler, semtler, gece hayatı, doğa kaçamakları — hepsini yerelde yaşayan, keşfeden insanların gözüyle yazıyoruz. Reklam değil, deneyim.",
+      "Her hafta yeni içerikler yayınlıyoruz. Instagram'da takip edin, gelişmeleri kaçırmayın."
+    ]
+  }
+}

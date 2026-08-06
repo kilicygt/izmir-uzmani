@@ -1,15 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import siteConfig from '../data/site-config.json';
+
+const about = siteConfig.about;
 ---
 
-<Layout title="Hakkında" activePage="hakkinda" description="İzmir Uzmanı — İzmir'i seven insanlar tarafından, İzmir'i sevenlere.">
+<Layout title="Hakkında" activePage="hakkinda" description={`İzmir Uzmanı — ${about.heroDesc}`}>
 
   <!-- PAGE HEADER -->
   <section class="page-header">
     <div class="container anim">
       <p class="breadcrumb"><a href="/" class="bc-link">Ana Sayfa</a> · Hakkında</p>
-      <h1 class="page-title">Hakkında</h1>
-      <p class="page-desc">İzmir'i seven insanlar tarafından, İzmir'i sevenlere.</p>
+      <h1 class="page-title">{about.heroTitle}</h1>
+      <p class="page-desc">{about.heroDesc}</p>
     </div>
   </section>
 
@@ -17,10 +20,8 @@ import Layout from '../layouts/Layout.astro';
   <section class="story-section">
     <div class="story-container anim">
       <p class="eyebrow blue">Hikayemiz</p>
-      <h2 class="story-heading">İzmir Uzmanı, 2024 yılında bu şehri gerçekten bilen insanların sesini duyurmak için kuruldu.</h2>
-      <p class="story-text">Şehir rehberlerinin çoğu aynı mekanları, aynı rotaları gösterir. Oysa İzmir çok daha derin — her mahallenin kendine ait ritmi, her sokağın ayrı bir hikayesi var. Biz bu hikayeleri anlatmak istedik.</p>
-      <p class="story-text">Kafeler, etkinlikler, semtler, gece hayatı, doğa kaçamakları — hepsini yerelde yaşayan, keşfeden insanların gözüyle yazıyoruz. Reklam değil, deneyim.</p>
-      <p class="story-text">Her hafta yeni içerikler yayınlıyoruz. Instagram'da takip edin, gelişmeleri kaçırmayın.</p>
+      <h2 class="story-heading">{about.storyHeading}</h2>
+      {about.storyParagraphs.map((p: string) => <p class="story-text">{p}</p>)}
     </div>
   </section>
 

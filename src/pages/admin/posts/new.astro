@@ -1,0 +1,273 @@
+---
+export const prerender = false;
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+
+const categories = ['Kafeler', 'Semtler', 'Gece Hayatı', 'Keşfet', 'Etkinlikler'];
+---
+
+<AdminLayout title="Yeni Yazı">
+  <div style="max-width:900px">
+    <a href="/admin/posts" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#6b7280;margin-bottom:20px;text-decoration:none" onmouseover="this.style.color='#111827'" onmouseout="this.style.color='#6b7280'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Yazılara Dön
+    </a>
+
+    <div id="alert" class="alert"></div>
+
+    <form id="post-form">
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start">
+        <!-- Ana içerik -->
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div class="card">
+            <h2 style="font-size:14px;font-weight:600;color:#374151;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f3f4f6">Temel Bilgiler</h2>
+            <div class="form-group">
+              <label>Başlık <span class="req">*</span></label>
+              <input type="text" id="title" name="title" required placeholder="Yazı başlığını girin" oninput="updateSlug(this.value)" />
+            </div>
+            <div class="form-group">
+              <label>Slug (URL) <span class="req">*</span></label>
+              <div style="display:flex;gap:8px">
+                <input type="text" id="slug" name="slug" required placeholder="url-slug-buraya" style="flex:1" />
+                <button type="button" onclick="updateSlug(document.getElementById('title').value,true)" style="padding:0 14px;background:#f3f4f6;border:1.5px solid #d1d5db;border-radius:8px;font-size:13px;cursor:pointer;white-space:nowrap;color:#374151">Yenile</button>
+              </div>
+              <div style="font-size:12px;color:#9ca3af;margin-top:4px">izmiruzmani.com/rehberler/<span id="slug-preview" style="color:#062f96">slug</span></div>
+            </div>
+            <div class="form-group">
+              <label>Açıklama <span class="req">*</span></label>
+              <textarea id="description" name="description" rows="2" required placeholder="Yazı açıklaması (kart altında görünür)"></textarea>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <div class="form-group">
+                <label>Kategori <span class="req">*</span></label>
+                <select id="category" name="category" required>
+                  <option value="">Seçin...</option>
+                  {categories.map(c => <option value={c}>{c}</option>)}
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Yayın Tarihi <span class="req">*</span></label>
+                <input type="date" id="pubDate" name="pubDate" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Markdown içerik -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f3f4f6">
+              <h2 style="font-size:14px;font-weight:600;color:#374151">İçerik (Markdown)</h2>
+              <div style="display:flex;gap:4px" id="md-toolbar">
+                <button type="button" onclick="mdCmd('bold')" title="Kalın" class="md-btn"><strong>B</strong></button>
+                <button type="button" onclick="mdCmd('italic')" title="İtalik" class="md-btn"><em>İ</em></button>
+                <button type="button" onclick="mdCmd('h2')" title="Başlık" class="md-btn">H2</button>
+                <button type="button" onclick="mdCmd('h3')" title="Alt Başlık" class="md-btn">H3</button>
+                <button type="button" onclick="mdCmd('quote')" title="Alıntı" class="md-btn">"</button>
+                <button type="button" onclick="mdCmd('link')" title="Bağlantı" class="md-btn">🔗</button>
+                <button type="button" onclick="mdCmd('ul')" title="Liste" class="md-btn">≡</button>
+              </div>
+            </div>
+            <textarea id="content" name="content" rows="18" placeholder="Markdown formatında yazı içeriğini buraya yazın..." style="width:100%;font-family:'SF Mono',monospace;font-size:13px;line-height:1.7;resize:vertical"></textarea>
+          </div>
+
+          <!-- SEO -->
+          <div class="card">
+            <h2 style="font-size:14px;font-weight:600;color:#374151;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f3f4f6">SEO & Meta</h2>
+            <div class="form-group">
+              <label>SEO Başlığı <span style="font-size:11px;color:#9ca3af">(max 60 karakter)</span></label>
+              <input type="text" id="seoTitle" name="seoTitle" maxlength="60" placeholder="Arama sonuçlarında görünecek başlık" oninput="updateCount(this,'seo-title-count',60)" />
+              <div style="font-size:11px;color:#9ca3af;margin-top:4px;text-align:right"><span id="seo-title-count">0</span>/60</div>
+            </div>
+            <div class="form-group">
+              <label>SEO Açıklaması <span style="font-size:11px;color:#9ca3af">(max 160 karakter)</span></label>
+              <textarea id="seoDescription" name="seoDescription" rows="2" maxlength="160" placeholder="Meta description — arama sonuçlarında görünür" oninput="updateCount(this,'seo-desc-count',160)"></textarea>
+              <div style="font-size:11px;color:#9ca3af;margin-top:4px;text-align:right"><span id="seo-desc-count">0</span>/160</div>
+            </div>
+            <div class="form-group">
+              <label>Kısa Açıklama (Excerpt) <span style="font-size:11px;color:#9ca3af">(kartlarda görünür)</span></label>
+              <textarea id="excerpt" name="excerpt" rows="2" placeholder="Ana sayfada ve rehberler listesinde kartın altında görünecek kısa özet"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sağ panel -->
+        <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:20px">
+          <div class="card">
+            <h2 style="font-size:14px;font-weight:600;color:#374151;margin-bottom:16px">Yayınla</h2>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="save-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Kaydet
+            </button>
+          </div>
+
+          <div class="card">
+            <h2 style="font-size:14px;font-weight:600;color:#374151;margin-bottom:16px">Kapak Görseli</h2>
+            <div id="image-preview" style="background:#f3f4f6;border-radius:8px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;overflow:hidden">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <input type="file" id="image-file" accept="image/*" style="display:none" />
+            <button type="button" onclick="document.getElementById('image-file').click()" class="btn btn-ghost btn-sm" style="width:100%;justify-content:center;margin-bottom:8px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Görsel Yükle
+            </button>
+            <input type="text" id="image" name="image" placeholder="/images/uploads/gorsel.jpg" style="font-size:12px" />
+            <div id="upload-status" style="font-size:12px;color:#6b7280;margin-top:6px;min-height:16px"></div>
+          </div>
+
+          <div class="card">
+            <h2 style="font-size:14px;font-weight:600;color:#374151;margin-bottom:16px">Ayarlar</h2>
+            <div class="form-group">
+              <label>Etiketler <span style="font-size:11px;color:#9ca3af">(virgülle ayır)</span></label>
+              <input type="text" id="tags" name="tags" placeholder="İzmir, Kafeler, Rehber" />
+            </div>
+            <div class="form-group">
+              <label>Okuma Süresi</label>
+              <input type="text" id="readTime" name="readTime" placeholder="Otomatik hesaplanır" />
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+              <input type="checkbox" id="featured" name="featured" style="width:16px;height:16px;cursor:pointer" />
+              <label for="featured" style="font-size:14px;cursor:pointer;font-weight:400;margin-bottom:0">Öne Çıkan Yazı</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</AdminLayout>
+
+<style>
+  .form-group { margin-bottom: 16px; }
+  .form-group:last-child { margin-bottom: 0; }
+  label { display: block; font-size: 13px; font-weight: 500; color: #374151; margin-bottom: 6px; }
+  .req { color: #dc2626; }
+  input[type="text"], input[type="date"], select, textarea {
+    width: 100%; padding: 9px 12px; border: 1.5px solid #d1d5db; border-radius: 8px;
+    font-size: 14px; font-family: inherit; transition: border-color 0.15s; outline: none; color: #111827;
+    background: #fff;
+  }
+  input:focus, select:focus, textarea:focus { border-color: #062f96; box-shadow: 0 0 0 3px rgba(6,47,150,0.07); }
+  textarea { resize: vertical; }
+  .md-btn {
+    padding: 4px 8px; background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 5px;
+    font-size: 12px; cursor: pointer; transition: background 0.1s;
+  }
+  .md-btn:hover { background: #e5e7eb; }
+</style>
+
+<script>
+  // Slug auto-gen
+  function titleToSlug(title: string): string {
+    return title.toLowerCase()
+      .replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s')
+      .replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c')
+      .replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+  }
+
+  (window as any).updateSlug = function(title: string, force = false) {
+    const slugEl = document.getElementById('slug') as HTMLInputElement;
+    if (!slugEl.dataset.manual || force) {
+      const s = titleToSlug(title);
+      slugEl.value = s;
+      (document.getElementById('slug-preview') as HTMLElement).textContent = s || 'slug';
+      delete slugEl.dataset.manual;
+    }
+  };
+
+  document.getElementById('slug')?.addEventListener('input', function(this: HTMLInputElement) {
+    this.dataset.manual = '1';
+    (document.getElementById('slug-preview') as HTMLElement).textContent = this.value || 'slug';
+  });
+
+  // Char counter
+  (window as any).updateCount = function(el: HTMLInputElement, countId: string, max: number) {
+    const n = el.value.length;
+    const el2 = document.getElementById(countId)!;
+    el2.textContent = String(n);
+    el2.style.color = n > max * 0.9 ? '#dc2626' : '#9ca3af';
+  };
+
+  // Markdown toolbar
+  (window as any).mdCmd = function(cmd: string) {
+    const ta = document.getElementById('content') as HTMLTextAreaElement;
+    const start = ta.selectionStart;
+    const end = ta.selectionEnd;
+    const sel = ta.value.slice(start, end);
+    let insert = '';
+    if (cmd === 'bold') insert = `**${sel || 'kalın metin'}**`;
+    else if (cmd === 'italic') insert = `*${sel || 'italik metin'}*`;
+    else if (cmd === 'h2') insert = `\n## ${sel || 'Başlık'}\n`;
+    else if (cmd === 'h3') insert = `\n### ${sel || 'Alt Başlık'}\n`;
+    else if (cmd === 'quote') insert = `\n> ${sel || 'Alıntı'}\n`;
+    else if (cmd === 'link') insert = `[${sel || 'bağlantı metni'}](https://)`;
+    else if (cmd === 'ul') insert = `\n- ${sel || 'liste öğesi'}\n`;
+    ta.value = ta.value.slice(0, start) + insert + ta.value.slice(end);
+    ta.focus();
+    ta.selectionStart = start + insert.length;
+    ta.selectionEnd = start + insert.length;
+  };
+
+  // Image upload
+  document.getElementById('image-file')?.addEventListener('change', async function(this: HTMLInputElement) {
+    const file = this.files?.[0];
+    if (!file) return;
+    const statusEl = document.getElementById('upload-status')!;
+    statusEl.textContent = 'Yükleniyor...';
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await fetch('/api/admin/upload', { method: 'POST', body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+      (document.getElementById('image') as HTMLInputElement).value = data.path;
+      const preview = document.getElementById('image-preview')!;
+      preview.innerHTML = `<img src="${data.path}" style="width:100%;height:100%;object-fit:cover" alt="Önizleme" />`;
+      statusEl.textContent = '✓ Yüklendi: ' + data.path;
+      statusEl.style.color = '#059669';
+    } catch (err: any) {
+      statusEl.textContent = '✗ ' + err.message;
+      statusEl.style.color = '#dc2626';
+    }
+    this.value = '';
+  });
+
+  document.getElementById('image')?.addEventListener('input', function(this: HTMLInputElement) {
+    const preview = document.getElementById('image-preview')!;
+    if (this.value) {
+      preview.innerHTML = `<img src="${this.value}" style="width:100%;height:100%;object-fit:cover" alt="Önizleme" onerror="this.parentElement.innerHTML='<svg width=24 height=24 viewBox=0 0 24 24 fill=none stroke=#9ca3af stroke-width=1.5><path d=M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z/><circle cx=12 cy=13 r=4/></svg>'" />`;
+    }
+  });
+
+  // Set today's date
+  const today = new Date().toISOString().split('T')[0];
+  (document.getElementById('pubDate') as HTMLInputElement).value = today;
+
+  // Form submit
+  document.getElementById('post-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('save-btn') as HTMLButtonElement;
+    btn.disabled = true; btn.textContent = 'Kaydediliyor...';
+
+    const get = (id: string) => (document.getElementById(id) as HTMLInputElement)?.value || '';
+    const body = {
+      title: get('title'), slug: get('slug'), description: get('description'),
+      category: get('category'), pubDate: get('pubDate'),
+      content: get('content'), image: get('image'),
+      excerpt: get('excerpt'), seoTitle: get('seoTitle'), seoDescription: get('seoDescription'),
+      tags: get('tags'), readTime: get('readTime'),
+      featured: (document.getElementById('featured') as HTMLInputElement)?.checked || false,
+    };
+
+    try {
+      const res = await fetch('/api/admin/posts', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Kayıt başarısız');
+      window.location.href = '/admin/posts';
+    } catch (err: any) {
+      const alertEl = document.getElementById('alert')!;
+      alertEl.textContent = err.message;
+      alertEl.className = 'alert alert-error show';
+      btn.disabled = false; btn.textContent = 'Kaydet';
+      window.scrollTo(0, 0);
+    }
+  });
+</script>

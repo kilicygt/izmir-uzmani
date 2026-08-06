@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import siteConfig from '../data/site-config.json';
+
+const hero = siteConfig.hero;
 
 const allPosts = await getCollection('blog');
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -49,12 +52,12 @@ const igPhotos = [
     <div class="hero-blob-b"></div>
     <div class="hero-blob-c"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">İzmir Rehberi · 2026</p>
-      <h1 class="hero-title">İzmir'i<br/>keşfetmenin<br/>en iyi yolu</h1>
-      <p class="hero-subtitle">Yerel gözüyle kafeler, etkinlikler, semtler ve daha fazlası. Her hafta yeni içerik.</p>
+      <p class="hero-eyebrow">{hero.eyebrow}</p>
+      <h1 class="hero-title" set:html={hero.title.replace(/\n/g, '<br/>')} />
+      <p class="hero-subtitle">{hero.subtitle}</p>
       <div class="hero-cta">
-        <a href="/rehberler" class="btn-primary">Rehberleri Keşfet</a>
-        <a href="#etkinlikler" class="btn-outline">Bu Hafta Etkinlikler</a>
+        <a href="/rehberler" class="btn-primary">{hero.ctaPrimary}</a>
+        <a href="#etkinlikler" class="btn-outline">{hero.ctaSecondary}</a>
       </div>
     </div>
   </section>

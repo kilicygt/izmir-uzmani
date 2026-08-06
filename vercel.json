@@ -2,20 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
-  "framework": "astro",
-  "headers": [
-    {
-      "source": "/(.*)\\.yml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/yaml; charset=utf-8"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    }
-  ]
+  "framework": "astro"
 }
