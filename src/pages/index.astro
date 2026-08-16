@@ -72,6 +72,14 @@ const igPhotos = [
           <article>
             <a href={`/rehberler/${featuredPost.slug}`} class="featured-card-link">
               <div class="card-img-lg">
+                <img
+                  src={featuredPost.data.image ?? `/images/blog/${featuredPost.slug}.webp`}
+                  alt={featuredPost.data.imageAlt || featuredPost.data.title}
+                  class="card-photo"
+                  onerror="this.style.display='none'"
+                  loading="eager"
+                  decoding="async"
+                />
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
               </div>
               <span class="cat-badge" style={`background:${catColor(featuredPost.data.category)};margin-bottom:14px`}>{featuredPost.data.category}</span>
@@ -86,6 +94,14 @@ const igPhotos = [
           {recentPosts.map(post => (
             <a href={`/rehberler/${post.slug}`} class="recent-item">
               <div class="recent-thumb">
+                <img
+                  src={post.data.image ?? `/images/blog/${post.slug}.webp`}
+                  alt={post.data.imageAlt || post.data.title}
+                  class="card-photo"
+                  onerror="this.style.display='none'"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
               </div>
               <div class="recent-body">
@@ -145,6 +161,14 @@ const igPhotos = [
           <article class="guide-card" data-cat={post.data.category}>
             <a href={`/rehberler/${post.slug}`}>
               <div class="card-img-sm">
+                <img
+                  src={post.data.image ?? `/images/blog/${post.slug}.webp`}
+                  alt={post.data.imageAlt || post.data.title}
+                  class="card-photo"
+                  onerror="this.style.display='none'"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
               </div>
               <div class="card-body">
@@ -290,7 +314,8 @@ const igPhotos = [
   .card-img-lg {
     background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
     border-radius: 14px; aspect-ratio: 16/10; margin-bottom: 20px;
-    display: flex; align-items: center; justify-content: center; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
   }
   .featured-card-link { display: block; color: inherit; }
   .featured-title {
@@ -311,6 +336,7 @@ const igPhotos = [
     width: 68px; height: 68px; flex-shrink: 0;
     background: linear-gradient(135deg,#ede5db,#ddd0c4);
     border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
   }
   .recent-body { flex: 1; min-width: 0; }
   .recent-title { font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.4; margin-bottom: 5px; }
@@ -374,6 +400,11 @@ const igPhotos = [
   .card-img-sm {
     background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
     aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .card-photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
   }
   .card-body { padding: 20px; }
   .card-title { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.45; margin-bottom: 8px; }
