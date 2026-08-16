@@ -8,7 +8,7 @@ const { activePage } = Astro.props;
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">
-      İzmir<span class="logo-blue">Uzmanı</span><span class="logo-dot"></span>
+      <img src="/images/site_logo.png" alt="İzmir Uzmanı" class="logo-img" />
     </a>
     <div class="nav-right">
       <div class="desktop-links">
@@ -57,25 +57,14 @@ const { activePage } = Astro.props;
     justify-content: space-between;
   }
   .logo {
-    font-size: 17px;
-    font-weight: 600;
-    color: #1a1a1a;
     display: flex;
     align-items: center;
-    gap: 2px;
-    letter-spacing: -0.02em;
-  }
-  .logo:hover { color: #1a1a1a; }
-  .logo-blue { color: #062f96; }
-  .logo-dot {
-    width: 5px;
-    height: 5px;
-    background: #ff7c11;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 2px;
     flex-shrink: 0;
-    margin-bottom: 1px;
+  }
+  .logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
   }
   .nav-right {
     display: flex;
