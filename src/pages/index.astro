@@ -35,16 +35,16 @@ const events = [
 ];
 
 const igPosts = [
-  'https://www.instagram.com/izmiruzmani/p/DXb8kx8jMjy/',
-  'https://www.instagram.com/izmiruzmani/p/DZ5M7wpDPUT/',
-  'https://www.instagram.com/izmiruzmani/p/DYUoND6DPs1/',
-  'https://www.instagram.com/izmiruzmani/p/Db6C6MvDEIf/',
-  'https://www.instagram.com/izmiruzmani/p/DbTcfanjJ_A/',
-  'https://www.instagram.com/izmiruzmani/p/Db0_v1DjE1i/',
-  'https://www.instagram.com/izmiruzmani/p/DbGkvpLjOU6/',
-  'https://www.instagram.com/izmiruzmani/p/DZsYC8iDBlL/',
-  'https://www.instagram.com/izmiruzmani/p/DXEs0UjDNy5/',
-  'https://www.instagram.com/izmiruzmani/p/DWTwxvwDCWu/',
+  { shortcode: 'DXb8kx8jMjy', url: 'https://www.instagram.com/izmiruzmani/p/DXb8kx8jMjy/' },
+  { shortcode: 'DZ5M7wpDPUT', url: 'https://www.instagram.com/izmiruzmani/p/DZ5M7wpDPUT/' },
+  { shortcode: 'DYUoND6DPs1', url: 'https://www.instagram.com/izmiruzmani/p/DYUoND6DPs1/' },
+  { shortcode: 'Db6C6MvDEIf', url: 'https://www.instagram.com/izmiruzmani/p/Db6C6MvDEIf/' },
+  { shortcode: 'DbTcfanjJ_A', url: 'https://www.instagram.com/izmiruzmani/p/DbTcfanjJ_A/' },
+  { shortcode: 'Db0_v1DjE1i', url: 'https://www.instagram.com/izmiruzmani/p/Db0_v1DjE1i/' },
+  { shortcode: 'DbGkvpLjOU6', url: 'https://www.instagram.com/izmiruzmani/p/DbGkvpLjOU6/' },
+  { shortcode: 'DZsYC8iDBlL', url: 'https://www.instagram.com/izmiruzmani/p/DZsYC8iDBlL/' },
+  { shortcode: 'DXEs0UjDNy5', url: 'https://www.instagram.com/izmiruzmani/p/DXEs0UjDNy5/' },
+  { shortcode: 'DWTwxvwDCWu', url: 'https://www.instagram.com/izmiruzmani/p/DWTwxvwDCWu/' },
 ];
 ---
 
@@ -219,18 +219,24 @@ const igPosts = [
         <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-handle">@izmiruzmani</a>
       </div>
       <div class="ig-embed-grid">
-        {igPosts.map(url => (
-          <blockquote
-            class="instagram-media"
-            data-instgrm-permalink={url}
-            data-instgrm-version="14"
-            style="background:#FFF;border:0;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.10);margin:0;min-width:0;padding:0;width:100%">
-          </blockquote>
+        {igPosts.map(post => (
+          <a href={post.url} target="_blank" rel="noopener" class="ig-frame-wrap">
+            <iframe
+              src={`https://www.instagram.com/p/${post.shortcode}/embed/`}
+              width="100%"
+              height="500"
+              frameborder="0"
+              scrolling="no"
+              allowtransparency="true"
+              loading="lazy"
+              title="Instagram gönderisi"
+              class="ig-frame"
+            ></iframe>
+          </a>
         ))}
       </div>
     </div>
   </section>
-  <script is:inline async src="https://www.instagram.com/embed.js"></script>
 
 </Layout>
 
@@ -448,15 +454,24 @@ const igPosts = [
   .ig-embed-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
     max-width: 1200px;
     margin: 0 auto;
   }
   @media (min-width: 640px) {
     .ig-embed-grid { grid-template-columns: 1fr 1fr; }
   }
-  @media (min-width: 1024px) {
-    .ig-embed-grid { grid-template-columns: 1fr 1fr; }
+  .ig-frame-wrap {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .ig-frame {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
   }
 </style>
 
