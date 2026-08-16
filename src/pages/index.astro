@@ -34,13 +34,17 @@ const events = [
   { date: '9 Ağu', day: 'Cmt', title: 'Tarihi Konak Müze Turu', cat: 'Kültür', catColor: '#062f96' },
 ];
 
-const igPhotos = [
-  'linear-gradient(135deg,#e8d5c4,#c9b8a8)',
-  'linear-gradient(135deg,#c4d5e8,#a8b8c9)',
-  'linear-gradient(135deg,#e8c4c4,#c9a8a8)',
-  'linear-gradient(135deg,#c4e8d5,#a8c9b8)',
-  'linear-gradient(135deg,#e4d4b8,#c8b89c)',
-  'linear-gradient(135deg,#d4c4e8,#b8a8c9)',
+const igPosts = [
+  'https://www.instagram.com/izmiruzmani/p/DXb8kx8jMjy/',
+  'https://www.instagram.com/izmiruzmani/p/DZ5M7wpDPUT/',
+  'https://www.instagram.com/izmiruzmani/p/DYUoND6DPs1/',
+  'https://www.instagram.com/izmiruzmani/p/Db6C6MvDEIf/',
+  'https://www.instagram.com/izmiruzmani/p/DbTcfanjJ_A/',
+  'https://www.instagram.com/izmiruzmani/p/Db0_v1DjE1i/',
+  'https://www.instagram.com/izmiruzmani/p/DbGkvpLjOU6/',
+  'https://www.instagram.com/izmiruzmani/p/DZsYC8iDBlL/',
+  'https://www.instagram.com/izmiruzmani/p/DXEs0UjDNy5/',
+  'https://www.instagram.com/izmiruzmani/p/DWTwxvwDCWu/',
 ];
 ---
 
@@ -209,20 +213,24 @@ const igPhotos = [
 
   <!-- INSTAGRAM -->
   <section class="ig-section">
-    <div class="container" style="text-align:center">
-      <h2 class="ig-heading">Instagram'da Takip Et</h2>
-      <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-handle">@izmiruzmani</a>
-      <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-grid">
-        {igPhotos.map(bg => (
-          <div class="ig-cell" style={`background:${bg}`}>
-            <div class="ig-overlay">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="ig-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,0)" stroke="none"/></svg>
-            </div>
-          </div>
+    <div class="container">
+      <div class="ig-header">
+        <h2 class="ig-heading">Instagram'da Takip Et</h2>
+        <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-handle">@izmiruzmani</a>
+      </div>
+      <div class="ig-embed-grid">
+        {igPosts.map(url => (
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink={url}
+            data-instgrm-version="14"
+            style="background:#FFF;border:0;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.10);margin:0;min-width:0;padding:0;width:100%">
+          </blockquote>
         ))}
-      </a>
+      </div>
     </div>
   </section>
+  <script is:inline async src="https://www.instagram.com/embed.js"></script>
 
 </Layout>
 
@@ -431,26 +439,25 @@ const igPhotos = [
 
   /* INSTAGRAM */
   .ig-section { background: #fff9f3; padding: clamp(48px,6vw,72px) 20px; }
+  .ig-header { text-align: center; margin-bottom: 32px; }
   .ig-heading { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
   .ig-handle {
-    font-size: 13px; color: #062f96; font-weight: 500; display: inline-block; margin-bottom: 28px;
+    font-size: 13px; color: #062f96; font-weight: 500; display: inline-block;
   }
   .ig-handle:hover { opacity: 0.75; color: #062f96; }
-  .ig-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 6px; max-width: 720px; margin: 0 auto;
+  .ig-embed-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  .ig-cell {
-    position: relative; aspect-ratio: 1; border-radius: 4px; overflow: hidden; cursor: pointer;
+  @media (min-width: 640px) {
+    .ig-embed-grid { grid-template-columns: 1fr 1fr; }
   }
-  .ig-overlay {
-    position: absolute; inset: 0; background: rgba(0,0,0,0);
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s;
+  @media (min-width: 1024px) {
+    .ig-embed-grid { grid-template-columns: 1fr 1fr; }
   }
-  .ig-cell:hover .ig-overlay { background: rgba(0,0,0,0.25); }
-  .ig-icon { transition: stroke 0.2s; }
-  .ig-cell:hover .ig-icon { stroke: rgba(255,255,255,1); }
 </style>
 
 <script>
