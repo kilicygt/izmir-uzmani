@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "7 dk"
 tags: ["Çeşme", "Alaçatı", "Sörf", "Koy", "Ege", "Kale"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Cesme_castle_-_Izmir.jpg/1280px-Cesme_castle_-_Izmir.jpg"
+image: "/images/blog/cesme-yarimadasi-rehberi.webp"
 imageAlt: "Çeşme Kalesi deniz kenarı görünümü"
 ---
 

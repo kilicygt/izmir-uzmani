@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "6 dk"
 tags: ["Ödemiş", "Birgi", "İç Ege", "Osmanlı Konağı", "Bozdağ", "Keşif"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Birgi_Turkey_mansion.jpg/1280px-Birgi_Turkey_mansion.jpg"
+image: "/images/blog/odemis-ve-birgi-ic-kesimler.webp"
 imageAlt: "Birgi köyü Osmanlı dönemi ahşap cephe konakları"
 ---
 

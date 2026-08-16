@@ -8,7 +8,7 @@ category: "Kültür"
 readTime: "5 dk"
 tags: ["Kordon", "İzmir Körfezi", "Yürüyüş", "Deniz", "Şehir Kültürü"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Izmir-Kordon.jpg/1280px-Izmir-Kordon.jpg"
+image: "/images/blog/izmir-korfezi-ve-kordon.webp"
 imageAlt: "İzmir Kordon sahil şeridi ve körfez manzarası"
 ---
 

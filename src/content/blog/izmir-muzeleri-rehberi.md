@@ -8,7 +8,7 @@ category: "Kültür"
 readTime: "6 dk"
 tags: ["İzmir Müzeleri", "Arkeoloji", "Etnografya", "Kültür", "Müze Rehberi"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Izmir_archaeology_museum.jpg/1280px-Izmir_archaeology_museum.jpg"
+image: "/images/blog/izmir-muzeleri-rehberi.webp"
 imageAlt: "İzmir Arkeoloji Müzesi dış görünüm"
 ---
 

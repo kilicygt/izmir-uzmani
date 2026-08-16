@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "6 dk"
 tags: ["Midilli", "Sakız", "Yunan Adaları", "Feribot", "Ada Gezisi"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Chios_island_view.jpg/1280px-Chios_island_view.jpg"
+image: "/images/blog/izmir-adalari-ve-karsikiya-geziler.webp"
 imageAlt: "Sakız Adası limanı ve Ege manzarası"
 ---
 

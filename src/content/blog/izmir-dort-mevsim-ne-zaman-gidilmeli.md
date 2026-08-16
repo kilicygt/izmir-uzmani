@@ -8,7 +8,7 @@ category: "Rehber"
 readTime: "6 dk"
 tags: ["İzmir İklimi", "Ne Zaman Gidilmeli", "Sezon", "Turizm", "Gezi Planı"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%C4%B0zmir_Panoramas%C4%B1.jpg/1280px-%C4%B0zmir_Panoramas%C4%B1.jpg"
+image: "/images/blog/izmir-dort-mevsim-ne-zaman-gidilmeli.webp"
 imageAlt: "İzmir şehir silueti ve körfez genel manzarası"
 ---
 

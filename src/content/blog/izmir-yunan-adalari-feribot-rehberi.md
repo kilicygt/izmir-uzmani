@@ -8,7 +8,7 @@ category: "Rehber"
 readTime: "7 dk"
 tags: ["Feribot", "Yunan Adaları", "Çeşme Sakız", "Ayvalık Midilli", "Vize", "Seyahat"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Cesme_to_Chios_ferry.jpg/1280px-Cesme_to_Chios_ferry.jpg"
+image: "/images/blog/izmir-yunan-adalari-feribot-rehberi.webp"
 imageAlt: "Çeşme limanından Sakız Adası'na kalkan feribot"
 ---
 

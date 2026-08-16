@@ -8,7 +8,7 @@ category: "Rehber"
 readTime: "5 dk"
 tags: ["Bisiklet", "İzmir Rotaları", "Sürdürülebilir Ulaşım", "Kordon", "Şehir Hayatı"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Izmir-Kordon.jpg/1280px-Izmir-Kordon.jpg"
+image: "/images/blog/izmir-bisiklet-kulturu-ve-rotalari.webp"
 imageAlt: "İzmir Kordon sahil yolu bisiklet rotası"
 ---
 

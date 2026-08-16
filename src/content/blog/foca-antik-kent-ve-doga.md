@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "6 dk"
 tags: ["Foça", "Antik Kent", "Deniz Foku", "Koy", "Yavaş Şehir"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Foca-turkey.jpg/1280px-Foca-turkey.jpg"
+image: "/images/blog/foca-antik-kent-ve-doga.webp"
 imageAlt: "Foça limanı ve antik kale"
 ---
 

@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "6 dk"
 tags: ["Seferihisar", "Doğanbey", "Yavaş Şehir", "Teos", "Sığacık"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seferihisar_Turkey.jpg/1280px-Seferihisar_Turkey.jpg"
+image: "/images/blog/seferihisar-ve-doganbey.webp"
 imageAlt: "Seferihisar ilçesi Ege kıyısı genel görünüm"
 ---
 

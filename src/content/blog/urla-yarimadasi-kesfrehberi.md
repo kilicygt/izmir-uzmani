@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "6 dk"
 tags: ["Urla", "Yarımada", "Ege", "Gezi", "Gastronomi"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Urla-district.jpg/1280px-Urla-district.jpg"
+image: "/images/blog/urla-yarimadasi-kesfrehberi.webp"
 imageAlt: "Urla yarımadası Ege kıyısı ve zeytinlikler"
 ---
 

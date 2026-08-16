@@ -8,7 +8,7 @@ category: "Rehber"
 readTime: "7 dk"
 tags: ["Günübirlik Gezi", "İzmir", "Gezi Rotası", "Efes", "Çeşme", "Bergama"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%C4%B0zmir_Panoramas%C4%B1.jpg/1280px-%C4%B0zmir_Panoramas%C4%B1.jpg"
+image: "/images/blog/izmir-gunubirlik-geziler.webp"
 imageAlt: "İzmir Körfezi panoramik görünüm"
 ---
 

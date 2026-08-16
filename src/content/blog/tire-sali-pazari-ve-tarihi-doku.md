@@ -8,7 +8,7 @@ category: "Kültür"
 readTime: "6 dk"
 tags: ["Tire", "Salı Pazarı", "Tarihi Çarşı", "Sucuk", "İzmir İlçesi"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Tire_bazaar_Turkey.jpg/1280px-Tire_bazaar_Turkey.jpg"
+image: "/images/blog/tire-sali-pazari-ve-tarihi-doku.webp"
 imageAlt: "Tire Salı Pazarı'nın genel görünümü ve tezgahlar"
 ---
 

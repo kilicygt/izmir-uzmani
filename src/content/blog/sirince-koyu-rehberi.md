@@ -8,7 +8,7 @@ category: "Kültür"
 readTime: "6 dk"
 tags: ["Şirince", "Ege Köyü", "Meyve Şarabı", "Rum Mirası", "Selçuk"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/%C5%9Eirince_village.jpg/1280px-%C5%9Eirince_village.jpg"
+image: "/images/blog/sirince-koyu-rehberi.webp"
 imageAlt: "Şirince köyü taş evler ve zeytinlik manzarası"
 ---
 

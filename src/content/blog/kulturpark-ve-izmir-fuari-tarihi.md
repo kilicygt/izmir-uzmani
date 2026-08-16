@@ -8,7 +8,7 @@ category: "Tarih"
 readTime: "6 dk"
 tags: ["Kültürpark", "İzmir Fuarı", "Cumhuriyet Tarihi", "Şehir Kültürü"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Kulturpark-izmir.jpg/1280px-Kulturpark-izmir.jpg"
+image: "/images/blog/kulturpark-ve-izmir-fuari-tarihi.webp"
 imageAlt: "İzmir Kültürpark genel alan ve pavyonlar"
 ---
 

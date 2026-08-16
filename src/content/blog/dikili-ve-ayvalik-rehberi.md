@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "6 dk"
 tags: ["Dikili", "Ayvalık", "Cunda Adası", "Kuzey Ege", "Zeytin"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Ayvalik_Turkey.jpg/1280px-Ayvalik_Turkey.jpg"
+image: "/images/blog/dikili-ve-ayvalik-rehberi.webp"
 imageAlt: "Ayvalık tarihi ilçesi ve körfez görünümü"
 ---
 

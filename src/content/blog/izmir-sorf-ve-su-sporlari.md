@@ -8,7 +8,7 @@ category: "Rehber"
 readTime: "6 dk"
 tags: ["Sörf", "Alaçatı", "Su Sporları", "Kiteboard", "SUP", "Dalış"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Alacati_Windsurfing.jpg/1280px-Alacati_Windsurfing.jpg"
+image: "/images/blog/izmir-sorf-ve-su-sporlari.webp"
 imageAlt: "Alaçatı'da sörf yapan sporcular ve meltem rüzgârı"
 ---
 

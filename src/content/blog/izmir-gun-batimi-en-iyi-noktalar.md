@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "5 dk"
 tags: ["Gün Batımı", "Seyir Noktası", "Kadifekale", "Kordon", "Karaburun", "İzmir"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Izmir_Kordon_sunset.jpg/1280px-Izmir_Kordon_sunset.jpg"
+image: "/images/blog/izmir-gun-batimi-en-iyi-noktalar.webp"
 imageAlt: "İzmir Kordon gün batımı körfez manzarası"
 ---
 

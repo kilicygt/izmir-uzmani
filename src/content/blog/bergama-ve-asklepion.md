@@ -8,7 +8,7 @@ category: "Tarih"
 readTime: "7 dk"
 tags: ["Bergama", "Pergamon", "Asklepion", "Antik Kent", "Tarih", "Akropol"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Pergamon_Theatre.jpg/1280px-Pergamon_Theatre.jpg"
+image: "/images/blog/bergama-ve-asklepion.webp"
 imageAlt: "Pergamon Akropol tiyatrosu ve Bergama ovası manzarası"
 ---
 

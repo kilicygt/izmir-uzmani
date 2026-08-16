@@ -8,7 +8,7 @@ category: "Kültür"
 readTime: "7 dk"
 tags: ["İzmir Mutfağı", "Boyoz", "Kumru", "Ege Mutfağı", "Yöresel Lezzetler"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Boyoz_pastry_Izmir.jpg/1280px-Boyoz_pastry_Izmir.jpg"
+image: "/images/blog/izmir-mutfagi-yoresel-lezzetler.webp"
 imageAlt: "Boyoz — İzmir'in sembolik hamur işi sabah kahvaltısı"
 ---
 

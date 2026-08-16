@@ -8,7 +8,7 @@ category: "Tarih"
 readTime: "7 dk"
 tags: ["Efes", "Antik Kent", "Tarih", "Arkeoloji", "Selçuk"]
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Ephesus_theater.jpg/1280px-Ephesus_theater.jpg"
+image: "/images/blog/efes-antik-kenti-rehberi.webp"
 imageAlt: "Efes Antik Kenti Büyük Tiyatro genel görünüm"
 ---
 

@@ -8,7 +8,7 @@ category: "Tarih"
 readTime: "6 dk"
 tags: ["Kemeraltı", "Konak", "Tarihi Çarşı", "İzmir Tarihi", "Kültür"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Kemeralti_Izmir.jpg/1280px-Kemeralti_Izmir.jpg"
+image: "/images/blog/kemeralt-ve-konak-tarihi-semtler.webp"
 imageAlt: "Kemeraltı çarşısı tarihi hanlar ve çarşı sokakları"
 ---
 

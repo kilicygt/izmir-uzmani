@@ -8,7 +8,7 @@ category: "Kültür"
 readTime: "6 dk"
 tags: ["İzmir Festivalleri", "Etkinlik", "Festival Takvimi", "Kültür", "Müzik"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%C4%B0zmir_Panoramas%C4%B1.jpg/1280px-%C4%B0zmir_Panoramas%C4%B1.jpg"
+image: "/images/blog/izmir-festival-ve-etkinlik-takvimi.webp"
 imageAlt: "İzmir şehir silueti gece görünümü"
 ---
 

@@ -8,7 +8,7 @@ category: "Rehber"
 readTime: "8 dk"
 tags: ["İzmir Rehberi", "İzmir Gezi", "İzmir Ulaşım", "İlk Ziyaret"]
 featured: true
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%C4%B0zmir_Panoramas%C4%B1.jpg/1280px-%C4%B0zmir_Panoramas%C4%B1.jpg"
+image: "/images/blog/izmir-ilk-kez-gelenler-icin-rehber.webp"
 imageAlt: "İzmir Körfezi ve şehir merkezi panoramik görünüm"
 ---
 

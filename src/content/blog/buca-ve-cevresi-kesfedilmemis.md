@@ -8,7 +8,7 @@ category: "Gezi"
 readTime: "5 dk"
 tags: ["Buca", "İzmir Semtleri", "Tarihi Köy", "Botanik", "Keşif"]
 featured: false
-image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Buca%2C_Izmir.jpg/1280px-Buca%2C_Izmir.jpg"
+image: "/images/blog/buca-ve-cevresi-kesfedilmemis.webp"
 imageAlt: "Buca ilçesi tarihi doku ve konak evleri"
 ---
 
