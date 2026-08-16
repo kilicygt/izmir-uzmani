@@ -35,16 +35,16 @@ const events = [
 ];
 
 const igPosts = [
-  { shortcode: 'DXb8kx8jMjy', url: 'https://www.instagram.com/izmiruzmani/p/DXb8kx8jMjy/' },
-  { shortcode: 'DZ5M7wpDPUT', url: 'https://www.instagram.com/izmiruzmani/p/DZ5M7wpDPUT/' },
-  { shortcode: 'DYUoND6DPs1', url: 'https://www.instagram.com/izmiruzmani/p/DYUoND6DPs1/' },
-  { shortcode: 'Db6C6MvDEIf', url: 'https://www.instagram.com/izmiruzmani/p/Db6C6MvDEIf/' },
-  { shortcode: 'DbTcfanjJ_A', url: 'https://www.instagram.com/izmiruzmani/p/DbTcfanjJ_A/' },
-  { shortcode: 'Db0_v1DjE1i', url: 'https://www.instagram.com/izmiruzmani/p/Db0_v1DjE1i/' },
-  { shortcode: 'DbGkvpLjOU6', url: 'https://www.instagram.com/izmiruzmani/p/DbGkvpLjOU6/' },
-  { shortcode: 'DZsYC8iDBlL', url: 'https://www.instagram.com/izmiruzmani/p/DZsYC8iDBlL/' },
-  { shortcode: 'DXEs0UjDNy5', url: 'https://www.instagram.com/izmiruzmani/p/DXEs0UjDNy5/' },
-  { shortcode: 'DWTwxvwDCWu', url: 'https://www.instagram.com/izmiruzmani/p/DWTwxvwDCWu/' },
+  { img: '/images/instagram/1.webp', url: 'https://www.instagram.com/izmiruzmani/p/DXb8kx8jMjy/' },
+  { img: '/images/instagram/2.webp', url: 'https://www.instagram.com/izmiruzmani/p/DZ5M7wpDPUT/' },
+  { img: '/images/instagram/3.webp', url: 'https://www.instagram.com/izmiruzmani/p/DYUoND6DPs1/' },
+  { img: '/images/instagram/4.webp', url: 'https://www.instagram.com/izmiruzmani/p/Db6C6MvDEIf/' },
+  { img: '/images/instagram/5.webp', url: 'https://www.instagram.com/izmiruzmani/p/DbTcfanjJ_A/' },
+  { img: '/images/instagram/6.webp', url: 'https://www.instagram.com/izmiruzmani/p/Db0_v1DjE1i/' },
+  { img: '/images/instagram/7.webp', url: 'https://www.instagram.com/izmiruzmani/p/DbGkvpLjOU6/' },
+  { img: '/images/instagram/8.webp', url: 'https://www.instagram.com/izmiruzmani/p/DZsYC8iDBlL/' },
+  { img: '/images/instagram/9.webp', url: 'https://www.instagram.com/izmiruzmani/p/DXEs0UjDNy5/' },
+  { img: '/images/instagram/10.webp', url: 'https://www.instagram.com/izmiruzmani/p/DWTwxvwDCWu/' },
 ];
 ---
 
@@ -220,18 +220,11 @@ const igPosts = [
       </div>
       <div class="ig-embed-grid">
         {igPosts.map(post => (
-          <a href={post.url} target="_blank" rel="noopener" class="ig-frame-wrap">
-            <iframe
-              src={`https://www.instagram.com/p/${post.shortcode}/embed/`}
-              width="100%"
-              height="500"
-              frameborder="0"
-              scrolling="no"
-              allowtransparency="true"
-              loading="lazy"
-              title="Instagram gönderisi"
-              class="ig-frame"
-            ></iframe>
+          <a href={post.url} target="_blank" rel="noopener" class="ig-cell">
+            <img src={post.img} alt="Instagram gönderisi" class="ig-img" loading="lazy" decoding="async" />
+            <div class="ig-overlay">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
+            </div>
           </a>
         ))}
       </div>
@@ -453,26 +446,35 @@ const igPosts = [
   .ig-handle:hover { opacity: 0.75; color: #062f96; }
   .ig-embed-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
   }
   @media (min-width: 640px) {
-    .ig-embed-grid { grid-template-columns: 1fr 1fr; }
+    .ig-embed-grid { grid-template-columns: repeat(5, 1fr); }
   }
-  .ig-frame-wrap {
-    display: block;
-    border-radius: 12px;
+  .ig-cell {
+    position: relative;
+    aspect-ratio: 1;
     overflow: hidden;
-    pointer-events: none;
-  }
-  .ig-frame {
     display: block;
-    width: 100%;
-    border: none;
-    border-radius: 12px;
+    background: #ede5db;
   }
+  .ig-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .ig-cell:hover .ig-img { transform: scale(1.05); }
+  .ig-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .ig-overlay svg { opacity: 0; transition: opacity 0.2s; }
+  .ig-cell:hover .ig-overlay { background: rgba(0,0,0,0.35); }
+  .ig-cell:hover .ig-overlay svg { opacity: 1; }
 </style>
 
 <script>
