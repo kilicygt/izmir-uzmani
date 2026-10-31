@@ -127,5 +127,6 @@ Oradan **Kızlarağası Hanı → Hisar Camii → Havra Sokağı** hattını izl
 - İzmir Büyükşehir Belediyesi: Hisar Camii ve Kemeraltı sokak düzenlemeleri
 - Müze resmi sayfası: Agora Örenyeri
 - ESHOT, İzmir Metro ve İZDENİZ resmî ulaşım sayfaları
+- Kapak fotoğrafı: İ. Hasan Bodur / T.C. Kültür ve Turizm Bakanlığı Kültür Portalı
 
 Kemeraltı dışında Konak çevresinde yürünebilecek başka rotalar da arıyorsanız, yeni rehberler için bizi Instagram’da da takip edebilirsiniz: **@izmiruzmani**
