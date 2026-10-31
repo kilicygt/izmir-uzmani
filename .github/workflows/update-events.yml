@@ -1,0 +1,40 @@
+name: Etkinlikleri güncelle
+
+on:
+  schedule:
+    # Every day at 06:17 İzmir time (03:17 UTC)
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-events
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: npm install --no-audit --no-fund
+
+      - name: Fetch events from kultursanat.izmir.bel.tr
+        run: node scripts/fetch-events.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/events.json public/images/etkinlikler/otomatik
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Etkinlikleri güncelle"
+          git pull --rebase origin main
+          git push origin HEAD:main

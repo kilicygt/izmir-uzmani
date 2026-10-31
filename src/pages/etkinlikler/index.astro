@@ -1,48 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getEvents, groupEvents, dayMonth, weekday, time, catColor } from '../../lib/events';
 
-const allGroups = [
-  {
-    header: '3–9 Ağustos · Bu Hafta',
-    key: 'Bu Hafta',
-    events: [
-      { date: 'Paz 3 Ağu', time: '09:00', title: 'Kordon Açık Pazar', cat: 'Pazar', catColor: '#ff7c11', venue: 'Kordon, Alsancak' },
-      { date: 'Sal 5 Ağu', time: '21:00', title: 'Açık Hava Sinema: Türk Klasikleri', cat: 'Sinema', catColor: '#062f96', venue: 'Kültürpark' },
-      { date: 'Per 7 Ağu', time: '18:00', title: 'Alsancak Sokak Festivali', cat: 'Festival', catColor: '#ff7c11', venue: 'Alsancak' },
-      { date: 'Cmt 9 Ağu', time: '10:00', title: 'Tarihi Konak Müze Turu', cat: 'Kültür', catColor: '#062f96', venue: 'Konak' },
-    ],
-  },
-  {
-    header: '10–16 Ağustos · Gelecek Hafta',
-    key: 'Bu Ay',
-    events: [
-      { date: 'Paz 10 Ağu', time: '11:00', title: 'Bostanlı Kayık Turu', cat: 'Tur', catColor: '#ff7c11', venue: 'Bostanlı İskele' },
-      { date: 'Sal 12 Ağu', time: '20:00', title: 'Jazz Gecesi: Açık Sahne', cat: 'Müzik', catColor: '#062f96', venue: 'Alsancak Bar Sokak' },
-      { date: 'Cum 15 Ağu', time: '19:00', title: 'Kemeraltı Gece Turu', cat: 'Tur', catColor: '#ff7c11', venue: 'Kemeraltı' },
-      { date: 'Cmt 16 Ağu', time: '10:00', title: 'Foça Günübirlik Kaçamağı', cat: 'Doğa', catColor: '#062f96', venue: 'Foça' },
-    ],
-  },
-  {
-    header: '17–31 Ağustos · Bu Ay',
-    key: 'Bu Ay',
-    events: [
-      { date: 'Paz 17 Ağu', time: '09:00', title: 'Urla Zeytinyağı Festivali', cat: 'Festival', catColor: '#ff7c11', venue: 'Urla' },
-      { date: 'Per 21 Ağu', time: '20:30', title: 'İzmir Klasik Müzik Günleri', cat: 'Müzik', catColor: '#062f96', venue: 'Ahmet Adnan Saygun ASM' },
-      { date: 'Cmt 23 Ağu', time: '18:00', title: 'Kadifekale Gün Batımı Pikniği', cat: 'Doğa', catColor: '#ff7c11', venue: 'Kadifekale' },
-      { date: 'Paz 31 Ağu', time: '10:00', title: 'Aylık Kitap Takası', cat: 'Kültür', catColor: '#062f96', venue: 'Alsancak Kitapçı Sokak' },
-    ],
-  },
-];
+const groups = groupEvents(await getEvents());
 ---
 
-<Layout title="Etkinlikler" activePage="etkinlikler" description="İzmir'deki konser, festival, tur ve kültür etkinlikleri.">
+<Layout title="Etkinlikler" activePage="etkinlikler" description="İzmir'deki güncel konser, tiyatro, sergi, sinema ve kültür etkinlikleri.">
 
   <!-- PAGE HEADER -->
   <section class="page-header">
     <div class="container anim">
       <p class="breadcrumb"><a href="/" class="bc-link">Ana Sayfa</a> · Etkinlikler</p>
       <h1 class="page-title">Etkinlikler</h1>
-      <p class="page-desc">İzmir'deki konser, festival, tur ve kültür etkinlikleri.</p>
+      <p class="page-desc">İzmir'deki konser, tiyatro, sergi, sinema ve kültür etkinlikleri.</p>
     </div>
   </section>
 
@@ -59,28 +29,41 @@ const allGroups = [
   <section class="events-section">
     <div class="container">
       <div class="event-groups" id="event-groups">
-        {allGroups.map((group, gi) => (
-          <div class="event-group" data-group={gi === 0 ? 'Bu Hafta' : 'Bu Ay'}>
+        {groups.map(group => (
+          <div class="event-group" data-filters={group.filters.join('|')}>
             <p class="group-header">{group.header}</p>
             <div class="events-list">
               {group.events.map(ev => (
-                <a href="#" class="event-row">
+                <a href={`/etkinlikler/${ev.slug}`} class="event-row" data-end={ev.sessions[ev.sessions.length - 1].end}>
                   <div class="event-date">
-                    <p class="ev-date">{ev.date}</p>
-                    <p class="ev-time">{ev.time}</p>
+                    {ev.ongoing ? (
+                      <>
+                        <p class="ev-date">{dayMonth(ev.next.end)}</p>
+                        <p class="ev-time">tarihine kadar</p>
+                      </>
+                    ) : (
+                      <>
+                        <p class="ev-date">{weekday(ev.next.start)} {dayMonth(ev.next.start)}</p>
+                        <p class="ev-time">{time(ev.next.start)}{ev.sessions.length > 1 && ` · ${ev.sessions.length} seans`}</p>
+                      </>
+                    )}
                   </div>
                   <div class="event-divider"></div>
                   <div class="event-info">
                     <p class="ev-title">{ev.title}</p>
-                    <p class="ev-venue">{ev.venue}</p>
+                    {ev.next.venue && <p class="ev-venue">{ev.next.venue}</p>}
                   </div>
-                  <span class="cat-badge" style={`background:${ev.catColor};font-size:11px;white-space:nowrap`}>{ev.cat}</span>
+                  <span class="cat-badge" style={`background:${catColor(ev.category)};font-size:11px;white-space:nowrap`}>{ev.category}</span>
                 </a>
               ))}
             </div>
           </div>
         ))}
       </div>
+      <p class="empty-note" id="empty-note" hidden={groups.length > 0}>Şu an listelenecek etkinlik yok. Kısa süre içinde yeni etkinlikler eklenecek.</p>
+      <p class="source-note">
+        Etkinlik bilgileri <a href="https://kultursanat.izmir.bel.tr/" target="_blank" rel="noopener">İzmir Büyükşehir Belediyesi Kültürsanat</a> sayfasından her gün güncellenir. Tarih, saat ve bilet bilgisi değişebilir; güncel bilgi için etkinliğin resmi sayfasını kontrol edin.
+      </p>
     </div>
   </section>
 
@@ -115,7 +98,7 @@ const allGroups = [
   .events-section { background: #fff9f3; padding: clamp(40px,5vw,64px) 20px; }
   .event-groups { display: flex; flex-direction: column; gap: 40px; }
 
-  .event-group[hidden] { display: none; }
+  .event-group[hidden], .event-row[hidden] { display: none; }
 
   .group-header {
     font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
@@ -132,7 +115,7 @@ const allGroups = [
   }
   .event-row:last-child { border-bottom: none; }
   .event-row:hover { background: #faf7f4; }
-  .event-date { flex-shrink: 0; min-width: 72px; }
+  .event-date { flex-shrink: 0; min-width: 96px; }
   .ev-date { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
   .ev-time { font-size: 12px; color: #999; margin-top: 1px; }
   .event-divider { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
@@ -143,27 +126,38 @@ const allGroups = [
     display: inline-block; font-size: 11px; font-weight: 600;
     padding: 4px 12px; border-radius: 20px; letter-spacing: 0.03em; color: #fff;
   }
+  .empty-note { font-size: 15px; color: #666; text-align: center; padding: 32px 0; }
+  .source-note { font-size: 12px; color: #999; margin-top: 32px; line-height: 1.6; max-width: 720px; }
+  .source-note a { color: #062f96; text-decoration: underline; }
 </style>
 
 <script>
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const groups = document.querySelectorAll('.event-group');
+  const groups = document.querySelectorAll<HTMLElement>('.event-group');
+
+  // The page is rebuilt daily; hide anything that ended since the last build.
+  const now = Date.now();
+  document.querySelectorAll<HTMLElement>('.event-row').forEach(row => {
+    if (new Date(row.dataset.end ?? '').getTime() < now) row.hidden = true;
+  });
+
+  function apply(filter: string) {
+    let visible = 0;
+    groups.forEach(g => {
+      const show = (g.dataset.filters ?? '').split('|').includes(filter) && !!g.querySelector('.event-row:not([hidden])');
+      g.hidden = !show;
+      if (show) visible++;
+    });
+    const empty = document.getElementById('empty-note');
+    if (empty) empty.hidden = visible > 0;
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const f = btn.getAttribute('data-filter');
-      groups.forEach(g => {
-        const gf = g.getAttribute('data-group');
-        if (f === 'Tümü') {
-          g.removeAttribute('hidden');
-        } else if (f === 'Bu Hafta') {
-          gf === 'Bu Hafta' ? g.removeAttribute('hidden') : g.setAttribute('hidden', '');
-        } else {
-          g.removeAttribute('hidden');
-        }
-      });
+      apply(btn.getAttribute('data-filter') ?? 'Tümü');
     });
   });
+  apply('Bu Hafta');
 </script>

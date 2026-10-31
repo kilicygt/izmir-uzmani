@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import siteConfig from '../data/site-config.json';
+import { getEvents, dayMonth, weekday, time, catColor as eventColor } from '../lib/events';
 
 const hero = siteConfig.hero;
 
@@ -27,12 +28,7 @@ function formatDate(d: Date) {
   return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
-const events = [
-  { date: '3 Ağu', day: 'Paz', title: 'Kordon Açık Pazar', cat: 'Pazar', catColor: '#ff7c11' },
-  { date: '5 Ağu', day: 'Sal', title: 'Açık Hava Sinema: Türk Klasikleri', cat: 'Sinema', catColor: '#062f96' },
-  { date: '7 Ağu', day: 'Per', title: 'Alsancak Sokak Festivali', cat: 'Festival', catColor: '#ff7c11' },
-  { date: '9 Ağu', day: 'Cmt', title: 'Tarihi Konak Müze Turu', cat: 'Kültür', catColor: '#062f96' },
-];
+const events = (await getEvents()).filter((e) => !e.ongoing).slice(0, 4);
 
 const igPosts = Array.from({ length: 10 }, (_, i) => ({
   img: `/images/instagram/${i + 1}.webp?v=2`,
@@ -189,14 +185,14 @@ const igPosts = Array.from({ length: 10 }, (_, i) => ({
       </div>
       <div class="events-list">
         {events.map(ev => (
-          <a href="/etkinlikler" class="event-row">
+          <a href={`/etkinlikler/${ev.slug}`} class="event-row">
             <div class="event-date">
-              <p class="event-day-num">{ev.date}</p>
-              <p class="event-day-name">{ev.day}</p>
+              <p class="event-day-num">{dayMonth(ev.next.start)}</p>
+              <p class="event-day-name">{weekday(ev.next.start)} · {time(ev.next.start)}</p>
             </div>
             <div class="event-divider"></div>
             <p class="event-title">{ev.title}</p>
-            <span class="cat-badge" style={`background:${ev.catColor};font-size:11px`}>{ev.cat}</span>
+            <span class="cat-badge" style={`background:${eventColor(ev.category)};font-size:11px`}>{ev.category}</span>
           </a>
         ))}
       </div>
@@ -422,7 +418,7 @@ const igPosts = Array.from({ length: 10 }, (_, i) => ({
   }
   .event-row:last-child { border-bottom: none; }
   .event-row:hover { background: #faf7f4; }
-  .event-date { flex-shrink: 0; min-width: 52px; text-align: center; }
+  .event-date { flex-shrink: 0; min-width: 88px; text-align: center; }
   .event-day-num { font-size: 16px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
   .event-day-name { font-size: 11px; color: #999; margin-top: 2px; }
   .event-divider { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }

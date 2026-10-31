@@ -1,0 +1,249 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getEvents, fmt, longDate, time, dayMonth, weekday, catColor, descriptionOf, type EventItem } from '../../lib/events';
+
+export async function getStaticPaths() {
+  const events = await getEvents();
+  return events.map((event) => ({ params: { slug: event.slug }, props: { event, others: events } }));
+}
+
+const { event, others } = Astro.props as { event: EventItem; others: EventItem[] };
+const Content = event.entry ? (await event.entry.render()).Content : null;
+const { paragraphs, truncated } = descriptionOf(event);
+
+const venues = [...new Set(event.sessions.map((s) => s.venue).filter(Boolean))] as string[];
+const mapUrl = (venue: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${venue}, İzmir`)}`;
+const sameDay = (s: { start: string; end: string }) => s.start.slice(0, 10) === s.end.slice(0, 10) || new Date(s.end).getTime() - new Date(s.start).getTime() < 86_400_000;
+
+const rangeFmt: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+const actionUrl =event.ticketUrl ?? event.sourceUrl;
+const metaDescription = (paragraphs[0] ?? `${event.title} — ${longDate(event.next.start)}, ${event.next.venue ?? 'İzmir'}`).slice(0, 155);
+const related = others.filter((e) => e.slug !== event.slug && !e.ongoing).slice(0, 4);
+
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://izmiruzmani.com';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: event.title,
+  startDate: event.next.start,
+  endDate: event.next.end,
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: { '@type': 'Place', name: event.next.venue ?? 'İzmir', address: { '@type': 'PostalAddress', addressLocality: 'İzmir', addressCountry: 'TR' } },
+  ...(event.image && { image: [event.image.startsWith('http') ? event.image : `${site}${event.image}`] }),
+  description: metaDescription,
+  ...(event.organizer && { organizer: { '@type': 'Organization', name: event.organizer } }),
+  url: `${site}/etkinlikler/${event.slug}`,
+};
+---
+
+<Layout title={event.title} description={metaDescription} activePage="etkinlikler">
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+
+  <section class="ev-header">
+    <div class="ev-container anim">
+      <p class="breadcrumb">
+        <a href="/" class="bc-link">Ana Sayfa</a>
+        · <a href="/etkinlikler" class="bc-link">Etkinlikler</a>
+        · {event.category}
+      </p>
+      <span class="cat-badge" style={`background:${catColor(event.category)}`}>{event.category}</span>
+      <h1 class="ev-title">{event.title}</h1>
+      {event.organizer && <p class="ev-organizer">{event.organizer}</p>}
+    </div>
+  </section>
+
+  <section class="ev-main">
+    <div class="ev-grid">
+      {event.image && (
+        <div class="ev-poster">
+          <img src={event.image} alt={`${event.title} afişi`} onerror="this.parentElement.style.display='none'" decoding="async" />
+        </div>
+      )}
+
+      <aside class="ev-info">
+        <div class="info-block">
+          <p class="info-label">{event.sessions.length > 1 ? 'Seanslar' : 'Tarih'}</p>
+          <ul class="sessions">
+            {event.sessions.slice(0, 10).map((s) => (
+              <li data-end={s.end}>
+                {sameDay(s) ? (
+                  <><strong>{longDate(s.start)}</strong><span>{time(s.start)}</span></>
+                ) : (
+                  <strong>{fmt(s.start, rangeFmt)} – {fmt(s.end, rangeFmt)}</strong>
+                )}
+                {venues.length > 1 && s.venue && <span class="sess-venue">{s.venue}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {venues.length > 0 && (
+          <div class="info-block">
+            <p class="info-label">Mekân</p>
+            {venues.map((v) => (
+              <p class="info-value">{v} <a href={mapUrl(v)} target="_blank" rel="noopener" class="map-link">Haritada aç ↗</a></p>
+            ))}
+          </div>
+        )}
+
+        {event.ageLimit && (
+          <div class="info-block">
+            <p class="info-label">Yaş sınırı</p>
+            <p class="info-value">+{event.ageLimit}</p>
+          </div>
+        )}
+
+        {actionUrl && (
+          <a href={actionUrl} target="_blank" rel="noopener" class="cta">
+            {event.ticketUrl ? 'Bilet al' : 'Bilet ve detaylar'} ↗
+          </a>
+        )}
+      </aside>
+    </div>
+  </section>
+
+  <article class="ev-body">
+    <div class="ev-content">
+      {Content ? <Content /> : paragraphs.map((p) => <p>{p}</p>)}
+      {truncated && actionUrl && (
+        <p class="more"><a href={actionUrl} target="_blank" rel="noopener">Etkinliğin tüm ayrıntıları için resmi sayfayı ziyaret edin ↗</a></p>
+      )}
+
+      {event.sourceUrl && (
+        <div class="source-box">
+          <p>
+            <strong>Kaynak:</strong> <a href={event.sourceUrl} target="_blank" rel="noopener">{event.sourceName ?? 'Etkinliğin resmi sayfası'}</a>
+          </p>
+          <p>Tarih, saat, mekân ve bilet bilgisi değişebilir. Güncel bilgi için etkinliğin resmi sayfasını kontrol edin.</p>
+        </div>
+      )}
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="related">
+      <div class="related-container">
+        <div class="related-head">
+          <h2 class="related-title">Yaklaşan Etkinlikler</h2>
+          <a href="/etkinlikler" class="see-all">Tümünü Gör →</a>
+        </div>
+        <div class="events-list">
+          {related.map((ev) => (
+            <a href={`/etkinlikler/${ev.slug}`} class="event-row">
+              <div class="event-date">
+                <p class="ev-date">{weekday(ev.next.start)} {dayMonth(ev.next.start)}</p>
+                <p class="ev-time">{time(ev.next.start)}</p>
+              </div>
+              <div class="event-divider"></div>
+              <div class="event-info">
+                <p class="ev-row-title">{ev.title}</p>
+                {ev.next.venue && <p class="ev-venue">{ev.next.venue}</p>}
+              </div>
+              <span class="cat-badge small" style={`background:${catColor(ev.category)}`}>{ev.category}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>
+
+<style>
+  .anim { animation: fadeUp 0.5s ease both; }
+
+  .ev-header { background: #fff9f3; padding: 48px 20px 0; }
+  .ev-container { max-width: 960px; margin: 0 auto; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 16px; }
+  .bc-link { color: #062f96; transition: opacity 0.15s; }
+  .bc-link:hover { opacity: 0.7; color: #062f96; }
+  .cat-badge {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 4px 14px; border-radius: 20px; color: #fff; margin-bottom: 16px;
+  }
+  .cat-badge.small { margin-bottom: 0; padding: 4px 12px; white-space: nowrap; }
+  .ev-title {
+    font-size: clamp(24px,4vw,38px); font-weight: 600; color: #1a1a1a;
+    line-height: 1.25; margin-bottom: 8px;
+  }
+  .ev-organizer { font-size: 14px; color: #999; padding-bottom: 28px; border-bottom: 1px solid #ede5db; }
+
+  .ev-main { background: #fff9f3; padding: 32px 20px; }
+  .ev-grid {
+    max-width: 960px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start;
+  }
+  @media (min-width: 760px) {
+    .ev-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  }
+  .ev-poster {
+    background: #ede5db; border-radius: 14px; overflow: hidden;
+    display: flex; justify-content: center;
+  }
+  .ev-poster img { width: 100%; height: auto; max-height: 640px; object-fit: contain; display: block; }
+
+  .ev-info {
+    background: #fff; border-radius: 14px; padding: 24px;
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex; flex-direction: column; gap: 20px;
+  }
+  .info-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #999; margin-bottom: 6px;
+  }
+  .info-value { font-size: 15px; color: #1a1a1a; line-height: 1.5; }
+  .sessions { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .sessions li { display: flex; flex-direction: column; font-size: 15px; color: #1a1a1a; line-height: 1.4; }
+  .sessions li[hidden] { display: none; }
+  .sessions strong { font-weight: 600; }
+  .sessions span { font-size: 13px; color: #666; }
+  .sessions .sess-venue { color: #999; }
+  .map-link { font-size: 13px; color: #062f96; white-space: nowrap; }
+  .map-link:hover { text-decoration: underline; }
+  .cta {
+    display: block; text-align: center;
+    background: #062f96; color: #fff; font-weight: 600; font-size: 15px;
+    padding: 14px 20px; border-radius: 10px; transition: opacity 0.15s;
+  }
+  .cta:hover { opacity: 0.88; color: #fff; }
+
+  .ev-body { background: #fff9f3; padding: 8px 20px 56px; }
+  .ev-content { max-width: 960px; margin: 0 auto; }
+  .ev-content > p, .ev-content :global(p) {
+    font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 14px; max-width: 720px;
+  }
+  .more a, .source-box a { color: #062f96; text-decoration: underline; }
+  .source-box {
+    margin-top: 28px; max-width: 720px;
+    background: #f0e8df; border-radius: 12px; padding: 16px 20px;
+  }
+  .source-box p { font-size: 13px !important; color: #555 !important; line-height: 1.6 !important; margin-bottom: 4px !important; }
+
+  .related { background: #f0e8df; padding: clamp(40px,5vw,64px) 20px; }
+  .related-container { max-width: 960px; margin: 0 auto; }
+  .related-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; gap: 12px; }
+  .related-title { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; }
+  .see-all { font-size: 13px; color: #062f96; font-weight: 500; white-space: nowrap; }
+  .events-list { background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); }
+  .event-row {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    padding: 16px 20px; border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background 0.15s; color: inherit;
+  }
+  .event-row:last-child { border-bottom: none; }
+  .event-row:hover { background: #faf7f4; }
+  .event-date { flex-shrink: 0; min-width: 88px; }
+  .ev-date { font-size: 14px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
+  .ev-time { font-size: 12px; color: #999; margin-top: 1px; }
+  .event-divider { width: 1px; height: 32px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
+  .event-info { flex: 1; min-width: 160px; }
+  .ev-row-title { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
+  .ev-venue { font-size: 12px; color: #999; }
+</style>
+
+<script>
+  const now = Date.now();
+  document.querySelectorAll<HTMLElement>('.sessions li').forEach(li => {
+    if (new Date(li.dataset.end ?? '').getTime() < now) li.hidden = true;
+  });
+</script>
