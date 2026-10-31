@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Kemeraltı", "Konak", "Gezi Rehberi"]
 featured: false
+image: "/images/blog/kemeralti-carsisi-gezi-rehberi-nereden-baslamali.webp"
+imageAlt: "Kemeraltı Kızlarağası Hanı ve arkasında Hisar Camii"
 seoTitle: "Kemeraltı Çarşısı Gezi Rehberi: Nereden Başlamalı?"
 seoDescription: "Kemeraltı gezilecek yerler listesine nereden başlanır? Konak’tan yürüyüş rotası, tarihi duraklar ve pratik gezi ipuçları bu rehberde."
 imageSearchQuery: "Kemeralti Izmir"
