@@ -8,7 +8,9 @@ const hero = siteConfig.hero;
 
 const allPosts = await getCollection('blog');
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const featuredPost = sorted.find(p => p.data.featured) ?? sorted[0];
+const istanbulDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul' }).format(d);
+const today = istanbulDay(new Date());
+const featuredPost = sorted.find(p => istanbulDay(p.data.pubDate) < today) ?? sorted[0];
 const recentPosts = sorted.filter(p => p.slug !== featuredPost?.slug).slice(0, 4);
 const gridPosts = sorted.slice(0, 3);
 const trendPosts = sorted.slice(0, 3);
