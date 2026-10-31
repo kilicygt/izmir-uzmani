@@ -15,18 +15,18 @@ imageSearchQuery: "Izmirim Kart"
 
 # İzmirim Kart nasıl alınır?
 
-İzmirim Kart, İzmir’de toplu taşımayı kullanmak için en temel ulaşım kartıdır. Kartı, İzmirim Kart satış noktası logosu bulunan bayilerden ve dolum otomatı olan bazı ulaşım noktalarındaki yüklematik cihazlarından kart ücreti ödeyerek satın alabilirsiniz. Daha sonra karta bakiye yükleyip otobüs, metro, tramvay, vapur, İZBAN ve İZTAŞIT araçlarında kullanabilirsiniz. Resmî kaynaklara göre kart satış ve dolum noktaları ile tarife bilgileri İzmirim Kart sisteminde yayımlanır. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23&utm_source=openai))
+İzmirim Kart, İzmir’de toplu taşımayı kullanmak için en temel ulaşım kartıdır. Kartı, İzmirim Kart satış noktası logosu bulunan bayilerden ve dolum otomatı olan bazı ulaşım noktalarındaki yüklematik cihazlarından kart ücreti ödeyerek satın alabilirsiniz. Daha sonra karta bakiye yükleyip otobüs, metro, tramvay, vapur, İZBAN ve İZTAŞIT araçlarında kullanabilirsiniz. Resmî kaynaklara göre kart satış ve dolum noktaları ile tarife bilgileri İzmirim Kart sisteminde yayımlanır. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23))
 
-İzmir’e yeni taşınanlar, öğrenciler ve kenti kısa süreli ziyaret edenler için en önemli fark şu: **standart kart ile kişiselleştirilmiş kart aynı şey değildir.** Herkesin ihtiyacı aynı kart tipi olmayabilir. Bu yüzden önce hangi kartı almanız gerektiğini bilmek işinizi kolaylaştırır. Resmî kart başvurularının şahsen veya resmî web sitesi üzerinden alınabildiği ESHOT hizmet standartlarında belirtilir. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf?utm_source=openai))
+İzmir’e yeni taşınanlar, öğrenciler ve kenti kısa süreli ziyaret edenler için en önemli fark şu: **standart kart ile kişiselleştirilmiş kart aynı şey değildir.** Herkesin ihtiyacı aynı kart tipi olmayabilir. Bu yüzden önce hangi kartı almanız gerektiğini bilmek işinizi kolaylaştırır. Resmî kart başvurularının şahsen veya resmî web sitesi üzerinden alınabildiği ESHOT hizmet standartlarında belirtilir. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf))
 
 ## İzmirim Kart nereden alınır?
 
 Resmî İzmirim Kart sitesine göre kartı iki temel yerden alabilirsiniz:
 
 - İzmirim Kart satış noktası logosu bulunan bayiler
-- Dolum otomatı bulunan bazı ulaşım noktalarındaki yüklematik cihazları ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23&utm_source=openai))
+- Dolum otomatı bulunan bazı ulaşım noktalarındaki yüklematik cihazları ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23))
 
-Satış ve dolum bayileri ilçe ilçe listelenir. Güncel nokta listesi zamanla değişebildiği için belirli bir bayi adıyla yola çıkmadan önce resmî “Satın Alma ve Dolum Bayileri” sayfasını kontrol etmek en güvenli yöntemdir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/satin-alma-ve-dolum-bayileri?utm_source=openai))
+Satış ve dolum bayileri ilçe ilçe listelenir. Güncel nokta listesi zamanla değişebildiği için belirli bir bayi adıyla yola çıkmadan önce resmî “Satın Alma ve Dolum Bayileri” sayfasını kontrol etmek en güvenli yöntemdir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/satin-alma-ve-dolum-bayileri))
 
 ## Hangi kart türünü almalısınız?
 
@@ -42,11 +42,11 @@ için genellikle önce bu kart tercih edilir.
 
 ### 2) Kişiselleştirilmiş İzmirim Kart
 
-Resmî tarifede “kişiselleştirilmiş İzmirim Kart” ayrı bir kart türü olarak yer alır. Bu kart, adınıza tanımlanan kullanım ve bazı özel tarifeler için gerekir. Kart başvurusunda adrese teslim seçeneği işaretlenirse kart ücretine PTT kargo bedeli eklendiği de resmî sitede belirtilir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/izmirimkart-ve-bilet-35?utm_source=openai))
+Resmî tarifede “kişiselleştirilmiş İzmirim Kart” ayrı bir kart türü olarak yer alır. Bu kart, adınıza tanımlanan kullanım ve bazı özel tarifeler için gerekir. Kart başvurusunda adrese teslim seçeneği işaretlenirse kart ücretine PTT kargo bedeli eklendiği de resmî sitede belirtilir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/izmirimkart-ve-bilet-35))
 
 ### 3) İndirimli veya hak sahibi kartlar
 
-Öğrenci, öğretmen, 60 yaş, 65 yaş üstü, engelli, refakatçi gibi kartlarda başvuru şartları kart türüne göre değişir. ESHOT’un hizmet standartları ve ilgili mevzuat, bu başvuruların resmî web sitesi üzerinden veya şahsen yapılabildiğini gösterir. Gerekli belge listesi de kart tipine göre farklılaşır. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf?utm_source=openai))
+Öğrenci, öğretmen, 60 yaş, 65 yaş üstü, engelli, refakatçi gibi kartlarda başvuru şartları kart türüne göre değişir. ESHOT’un hizmet standartları ve ilgili mevzuat, bu başvuruların resmî web sitesi üzerinden veya şahsen yapılabildiğini gösterir. Gerekli belge listesi de kart tipine göre farklılaşır. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf))
 
 ## İzmirim Kart nasıl alınır? Adım adım
 
@@ -55,16 +55,16 @@ Resmî tarifede “kişiselleştirilmiş İzmirim Kart” ayrı bir kart türü 
 1. Size en yakın yetkili satış noktasını veya yüklematik cihazını bulun.  
 2. Kart ücretini ödeyerek kartı satın alın.  
 3. İlk kullanım öncesinde karta bakiye yükleyin.  
-4. Turnikede veya araç içi validatörde kartınızı okutarak kullanmaya başlayın. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23&utm_source=openai))
+4. Turnikede veya araç içi validatörde kartınızı okutarak kullanmaya başlayın. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23))
 
 ### Kişiselleştirilmiş veya indirimli kart almak için
 
 1. Size uygun kart türünü belirleyin.  
 2. Resmî başvuru kanalını kullanın: şahsen başvuru veya resmî web sitesi.  
 3. Gerekli belgeleri eksiksiz hazırlayın.  
-4. Kart üretimi ve teslim sürecini takip edin. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf?utm_source=openai))
+4. Kart üretimi ve teslim sürecini takip edin. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf))
 
-Burada kritik nokta şu: **öğrenci ya da öğretmen gibi hak sahipliği gerektiren kartlarda belge ve uygunluk kontrolü vardır.** Bu nedenle standart hamiline kart satın alma süreciyle aynı değildir. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf?utm_source=openai))
+Burada kritik nokta şu: **öğrenci ya da öğretmen gibi hak sahipliği gerektiren kartlarda belge ve uygunluk kontrolü vardır.** Bu nedenle standart hamiline kart satın alma süreciyle aynı değildir. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf))
 
 ## İzmirim Kart’a bakiye nasıl yüklenir?
 
@@ -72,9 +72,9 @@ Resmî kaynaklarda bakiye yükleme için öne çıkan yöntemler şunlardır:
 
 - Yüklematik cihazları
 - Satış ve dolum bayileri
-- Resmî sistemin desteklediği banka kartlarıyla yapılan yüklemeler ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/sikca-sorulan-sorular?utm_source=openai))
+- Resmî sistemin desteklediği banka kartlarıyla yapılan yüklemeler ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/sikca-sorulan-sorular))
 
-Online yükleme ve banka kartı desteği gibi detaylar zaman içinde değişebildiği için, özellikle dijital yükleme yapacaksanız işlem öncesinde İzmirim Kart’ın resmî SSS sayfasını kontrol etmek faydalı olur. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/sikca-sorulan-sorular?utm_source=openai))
+Online yükleme ve banka kartı desteği gibi detaylar zaman içinde değişebildiği için, özellikle dijital yükleme yapacaksanız işlem öncesinde İzmirim Kart’ın resmî SSS sayfasını kontrol etmek faydalı olur. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/sikca-sorulan-sorular))
 
 ## İzmirim Kart nerelerde kullanılır?
 
@@ -85,7 +85,7 @@ Online yükleme ve banka kartı desteği gibi detaylar zaman içinde değişebil
 - Tramvay
 - İZDENİZ vapurları
 - İZBAN
-- İZTAŞIT araçları ([eshot.gov.tr](https://www.eshot.gov.tr/tr/SSS/402?utm_source=openai))
+- İZTAŞIT araçları ([eshot.gov.tr](https://www.eshot.gov.tr/tr/SSS/402))
 
 Kısacası şehir içi toplu ulaşımda tek kart mantığıyla çalışır. Özellikle aktarmalı yolculuk yapanlar için bu büyük kolaylık sağlar.
 
@@ -94,21 +94,21 @@ Kısacası şehir içi toplu ulaşımda tek kart mantığıyla çalışır. Öze
 Kullanım şekli araca göre değişse de mantık aynıdır:
 
 - Otobüste araca bindikten sonra kartınızı cihaza okutursunuz.
-- Metro, tramvay, İZBAN ve vapurda turnikeden geçerken kartı okutup giriş yaparsınız. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/SSS/402?utm_source=openai))
+- Metro, tramvay, İZBAN ve vapurda turnikeden geçerken kartı okutup giriş yaparsınız. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/SSS/402))
 
 Yetersiz bakiye varsa geçiş yapılamaz. Bu yüzden özellikle sabah işe veya okula giderken kart bakiyesini önceden kontrol etmek iyi bir alışkanlıktır.
 
 ## 90 dakika aktarma sistemi nasıl işler?
 
-ESHOT’un resmî açıklamasına göre İzmirim Kart’la metro, banliyö ve tramvay istasyonları ile vapur iskeleleri turnikelerinden geçişlerde ve tüm otobüslere binişlerde, **ilk binişi takiben 90 dakika aktarma süresi** bulunur. Resmî tarifede de, kredi kartı, aylık genç abonmanlığı ve Bilet 35 hariç olmak üzere 90 dakika içinde ikinci ve sonraki binişlerin sisteme göre dahil olduğu belirtilir. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/SSS/402?utm_source=openai))
+ESHOT’un resmî açıklamasına göre İzmirim Kart’la metro, banliyö ve tramvay istasyonları ile vapur iskeleleri turnikelerinden geçişlerde ve tüm otobüslere binişlerde, **ilk binişi takiben 90 dakika aktarma süresi** bulunur. Resmî tarifede de, kredi kartı, aylık genç abonmanlığı ve Bilet 35 hariç olmak üzere 90 dakika içinde ikinci ve sonraki binişlerin sisteme göre dahil olduğu belirtilir. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/SSS/402))
 
-Ancak ücret politikaları ve istisnalar dönemsel olarak değişebildiği için, özellikle yeni tarifeler yürürlüğe girdiyse güncel ayrıntıyı resmî tarife sayfasından kontrol etmek gerekir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/tarife-ve-ucretlendirme?utm_source=openai))
+Ancak ücret politikaları ve istisnalar dönemsel olarak değişebildiği için, özellikle yeni tarifeler yürürlüğe girdiyse güncel ayrıntıyı resmî tarife sayfasından kontrol etmek gerekir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/tarife-ve-ucretlendirme))
 
 ## Dijital İzmirim Kart var mı?
 
-Evet. ESHOT’un duyurusuna göre QR kodla biniş sağlayan **Dijital İzmirim Kart** uygulaması bulunur ve bu sistem ESHOT, İZULAŞ, İZDENİZ, İZTAŞIT, İzmir Metro, tramvay ve İZBAN’da kullanılacak şekilde duyurulmuştur. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/Haberler/4104/91?utm_source=openai))
+Evet. ESHOT’un duyurusuna göre QR kodla biniş sağlayan **Dijital İzmirim Kart** uygulaması bulunur ve bu sistem ESHOT, İZULAŞ, İZDENİZ, İZTAŞIT, İzmir Metro, tramvay ve İZBAN’da kullanılacak şekilde duyurulmuştur. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/Haberler/4104/91))
 
-Yine de uygulama kurulumu, cihaz uyumluluğu ve kullanım adımları zaman içinde güncellenebileceği için bunu fiziksel kartın birebir alternatifi gibi düşünmeden önce resmî yönlendirmeleri kontrol etmek daha doğru olur. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/Haberler/4104/91?utm_source=openai))
+Yine de uygulama kurulumu, cihaz uyumluluğu ve kullanım adımları zaman içinde güncellenebileceği için bunu fiziksel kartın birebir alternatifi gibi düşünmeden önce resmî yönlendirmeleri kontrol etmek daha doğru olur. ([eshot.gov.tr](https://www.eshot.gov.tr/tr/Haberler/4104/91))
 
 ## Kısa karar rehberi
 
@@ -125,19 +125,19 @@ Yine de uygulama kurulumu, cihaz uyumluluğu ve kullanım adımları zaman için
 
 ## İzmirim Kart olmadan toplu taşıma kullanılabilir mi?
 
-Bazı ödeme ve biniş alternatifleri dönemsel olarak değişebilir. Ancak İzmir’de düzenli toplu taşıma kullanımı için temel çözüm İzmirim Kart sistemidir. Güncel alternatifler için resmî tarife ve SSS sayfalarına bakmak gerekir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/sikca-sorulan-sorular?utm_source=openai))
+Bazı ödeme ve biniş alternatifleri dönemsel olarak değişebilir. Ancak İzmir’de düzenli toplu taşıma kullanımı için temel çözüm İzmirim Kart sistemidir. Güncel alternatifler için resmî tarife ve SSS sayfalarına bakmak gerekir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/sikca-sorulan-sorular))
 
 ## İzmirim Kart ücreti ne kadar?
 
-Kart bedeli kart türüne göre değişir. Resmî sitede örneğin kişiselleştirilmiş İzmirim Kart için ücret bilgisi yayımlanır; bu tutarlar zamanla güncellenebildiği için sabit rakamı kontrol etmeden işlem yapmak doğru olmaz. En güncel bilgi için tarife ve ücretlendirme sayfasına bakın. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/izmirimkart-ve-bilet-35?utm_source=openai))
+Kart bedeli kart türüne göre değişir. Resmî sitede örneğin kişiselleştirilmiş İzmirim Kart için ücret bilgisi yayımlanır; bu tutarlar zamanla güncellenebildiği için sabit rakamı kontrol etmeden işlem yapmak doğru olmaz. En güncel bilgi için tarife ve ücretlendirme sayfasına bakın. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/izmirimkart-ve-bilet-35))
 
 ## Öğrenci kartı başvurusu internetten yapılabilir mi?
 
-ESHOT’un hizmet standartlarına göre bazı ulaşım kartı başvuruları resmî web sitesi üzerinden veya şahsen alınır. Öğrenci kartı gibi başvurularda güncel belge ve süreç detayını işlem öncesinde resmî başvuru ekranından doğrulamak gerekir. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf?utm_source=openai))
+ESHOT’un hizmet standartlarına göre bazı ulaşım kartı başvuruları resmî web sitesi üzerinden veya şahsen alınır. Öğrenci kartı gibi başvurularda güncel belge ve süreç detayını işlem öncesinde resmî başvuru ekranından doğrulamak gerekir. ([eshot.gov.tr](https://www.eshot.gov.tr/CKYuklenen/UlasimTeknHizmetStand.pdf))
 
 ## Son not
 
-İzmirim Kart’ta en çok karışan konu, **kartı satın alma süreciyle indirimli kart başvurusunun aynı şey sanılmasıdır.** Hızlı kullanım için hamiline kart genellikle yeterlidir; indirimli ya da kişiye özel haklar içinse resmî başvuru sürecini izlemek gerekir. Güncel bayi, ücret ve başvuru bilgileri değişebildiği için işlem öncesinde resmî İzmirim Kart ve ESHOT sayfalarını kontrol edin. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/satin-alma-ve-dolum-bayileri?utm_source=openai))
+İzmirim Kart’ta en çok karışan konu, **kartı satın alma süreciyle indirimli kart başvurusunun aynı şey sanılmasıdır.** Hızlı kullanım için hamiline kart genellikle yeterlidir; indirimli ya da kişiye özel haklar içinse resmî başvuru sürecini izlemek gerekir. Güncel bayi, ücret ve başvuru bilgileri değişebildiği için işlem öncesinde resmî İzmirim Kart ve ESHOT sayfalarını kontrol edin. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/satin-alma-ve-dolum-bayileri))
 
 Kapak görseli: [İzmirim Kart resmî sitesi](https://www.izmirimkart.com.tr/)
 
