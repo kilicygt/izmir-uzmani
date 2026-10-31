@@ -34,18 +34,10 @@ const events = [
   { date: '9 Ağu', day: 'Cmt', title: 'Tarihi Konak Müze Turu', cat: 'Kültür', catColor: '#062f96' },
 ];
 
-const igPosts = [
-  { img: '/images/instagram/1.webp', url: 'https://www.instagram.com/izmiruzmani/p/DXb8kx8jMjy/' },
-  { img: '/images/instagram/2.webp', url: 'https://www.instagram.com/izmiruzmani/p/DZ5M7wpDPUT/' },
-  { img: '/images/instagram/3.webp', url: 'https://www.instagram.com/izmiruzmani/p/DYUoND6DPs1/' },
-  { img: '/images/instagram/4.webp', url: 'https://www.instagram.com/izmiruzmani/p/Db6C6MvDEIf/' },
-  { img: '/images/instagram/5.webp', url: 'https://www.instagram.com/izmiruzmani/p/DbTcfanjJ_A/' },
-  { img: '/images/instagram/6.webp', url: 'https://www.instagram.com/izmiruzmani/p/Db0_v1DjE1i/' },
-  { img: '/images/instagram/7.webp', url: 'https://www.instagram.com/izmiruzmani/p/DbGkvpLjOU6/' },
-  { img: '/images/instagram/8.webp', url: 'https://www.instagram.com/izmiruzmani/p/DZsYC8iDBlL/' },
-  { img: '/images/instagram/9.webp', url: 'https://www.instagram.com/izmiruzmani/p/DXEs0UjDNy5/' },
-  { img: '/images/instagram/10.webp', url: 'https://www.instagram.com/izmiruzmani/p/DWTwxvwDCWu/' },
-];
+const igPosts = Array.from({ length: 10 }, (_, i) => ({
+  img: `/images/instagram/${i + 1}.webp?v=2`,
+  url: 'https://www.instagram.com/izmiruzmani/',
+}));
 ---
 
 <Layout title="Ana Sayfa" description="İzmir'i yerel gözüyle keşfet — kafeler, etkinlikler, semtler ve daha fazlası.">
