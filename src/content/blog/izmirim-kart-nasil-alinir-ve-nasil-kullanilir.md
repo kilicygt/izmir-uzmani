@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "6 dk"
 tags: ["İzmir", "İzmirim Kart", "Ulaşım", "Toplu Taşıma"]
 featured: false
+image: "/images/blog/izmirim-kart-nasil-alinir-ve-nasil-kullanilir.webp"
+imageAlt: "İzmirim Kart mobil uygulamasının telefon ekranları"
 seoTitle: "İzmirim Kart Nasıl Alınır? 2026 Güncel Rehber"
 seoDescription: "İzmirim Kart nasıl alınır, nereden yüklenir ve hangi ulaşım araçlarında kullanılır? İzmir’de toplu taşıma için pratik ve güncel rehber."
 imageSearchQuery: "Izmirim Kart"
@@ -136,5 +138,7 @@ ESHOT’un hizmet standartlarına göre bazı ulaşım kartı başvuruları resm
 ## Son not
 
 İzmirim Kart’ta en çok karışan konu, **kartı satın alma süreciyle indirimli kart başvurusunun aynı şey sanılmasıdır.** Hızlı kullanım için hamiline kart genellikle yeterlidir; indirimli ya da kişiye özel haklar içinse resmî başvuru sürecini izlemek gerekir. Güncel bayi, ücret ve başvuru bilgileri değişebildiği için işlem öncesinde resmî İzmirim Kart ve ESHOT sayfalarını kontrol edin. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/satin-alma-ve-dolum-bayileri?utm_source=openai))
+
+Kapak görseli: [İzmirim Kart resmî sitesi](https://www.izmirimkart.com.tr/)
 
 İzmir’de ulaşım ve şehir yaşamına dair benzer pratik rehberler için @izmiruzmani hesabına da göz atabilirsiniz.
