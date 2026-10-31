@@ -6,6 +6,8 @@ category: "Şehir Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Şehir Rehberi", "Toplu Ulaşım", "Gezilecek Yerler"]
 featured: false
+image: "/images/blog/izmir-de-arabasiz-gezilecek-yerler.webp"
+imageAlt: "Konak Meydanı ve tarihi İzmir Saat Kulesi"
 seoTitle: "İzmir’de Arabasız Gezilecek Yerler Rehberi"
 seoDescription: "İzmir’de arabasız gezilecek yerler arayanlar için metro, tramvay, vapur ve yürüyüşle ulaşılabilen pratik rota önerileri."
 imageSearchQuery: "Izmir Kordon"
