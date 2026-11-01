@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "6 dk"
 tags: ["İzmir", "Adnan Menderes Havalimanı", "Şehir Merkezi", "Ulaşım", "İZBAN", "ESHOT"]
 featured: false
+image: "/images/blog/adnan-menderes-havalimani-ndan-sehir-merkezine-nasil-gidilir.webp"
+imageAlt: "İzmir Adnan Menderes Havalimanı terminal binası"
 seoTitle: "Adnan Menderes Havalimanı’ndan şehir merkezine ulaşım"
 seoDescription: "İzmir Adnan Menderes Havalimanı’ndan şehir merkezine İZBAN, ESHOT, HAVAŞ ve taksiyle nasıl gidilir? En pratik seçenekleri karşılaştırdık."
 imageSearchQuery: "Adnan Menderes Airport"
@@ -48,7 +50,7 @@ Belediyenin resmi SSS sayfasında da havalimanına banliyö hattıyla erişim i�
 
 ### İZBAN ücreti nasıl işliyor?
 
-İzmirim Kart tarifesine göre banliyö hattında ücret **gidilen mesafeye göre** hesaplanıyor. Ayrıca İzmirim Kart’ın resmi aktarma kurallarına göre İZBAN dahil sistemde **90 dakika aktarma hakkı** bulunuyor; ancak detaylar kart tipine göre değişebiliyor. Güncel ücretler ve sefer saatleri için yolculuk öncesi resmi ekranı kontrol etmek gerekiyor. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme?utm_source=openai))
+İzmirim Kart tarifesine göre banliyö hattında ücret **gidilen mesafeye göre** hesaplanıyor. Ayrıca İzmirim Kart’ın resmi aktarma kurallarına göre İZBAN dahil sistemde **90 dakika aktarma hakkı** bulunuyor; ancak detaylar kart tipine göre değişebiliyor. Güncel ücretler ve sefer saatleri için yolculuk öncesi resmi ekranı kontrol etmek gerekiyor. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme))
 
 ## ESHOT ile havalimanından merkeze nasıl gidilir?
 
@@ -69,7 +71,7 @@ Resmî kaynaklarda öne çıkan hatlar şöyle:
 
 ### ESHOT ücretleri farklı mı?
 
-Evet. İzmirim Kart’ın resmi tarife sayfasına göre havalimanı otobüsleri standart şehir içi tarifeden ayrı değerlendiriliyor. Aynı sayfada **havalimanı hatlarında 90 dakika aktarma hakkı olmadığı** da belirtiliyor. Bu yüzden özellikle aktarmalı yolculuk yapacaksanız İZBAN bazı durumlarda daha avantajlı olabilir. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme?utm_source=openai))
+Evet. İzmirim Kart’ın resmi tarife sayfasına göre havalimanı otobüsleri standart şehir içi tarifeden ayrı değerlendiriliyor. Aynı sayfada **havalimanı hatlarında 90 dakika aktarma hakkı olmadığı** da belirtiliyor. Bu yüzden özellikle aktarmalı yolculuk yapacaksanız İZBAN bazı durumlarda daha avantajlı olabilir. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme))
 
 ## HAVAŞ ile şehir merkezine gitmek mantıklı mı?
 
@@ -85,7 +87,7 @@ Taksi ücreti; varış noktanıza, trafik yoğunluğuna ve güncel tarifeye gör
 
 ## Havalimanında İzmirim Kart alınır mı?
 
-Evet. İzmirim Kart’ın resmi sitesine göre **İzmir Adnan Menderes Havalimanı dış hatlar varış terminalinde bulunan bayiden** kart alımı ve bakiye yükleme yapılabiliyor. Aynı kaynakta, fiziksel kart yoksa **İZBAN hariç** toplu ulaşım araçlarının bir bölümünde dijital kart veya temassız banka/kredi kartı kullanımının mümkün olabildiği belirtiliyor. ([izmirimkart.com.tr](https://izmirimkart.com.tr/?utm_source=openai))
+Evet. İzmirim Kart’ın resmi sitesine göre **İzmir Adnan Menderes Havalimanı dış hatlar varış terminalinde bulunan bayiden** kart alımı ve bakiye yükleme yapılabiliyor. Aynı kaynakta, fiziksel kart yoksa **İZBAN hariç** toplu ulaşım araçlarının bir bölümünde dijital kart veya temassız banka/kredi kartı kullanımının mümkün olabildiği belirtiliyor. ([izmirimkart.com.tr](https://izmirimkart.com.tr/))
 
 Bu ayrım önemli: **İZBAN kullanacaksanız fiziksel kart ihtiyacını önceden kontrol etmek faydalı olur.**
 
@@ -132,7 +134,7 @@ Güncel bilgi için en doğru kaynaklar:
 
 ## Adnan Menderes Havalimanı’ndan şehir merkezine en ucuz nasıl gidilir?
 
-Çoğu durumda en ekonomik seçenek toplu taşıma olur. İZBAN ve ESHOT arasında hangisinin daha avantajlı olduğu, gideceğiniz semte ve aktarma ihtiyacına göre değişir. Havalimanı otobüslerinde özel tarife uygulandığı için ücret karşılaştırmasını yolculuk öncesi güncel tarifeden kontrol etmek gerekir. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme?utm_source=openai))
+Çoğu durumda en ekonomik seçenek toplu taşıma olur. İZBAN ve ESHOT arasında hangisinin daha avantajlı olduğu, gideceğiniz semte ve aktarma ihtiyacına göre değişir. Havalimanı otobüslerinde özel tarife uygulandığı için ücret karşılaştırmasını yolculuk öncesi güncel tarifeden kontrol etmek gerekir. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme))
 
 ## Havalimanından Alsancak’a direkt gidilir mi?
 
