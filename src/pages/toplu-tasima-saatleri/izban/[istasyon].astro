@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import UlasimHeader from '../../../components/UlasimHeader.astro';
+import '../../../styles/ulasim.css';
+import { BASE, izban, longDay } from '../../../lib/ulasim';
+
+export function getStaticPaths() {
+  return izban.stations.map((station, i) => ({
+    params: { istasyon: station.slug },
+    props: { station, prev: izban.stations[i + 1] ?? null, next: izban.stations[i - 1] ?? null },
+  }));
+}
+
+type Station = (typeof izban.stations)[number];
+const { station, prev, next } = Astro.props as { station: Station; prev: Station | null; next: Station | null };
+const directions = [
+  { label: `${izban.northEnd} yönü`, times: station.north },
+  { label: `${izban.southEnd} yönü`, times: station.south },
+].filter((d) => d.times.length);
+const day = longDay(izban.date);
+---
+
+<Layout
+  title={`${station.name} İZBAN Saatleri`}
+  activePage="ulasim"
+  description={`${station.name} İZBAN istasyonundan ${izban.northEnd} ve ${izban.southEnd} yönüne kalkan trenlerin güncel saatleri. İlk ve son tren saatleri.`}
+>
+  <UlasimHeader
+    title={`${station.name} İZBAN Saatleri`}
+    desc={`${station.name} istasyonundan kalkan banliyö trenlerinin saatleri.`}
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }, { href: `${BASE}/izban/`, label: 'İZBAN' }]}
+    chips={[`${day} tarifesi`]}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <div class="tt-legend"><span class="l-next">Sıradaki tren</span><span class="l-past">Geçmiş seferler</span></div>
+      <div class="tt-grid2" data-live-date={izban.date}>
+        {directions.map((d) => (
+          <div class="tt-card">
+            <p class="tt-label">{d.label}</p>
+            <p class="tt-row-sub" style="margin:-6px 0 12px">İlk {d.times[0]} · Son {d.times[d.times.length - 1]} · {d.times.length} sefer</p>
+            <div class="tt-times" data-times>{d.times.map((tm) => <span class="tt-time" data-t={tm}>{tm}</span>)}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="tt-section" style="margin-top:40px">
+        <p class="tt-label">Komşu istasyonlar</p>
+        <div class="tt-list">
+          {[prev, next].filter(Boolean).map((s) => (
+            <a href={`${BASE}/izban/${s!.slug}/`} class="tt-row">
+              <div class="tt-row-main"><p class="tt-row-title">{s!.name} İZBAN Saatleri</p></div>
+              <span class="tt-arrow">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <p class="tt-note">
+        Saatler {day} günü için İZBAN tarifesidir ve her sabah o günün tarifesiyle güncellenir. Bazı trenler ara istasyonlarda sonlanır; aktarma ve güncel duyurular için <a href="https://www.izban.com.tr/" target="_blank" rel="noopener">izban.com.tr</a> adresini kontrol edin. Kaynak: İzmir Büyükşehir Belediyesi açık veri portalı.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../../../scripts/ulasim';
+</script>

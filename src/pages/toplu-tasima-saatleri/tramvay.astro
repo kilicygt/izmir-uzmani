@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UlasimHeader from '../../components/UlasimHeader.astro';
+import '../../styles/ulasim.css';
+import { BASE, TARIFFS, tramvay, every, updatedAt } from '../../lib/ulasim';
+
+type Line = (typeof tramvay.lines)[number];
+const lines = tramvay.lines as (Line & { frequencies: Record<string, { from: string; to: string; every: number }[]> })[];
+---
+
+<Layout title="İzmir Tramvay Sefer Saatleri" activePage="ulasim" description="Konak, Karşıyaka ve Çiğli tramvay hatlarının hafta içi, cumartesi ve pazar sefer sıklıkları ve çalışma saatleri.">
+  <UlasimHeader
+    title="Tramvay Sefer Saatleri"
+    desc="Konak, Karşıyaka ve Çiğli tramvaylarında saat dilimlerine göre sefer sıklığı."
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }]}
+    chips={updatedAt('tramvay') ? [`Güncelleme: ${updatedAt('tramvay')}`] : []}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <div class="tt-tabs" data-tabs="tram">
+        {TARIFFS.map((t) => <button class="tt-tab" data-tab={t.id} data-days={t.days}>{t.label}</button>)}
+      </div>
+
+      <div class="tt-grid2">
+        {lines.map((l) => (
+          <div class="tt-card">
+            <p class="tt-row-title">{l.name}</p>
+            <p class="tt-row-sub" style="margin-bottom:12px">{l.name.includes(l.direction) ? '\u00a0' : l.direction}</p>
+            {TARIFFS.map((t) => (
+              <div class="tt-panel" data-panel={t.id} data-panel-of="tram" hidden={t.id !== '1'}>
+                {l.frequencies[t.id]?.length ? (
+                  <table class="tt-table">
+                    <tbody>{l.frequencies[t.id].map((f) => <tr><td>{f.from} – {f.to}</td><td>{every(f.every)}</td></tr>)}</tbody>
+                  </table>
+                ) : <p class="tt-empty">Bu gün için bilgi yok.</p>}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <p class="tt-note">
+        Tablodaki süreler iki tramvay arasındaki ortalama bekleme süresidir. Kaynak: İzmir Metro A.Ş., İzmir Büyükşehir Belediyesi açık veri portalı. Güncel duyurular için <a href="https://www.tramizmir.com/" target="_blank" rel="noopener">tramizmir.com</a> adresini kontrol edin.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../../scripts/ulasim';
+</script>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  desc?: string;
+  crumbs?: { href: string; label: string }[];
+  chips?: string[];
+}
+const { title, desc, crumbs = [], chips = [] } = Astro.props;
+---
+
+<section class="tt-header">
+  <div class="tt-container">
+    <p class="tt-breadcrumb">
+      <a href="/">Ana Sayfa</a>
+      {crumbs.map((c) => <> · <a href={c.href}>{c.label}</a></>)}
+      {' · '}{title}
+    </p>
+    <h1 class="tt-title">{title}</h1>
+    {desc && <p class="tt-desc">{desc}</p>}
+    {chips.length > 0 && <div class="tt-meta">{chips.map((c) => <span class="tt-chip">{c}</span>)}</div>}
+  </div>
+</section>

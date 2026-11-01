@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activePage?: 'rehberler' | 'etkinlikler' | 'hakkinda';
+  activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda';
 }
 const { activePage } = Astro.props;
 ---
@@ -14,6 +14,7 @@ const { activePage } = Astro.props;
       <div class="desktop-links">
         <a href="/rehberler" class:list={['nav-link', { active: activePage === 'rehberler' }]}>Rehberler</a>
         <a href="/etkinlikler" class:list={['nav-link', { active: activePage === 'etkinlikler' }]}>Etkinlikler</a>
+        <a href="/toplu-tasima-saatleri" class:list={['nav-link', { active: activePage === 'ulasim' }]}>Toplu Taşıma</a>
         <a href="/hakkinda" class:list={['nav-link', { active: activePage === 'hakkinda' }]}>Hakkında</a>
       </div>
       <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-btn" aria-label="Instagram">
@@ -30,6 +31,7 @@ const { activePage } = Astro.props;
   <button id="menu-close" aria-label="Menüyü kapat">×</button>
   <a href="/rehberler">Rehberler</a>
   <a href="/etkinlikler">Etkinlikler</a>
+  <a href="/toplu-tasima-saatleri">Toplu Taşıma</a>
   <a href="/hakkinda">Hakkında</a>
   <div class="mobile-social">
     <a href="https://instagram.com/izmiruzmani" target="_blank">

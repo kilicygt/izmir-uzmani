@@ -1,0 +1,82 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import UlasimHeader from '../../../components/UlasimHeader.astro';
+import '../../../styles/ulasim.css';
+import { BASE, WEEKDAYS, vapur, updatedAt } from '../../../lib/ulasim';
+
+export function getStaticPaths() {
+  return vapur.piers.map((pier) => ({ params: { iskele: pier.slug }, props: { pier } }));
+}
+
+type Pier = (typeof vapur.piers)[number];
+const { pier } = Astro.props as { pier: Pier };
+const days = pier.days as Record<string, { time: string; to: string[]; car: boolean; note: string | null; cancelled: boolean }[]>;
+const destinations = [...new Set(Object.values(days).flat().flatMap((d) => d.to))];
+const others = vapur.piers.filter((p) => p.slug !== pier.slug);
+---
+
+<Layout
+  title={`${pier.name} Vapur Saatleri`}
+  activePage="ulasim"
+  description={`${pier.name} iskelesinden kalkan İzdeniz vapurlarının güncel sefer saatleri${destinations.length ? `: ${destinations.slice(0, 5).join(', ')} seferleri` : ''}. Hafta içi ve hafta sonu saatleri.`}
+>
+  <UlasimHeader
+    title={`${pier.name} Vapur Saatleri`}
+    desc={destinations.length ? `${pier.name} iskelesinden ${destinations.join(', ')} seferleri.` : undefined}
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }, { href: `${BASE}/vapur/`, label: 'Vapur' }]}
+    chips={[...(pier.carFerry ? ['Arabalı vapur iskelesi'] : []), ...(updatedAt('vapur') ? [`Güncelleme: ${updatedAt('vapur')}`] : [])]}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <div class="tt-tabs" data-tabs="ferry">
+        {WEEKDAYS.map((d) => <button class="tt-tab" data-tab={d.id} data-days={d.id}>{d.label}</button>)}
+      </div>
+      <div class="tt-legend"><span class="l-next">Sıradaki sefer</span><span class="l-past">Geçmiş seferler</span></div>
+
+      {WEEKDAYS.map((d) => (
+        <div class="tt-panel" data-panel={d.id} data-panel-of="ferry" hidden={d.id !== '1'}>
+          <div class="tt-card">
+            {days[d.id]?.length ? (
+              <div data-times data-collapse-past>
+                {days[d.id].map((s) => (
+                  <div class:list={['tt-dep', { cancelled: s.cancelled }]}>
+                    <span class="tt-time" data-t={s.time}>{s.time}</span>
+                    <span class="tt-dep-to">
+                      {s.to.join(' · ') || '—'}
+                      {s.car && <span class="tt-tag">Arabalı</span>}
+                      {s.cancelled && <span class="tt-tag">İptal</span>}
+                      {s.note && <span class="tt-row-sub" style="display:block">{s.note}</span>}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p class="tt-empty">{d.label} günü bu iskeleden sefer yok.</p>
+            )}
+          </div>
+        </div>
+      ))}
+
+      <div class="tt-section" style="margin-top:40px">
+        <p class="tt-label">Diğer iskeleler</p>
+        <div class="tt-list">
+          {others.map((p) => (
+            <a href={`${BASE}/vapur/${p.slug}/`} class="tt-row">
+              <div class="tt-row-main"><p class="tt-row-title">{p.name} Vapur Saatleri</p></div>
+              <span class="tt-arrow">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <p class="tt-note">
+        Kaynak: İzdeniz, İzmir Büyükşehir Belediyesi açık veri portalı. Hava muhalefeti ve bayramlarda seferler değişebilir; güncel duyurular için <a href="https://www.izdeniz.com.tr/" target="_blank" rel="noopener">izdeniz.com.tr</a> adresini kontrol edin.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../../../scripts/ulasim';
+</script>

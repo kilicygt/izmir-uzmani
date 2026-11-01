@@ -1,0 +1,71 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import UlasimHeader from '../../../components/UlasimHeader.astro';
+import '../../../styles/ulasim.css';
+import { BASE, TARIFFS, otobus, updatedAt } from '../../../lib/ulasim';
+
+export function getStaticPaths() {
+  return otobus.lines.map((line) => ({ params: { hat: line.no }, props: { line } }));
+}
+
+type Line = (typeof otobus.lines)[number];
+const { line } = Astro.props as { line: Line };
+const sched = line.schedule as Record<string, { gidis: string[]; donus: string[] }>;
+const first = (d: string[]) => d[0];
+const last = (d: string[]) => d[d.length - 1];
+const weekday = sched['1'];
+---
+
+<Layout
+  title={`${line.no} Otobüs Saatleri: ${line.name}`}
+  activePage="ulasim"
+  description={`ESHOT ${line.no} numaralı ${line.name} otobüs hattının hafta içi, cumartesi ve pazar hareket saatleri. ${line.from} ve ${line.to} kalkış saatleri.`}
+>
+  <UlasimHeader
+    title={`${line.no} Otobüs Saatleri`}
+    desc={line.name}
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }, { href: `${BASE}/otobus/`, label: 'Otobüs' }]}
+    chips={[
+      ...(weekday.gidis.length ? [`Hafta içi ilk sefer ${first(weekday.gidis)} · son sefer ${last(weekday.gidis)}`] : []),
+      ...(updatedAt('otobus') ? [`Güncelleme: ${updatedAt('otobus')}`] : []),
+    ]}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      {line.route && <p class="tt-text" style="margin-bottom:20px"><strong>Güzergâh:</strong> {line.route}</p>}
+
+      <div class="tt-tabs" data-tabs="bus">
+        {TARIFFS.map((t) => <button class="tt-tab" data-tab={t.id} data-days={t.days}>{t.label}</button>)}
+      </div>
+      <div class="tt-legend"><span class="l-next">Sıradaki sefer</span><span class="l-past">Geçmiş seferler</span></div>
+
+      {TARIFFS.map((t) => (
+        <div class="tt-panel" data-panel={t.id} data-panel-of="bus" hidden={t.id !== '1'}>
+          <div class="tt-grid2">
+            {[{ label: `${line.from} kalkış`, times: sched[t.id].gidis }, { label: `${line.to} kalkış`, times: sched[t.id].donus }].map((col) => (
+              <div class="tt-card">
+                <p class="tt-label">{col.label}</p>
+                {col.times.length ? (
+                  <div class="tt-times" data-times>{col.times.map((tm) => <span class="tt-time" data-t={tm}>{tm}</span>)}</div>
+                ) : (
+                  <p class="tt-empty">Bu gün için sefer yok.</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {line.note && <p class="tt-note">{line.note}</p>}
+      <p class="tt-note">
+        Kaynak: ESHOT Genel Müdürlüğü, İzmir Büyükşehir Belediyesi açık veri portalı. Saatler hattın başlangıç ve bitiş noktalarından kalkış saatleridir. Güncel duyurular için <a href="https://www.eshot.gov.tr/" target="_blank" rel="noopener">eshot.gov.tr</a> adresini kontrol edin.
+      </p>
+      <p class="tt-text" style="margin-top:24px"><a href={`${BASE}/otobus/`} style="color:#062f96">← Tüm otobüs hatları</a></p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../../../scripts/ulasim';
+</script>

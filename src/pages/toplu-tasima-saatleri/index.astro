@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import UlasimHeader from '../../components/UlasimHeader.astro';
+import '../../styles/ulasim.css';
+import { BASE, otobus, vapur, izban, metro, tramvay } from '../../lib/ulasim';
+
+const popularBus = ['202', '985', '684', '984', '5', '169'].map((no) => otobus.lines.find((l) => l.no === no)).filter(Boolean);
+
+const modes = [
+  { href: `${BASE}/otobus/`, title: 'Otobüs Saatleri', sub: `ESHOT · ${otobus.lines.length} hat`, badge: 'ESHOT' },
+  { href: `${BASE}/vapur/`, title: 'Vapur Saatleri', sub: `İzdeniz · ${vapur.piers.length} iskele`, badge: 'Vapur' },
+  { href: `${BASE}/izban/`, title: 'İZBAN Saatleri', sub: `Banliyö · ${izban.stations.length} istasyon`, badge: 'İZBAN' },
+  { href: `${BASE}/metro/`, title: 'Metro Sefer Saatleri', sub: `İzmir Metro · ${metro.stations.length} istasyon`, badge: 'Metro' },
+  { href: `${BASE}/tramvay/`, title: 'Tramvay Sefer Saatleri', sub: 'Konak, Karşıyaka ve Çiğli tramvayları', badge: 'Tramvay' },
+];
+---
+
+<Layout title="İzmir Toplu Taşıma Saatleri" activePage="ulasim" description="İzmir otobüs, vapur, İZBAN, metro ve tramvay sefer saatleri tek sayfada. ESHOT hat saatleri, İzdeniz iskele saatleri ve İZBAN istasyon saatleri her gün güncellenir.">
+  <UlasimHeader
+    title="Toplu Taşıma Saatleri"
+    desc="İzmir'de otobüs, vapur, İZBAN, metro ve tramvay sefer saatleri. Veriler İzmir Büyükşehir Belediyesi'nin açık veri servisinden her gün güncellenir."
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <div class="tt-section">
+        <div class="tt-list">
+          {modes.map((m) => (
+            <a href={m.href} class="tt-row">
+              <span class="tt-badge" style="min-width:76px">{m.badge}</span>
+              <div class="tt-row-main">
+                <p class="tt-row-title">{m.title}</p>
+                <p class="tt-row-sub">{m.sub}</p>
+              </div>
+              <span class="tt-arrow">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="tt-section">
+        <p class="tt-label">Sık aranan vapur iskeleleri</p>
+        <div class="tt-list">
+          {vapur.piers.slice(0, 5).map((p) => (
+            <a href={`${BASE}/vapur/${p.slug}/`} class="tt-row">
+              <div class="tt-row-main"><p class="tt-row-title">{p.name} Vapur Saatleri</p></div>
+              <span class="tt-arrow">→</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {popularBus.length > 0 && (
+        <div class="tt-section">
+          <p class="tt-label">Sık aranan otobüs hatları</p>
+          <div class="tt-list">
+            {popularBus.map((l) => (
+              <a href={`${BASE}/otobus/${l!.no}/`} class="tt-row">
+                <span class="tt-badge">{l!.no}</span>
+                <div class="tt-row-main"><p class="tt-row-title">{l!.name}</p></div>
+                <span class="tt-arrow">→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <p class="tt-note">
+        Saatler İzmir Büyükşehir Belediyesi açık veri portalından (ESHOT, İzdeniz, İZBAN, İzmir Metro) alınır ve her gün güncellenir. Bayram, tatil ve yoğun hava koşullarında seferlerde değişiklik olabilir; yolculuktan önce işletmenin resmî duyurularını kontrol edin.
+      </p>
+    </div>
+  </section>
+</Layout>
