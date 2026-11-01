@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Sığacık", "Seferihisar", "Gezi Rehberi"]
 featured: false
+image: "/images/blog/sigacik-ta-gezilecek-yerler-ve-yapilacak-seyler.webp"
+imageAlt: "Sığacık Kaleiçi’nde begonvillerle süslü taş sokak"
 seoTitle: "Sığacık Gezilecek Yerler: Görülecek Noktalar Rehberi"
 seoDescription: "Sığacık gezilecek yerler listesini pratik bir rotayla keşfedin. Kaleiçi, Teos Antik Kenti, marina, pazar ve deniz keyfi için rehber."
 imageSearchQuery: "Sigacik Kaleici"
@@ -15,13 +17,13 @@ imageSearchQuery: "Sigacik Kaleici"
 
 Sığacık’ta gezilecek yerler denince ilk sırada **Sığacık Kaleiçi**, **Teos Antik Kenti**, **Teos Marina** ve çevredeki **Akkum kıyıları** öne çıkıyor. Eğer günübirlik gidiyorsanız, en verimli plan genelde şöyle oluyor: önce Kaleiçi sokakları, sonra Teos Antik Kenti, ardından marina tarafında kısa bir yürüyüş ve günün kalanında sahil ya da deniz molası.
 
-Sığacık’ın farkı, tek bir “görülecek yer” sunmaması. Burada tarih, küçük ölçekli mahalle dokusu, pazar kültürü ve kıyı yaşamı birbirine çok yakın mesafede birleşiyor. Teos Antik Kenti, Seferihisar’ın Sığacık Mahallesi’nde yer alıyor; Kültür Portalı’na göre antik kent, ilçe merkezine yaklaşık 5 kilometre uzaklıkta bulunuyor. ([kulturportali.gov.tr](https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/teos-antik-kenti-?utm_source=openai))
+Sığacık’ın farkı, tek bir “görülecek yer” sunmaması. Burada tarih, küçük ölçekli mahalle dokusu, pazar kültürü ve kıyı yaşamı birbirine çok yakın mesafede birleşiyor. Teos Antik Kenti, Seferihisar’ın Sığacık Mahallesi’nde yer alıyor; Kültür Portalı’na göre antik kent, ilçe merkezine yaklaşık 5 kilometre uzaklıkta bulunuyor. ([kulturportali.gov.tr](https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/teos-antik-kenti-))
 
 ## Sığacık’ta mutlaka görülmesi gereken yerler
 
 ### 1) Sığacık Kaleiçi
 
-Sığacık gezisinin en karakteristik durağı burası. Kale surlarının içinde hâlâ günlük yaşamın sürmesi, Kaleiçi’ni klasik “tarihi çevre”lerden ayırıyor. Seferihisar Belediyesi’nin aktardığına göre Sığacık Kalesi, Kanuni Sultan Süleyman döneminde Rodos seferi hazırlıklarıyla ilişkilendiriliyor ve alan uzun süredir yerleşim dokusuyla birlikte anılıyor. ([seferihisar.bel.tr](https://seferihisar.bel.tr/izmir-sigacik-pazarina-akiyor?utm_source=openai))
+Sığacık gezisinin en karakteristik durağı burası. Kale surlarının içinde hâlâ günlük yaşamın sürmesi, Kaleiçi’ni klasik “tarihi çevre”lerden ayırıyor. Seferihisar Belediyesi’nin aktardığına göre Sığacık Kalesi, Kanuni Sultan Süleyman döneminde Rodos seferi hazırlıklarıyla ilişkilendiriliyor ve alan uzun süredir yerleşim dokusuyla birlikte anılıyor. ([seferihisar.bel.tr](https://seferihisar.bel.tr/izmir-sigacik-pazarina-akiyor))
 
 Burada yapılacak en iyi şey, sokakları liste mantığıyla değil yürüyerek keşfetmek. Kısa bir turda şunlara odaklanabilirsiniz:
 
@@ -34,7 +36,7 @@ Burada yapılacak en iyi şey, sokakları liste mantığıyla değil yürüyerek
 
 ### 2) Sığacık Pazarı
 
-Sığacık’ın en bilinen deneyimlerinden biri pazar günü kurulan üretici pazarı. Seferihisar Belediyesi, kale içinde kurulan pazarda Seferihisar köylerinden gelen üreticilerin ürün sattığını ve pazarın özellikle pazar günleri yoğun ilgi gördüğünü belirtiyor. Belediyenin faaliyet raporlarında da **Sığacık Mahallesi’nde pazar günü kurulan üretici pazarı** ifadesi yer alıyor. ([seferihisar.bel.tr](https://seferihisar.bel.tr/izmir-sigacik-pazarina-akiyor?utm_source=openai))
+Sığacık’ın en bilinen deneyimlerinden biri pazar günü kurulan üretici pazarı. Seferihisar Belediyesi, kale içinde kurulan pazarda Seferihisar köylerinden gelen üreticilerin ürün sattığını ve pazarın özellikle pazar günleri yoğun ilgi gördüğünü belirtiyor. Belediyenin faaliyet raporlarında da **Sığacık Mahallesi’nde pazar günü kurulan üretici pazarı** ifadesi yer alıyor. ([seferihisar.bel.tr](https://seferihisar.bel.tr/izmir-sigacik-pazarina-akiyor))
 
 Pazara özellikle şu amaçlarla gidilir:
 
@@ -47,7 +49,7 @@ Pazara özellikle şu amaçlarla gidilir:
 
 ### 3) Teos Antik Kenti
 
-Sığacık çevresindeki en güçlü tarih durağı Teos Antik Kenti. Kültür Portalı’na göre Teos, 12 İon kentinden biridir; kentte Dionysos Tapınağı, tiyatro, agora, odeon, meclis yapısı, gymnasium ve liman kalıntıları gibi birçok unsur bulunur. Aynı kaynak, Dionysos Tapınağı’nın Anadolu’daki Dionysos’a adanmış en büyük tapınaklardan biri olduğunu belirtir. ([kulturportali.gov.tr](https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/teos-antik-kenti-?utm_source=openai))
+Sığacık çevresindeki en güçlü tarih durağı Teos Antik Kenti. Kültür Portalı’na göre Teos, 12 İon kentinden biridir; kentte Dionysos Tapınağı, tiyatro, agora, odeon, meclis yapısı, gymnasium ve liman kalıntıları gibi birçok unsur bulunur. Aynı kaynak, Dionysos Tapınağı’nın Anadolu’daki Dionysos’a adanmış en büyük tapınaklardan biri olduğunu belirtir. ([kulturportali.gov.tr](https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/teos-antik-kenti-))
 
 Burası sadece “antik taş kalıntıları” görmek için gidilen bir alan değil. Sığacık’ı anlamak için de önemli, çünkü bugünkü kıyı yerleşiminin tarihsel arka planını tamamlıyor.
 
@@ -58,11 +60,11 @@ Gezerken en çok dikkat çeken unsurlar genelde şunlar olur:
 - antik liman kentine dair açık alan hissi
 - kıyı ile tarih arasındaki bağ
 
-2026 turizm sezonu ziyaret saatleri listesinde **Teos Örenyeri için 19:00 kapanış saati** yer alıyor. Ancak müze ve ören yeri saatleri dönemsel olarak değişebildiği için gitmeden önce resmî listeyi kontrol etmek gerekir. ([kvmgm.ktb.gov.tr](https://kvmgm.ktb.gov.tr/TR-451147/2026-turizm-sezonunda-ziyaret-saatleri.html?utm_source=openai))
+2026 turizm sezonu ziyaret saatleri listesinde **Teos Örenyeri için 19:00 kapanış saati** yer alıyor. Ancak müze ve ören yeri saatleri dönemsel olarak değişebildiği için gitmeden önce resmî listeyi kontrol etmek gerekir. ([kvmgm.ktb.gov.tr](https://kvmgm.ktb.gov.tr/TR-451147/2026-turizm-sezonunda-ziyaret-saatleri.html))
 
 ### 4) Teos Marina çevresi
 
-Daha modern ve düzenli bir kıyı yürüyüşü isteyenler için marina çevresi iyi bir durak. Teos Marina’nın resmî sitesine göre tesis, İzmir kent merkezine yaklaşık 40 kilometre uzaklıkta ve marina çevresi Sığacık’ın başlıca hareket alanlarından biri. ([teosmarina.com](https://teosmarina.com/en/index.html?utm_source=openai))
+Daha modern ve düzenli bir kıyı yürüyüşü isteyenler için marina çevresi iyi bir durak. Teos Marina’nın resmî sitesine göre tesis, İzmir kent merkezine yaklaşık 40 kilometre uzaklıkta ve marina çevresi Sığacık’ın başlıca hareket alanlarından biri. ([teosmarina.com](https://teosmarina.com/en/index.html))
 
 Marina tarafı şu durumlarda iyi bir seçenek:
 
@@ -75,7 +77,7 @@ Kaleiçi ile marina aynı gün rahatça birleştirilebilir.
 
 ### 5) Akkum ve Sığacık kıyıları
 
-Sığacık sadece tarihi sokaklardan ibaret değil; deniz odaklı kısa duraklarla da tamamlanıyor. ESHOT’un 640 numaralı Seferihisar–Sığacık hattı durak listesinde **Büyük Akkum**, **Küçük Akkum**, **Teos Marina**, **Sığacık Pazarı** ve **Teos Antik Kenti** gibi noktaların yer alması, bu alanların aynı yerel gezi aksı üzerinde bulunduğunu gösteriyor. ([eshot.gov.tr](https://www.eshot.gov.tr/%28X%281%29S%280zwplwfc3g0zqta3jemxf4ta%29%29/tr/UlasimSaatleri/640/288?AspxAutoDetectCookieSupport=1&utm_source=openai))
+Sığacık sadece tarihi sokaklardan ibaret değil; deniz odaklı kısa duraklarla da tamamlanıyor. ESHOT’un 640 numaralı Seferihisar–Sığacık hattı durak listesinde **Büyük Akkum**, **Küçük Akkum**, **Teos Marina**, **Sığacık Pazarı** ve **Teos Antik Kenti** gibi noktaların yer alması, bu alanların aynı yerel gezi aksı üzerinde bulunduğunu gösteriyor. ([eshot.gov.tr](https://www.eshot.gov.tr/%28X%281%29S%280zwplwfc3g0zqta3jemxf4ta%29%29/tr/UlasimSaatleri/640/288?AspxAutoDetectCookieSupport=1))
 
 Denize girmeyi planlamasanız bile kıyı hattı şu nedenlerle değerlendirilebilir:
 
@@ -122,13 +124,13 @@ Bu rota, günü hem tarih hem mahalle dokusu hem de kıyı deneyimiyle dengeler.
 
 ## Sığacık’a ulaşım hakkında kısa not
 
-Toplu taşımayla gelenler için Sığacık içinde ve Seferihisar bağlantısında ESHOT hatları önemli. ESHOT’un resmî verilerinde **640 Seferihisar–Sığacık** hattının durakları arasında Teos Antik Kenti, Teos Marina, Sığacık Pazarı, Büyük Akkum ve Küçük Akkum yer alıyor. İzmir içinden gelenler için ana bağlantı planı dönemsel olarak değişebildiğinden, yola çıkmadan önce ESHOT ve gerekiyorsa İZBAN aktarma bilgilerini kontrol etmek en güvenlisi. ([eshot.gov.tr](https://www.eshot.gov.tr/%28X%281%29S%280zwplwfc3g0zqta3jemxf4ta%29%29/tr/UlasimSaatleri/640/288?AspxAutoDetectCookieSupport=1&utm_source=openai))
+Toplu taşımayla gelenler için Sığacık içinde ve Seferihisar bağlantısında ESHOT hatları önemli. ESHOT’un resmî verilerinde **640 Seferihisar–Sığacık** hattının durakları arasında Teos Antik Kenti, Teos Marina, Sığacık Pazarı, Büyük Akkum ve Küçük Akkum yer alıyor. İzmir içinden gelenler için ana bağlantı planı dönemsel olarak değişebildiğinden, yola çıkmadan önce ESHOT ve gerekiyorsa İZBAN aktarma bilgilerini kontrol etmek en güvenlisi. ([eshot.gov.tr](https://www.eshot.gov.tr/%28X%281%29S%280zwplwfc3g0zqta3jemxf4ta%29%29/tr/UlasimSaatleri/640/288?AspxAutoDetectCookieSupport=1))
 
 ## Sığacık gezerken bilmeniz gerekenler
 
-- **Pazar günü kalabalık artar.** Özellikle araçla gidenler için otopark ve yoğunluk hesabı yapmak gerekir. ([seferihisar.bel.tr](https://seferihisar.bel.tr/izmir-sigacik-pazarina-akiyor?utm_source=openai))
-- **Teos Antik Kenti için ayrı zaman ayırın.** Sadece Kaleiçi’ni görüp dönmek, Sığacık deneyimini eksik bırakır. ([kulturportali.gov.tr](https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/teos-antik-kenti-?utm_source=openai))
-- **Ziyaret saatleri değişebilir.** Özellikle ören yeri planında resmî saatleri son gün kontrol etmek gerekir. ([kvmgm.ktb.gov.tr](https://kvmgm.ktb.gov.tr/TR-451147/2026-turizm-sezonunda-ziyaret-saatleri.html?utm_source=openai))
+- **Pazar günü kalabalık artar.** Özellikle araçla gidenler için otopark ve yoğunluk hesabı yapmak gerekir. ([seferihisar.bel.tr](https://seferihisar.bel.tr/izmir-sigacik-pazarina-akiyor))
+- **Teos Antik Kenti için ayrı zaman ayırın.** Sadece Kaleiçi’ni görüp dönmek, Sığacık deneyimini eksik bırakır. ([kulturportali.gov.tr](https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/teos-antik-kenti-))
+- **Ziyaret saatleri değişebilir.** Özellikle ören yeri planında resmî saatleri son gün kontrol etmek gerekir. ([kvmgm.ktb.gov.tr](https://kvmgm.ktb.gov.tr/TR-451147/2026-turizm-sezonunda-ziyaret-saatleri.html))
 - **Sığacık tek bir odakta gezilmez.** En iyi deneyim, Kaleiçi + Teos + kıyı hattını birlikte değerlendiren planda çıkar.
 
 ## Sık sorulan sorular
