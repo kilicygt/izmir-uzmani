@@ -148,4 +148,14 @@ Havalimanı için ESHOT’un 200, 202, 204 ve 206 numaralı hatları resmi kayna
 
 Doğrudan İzmir Metro hattı havalimanı terminaline gelmiyor; havalimanı bağlantısı **İZBAN banliyö hattı** üzerinden sağlanıyor. Belediye de havalimanı erişiminde “metro-izban” ifadesiyle bu aktarmalı yapıyı anlatıyor. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
 
+## Güncel sefer saatleri
+
+Yola çıkmadan önce güncel saatleri kontrol edin. Aşağıdaki sayfalar her gün güncellenir:
+
+- [Adnan Menderes Havalimanı İZBAN saatleri](/toplu-tasima-saatleri/izban/adnan-menderes-havalimani/)
+- [200 Mavişehir Aktarma Merkezi – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/200/)
+- [202 Cumhuriyet Meydanı – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/202/)
+- [204 Bornova Metro – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/204/)
+- [206 Şirinyer Aktarma Merkezi – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/206/)
+
 İzmir’de ulaşım ve şehir içi rota rehberleri için bizi Instagram’da da takip edebilirsiniz: **@izmiruzmani**
