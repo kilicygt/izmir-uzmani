@@ -17,8 +17,10 @@ export interface EventItem {
   sourceName: string | null;
   ticketUrl: string | null;
   entry?: CollectionEntry<'etkinlikler'>;
+  /** Next upcoming session; for past events, the last session. */
   next: Session;
   ongoing: boolean;
+  past: boolean;
 }
 
 const TZ = 'Europe/Istanbul';
@@ -29,14 +31,16 @@ export function startOfTodayIstanbul(now = new Date()) {
   return new Date(`${ymd}T00:00:00+03:00`);
 }
 
-function upcoming(sessions: Session[], now: Date): Pick<EventItem, 'next' | 'ongoing'> | null {
+function status(sessions: Session[], now: Date): Pick<EventItem, 'next' | 'ongoing' | 'past'> {
   const today = startOfTodayIstanbul(now).getTime();
   const next = sessions.find((s) => new Date(s.end).getTime() >= now.getTime());
-  if (!next) return null;
-  return { next, ongoing: new Date(next.start).getTime() < today };
+  if (!next) return { next: sessions[sessions.length - 1], ongoing: false, past: true };
+  return { next, ongoing: new Date(next.start).getTime() < today, past: false };
 }
 
-export async function getEvents(now = new Date()): Promise<EventItem[]> {
+const time0 = (d: string) => new Date(d).getTime();
+
+export async function getAllEvents(now = new Date()): Promise<EventItem[]> {
   const auto = data.events.map((e) => ({ ...e, ticketUrl: null }));
   const manual = (await getCollection('etkinlikler')).map((entry) => ({
     slug: entry.slug,
@@ -53,14 +57,19 @@ export async function getEvents(now = new Date()): Promise<EventItem[]> {
     ticketUrl: entry.data.ticketUrl ?? null,
     entry,
   }));
+  return [...auto, ...manual].map((e) => ({ ...e, ...status(e.sessions, now) }));
+}
 
-  return [...auto, ...manual]
-    .map((e) => {
-      const u = upcoming(e.sessions, now);
-      return u ? { ...e, ...u } : null;
-    })
-    .filter((e): e is EventItem => e !== null)
-    .sort((a, b) => new Date(a.next.start).getTime() - new Date(b.next.start).getTime());
+export async function getEvents(now = new Date()): Promise<EventItem[]> {
+  return (await getAllEvents(now))
+    .filter((e) => !e.past)
+    .sort((a, b) => time0(a.next.start) - time0(b.next.start));
+}
+
+export async function getPastEvents(now = new Date()): Promise<EventItem[]> {
+  return (await getAllEvents(now))
+    .filter((e) => e.past)
+    .sort((a, b) => time0(b.next.end) - time0(a.next.end));
 }
 
 export function groupEvents(events: EventItem[], now = new Date()) {

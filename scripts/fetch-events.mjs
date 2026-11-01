@@ -1,4 +1,4 @@
-import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import sharp from 'sharp';
@@ -94,9 +94,18 @@ const list = (await fetchWithRetry(`${API}/Event/List`)).data;
 if (!Array.isArray(list) || list.length === 0) throw new Error('Event list is empty');
 
 await mkdir(IMG_DIR, { recursive: true });
-const now = Date.now();
 
-const events = (await mapLimit(list, 4, async (item) => {
+// The API only lists current events, so finished ones are kept from our own archive.
+const previous = new Map(
+  (JSON.parse(await readFile(DATA_FILE, 'utf8').catch(() => '{"events":[]}')).events ?? []).map((e) => [e.id, e]),
+);
+
+const mergeSessions = (a, b) => {
+  const byStart = new Map([...a, ...b].map((s) => [s.start, s]));
+  return [...byStart.values()].sort((x, y) => x.start.localeCompare(y.start)).slice(-60);
+};
+
+const fresh = (await mapLimit(list, 4, async (item) => {
   let detail = null;
   try {
     detail = (await fetchWithRetry(`${API}/event/detail?eventId=${item.id}`)).data;
@@ -110,7 +119,6 @@ const events = (await mapLimit(list, 4, async (item) => {
   if (sessions.length === 0 && item.nextSessionStartDate) {
     sessions = [{ start: withTz(item.nextSessionStartDate), end: withTz(item.nextSessionEndDate || item.nextSessionStartDate), venue: null }];
   }
-  sessions = sessions.filter((s) => new Date(s.end).getTime() >= now).sort((a, b) => a.start.localeCompare(b.start));
   if (sessions.length === 0) return null;
 
   let image = null;
@@ -126,26 +134,32 @@ const events = (await mapLimit(list, 4, async (item) => {
   const textVenue = findVenue([...summary, ...body]);
   for (const s of sessions) s.venue ??= textVenue;
 
+  const old = previous.get(item.id);
   return {
     id: item.id,
-    slug: `${slugify(title)}-${item.id.slice(0, 6)}`,
+    // Keep the first URL an event got, so links and search results stay valid if the title changes.
+    slug: old?.slug ?? `${slugify(title)}-${item.id.slice(0, 6)}`,
     title,
     category: item.categories?.[0]?.name ?? 'Etkinlik',
     organizer: item.company?.name ?? null,
     ageLimit: item.ageLimit || null,
-    image: image ? `/images/etkinlikler/otomatik/${image}` : item.imageUrl ?? null,
+    image: image ? `/images/etkinlikler/otomatik/${image}` : old?.image ?? item.imageUrl ?? null,
     summary,
     body,
-    sessions: sessions.slice(0, 30),
+    sessions: mergeSessions(old?.sessions ?? [], sessions),
     sourceUrl: `${SITE}/event/${sourceSlug(item.name)}/${item.id}`,
     sourceName: 'İzmir Büyükşehir Belediyesi Kültürsanat',
   };
 })).filter(Boolean);
 
-if (events.length === 0) throw new Error('No upcoming events after processing');
+if (fresh.length === 0) throw new Error('No events after processing');
+
+const merged = new Map(previous);
+for (const e of fresh) merged.set(e.id, e);
+const events = [...merged.values()].sort((a, b) => a.sessions[0].start.localeCompare(b.sessions[0].start));
 
 const keep = new Set(events.map((e) => e.image?.startsWith('/images/etkinlikler/otomatik/') && path.basename(e.image)).filter(Boolean));
 for (const f of await readdir(IMG_DIR)) if (!keep.has(f)) await rm(path.join(IMG_DIR, f));
 
 await writeFile(DATA_FILE, JSON.stringify({ fetchedAt: new Date().toISOString(), source: SITE, events }, null, 2) + '\n');
-console.log(`Saved ${events.length} events`);
+console.log(`Saved ${events.length} events (${fresh.length} from API, ${events.length - fresh.length} archived)`);

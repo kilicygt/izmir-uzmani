@@ -1,10 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getEvents, fmt, longDate, time, dayMonth, weekday, catColor, descriptionOf, type EventItem } from '../../lib/events';
+import { getAllEvents, getEvents, fmt, longDate, time, dayMonth, weekday, catColor, descriptionOf, type EventItem } from '../../lib/events';
 
 export async function getStaticPaths() {
-  const events = await getEvents();
-  return events.map((event) => ({ params: { slug: event.slug }, props: { event, others: events } }));
+  const [all, upcoming] = await Promise.all([getAllEvents(), getEvents()]);
+  return all.map((event) => ({ params: { slug: event.slug }, props: { event, others: upcoming } }));
 }
 
 const { event, others } = Astro.props as { event: EventItem; others: EventItem[] };
@@ -16,7 +16,11 @@ const mapUrl = (venue: string) => `https://www.google.com/maps/search/?api=1&que
 const sameDay = (s: { start: string; end: string }) => s.start.slice(0, 10) === s.end.slice(0, 10) || new Date(s.end).getTime() - new Date(s.start).getTime() < 86_400_000;
 
 const rangeFmt: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' };
-const actionUrl =event.ticketUrl ?? event.sourceUrl;
+const actionUrl = event.ticketUrl ?? event.sourceUrl;
+const buildTime = Date.now();
+const shownSessions = event.past
+  ? event.sessions.slice(-10)
+  : event.sessions.filter((s) => new Date(s.end).getTime() >= buildTime).slice(0, 10);
 const metaDescription = (paragraphs[0] ?? `${event.title} — ${longDate(event.next.start)}, ${event.next.venue ?? 'İzmir'}`).slice(0, 155);
 const related = others.filter((e) => e.slug !== event.slug && !e.ongoing).slice(0, 4);
 
@@ -45,11 +49,15 @@ const jsonLd = {
       <p class="breadcrumb">
         <a href="/" class="bc-link">Ana Sayfa</a>
         · <a href="/etkinlikler" class="bc-link">Etkinlikler</a>
+        {event.past && <>· <a href="/etkinlikler/gecmis" class="bc-link">Geçmiş Etkinlikler</a></>}
         · {event.category}
       </p>
       <span class="cat-badge" style={`background:${catColor(event.category)}`}>{event.category}</span>
       <h1 class="ev-title">{event.title}</h1>
       {event.organizer && <p class="ev-organizer">{event.organizer}</p>}
+      <p class="ended-note" id="ended-note" hidden={!event.past}>
+        Bu etkinlik sona erdi. Yaklaşan etkinlikler için <a href="/etkinlikler">Etkinlikler</a> sayfasına göz atabilirsiniz.
+      </p>
     </div>
   </section>
 
@@ -63,9 +71,9 @@ const jsonLd = {
 
       <aside class="ev-info">
         <div class="info-block">
-          <p class="info-label">{event.sessions.length > 1 ? 'Seanslar' : 'Tarih'}</p>
+          <p class="info-label">{shownSessions.length > 1 ? 'Seanslar' : 'Tarih'}</p>
           <ul class="sessions">
-            {event.sessions.slice(0, 10).map((s) => (
+            {shownSessions.map((s) => (
               <li data-end={s.end}>
                 {sameDay(s) ? (
                   <><strong>{longDate(s.start)}</strong><span>{time(s.start)}</span></>
@@ -94,7 +102,7 @@ const jsonLd = {
           </div>
         )}
 
-        {actionUrl && (
+        {actionUrl && !event.past && (
           <a href={actionUrl} target="_blank" rel="noopener" class="cta">
             {event.ticketUrl ? 'Bilet al' : 'Bilet ve detaylar'} ↗
           </a>
@@ -167,6 +175,12 @@ const jsonLd = {
     line-height: 1.25; margin-bottom: 8px;
   }
   .ev-organizer { font-size: 14px; color: #999; padding-bottom: 28px; border-bottom: 1px solid #ede5db; }
+  .ended-note {
+    margin-top: 20px; background: #f0e8df; border-radius: 10px;
+    padding: 12px 16px; font-size: 14px; color: #555;
+  }
+  .ended-note[hidden], .cta[hidden] { display: none; }
+  .ended-note a { color: #062f96; text-decoration: underline; }
 
   .ev-main { background: #fff9f3; padding: 32px 20px; }
   .ev-grid {
@@ -243,7 +257,12 @@ const jsonLd = {
 
 <script>
   const now = Date.now();
-  document.querySelectorAll<HTMLElement>('.sessions li').forEach(li => {
-    if (new Date(li.dataset.end ?? '').getTime() < now) li.hidden = true;
-  });
+  const items = [...document.querySelectorAll<HTMLElement>('.sessions li')];
+  const ended = (li: HTMLElement) => new Date(li.dataset.end ?? '').getTime() < now;
+  if (items.length && items.every(ended)) {
+    document.getElementById('ended-note')?.removeAttribute('hidden');
+    document.querySelector<HTMLElement>('.cta')?.setAttribute('hidden', '');
+  } else {
+    items.forEach(li => { if (ended(li)) li.hidden = true; });
+  }
 </script>
