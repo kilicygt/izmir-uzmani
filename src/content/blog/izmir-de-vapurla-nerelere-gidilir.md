@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "5 dk"
 tags: ["İzmir", "Vapur", "İskele", "İZDENİZ", "Ulaşım"]
 featured: false
+image: "/images/blog/izmir-de-vapurla-nerelere-gidilir.webp"
+imageAlt: "İZDENİZ'in yeni arabalı vapuru İzmir Körfezi'nde"
 seoTitle: "İzmir Vapur Seferleri ve İskeleler Rehberi"
 seoDescription: "İzmir vapur seferleri iskeleler rehberi: Hangi iskeleler arasında vapur var, arabalı vapur nereden kalkıyor, yaz hatları nasıl çalışıyor?"
 imageSearchQuery: "Konak ferry terminal"
@@ -13,7 +15,7 @@ imageSearchQuery: "Konak ferry terminal"
 
 # İzmir'de vapurla nerelere gidilir?
 
-İzmir’de vapurla başlıca **Konak, Pasaport, Alsancak, Karşıyaka, Bostanlı, Göztepe, Üçkuyular ve Karantina** iskeleleri arasında yolculuk yapılabiliyor. Buna ek olarak bazı hatlar ve seferler dönemsel olarak **Urla, Mordoğan, Güzelbahçe ve Foça** gibi dış körfez noktalarına da uzanabiliyor. Güncel hat ve saat bilgisi ise İZDENİZ’in sefer sorgulama ekranından kontrol edilmeli; çünkü hat yapısı, saatler ve dönemsel seferler değişebiliyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf?utm_source=openai))
+İzmir’de vapurla başlıca **Konak, Pasaport, Alsancak, Karşıyaka, Bostanlı, Göztepe, Üçkuyular ve Karantina** iskeleleri arasında yolculuk yapılabiliyor. Buna ek olarak bazı hatlar ve seferler dönemsel olarak **Urla, Mordoğan, Güzelbahçe ve Foça** gibi dış körfez noktalarına da uzanabiliyor. Güncel hat ve saat bilgisi ise İZDENİZ’in sefer sorgulama ekranından kontrol edilmeli; çünkü hat yapısı, saatler ve dönemsel seferler değişebiliyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf))
 
 ## İzmir'de vapurla gidilebilen başlıca iskeleler
 
@@ -26,9 +28,9 @@ imageSearchQuery: "Konak ferry terminal"
 - **Bostanlı**
 - **Göztepe**
 - **Üçkuyular**
-- **Karantina** ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf?utm_source=openai))
+- **Karantina** ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf))
 
-Bu ağ, özellikle **Karşıyaka kıyısı ile Konak merkez hattını** birbirine bağlayan günlük ulaşım ihtiyacında kullanılıyor. Resmî sefer sorgulama sayfalarında Karşıyaka, Bostanlı, Konak, Pasaport, Alsancak, Göztepe, Karantina ve Üçkuyular arasında farklı kombinasyonlarla çalışan hatlar görülebiliyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1&utm_source=openai))
+Bu ağ, özellikle **Karşıyaka kıyısı ile Konak merkez hattını** birbirine bağlayan günlük ulaşım ihtiyacında kullanılıyor. Resmî sefer sorgulama sayfalarında Karşıyaka, Bostanlı, Konak, Pasaport, Alsancak, Göztepe, Karantina ve Üçkuyular arasında farklı kombinasyonlarla çalışan hatlar görülebiliyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1))
 
 ## En sık kullanılan vapur bağlantıları
 
@@ -44,45 +46,47 @@ Bu ağ, özellikle **Karşıyaka kıyısı ile Konak merkez hattını** birbirin
 | Üçkuyular - karşı kıyı bağlantıları | Güneybatı aksından deniz yoluyla geçiş |
 | Göztepe / Karantina bağlantıları | Ara duraklı veya tamamlayıcı kıyı erişimi |
 
-İZDENİZ’in sefer ekranlarında örnek olarak **Karşıyaka–Alsancak–Pasaport**, **Alsancak–Pasaport–Karşıyaka–Bostanlı**, **Bostanlı–Karşıyaka–Konak** ve **Konak–Karşıyaka–Bostanlı** gibi düzenli hat örnekleri açıkça yer alıyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1&utm_source=openai))
+İZDENİZ’in sefer ekranlarında örnek olarak **Karşıyaka–Alsancak–Pasaport**, **Alsancak–Pasaport–Karşıyaka–Bostanlı**, **Bostanlı–Karşıyaka–Konak** ve **Konak–Karşıyaka–Bostanlı** gibi düzenli hat örnekleri açıkça yer alıyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1))
 
 ## Arabalı vapurla nerelere gidilir?
 
-İzmir’de arabalı vapur seferleri **Üçkuyular ile Bostanlı** arasında yapılıyor. Bu hat, özellikle karayolundaki şehir içi trafiğine girmeden iki yakaya araçla geçmek isteyenler için kullanılıyor. İzmir Büyükşehir Belediyesi, bu hatta karşılıklı arabalı vapur işletildiğini ve geçişin yaklaşık **25 dakika** sürdüğünü belirtiyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/ulasim-hizmetleri/18?utm_source=openai))
+İzmir’de arabalı vapur seferleri **Üçkuyular ile Bostanlı** arasında yapılıyor. Bu hat, özellikle karayolundaki şehir içi trafiğine girmeden iki yakaya araçla geçmek isteyenler için kullanılıyor. İzmir Büyükşehir Belediyesi, bu hatta karşılıklı arabalı vapur işletildiğini ve geçişin yaklaşık **25 dakika** sürdüğünü belirtiyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/ulasim-hizmetleri/18))
 
 Bu yüzden “vapurla nerelere gidilir?” sorusunun araçlı versiyonunda kısa cevap nettir:  
-**Araçla vapura binecekseniz ana hat Bostanlı - Üçkuyular arasıdır.** ([izmir.bel.tr](https://www.izmir.bel.tr/tr/ulasim-hizmetleri/18?utm_source=openai))
+**Araçla vapura binecekseniz ana hat Bostanlı - Üçkuyular arasıdır.** ([izmir.bel.tr](https://www.izmir.bel.tr/tr/ulasim-hizmetleri/18))
 
 ## Yazın açılan veya dönemsel çalışan hatlar
 
-İzmir’de tüm vapur hareketleri yıl boyu aynı kalmıyor. İZDENİZ ve belediye kaynaklarında, dış körfez ve sayfiye odaklı bazı iskelelerin **yaz aylarında veya dönemsel olarak** devreye girdiği görülüyor. Resmî kaynaklarda **Urla, Mordoğan, Güzelbahçe ve Foça** bu kapsamda anılıyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf?utm_source=openai))
+İzmir’de tüm vapur hareketleri yıl boyu aynı kalmıyor. İZDENİZ ve belediye kaynaklarında, dış körfez ve sayfiye odaklı bazı iskelelerin **yaz aylarında veya dönemsel olarak** devreye girdiği görülüyor. Resmî kaynaklarda **Urla, Mordoğan, Güzelbahçe ve Foça** bu kapsamda anılıyor. ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf))
 
-Ayrıca 2026 yaz dönemi duyurusunda **Karşıyaka ve Konak’tan Urla ve Mordoğan’a hafta sonu günübirlik seferler** planlandığı belirtiliyor. Bu da dış körfez seferlerinin sabit değil, sezona göre şekillendiğini gösteriyor. ([izmir.bel.tr](https://izmir.bel.tr/tr/Haberler/%E2%80%8Bizdeniz-in-yaz-seferleri-27-haziran-da-basliyor/58874/156?utm_source=openai))
+Ayrıca 2026 yaz dönemi duyurusunda **Karşıyaka ve Konak’tan Urla ve Mordoğan’a hafta sonu günübirlik seferler** planlandığı belirtiliyor. Bu da dış körfez seferlerinin sabit değil, sezona göre şekillendiğini gösteriyor. ([izmir.bel.tr](https://izmir.bel.tr/tr/Haberler/%E2%80%8Bizdeniz-in-yaz-seferleri-27-haziran-da-basliyor/58874/156))
 
 ## Hangi iskele sizin için daha mantıklı?
 
 Vapur tercihi yaparken iskele seçimini semte göre düşünmek daha pratik olur:
 
 ### Konak ve Pasaport
-Merkezde işi olanlar, Kemeraltı, resmi kurumlar veya Alsancak yönüne geçecekler için en işlevsel duraklardır. Konak zaten körfez içi ulaşımın ana düğümlerinden biridir. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/1/3/1?utm_source=openai))
+Merkezde işi olanlar, Kemeraltı, resmi kurumlar veya Alsancak yönüne geçecekler için en işlevsel duraklardır. Konak zaten körfez içi ulaşımın ana düğümlerinden biridir. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/1/3/1))
 
 ### Alsancak
-Kordon, Alsancak Gar çevresi ve liman aksına yaklaşmak isteyenler için avantajlıdır. Bazı seferlerde doğrudan, bazılarında ara duraklı bağlantı bulunur. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1&utm_source=openai))
+Kordon, Alsancak Gar çevresi ve liman aksına yaklaşmak isteyenler için avantajlıdır. Bazı seferlerde doğrudan, bazılarında ara duraklı bağlantı bulunur. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1))
 
 ### Karşıyaka ve Bostanlı
-Karşıyaka sahil hattı boyunca yaşayanlar veya kuzey kıyısından merkeze geçmek isteyenler için en yoğun kullanılan iki iskeledir. İZDENİZ’in geçmiş ve güncel sefer bilgilerinde bu iki iskele omurga rolünde görünür. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/Haberler/izdeniz-15-dakikada-bir-sefer-duzenine-donuyor/53599/156?utm_source=openai))
+Karşıyaka sahil hattı boyunca yaşayanlar veya kuzey kıyısından merkeze geçmek isteyenler için en yoğun kullanılan iki iskeledir. İZDENİZ’in geçmiş ve güncel sefer bilgilerinde bu iki iskele omurga rolünde görünür. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/Haberler/izdeniz-15-dakikada-bir-sefer-duzenine-donuyor/53599/156))
 
 ### Göztepe, Karantina ve Üçkuyular
-Güney kıyısında oturanlar için tamamlayıcı erişim sağlar. Her iskeleden her noktaya doğrudan sefer olmayabileceği için yolculuk öncesi sorgulama yapmak gerekir. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/7/3/1?AspxAutoDetectCookieSupport=1&utm_source=openai))
+Güney kıyısında oturanlar için tamamlayıcı erişim sağlar. Her iskeleden her noktaya doğrudan sefer olmayabileceği için yolculuk öncesi sorgulama yapmak gerekir. ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/7/3/1?AspxAutoDetectCookieSupport=1))
 
 ## Vapur saatleri nasıl kontrol edilir?
 
-En güvenilir yöntem, doğrudan **İZDENİZ’in resmî sefer sorgulama sistemi** üzerinden kalkış ve varış iskelesi seçerek bakmaktır. İzmir Büyükşehir Belediyesi de vapur tarifeleri, iskele bilgileri ve olası değişiklikler için İZDENİZ sitesini işaret ediyor. Ayrıca sefer bilgileri belediyenin ulaşım sayfaları ve bazı dijital uygulamalar üzerinden de takip edilebiliyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/SSS/281?utm_source=openai))
+En güvenilir yöntem, doğrudan **İZDENİZ’in resmî sefer sorgulama sistemi** üzerinden kalkış ve varış iskelesi seçerek bakmaktır. İzmir Büyükşehir Belediyesi de vapur tarifeleri, iskele bilgileri ve olası değişiklikler için İZDENİZ sitesini işaret ediyor. Ayrıca sefer bilgileri belediyenin ulaşım sayfaları ve bazı dijital uygulamalar üzerinden de takip edilebiliyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/SSS/281))
+
+Güncel kalkış saatlerini iskele iskele sitemizde de toplu hâlde bulabilirsiniz: [tüm vapur saatleri](/toplu-tasima-saatleri/vapur/) · [Konak](/toplu-tasima-saatleri/vapur/konak/) · [Karşıyaka](/toplu-tasima-saatleri/vapur/karsiyaka/) · [Bostanlı](/toplu-tasima-saatleri/vapur/bostanli/) · [Pasaport](/toplu-tasima-saatleri/vapur/pasaport/) · [Alsancak](/toplu-tasima-saatleri/vapur/alsancak/) · [Göztepe](/toplu-tasima-saatleri/vapur/goztepe/) · [Üçkuyular](/toplu-tasima-saatleri/vapur/uckuyular/) · [Karantina](/toplu-tasima-saatleri/vapur/karantina/). Saatler her gün İzmir Büyükşehir Belediyesi'nin açık verisinden otomatik güncellenir.
 
 Resmî kaynaklar:
 - İZDENİZ sefer sorgulama
 - İzmir Büyükşehir Belediyesi ulaşım sayfaları
-- İzmirim Kart sistemi ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1&utm_source=openai))
+- İzmirim Kart sistemi ([izdeniz.com.tr](https://www.izdeniz.com.tr/tr/HareketSaatleri/2/5/1?AspxAutoDetectCookieSupport=1))
 
 ## İzmirim Kart vapurda geçerli mi?
 
@@ -92,6 +96,6 @@ Bu nedenle vapur yolculuğu çoğu kullanıcı için tek başına değil, **otob
 
 ## Kısa özet
 
-İzmir’de vapurla en temelde **Konak, Pasaport, Alsancak, Karşıyaka, Bostanlı, Göztepe, Üçkuyular ve Karantina** iskelelerine gidilebilir. Araçlı geçişte ana hat **Bostanlı - Üçkuyular** arasıdır. Yazın ise **Urla, Mordoğan, Güzelbahçe ve Foça** gibi noktalara uzanan dönemsel seferler gündeme gelebilir. Ancak hangi hatta hangi gün sefer olduğunu mutlaka yolculuk öncesinde resmî İZDENİZ ekranından kontrol etmek gerekir. ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf?utm_source=openai))
+İzmir’de vapurla en temelde **Konak, Pasaport, Alsancak, Karşıyaka, Bostanlı, Göztepe, Üçkuyular ve Karantina** iskelelerine gidilebilir. Araçlı geçişte ana hat **Bostanlı - Üçkuyular** arasıdır. Yazın ise **Urla, Mordoğan, Güzelbahçe ve Foça** gibi noktalara uzanan dönemsel seferler gündeme gelebilir. Ancak hangi hatta hangi gün sefer olduğunu mutlaka yolculuk öncesinde resmî İZDENİZ ekranından kontrol etmek gerekir. ([izdeniz.com.tr](https://www.izdeniz.com.tr/YuklenenDosyalar/IhalelerPdf/10122025_0250_TEKL%C4%B0F%20%C4%B0STEME%20FORMU.pdf))
 
 İzmir ulaşımıyla ilgili benzer pratik rehberler için @izmiruzmani hesabını da takip edebilirsiniz.
