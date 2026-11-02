@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "6 dk"
 tags: ["İzmir", "Saat Kulesi", "Konak", "Tarih", "Kültür"]
 featured: false
+image: "/images/blog/izmir-saat-kulesi-nin-tarihi-ve-bilinmeyen-hikayesi.webp"
+imageAlt: "İzmir Saat Kulesi'nin yapıldığı yıllara ait tarihi fotoğrafı"
 seoTitle: "İzmir Saat Kulesi Tarihi: Yapımı ve Hikâyesi"
 seoDescription: "İzmir Saat Kulesi tarihi hakkında kısa ve güvenilir rehber: yapım yılı, mimarı, mimari özellikleri, depremler sonrası değişimleri ve bilinmeyen ayrıntılar."
 imageSearchQuery: "Izmir Clock Tower"
