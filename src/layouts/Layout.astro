@@ -17,6 +17,16 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site);
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const fullTitle = isHome ? `İzmir Uzmanı — ${title}` : `${title} — İzmir Uzmanı`;
+// Google uses the WebSite structured data on the homepage to pick the site name in search results.
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'İzmir Uzmanı',
+  alternateName: ['Izmir Uzmani', 'izmiruzmani.com'],
+  url: 'https://www.izmiruzmani.com/',
+};
 ---
 
 <!doctype html>
@@ -26,9 +36,18 @@ const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} — İzmir Uzmanı</title>
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="İzmir Uzmanı" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={isHome ? 'website' : 'article'} />
+    <meta property="og:locale" content="tr_TR" />
+    {isHome && (
+      <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+    )}
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
