@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "8 dk"
 tags: ["İzmir", "İZBAN", "Ulaşım", "Gezi"]
 featured: false
+image: "/images/blog/izmir-de-izban-ile-gezilebilecek-yerler.webp"
+imageAlt: "İZBAN treni İzmir Körfezi kıyısında ilerlerken"
 seoTitle: "İzmir'de İZBAN ile Gezilecek Yerler Rehberi"
 seoDescription: "İZBAN ile İzmir’de gezilecek yerler: hangi istasyonda inilir, nerelere aktarma yapılır, günübirlik rota için en pratik duraklar hangileri?"
 imageSearchQuery: "Izmir Konak Square"

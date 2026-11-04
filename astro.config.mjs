@@ -9,6 +9,7 @@ export default defineConfig({
   output: 'static',
   redirects: {
     '/rehberler/izmir-saat-kulesi-nin-tarihi-ve-bilinmeyen-hik-yesi': '/rehberler/izmir-saat-kulesi-nin-tarihi-ve-bilinmeyen-hikayesi',
+    '/rehberler/tarihi-asansor-un-hik-yesi-ve-ziyaret-rehberi': '/rehberler/tarihi-asansor-un-hikayesi-ve-ziyaret-rehberi',
   },
   integrations: [sitemap()],
   markdown: { rehypePlugins: [rehypeStripUtm, rehypeDemoteH1] },

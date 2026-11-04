@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "6 dk"
 tags: ["İzmir", "Tarihi Asansör", "Karataş", "Konak", "Tarih ve Kültür"]
 featured: false
+image: "/images/blog/tarihi-asansor-un-hikayesi-ve-ziyaret-rehberi.webp"
+imageAlt: "Karataş'taki Tarihi Asansör'ün tuğla kulesi ve seyir terası"
 seoTitle: "Tarihi Asansör İzmir: Hikâyesi ve Ziyaret Rehberi"
 seoDescription: "Tarihi Asansör İzmir hakkında kısa tarihçe, ulaşım, manzara noktaları ve ziyaret öncesi bilinmesi gerekenler bu rehberde."
 imageSearchQuery: "Karataş Asansör İzmir"
