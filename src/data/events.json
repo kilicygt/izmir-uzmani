@@ -9,6 +9,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/bfa466ee-c75c7261.webp",
       "summary": [],
       "body": [
@@ -46,6 +47,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/6c42f24c-5ed41769.webp",
       "summary": [
         "2 Nisan-31 Aralık 2026",
@@ -79,6 +81,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": null,
       "image": "/images/etkinlikler/otomatik/a9b30abc-fe86c631.webp",
       "summary": [
         "2 Eylül-2 Kasım 2026",
@@ -106,6 +109,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/e7b55c19-579bf9fd.webp",
       "summary": [
         "5 Eylül-31 Aralık 2026",
@@ -132,6 +136,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/a6b0ed8d-d52c4424.webp",
       "summary": [
         "5 Eylül 2026-15 Ocak 2027",
@@ -167,6 +172,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/62572f20-6236841f.webp",
       "summary": [
         "18 Eylül-15 Kasım 2026",
@@ -194,6 +200,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/78fd032f-d9140139.webp",
       "summary": [
         "13 Ekim-25 Aralık 2026",
@@ -222,6 +229,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/b0ceb058-1af5e725.webp",
       "summary": [
         "15 Ekim – 30 Kasım 2026",
@@ -248,6 +256,7 @@
       "category": "Sergi",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/8fff03bf-6c2687bd.webp",
       "summary": [
         "27 Ekim-8 Kasım 2026",
@@ -289,6 +298,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": null,
       "image": "/images/etkinlikler/otomatik/dc07ecf5-a1e51733.webp",
       "summary": [
         "Balkon, Bahçe Bitkileri ve Bal Üreticileri Festivali Kültürpark'ta Başlıyor!",
@@ -326,6 +336,7 @@
       "category": "Tiyatro",
       "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": null,
       "image": "/images/etkinlikler/otomatik/a8a31121-e0bca640.webp",
       "summary": [
         "Yaş Sınırı: +13",
@@ -387,6 +398,7 @@
       "category": "Tiyatro",
       "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": null,
       "image": "/images/etkinlikler/otomatik/596d0fea-640050a0.webp",
       "summary": [
         "Cervantes'in Don Kişot'undan hareketle, çağdaş bir masal...",
@@ -444,6 +456,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": null,
       "image": "/images/etkinlikler/otomatik/463b6f97-19018ee5.webp",
       "summary": [
         "İzmir Büyükşehir Belediyesi’nin düzenlediği Alternatif Park Konserleri kapsamında The GAFFERS grubu ile Bostanlı sahilinde buluşuyoruz!"
@@ -472,6 +485,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": null,
       "image": "/images/etkinlikler/otomatik/b877cc20-61f68d91.webp",
       "summary": [
         "İzmir Büyükşehir Belediyesi bünyesinde düzenlenen Aziz Vukolos'ta Akustik Günler 2026 etkinlik serisi, müzikseverleri tarihi ve büyüleyici bir atmosferde buluşturmaya devam ediyo"
@@ -503,6 +517,7 @@
       "category": "Sinema",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/21b82fe8-e3104084.webp",
       "summary": [
         "Elveda, büyükannelerinin hastalandığını öğrenen Çinli bir ailenin yaşadıklarını konu ediyor. Bili, Amerika’da büyüyen bir genç kızdır. Bir gün babasından aldığı haber, genç kız için büyük bir yıkım olur. Bili’nin Çin’de yaşayan büyükannesi Nai Nai’ye dördüncü evre kanser teşhisi konmuştur. Aile, kendilerine büyük bir üzüntü veren bu gerçeği, ninelerinden saklamaya karar verir. Son günlerini huzur ve mutluluk içinde geçirmesini isteyen aile üyeleri, bunun için Nai Nai'nin yanında toplanmaya karar verir. Bili, bu haberi ninesinin bilmesi gerektiğini düşünse de ailesinin isteğine karşı çıkmaz ve ninesi ile vedalaşmak için Çin’e doğru yola koyulur.",
@@ -546,6 +561,7 @@
       "category": "Tiyatro",
       "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
       "ageLimit": 8,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/74e8d9fd-4c56607d.webp",
       "summary": [
         "Yaş Sınırı :+16",
@@ -619,6 +635,7 @@
       "category": "Konser",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": 2,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/38a2205f-58268950.webp",
       "summary": [
         "Uluslararası keman yarışmalarında kazandığı birinciliklerle tanınan Güney Koreli keman sanatçısı Soyoung Yoon, Mozart’ın 5. Keman Konçertosu ile sahnemizde."
@@ -645,6 +662,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/20456919-3abaf125.webp",
       "summary": [
         "Aziz Vukolos'ta Akustik Günler 2026: Hasan Karar & Olgaç Yurtsever Konseri",
@@ -677,6 +695,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/94e7fac6-0473ee99.webp",
       "summary": [
         "Müziğe ruh kılan değerli koro şefimizin yönetiminde unutulmaz bir anma akşamı!",
@@ -708,6 +727,7 @@
       "category": "Konser",
       "organizer": "AASSM Şube Müdürlüğü",
       "ageLimit": 5,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/73152e8c-65c1c1c3.webp",
       "summary": [],
       "body": [
@@ -733,6 +753,7 @@
       "category": "Sinema",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/95e89426-d4da8d8b.webp",
       "summary": [
         "Yoğun iş temposuna ara vererek Fransa'nın Alp dağlarına kayağa giden Tomas ve ailesinin kaldıkları otelde başlarına gelenlere karşı Tomas’ın tutum ve davranışları çiftin evliliklerini sorgulamasına ve Tomas'ın ailenin reisi pozisyonunun sarsılmasına neden olur.",
@@ -774,6 +795,7 @@
       "category": "Konser",
       "organizer": "AASSM Şube Müdürlüğü",
       "ageLimit": 9,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/32fb83dc-36b78aef.webp",
       "summary": [],
       "body": [
@@ -797,6 +819,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/b549df83-8a872716.webp",
       "summary": [
         "Sandalyeni al gel, gerisini müzik halleder!",
@@ -826,6 +849,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/1d638578-447e1f3a.webp",
       "summary": [
         "Aziz Vukolos'ta Akustik Günler 2026 Gülce Alatay Konseri",
@@ -858,6 +882,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/3b7abd52-2cc84e7d.webp",
       "summary": [
         "Müziğin zarafetini ve ruhunu hissedeceğimiz unutulmaz bir akşam...",
@@ -888,6 +913,7 @@
       "category": "Sinema",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/41cf84bb-347e86ae.webp",
       "summary": [
         "Usta sinemacı Bong Joon-ho'nun filmi Parazit, metropolleşen Seul'ün yuttuğu bir muhitte, bodrum katı bir evde yaşayan Kim ailesinin hikayesini konu alıyor. Fakir ve işsiz Ki-Taek, karısı, oğlu ve kızıyla birlikte Seul'un arka mahallelerinden birinde, böceklerin istila ettiği bir evde yaşamaktadır. Bir gün Ki-Taek'in oğlu Ki-Woo, son derece varlıklı Park ailesinin kızları için özel öğretmen olarak iş bulunca çok geçmeden kendi ailesini de Park ailesinin hayatına dahil etmeye başlar. Bu durum, iki ailenin yaşamlarının beklenmedik ve dramatik bir şekilde kesişmesine neden olur.",
@@ -930,6 +956,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/7ec481fd-00434896.webp",
       "summary": [
         "Aziz Vukolos'ta Akustik Günler 2026: Merve Mete Konseri",
@@ -961,6 +988,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/7a99dd40-0a5ef011.webp",
       "summary": [
         "Kubbenin Altında – Öğretmen Bestekârların Şarkıları 24 Kasım Öğretmenler Günü'nde, Hüseyin Tolu'nun seslendireceği akustik Türk müziği konserinde buluşuyoruz."
@@ -991,6 +1019,7 @@
       "category": "Sinema",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/38b54788-ff0c3985.webp",
       "summary": [
         "Göçmen işçi olarak İngiltere’de çalışan Fatih, Türkiye’deki ailesine göndermek üzere arkadaşı Ayhan’dan yüklü miktarda borç almıştır. Fatih Türkiye’ye dönmesinden sonra da borcu ödenmeyince Türkiye’ye gelen Ayhan, Fatih’in ailesini ziyaret eder ve parasını ister. Bu borcun talep edilmesi, aynı binada ve iç içe geçmiş ekonomik çıkarlarla yaşayan aile içinde bir fitili ateşler. Aile bireyleri arasında gizli kalmış tüm çatışmalar su yüzüne çıkar.",
@@ -1033,6 +1062,7 @@
       "category": "Sinema",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/d5907103-975d08ac.webp",
       "summary": [
         "27 Kasım 2026, Cuma",
@@ -1066,6 +1096,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/0679f07d-1d88846d.webp",
       "summary": [
         "Bostanlı Sahilinde Müzik Molası! 🌊🎸",
@@ -1096,6 +1127,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/37b50ce1-2c1ebaa2.webp",
       "summary": [
         "Aziz Vukolos'ta Akustik Günler 2026: Enes Kunduracı Konseri",
@@ -1127,6 +1159,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/04a74eb4-728c8283.webp",
       "summary": [
         "Müziğin birleştirici gücü ve kalplere dokunan ezgilerle dolu özel bir akşam...",
@@ -1158,6 +1191,7 @@
       "category": "Diğer",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/f0bebfa0-be010fcf.webp",
       "summary": [
         "33. TBD-Halıcı Bilgisayarla Beste Yarışması, sanat ve teknolojiyi bir araya getiren prestijli bir beste yarışmasıdır. Toplam 150.000 TL ödüllü yarışmanın son başvuru tarihi 14 Kasım 2026, final gecesi ise 10 Aralık 2026'da Ahmed Adnan Saygun Sanat Merkezi - İzmir’de gerçekleşecektir."
@@ -1188,6 +1222,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/c82eddba-7dcf97f2.webp",
       "summary": [
         "Müziğe ruh kılan eşsiz dokunuşlar ve büyüleyici bir ses aynı sahnede!",

@@ -24,7 +24,16 @@ const shownSessions = event.past
 const metaDescription = (paragraphs[0] ?? `${event.title} — ${longDate(event.next.start)}, ${event.next.venue ?? 'İzmir'}`).slice(0, 155);
 const related = others.filter((e) => e.slug !== event.slug && !e.ongoing).slice(0, 4);
 
-const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://izmiruzmani.com';
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://www.izmiruzmani.com';
+const pageUrl = `${site}/etkinlikler/${event.slug}/`;
+const admissionLabel = {
+  free: 'Ücretsiz · serbest giriş',
+  'free-ticket': 'Ücretsiz · biletli (önceden bilet alınmalı)',
+  paid: 'Ücretli',
+}[event.admission ?? ''] as string | undefined;
+const isFree = event.admission === 'free' || event.admission === 'free-ticket';
+// Automatic events all come from İzBB's kultursanat site; its departments are the organizers.
+const organizerUrl = event.entry ? event.entry.data.organizerUrl ?? event.sourceUrl : 'https://kultursanat.izmir.bel.tr/';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Event',
@@ -36,8 +45,18 @@ const jsonLd = {
   location: { '@type': 'Place', name: event.next.venue ?? 'İzmir', address: { '@type': 'PostalAddress', addressLocality: 'İzmir', addressCountry: 'TR' } },
   ...(event.image && { image: [event.image.startsWith('http') ? event.image : `${site}${event.image}`] }),
   description: metaDescription,
-  ...(event.organizer && { organizer: { '@type': 'Organization', name: event.organizer } }),
-  url: `${site}/etkinlikler/${event.slug}`,
+  ...(event.organizer && {
+    organizer: { '@type': 'Organization', name: event.organizer, ...(organizerUrl && { url: organizerUrl }) },
+  }),
+  ...(event.performer && { performer: { '@type': 'PerformingGroup', name: event.performer } }),
+  offers: {
+    '@type': 'Offer',
+    url: event.ticketUrl ?? event.sourceUrl ?? pageUrl,
+    ...(isFree && { price: 0 }),
+    priceCurrency: 'TRY',
+    ...(!event.past && { availability: 'https://schema.org/InStock' }),
+  },
+  url: pageUrl,
 };
 ---
 
@@ -95,6 +114,13 @@ const jsonLd = {
           </div>
         )}
 
+        {admissionLabel && (
+          <div class="info-block">
+            <p class="info-label">Giriş</p>
+            <p class="info-value">{admissionLabel}</p>
+          </div>
+        )}
+
         {event.ageLimit && (
           <div class="info-block">
             <p class="info-label">Yaş sınırı</p>
@@ -104,7 +130,7 @@ const jsonLd = {
 
         {actionUrl && !event.past && (
           <a href={actionUrl} target="_blank" rel="noopener" class="cta">
-            {event.ticketUrl ? 'Bilet al' : 'Bilet ve detaylar'} ↗
+            {event.ticketUrl ? 'Bilet al' : event.admission === 'free' ? 'Resmi etkinlik sayfası' : 'Bilet ve detaylar'} ↗
           </a>
         )}
       </aside>

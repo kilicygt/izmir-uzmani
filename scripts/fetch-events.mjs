@@ -113,8 +113,8 @@ const fresh = (await mapLimit(list, 4, async (item) => {
     console.warn(`detail failed, using list data: ${item.name} (${err.message})`);
   }
 
-  let sessions = (detail?.sessions ?? [])
-    .filter((s) => !s.isDisabled)
+  const enabled = (detail?.sessions ?? []).filter((s) => !s.isDisabled);
+  let sessions = enabled
     .map((s) => ({ start: withTz(s.eventDate), end: withTz(s.eventEndDate || s.eventDate), venue: s.venue?.name?.trim() || null }));
   if (sessions.length === 0 && item.nextSessionStartDate) {
     sessions = [{ start: withTz(item.nextSessionStartDate), end: withTz(item.nextSessionEndDate || item.nextSessionStartDate), venue: null }];
@@ -135,6 +135,13 @@ const fresh = (await mapLimit(list, 4, async (item) => {
   for (const s of sessions) s.venue ??= textVenue;
 
   const old = previous.get(item.id);
+  // The municipality's own site treats session types 1 and 2 as free.
+  // 0 = Ücretli, 1 = Ücretsiz Biletli, 2 = Ücretsiz Serbest Giriş, 3 = Sadece AASSM (box office)
+  const types = enabled.map((s) => s.sessionType);
+  const admission = types.length === 0 ? old?.admission ?? null
+    : types.every((t) => t === 2) ? 'free'
+    : types.every((t) => t === 1 || t === 2) ? 'free-ticket'
+    : 'paid';
   return {
     id: item.id,
     // Keep the first URL an event got, so links and search results stay valid if the title changes.
@@ -143,6 +150,7 @@ const fresh = (await mapLimit(list, 4, async (item) => {
     category: item.categories?.[0]?.name ?? 'Etkinlik',
     organizer: item.company?.name ?? null,
     ageLimit: item.ageLimit || null,
+    admission,
     image: image ? `/images/etkinlikler/otomatik/${image}` : old?.image ?? item.imageUrl ?? null,
     summary,
     body,

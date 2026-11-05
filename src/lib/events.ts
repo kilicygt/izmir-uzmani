@@ -3,12 +3,17 @@ import data from '../data/events.json';
 
 export interface Session { start: string; end: string; venue: string | null }
 
+export type Admission = 'free' | 'free-ticket' | 'paid';
+
 export interface EventItem {
   slug: string;
   title: string;
   category: string;
   organizer: string | null;
   ageLimit: number | null;
+  /** 'free' = serbest giriş, 'free-ticket' = ücretsiz ama biletli, 'paid' = ücretli, null = bilinmiyor */
+  admission: Admission | null;
+  performer: string | null;
   image: string | null;
   summary: string[];
   body: string[];
@@ -41,13 +46,15 @@ function status(sessions: Session[], now: Date): Pick<EventItem, 'next' | 'ongoi
 const time0 = (d: string) => new Date(d).getTime();
 
 export async function getAllEvents(now = new Date()): Promise<EventItem[]> {
-  const auto = data.events.map((e) => ({ ...e, ticketUrl: null }));
+  const auto = data.events.map((e) => ({ ...e, admission: ((e as { admission?: Admission | null }).admission ?? null), performer: null, ticketUrl: null }));
   const manual = (await getCollection('etkinlikler')).map((entry) => ({
     slug: entry.slug,
     title: entry.data.title,
     category: entry.data.category,
     organizer: entry.data.organizer ?? null,
     ageLimit: null,
+    admission: entry.data.admission ?? null,
+    performer: entry.data.performer ?? null,
     image: entry.data.image ?? null,
     summary: [],
     body: [],
