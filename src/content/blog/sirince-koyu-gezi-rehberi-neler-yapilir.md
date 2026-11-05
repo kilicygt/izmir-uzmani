@@ -19,6 +19,8 @@ imageSearchQuery: "Sirince village Izmir"
 
 Şirince, Selçuk’un kuzeyinde, vadinin içine kurulmuş eski bir mübadele köyü. Kaynaklarda köyün geçmişte Rumların yaşadığı bir yerleşim olduğu, 1923 nüfus mübadelesinden sonra bugünkü sosyal yapısına kavuştuğu belirtiliyor. Bugün burayı özel kılan şey yalnızca tek tek yapılar değil; **beyaz cepheli evler, eğimli sokaklar, zeytin ve meyve bahçeleriyle birlikte korunan bütünlüklü doku**. ([kulturportali.gov.tr](https://kulturportali.gov.tr/turkiye/izmir/gezilecekyer/selcuk-sirince-koyu))
 
+Köyün “Çirkince”den “Şirince”ye uzanan adının hikâyesini, Rum mirasını ve kiliselerin geçmişini merak ediyorsanız [Şirince Köyü: Tarihi, Kültürü ve Gezi Rehberi](/rehberler/sirince-koyu-rehberi/) yazımızda daha ayrıntılı bulabilirsiniz.
+
 ## Şirince gezilecek yerler
 
 ### 1) Köy sokakları ve tarihi ev dokusu
@@ -74,7 +76,7 @@ Köy çarşısı, Şirince deneyiminin önemli parçası. Ancak burada en iyi ya
 6. Dönüş
 
 ### 1 günlük Selçuk + Şirince planı
-- Sabah: Efes veya Ayasuluk çevresi  
+- Sabah: [Efes](/rehberler/efes-antik-kenti-gezi-rehberi-gitmeden-once-bilmeniz-gerekenler/) veya Ayasuluk çevresi  
 - Öğleden sonra: Şirince  
 - Akşamüstü: Köyde kısa mola ve dönüş
 

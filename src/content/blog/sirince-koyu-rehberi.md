@@ -14,6 +14,8 @@ imageAlt: "Şirince köyü taş evler ve zeytinlik manzarası"
 
 Selçuk'un yaklaşık sekiz kilometre doğusunda, Kuzey Menderes dağlarının eteklerine yaslanmış Şirince köyü, ağırlıklı olarak Rum nüfusu tarafından kurulmuş ve 1924'teki nüfus mübadelesiyle terk edilmiş. Sonrasında Rodos ve Midilli'den gelen Müslüman Türkler bu köye yerleşti. Bugün Şirince, taş evleri, meyve bahçeleri ve asırlık kilisesiyle hem tarihi bir belge hem de yaşayan bir köy.
 
+Köyde yarım gün ya da bir gün içinde nereleri gezebileceğinizi, örnek rotaları ve gitmeden önce bilmeniz gereken pratik ipuçlarını [Şirince Köyü Gezi Rehberi: Neler Yapılır?](/rehberler/sirince-koyu-gezi-rehberi-neler-yapilir/) yazımızda adım adım anlattık.
+
 ## Şirince'nin Tarihi
 
 ### Çirkince'den Şirince'ye
@@ -58,7 +60,7 @@ Köyde birkaç küçük lokanta var. Ege mutfağının sade ama lezzetli yüzü 
 
 ## Nasıl Gidilir?
 
-**Efes Ziyaretiyle Birleştirin:** Çoğu ziyaretçi Efes gezisini Şirince ile birleştiriyor. Selçuk'a ulaşın, önce Efes Antik Kenti'ni görün, öğleden sonra Şirince'ye geçin. Selçuk'tan minibüsler her gün çalışıyor.
+**Efes Ziyaretiyle Birleştirin:** Çoğu ziyaretçi Efes gezisini Şirince ile birleştiriyor. Selçuk'a ulaşın, önce [Efes Antik Kenti](/rehberler/efes-antik-kenti-gezi-rehberi-gitmeden-once-bilmeniz-gerekenler/)'ni görün, öğleden sonra Şirince'ye geçin. Selçuk'tan minibüsler her gün çalışıyor.
 
 **İzmir'den Doğrudan:** İzmir'den araçla Selçuk'a oradan Şirince'ye yol yaklaşık 1,5-2 saat. Toplu taşımayla İZBAN treniyle Selçuk'a, oradan dolmuşla Şirince'ye.
 
