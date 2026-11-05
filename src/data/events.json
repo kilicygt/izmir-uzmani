@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-03T10:58:19.395Z",
+  "fetchedAt": "2026-11-05T11:04:20.381Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -511,6 +511,33 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "05b2616f-ade5-445d-a5fa-e87b45a4a894",
+      "slug": "nazim-hikmet-siirinde-incesaz-dinleti-05b261",
+      "title": "“Nazım Hikmet Şiirinde İncesaz” Dinleti",
+      "category": "Konser",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/05b2616f-92367b10.webp",
+      "summary": [
+        "5 Kasım 2026",
+        "SAAT: 18.30-21.00",
+        "YER: ATLAS PAVYONU"
+      ],
+      "body": [
+        "Sanatçılar: Özlem BAŞKAYA, Hakan ÖZGÖMEÇ, Nihat DEMİRKOL"
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-05T18:30:00+03:00",
+          "end": "2026-11-05T21:00:00+03:00",
+          "venue": "ATLAS PAVYONU"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/nazm-hikmet-siirinde-incesaz-dinleti/05b2616f-ade5-445d-a5fa-e87b45a4a894",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "21b82fe8-ba46-4ace-8f63-753756fa6e51",
       "slug": "yeniden-sinematek-kokler-ve-kirilmalar-elveda-21b82f",
       "title": "Yeniden Sinematek / Kökler ve Kırılmalar - Elveda",
@@ -611,17 +638,17 @@
         },
         {
           "start": "2026-11-12T20:00:00+03:00",
-          "end": "2026-11-12T22:30:00+03:00",
+          "end": "2026-11-12T21:20:00+03:00",
           "venue": "İzBBŞT İsmet İnönü Sahnesi"
         },
         {
           "start": "2026-11-13T20:00:00+03:00",
-          "end": "2026-11-13T21:30:00+03:00",
+          "end": "2026-11-13T21:20:00+03:00",
           "venue": "İzBBŞT İsmet İnönü Sahnesi"
         },
         {
           "start": "2026-11-14T20:00:00+03:00",
-          "end": "2026-11-14T21:30:00+03:00",
+          "end": "2026-11-14T21:20:00+03:00",
           "venue": "İzBBŞT İsmet İnönü Sahnesi"
         }
       ],
@@ -653,6 +680,37 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/izmir-oda-orkestras-konseri/38a2205f-5f46-4d2b-ba0a-f02d9b138505",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "3e5661d1-ee98-4778-a427-0382498f7abe",
+      "slug": "2-karaburun-furma-festival-konserleri-3e5661",
+      "title": "2. Karaburun FURMA FESTİVAL Konserleri",
+      "category": "Konser",
+      "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/3e5661d1-6748bdd3.webp",
+      "summary": [
+        "2. KARABURUN FURMA FESTİVALİ KONSERLERİ",
+        "Karaburun'un eşsiz lezzeti ve kültürünün buluştuğu 2. Karaburun Furma Festivali kapsamında düzenlenecek festival konserlerine davetlisiniz!"
+      ],
+      "body": [
+        "Burak Maral (İzBB THM Orkestrası)",
+        "⏰ Saat: 15.00",
+        "🎤 Gülce Alatay (İzBB POP Orkestrası)",
+        "⏰ Saat: 17.00",
+        "📅 Tarih: 8 Kasım 2026 Pazar",
+        "📍 Yer: Karaburun, Eğlenhoca"
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-08T15:00:00+03:00",
+          "end": "2026-11-08T18:30:00+03:00",
+          "venue": "Karaburun, Eğlenhoca"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/2-karaburun-furma-festival-konserleri/3e5661d1-ee98-4778-a427-0382498f7abe",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
@@ -689,6 +747,39 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "bc568da4-2946-475f-851d-8e93eeb74502",
+      "slug": "bargilya-grubu-resim-sergisi-bc568d",
+      "title": "Bargilya Grubu Resim Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/bc568da4-eecd8f4e.webp",
+      "summary": [
+        "10-30 Kasım 2026",
+        "SAAT: 16.00",
+        "YER: Ahmed Adnan Saygun Sanat Merkezi Üst Kat Doğu Galeri"
+      ],
+      "body": [
+        "BARGİLYA’DAN İZMİR’E BİR SANAT KÖPRÜSÜ: “ÜÇ SANATÇI, ÜÇ BAKIŞ” SERGİSİ AHMED ADNAN SAYGUN’DA KAPILARINI SANATSEVERLERE AÇIYOR.",
+        "Muğla’nın tarihi Milas-Bargilya bölgesinde çalışmalarını sürdüren ressamlar Ayşegül Öngel, Fatma Tulum ve Neriman Karşanbaş, “Üç Sanatçı, Üç Bakış” sergisiyle doğayı, insanı ve mitolojik mirası dışavurumcu bir dille tuvale taşıyan 24 özgün eser, İzmirli sanatseverlerle buluşuyor.",
+        "Bargilya Resim Grubu çatısı altında bir araya gelen üç sanatçı; renk, doku ve biçim zenginliğiyle harmanladıkları eserlerini, tuval üzerine akrilik ve yağlı boya teknikleriyle üretilmiş özgün eserleri bir araya getiriyor.",
+        "Üç Farklı Dünya, Tek Bir Dışavurumcu Dil ve aynı coğrafyada yaşayan ancak kendilerine özgü görsel dilleriyle ayrışan üç sanatçı, sergide izleyiciyi farklı temalar arasında derin bir yolculuğa davet ediyor:",
+        "Ayşegül Öngel | ODTÜ Mimarlık Fakültesi mezunu olan ve bugüne kadar 6 kişisel sergiye imza atan Öngel, mimari disiplinini dışavurumcu anlatımla buluşturuyor. İnsan yaşamından kesitleri renk lekeleri ve zengin dokularla işleyen sanatçı, figüratif eserlerinde şiirsel bir atmosfer yaratıyor.",
+        "Fatma Tulum | Gazi Üniversitesi Resim Bölümü mezunu sanatçı ve resim eğitmeni Tulum, doğa görünümlerini mavi ile turkuazın huzur veren tonlarıyla yorumluyor. Eserlerinde özellikle balıkçıl kuşlarını odağa alan sanatçı, dokusal zenginlikle dışavurumcu bir estetik sunuyor.",
+        "Neriman Karşanbaş | Gazi Üniversitesi Resim Bölümü mezunu ve 14 kişisel sergi tecrübesine sahip Karşanbaş, yüksek lisans çalışmalarını da sürdürdüğü tarihsel temaları tuvale taşıyor. Eserlerinde Anadolu’nun kültürel mirasındaki atlı kadın figürlerine ve Karia kraliçelerine odaklanan sanatçı, kadının tarihsel gücünü ve dinamizmini güçlü bir dışavurumculukla anlatıyor."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-10T16:00:00+03:00",
+          "end": "2026-11-30T17:00:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi Üst Kat Doğu Galeri"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/bargilya-grubu-resim-sergisi/bc568da4-2946-475f-851d-8e93eeb74502",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "94e7fac6-b4fa-42ad-8e9f-0bd20d63bb63",
       "slug": "aziz-vukolos-ta-akustik-turk-muzigi-konserleri-94e7fa",
       "title": "Aziz Vukolos'ta Akustik Türk Müziği Konserleri",
@@ -718,6 +809,34 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/aziz-vukolosta-akustik-turk-muzigi-konserleri/94e7fac6-b4fa-42ad-8e9f-0bd20d63bb63",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "332f1e4d-d95b-4e30-b429-3ba4c88c7e7b",
+      "slug": "ataturk-un-sevdigi-sarkilar-konseri-332f1e",
+      "title": "Atatürk'ün Sevdiği Şarkılar Konseri",
+      "category": "Konser",
+      "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/332f1e4d-521ef602.webp",
+      "summary": [
+        "Atatürk’ü Anma Günü ve Atatürk Haftası kapsamında düzenlenen, solistliğini Hasan Karar'ın üstlendiği ve İzBB Türk Halk Müziği Orkestrası ile Sarı Zeybek Dans Gösterisi'nin eşlik edeceği \"Atatürk’ün Sevdiği Şarkılar Konseri\"ne tüm halkımız davetlidir"
+      ],
+      "body": [
+        "📅 Tarih: 10 Kasım 2026",
+        "⏰ Saat: 20.00",
+        "📍 Yer: Tire Belediyesi Kültür Salonu",
+        "İzmir Büyükşehir Belediyesi ve T.C. Tire Belediyesi iş birliğiyle gerçekleştirilecek bu anlamlı gecede buluşmak dileğiyle!"
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-10T20:00:00+03:00",
+          "end": "2026-11-10T21:30:00+03:00",
+          "venue": "Tire Belediyesi Kültür Salonu"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/ataturkun-sevdigi-sarklar-konseri/332f1e4d-d95b-4e30-b429-3ba4c88c7e7b",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
@@ -786,6 +905,62 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/yeniden-sinematek-kokler-ve-krlmalar-turist/95e89426-ac57-4f8c-85c2-8c2c23cd32e4",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "28851475-59e9-4fc1-be58-cd756e305f1c",
+      "slug": "club-221-spor-etkinligi-288514",
+      "title": "Club 221 Spor Etkinliği",
+      "category": "Diğer",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/28851475-c4688388.webp",
+      "summary": [
+        "12 Kasım 2026",
+        "SAAT: 19.30-21.30",
+        "YER: Tarihi Bıçakçı Han Antrepo 1-2"
+      ],
+      "body": [
+        "Fonksiyonel antrenman disiplinini, fiziksel performansı ve takım çalışmasını bir araya getiren dinamik bir spor deneyimi sunmaktadır.Etkinlik programı kapsamında; dinamik ısınma ve mobilite çalışmaları, yüksek yoğunluklu hibrit WOD etapları ve katılımcılar arasındaki iş birliğini güçlendirmeye yönelik takım aktiviteleri gerçekleştirilecektir. Farklı antrenman disiplinlerini bir araya getiren program, katılımcıların dayanıklılık, koordinasyon ve performans odaklı bir deneyim yaşamalarını hedeflemektedir.Antrenman programının ardından düzenlenecek sosyalleşme bölümüyle katılımcıların bir araya gelmesi, etkileşimin artırılması ve spor topluluğu içerisindeki bağların güçlendirilmesi amaçlanmaktadır."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-12T19:30:00+03:00",
+          "end": "2026-11-12T21:30:00+03:00",
+          "venue": "Tarihi Bıçakçı Han Antrepo 1-2"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/club-221-spor-etkinligi/28851475-59e9-4fc1-be58-cd756e305f1c",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "1accddf2-040d-40ce-ad95-17a20012e770",
+      "slug": "bunca-zaman-dokuma-resim-sergisi-1accdd",
+      "title": "''Bunca Zaman'' Dokuma Resim Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/1accddf2-f3c88483.webp",
+      "summary": [
+        "13-20 Kasım 2026",
+        "SAAT: 16.00",
+        "YER: Tarihi Bıçakçı Han Antrepo 1"
+      ],
+      "body": [
+        "Tarihsel süreçte anıtsal dokumalar, savaşların, zaferlerin ve önemli kişilerin temsil edildiği, toplumsal belleğin görsel taşıyıcılarından biri olmuştur. Bu sergide ise dokuma yüzeyi, büyük tarihsel anlatılardan sanatçının kişisel yaşantısına yönelir. Sanatçının kendisini ve yakın çevresindeki insanları konu alan portreleri, bireysel belleğin ve deneyimlerin parçalı bir anlatısını oluşturur.",
+        "Sanatçının bireysel belleğinde yer edinen imgeler, dokumanın yavaş, tekrara dayalı ve zamana yayılan üretim süreciyle yeniden biçimlenir. Fotoğrafın bir anı sabitleyen doğasına karşılık dokuma, bu anlık görüntüyü uzun süreli bir üretim ve yeniden yorumlama sürecine dönüştürür. Yüzlerin kimi zaman bütünlüğünü yitirerek karanlıkta belirsizleşmesi ve görüntünün eksiltilerek yeniden kurulması, hatırlamanın parçalı doğasına ve kişisel belleğin seçici niteliğine işaret eder.",
+        "Böylece sanatçı, kendi portreleri ve yaşamında yer alan insanların yüzleri aracılığıyla kişisel geçmişini yeniden yorumlarken dokumayı zaman, bellek ve temsil arasındaki ilişkilerin sorgulandığı bir ifade alanına dönüştürür."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-13T16:00:00+03:00",
+          "end": "2026-11-20T17:00:00+03:00",
+          "venue": "Tarihi Bıçakçı Han Antrepo 1"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/bunca-zaman-dokuma-resim-sergisi/1accddf2-040d-40ce-ad95-17a20012e770",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
@@ -876,6 +1051,65 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "31d75d2f-81eb-4905-a036-53c71bd04153",
+      "slug": "shift-vcd-26-izmir-ekonomi-universitesi-ogrenci-projeleri-sergisi-31d75d",
+      "title": "SHIFT+VCD’26 İzmir Ekonomi Üniversitesi Öğrenci Projeleri Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/31d75d2f-0747bfa3.webp",
+      "summary": [
+        "17-29 Kasım 2026",
+        "SAAT: 18.00",
+        "YER: Ahmed Adnan Saygun Sanat Merkezi Alt Kat Galeri"
+      ],
+      "body": [
+        "İzmir Ekonomi Üniversitesi Güzel Sanatlar ve Tasarım Fakültesi Görsel İletişim Tasarımı Bölümü öğrenci projeleri sergisi SHIFT+VCD’26, ikinci kez izleyiciyle buluşuyor. Her yıl yeniden kurgulanarak sürdürülmesi amaçlanan sergi serisi, öğrencilerin dört yıllık eğitim süreçlerinde ürettikleri çalışmaları bir araya getirirken tasarım eğitiminin değişen dinamiklerini ve farklı üretim yaklaşımlarını görünür kılıyor.",
+        "SHIFT tuşu, başka bir tuşla birlikte kullanıldığında onun işlevini değiştirebilir ya da yeni bir karakterin ortaya çıkmasını sağlar. Sergi, bu etkileşimi tasarım eğitiminin dönüştürücü potansiyeline ilişkin bir metafor olarak ele alıyor. Öğrencilerin deneyimleri, merakları ve düşünme biçimleri; dersler, atölyeler, eleştiri ortamları ve kolektif üretim pratikleriyle yeni yönler kazanıyor. Tasarımın yalnızca bireysel becerilerle değil, farklı bakış açılarının ve üretim yöntemlerinin etkileşimiyle de biçimlendiğini ortaya koyuyor.",
+        "Tipografi, fotoğraf, hareketli görüntü, film, dijital medya, etkileşim ve oyun tasarımı gibi farklı alanlara yayılan projeler, eğitimin çeşitli aşamalarında gelişen araştırma, düşünme ve üretme pratiklerini bir araya getiriyor. Birinci sınıftaki temel arayışlardan son sınıfta geliştirilen kapsamlı kişisel projelere uzanan seçki, ortaya çıkan ürünlerin yanı sıra bu ürünleri mümkün kılan süreçlere, akademisyenlerin rehberliği ve katkısına odaklanıyor.",
+        "SHIFT+VCD’26, önceki edisyonun deneyimini devralırken her yıl değişen öğrenci kuşakları, teknolojik olanaklar ve kültürel koşullar doğrultusunda yeniden biçimlenen birlikte öğrenme süreçlerini gösteriyor. Sergi, izleyiciyi farklı üretimler arasında dolaşmaya ve tasarım eğitimini deneyimlerin karşılaştığı, düşüncelerin sınandığı ve yeni yönlerin ortaya çıktığı dinamik bir süreç olarak değerlendirmeye davet ediyor."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-17T18:00:00+03:00",
+          "end": "2026-11-29T17:00:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi Alt Kat Galeri"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/shiftvcd26-izmir-ekonomi-universitesi-ogrenci-projeleri-sergisi/31d75d2f-81eb-4905-a036-53c71bd04153",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "38d03e28-d7ca-411d-97a5-e4c01d8f173a",
+      "slug": "bir-siir-bir-turku-turkulerle-siir-dinletisi-38d03e",
+      "title": "Bir Şiir Bir Türkü Türkülerle Şiir Dinletisi",
+      "category": "Konser",
+      "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/38d03e28-f934e22b.webp",
+      "summary": [
+        "BİR ŞİİR BİR TÜRKÜ - Türkülerle Şiir Dinletisi",
+        "İzmir Büyükşehir Belediyesi etkinlikleri kapsamında düzenlenen, şair Çetin Şahabettin Güncü'nün dizelerine Nurbey Başar'ın türküleriyle eşlik edeceği \"Bir Şiir Bir Türkü\" dinletisinde şiirin ve müziğin duygusal yolculuğuna davetlisiniz."
+      ],
+      "body": [
+        "📅 Tarih: 17 Kasım 2026",
+        "⏰ Saat: 20.00",
+        "📍 Yer: Aziz Vukolos Kültür Merkezi",
+        "Etkinliğimiz ücretsizdir. Tüm sanatsever halkımız davetlidir!"
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-17T20:00:00+03:00",
+          "end": "2026-11-17T21:30:00+03:00",
+          "venue": "Aziz Vukolos Kültür Merkezi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/bir-siir-bir-turku-turkulerle-siir-dinletisi/38d03e28-d7ca-411d-97a5-e4c01d8f173a",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "3b7abd52-aacd-4799-ab23-7240a280b484",
       "slug": "izbb-seferihisar-tsm-korosu-3b7abd",
       "title": "İzBB Seferihisar TSM Korosu",
@@ -950,6 +1184,34 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "61524520-336b-4d20-9240-f0a4d341960c",
+      "slug": "endonezya-nin-guzellikleri-fotograf-sergisi-615245",
+      "title": "Endonezya'nın Güzellikleri Fotoğraf Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/61524520-fe9b35ae.webp",
+      "summary": [
+        "20 Kasım-15 Aralık 2026",
+        "SAAT: 16.00",
+        "YER: Konak Metro Sanat Galerisi"
+      ],
+      "body": [
+        "Türkiye Fotoğraf Sanatı Federasyonu (TFSF) ile Endonezya Fotoğraf Dernekleri Federasyonu (FPSI) iş birliğiyle gerçekleştirilen “Endonezya’nın Güzellikleri” fotoğraf sergisi, İFOD – İzmir Fotoğraf Sanatı Derneği’nin ev sahipliğinde Metro Sanat Galerisi’nde fotoğrafseverlerle buluşuyor. Türkiye ve Endonezya arasındaki dostane kültürel iş birliğinin bir parçası olan sergi, iki ülkenin fotoğraf sanatı aracılığıyla kültürel değerlerini ve sanatsal birikimlerini paylaşmayı amaçlıyor. Küratörlüğünü Dr. Sefa Ulukan ve Agatha Anne Bunanta’nın üstlendiği sergi, Endonezya’nın doğal güzelliklerini, kültürel zenginliğini ve yaşam biçimini fotoğraf sanatı aracılığıyla İzmirli sanatseverlere sunacak.",
+        "Uluslararası fotoğraf platformlarında da yer bulan bu özel seçki, Türkiye ile Endonezya arasındaki kültürel bağların güçlenmesine ve iki ülkenin fotoğraf sanatçıları arasındaki iletişimin gelişmesine katkı sağlayacak. İFOD – İzmir Fotoğraf Sanatı Derneği, farklı kültürleri fotoğrafın evrensel diliyle buluşturan bu özel sergiyi tüm fotoğrafseverlerle paylaşmaktan mutluluk duyacaktır ve tüm fotoğrafseverler Endonezya’nın güzelliklerini keşfetmeye davetlidir."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-20T16:00:00+03:00",
+          "end": "2026-12-15T17:00:00+03:00",
+          "venue": "Konak Metro Sanat Galerisi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/endonezyann-guzellikleri-fotograf-sergisi/61524520-336b-4d20-9240-f0a4d341960c",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "7ec481fd-58a6-4e02-a84c-85b805b4278e",
       "slug": "aziz-vukolos-ta-akustik-gunler-7ec481",
       "title": "Aziz Vukolos'ta Akustik Günler",
@@ -982,6 +1244,34 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "2213ac80-9d3a-4ae3-82e2-049e82398942",
+      "slug": "celebi-nin-rotasi-resim-sergisi-2213ac",
+      "title": "Çelebi'nin Rotası Resim Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/2213ac80-553c842d.webp",
+      "summary": [
+        "24 Kasım-15 Aralık 2026",
+        "SAAT: 16.00",
+        "YER: Tarihi Bıçakçı Han Antrepo 1"
+      ],
+      "body": [
+        "“Çelebi’nin Rotası” sergisi, farklı dönemlerde üretilen resim ve çizim çalışmalarını ortak bir görsel anlatı etrafında bir araya getirmektedir. Balkanlar’dan Ege kıyılarına uzanan coğrafyanın mimari öğelerinden, doğal dokusundan ve tarihsel izlerinden beslenen eserler; gerçekte var olmayan, ancak tanıdık coğrafyaları çağrıştıran düşsel mekânlar kurgulamaktadır.",
+        "Akrilik resimlerden Flâneur of the Lines çizimlerine uzanan seçki, mekânın ve biçimlerin farklı üretim süreçleriyle yeniden oluşumunu ele almaktadır. Zaman, hafıza ve hayal gücü arasında şekillenen sergi, sanatçının dönüşen üretim pratiğini ve farklı anlatım biçimleri arasındaki ilişkileri izleyiciyle buluşturmaktadır."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-24T16:00:00+03:00",
+          "end": "2026-12-15T17:00:00+03:00",
+          "venue": "Tarihi Bıçakçı Han Antrepo 1"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/celebinin-rotas-resim-sergisi/2213ac80-9d3a-4ae3-82e2-049e82398942",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "7a99dd40-bd0e-4011-a262-eaaa8c1f5bc1",
       "slug": "aziz-vukolos-ta-akustik-turk-muzigi-konserleri-7a99dd",
       "title": "Aziz Vukolos'ta Akustik Türk Müziği Konserleri",
@@ -1010,6 +1300,38 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/aziz-vukolosta-akustik-turk-muzigi-konserleri/7a99dd40-bd0e-4011-a262-eaaa8c1f5bc1",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "688ebb2e-b032-4bc4-9405-5a7c860a4710",
+      "slug": "efes-ten-mimas-a-giden-yol-meryem-ana-dan-kolophan-a-fotograf-sergisi-688ebb",
+      "title": "Efes'ten Mimas'a Giden Yol Ⅰ Meryem Ana'dan Kolophan'a Fotoğraf Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/688ebb2e-466a55b4.webp",
+      "summary": [
+        "26 Kasım-31 Aralık 2026",
+        "SAAT: 18.00",
+        "YER: Ahmed Adnan Saygun Sanat Merkezi Giriş Kat Doğu ve Batı Galeriler"
+      ],
+      "body": [
+        "Yeryüzünün hafızasına fotoğrafla tanıklık",
+        "Ertuğrul Tugay’ın “Efes’ten Mimas’a Giden Yol I: Meryem Ana’dan Kolophon’a” adlı fotoğraf sergisi, İzmir Yarımadası’nın binlerce yıllık tarihini, kültürel mirasını ve doğal zenginliklerini fotoğraf sanatı aracılığıyla belgeleyen kapsamlı bir görsel anlatı sunmaktadır. Efes–Mimas Kültür Yolu’nun 133 kilometrelik ilk etabında yer alan 11 yürüyüş rotasında çekilen fotoğraflardan oluşan sergi, geçmiş ile bugün arasında bir bağ kurarak coğrafyanın taşıdığı ortak hafızayı görünür kılmayı amaçlamaktadır.",
+        "Meryem Ana’dan başlayarak Efes, Şirince, Belevi, Keçi Kalesi, Küçük Menderes Havzası, Claros, Notion ve Kolophon çevresine uzanan güzergâh; antik kentleri, tarihî yapıları, kutsal alanları ve eski yol izlerini Ege’nin doğal güzellikleriyle bir araya getirmektedir. Sergide, Belevi Gölü, Küçük Menderes Ovası ve Deltası, zeytinlikler, üzüm bağları, incir, nar ve mandalina bahçeleri, şeftali bahçeleri, çam ormanları ve geleneksel köy yaşamından kesitler yer almaktadır. Keçi Kalesi çevresinden görülen Nif Dağı, Mahmut Dağı, Keldağ ve Bozdağlar gibi doğal oluşumlar ise bölgenin etkileyici coğrafi çeşitliliğini yansıtmaktadır.",
+        "Sergi, İzmir Yarımadası’nın tarihsel ve arkeolojik zenginliklerini doğal çevresi ve tarımsal üretim kültürüyle birlikte ele alırken, bu coğrafyada yüzyıllar boyunca şekillenen insan-doğa ilişkisine de dikkat çekmektedir. Antik yolların, yerleşimlerin ve kutsal alanların izlerini günümüz manzaralarıyla buluşturan fotoğraflar, bölgenin yalnızca geçmişten kalan kalıntılardan ibaret olmadığını; yaşayan, değişen ve hafızasını koruyan bir kültürel peyzaj olduğunu ortaya koymaktadır.",
+        "Ayrıca Efes–Mimas Kültür Yolu’nun araştırılması, güzergâhlarının keşfedilmesi ve yürünebilir bir kültür rotasına dönüştürülmesinde gönüllü dağcıların emeği ve katkıları da serginin önemli bileşenlerinden birini oluşturmaktadır.",
+        "Serginin temel amacı; İzmir Yarımadası’nın tarihsel, kültürel ve doğal mirasına yönelik farkındalığı artırmak, ziyaretçileri yaşadıkları coğrafyayı farklı bir bakış açısıyla yeniden keşfetmeye davet etmek ve bu değerlerin korunmasının önemini vurgulamaktır. Fotoğrafı yeryüzünün hafızasına tanıklık etmenin bir aracı olarak ele alan sergi, geçmişten günümüze taşınan izleri görünür kılarak ortak kültürel mirasın gelecek kuşaklara aktarılmasına katkı sunmayı hedeflemektedir."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-26T18:00:00+03:00",
+          "end": "2026-12-31T18:00:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi Giriş Kat Doğu ve Batı Galeriler"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/efesten-mimasa-giden-yol-meryem-anadan-kolophana-fotograf-sergisi/688ebb2e-b032-4bc4-9405-5a7c860a4710",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
