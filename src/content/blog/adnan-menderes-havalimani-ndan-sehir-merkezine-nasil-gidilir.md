@@ -22,11 +22,11 @@ imageSearchQuery: "Adnan Menderes Airport"
 - **Kapıya daha yakın bırakma isteyenler için:** HAVAŞ
 - **En zahmetsiz ama en pahalı seçenek:** Taksi
 
-DHMI’ye göre Adnan Menderes Havalimanı şehir merkezine yaklaşık **18 km** uzaklıkta. Havalimanından şehir merkezine **HAVAŞ, ESHOT, Metro-İZBAN bağlantısı, taksi ve özel araç** ile ulaşım sağlanabiliyor. HAVAŞ ve belediye otobüsleri gelen yolcu terminali çıkışından, İZBAN ise terminalden bağlantı yoluyla ulaşılan istasyondan kullanılabiliyor. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+DHMI’ye göre Adnan Menderes Havalimanı şehir merkezine yaklaşık **18 km** uzaklıkta. Havalimanından şehir merkezine **HAVAŞ, ESHOT, Metro-İZBAN bağlantısı, taksi ve özel araç** ile ulaşım sağlanabiliyor. HAVAŞ ve belediye otobüsleri gelen yolcu terminali çıkışından, İZBAN ise terminalden bağlantı yoluyla ulaşılan istasyondan kullanılabiliyor.
 
 ## İZBAN ile şehir merkezine ulaşım
 
-Şehir merkezine toplu taşımayla gitmek isteyenler için ilk bakılması gereken seçenek **İZBAN**. Havalimanı istasyonu doğrudan sistem üzerinde yer alıyor ve terminalden istasyona bağlantı yoluyla geçiliyor. Terminal planında da tren istasyonu bağlantı yolu ve istasyon açıkça gösteriliyor. ([cdn.adnanmenderesairport.com](https://cdn.adnanmenderesairport.com/files/1522676484_gelisarrival.pdf))
+Şehir merkezine toplu taşımayla gitmek isteyenler için ilk bakılması gereken seçenek **İZBAN**. Havalimanı istasyonu doğrudan sistem üzerinde yer alıyor ve terminalden istasyona bağlantı yoluyla geçiliyor. Terminal planında da tren istasyonu bağlantı yolu ve istasyon açıkça gösteriliyor.
 
 ### İZBAN hangi merkez noktalara gider?
 
@@ -37,7 +37,7 @@ DHMI’ye göre Adnan Menderes Havalimanı şehir merkezine yaklaşık **18 km**
 - **Halkapınar**
 - **Alsancak**
 
-Belediyenin resmi SSS sayfasında da havalimanına banliyö hattıyla erişim için **Halkapınar, Hilal, Alsancak ve Şirinyer** istasyonları aktarma noktaları olarak belirtiliyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/SSS/281))
+Belediyenin resmi SSS sayfasında da havalimanına banliyö hattıyla erişim için **Halkapınar, Hilal, Alsancak ve Şirinyer** istasyonları aktarma noktaları olarak belirtiliyor.
 
 ### İZBAN ne zaman mantıklı?
 
@@ -50,11 +50,11 @@ Belediyenin resmi SSS sayfasında da havalimanına banliyö hattıyla erişim i�
 
 ### İZBAN ücreti nasıl işliyor?
 
-İzmirim Kart tarifesine göre banliyö hattında ücret **gidilen mesafeye göre** hesaplanıyor. Ayrıca İzmirim Kart’ın resmi aktarma kurallarına göre İZBAN dahil sistemde **90 dakika aktarma hakkı** bulunuyor; ancak detaylar kart tipine göre değişebiliyor. Güncel ücretler ve sefer saatleri için yolculuk öncesi resmi ekranı kontrol etmek gerekiyor. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme))
+İzmirim Kart tarifesine göre banliyö hattında ücret **gidilen mesafeye göre** hesaplanıyor. Ayrıca İzmirim Kart’ın resmi aktarma kurallarına göre İZBAN dahil sistemde **90 dakika aktarma hakkı** bulunuyor; ancak detaylar kart tipine göre değişebiliyor. Güncel ücretler ve sefer saatleri için yolculuk öncesi resmi ekranı kontrol etmek gerekiyor.
 
 ## ESHOT ile havalimanından merkeze nasıl gidilir?
 
-Adnan Menderes Havalimanı’ndan ESHOT’un havalimanı hatları da çalışıyor. DHMI ve İzmir Büyükşehir Belediyesi kaynaklarında havalimanı için **200, 202, 204 ve 206** numaralı hatlar belirtiliyor. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+Adnan Menderes Havalimanı’ndan ESHOT’un havalimanı hatları da çalışıyor. DHMI ve İzmir Büyükşehir Belediyesi kaynaklarında havalimanı için **200, 202, 204 ve 206** numaralı hatlar belirtiliyor.
 
 ### Hangi ESHOT hattı nereye gider?
 
@@ -67,27 +67,27 @@ Resmî kaynaklarda öne çıkan hatlar şöyle:
 | **204** | Bornova Metro – Havalimanı | Bornova, metro ve otogar bağlantısı isteyenler |
 | **206** | Şirinyer Aktarma Merkezi – Havalimanı | Buca ve Şirinyer bağlantısı isteyenler |
 
-İzmir Büyükşehir Belediyesi SSS sayfasında 200, 202 ve 204 hatlarının ana durak mantığı ayrıca açıklanıyor; ESHOT resmi sitesi ve İzmirim Kart tarife sayfası da 206 dahil bu dört hattı doğruluyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/SSS/281))
+İzmir Büyükşehir Belediyesi SSS sayfasında 200, 202 ve 204 hatlarının ana durak mantığı ayrıca açıklanıyor; ESHOT resmi sitesi ve İzmirim Kart tarife sayfası da 206 dahil bu dört hattı doğruluyor.
 
 ### ESHOT ücretleri farklı mı?
 
-Evet. İzmirim Kart’ın resmi tarife sayfasına göre havalimanı otobüsleri standart şehir içi tarifeden ayrı değerlendiriliyor. Aynı sayfada **havalimanı hatlarında 90 dakika aktarma hakkı olmadığı** da belirtiliyor. Bu yüzden özellikle aktarmalı yolculuk yapacaksanız İZBAN bazı durumlarda daha avantajlı olabilir. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme))
+Evet. İzmirim Kart’ın resmi tarife sayfasına göre havalimanı otobüsleri standart şehir içi tarifeden ayrı değerlendiriliyor. Aynı sayfada **havalimanı hatlarında 90 dakika aktarma hakkı olmadığı** da belirtiliyor. Bu yüzden özellikle aktarmalı yolculuk yapacaksanız İZBAN bazı durumlarda daha avantajlı olabilir.
 
 ## HAVAŞ ile şehir merkezine gitmek mantıklı mı?
 
-Bagajı fazla olanlar ya da tren-otobüs aktarmasıyla uğraşmak istemeyenler için **HAVAŞ** daha rahat bir seçenek olabilir. DHMI’nin havalimanı ulaşım sayfasına göre HAVAŞ araçları **iç ve dış hat gelen yolcu terminali çıkışından** kalkıyor. Terminal planında da **Havaş otobüs durağı** işaretli. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+Bagajı fazla olanlar ya da tren-otobüs aktarmasıyla uğraşmak istemeyenler için **HAVAŞ** daha rahat bir seçenek olabilir. DHMI’nin havalimanı ulaşım sayfasına göre HAVAŞ araçları **iç ve dış hat gelen yolcu terminali çıkışından** kalkıyor. Terminal planında da **Havaş otobüs durağı** işaretli.
 
-Ancak HAVAŞ’ta güzergâh ve saat bilgisi dönemsel olarak değişebildiği için, sabit saat vermek doğru olmaz. Yolculuktan önce resmi sefer sorgulamasını kontrol etmek gerekir. DHMI de saat ve güzergâh için doğrudan HAVAŞ’ın resmi sayfasına yönlendiriyor. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+Ancak HAVAŞ’ta güzergâh ve saat bilgisi dönemsel olarak değişebildiği için, sabit saat vermek doğru olmaz. Yolculuktan önce resmi sefer sorgulamasını kontrol etmek gerekir. DHMI de saat ve güzergâh için doğrudan HAVAŞ’ın resmi sayfasına yönlendiriyor.
 
 ## Taksi ile şehir merkezine ulaşım
 
-Toplu taşıma saatine yetişme derdi olmadan doğrudan otele ya da belirli bir adrese gitmek istiyorsanız taksi en rahat seçenek. DHMI’nin sayfasına göre taksiye **iç ve dış hatlar gelen yolcu katı terminal çıkışından** ulaşılabiliyor. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+Toplu taşıma saatine yetişme derdi olmadan doğrudan otele ya da belirli bir adrese gitmek istiyorsanız taksi en rahat seçenek. DHMI’nin sayfasına göre taksiye **iç ve dış hatlar gelen yolcu katı terminal çıkışından** ulaşılabiliyor.
 
 Taksi ücreti; varış noktanıza, trafik yoğunluğuna ve güncel tarifeye göre değişeceği için burada sabit fiyat vermek sağlıklı olmaz. Özellikle **Alsancak, Konak, Karşıyaka, Bornova** gibi farklı yönlerde ücret farkı oluşabilir.
 
 ## Havalimanında İzmirim Kart alınır mı?
 
-Evet. İzmirim Kart’ın resmi sitesine göre **İzmir Adnan Menderes Havalimanı dış hatlar varış terminalinde bulunan bayiden** kart alımı ve bakiye yükleme yapılabiliyor. Aynı kaynakta, fiziksel kart yoksa **İZBAN hariç** toplu ulaşım araçlarının bir bölümünde dijital kart veya temassız banka/kredi kartı kullanımının mümkün olabildiği belirtiliyor. ([izmirimkart.com.tr](https://izmirimkart.com.tr/))
+Evet. İzmirim Kart’ın resmi sitesine göre **İzmir Adnan Menderes Havalimanı dış hatlar varış terminalinde bulunan bayiden** kart alımı ve bakiye yükleme yapılabiliyor. Aynı kaynakta, fiziksel kart yoksa **İZBAN hariç** toplu ulaşım araçlarının bir bölümünde dijital kart veya temassız banka/kredi kartı kullanımının mümkün olabildiği belirtiliyor.
 
 Bu ayrım önemli: **İZBAN kullanacaksanız fiziksel kart ihtiyacını önceden kontrol etmek faydalı olur.**
 
@@ -128,25 +128,25 @@ Güncel bilgi için en doğru kaynaklar:
 - **İzmirim Kart tarife ve kart satış bilgileri**
 - **İzmir Büyükşehir Belediyesi ulaşım SSS sayfası**
 
-İzmir Büyükşehir Belediyesi de kent içi hat ve sefer bilgileri için ESHOT, İzmir Metro, İZBAN ve kendi ulaşım menüsünü resmi başvuru noktaları olarak gösteriyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/SSS/281))
+İzmir Büyükşehir Belediyesi de kent içi hat ve sefer bilgileri için ESHOT, İzmir Metro, İZBAN ve kendi ulaşım menüsünü resmi başvuru noktaları olarak gösteriyor.
 
 ## Sık sorulan sorular
 
 ## Adnan Menderes Havalimanı’ndan şehir merkezine en ucuz nasıl gidilir?
 
-Çoğu durumda en ekonomik seçenek toplu taşıma olur. İZBAN ve ESHOT arasında hangisinin daha avantajlı olduğu, gideceğiniz semte ve aktarma ihtiyacına göre değişir. Havalimanı otobüslerinde özel tarife uygulandığı için ücret karşılaştırmasını yolculuk öncesi güncel tarifeden kontrol etmek gerekir. ([izmirimkart.com.tr](https://izmirimkart.com.tr/tarife-ve-ucretlendirme))
+Çoğu durumda en ekonomik seçenek toplu taşıma olur. İZBAN ve ESHOT arasında hangisinin daha avantajlı olduğu, gideceğiniz semte ve aktarma ihtiyacına göre değişir. Havalimanı otobüslerinde özel tarife uygulandığı için ücret karşılaştırmasını yolculuk öncesi güncel tarifeden kontrol etmek gerekir.
 
 ## Havalimanından Alsancak’a direkt gidilir mi?
 
-Alsancak yönü için en güçlü seçeneklerden biri **İZBAN**. Ayrıca **202 ESHOT** hattı da Cumhuriyet Meydanı/Alsancak yönünde kullanılabilir. Resmî sayfalarda güzergâh ve saatler kontrol edilmelidir. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/SSS/281))
+Alsancak yönü için en güçlü seçeneklerden biri **İZBAN**. Ayrıca **202 ESHOT** hattı da Cumhuriyet Meydanı/Alsancak yönünde kullanılabilir. Resmî sayfalarda güzergâh ve saatler kontrol edilmelidir.
 
 ## Havalimanında gece toplu taşıma var mı?
 
-Havalimanı için ESHOT’un 200, 202, 204 ve 206 numaralı hatları resmi kaynaklarda listeleniyor. Ancak saatler dönemsel olarak değişebildiği için özellikle gece inişlerinde çıkmadan önce sefer kontrolü yapmak gerekir. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+Havalimanı için ESHOT’un 200, 202, 204 ve 206 numaralı hatları resmi kaynaklarda listeleniyor. Ancak saatler dönemsel olarak değişebildiği için özellikle gece inişlerinde çıkmadan önce sefer kontrolü yapmak gerekir.
 
 ## Havalimanından metro var mı?
 
-Doğrudan İzmir Metro hattı havalimanı terminaline gelmiyor; havalimanı bağlantısı **İZBAN banliyö hattı** üzerinden sağlanıyor. Belediye de havalimanı erişiminde “metro-izban” ifadesiyle bu aktarmalı yapıyı anlatıyor. ([dhmi.gov.tr](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx))
+Doğrudan İzmir Metro hattı havalimanı terminaline gelmiyor; havalimanı bağlantısı **İZBAN banliyö hattı** üzerinden sağlanıyor. Belediye de havalimanı erişiminde “metro-izban” ifadesiyle bu aktarmalı yapıyı anlatıyor.
 
 ## Güncel sefer saatleri
 
@@ -157,5 +157,12 @@ Yola çıkmadan önce güncel saatleri kontrol edin. Aşağıdaki sayfalar her g
 - [202 Cumhuriyet Meydanı – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/202/)
 - [204 Bornova Metro – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/204/)
 - [206 Şirinyer Aktarma Merkezi – Havalimanı otobüs saatleri](/toplu-tasima-saatleri/otobus/206/)
+
+## Kaynaklar
+
+- [DHMİ](https://dhmi.gov.tr/sayfalar/havalimani/adnanmenderes/Ulasim.aspx)
+- [İzmir Adnan Menderes Havalimanı](https://cdn.adnanmenderesairport.com/files/1522676484_gelisarrival.pdf)
+- [İzmir Büyükşehir Belediyesi](https://www.izmir.bel.tr/tr/SSS/281)
+- [İzmirim Kart](https://izmirimkart.com.tr/tarife-ve-ucretlendirme)
 
 İzmir’de ulaşım ve şehir içi rota rehberleri için bizi Instagram’da da takip edebilirsiniz: **@izmiruzmani**

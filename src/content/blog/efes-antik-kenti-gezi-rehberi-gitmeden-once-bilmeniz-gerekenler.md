@@ -15,23 +15,23 @@ imageSearchQuery: "Ephesus ancient city"
 
 Efes Antik Kenti, Selçuk’ta yer alan ve tek başına “uğrayıp çıkılacak” bir durak olmaktan çok daha fazlasını sunan büyük bir arkeolojik alan. Gitmeden önce en önemli şey şu: Burası kısa bir fotoğraf molasıyla geçilecek bir yer değil; rahat bir gezi için zaman, su, uygun ayakkabı ve temel bir rota planı gerekiyor.
 
-UNESCO Dünya Miras Listesi’nde yer alan Efes, Helenistik, Roma ve erken Hristiyanlık dönemlerine uzanan çok katmanlı tarihiyle Türkiye’nin en önemli arkeolojik alanlarından biri. Resmî bilgilere göre Efes Örenyeri her gün açık; güncel ziyaret saatleri 08.00–18.00, gişe kapanışı ise 17.30. ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
+UNESCO Dünya Miras Listesi’nde yer alan Efes, Helenistik, Roma ve erken Hristiyanlık dönemlerine uzanan çok katmanlı tarihiyle Türkiye’nin en önemli arkeolojik alanlarından biri. Resmî bilgilere göre Efes Örenyeri her gün açık; güncel ziyaret saatleri 08.00–18.00, gişe kapanışı ise 17.30.
 
 ## Efes Antik Kenti neden bu kadar önemli?
 
-Efes’in önemi yalnızca Celsus Kütüphanesi gibi simge yapılardan gelmiyor. Antik kent, tarih öncesinden Osmanlı dönemine kadar uzanan uzun bir yerleşim geçmişine sahip. UNESCO’ya göre alan, eski liman kenti yapısı, anıtsal Roma dönemi kalıntıları ve Hristiyanlık tarihiyle kurduğu güçlü bağ nedeniyle dünya ölçeğinde istisnai değer taşıyor. Efes, 2015 yılında UNESCO Dünya Miras Listesi’ne kaydedildi. ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
+Efes’in önemi yalnızca Celsus Kütüphanesi gibi simge yapılardan gelmiyor. Antik kent, tarih öncesinden Osmanlı dönemine kadar uzanan uzun bir yerleşim geçmişine sahip. UNESCO’ya göre alan, eski liman kenti yapısı, anıtsal Roma dönemi kalıntıları ve Hristiyanlık tarihiyle kurduğu güçlü bağ nedeniyle dünya ölçeğinde istisnai değer taşıyor. Efes, 2015 yılında UNESCO Dünya Miras Listesi’ne kaydedildi.
 
-Bu yüzden Efes’i gezerken sadece “tek tek yapılar”a değil, kentin bütününe bakmak daha anlamlı olur: liman kenti düzeni, ana caddeler, kamusal yapılar, inanç alanları ve gündelik yaşam izleri aynı alanda bir arada görülebilir. ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
+Bu yüzden Efes’i gezerken sadece “tek tek yapılar”a değil, kentin bütününe bakmak daha anlamlı olur: liman kenti düzeni, ana caddeler, kamusal yapılar, inanç alanları ve gündelik yaşam izleri aynı alanda bir arada görülebilir.
 
 ## Efes Antik Kenti nerede?
 
-Efes Antik Kenti, İzmir’in Selçuk ilçesinde bulunuyor. Resmî adreste alan “Efes Harabeleri, 35920 Selçuk/İzmir” olarak geçiyor. Selçuk, İzmir merkezden günübirlik ulaşımın mümkün olduğu bir ilçe; bu yüzden Efes çoğu ziyaretçi için ya günübirlik rota ya da Selçuk çevresindeki diğer tarih duraklarıyla birlikte planlanan bir gezi oluyor. ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
+Efes Antik Kenti, İzmir’in Selçuk ilçesinde bulunuyor. Resmî adreste alan “Efes Harabeleri, 35920 Selçuk/İzmir” olarak geçiyor. Selçuk, İzmir merkezden günübirlik ulaşımın mümkün olduğu bir ilçe; bu yüzden Efes çoğu ziyaretçi için ya günübirlik rota ya da Selçuk çevresindeki diğer tarih duraklarıyla birlikte planlanan bir gezi oluyor.
 
 ## Efes Antik Kenti’ne nasıl gidilir?
 
 ### İzmir’den İZBAN ile Selçuk’a ulaşım
 
-İzmir’den toplu taşımayla gitmenin en bilinen seçeneklerinden biri İZBAN. İZBAN’ın resmî bilgilerine göre banliyö hattı Aliağa-Selçuk arasında çalışıyor ve Selçuk güney aksının son duraklarından biri. ([izban.com.tr](https://www.izban.com.tr/sayfalar/Single.aspx?MenuId=17))
+İzmir’den toplu taşımayla gitmenin en bilinen seçeneklerinden biri İZBAN. İZBAN’ın resmî bilgilerine göre banliyö hattı Aliağa-Selçuk arasında çalışıyor ve Selçuk güney aksının son duraklarından biri.
 
 Bu nedenle İzmir merkezden gelenler için pratik plan genelde şöyle olur:
 
@@ -45,7 +45,7 @@ Evet, özellikle çevrede birden fazla durak görecekseniz özel araç daha esne
 
 ### Selçuk merkezden ulaşım
 
-Selçuk Belediyesi’nin tanıtım bilgilerinde Efes’e merkezden taksi, dolmuş, bisiklet ve yürüyerek ulaşım seçeneklerinin bulunduğu belirtiliyor. Yürümeyi düşünenler için kritik nokta şu: Mesafe kısa görünse bile sıcak hava ve gün içi yorgunluk hesabı mutlaka yapılmalı. ([selcuk.bel.tr](https://www.selcuk.bel.tr/efes-selcuk))
+Selçuk Belediyesi’nin tanıtım bilgilerinde Efes’e merkezden taksi, dolmuş, bisiklet ve yürüyerek ulaşım seçeneklerinin bulunduğu belirtiliyor. Yürümeyi düşünenler için kritik nokta şu: Mesafe kısa görünse bile sıcak hava ve gün içi yorgunluk hesabı mutlaka yapılmalı.
 
 ## Ziyaret saatleri ve planlama
 
@@ -54,9 +54,9 @@ Kültür ve Turizm Bakanlığı’nın resmî ziyaretçi sayfasına göre Efes �
 - **Her gün açık**
 - **Açılış:** 08.00
 - **Kapanış:** 18.00
-- **Gişe kapanışı:** 17.30 ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
+- **Gişe kapanışı:** 17.30
 
-Bu saatler mevsime veya uygulamaya göre değişebileceği için yola çıkmadan önce resmî sayfayı yeniden kontrol etmek önemli. Özellikle yaz aylarında kalabalık ve sıcak birlikte düşünüldüğünde sabah erken saatler daha konforlu olabilir. ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
+Bu saatler mevsime veya uygulamaya göre değişebileceği için yola çıkmadan önce resmî sayfayı yeniden kontrol etmek önemli. Özellikle yaz aylarında kalabalık ve sıcak birlikte düşünüldüğünde sabah erken saatler daha konforlu olabilir.
 
 ## Efes’i gezerken mutlaka görülmesi gereken yerler
 
@@ -68,7 +68,7 @@ Efes’in en tanınan yapılarından biri. Fotoğraflarda en çok görülen ceph
 
 ### Büyük Tiyatro
 
-UNESCO kayıtlarında da öne çıkan anıtsal yapılardan biri. Kentin ölçeğini hissetmek için en etkileyici duraklardan biri sayılır. ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
+UNESCO kayıtlarında da öne çıkan anıtsal yapılardan biri. Kentin ölçeğini hissetmek için en etkileyici duraklardan biri sayılır.
 
 ### Kuretler Caddesi
 
@@ -80,11 +80,11 @@ Anıtsal cepheleri ve yakın çevresindeki kalıntılarla, kısa sürede çok ş
 
 ### Meryem Kilisesi
 
-Efes’in yalnızca Roma kenti olmadığını, dini tarih açısından da neden önemli kabul edildiğini anlamak için dikkat edilmesi gereken yapılardan biri. UNESCO da alanın Hristiyanlık tarihiyle ilişkisini özellikle vurguluyor. ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
+Efes’in yalnızca Roma kenti olmadığını, dini tarih açısından da neden önemli kabul edildiğini anlamak için dikkat edilmesi gereken yapılardan biri. UNESCO da alanın Hristiyanlık tarihiyle ilişkisini özellikle vurguluyor.
 
 ### Yamaçevler
 
-Roma döneminde seçkin yaşamına dair güçlü ipuçları sunan bu bölüm, standart antik kent gezisinin ötesine geçmek isteyenler için çok değerli. Resmî müze sayfasına göre Yamaçevler, Efes Örenyeri sınırları içinde yer alıyor ve Roma dönemine ait evlerden oluşuyor. ([muze.gov.tr](https://www.muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS02))
+Roma döneminde seçkin yaşamına dair güçlü ipuçları sunan bu bölüm, standart antik kent gezisinin ötesine geçmek isteyenler için çok değerli. Resmî müze sayfasına göre Yamaçevler, Efes Örenyeri sınırları içinde yer alıyor ve Roma dönemine ait evlerden oluşuyor.
 
 ## Efes gezisi için ideal rota nasıl planlanır?
 
@@ -97,7 +97,7 @@ Roma döneminde seçkin yaşamına dair güçlü ipuçları sunan bu bölüm, st
 | İnanç yapıları | Kentin çok katmanlı tarihini kavramak |
 | Yamaçevler gibi özel bölümler | Gündelik yaşam ayrıntılarını görmek |
 
-Eğer vaktiniz sınırlıysa ana odak noktalarını öne alın. Daha uzun bir ziyaret planlıyorsanız Efes Müzesi’ni de programa eklemek iyi fikir olabilir. Çünkü alandan çıkan eserlerin önemli bölümü bugün Efes Müzesi’nde sergileniyor. Müzenin resmî sayfasında Artemis heykelleri, Eros heykelleri, çeşitli mitolojik heykeller ve sikkeler öne çıkan koleksiyonlar arasında sayılıyor. ([muze.gov.tr](https://muze.gov.tr/muze-detay?distid=efm&sectionid=efm01))
+Eğer vaktiniz sınırlıysa ana odak noktalarını öne alın. Daha uzun bir ziyaret planlıyorsanız Efes Müzesi’ni de programa eklemek iyi fikir olabilir. Çünkü alandan çıkan eserlerin önemli bölümü bugün Efes Müzesi’nde sergileniyor. Müzenin resmî sayfasında Artemis heykelleri, Eros heykelleri, çeşitli mitolojik heykeller ve sikkeler öne çıkan koleksiyonlar arasında sayılıyor.
 
 ## Efes gezisi ne kadar sürer?
 
@@ -117,7 +117,7 @@ Gölge alanlar sınırlı olabileceği için su, şapka ve güneş koruması ön
 
 ### 3. Son giriş saatini dikkate alın
 
-Alan açık olsa da gişe kapanış saati daha erken. Bu ayrıntı, geç saatte gitmeyi düşünenler için kritik. ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
+Alan açık olsa da gişe kapanış saati daha erken. Bu ayrıntı, geç saatte gitmeyi düşünenler için kritik.
 
 ### 4. Efes’i çevredeki diğer duraklarla karıştırmayın
 
@@ -127,11 +127,11 @@ Meryem Ana Evi, Efes Müzesi, Ayasuluk Tepesi ve Artemis Tapınağı kalıntıla
 
 ### Efes Müzesi
 
-Antik kentte gördüğünüz yapıları, müzedeki eserlerle tamamlamak isteyenler için en mantıklı eşleşmelerden biri. Özellikle arkeolojik bağlamı daha iyi kurmak isteyenler için geziyi güçlendirir. ([muze.gov.tr](https://muze.gov.tr/muze-detay?distid=efm&sectionid=efm01))
+Antik kentte gördüğünüz yapıları, müzedeki eserlerle tamamlamak isteyenler için en mantıklı eşleşmelerden biri. Özellikle arkeolojik bağlamı daha iyi kurmak isteyenler için geziyi güçlendirir.
 
 ### Meryem Ana Evi
 
-UNESCO kaydında ve kültürel anlatılarda Efes’le bağlantılı önemli hac noktalarından biri olarak geçiyor. Ancak fiziksel olarak ayrı bir ziyaret planı gerektirir. ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
+UNESCO kaydında ve kültürel anlatılarda Efes’le bağlantılı önemli hac noktalarından biri olarak geçiyor. Ancak fiziksel olarak ayrı bir ziyaret planı gerektirir.
 
 ### Ayasuluk ve Selçuk merkezi
 
@@ -145,11 +145,11 @@ Gezi temposuna göre değişir. Sadece ana yapıları görmekle detaylı gezmek 
 
 ## Efes’e İzmir’den toplu taşımayla gidilir mi?
 
-Evet. İZBAN’ın Selçuk hattı sayesinde İzmir’den Selçuk’a toplu taşımayla ulaşmak mümkün. Sonrasında antik kente kısa bir bağlantı gerekir. ([izban.com.tr](https://www.izban.com.tr/sayfalar/Single.aspx?MenuId=17))
+Evet. İZBAN’ın Selçuk hattı sayesinde İzmir’den Selçuk’a toplu taşımayla ulaşmak mümkün. Sonrasında antik kente kısa bir bağlantı gerekir.
 
 ## Efes haftanın hangi günleri açık?
 
-Resmî bilgiye göre her gün açık. ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
+Resmî bilgiye göre her gün açık.
 
 ## Efes’e giderken en önemli hazırlık ne?
 
@@ -157,9 +157,16 @@ Rahat ayakkabı, su, hava durumuna uygun kıyafet ve önceden kontrol edilmiş z
 
 ## Resmî kaynaklar
 
-- Kültür ve Turizm Bakanlığı Efes Örenyeri sayfası: ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
-- UNESCO Ephesus kaydı: ([whc.unesco.org](https://whc.unesco.org/en/list/1018))
-- İZBAN resmî hat bilgileri: ([izban.com.tr](https://www.izban.com.tr/sayfalar/Single.aspx?MenuId=17))
-- Efes Müzesi resmî sayfası: ([muze.gov.tr](https://muze.gov.tr/muze-detay?distid=efm&sectionid=efm01))
+- Kültür ve Turizm Bakanlığı Efes Örenyeri sayfası:
+- UNESCO Ephesus kaydı:
+- İZBAN resmî hat bilgileri:
+- Efes Müzesi resmî sayfası:
+
+## Kaynaklar
+
+- [UNESCO Dünya Mirası Merkezi](https://whc.unesco.org/en/list/1018)
+- [Müze.gov.tr (Kültür ve Turizm Bakanlığı)](https://muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01)
+- [İZBAN](https://www.izban.com.tr/sayfalar/Single.aspx?MenuId=17)
+- [Selçuk Belediyesi](https://www.selcuk.bel.tr/efes-selcuk)
 
 Selçuk ve İzmir’de tarih odaklı yeni rotalar arıyorsanız, güncel içerikler için Instagram’da **@izmiruzmani** hesabına da göz atabilirsiniz.

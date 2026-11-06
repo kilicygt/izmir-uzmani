@@ -23,7 +23,7 @@ Yağmurlu günlerde en rahat yaklaşım, açık alan ağırlıklı uzun rotalar 
 - **Kafe + kitapçı + kısa yürüyüş planı**
 - **Vapurla semt değiştirip kapalı mekâna geçilen rota**
 
-İzmir’de toplu ulaşım açısından bu planları kurmak da görece kolaydır. İzmirim Kart, otobüs, metro, tramvay ve vapurda kullanılabiliyor; ayrıca ilk binişten sonra **90 dakika aktarma süresi** uygulanıyor. Bu yüzden yağmurlu havada tek bir semtte sıkışmak yerine, aktarmalı kısa bir şehir turu yapmak mümkün. Resmî tarifeler ve aktarma kuralları için güncel bilgiler İzmirim Kart ve ilgili ulaşım kurumlarının duyurularından kontrol edilmeli. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/aktarmali-ulasim-kurallari))
+İzmir’de toplu ulaşım açısından bu planları kurmak da görece kolaydır. İzmirim Kart, otobüs, metro, tramvay ve vapurda kullanılabiliyor; ayrıca ilk binişten sonra **90 dakika aktarma süresi** uygulanıyor. Bu yüzden yağmurlu havada tek bir semtte sıkışmak yerine, aktarmalı kısa bir şehir turu yapmak mümkün. Resmî tarifeler ve aktarma kuralları için güncel bilgiler İzmirim Kart ve ilgili ulaşım kurumlarının duyurularından kontrol edilmeli.
 
 ## 1) Müze gezmek: Yağmurlu günün en güvenli seçeneği
 
@@ -31,15 +31,15 @@ Yağmurlu günlerde en rahat yaklaşım, açık alan ağırlıklı uzun rotalar 
 
 ### İzmir Arkeoloji Müzesi
 
-Kapalı mekânda uzun süre geçirilebilecek en güçlü seçeneklerden biri. İzmir ve çevresindeki antik kentlerden gelen eserleri görmek isteyenler için klasik ama hâlâ işlevli bir durak. Müzenin güncel ziyaret bilgileri Kültür ve Turizm Bakanlığı’nın müze sayfasında yer alıyor; kış sezonu ziyaret saatleri ayrıca İzmir İl Kültür ve Turizm Müdürlüğü listesinde yayınlanıyor. ([muze.gov.tr](https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=IZA02))
+Kapalı mekânda uzun süre geçirilebilecek en güçlü seçeneklerden biri. İzmir ve çevresindeki antik kentlerden gelen eserleri görmek isteyenler için klasik ama hâlâ işlevli bir durak. Müzenin güncel ziyaret bilgileri Kültür ve Turizm Bakanlığı’nın müze sayfasında yer alıyor; kış sezonu ziyaret saatleri ayrıca İzmir İl Kültür ve Turizm Müdürlüğü listesinde yayınlanıyor.
 
 ### İzmir Kültür Sanat Fabrikası içindeki müzeler
 
-Eski Alsancak Tekel Fabrikası yerleşkesindeki müze alanları, yağmurlu gün için en pratik alternatiflerden biri. Hem kapalı gezi imkânı sunuyor hem de tek noktada birden fazla sergi/müze deneyimi sağlıyor. Resmî ücret bilgisinde bu alan için **Müzekart ile giriş** bilgisi yer alıyor. ([kvmgm.ktb.gov.tr](https://kvmgm.ktb.gov.tr/TR-44102/izmir-muze-mudurlugu.html))
+Eski Alsancak Tekel Fabrikası yerleşkesindeki müze alanları, yağmurlu gün için en pratik alternatiflerden biri. Hem kapalı gezi imkânı sunuyor hem de tek noktada birden fazla sergi/müze deneyimi sağlıyor. Resmî ücret bilgisinde bu alan için **Müzekart ile giriş** bilgisi yer alıyor.
 
 ### Atatürk Müzesi
 
-Alsancak tarafında kısa ve odaklı bir ziyaret isteyenler için iyi bir seçenek. Ancak burada kritik nokta şu: resmî ücretlendirme sayfasında müzenin **24 Kasım 2026 tarihine kadar kapalı** olduğu bilgisi yer alıyor. Bu nedenle yağmurlu gün planı yaparken açık kabul edilmemeli; gitmeden önce yeniden kontrol etmek gerekir. ([dosim.ktb.gov.tr](https://dosim.ktb.gov.tr/TR-218202/muze-ve-oren-yeri-ucretleri.html))
+Alsancak tarafında kısa ve odaklı bir ziyaret isteyenler için iyi bir seçenek. Ancak burada kritik nokta şu: resmî ücretlendirme sayfasında müzenin **24 Kasım 2026 tarihine kadar kapalı** olduğu bilgisi yer alıyor. Bu nedenle yağmurlu gün planı yaparken açık kabul edilmemeli; gitmeden önce yeniden kontrol etmek gerekir.
 
 ## 2) Sergi veya konser programına bakmak
 
@@ -47,11 +47,11 @@ Yağmurlu havada “gezeyim ama müze kadar durağan olmasın” diyorsanız, k�
 
 ### Ahmed Adnan Saygun Sanat Merkezi
 
-AASSM, özellikle konser, dinleti, sergi veya etkinlik akşamı olan günlerde çok iyi bir yağmurlu hava durağına dönüşür. Resmî sayfada merkeze çeşitli ESHOT hatlarıyla ulaşım bilgisi de veriliyor; bu da özel araç kullanmadan gitmeyi kolaylaştırıyor. Gitmeden önce aynı gün programını kontrol etmek önemli. ([izmir.art](https://www.izmir.art/tr/ahmed-adnan-saygun-sanat-merkezi-aassm))
+AASSM, özellikle konser, dinleti, sergi veya etkinlik akşamı olan günlerde çok iyi bir yağmurlu hava durağına dönüşür. Resmî sayfada merkeze çeşitli ESHOT hatlarıyla ulaşım bilgisi de veriliyor; bu da özel araç kullanmadan gitmeyi kolaylaştırıyor. Gitmeden önce aynı gün programını kontrol etmek önemli.
 
 ### Arkas Sanat Merkezi ve benzeri sergi alanları
 
-Alsancak tarafında sergi gezmeyi sevenler için iyi bir alternatif. Ancak sergi tarihleri ve ziyaret saatleri dönemsel olarak değişebildiği için, sabit bir öneri gibi değil, **güncel program kontrol edilerek** değerlendirilmesi gereken bir seçenek olarak düşünülmeli. Arkas’ın İzmir’de birden fazla sanat mekânı bulunduğu da resmî site bilgisinde yer alıyor. ([arkassanatmerkezi.com](https://arkassanatmerkezi.com/en))
+Alsancak tarafında sergi gezmeyi sevenler için iyi bir alternatif. Ancak sergi tarihleri ve ziyaret saatleri dönemsel olarak değişebildiği için, sabit bir öneri gibi değil, **güncel program kontrol edilerek** değerlendirilmesi gereken bir seçenek olarak düşünülmeli. Arkas’ın İzmir’de birden fazla sanat mekânı bulunduğu da resmî site bilgisinde yer alıyor.
 
 ## 3) Yağmurda kısa ama keyifli bir vapur planı yapmak
 
@@ -63,7 +63,7 @@ Alsancak tarafında sergi gezmeyi sevenler için iyi bir alternatif. Ancak sergi
 2. Kısa bir vapur yolculuğu yapın.
 3. Karşı kıyıda açık alan yerine kapalı bir mekâna, kafeye veya sergi alanına geçin.
 
-Bu planın pratik olmasının nedeni, İzmirim Kart’ın vapur dahil kent içi ulaşımda geçerli olması. Vapura dayalı rota kurarken sefer saatlerini o gün ayrıca kontrol etmek gerekir; yağış ve işletme koşulları planlı saatlerde değişiklik yaratabilir. ([izmirimkart.com.tr](https://www.izmirimkart.com.tr/?v=1.0.23))
+Bu planın pratik olmasının nedeni, İzmirim Kart’ın vapur dahil kent içi ulaşımda geçerli olması. Vapura dayalı rota kurarken sefer saatlerini o gün ayrıca kontrol etmek gerekir; yağış ve işletme koşulları planlı saatlerde değişiklik yaratabilir.
 
 ## 4) Kültürpark çevresinde kapalı ağırlıklı bir gün geçirmek
 
@@ -76,7 +76,7 @@ Burada plan şu şekilde kurulabilir:
 - Yağmur hafiflerse kısa park içi yürüyüş
 - Ardından metro veya tramvayla başka bir kapalı noktaya geçiş
 
-İzmir Tarih ve Sanat Müzesi de bu bölgedeki önemli duraklardan biri olarak öne çıkıyor. Müzenin varlığı ve konumu Bakanlık kaynaklarında yer alıyor; ziyaret öncesi güncel saat bilgisinin ayrıca kontrol edilmesi iyi olur. ([kvmgm.ktb.gov.tr](https://kvmgm.ktb.gov.tr/Eklenti/93896%2Cizmir-tarih-ve-sanat-muzesipdf.pdf?0=))
+İzmir Tarih ve Sanat Müzesi de bu bölgedeki önemli duraklardan biri olarak öne çıkıyor. Müzenin varlığı ve konumu Bakanlık kaynaklarında yer alıyor; ziyaret öncesi güncel saat bilgisinin ayrıca kontrol edilmesi iyi olur.
 
 ## 5) “Islanmadan çok yer göreyim” diyenler için pratik rota önerileri
 
@@ -101,10 +101,10 @@ Burada plan şu şekilde kurulabilir:
 ## Yağmurlu havada plan yaparken nelere dikkat edilmeli?
 
 ### Müze saatleri mevsime göre değişebilir
-İzmir’de müze ve örenyeri ziyaret saatleri yaz-kış dönemine göre farklılaşıyor. 1 Ekim 2026 ile 1 Nisan 2027 arasındaki kış dönemi için ayrı liste yayınlanmış durumda. Bu nedenle “genelde açıktır” varsayımıyla hareket etmek yerine, gideceğiniz yerin o günkü durumunu kontrol etmek daha doğru olur. ([izmir.ktb.gov.tr](https://izmir.ktb.gov.tr/TR-77092/izmir-ili-muze-ve-oren-yerleri-ziyaret-saatleri.html))
+İzmir’de müze ve örenyeri ziyaret saatleri yaz-kış dönemine göre farklılaşıyor. 1 Ekim 2026 ile 1 Nisan 2027 arasındaki kış dönemi için ayrı liste yayınlanmış durumda. Bu nedenle “genelde açıktır” varsayımıyla hareket etmek yerine, gideceğiniz yerin o günkü durumunu kontrol etmek daha doğru olur.
 
 ### Her yağmurlu günde açık alan planı mantıklı değil
-Agora, Efes, Teos gibi önemli yerler İzmir programlarında sık geçer; ama bunlar yağmurlu havada ilk tercih olmayabilir. Özellikle örenyerleri yağışta hem deneyim hem konfor açısından zayıflayabilir. Bu nedenle yağmurlu günlerde şehir içindeki kapalı kültür durakları daha verimli olur. Resmî kaynaklar bu alanların ziyaret saatlerini verse de, uygunluk açısından karar ziyaret gününün hava durumuna göre verilmeli. ([muze.gov.tr](https://www.muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01))
+Agora, Efes, Teos gibi önemli yerler İzmir programlarında sık geçer; ama bunlar yağmurlu havada ilk tercih olmayabilir. Özellikle örenyerleri yağışta hem deneyim hem konfor açısından zayıflayabilir. Bu nedenle yağmurlu günlerde şehir içindeki kapalı kültür durakları daha verimli olur. Resmî kaynaklar bu alanların ziyaret saatlerini verse de, uygunluk açısından karar ziyaret gününün hava durumuna göre verilmeli.
 
 ## Sık sorulan soru: İzmir’de yağmurda çocukla ne yapılır?
 
@@ -126,5 +126,15 @@ Agora, Efes, Teos gibi önemli yerler İzmir programlarında sık geçer; ama bu
 - **Kültürpark, Konak ve Alsancak çevresinde kapalı ağırlıklı rota kurmak**
 
 En kritik nokta ise şu: müze saatleri, etkinlik takvimi ve bazı mekânların açık/kapalı durumu değişebildiği için, yola çıkmadan önce mutlaka resmî kaynaklardan son durumu kontrol edin.
+
+## Kaynaklar
+
+- [İzmirim Kart](https://www.izmirimkart.com.tr/aktarmali-ulasim-kurallari)
+- [Müze.gov.tr (Kültür ve Turizm Bakanlığı)](https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=IZA02)
+- [Kültür Varlıkları ve Müzeler Genel Müdürlüğü](https://kvmgm.ktb.gov.tr/TR-44102/izmir-muze-mudurlugu.html)
+- [DÖSİM](https://dosim.ktb.gov.tr/TR-218202/muze-ve-oren-yeri-ucretleri.html)
+- [İzmir Kültür Sanat](https://www.izmir.art/tr/ahmed-adnan-saygun-sanat-merkezi-aassm)
+- [Arkas Sanat Merkezi](https://arkassanatmerkezi.com/en)
+- [İzmir İl Kültür ve Turizm Müdürlüğü](https://izmir.ktb.gov.tr/TR-77092/izmir-ili-muze-ve-oren-yerleri-ziyaret-saatleri.html)
 
 İzmir’de semt semt daha pratik rota fikirleri için @izmiruzmani hesabına da göz atabilirsiniz.

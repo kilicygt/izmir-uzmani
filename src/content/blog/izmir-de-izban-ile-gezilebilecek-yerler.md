@@ -19,8 +19,7 @@ Aşağıda, şehir içi kısa rota ile günübirlik uzun rota seçeneklerini ayr
 
 ## İZBAN ile gezi planlarken bilinmesi gerekenler
 
-İZBAN’ın resmî sitesinde sistemin **05:20’de başladığı** ve **son istasyona varışın 01:23** olduğu görülüyor. Güncel sefer planı ve istasyon bilgileri yolculuk öncesi ayrıca kontrol edilmeli. İZBAN ayrıca “İstasyonlar”, “Sefer Saatleri” ve “Aktarmalı Ulaşım” başlıklarıyla resmî rota planlaması sunuyor.  
-Kaynaklar: [İZBAN ana sayfa](https://www.izban.com.tr/), [Sefer bilgileri](https://www.izban.com.tr/sayfalar/SeferSaatleri.aspx?MenuId=22)
+İZBAN’ın resmî sitesinde sistemin **05:20’de başladığı** ve **son istasyona varışın 01:23** olduğu görülüyor. Güncel sefer planı ve istasyon bilgileri yolculuk öncesi ayrıca kontrol edilmeli. İZBAN ayrıca “İstasyonlar”, “Sefer Saatleri” ve “Aktarmalı Ulaşım” başlıklarıyla resmî rota planlaması sunuyor.
 
 Gezi açısından kritik nokta şu:
 
@@ -28,8 +27,7 @@ Gezi açısından kritik nokta şu:
 - En verimli kullanım biçimi **İZBAN + Metro** veya **İZBAN + kısa yürüyüş**
 - Özellikle **Hilal** ve **Halkapınar**, şehir içi gezide en önemli aktarma noktaları arasında
 
-İzmir Metro tarafında **Konak, Çankaya, Basmane, Hilal ve Halkapınar** istasyonları merkez rotalar için kritik bağlantılar arasında yer alıyor.  
-Kaynak: [İzmir Metro kurumsal dokümanları](https://www.izmirmetro.com.tr/)
+İzmir Metro tarafında **Konak, Çankaya, Basmane, Hilal ve Halkapınar** istasyonları merkez rotalar için kritik bağlantılar arasında yer alıyor.
 
 ## Şehir merkezinde İZBAN ile gezilebilecek yerler
 
@@ -44,8 +42,7 @@ Kaynak: [İzmir Metro kurumsal dokümanları](https://www.izmirmetro.com.tr/)
 - **Alsancak sokakları**
 - **İzmir Kültür Sanat Fabrikası**
 
-Kültür ve Turizm Bakanlığı’na bağlı **İzmir Kültür Sanat Fabrikası**, 2023’te resmî açılışı yapılan önemli bir kültür kompleksi. Arkeoloji ve Etnografya Müzesi, Resim ve Heykel Müzesi, kütüphaneler ve etkinlik alanlarını aynı yerleşkede topluyor.  
-Kaynak: [Müze resmî sayfası](https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=ITK01)
+Kültür ve Turizm Bakanlığı’na bağlı **İzmir Kültür Sanat Fabrikası**, 2023’te resmî açılışı yapılan önemli bir kültür kompleksi. Arkeoloji ve Etnografya Müzesi, Resim ve Heykel Müzesi, kütüphaneler ve etkinlik alanlarını aynı yerleşkede topluyor.
 
 Bu rota kimler için uygun?
 
@@ -63,8 +60,7 @@ Burada görülebilecek temel yerler:
 - **İzmir Saat Kulesi**
 - Kısa yürüyüşle **Kemeraltı çevresi**
 
-İzmir Büyükşehir Belediyesi’nin resmî içeriğine göre **Saat Kulesi**, kentin simge yapılarından biri. Belediye kaynaklarında kulenin tarihsel anlatımı ayrıntılı biçimde yer alıyor; ayrıca son dönemde yayımlanan belediye haberlerinde yapının **125. yılına** vurgu yapılıyor.  
-Kaynaklar: [Saat Kulesi sayfası](https://www.izmir.bel.tr/tr/SaatKulesi/208), [Belediye haberi](https://izmir.bel.tr/tr/Haberler/saat-kulesi-125-yildir-izmir-in-zamanina-taniklik-ediyor/59279/156)
+İzmir Büyükşehir Belediyesi’nin resmî içeriğine göre **Saat Kulesi**, kentin simge yapılarından biri. Belediye kaynaklarında kulenin tarihsel anlatımı ayrıntılı biçimde yer alıyor; ayrıca son dönemde yayımlanan belediye haberlerinde yapının **125. yılına** vurgu yapılıyor.
 
 Bu rota, “İzmir’e geldim, önce nereden başlamalıyım?” diyenler için en klasik seçenek.
 
@@ -72,8 +68,7 @@ Bu rota, “İzmir’e geldim, önce nereden başlamalıyım?” diyenler için 
 
 Konak merkezli gezinin en iyi devam rotalarından biri **Kemeraltı + Agora** hattı. İZBAN sizi doğrudan Agora kapısına bırakmaz; fakat merkez aktarması sayesinde ulaşım oldukça pratiktir.
 
-**İzmir Agora Örenyeri**, Kültür ve Turizm Bakanlığı’nın resmî tanımına göre Smyrna’nın Helenistik ve Roma dönemlerinde idari, sosyal ve kültürel işlevler taşıyan kent merkezlerinden biridir. Ziyaret saatleri dönemsel değişebildiği için gitmeden önce resmî sayfa kontrol edilmeli.  
-Kaynak: [Agora Örenyeri](https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=AGR01&sa=X&ved=2ahUKEwiRndrzvsiFAxUFSpEFHdxhDSsQyK4DegQIAxAl)
+**İzmir Agora Örenyeri**, Kültür ve Turizm Bakanlığı’nın resmî tanımına göre Smyrna’nın Helenistik ve Roma dönemlerinde idari, sosyal ve kültürel işlevler taşıyan kent merkezlerinden biridir. Ziyaret saatleri dönemsel değişebildiği için gitmeden önce resmî sayfa kontrol edilmeli.
 
 Bu bölge neden iyi bir seçenek?
 
@@ -83,11 +78,9 @@ Bu bölge neden iyi bir seçenek?
 
 ## 4) Kültürpark ve İzmir Tarih ve Sanat Müzesi
 
-İZBAN’dan şehir içi aktarmayla ulaşılabilecek en mantıklı duraklardan biri de **Kültürpark çevresi**. İzmir Büyükşehir Belediyesi kent rehberinde **Kültürpark**, kentin önemli kültürel alanları arasında listeleniyor.  
-Kaynak: [İzmir kent rehberi PDF](https://izmir.bel.tr/CKYuklenen/icerik_sayfalari/Yeni_Klasor/Kentrehberi_i%C3%A72.pdf)
+İZBAN’dan şehir içi aktarmayla ulaşılabilecek en mantıklı duraklardan biri de **Kültürpark çevresi**. İzmir Büyükşehir Belediyesi kent rehberinde **Kültürpark**, kentin önemli kültürel alanları arasında listeleniyor.
 
-Kültürpark içinde yer alan **İzmir Tarih ve Sanat Müzesi**, belediye tanıtım sayfasında üç ana bölümle anlatılıyor: taş eserler, seramik eserler ve kıymetli eserler.  
-Kaynak: [Visit İzmir içeriği](https://testvisitizmir.izmir.bel.tr/tr/Icerik/240)
+Kültürpark içinde yer alan **İzmir Tarih ve Sanat Müzesi**, belediye tanıtım sayfasında üç ana bölümle anlatılıyor: taş eserler, seramik eserler ve kıymetli eserler.
 
 Bu rota özellikle şu durumlarda iyi çalışır:
 
@@ -99,8 +92,7 @@ Bu rota özellikle şu durumlarda iyi çalışır:
 
 İZBAN ile doğrudan kapısına kadar gidemeseniz de, merkezi aktarmayla en rahat ulaşılan klasik noktalardan biri **Tarihi Asansör**.
 
-İzmir Büyükşehir Belediyesi’nin Visit İzmir içeriğinde, asansörün seyir terasıyla öne çıktığı; ayrıca **haftanın 7 günü 08.00–24.00** arasında kullanılabildiği ve yukarı çıkışın ücretsiz olduğu belirtiliyor. Saatler değişebileceği için gitmeden önce güncel durum kontrol edilmeli.  
-Kaynak: [Tarihi Asansör bilgisi](https://testvisitizmir.izmir.bel.tr/tr/Icerik/240)
+İzmir Büyükşehir Belediyesi’nin Visit İzmir içeriğinde, asansörün seyir terasıyla öne çıktığı; ayrıca **haftanın 7 günü 08.00–24.00** arasında kullanılabildiği ve yukarı çıkışın ücretsiz olduğu belirtiliyor. Saatler değişebileceği için gitmeden önce güncel durum kontrol edilmeli.
 
 Bu rota neden seviliyor?
 
@@ -112,11 +104,9 @@ Bu rota neden seviliyor?
 
 ## 6) Selçuk ve Efes
 
-İZBAN’ın gezi açısından en güçlü taraflarından biri, sizi **Selçuk** hattına kadar götürebilmesi. Kent rehberinde Selçuk bölümünde **Efes-Efes Müzesi**, **İsabey Camisi**, **Meryem Ana Evi**, **St. Jean Bazilikası** ve **Şirince** gibi önemli duraklar listeleniyor.  
-Kaynak: [İzmir kent rehberi PDF](https://izmir.bel.tr/CKYuklenen/icerik_sayfalari/Yeni_Klasor/Kentrehberi_i%C3%A72.pdf)
+İZBAN’ın gezi açısından en güçlü taraflarından biri, sizi **Selçuk** hattına kadar götürebilmesi. Kent rehberinde Selçuk bölümünde **Efes-Efes Müzesi**, **İsabey Camisi**, **Meryem Ana Evi**, **St. Jean Bazilikası** ve **Şirince** gibi önemli duraklar listeleniyor.
 
-Burada en bilinen ana durak **Efes Örenyeri**. Kültür ve Turizm Bakanlığı’nın resmî sayfasına göre Efes, tarih öncesinden Osmanlı dönemine kadar kesintisiz yerleşim görmüş, bilim, kültür ve ticarette önemli rol oynamış büyük bir antik merkez. Ziyaret saatleri mevsime göre değişebildiği için yola çıkmadan önce resmî sayfaya bakmak şart.  
-Kaynak: [Efes Örenyeri](https://www.muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01)
+Burada en bilinen ana durak **Efes Örenyeri**. Kültür ve Turizm Bakanlığı’nın resmî sayfasına göre Efes, tarih öncesinden Osmanlı dönemine kadar kesintisiz yerleşim görmüş, bilim, kültür ve ticarette önemli rol oynamış büyük bir antik merkez. Ziyaret saatleri mevsime göre değişebildiği için yola çıkmadan önce resmî sayfaya bakmak şart.
 
 Bu rota kimler için en uygun?
 
@@ -130,8 +120,7 @@ Bu rota kimler için en uygun?
 
 Daha az bilinen ama toplu taşımayla kültür odaklı rota arayanlar için **Torbalı - Metropolis** hattı dikkat çekici.
 
-İzmir kent rehberinde **Metropolis Antik Yerleşimi** Torbalı bölümünde yer alıyor. Bakanlığın resmî müze sayfası da **Metropolis Örenyeri**ni açık biçimde doğruluyor ve alanın Torbalı ilçesinde bulunduğunu belirtiyor.  
-Kaynaklar: [Kent rehberi](https://izmir.bel.tr/CKYuklenen/icerik_sayfalari/Yeni_Klasor/Kentrehberi_i%C3%A72.pdf), [Metropolis Örenyeri](https://muze.gov.tr/muze-detay?distId=MRK&sectionId=IME01)
+İzmir kent rehberinde **Metropolis Antik Yerleşimi** Torbalı bölümünde yer alıyor. Bakanlığın resmî müze sayfası da **Metropolis Örenyeri**ni açık biçimde doğruluyor ve alanın Torbalı ilçesinde bulunduğunu belirtiyor.
 
 Bu rota şu yüzden iyi:
 
@@ -191,5 +180,19 @@ Evet. Şehir içinde kısa gezi için **Alsancak, Konak, Kültürpark**; tüm g�
 ## İZBAN ile sadece merkez mi gezilir?
 
 Hayır. Merkez dışında **Selçuk** ve **Torbalı** gibi daha uzun kültür rotaları da kurulabilir. Ama bu tür planlarda ikinci aşama ulaşım önemlidir.
+
+## Kaynaklar
+
+- [İZBAN](https://www.izban.com.tr/)
+- [İZBAN sefer saatleri](https://www.izban.com.tr/sayfalar/SeferSaatleri.aspx?MenuId=22)
+- [İzmir Metro](https://www.izmirmetro.com.tr/)
+- [İzmir Kültür Sanat Fabrikası (Müze.gov.tr)](https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=ITK01)
+- [İzmir Büyükşehir Belediyesi – Saat Kulesi](https://www.izmir.bel.tr/tr/SaatKulesi/208)
+- [İzmir Büyükşehir Belediyesi – Saat Kulesi 125 yaşında](https://izmir.bel.tr/tr/Haberler/saat-kulesi-125-yildir-izmir-in-zamanina-taniklik-ediyor/59279/156)
+- [Agora Örenyeri](https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=AGR01)
+- [İzmir Büyükşehir Belediyesi kent rehberi (PDF)](https://izmir.bel.tr/CKYuklenen/icerik_sayfalari/Yeni_Klasor/Kentrehberi_i%C3%A72.pdf)
+- [Visit İzmir](https://www.visitizmir.org/tr/Icerik/240)
+- [Efes Örenyeri](https://www.muze.gov.tr/muze-detay?DistId=EFS&SectionId=EFS01)
+- [Metropolis Örenyeri](https://muze.gov.tr/muze-detay?distId=MRK&sectionId=IME01)
 
 Güncel ulaşım düzenlerini kontrol ederek rota kurmak isterseniz önce İZBAN’ın resmî istasyon ve sefer sayfalarına bakın. İzmir’de toplu taşımayla gezi rotaları için daha fazla içerik yakında İzmir Uzmanı’nda olacak. İsterseniz Instagram’da da takip edebilirsiniz: **@izmiruzmani**
