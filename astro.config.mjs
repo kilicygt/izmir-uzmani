@@ -10,6 +10,7 @@ export default defineConfig({
   redirects: {
     '/rehberler/izmir-saat-kulesi-nin-tarihi-ve-bilinmeyen-hik-yesi': '/rehberler/izmir-saat-kulesi-nin-tarihi-ve-bilinmeyen-hikayesi',
     '/rehberler/tarihi-asansor-un-hik-yesi-ve-ziyaret-rehberi': '/rehberler/tarihi-asansor-un-hikayesi-ve-ziyaret-rehberi',
+    '/rehberler/izmirde-metro-ve-tramvay-nasil-kullanilir': '/toplu-tasima-saatleri/metro',
   },
   integrations: [sitemap()],
   markdown: { rehypePlugins: [rehypeStripUtm, rehypeDemoteH1] },
