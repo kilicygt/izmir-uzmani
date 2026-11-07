@@ -6,6 +6,8 @@ category: "Şehir Rehberi"
 readTime: "6 dk"
 tags: ["İzmir", "Sahil", "Yürüyüş", "Kordon", "Karşıyaka"]
 featured: false
+image: "/images/blog/izmir-de-sahil-boyunca-yuruyus-yapilacak-yerler.webp"
+imageAlt: "Kordon'da deniz kenarındaki yürüyüş yolu, bisiklet yolu ve yeşil alanlar"
 seoTitle: "İzmir Sahil Yürüyüş Yerleri: En İyi Rotalar"
 seoDescription: "İzmir’de sahil boyunca yürüyüş yapılacak yerleri keşfedin. Kordon, Bostanlı, Karşıyaka, İnciraltı ve Güzelbahçe için pratik rota önerileri burada."
 imageSearchQuery: "Izmir coastline"
@@ -19,7 +21,7 @@ Bu rehberde, **izmir sahil yürüyüş yerleri** arayanlar için gerçekten işl
 
 ## 1) Kordon: İlk akla gelen klasik sahil yürüyüşü
 
-Alsancak ile Konak arasındaki Kordonboyu, İzmir’de deniz kenarında yürüyüş denince hâlâ ilk sırada. Büyükşehir Belediyesi, bu hattı yeşil alanlar, oturma noktaları, yürüyüş alanları ve bisiklet parkuruyla tanımlıyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/DinlenmeAlanlariVeYuruyusParkurlari/61/120?utm_source=openai))
+Alsancak ile Konak arasındaki Kordonboyu, İzmir’de deniz kenarında yürüyüş denince hâlâ ilk sırada. Büyükşehir Belediyesi, bu hattı yeşil alanlar, oturma noktaları, yürüyüş alanları ve bisiklet parkuruyla tanımlıyor.
 
 ### Kordon neden tercih ediliyor?
 
@@ -38,7 +40,7 @@ Kordon özellikle kısa ve orta uzunlukta yürüyüşler için iyi bir seçenek.
 
 ## 2) Karşıyaka Sahili: Uzun, ferah ve ritmi daha sakin
 
-Karşıyaka kıyı hattı, şehir merkezindeki yoğunluk olmadan uzun yürüyüş yapmak isteyenler için öne çıkıyor. İzmir Büyükşehir Belediyesi’nin sahil düzenlemeleri kapsamında Karşıyaka ve çevresindeki kıyı alanları yürüyüş ve spor için kullanılan ana hatlardan biri. ([izmir.bel.tr](https://izmir.bel.tr/en/RecreationAndSportsAreas/298/2159?utm_source=openai))
+Karşıyaka kıyı hattı, şehir merkezindeki yoğunluk olmadan uzun yürüyüş yapmak isteyenler için öne çıkıyor. İzmir Büyükşehir Belediyesi’nin sahil düzenlemeleri kapsamında Karşıyaka ve çevresindeki kıyı alanları yürüyüş ve spor için kullanılan ana hatlardan biri.
 
 Karşıyaka sahilinde yürürken denizle temas daha sürekli hissediliyor. Özellikle iskele çevresi ile Bostanlı yönü arasında yürümek, kalabalık ama bunaltmayan bir sahil deneyimi sunuyor.
 
@@ -51,7 +53,7 @@ Karşıyaka sahilinde yürürken denizle temas daha sürekli hissediliyor. Özel
 
 ## 3) Bostanlı Sahili: Gün batımı ve uzun tempo yürüyüşü için
 
-Bostanlı, İzmir’de sahilde yürüyüş yapılacak yerler arasında son yıllarda en çok tercih edilen noktalardan biri. Belediyenin rekreasyon alanı düzenlemeleri içinde Bostanlı sahili; yürüyüş, koşu ve açık hava kullanımı açısından özel olarak öne çıkıyor. ([izmir.bel.tr](https://izmir.bel.tr/tr/DinlenmeAlanlariVeYuruyusParkurlari/61/120?utm_source=openai))
+Bostanlı, İzmir’de sahilde yürüyüş yapılacak yerler arasında son yıllarda en çok tercih edilen noktalardan biri. Belediyenin rekreasyon alanı düzenlemeleri içinde Bostanlı sahili; yürüyüş, koşu ve açık hava kullanımı açısından özel olarak öne çıkıyor.
 
 Burada yürüyüş deneyimi biraz daha “şehir parkı + deniz kıyısı” hissi veriyor. Kıyı boyunca farklı oturma alanları, geniş açıklıklar ve durup manzaraya bakabileceğiniz noktalar bulunuyor.
 
@@ -66,7 +68,7 @@ Burada yürüyüş deneyimi biraz daha “şehir parkı + deniz kıyısı” his
 
 ## 4) Göztepe – Karantina – Karataş hattı: Mahalle dokusu olan sahil yürüyüşü
 
-Daha yerel his veren bir rota arıyorsanız Göztepe, Karantina ve Karataş hattı iyi bir alternatif. Bu bölüm, kıyı boyunca yürüyüş yapılabilen uzun İzmir sahil bandının parçalarından biri. Büyükşehir Belediyesi’nin kıyı düzenlemelerinde bu kesim de sahil kullanım zincirinin önemli durakları arasında yer alıyor. ([izmir.bel.tr](https://izmir.bel.tr/tr/Projeler/1277/4?utm_source=openai))
+Daha yerel his veren bir rota arıyorsanız Göztepe, Karantina ve Karataş hattı iyi bir alternatif. Bu bölüm, kıyı boyunca yürüyüş yapılabilen uzun İzmir sahil bandının parçalarından biri. Büyükşehir Belediyesi’nin kıyı düzenlemelerinde bu kesim de sahil kullanım zincirinin önemli durakları arasında yer alıyor.
 
 Bu hatta yürürken Kordon’daki kadar turistik bir kalabalık yerine daha çok mahalle yaşamı, deniz kıyısı ve günlük şehir ritmi hissediliyor.
 
@@ -78,7 +80,7 @@ Bu hatta yürürken Kordon’daki kadar turistik bir kalabalık yerine daha çok
 
 ## 5) İnciraltı: Daha doğal ve geniş alan hissi isteyenlere
 
-İnciraltı Rekreasyon Alanı ve İnciraltı Kent Ormanı bağlantısı, daha uzun ve daha açık alan hissi veren yürüyüşler için güçlü bir seçenek. Belediyenin açıklamalarına göre sahilden başlayan yürüyüş ve bisiklet yolu, İnciraltı Kent Ormanı’na bağlanıyor. ([izmir.bel.tr](https://www.izmir.bel.tr/tr/DinlenmeAlanlariVeYuruyusParkurlari/61/120?utm_source=openai))
+İnciraltı Rekreasyon Alanı ve İnciraltı Kent Ormanı bağlantısı, daha uzun ve daha açık alan hissi veren yürüyüşler için güçlü bir seçenek. Belediyenin açıklamalarına göre sahilden başlayan yürüyüş ve bisiklet yolu, İnciraltı Kent Ormanı’na bağlanıyor.
 
 Bu yönüyle İnciraltı, “şehir içinde sahil yürüyüşü” ile “daha doğal bir hatta yürüyüş” arasında bir denge kuruyor.
 
@@ -92,7 +94,7 @@ Bu yönüyle İnciraltı, “şehir içinde sahil yürüyüşü” ile “daha d
 
 ## 6) Güzelbahçe Sahili: Merkezden uzak ama daha sakin
 
-İzmir Büyükşehir Belediyesi, Güzelbahçe sahil kesimini de kıyı boyunca düzenlenen yürüyüş ve koşu alanları içinde sayıyor. ([izmir.bel.tr](https://izmir.bel.tr/tr/DinlenmeAlanlariVeYuruyusParkurlari/61/120?utm_source=openai))
+İzmir Büyükşehir Belediyesi, Güzelbahçe sahil kesimini de kıyı boyunca düzenlenen yürüyüş ve koşu alanları içinde sayıyor.
 
 Güzelbahçe, şehir merkezine yakın hızlı bir yürüyüşten çok, biraz daha sakin bir sahil atmosferi arayanlara hitap ediyor. Yolunuzu özellikle sahil için düşürüyorsanız, burada daha az yoğunluklu bir deneyim bulabilirsiniz.
 
@@ -109,7 +111,7 @@ Güzelbahçe, şehir merkezine yakın hızlı bir yürüyüşten çok, biraz dah
 
 ## Ulaşım açısından en pratik sahil rotaları
 
-Toplu taşımayla erişim kolaylığı açısından en pratik seçenekler genelde Kordon, Karşıyaka ve Bostanlı. İzmir Büyükşehir Belediyesi’nin kıyı hattı ve BİSİM istasyon bilgileri, sahil boyunca Güzelbahçe ile Mavişehir arasında uzanan geniş bir kıyı kullanım ağına işaret ediyor. ([izmir.bel.tr](https://izmir.bel.tr/tr/Projeler/1277/4?utm_source=openai))
+Toplu taşımayla erişim kolaylığı açısından en pratik seçenekler genelde Kordon, Karşıyaka ve Bostanlı. İzmir Büyükşehir Belediyesi’nin kıyı hattı ve BİSİM istasyon bilgileri, sahil boyunca Güzelbahçe ile Mavişehir arasında uzanan geniş bir kıyı kullanım ağına işaret ediyor.
 
 Pratik seçim yapmak gerekirse:
 
@@ -145,9 +147,9 @@ Karşıyaka-Bostanlı hattı ile İnciraltı çevresi, daha uzun tempolu yürüy
 
 ## Kaynaklar
 
-- İzmir Büyükşehir Belediyesi – Dinlenme Alanları ve Yürüyüş Parkurları ([izmir.bel.tr](https://izmir.bel.tr/tr/DinlenmeAlanlariVeYuruyusParkurlari/61/120?utm_source=openai))
-- İzmir Büyükşehir Belediyesi – Kordonboyu ([izmir.bel.tr](https://www.izmir.bel.tr/tr/Kordonboyu/264?utm_source=openai))
-- İzmir Büyükşehir Belediyesi – BİSİM ve sahil hattı istasyon bilgileri ([izmir.bel.tr](https://izmir.bel.tr/tr/Projeler/1277/4?utm_source=openai))
-- İzmir Büyükşehir Belediyesi – İzmir’de bir gün / sahil yürüyüş alanları ([izmir.bel.tr](https://www.izmir.bel.tr/en/a-day-in-izmir/517/3181?utm_source=openai))
+- [İzmir Büyükşehir Belediyesi – Dinlenme Alanları ve Yürüyüş Parkurları](https://izmir.bel.tr/tr/DinlenmeAlanlariVeYuruyusParkurlari/61/120)
+- [İzmir Büyükşehir Belediyesi – Kordonboyu](https://www.izmir.bel.tr/tr/Kordonboyu/264)
+- [İzmir Büyükşehir Belediyesi – BİSİM ve sahil hattı istasyon bilgileri](https://izmir.bel.tr/tr/Projeler/1277/4)
+- [İzmir Büyükşehir Belediyesi – İzmir’de bir gün / sahil yürüyüş alanları](https://www.izmir.bel.tr/en/a-day-in-izmir/517/3181)
 
 İzmir’de rota odaklı daha fazla şehir rehberi için @izmiruzmani hesabına da göz atabilirsiniz.

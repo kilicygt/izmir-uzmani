@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "6 dk"
 tags: ["İzmir", "Kemeraltı", "Tarihi Hanlar", "Tarih ve Kültür"]
 featured: false
+image: "/images/blog/izmir-in-tarihi-hanlari-ve-kemeralti-ndaki-izleri.webp"
+imageAlt: "Kemeraltı Çarşısı'nın havadan görünümü, ortada avlulu Kızlarağası Hanı ve Hisar Camii"
 seoTitle: "İzmir Tarihi Hanları: Kemeraltı’ndaki İzleri"
 seoDescription: "İzmir tarihi hanları içinde Kemeraltı’nda öne çıkan yapıları, ticari işlevlerini ve günümüze kalan izlerini sade ve güvenilir bir çerçevede keşfedin."
 imageSearchQuery: "Kemeralti Izmir"

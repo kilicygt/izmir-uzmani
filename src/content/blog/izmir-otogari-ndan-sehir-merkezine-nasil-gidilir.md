@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "5 dk"
 tags: ["İzmir", "Otogar", "Şehir Merkezi", "Ulaşım"]
 featured: false
+image: "/images/blog/izmir-otogari-ndan-sehir-merkezine-nasil-gidilir.webp"
+imageAlt: "İzmir Otogarı'nın havadan görünümü ve peronlarda bekleyen otobüsler"
 seoTitle: "İzmir Otogarı’ndan Şehir Merkezine Ulaşım Rehberi"
 seoDescription: "İzmir Otogarı’ndan şehir merkezine nasıl gidilir? Konak, Alsancak ve Basmane için ESHOT, metro aktarması ve pratik ulaşım seçenekleri burada."
 imageSearchQuery: "Izmir bus terminal"
