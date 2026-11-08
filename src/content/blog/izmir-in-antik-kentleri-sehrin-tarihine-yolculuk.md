@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "7 dk"
 tags: ["İzmir", "Tarih", "Antik Kentler", "Kültür Rotaları"]
 featured: false
+image: "/images/blog/izmir-in-antik-kentleri-sehrin-tarihine-yolculuk.webp"
+imageAlt: "Bergama Akropolü'nün havadan görünümü, antik tiyatro ve arkadaki baraj gölü"
 seoTitle: "İzmir Antik Kentler Rehberi: Hangi Kent Nerede?"
 seoDescription: "İzmir antik kentler rehberi: Efes, Pergamon, Smyrna, Teos ve daha fazlası. Hangi antik kent nerede, neden önemli, bu yazıda öğrenin."
 imageSearchQuery: "Ephesus İzmir"

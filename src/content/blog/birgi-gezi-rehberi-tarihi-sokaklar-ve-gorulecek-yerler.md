@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "6 dk"
 tags: ["İzmir", "Birgi", "Ödemiş", "Gezi Rehberi"]
 featured: false
+image: "/images/blog/birgi-gezi-rehberi-tarihi-sokaklar-ve-gorulecek-yerler.webp"
+imageAlt: "Birgi'de cumbalı tarihi konaklar, ahşap evler ve arkada cami minaresi"
 seoTitle: "Birgi Gezilecek Yerler: Tarihi Sokaklar Rehberi"
 seoDescription: "Birgi gezilecek yerler rehberi: Çakırağa Konağı, Ulu Cami, türbeler, medreseler ve tarihi sokaklarda yürüyüş rotasıyla Birgi’yi planlı gezin."
 imageSearchQuery: "Birgi Izmir"

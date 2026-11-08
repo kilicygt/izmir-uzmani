@@ -6,6 +6,8 @@ category: "Aile Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Çocuklarla Gezi", "Aile Rehberi"]
 featured: false
+image: "/images/blog/izmir-de-cocuklarla-gidilebilecek-yerler.webp"
+imageAlt: "Cam çatılı bir sergi alanında dinozor iskeletini inceleyen çocuklar"
 seoTitle: "İzmir Çocuklarla Gezilecek Yerler Rehberi"
 seoDescription: "İzmir’de çocuklarla gidilebilecek yerleri yaş grubu, ulaşım kolaylığı ve gezi planına göre derledik. Park, müze, vapur ve doğa önerileri burada."
 imageSearchQuery: "Izmir Kulturpark"
