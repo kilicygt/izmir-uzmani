@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-07T10:21:46.994Z",
+  "fetchedAt": "2026-11-08T10:29:42.243Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -689,7 +689,7 @@
       "category": "Konser",
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
-      "admission": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/3e5661d1-6748bdd3.webp",
       "summary": [
         "2. KARABURUN FURMA FESTİVALİ KONSERLERİ",
@@ -707,7 +707,7 @@
         {
           "start": "2026-11-08T15:00:00+03:00",
           "end": "2026-11-08T18:30:00+03:00",
-          "venue": "Karaburun, Eğlenhoca"
+          "venue": "Karaburun Eğlenhoca"
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/2-karaburun-furma-festival-konserleri/3e5661d1-ee98-4778-a427-0382498f7abe",
