@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "6 dk"
 tags: ["İzmir", "Kadifekale", "Tarih", "Konak", "Smyrna"]
 featured: false
+image: "/images/blog/kadifekale-nin-tarihi-ve-ziyaret-rehberi.webp"
+imageAlt: "Kadifekale içindeki tarihi sarnıcın taş kemerleri ve çimenlik avlusu"
 seoTitle: "Kadifekale İzmir: Tarihi ve Ziyaret Rehberi"
 seoDescription: "Kadifekale İzmir hakkında tarih, kalede görülecek noktalar, ulaşım ve güncel ziyaret planı için bilmeniz gerekenleri bu rehberde bulabilirsiniz."
 imageSearchQuery: "Kadifekale Izmir"
