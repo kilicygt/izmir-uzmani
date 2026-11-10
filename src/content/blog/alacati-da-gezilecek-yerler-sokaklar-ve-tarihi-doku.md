@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "6 dk"
 tags: ["İzmir", "Alaçatı", "Çeşme", "Tarihi Yerler"]
 featured: false
+image: "/images/blog/alacati-da-gezilecek-yerler-sokaklar-ve-tarihi-doku.webp"
+imageAlt: "Alaçatı'da turkuaz pencereli taş evler ve Arnavut kaldırımlı sokak"
 seoTitle: "Alaçatı'da Gezilecek Yerler: Sokaklar ve Tarihi Doku"
 seoDescription: "Alaçatı gezilecek yerler listesinde taş sokaklar, yel değirmenleri, Hacı Memiş ve Pazaryeri çevresini pratik bir rota mantığıyla keşfedin."
 imageSearchQuery: "Alacati windmills"

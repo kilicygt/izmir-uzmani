@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "5 dk"
 tags: ["İzmir", "Çeşme", "Toplu Taşıma", "Ulaşım"]
 featured: false
+image: "/images/blog/izmir-den-cesme-ye-toplu-tasimayla-nasil-gidilir.webp"
+imageAlt: "Çeşme merkezi, marina ve iskelenin havadan görünümü"
 seoTitle: "İzmir’den Çeşme’ye Toplu Taşıma ile Ulaşım Rehberi"
 seoDescription: "İzmir’den Çeşme’ye toplu taşımayla nasıl gidilir? ESHOT 760 hattı, aktarma noktaları, otogar alternatifi ve pratik ulaşım seçenekleri bu rehberde."
 imageSearchQuery: "Cesme Izmir"

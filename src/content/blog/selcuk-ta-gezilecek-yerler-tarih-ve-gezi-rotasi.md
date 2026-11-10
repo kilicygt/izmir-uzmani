@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Selçuk", "Efes", "Gezi Rotası"]
 featured: false
+image: "/images/blog/selcuk-ta-gezilecek-yerler-tarih-ve-gezi-rotasi.webp"
+imageAlt: "Selçuk'ta St. Jean Bazilikası'nın sütunları ve arkada Ayasuluk Kalesi"
 seoTitle: "Selçuk’ta Gezilecek Yerler ve Gezi Rotası"
 seoDescription: "Selçuk gezilecek yerler rehberi: Efes, Meryem Ana Evi, Ayasuluk, Şirince ve günü verimli planlamak için rota önerileri."
 imageSearchQuery: "Ayasuluk Hill Selcuk"

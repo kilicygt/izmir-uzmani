@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "5 dk"
 tags: ["İzmir", "Ulaşım", "İzmirim Kart", "ESHOT"]
 featured: false
+image: "/images/blog/izmir-de-90-dakika-aktarma-sistemi-nasil-calisir.webp"
+imageAlt: "Cumaovası İZBAN istasyonunda perona yanaşan banliyö treni"
 seoTitle: "İzmir 90 Dakika Aktarma Sistemi Nasıl Çalışır?"
 seoDescription: "İzmir 90 dakika aktarma kuralı hangi toplu taşıma araçlarında geçerli, hangi istisnalar var, İZBAN dahil sistem nasıl işliyor öğrenin."
 imageSearchQuery: "Izmir ferry tram"
