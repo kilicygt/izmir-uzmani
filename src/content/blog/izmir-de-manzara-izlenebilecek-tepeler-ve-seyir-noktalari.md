@@ -6,6 +6,8 @@ category: "Şehir Rehberi"
 readTime: "6 dk"
 tags: ["İzmir", "Şehir Rehberi", "Manzara", "Seyir Noktaları"]
 featured: false
+image: "/images/blog/izmir-de-manzara-izlenebilecek-tepeler-ve-seyir-noktalari.webp"
+imageAlt: "Ormanlık bir tepeden gün batımında İzmir yerleşimi ve körfez manzarası"
 seoTitle: "İzmir'de Manzara İzlenecek Yerler: Tepe ve Seyir Noktaları"
 seoDescription: "İzmir'de manzara izlenecek yerler arasında öne çıkan tepe ve seyir noktalarını, hangi manzara için nereye gidileceğiyle birlikte keşfedin."
 imageSearchQuery: "Izmir skyline"
