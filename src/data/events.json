@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-09T11:42:42.336Z",
+  "fetchedAt": "2026-11-10T11:20:07.765Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -863,6 +863,31 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/nesrine-konseri/73152e8c-69dd-4459-8c13-e886e93111c3",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "142199c5-5f4e-49d5-8284-0005b37d6bda",
+      "slug": "nazim-aramizda-belgesel-gosterimi-ve-yonetmen-ile-soylesi-142199",
+      "title": "''Nazım Aramızda'' Belgesel Gösterimi ve Yönetmen ile Söyleşi",
+      "category": "Toplantı / Panel ",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/142199c5-d3945f08.webp",
+      "summary": [
+        "12 Kasım 2026",
+        "SAAT: 19.00",
+        "YER: Atlas Pavyonu"
+      ],
+      "body": [],
+      "sessions": [
+        {
+          "start": "2026-11-12T19:00:00+03:00",
+          "end": "2026-11-12T21:00:00+03:00",
+          "venue": "Atlas Pavyonu"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/nazm-aramzda-belgesel-gosterimi-ve-yonetmen-ile-soylesi/142199c5-5f4e-49d5-8284-0005b37d6bda",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
