@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "6 dk"
 tags: ["İzmir", "Agora", "Smyrna", "Antik Kent", "Tarih ve Kültür"]
 featured: false
+image: "/images/blog/izmir-agora-oren-yeri-tarihi-ve-gezi-rehberi.webp"
+imageAlt: "İzmir Agora Ören Yeri'nde bazilikanın taş kemerleri ve arkadaki sütunlar"
 seoTitle: "İzmir Agora Antik Kent Gezi ve Tarih Rehberi"
 seoDescription: "İzmir Agora Ören Yeri hakkında tarih, gezi rotası, ulaşım, ziyaret saatleri ve dikkat edilmesi gerekenler tek rehberde."
 imageSearchQuery: "Smyrna Agora Izmir"

@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "6 dk"
 tags: ["İzmir", "Sığacık", "Seferihisar", "Toplu Taşıma", "Ulaşım"]
 featured: false
+image: "/images/blog/sigacik-a-toplu-tasimayla-nasil-gidilir.webp"
+imageAlt: "Sığacık'ta kale surları, kıyı yolu ve kırmızı kiremitli evlerin havadan görünümü"
 seoTitle: "Sığacık'a Toplu Taşımayla Nasıl Gidilir?"
 seoDescription: "Sığacık’a ESHOT, İZBAN ve metro ile nasıl gidilir? İzmir merkezden en pratik toplu taşıma rotalarını ve aktarma seçeneklerini öğrenin."
 imageSearchQuery: "Sigacik Teos Marina"

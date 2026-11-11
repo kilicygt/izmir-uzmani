@@ -6,6 +6,8 @@ category: "Doğa Rehberi"
 readTime: "6 dk"
 tags: ["İzmir", "Doğa", "Piknik", "Mesire Alanı"]
 featured: false
+image: "/images/blog/izmir-de-piknik-yapilabilecek-alanlar.webp"
+imageAlt: "Çam ormanı içinde gölgelik alanda ahşap piknik masaları"
 seoTitle: "İzmir Piknik Alanları: Gidilebilecek Yerler Rehberi"
 seoDescription: "İzmir piknik alanları arasında kent içi parklar, orman içi dinlenme yerleri ve deniz manzaralı seçenekler var. Nereye gidileceğini hızlıca karşılaştırın."
 imageSearchQuery: "Karagol Izmir"
