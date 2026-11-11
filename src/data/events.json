@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-10T11:20:07.765Z",
+  "fetchedAt": "2026-11-11T11:06:42.192Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -1437,6 +1437,59 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "a50064dd-6230-445d-b539-dcbd6f05f05c",
+      "slug": "izmir-oda-orkestrasi-konseri-a50064",
+      "title": "İzmir Oda Orkestrası Konseri",
+      "category": "Konser",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": 2,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/a50064dd-3e1b9559.webp",
+      "summary": [
+        "28 Kasım Cumartesi akşamı Alman besteci ve şef Oscar Jockel’in yöneteceği konserimiz, Ahmed Adnan Saygun Sanat Merkezi’nde sizlerle!"
+      ],
+      "body": [
+        "Venedik ekolünün önemli bestecilerinden ve San Marco Bazilikası’nın baş orgcularından Giovanni Gabrieli’nin Exaudi me Domine adlı eseri, Oscar Jockel’in beş orkestra grubu için yazdığı, orkestranın farklı noktalarda konumlanmasıyla dikkat çeken Gök Yüzündeki Yollar ve Mendelssohn’un İskoçya seyahatinden ilhamla bestelediği 3. Senfoni “İskoç” seslendirilecek.",
+        "Tüm sanatseverleri konserimize bekliyoruz.",
+        "Biletler kultursanatbilet.izmir.bel.tr adresinden ve AASSM, İsmet İnönü Sanat Merkezi ile Konak Vapur İskelesi gişelerinden temin edilebilir."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-28T20:00:00+03:00",
+          "end": "2026-11-28T22:00:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/izmir-oda-orkestras-konseri/a50064dd-6230-445d-b539-dcbd6f05f05c",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "66d0be51-7a81-4e38-a0eb-ab0fb2506eca",
+      "slug": "trio-vecando-konseri-66d0be",
+      "title": "TRIO VECANDO KONSERİ",
+      "category": "Konser",
+      "organizer": "AASSM Şube Müdürlüğü",
+      "ageLimit": 5,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/66d0be51-6fef0f67.webp",
+      "summary": [
+        "28 Kasım 2026 Cumartesi günü saat 20.00'de, Trio Vecando Konseri (Veriko Tchumburidze “Keman”, Dorukhan Doruk “Viyolonsel”, Can Çakmur “Piyano”) Ahmed Adnan Saygun Sanat Merkezi'nde gerçekleştirilecek."
+      ],
+      "body": [
+        "Trio Vecando, üç ödüllü sanatçıdan oluşmaktadır: 2016 Henryk Wieniawski Keman Yarışması birincisi Veriko Tchumburidze, 2015 Lutosławski Viyolonsel Yarışması ikincisi ve Düsseldorfer Symphoniker’in solo viyolonselcisi Dorukhan Doruk ve 2018 Hamamatsu Piyano Yarışması birincisi Can Çakmur.",
+        "Türkiye’de ve Avrupa’nın birçok prestijli salonunda birlikte sahne alan müzisyenlerin, Trio Vecando’yu kurmadan önce on yılı aşkın bir geçmişe dayanan müzikal işbirlikleri ve dostlukları bulunuyor. Çok genç yaşlarda Türkiye’deki G&S Pekinel Young Musicians on World Stages projesinin bir parçası olmuş ve ilk kez burada aynı sahneyi paylaşmışlardır. Dostluklarının yanı sıra sahnedeki doğal uyumları ve ortak müzikal dillerini daha da derinleştirme arzuları Trio Vecando’nun kurulmasına öncülük etmiştir."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-28T20:00:00+03:00",
+          "end": "2026-11-28T21:30:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/trio-vecando-konseri/66d0be51-7a81-4e38-a0eb-ab0fb2506eca",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "0679f07d-8725-4c48-8df3-a90d337f5508",
       "slug": "alternatif-park-konserleri-0679f0",
       "title": "Alternatif Park Konserleri",
@@ -1591,6 +1644,35 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/aziz-vukolosta-akustik-turk-muzigi-konserleri/c82eddba-c8db-45f7-91f5-cb64ce2aa2d1",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "951ab129-77cb-4c12-a848-bfcb6a46a4fc",
+      "slug": "2027-izmir-uluslararasi-coksesli-korolar-festivali-951ab1",
+      "title": "2027 İZMİR ULUSLARARASI ÇOKSESLİ KOROLAR FESTİVALİ",
+      "category": "Festival",
+      "organizer": "AASSM Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": "free",
+      "image": "/images/etkinlikler/otomatik/951ab129-5c111521.webp",
+      "summary": [],
+      "body": [
+        "İzmir Büyükşehir Belediyesi ve Türkiye Polifonik Korolar Derneği İzmir Şubesi işbirliğiyle \"İzmir Uluslararası Çoksesli Korolar Festivali\" 29 Nisan – 2 Mayıs 2027 tarihleri arasında Ahmed Adnan Saygun Sanat Merkezi'nde gerçekleştirilecek.",
+        "Son başvuru tarihi: 17 Ocak 2027",
+        "Festivalin amacı, çoksesli koro müziği aracılığıyla ulusal müziğimizin evrensel boyut kazanmasına katkılar sağlamak, bu konuda çalışan koro, koro şefleri ve müzik eğitimcilerine, etkinliklerini sergileme fırsatı vererek özendirmek, festivalde yapılan konser etkinlikleriyle korolar ve üyeleri arasındaki sosyal ilişkileri güçlendirmek, konser, radyo ve TV yayınları aracılığıyla da insanımıza Türk ve dünya koro edebiyatından seçkin koro müziği örneklerini dinletebilmektir.",
+        "Festival, 29 Nisan – 2 Mayıs 2027 tarihleri arasında İzmir’de Ahmed Adnan Saygun Sanat Merkezi konser salonlarında gerçekleştirilecektir.",
+        "Son başvuru tarihi 17 Ocak 2027 Pazar günü saat 23.59'a kadardır.",
+        "Festival Şartnamesi ve Başvuru Formuna bu linkten ulaşabilirsiniz:",
+        "İzmir Uluslararası Çoksesli Korolar Festivali 2027 Şartnamesi"
+      ],
+      "sessions": [
+        {
+          "start": "2027-01-17T23:59:00+03:00",
+          "end": "2027-01-17T23:59:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/2027-izmir-uluslararasi-coksesli-korolar-festivali/951ab129-77cb-4c12-a848-bfcb6a46a4fc",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     }
   ]
