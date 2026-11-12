@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-11T11:06:42.192Z",
+  "fetchedAt": "2026-11-12T11:25:37.481Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -444,6 +444,11 @@
           "start": "2026-11-01T15:00:00+03:00",
           "end": "2026-11-01T16:00:00+03:00",
           "venue": "İzBBŞT İsmet İnönü Sahnesi"
+        },
+        {
+          "start": "2026-11-29T15:00:00+03:00",
+          "end": "2026-11-29T16:00:00+03:00",
+          "venue": null
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/don-kisot/596d0fea-6bab-44b4-f89c-08de33e55467",
@@ -1403,6 +1408,50 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "fb0091a8-7130-454a-93d8-561e077410ec",
+      "slug": "yenilmez-fb0091",
+      "title": "Yenilmez",
+      "category": "Tiyatro",
+      "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
+      "ageLimit": 8,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/fb0091a8-90eeb009.webp",
+      "summary": [
+        "Yenilmez\", iki çiftin birbirlerine dair önyargılarını, gizli beklentilerini ve derin çelişkilerini gün yüzüne çıkarırken düşündürtür. İnsanları birbirinden ayıran gerçekten düşünceleri ve yaşam biçimleri mi? İnsan kendi doğrularının arkasına sığınarak karşısındakini anlamaktan kaçınır mı?",
+        "İngiliz oyun yazarı Torben Betts, Yenilmez'de sınıfsal farklılıkları, kültürel çatışmaları, siyasi kutuplaşmayı ve insan ilişkilerinin kırılganlığını keskin bir mizahla ele alıyor. Komedi ile trajedi arasındaki ince çizgide ilerleyen Yenilmez, Ozan Çolak rejisi ile 26 Kasım 2026'da İzBBŞT İsmet İnönü sahnesinde."
+      ],
+      "body": [
+        "YAZAN: TORBEN BETTS",
+        "ÇEVİREN: NAZLI GÖZDE YOLCU",
+        "YÖNETEN: OZAN ÇOLAK",
+        "YARDIMCI YÖNETMEN: SELİN KAHRAMAN",
+        "SAHNE TASARIMI: ANIL ATEŞ IŞIK",
+        "KOSTÜM TASARIMI: DENİZ BİLGİLİ",
+        "IŞIK TASARIM: AYŞE SEDEF AYTER",
+        "OYUNCULAR:",
+        "EMİLY: IŞIL KESKİN",
+        "OLİVER: CANDAŞ YILANCI",
+        "DAWN: FERAHİ AKSAVAŞ",
+        "ALAN: BURAK TALI",
+        "SAHNE AMİRİ: NİMET ERDEM",
+        "TEKNİK SORUMLU: HAYRİ KURT",
+        "IŞIK UYGULAMA: SEMİH PAMUKÇU",
+        "KONDÜVİT: MEHMET UĞUR YILMAZ",
+        "SAHNE MAKİNİSTİ: ALİ KIRMIZIAY",
+        "SAHNE MAKİNİSTİ: HAKAN DAĞLI",
+        "SAHNE TERZİSİ: TÜRKAN EZGİ ERCAN, BERNA YILMAZ KART"
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-26T20:00:00+03:00",
+          "end": "2026-11-26T21:30:00+03:00",
+          "venue": null
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/yenilmez/fb0091a8-7130-454a-93d8-561e077410ec",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "d5907103-cee2-4442-8740-fa551f4f71e3",
       "slug": "yeniden-sinematek-ustalik-sinifi-sinemada-yapim-tasarimi-ve-sanat-yone-d59071",
       "title": "Yeniden Sinematek / Ustalık Sınıfı “Sinemada Yapım Tasarımı ve Sanat Yönetmenliği\"",
@@ -1443,7 +1492,7 @@
       "category": "Konser",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": 2,
-      "admission": null,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/a50064dd-3e1b9559.webp",
       "summary": [
         "28 Kasım Cumartesi akşamı Alman besteci ve şef Oscar Jockel’in yöneteceği konserimiz, Ahmed Adnan Saygun Sanat Merkezi’nde sizlerle!"
@@ -1457,7 +1506,7 @@
         {
           "start": "2026-11-28T20:00:00+03:00",
           "end": "2026-11-28T22:00:00+03:00",
-          "venue": "Ahmed Adnan Saygun Sanat Merkezi"
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi Büyük Salon"
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/izmir-oda-orkestras-konseri/a50064dd-6230-445d-b539-dcbd6f05f05c",
