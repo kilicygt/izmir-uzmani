@@ -6,6 +6,8 @@ category: "Tarih ve Kültür"
 readTime: "6 dk"
 tags: ["İzmir", "Tarih", "Kültür", "Sinagog", "Yahudi Mirası", "Kemeraltı"]
 featured: false
+image: "/images/blog/izmir-in-tarihi-sinagoglari-ve-yahudi-kultur-mirasi.webp"
+imageAlt: "Tarihi bir sinagogun avizeli iç mekânı, ahşap sıraları ve Ehal"
 seoTitle: "İzmir Tarihi Sinagoglar: Yahudi Mirası Rehberi"
 seoDescription: "İzmir tarihi sinagoglar rotasını, Kemeraltı’ndaki yapıları ve Yahudi kültür mirasının kentte bıraktığı izleri güvenilir kaynaklarla keşfedin."
 imageSearchQuery: "Kemeralti synagogue"

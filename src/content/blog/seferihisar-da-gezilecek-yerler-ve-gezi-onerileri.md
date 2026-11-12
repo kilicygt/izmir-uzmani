@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Seferihisar", "Sığacık", "Teos"]
 featured: false
+image: "/images/blog/seferihisar-da-gezilecek-yerler-ve-gezi-onerileri.webp"
+imageAlt: "Sığacık limanında balıkçı tekneleri ve arkada kale surları"
 seoTitle: "Seferihisar’da Gezilecek Yerler Rehberi"
 seoDescription: "Seferihisar gezilecek yerler listesi: Sığacık, Teos Antik Kenti, Akkum, Akarca ve daha fazlası. Rota önerileri ve pratik bilgiler bu rehberde."
 imageSearchQuery: "Sigacik Seferihisar"
