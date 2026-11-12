@@ -6,6 +6,8 @@ category: "Doğa Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Doğa Yürüyüşü", "Trekking", "Rota"]
 featured: false
+image: "/images/blog/izmir-de-doga-yuruyusu-yapilabilecek-rotalar.webp"
+imageAlt: "Çam ormanlarıyla çevrili dağ gölü ve arkada kayalık tepeler"
 seoTitle: "İzmir’de Doğa Yürüyüşü Rotaları Rehberi"
 seoDescription: "İzmir’de doğa yürüyüşü yapılabilecek rotaları bölgelere göre keşfedin. Şehir içi, kıyı ve orman parkurları için pratik bir başlangıç rehberi."
 imageSearchQuery: "Izmir hiking trail"
