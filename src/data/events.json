@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-12T11:25:37.481Z",
+  "fetchedAt": "2026-11-13T11:08:18.978Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -1111,6 +1111,31 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "af2b1243-53e5-44d9-af4d-93563c6ce09a",
+      "slug": "bir-ruyanin-ardindan-nazim-la-konusma-semiha-berksoy-af2b12",
+      "title": "Bir Rüyanın Ardından Nazım'la Konuşma: SEMİHA BERKSOY",
+      "category": "Toplantı / Panel ",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/af2b1243-95299aff.webp",
+      "summary": [
+        "17 Kasım 2026",
+        "SAAT: 19.00-21.00",
+        "YER: Atlas Pavyonu"
+      ],
+      "body": [],
+      "sessions": [
+        {
+          "start": "2026-11-17T19:00:00+03:00",
+          "end": "2026-11-17T21:00:00+03:00",
+          "venue": "Atlas Pavyonu"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/bir-ruyann-ardndan-nazmla-konusma-semiha-berksoy/af2b1243-53e5-44d9-af4d-93563c6ce09a",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "38d03e28-d7ca-411d-97a5-e4c01d8f173a",
       "slug": "bir-siir-bir-turku-turkulerle-siir-dinletisi-38d03e",
       "title": "Bir Şiir Bir Türkü Türkülerle Şiir Dinletisi",
@@ -1239,6 +1264,36 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/endonezyann-guzellikleri-fotograf-sergisi/61524520-336b-4d20-9240-f0a4d341960c",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "e244ec1a-5712-46ff-9c7c-04133ea1fa41",
+      "slug": "artmeet-2026-gorunmez-baglar-sergisi-e244ec",
+      "title": "Artmeet 2026 Görünmez Bağlar Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/e244ec1a-1813eee1.webp",
+      "summary": [
+        "20 Kasım-25 Aralık 2026",
+        "SAAT: 18.30",
+        "YER: Tarihi Bıçakçı Han Antrepo 2"
+      ],
+      "body": [
+        "ArtMeet, İzmir merkezli bağımsız bir kültür-sanat platformudur. Çağdaş sanat, ekoloji ve kültürel miras arasında ilişkiler kurarak farklı disiplinlerden sanatçıları, araştırmacıları ve izleyicileri bir araya getiren sergi ve kamusal programlar gerçekleştirir.",
+        "ArtMeet 2026, “Hayat Ağacı” teması etrafında insan, doğa ve kültür arasındaki görünmez bağlantıları araştırıyor. Programın merkezinde yer alan “Görünmez Bağlar” sergisi, Türkiye'den ve Avrupa'dan sanatçıların farklı disiplinlerdeki üretimlerini Tarihi Bıçakçı Han'da bir araya getiriyor. Ekolojik ilişkiler, karşılıklı bağımlılık, ortak yaşam ve kültürel miras, serginin temel araştırma alanlarını oluşturuyor.",
+        "Projenin Amacı",
+        "ArtMeet 2026, çağdaş sanat aracılığıyla insan, doğa ve kültür arasındaki ilişkileri görünür kılmayı; ekoloji ve kültürel miras üzerine yeni düşünme ve karşılaşma alanları oluşturmayı hedefliyor. Türkiye'den ve Avrupa'dan sanatçıların üretimlerini İzmir'de bir araya getiren sergi, kentin bağımsız kültür-sanat yaşamına katkıda bulunmayı ve Tarihi Bıçakçı Han'ın kültürel bir buluşma ve üretim alanı olarak değerlendirilmesini amaçlıyor."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-20T18:30:00+03:00",
+          "end": "2026-12-25T18:30:00+03:00",
+          "venue": "Tarihi Bıçakçı Han Antrepo 2"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/artmeet-2026-gorunmez-baglar-sergisi/e244ec1a-5712-46ff-9c7c-04133ea1fa41",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
@@ -1414,7 +1469,7 @@
       "category": "Tiyatro",
       "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
       "ageLimit": 8,
-      "admission": null,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/fb0091a8-90eeb009.webp",
       "summary": [
         "Yenilmez\", iki çiftin birbirlerine dair önyargılarını, gizli beklentilerini ve derin çelişkilerini gün yüzüne çıkarırken düşündürtür. İnsanları birbirinden ayıran gerçekten düşünceleri ve yaşam biçimleri mi? İnsan kendi doğrularının arkasına sığınarak karşısındakini anlamaktan kaçınır mı?",
@@ -1445,7 +1500,12 @@
         {
           "start": "2026-11-26T20:00:00+03:00",
           "end": "2026-11-26T21:30:00+03:00",
-          "venue": null
+          "venue": "İzBBŞT İsmet İnönü Sahnesi"
+        },
+        {
+          "start": "2026-11-27T20:00:00+03:00",
+          "end": "2026-11-27T21:30:00+03:00",
+          "venue": "İzBBŞT İsmet İnönü Sahnesi"
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/yenilmez/fb0091a8-7130-454a-93d8-561e077410ec",
@@ -1703,7 +1763,7 @@
       "organizer": "AASSM Şube Müdürlüğü",
       "ageLimit": null,
       "admission": "free",
-      "image": "/images/etkinlikler/otomatik/951ab129-5c111521.webp",
+      "image": "/images/etkinlikler/otomatik/951ab129-b540979b.webp",
       "summary": [],
       "body": [
         "İzmir Büyükşehir Belediyesi ve Türkiye Polifonik Korolar Derneği İzmir Şubesi işbirliğiyle \"İzmir Uluslararası Çoksesli Korolar Festivali\" 29 Nisan – 2 Mayıs 2027 tarihleri arasında Ahmed Adnan Saygun Sanat Merkezi'nde gerçekleştirilecek.",
