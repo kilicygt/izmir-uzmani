@@ -6,7 +6,11 @@ interface Props {
   class?: string;
 }
 const { name, size = 120, class: cls } = Astro.props;
-const id = `ii-${name}`;
+// Gradient ids must be unique per instance: when one copy sits in a hidden (display:none) block,
+// other copies that point at its <defs> would lose their fills.
+const g = globalThis as { __izmirIconSeq?: number };
+g.__izmirIconSeq = (g.__izmirIconSeq ?? 0) + 1;
+const id = `ii-${name}-${g.__izmirIconSeq}`;
 ---
 
 <svg
