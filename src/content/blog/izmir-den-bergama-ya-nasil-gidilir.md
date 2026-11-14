@@ -6,6 +6,8 @@ category: "Ulaşım"
 readTime: "5 dk"
 tags: ["İzmir", "Bergama", "Ulaşım"]
 featured: false
+image: "/images/blog/izmir-den-bergama-ya-nasil-gidilir.webp"
+imageAlt: "Bergama Akropolü'ndeki antik tiyatro ve akşam ışıklarıyla Bergama şehri"
 seoTitle: "İzmir’den Bergama’ya Nasıl Gidilir? Ulaşım Rehberi"
 seoDescription: "İzmir’den Bergama’ya gitmek için İZBAN+ESHOT, otogardan dolmuş ve özel araç seçeneklerini adım adım karşılaştıran pratik rehber."
 imageSearchQuery: "Bergama Izmir"

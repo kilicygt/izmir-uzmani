@@ -6,6 +6,8 @@ category: "Gezi Rehberi"
 readTime: "8 dk"
 tags: ["İzmir", "Urla", "Gezi Rehberi", "Urla gezilecek yerler"]
 featured: false
+image: "/images/blog/urla-da-gezilecek-yerler-ve-yapilacak-seyler.webp"
+imageAlt: "Urla İskele'deki marina, mendirek ve kıyıdaki evlerin havadan görünümü"
 seoTitle: "Urla’da Gezilecek Yerler: 2026 Gezi Rehberi"
 seoDescription: "Urla gezilecek yerler listesi: İskele, Sanat Sokağı, Klazomenai, Karantina Adası, köyler, plajlar ve yapılacak şeyler için pratik rehber."
 imageSearchQuery: "Urla Izmir"

@@ -6,6 +6,8 @@ category: "Şehir Rehberi"
 readTime: "6 dk"
 tags: ["İzmir", "Şehir Rehberi", "Hafta Sonu", "Sakin Rotalar"]
 featured: false
+image: "/images/blog/izmir-de-hafta-sonu-icin-sakin-gezi-rotalari.webp"
+imageAlt: "Urla'daki Karantina Adası'nın havadan görünümü ve çevresindeki deniz"
 seoTitle: "İzmir’de Sakin Gezilecek Yerler: 5 Hafta Sonu Rotası"
 seoDescription: "İzmir’de hafta sonu için sakin gezilecek yerler arıyorsanız, sahil, köy ve kısa yürüyüş odaklı 5 pratik rota burada."
 imageSearchQuery: "Sigacik coast"
