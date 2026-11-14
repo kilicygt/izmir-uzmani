@@ -1,11 +1,12 @@
 ---
 import IzmirIcon from './IzmirIcon.astro';
+import Wordmark from './Wordmark.astro';
 
 interface Props {
   activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda';
 }
 const { activePage } = Astro.props;
-const LOGO: 'yazi' | 'tam' = 'tam';
+const WM = 'dalga' as const;
 
 const menuLinks = [
   { key: 'rehberler', href: '/rehberler', label: 'Rehberler', sub: 'Gezilecek yerler ve rotalar', icon: 'harita' },
@@ -26,11 +27,7 @@ const transit = [
 <nav id="site-nav">
   <div class="nav-inner">
     <a href="/" class="logo" aria-label="İzmir Uzmanı ana sayfa">
-      {LOGO === 'yazi' ? (
-        <><img src="/images/logo-izmir.png" alt="İzmir" class="logo-mark" width="215" height="132" /><span class="logo-word">uzmanı</span></>
-      ) : (
-        <img src="/images/logo-tam.png" alt="İzmir Uzmanı" class="logo-full" width="215" height="132" />
-      )}
+      <Wordmark variant={WM} />
     </a>
     <div class="nav-right">
       <div class="desktop-links">
@@ -53,11 +50,7 @@ const transit = [
 <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menü" aria-hidden="true">
   <div class="mm-head">
     <a href="/" class="logo" aria-label="İzmir Uzmanı ana sayfa">
-      {LOGO === 'yazi' ? (
-        <><img src="/images/logo-izmir.png" alt="İzmir" class="logo-mark" width="215" height="132" /><span class="logo-word">uzmanı</span></>
-      ) : (
-        <img src="/images/logo-tam.png" alt="İzmir Uzmanı" class="logo-full" width="215" height="132" />
-      )}
+      <Wordmark variant={WM} />
     </a>
     <button id="menu-close" class="mm-close" aria-label="Menüyü kapat">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -105,11 +98,8 @@ const transit = [
   nav::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, #ff7c11 0%, #dd2a7b 45%, #062f96 100%); }
   nav.scrolled { background: rgba(255,249,243,0.97); box-shadow: 0 10px 30px -18px rgba(15,20,40,0.35); }
   .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { display: flex; align-items: flex-end; gap: 6px; flex-shrink: 0; padding-top: 3px; transition: transform 0.2s; }
+  .logo { display: flex; align-items: center; flex-shrink: 0; padding-top: 3px; transition: transform 0.2s; color: inherit; }
   .logo:hover { transform: rotate(-2deg) scale(1.03); }
-  .logo-mark { height: 38px; width: auto; display: block; }
-  .logo-full { height: 46px; width: auto; display: block; }
-  .logo-word { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; line-height: 1; color: #062f96; letter-spacing: -0.01em; margin-bottom: 1px; }
   .nav-right { display: flex; align-items: center; gap: 4px; }
   .desktop-links { display: none; align-items: center; gap: 4px; margin-right: 10px; }
   @media (min-width: 768px) { .desktop-links { display: flex; } }
