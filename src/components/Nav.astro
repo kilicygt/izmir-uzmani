@@ -1,207 +1,189 @@
 ---
+import IzmirIcon from './IzmirIcon.astro';
+
 interface Props {
-  activePage?: 'rehberler' | 'etkinlikler' | 'hakkinda';
+  activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda';
 }
 const { activePage } = Astro.props;
+
+const menuLinks = [
+  { key: 'rehberler', href: '/rehberler', label: 'Rehberler', sub: 'Gezilecek yerler ve rotalar', icon: 'harita' },
+  { key: 'etkinlikler', href: '/etkinlikler', label: 'Etkinlikler', sub: 'Bu hafta şehirde neler var?', icon: 'bilet' },
+  { key: 'ulasim', href: '/toplu-tasima-saatleri', label: 'Toplu Taşıma', sub: 'Sefer saatleri tek yerde', icon: 'vapur' },
+  { key: 'hakkinda', href: '/hakkinda', label: 'Hakkında', sub: 'İzmir Uzmanı kimdir?', icon: 'saatkulesi' },
+] as const;
+
+const transit = [
+  { label: 'Metro', href: '/toplu-tasima-saatleri/metro' },
+  { label: 'İZBAN', href: '/toplu-tasima-saatleri/izban' },
+  { label: 'Vapur', href: '/toplu-tasima-saatleri/vapur' },
+  { label: 'Otobüs', href: '/toplu-tasima-saatleri/otobus' },
+  { label: 'Tramvay', href: '/toplu-tasima-saatleri/tramvay' },
+];
 ---
 
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">
-      İzmir<span class="logo-blue">Uzmanı</span><span class="logo-dot"></span>
+      <img src="/images/site_logo.png" alt="İzmir Uzmanı" class="logo-img" />
     </a>
     <div class="nav-right">
       <div class="desktop-links">
         <a href="/rehberler" class:list={['nav-link', { active: activePage === 'rehberler' }]}>Rehberler</a>
         <a href="/etkinlikler" class:list={['nav-link', { active: activePage === 'etkinlikler' }]}>Etkinlikler</a>
+        <a href="/toplu-tasima-saatleri" class:list={['nav-link', { active: activePage === 'ulasim' }]}>Toplu Taşıma</a>
         <a href="/hakkinda" class:list={['nav-link', { active: activePage === 'hakkinda' }]}>Hakkında</a>
       </div>
-      <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-btn" aria-label="Instagram">
+      <a href="https://instagram.com/izmiruzmani" target="_blank" rel="noopener" class="icon-btn" aria-label="Instagram">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       </a>
-      <button id="menu-toggle" class="hamburger" aria-label="Menüyü aç">
-        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      <button id="menu-toggle" class="icon-btn hamburger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bars"><span></span><span></span><span></span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<div id="mobile-menu">
-  <button id="menu-close" aria-label="Menüyü kapat">×</button>
-  <a href="/rehberler">Rehberler</a>
-  <a href="/etkinlikler">Etkinlikler</a>
-  <a href="/hakkinda">Hakkında</a>
-  <div class="mobile-social">
-    <a href="https://instagram.com/izmiruzmani" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      Instagram
+<div id="menu-backdrop" hidden></div>
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menü" aria-hidden="true">
+  <div class="mm-head">
+    <a href="/" class="logo"><img src="/images/site_logo.png" alt="İzmir Uzmanı" class="logo-img" /></a>
+    <button id="menu-close" class="mm-close" aria-label="Menüyü kapat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div class="mm-body">
+    <form class="mm-search" action="/rehberler" method="get" role="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input name="q" type="search" placeholder="Nereyi keşfetmek istersin?" autocomplete="off" aria-label="Rehberlerde ara" />
+    </form>
+
+    <div class="mm-links">
+      {menuLinks.map((l) => (
+        <a href={l.href} class:list={['mm-link', { active: activePage === l.key }]}>
+          <span class="mm-icon"><IzmirIcon name={l.icon} size={44} /></span>
+          <span class="mm-text">
+            <span class="mm-label">{l.label}</span>
+            <span class="mm-sub">{l.sub}</span>
+          </span>
+          <svg class="mm-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </a>
+      ))}
+    </div>
+
+    <div class="mm-transit">
+      <p class="mm-title">Sefer saatleri</p>
+      <div class="mm-chips">
+        {transit.map((t) => <a href={t.href} class="mm-chip">{t.label}</a>)}
+      </div>
+    </div>
+
+    <a href="https://instagram.com/izmiruzmani" target="_blank" rel="noopener" class="mm-ig">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      <span>
+        <strong>@izmiruzmani</strong>
+        <small>Instagram’da takip et</small>
+      </span>
     </a>
   </div>
 </div>
 
 <style>
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #fff9f3;
-    border-bottom: 1px solid rgba(0,0,0,0.07);
-  }
-  .nav-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    font-size: 17px;
-    font-weight: 600;
-    color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    letter-spacing: -0.02em;
-  }
-  .logo:hover { color: #1a1a1a; }
-  .logo-blue { color: #062f96; }
-  .logo-dot {
-    width: 5px;
-    height: 5px;
-    background: #ff7c11;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 2px;
-    flex-shrink: 0;
-    margin-bottom: 1px;
-  }
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .desktop-links {
-    display: none;
-    align-items: center;
-    gap: 32px;
-    margin-right: 8px;
-  }
-  @media (min-width: 768px) {
-    .desktop-links { display: flex; }
-    .hamburger { display: none; }
-  }
-  .nav-link {
-    color: #555;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.15s;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,249,243,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; flex-shrink: 0; }
+  .logo-img { height: 48px; width: auto; display: block; }
+  .nav-right { display: flex; align-items: center; gap: 4px; }
+  .desktop-links { display: none; align-items: center; gap: 32px; margin-right: 12px; }
+  @media (min-width: 768px) { .desktop-links { display: flex; } }
+  .nav-link { color: #555; font-size: 14px; font-weight: 500; transition: color 0.15s; position: relative; }
   .nav-link:hover, .nav-link.active { color: #1a1a1a; }
   .nav-link.active { font-weight: 600; }
-  .ig-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1a1a1a;
-    transition: color 0.15s;
+  .nav-link.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; border-radius: 2px; background: #ff7c11; }
+  .icon-btn {
+    width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px;
+    color: #1a1a1a; background: none; border: 0; padding: 0; cursor: pointer; transition: background 0.2s, color 0.2s;
   }
-  .ig-btn:hover { color: #062f96; }
-  .hamburger {
-    background: none;
-    border: none;
-    color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    cursor: pointer;
-  }
+  .icon-btn:hover { background: #f0e6da; color: #062f96; }
+  .bars { width: 20px; height: 14px; position: relative; display: block; }
+  .bars span { position: absolute; left: 0; height: 2px; border-radius: 2px; background: currentColor; transition: width 0.2s; }
+  .bars span:nth-child(1) { top: 0; width: 20px; }
+  .bars span:nth-child(2) { top: 6px; width: 14px; }
+  .bars span:nth-child(3) { top: 12px; width: 20px; }
+  .hamburger:hover .bars span:nth-child(2) { width: 20px; }
 
-  /* Mobile Menu */
+  /* MENU */
+  #menu-backdrop { position: fixed; inset: 0; z-index: 199; background: rgba(15,20,40,0.45); backdrop-filter: blur(2px); opacity: 0; transition: opacity 0.25s; }
+  #menu-backdrop.show { opacity: 1; }
+  #menu-backdrop[hidden] { display: none; }
   #mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99;
-    background: #fff9f3;
-    padding: 72px 28px 32px;
-    flex-direction: column;
-    gap: 0;
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 200; width: 100%; max-width: 420px;
+    background: #fff9f3; display: flex; flex-direction: column; overflow-y: auto; overscroll-behavior: contain;
+    transform: translateX(100%); visibility: hidden; transition: transform 0.3s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0.3s;
+    box-shadow: -30px 0 60px -30px rgba(15,20,40,0.4);
   }
-  #mobile-menu.open { display: flex; }
-  #menu-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: none;
-    border: none;
-    color: #1a1a1a;
-    font-size: 30px;
-    cursor: pointer;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-  }
-  #mobile-menu > a {
-    font-size: 26px;
-    font-weight: 600;
-    color: #1a1a1a;
-    padding: 16px 0;
-    border-bottom: 1px solid #e8e0d8;
-    display: block;
-  }
-  #mobile-menu > a:last-of-type { border-bottom: none; }
-  #mobile-menu > a:hover { color: #062f96; }
-  .mobile-social {
-    margin-top: 32px;
-  }
-  .mobile-social a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    color: #666;
-    border-bottom: none !important;
-    font-weight: 400;
-  }
+  #mobile-menu.open { transform: translateX(0); visibility: visible; transition: transform 0.3s cubic-bezier(.2,.8,.2,1), visibility 0s; }
+  @media (min-width: 768px) { #mobile-menu { border-radius: 24px 0 0 24px; } }
+  .mm-head { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 16px 0 20px; flex-shrink: 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .mm-close { width: 42px; height: 42px; border-radius: 50%; border: 0; background: #f0e6da; color: #1a1a1a; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+  .mm-close:hover { background: #e6d8c8; transform: rotate(90deg); }
+  .mm-body { padding: 20px; display: flex; flex-direction: column; gap: 22px; }
+
+  .mm-search { display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid #e4d9cd; border-radius: 14px; padding: 0 14px; color: #062f96; }
+  .mm-search:focus-within { border-color: #062f96; }
+  .mm-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 15px 'Poppins', sans-serif; color: #1a1a1a; padding: 14px 0; }
+
+  .mm-links { display: flex; flex-direction: column; gap: 8px; }
+  .mm-link { display: flex; align-items: center; gap: 14px; padding: 10px 14px 10px 10px; border-radius: 18px; background: #fff; border: 1px solid #efe2d3; transition: border-color 0.2s, transform 0.2s; }
+  .mm-link:hover { border-color: #062f96; color: inherit; transform: translateX(-2px); }
+  .mm-link.active { border-color: #062f96; background: #eef2fd; }
+  .mm-icon { flex-shrink: 0; width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #fff 0%, #f3e6d6 100%); box-shadow: inset 0 2px 0 #fff, 0 6px 14px -8px rgba(90,58,26,0.45); }
+  .mm-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .mm-label { font-size: 17px; font-weight: 600; color: #1a1a1a; }
+  .mm-sub { font-size: 13px; color: #888; }
+  .mm-arrow { color: #062f96; flex-shrink: 0; }
+
+  .mm-title { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+  .mm-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .mm-chip { font-size: 13px; font-weight: 500; color: #062f96; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid #dfe5f5; }
+  .mm-chip:hover { background: #062f96; color: #fff; border-color: #062f96; }
+
+  .mm-ig { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 18px; color: #fff; background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%); }
+  .mm-ig:hover { color: #fff; }
+  .mm-ig span { display: flex; flex-direction: column; line-height: 1.3; }
+  .mm-ig strong { font-size: 15px; }
+  .mm-ig small { font-size: 12px; opacity: 0.85; }
+
+  @media (prefers-reduced-motion: reduce) { #mobile-menu, #menu-backdrop { transition: none; } }
 </style>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
   const closeBtn = document.getElementById('menu-close');
   const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('menu-backdrop');
 
-  function closeMenu() {
-    menu?.classList.remove('open');
+  function setOpen(open: boolean) {
+    if (!menu || !backdrop) return;
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    toggle?.setAttribute('aria-expanded', String(open));
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      backdrop.hidden = false;
+      requestAnimationFrame(() => backdrop.classList.add('show'));
+      closeBtn?.focus();
+    } else {
+      backdrop.classList.remove('show');
+      setTimeout(() => { if (!menu.classList.contains('open')) backdrop.hidden = true; }, 250);
+    }
   }
 
-  // Hamburger: toggle açık/kapalı
-  toggle?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menu?.classList.toggle('open');
-  });
-
-  // × butonu
-  closeBtn?.addEventListener('click', closeMenu);
-
-  // Overlay arka planına tıklanınca kapat (link/butona değil, direkt overlay'e)
-  menu?.addEventListener('click', (e) => {
-    if (e.target === menu) closeMenu();
-  });
-
-  // Sayfa geri kalanına tıklanınca kapat
-  document.addEventListener('click', (e) => {
-    if (menu?.classList.contains('open') && !menu.contains(e.target as Node)) {
-      closeMenu();
-    }
+  toggle?.addEventListener('click', () => setOpen(!menu?.classList.contains('open')));
+  closeBtn?.addEventListener('click', () => { setOpen(false); toggle?.focus(); });
+  backdrop?.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu?.classList.contains('open')) { setOpen(false); toggle?.focus(); }
   });
 </script>
