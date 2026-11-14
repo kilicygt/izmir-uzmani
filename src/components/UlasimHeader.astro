@@ -1,0 +1,33 @@
+---
+import IzmirIcon from './IzmirIcon.astro';
+
+interface Props {
+  title: string;
+  desc?: string;
+  crumbs?: { href: string; label: string }[];
+  chips?: string[];
+}
+const { title, desc, crumbs = [], chips = [] } = Astro.props;
+
+const path = Astro.url.pathname;
+const icon = path.includes('/vapur') ? 'vapur'
+  : path.includes('/otobus') ? 'otobus'
+  : path.includes('/metro') || path.includes('/tramvay') || path.includes('/izban') ? 'metro'
+  : 'harita';
+---
+
+<section class="tt-header">
+  <div class="tt-container tt-head-grid">
+    <div>
+      <p class="tt-breadcrumb">
+        <a href="/">Ana Sayfa</a>
+        {crumbs.map((c) => <><span class="tt-sep">›</span><a href={c.href}>{c.label}</a></>)}
+        <span class="tt-sep">›</span>{title}
+      </p>
+      <h1 class="tt-title">{title}</h1>
+      {desc && <p class="tt-desc">{desc}</p>}
+      {chips.length > 0 && <div class="tt-meta">{chips.map((c) => <span class="tt-chip">{c}</span>)}</div>}
+    </div>
+    <div class="tt-head-icon" aria-hidden="true"><IzmirIcon name={icon} size={120} /></div>
+  </div>
+</section>

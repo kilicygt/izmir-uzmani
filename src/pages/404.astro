@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IzmirIcon from '../components/IzmirIcon.astro';
+---
+
+<Layout title="Sayfa bulunamadı" description="Aradığınız sayfa bulunamadı. İzmir Uzmanı rehberlerine, etkinliklerine ve toplu taşıma saatlerine buradan ulaşabilirsiniz.">
+  <section class="nf">
+    <div class="nf-inner">
+      <div class="nf-art" aria-hidden="true">
+        <span class="nf-num">4</span>
+        <IzmirIcon name="harita" size={150} class="nf-icon" />
+        <span class="nf-num">4</span>
+      </div>
+      <h1 class="nf-title">Bu sokak çıkmaz gibi görünüyor.</h1>
+      <p class="nf-desc">Aradığın sayfa taşınmış ya da hiç var olmamış olabilir. Ama İzmir’de keşfedilecek çok yer var.</p>
+      <form class="nf-search" action="/rehberler" method="get" role="search">
+        <input name="q" type="search" placeholder="Rehberlerde ara: Çeşme, Efes…" aria-label="Rehberlerde ara" />
+        <button type="submit">Ara</button>
+      </form>
+      <div class="nf-links">
+        <a href="/">Ana Sayfa</a>
+        <a href="/rehberler">Rehberler</a>
+        <a href="/etkinlikler">Etkinlikler</a>
+        <a href="/toplu-tasima-saatleri">Toplu Taşıma Saatleri</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .nf { background: linear-gradient(180deg, #fff9f3 0%, #f5e8d8 100%); padding: clamp(48px, 8vw, 110px) 20px; }
+  .nf-inner { max-width: 620px; margin: 0 auto; text-align: center; }
+  .nf-art { display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 20px; }
+  .nf-num { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: clamp(90px, 16vw, 150px); line-height: 1; color: #062f96; }
+  .nf-art :global(.nf-icon) { width: clamp(100px, 18vw, 150px); height: auto; filter: drop-shadow(0 16px 16px rgba(90,58,26,0.2)); animation: nfBob 5s ease-in-out infinite; }
+  @keyframes nfBob { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+  .nf-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(28px, 4.4vw, 42px); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .nf-desc { color: #555; font-size: 16px; line-height: 1.7; margin-bottom: 26px; }
+  .nf-search { display: flex; gap: 8px; background: #fff; border: 1.5px solid #e4d9cd; border-radius: 16px; padding: 6px; max-width: 460px; margin: 0 auto 22px; }
+  .nf-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 15px 'Poppins', sans-serif; padding: 0 12px; }
+  .nf-search button { font: 600 14px 'Poppins', sans-serif; background: #062f96; color: #fff; border: 0; border-radius: 11px; padding: 11px 20px; cursor: pointer; }
+  .nf-links { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .nf-links a { font-size: 14px; font-weight: 500; padding: 9px 16px; border-radius: 999px; background: #fff; border: 1px solid #ecdccb; }
+  .nf-links a:hover { border-color: #062f96; color: #062f96; }
+</style>

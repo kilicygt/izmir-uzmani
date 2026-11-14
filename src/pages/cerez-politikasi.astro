@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Çerez Politikası" description="İzmir Uzmanı web sitesinde kullanılan çerezler, kullanım amaçları ve çerez tercihlerinizi nasıl değiştirebileceğiniz hakkında bilgilendirme.">
+  <section class="pol-header">
+    <div class="pol-container">
+      <p class="pol-breadcrumb"><a href="/">Ana Sayfa</a> · Çerez Politikası</p>
+      <h1 class="pol-title">Çerez Politikası</h1>
+      <p class="pol-updated">Son güncelleme: 1 Kasım 2026</p>
+    </div>
+  </section>
+
+  <article class="pol-body">
+    <div class="pol-container">
+      <p>
+        Bu politika, izmiruzmani.com ("Site") ziyaretçilerine, sitede hangi çerezlerin kullanıldığını, hangi amaçla kullanıldığını ve çerez tercihlerinin nasıl yönetilebileceğini açıklamak amacıyla 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında hazırlanmıştır.
+      </p>
+
+      <h2>Çerez nedir?</h2>
+      <p>
+        Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınıza kaydedilen küçük metin dosyalarıdır. Sitenin çalışması, ziyaretlerin ölçülmesi veya tercihlerinizin hatırlanması için kullanılabilir.
+      </p>
+
+      <h2>Hangi çerezleri kullanıyoruz?</h2>
+      <h3>Zorunlu kayıtlar</h3>
+      <p>
+        Çerez tercihinizi hatırlamak için tarayıcınızın yerel depolama alanına <code>cerez-tercihi</code> adlı bir kayıt bırakılır. Bu kayıt kişisel veri içermez ve yalnızca seçiminizin tekrar sorulmaması için kullanılır.
+      </p>
+      <h3>Analiz çerezleri (yalnızca onayınızla)</h3>
+      <p>
+        Sitenin hangi sayfalarının ziyaret edildiğini, ziyaretçilerin siteye nereden geldiğini ve içeriklerin ne kadar ilgi gördüğünü anlamak için Google LLC tarafından sağlanan <strong>Google Analytics</strong> hizmetini kullanıyoruz. Bu kapsamda <code>_ga</code> ve <code>_ga_*</code> adlı çerezler en fazla 2 yıl süreyle tarayıcınızda saklanabilir. Google Analytics, IP adresinizi tam olarak saklamaz; toplanan veriler istatistiksel raporlama amacıyla kullanılır.
+      </p>
+      <p>
+        Analiz çerezleri yalnızca çerez bildiriminde <strong>"Kabul et"</strong> seçeneğini işaretlemeniz halinde etkinleşir. Onay vermediğiniz sürece bu çerezler tarayıcınıza yerleştirilmez.
+      </p>
+
+      <h2>Reklam çerezleri</h2>
+      <p>Sitede reklam veya hedefleme amaçlı çerez kullanılmamaktadır.</p>
+
+      <h2>Verilerin yurt dışına aktarılması</h2>
+      <p>
+        Google Analytics aracılığıyla toplanan veriler, Google LLC'nin yurt dışındaki sunucularında işlenebilir. Analiz çerezlerine onay vermeniz, bu aktarıma ilişkin açık rızanız anlamına gelir. Onay vermemeniz durumunda bu aktarım gerçekleşmez.
+      </p>
+
+      <h2>Tercihlerinizi nasıl değiştirebilirsiniz?</h2>
+      <p>
+        Çerez tercihinizi dilediğiniz zaman sayfanın en altındaki <a href="#" data-cookie-prefs>Çerez Tercihleri</a> bağlantısından değiştirebilirsiniz. Onayınızı geri çektiğinizde analiz çerezleri tarayıcınızdan silinir. Ayrıca tarayıcınızın ayarlarından tüm çerezleri silebilir veya engelleyebilirsiniz.
+      </p>
+
+      <h2>Haklarınız ve iletişim</h2>
+      <p>
+        KVKK'nın 11. maddesi kapsamındaki haklarınıza (verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini isteme vb.) ilişkin talepleriniz için <a href="mailto:merhaba@izmiruzmani.com">merhaba@izmiruzmani.com</a> adresine e-posta gönderebilirsiniz.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .pol-header { background: linear-gradient(180deg, #fff9f3 0%, #f5e8d8 100%); padding: clamp(32px, 5vw, 56px) 20px clamp(28px, 4vw, 44px); }
+  .pol-container { max-width: 760px; margin: 0 auto; }
+  .pol-breadcrumb { font-size: 12px; color: #999; margin-bottom: 16px; }
+  .pol-breadcrumb a { color: #062f96; }
+  .pol-title { font-family: 'Fraunces', serif; font-size: clamp(32px, 5vw, 50px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; color: #1a1a1a; margin-bottom: 10px; }
+  .pol-updated { font-size: 13px; color: #888; }
+  .pol-body { background: #fff9f3; padding: 40px 20px 72px; }
+  .pol-body p { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 16px; }
+  .pol-body h2 { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 36px 0 12px; }
+  .pol-body h3 { font-size: 16px; font-weight: 600; color: #1a1a1a; margin: 20px 0 8px; }
+  .pol-body a { color: #062f96; text-decoration: underline; }
+  .pol-body code { font-size: 14px; background: #f0e8df; padding: 1px 6px; border-radius: 4px; }
+</style>
