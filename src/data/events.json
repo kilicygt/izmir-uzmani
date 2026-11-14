@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T11:08:18.978Z",
+  "fetchedAt": "2026-11-14T10:35:32.977Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -1117,7 +1117,7 @@
       "category": "Toplantı / Panel ",
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
-      "admission": null,
+      "admission": "free",
       "image": "/images/etkinlikler/otomatik/af2b1243-95299aff.webp",
       "summary": [
         "17 Kasım 2026",
@@ -1129,7 +1129,7 @@
         {
           "start": "2026-11-17T19:00:00+03:00",
           "end": "2026-11-17T21:00:00+03:00",
-          "venue": "Atlas Pavyonu"
+          "venue": "Kültürpark Atlas Pavyonu"
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/bir-ruyann-ardndan-nazmla-konusma-semiha-berksoy/af2b1243-53e5-44d9-af4d-93563c6ce09a",
@@ -1294,6 +1294,65 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/artmeet-2026-gorunmez-baglar-sergisi/e244ec1a-5712-46ff-9c7c-04133ea1fa41",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "e5ed9b60-f28f-430d-acef-817eb3ccf2cd",
+      "slug": "ayrimciliga-karsi-sinema-gunleri-e5ed9b",
+      "title": "Ayrımcılığa Karşı Sinema Günleri",
+      "category": "Sinema",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": "free",
+      "image": "/images/etkinlikler/otomatik/e5ed9b60-9e90cd50.webp",
+      "summary": [
+        "Etkinliğimiz 23 - 24 Kasım tarihlerinde Elhamra Sahnesinde gerçekleşecektir. Filmlerle ilgili tüm bilgiler açıklama kısmında yer almaktadır."
+      ],
+      "body": [
+        "23 Kasım 2026 - 19.30",
+        "Cadı Üçlemesi 15+",
+        "Yönetmen: Ceylan Özgün Özçelik",
+        "Senaryo: Ceylan Özgün Özçelik",
+        "Oyuncular/Seslendirme: Hale Sürel, Gülçin Kültür Şahin",
+        "Müzik: Ekin Fil",
+        "Yapım: 2022 ~ Türkiye",
+        "Tür: Belgesel",
+        "Süre: 71 dk.",
+        "Dil: Türkçe",
+        "2020 Antalya Film Forum Belgesel Work in Progress Platformu Ödülü (Ceylan Özgün Özçelik, Armağan Lale)",
+        "Konu: Canına tak eden kadınlar cezaevlerinden yaraları ve şifaları haykırıyor. Cadı Üçlemesi 15+ kendilerine şiddet uygulayan kocalarını öldürmüş iki kadının öyküsünü anlatıyor. Aylin ve Havva evlerini, sevgiyi, öfkeyi, çocukluklarını, çocuklarını, düşlerini ve kâbuslarını paylaşıyor. Belgesel, Aylin ile Havva’nın mektuplara döktükleri duyguları aktarırken gerilimden deneysele türler arasında dolaşıyor. Şiddetin zaman ve mekân tanımayan döngüsünde iki kadının “suçlu” bulunmasını sorguluyor.",
+        "24 Kasım 2026 - 13.30",
+        "Gelin",
+        "Yönetmen: Lütfi Ömer Akad",
+        "Senaryo: Lütfi Ömer Akad",
+        "Oyuncular: Hülya Koçyiğit, Kerem Yılmazer, Kahraman Kıral, Ali Şen",
+        "Müzik: Yalçın Tura",
+        "Yapım: 1973 ~ Türkiye",
+        "Tür: Dram",
+        "Süre: 97 dk.",
+        "Dil: Türkçe",
+        "1973 Adana Altın Koza Film Festivali - En İyi Film, Onur Ödülü (Lütfi Ömer Akad), En İyi Yardımcı Kadın Oyuncu (Nazan Adalı), En İyi Yardımcı Erkek Oyuncu (Kamran Usluer), Özel Ödül (Kahraman Kıral)",
+        "Konu: Lütfi Ömer Akad’ın üçlemesinin ilk filmi olan filmde Yozgat’tan İstanbul’a göç eden Hacı İlyas ve ailesinin hikayesi anlatılmaktadır. Aile burada işlerini büyütüp şehre tutunmak için didinir, şehrin gözde muhitlerinden birinde dükkan açmak üzere para biriktirir. Bu sırada gelinleri Meryem, hasta oğlunun tedaviye ihtiyacı olduğuna aileyi ikna etmeye çalışır.",
+        "24 Kasım 2026 - 18.00",
+        "Geronimo",
+        "Yönetmen: Tony Gatlif",
+        "Senaryo: Tony Gatlif",
+        "Oyuncular: Céline Sallette, Rachid Yous, David Murgia",
+        "Müzik: Valentin Dahmani, Delphine Mantoulet",
+        "Yapım: 2014 ~ Fransa",
+        "Tür: Dram",
+        "Süre: 107 dk.",
+        "Dil: Fransızca, Türkçe altyazılı",
+        "Konu: Fransa’nın güneyinde yer alan St. Pierre mahallesi kavganın ve gürültünün hiç bir zaman eksik olmadığı, oldukça hararetli bir kasabadır. Sosyal eğitmenlik görevini üstlenen Geronimo, gençler arasında aniden patlak veren gergin durumları yumuşatmaya çalışmaktadır. Çingene bir sevgilisi olan ama Türk kökenli genç Nil’in zorla evlendirilmekten kaçarak Roman sevgilisi Lucky’ye sığınmasıyla mahalledeki gerginlik giderek büyür. İki aile arasında çatışmaya dönüşen olaylar karşısında Geronimo, gençleri korumak ve mahallede yeniden huzuru sağlamak için mücadele eder."
+      ],
+      "sessions": [
+        {
+          "start": "2026-11-23T19:30:00+03:00",
+          "end": "2026-11-23T22:00:00+03:00",
+          "venue": "Elhamra Sahnesi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/ayrmclga-kars-sinema-gunleri/e5ed9b60-f28f-430d-acef-817eb3ccf2cd",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
@@ -1505,6 +1564,11 @@
         {
           "start": "2026-11-27T20:00:00+03:00",
           "end": "2026-11-27T21:30:00+03:00",
+          "venue": "İzBBŞT İsmet İnönü Sahnesi"
+        },
+        {
+          "start": "2026-11-28T20:00:00+03:00",
+          "end": "2026-11-28T21:30:00+03:00",
           "venue": "İzBBŞT İsmet İnönü Sahnesi"
         }
       ],
