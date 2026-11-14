@@ -229,12 +229,12 @@ const popular = ['Çeşme', 'Alaçatı', 'Urla', 'Efes', 'Bergama', 'Kemeraltı'
   /* THEMES */
   .themes { background: #fff9f3; padding: clamp(40px, 6vw, 64px) 0 clamp(24px, 4vw, 40px); }
   .theme-grid { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
-  .theme-chips { display: none; }
+  .chips.theme-chips { display: none; }
   @media (max-width: 599px) {
     .themes { padding: 24px 0 8px; }
     .themes .sec-title { font-size: 18px; margin-bottom: 12px; }
     .theme-grid { display: none; }
-    .theme-chips { display: flex; }
+    .chips.theme-chips { display: flex; }
   }
   @media (min-width: 600px) and (max-width: 1023px) { .theme-grid { gap: 12px; } }
   @media (min-width: 1024px) { .theme-grid { grid-template-columns: repeat(5, 1fr); } }
