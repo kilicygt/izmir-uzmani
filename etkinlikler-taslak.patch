@@ -1,0 +1,572 @@
+diff --git a/src/components/IzmirIcon.astro b/src/components/IzmirIcon.astro
+index 791b0ce..b4bef62 100644
+--- a/src/components/IzmirIcon.astro
++++ b/src/components/IzmirIcon.astro
+@@ -1,7 +1,7 @@
+ ---
+ // Clay-style "3D" illustrations of İzmir symbols, drawn as inline SVG so they stay sharp and light.
+ interface Props {
+-  name: 'saatkulesi' | 'asansor' | 'vapur' | 'marti' | 'palmiye' | 'metro' | 'bilet' | 'harita';
++  name: 'saatkulesi' | 'asansor' | 'vapur' | 'marti' | 'palmiye' | 'metro' | 'bilet' | 'harita' | 'nota' | 'maske';
+   size?: number;
+   class?: string;
+ }
+@@ -215,4 +215,46 @@ const id = `ii-${name}`;
+       <path d="M50 30c2-4 6-6 10-6" stroke="#fff" stroke-opacity=".5" stroke-width="2.5" stroke-linecap="round" />
+     </g>
+   )}
++  {name === 'nota' && (
++    <g>
++      <defs>
++        <linearGradient id={`${id}-nt`} x1="0" y1="0" x2="1" y2="1">
++          <stop offset="0" stop-color="#6f95f2" /><stop offset="1" stop-color="#062f96" />
++        </linearGradient>
++      </defs>
++      <ellipse cx="58" cy="110" rx="32" ry="5" fill={`url(#${id}-sh)`} />
++      <path d="M44 30l50-14v62" stroke="#041e6e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" transform="translate(2 3)" opacity=".35" />
++      <path d="M44 84V30l50-14v62" stroke={`url(#${id}-nt)`} stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
++      <path d="M44 30l50-14v12l-50 14z" fill={`url(#${id}-nt)`} />
++      <ellipse cx="33" cy="86" rx="15" ry="12" fill={`url(#${id}-nt)`} transform="rotate(-18 33 86)" />
++      <ellipse cx="83" cy="80" rx="15" ry="12" fill={`url(#${id}-nt)`} transform="rotate(-18 83 80)" />
++      <path d="M24 82c2-4 6-6 10-6M74 76c2-4 6-6 10-6" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" />
++    </g>
++  )}
++
++  {name === 'maske' && (
++    <g>
++      <defs>
++        <linearGradient id={`${id}-m1`} x1="0" y1="0" x2="1" y2="1">
++          <stop offset="0" stop-color="#ffd27a" /><stop offset="1" stop-color="#ef8a00" />
++        </linearGradient>
++        <linearGradient id={`${id}-m2`} x1="0" y1="0" x2="1" y2="1">
++          <stop offset="0" stop-color="#ff8fb4" /><stop offset="1" stop-color="#c2255c" />
++        </linearGradient>
++      </defs>
++      <ellipse cx="60" cy="110" rx="36" ry="5" fill={`url(#${id}-sh)`} />
++      <g transform="rotate(14 78 58)">
++        <path d="M58 26h42v30c0 18-9 32-21 32S58 74 58 56z" fill={`url(#${id}-m2)`} />
++        <path d="M66 46q4-4 8 0M84 46q4-4 8 0" stroke="#5c0f2b" stroke-width="3.5" stroke-linecap="round" fill="none" />
++        <path d="M68 72q11-9 22 0" stroke="#5c0f2b" stroke-width="3.5" stroke-linecap="round" fill="none" />
++      </g>
++      <g transform="rotate(-12 42 56)">
++        <path d="M20 24h44v32c0 19-10 34-22 34S20 75 20 56z" fill={`url(#${id}-m1)`} />
++        <ellipse cx="32" cy="46" rx="4.5" ry="3.5" fill="#6b3a00" />
++        <ellipse cx="52" cy="46" rx="4.5" ry="3.5" fill="#6b3a00" />
++        <path d="M30 64q12 11 24 0" stroke="#6b3a00" stroke-width="3.5" stroke-linecap="round" fill="none" />
++        <path d="M26 30c0 8 0 16 2 22" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" />
++      </g>
++    </g>
++  )}
+ </svg>
+diff --git a/src/lib/events.ts b/src/lib/events.ts
+index 86d78d2..f4cfbd3 100644
+--- a/src/lib/events.ts
++++ b/src/lib/events.ts
+@@ -106,9 +106,9 @@ export const longDate = (d: string) => fmt(d, { day: 'numeric', month: 'long', y
+ export function catColor(cat: string) {
+   const map: Record<string, string> = {
+     Konser: '#062f96', Tiyatro: '#ff7c11', Sergi: '#0b7a5c', Sinema: '#8a2be2',
+-    Festival: '#ff7c11', Çocuk: '#d6336c',
++    Festival: '#ff7c11', Çocuk: '#d6336c', 'Toplantı / Panel': '#6b4fa0', Diğer: '#6b7280',
+   };
+-  return map[cat] ?? '#062f96';
++  return map[cat.trim()] ?? '#062f96';
+ }
+ 
+ const META_LINE = /^(📍\s*)?(yer|mekân|mekan|saat|tarih)\s*[:：]/i;
+diff --git a/src/pages/etkinlikler/index.astro b/src/pages/etkinlikler/index.astro
+index 1b9adda..e39303f 100644
+--- a/src/pages/etkinlikler/index.astro
++++ b/src/pages/etkinlikler/index.astro
+@@ -1,153 +1,359 @@
+ ---
+ import Layout from '../../layouts/Layout.astro';
+-import { getEvents, groupEvents, dayMonth, weekday, time, catColor } from '../../lib/events';
++import IzmirIcon from '../../components/IzmirIcon.astro';
++import { getEvents, groupEvents, dayMonth, weekday, time, fmt, catColor } from '../../lib/events';
+ 
+-const groups = groupEvents(await getEvents());
++const events = await getEvents();
++const groups = groupEvents(events);
++
++const cat = (c: string) => c.trim();
++const catCounts = new Map<string, number>();
++for (const e of events) catCounts.set(cat(e.category), (catCounts.get(cat(e.category)) ?? 0) + 1);
++const categories = [...catCounts.entries()].sort((a, b) => b[1] - a[1]).map(([c]) => c);
++
++const weekCount = groups.find((g) => g.header.endsWith('Bu Hafta'))?.events.length ?? 0;
++const freeCount = events.filter((e) => e.admission === 'free' || e.admission === 'free-ticket').length;
++
++const dayNum = (d: string) => fmt(d, { day: 'numeric' });
++const monthShort = (d: string) => fmt(d, { month: 'short' });
+ ---
+ 
+-<Layout title="Etkinlikler" activePage="etkinlikler" description="İzmir'deki güncel konser, tiyatro, sergi, sinema ve kültür etkinlikleri.">
++<Layout
++  title="İzmir Etkinlikleri: Konser, Tiyatro, Sergi"
++  activePage="etkinlikler"
++  description="İzmir'de bu hafta ve bu ay neler var? Güncel konser, tiyatro, sergi, sinema ve festival takvimi; tarih, saat, mekan ve ücretsiz etkinlikler tek sayfada."
++>
+ 
+-  <!-- PAGE HEADER -->
+-  <section class="page-header">
+-    <div class="container anim">
+-      <p class="breadcrumb"><a href="/" class="bc-link">Ana Sayfa</a> · Etkinlikler</p>
+-      <h1 class="page-title">Etkinlikler</h1>
+-      <p class="page-desc">İzmir'deki konser, tiyatro, sergi, sinema ve kültür etkinlikleri.</p>
++  <!-- HERO -->
++  <section class="hero">
++    <div class="blob blob-a"></div>
++    <div class="blob blob-b"></div>
++    <div class="container hero-grid">
++      <div class="hero-text">
++        <p class="breadcrumb"><a href="/" class="bc-link">Ana Sayfa</a> · Etkinlikler</p>
++        <p class="eyebrow">Etkinlik Takvimi</p>
++        <h1 class="hero-title">İzmir’de bu hafta neler var?</h1>
++        <p class="hero-sub">Konserler, tiyatrolar, sergiler ve festivaller. Şehrin kültür sanat takvimi her gün güncelleniyor; sen sadece hangisine gideceğini seç.</p>
++        <div class="hero-pills">
++          <span class="pill"><strong>{events.length}</strong> güncel etkinlik</span>
++          {weekCount > 0 && <span class="pill"><strong>{weekCount}</strong> bu hafta</span>}
++          {freeCount > 0 && <span class="pill pill-green"><strong>{freeCount}</strong> ücretsiz</span>}
++        </div>
++      </div>
++      <div class="hero-art" aria-hidden="true">
++        <div class="art-disc"></div>
++        <IzmirIcon name="maske" size={190} class="art art-maske" />
++        <IzmirIcon name="nota" size={150} class="art art-nota" />
++        <IzmirIcon name="bilet" size={170} class="art art-bilet" />
++        <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
++      </div>
+     </div>
+   </section>
+ 
+-  <!-- FILTER -->
++  <!-- FILTERS -->
+   <div class="filter-bar">
+-    <div class="container">
+-      {['Bu Hafta', 'Bu Ay', 'Tümü'].map((f, i) => (
+-        <button class:list={['filter-btn', { active: i === 0 }]} data-filter={f}>{f}</button>
+-      ))}
+-      <a href="/etkinlikler/gecmis" class="past-link">Geçmiş Etkinlikler →</a>
++    <div class="container filter-inner">
++      <div class="seg" role="tablist" aria-label="Zaman aralığı">
++        {['Bu Hafta', 'Bu Ay', 'Tümü'].map((f, i) => (
++          <button class:list={['seg-btn', { active: i === 0 }]} data-filter={f}>{f}</button>
++        ))}
++      </div>
++      <div class="chips" aria-label="Kategori">
++        <button class="chip active" data-cat="">Hepsi</button>
++        {categories.map((c) => (
++          <button class="chip" data-cat={c}><span class="dot" style={`background:${catColor(c)}`}></span>{c}</button>
++        ))}
++        <button class="chip chip-free" data-free-toggle aria-pressed="false">Ücretsiz</button>
++      </div>
+     </div>
+   </div>
+ 
+   <!-- EVENT GROUPS -->
+   <section class="events-section">
+     <div class="container">
+-      <div class="event-groups" id="event-groups">
+-        {groups.map(group => (
++      <div class="event-groups">
++        {groups.map((group, gi) => (
+           <div class="event-group" data-filters={group.filters.join('|')}>
+-            <p class="group-header">{group.header}</p>
+-            <div class="events-list">
+-              {group.events.map(ev => (
+-                <a href={`/etkinlikler/${ev.slug}`} class="event-row" data-end={ev.sessions[ev.sessions.length - 1].end}>
+-                  <div class="event-date">
+-                    {ev.ongoing ? (
+-                      <>
+-                        <p class="ev-date">{dayMonth(ev.next.end)}</p>
+-                        <p class="ev-time">tarihine kadar</p>
+-                      </>
+-                    ) : (
+-                      <>
+-                        <p class="ev-date">{weekday(ev.next.start)} {dayMonth(ev.next.start)}</p>
+-                        <p class="ev-time">{time(ev.next.start)}{ev.sessions.length > 1 && ` · ${ev.sessions.length} seans`}</p>
+-                      </>
+-                    )}
+-                  </div>
+-                  <div class="event-divider"></div>
+-                  <div class="event-info">
+-                    <p class="ev-title">{ev.title}</p>
+-                    {ev.next.venue && <p class="ev-venue">{ev.next.venue}</p>}
+-                  </div>
+-                  <span class="cat-badge" style={`background:${catColor(ev.category)};font-size:11px;white-space:nowrap`}>{ev.category}</span>
+-                </a>
+-              ))}
++            <h2 class="group-header">{group.header}</h2>
++            <div class="cards">
++              {group.events.map((ev, i) => {
++                const free = ev.admission === 'free' || ev.admission === 'free-ticket';
++                return (
++                  <a
++                    href={`/etkinlikler/${ev.slug}`}
++                    class="card"
++                    data-cat={cat(ev.category)}
++                    data-free={free ? '1' : '0'}
++                    data-end={ev.sessions[ev.sessions.length - 1].end}
++                  >
++                    <div class="card-img">
++                      {ev.image ? (
++                        <img src={ev.image} alt={ev.title} loading={gi === 0 && i < 4 ? 'eager' : 'lazy'} decoding="async" />
++                      ) : (
++                        <div class="img-ph"><IzmirIcon name="bilet" size={80} /></div>
++                      )}
++                      {ev.ongoing ? (
++                        <div class="date-chip until">
++                          <span class="dc-small">son gün</span>
++                          <span class="dc-day">{dayNum(ev.next.end)}</span>
++                          <span class="dc-month">{monthShort(ev.next.end)}</span>
++                        </div>
++                      ) : (
++                        <div class="date-chip">
++                          <span class="dc-small">{weekday(ev.next.start)}</span>
++                          <span class="dc-day">{dayNum(ev.next.start)}</span>
++                          <span class="dc-month">{monthShort(ev.next.start)}</span>
++                        </div>
++                      )}
++                      <span class="cat-tag" style={`background:${catColor(ev.category)}`}>{cat(ev.category)}</span>
++                      {free && <span class="free-tag">Ücretsiz</span>}
++                    </div>
++                    <div class="card-body">
++                      <h3 class="card-title">{ev.title}</h3>
++                      {ev.next.venue && (
++                        <p class="card-meta">
++                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
++                          <span>{ev.next.venue}</span>
++                        </p>
++                      )}
++                      <p class="card-meta">
++                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
++                        {ev.ongoing ? `${dayMonth(ev.next.end)} tarihine kadar` : `${time(ev.next.start)}${ev.sessions.length > 1 ? ` · ${ev.sessions.length} seans` : ''}`}
++                      </p>
++                    </div>
++                  </a>
++                );
++              })}
+             </div>
+           </div>
+         ))}
+       </div>
+-      <p class="empty-note" id="empty-note" hidden={groups.length > 0}>Şu an listelenecek etkinlik yok. Kısa süre içinde yeni etkinlikler eklenecek.</p>
+-      <p class="source-note">
+-        Etkinlik bilgileri <a href="https://kultursanat.izmir.bel.tr/" target="_blank" rel="noopener">İzmir Büyükşehir Belediyesi Kültürsanat</a> sayfasından her gün güncellenir. Tarih, saat ve bilet bilgisi değişebilir; güncel bilgi için etkinliğin resmi sayfasını kontrol edin.
+-      </p>
++
++      <div class="empty" id="empty-note" hidden={groups.length > 0}>
++        <IzmirIcon name="bilet" size={90} />
++        <p>Bu filtrelerle eşleşen etkinlik yok. Başka bir kategori ya da zaman aralığı dene.</p>
++      </div>
++
++      <div class="past-row">
++        <a href="/etkinlikler/gecmis" class="past-link">Geçmiş etkinliklere göz at →</a>
++      </div>
++    </div>
++  </section>
++
++  <!-- CTA -->
++  <section class="cta-section">
++    <div class="container cta-grid">
++      <a href="https://instagram.com/izmiruzmani" target="_blank" rel="noopener" class="cta-card cta-ig">
++        <p class="cta-eyebrow">Instagram</p>
++        <h2 class="cta-title">Haftanın etkinliklerini kaçırma</h2>
++        <p class="cta-desc">Öne çıkan konser, sergi ve festivalleri her hafta @izmiruzmani hesabında paylaşıyoruz.</p>
++        <span class="cta-btn">Takip et →</span>
++      </a>
++      <a href="mailto:merhaba@izmiruzmani.com?subject=Etkinlik%20duyurusu" class="cta-card cta-mail">
++        <p class="cta-eyebrow dark">Organizatörler için</p>
++        <h2 class="cta-title dark">Etkinliğini burada görmek ister misin?</h2>
++        <p class="cta-desc dark">İzmir’de düzenlediğin konser, atölye ya da festivalin bilgilerini gönder, takvime ekleyelim.</p>
++        <span class="cta-btn dark">E-posta gönder →</span>
++      </a>
+     </div>
++    <p class="source-note container">
++      Etkinlik bilgileri <a href="https://kultursanat.izmir.bel.tr/" target="_blank" rel="noopener">İzmir Büyükşehir Belediyesi Kültürsanat</a> sayfasından her gün güncellenir. Tarih, saat ve bilet bilgisi değişebilir; güncel bilgi için etkinliğin resmi sayfasını kontrol edin.
++    </p>
+   </section>
+ 
+ </Layout>
+ 
+ <style>
+   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+-  .anim { animation: fadeUp 0.5s ease both; }
++  .eyebrow {
++    font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
++    color: #062f96; margin-bottom: 14px;
++  }
++
++  /* HERO */
++  .hero {
++    position: relative; overflow: hidden;
++    background: linear-gradient(180deg, #fff9f3 0%, #f5e8d8 100%);
++    padding: clamp(32px, 5vw, 64px) 0 clamp(32px, 5vw, 56px);
++  }
++  .blob { position: absolute; border-radius: 50%; filter: blur(64px); pointer-events: none; }
++  .blob-a { top: -80px; right: -60px; width: 420px; height: 420px; background: rgba(255,124,17,0.12); animation: floatA 10s ease-in-out infinite; }
++  .blob-b { bottom: -120px; left: -80px; width: 380px; height: 380px; background: rgba(214,51,108,0.07); animation: floatB 13s ease-in-out infinite; }
++  .hero-grid { position: relative; display: grid; gap: 20px; align-items: center; }
++  @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 40px; } }
++  .hero-text { animation: fadeUp 0.6s ease both; }
++  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 22px; }
++  .bc-link { color: #062f96; }
++  .hero-title {
++    font-family: 'Fraunces', serif; font-weight: 800; color: #1a1a1a;
++    font-size: clamp(36px, 5.6vw, 64px); line-height: 1.04; letter-spacing: -0.03em; margin-bottom: 18px;
++  }
++  .hero-sub { font-size: 16px; color: #555; line-height: 1.75; max-width: 540px; margin-bottom: 24px; }
++  .hero-pills { display: flex; gap: 8px; flex-wrap: wrap; }
++  .pill {
++    background: #fff; border: 1px solid #ecdccb; border-radius: 999px; padding: 7px 14px;
++    font-size: 13px; color: #555;
++  }
++  .pill strong { color: #062f96; font-weight: 700; }
++  .pill-green strong { color: #0b7a5c; }
+ 
+-  .page-header { background: #f0e8df; padding: 48px 20px; }
+-  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 10px; }
+-  .bc-link { color: #062f96; transition: opacity 0.15s; }
+-  .bc-link:hover { opacity: 0.7; color: #062f96; }
+-  .page-title { font-size: clamp(28px,4vw,40px); font-weight: 600; color: #1a1a1a; margin-bottom: 8px; }
+-  .page-desc { font-size: 15px; color: #666; }
++  .hero-art { position: relative; height: clamp(220px, 28vw, 320px); max-width: 440px; width: 100%; margin: 0 auto; }
++  .art-disc {
++    position: absolute; inset: 12% 8% 4%; border-radius: 50%;
++    background: radial-gradient(circle at 40% 35%, #ffe3c4 0%, #ffc58f 55%, #ffb06b 100%);
++    box-shadow: inset 0 -14px 30px rgba(239,106,0,0.18);
++  }
++  :global(.art) { position: absolute; filter: drop-shadow(0 16px 16px rgba(90,58,26,0.2)); height: auto; }
++  :global(.art-maske) { left: 2%; top: 4%; width: 46%; animation: bob 6s ease-in-out infinite; }
++  :global(.art-nota) { right: 6%; top: 0; width: 36%; animation: bob 7s ease-in-out infinite 0.8s; }
++  :global(.art-bilet) { left: 30%; bottom: 0; width: 42%; animation: bob 6.5s ease-in-out infinite 1.4s; }
++  .spark { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #062f96; opacity: .8; }
++  .s1 { top: 14%; left: 52%; } .s2 { bottom: 20%; right: 8%; background: #d6336c; width: 8px; height: 8px; } .s3 { bottom: 34%; left: 4%; background: #ff7c11; }
++  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
++  @media (prefers-reduced-motion: reduce) { :global(.art), .blob { animation: none !important; } }
+ 
++  /* FILTERS */
+   .filter-bar {
+-    background: #fff9f3; padding: 16px 20px;
+-    border-bottom: 1px solid #ede5db;
+-    display: flex;
+-  }
+-  .filter-bar .container { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+-  .past-link { margin-left: auto; font-size: 13px; font-weight: 500; color: #062f96; padding: 8px 4px; }
+-  .past-link:hover { opacity: 0.75; color: #062f96; }
+-  .filter-btn {
+-    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
+-    background: #fff; color: #555; border: 1.5px solid #e0d8d0;
++    position: sticky; top: 64px; z-index: 20;
++    background: rgba(255,249,243,0.92); backdrop-filter: blur(10px);
++    border-bottom: 1px solid #ede5db; padding: 12px 0;
++  }
++  .filter-inner { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
++  .seg { display: inline-flex; background: #efe4d8; border-radius: 999px; padding: 4px; flex-shrink: 0; }
++  .seg-btn {
++    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; color: #555;
++    padding: 7px 16px; border-radius: 999px; border: 0; background: transparent; cursor: pointer;
+     transition: background 0.2s, color 0.2s;
+   }
+-  .filter-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+-  .filter-btn:hover:not(.active) { border-color: #999; }
++  .seg-btn.active { background: #062f96; color: #fff; box-shadow: 0 4px 10px -4px rgba(6,47,150,0.5); }
++  .chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; padding: 2px 0; }
++  .chips::-webkit-scrollbar { display: none; }
++  .chip {
++    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; color: #555; white-space: nowrap;
++    padding: 6px 14px; border-radius: 999px; border: 1.5px solid #e4d9cd; background: #fff; cursor: pointer;
++    display: inline-flex; align-items: center; gap: 6px; transition: border-color 0.2s, background 0.2s, color 0.2s;
++  }
++  .chip:hover { border-color: #bbb; }
++  .chip.active { background: #1a1a1a; border-color: #1a1a1a; color: #fff; }
++  .chip-free[aria-pressed="true"] { background: #0b7a5c; border-color: #0b7a5c; color: #fff; }
++  .dot { width: 8px; height: 8px; border-radius: 50%; }
++  @media (max-width: 700px) {
++    .filter-inner { gap: 10px; }
++    .chips { flex-basis: 100%; }
++    .hero-art { height: 190px; max-width: 300px; }
++  }
+ 
+-  .events-section { background: #fff9f3; padding: clamp(40px,5vw,64px) 20px; }
+-  .event-groups { display: flex; flex-direction: column; gap: 40px; }
++  /* EVENTS */
++  .events-section { background: #fff9f3; padding: clamp(32px, 5vw, 56px) 0; }
++  .event-groups { display: flex; flex-direction: column; gap: 48px; }
++  .event-group[hidden], .card[hidden] { display: none; }
++  .group-header {
++    font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px);
++    color: #1a1a1a; margin-bottom: 20px; letter-spacing: -0.01em;
++  }
++  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
++  @media (min-width: 768px) { .cards { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
++  @media (min-width: 1100px) { .cards { grid-template-columns: repeat(4, 1fr); } }
++  .card {
++    background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);
++    display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s;
++  }
++  .card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -22px rgba(90,58,26,0.45); color: inherit; }
++  .card-img { position: relative; aspect-ratio: 4 / 5; background: #efe4d8; overflow: hidden; }
++  .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.4s; }
++  .card:hover .card-img img { transform: scale(1.04); }
++  .img-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
++  .date-chip {
++    position: absolute; top: 10px; left: 10px; background: #fff; border-radius: 12px;
++    padding: 6px 10px 7px; text-align: center; min-width: 52px; line-height: 1.05;
++    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.35);
++    display: flex; flex-direction: column; align-items: center;
++  }
++  .dc-small { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #ff7c11; }
++  .dc-day { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 800; color: #1a1a1a; }
++  .dc-month { font-size: 11px; font-weight: 500; color: #666; text-transform: uppercase; }
++  .date-chip.until .dc-small { color: #0b7a5c; }
++  .cat-tag {
++    position: absolute; top: 12px; right: 10px; color: #fff; font-size: 11px; font-weight: 600;
++    padding: 4px 10px; border-radius: 999px; box-shadow: 0 4px 10px -4px rgba(0,0,0,0.4);
++  }
++  .free-tag {
++    position: absolute; bottom: 10px; left: 10px; background: #0b7a5c; color: #fff;
++    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px;
++  }
++  .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; }
++  .card-title {
++    font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.35; margin-bottom: 2px;
++    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
++  }
++  .card-meta {
++    font-size: 12.5px; color: #777; display: flex; gap: 6px; align-items: flex-start; line-height: 1.4;
++  }
++  .card-meta span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
++  .card-meta svg { flex-shrink: 0; margin-top: 1px; color: #062f96; }
++  @media (max-width: 480px) {
++    .card-body { padding: 12px; }
++    .card-title { font-size: 14px; }
++    .dc-day { font-size: 20px; }
++    .cat-tag { font-size: 10px; padding: 3px 8px; }
++  }
+ 
+-  .event-group[hidden], .event-row[hidden] { display: none; }
++  .empty { text-align: center; padding: 40px 0; color: #666; }
++  .empty[hidden] { display: none; }
++  .empty :global(svg) { margin: 0 auto 8px; display: block; }
++  .past-row { text-align: center; margin-top: 40px; }
++  .past-link {
++    display: inline-block; font-size: 14px; font-weight: 500; color: #062f96;
++    padding: 12px 22px; border: 1.5px solid #e4d9cd; border-radius: 999px; background: #fff;
++  }
++  .past-link:hover { border-color: #062f96; color: #062f96; }
+ 
+-  .group-header {
+-    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+-    text-transform: uppercase; color: #999; margin-bottom: 16px;
+-  }
+-  .events-list {
+-    background: #fff; border-radius: 14px; overflow: hidden;
+-    border: 1px solid rgba(0,0,0,0.06);
+-  }
+-  .event-row {
+-    display: flex; align-items: center; gap: 16px;
+-    padding: 18px 24px; border-bottom: 1px solid rgba(0,0,0,0.05);
+-    transition: background 0.15s; color: inherit; flex-wrap: wrap;
+-  }
+-  .event-row:last-child { border-bottom: none; }
+-  .event-row:hover { background: #faf7f4; }
+-  .event-date { flex-shrink: 0; min-width: 96px; }
+-  .ev-date { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
+-  .ev-time { font-size: 12px; color: #999; margin-top: 1px; }
+-  .event-divider { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
+-  .event-info { flex: 1; min-width: 160px; }
+-  .ev-title { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
+-  .ev-venue { font-size: 12px; color: #999; }
+-  .cat-badge {
+-    display: inline-block; font-size: 11px; font-weight: 600;
+-    padding: 4px 12px; border-radius: 20px; letter-spacing: 0.03em; color: #fff;
+-  }
+-  .empty-note { font-size: 15px; color: #666; text-align: center; padding: 32px 0; }
+-  .source-note { font-size: 12px; color: #999; margin-top: 32px; line-height: 1.6; max-width: 720px; }
++  /* CTA */
++  .cta-section { background: #f0e8df; padding: clamp(48px, 7vw, 80px) 0 40px; }
++  .cta-grid { display: grid; gap: 20px; }
++  @media (min-width: 900px) { .cta-grid { grid-template-columns: 1.2fr 1fr; } }
++  .cta-card { border-radius: 24px; padding: clamp(26px, 4vw, 40px); display: block; transition: transform 0.25s; }
++  .cta-card:hover { transform: translateY(-3px); }
++  .cta-ig { background: linear-gradient(135deg, #f58529 0%, #dd2a7b 45%, #8134af 75%, #515bd4 100%); color: #fff; }
++  .cta-ig:hover { color: #fff; }
++  .cta-mail { background: #fff9f3; border: 1px solid #e4d9cd; }
++  .cta-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 10px; }
++  .cta-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(24px, 3vw, 34px); line-height: 1.15; margin-bottom: 12px; }
++  .cta-desc { font-size: 15px; line-height: 1.7; opacity: 0.92; margin-bottom: 22px; max-width: 460px; }
++  .cta-btn { display: inline-block; background: #fff; color: #1a1a1a; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 999px; }
++  .dark { color: #1a1a1a; }
++  .cta-eyebrow.dark { color: #062f96; }
++  .cta-desc.dark { color: #666; }
++  .cta-btn.dark { background: #062f96; color: #fff; }
++  .source-note { font-size: 12px; color: #999; margin-top: 32px; line-height: 1.6; }
+   .source-note a { color: #062f96; text-decoration: underline; }
+ </style>
+ 
+ <script>
+-  const filterBtns = document.querySelectorAll('.filter-btn');
++  const segBtns = document.querySelectorAll<HTMLButtonElement>('.seg-btn');
++  const catBtns = document.querySelectorAll<HTMLButtonElement>('.chip[data-cat]');
++  const freeBtn = document.querySelector<HTMLButtonElement>('[data-free-toggle]');
+   const groups = document.querySelectorAll<HTMLElement>('.event-group');
++  const cards = document.querySelectorAll<HTMLElement>('.card');
+ 
+-  // The page is rebuilt daily; hide anything that ended since the last build.
++  // The page is rebuilt daily; drop anything that ended since the last build.
+   const now = Date.now();
+-  document.querySelectorAll<HTMLElement>('.event-row').forEach(row => {
+-    if (new Date(row.dataset.end ?? '').getTime() < now) row.hidden = true;
++  cards.forEach((c) => {
++    if (new Date(c.dataset.end ?? '').getTime() < now) c.dataset.expired = '1';
+   });
+ 
+-  function apply(filter: string) {
++  const state = { time: 'Bu Hafta', cat: '', free: false };
++
++  function apply() {
++    cards.forEach((c) => {
++      c.hidden =
++        c.dataset.expired === '1' ||
++        (state.cat !== '' && c.dataset.cat !== state.cat) ||
++        (state.free && c.dataset.free !== '1');
++    });
+     let visible = 0;
+-    groups.forEach(g => {
+-      const show = (g.dataset.filters ?? '').split('|').includes(filter) && !!g.querySelector('.event-row:not([hidden])');
++    groups.forEach((g) => {
++      const show = (g.dataset.filters ?? '').split('|').includes(state.time) && !!g.querySelector('.card:not([hidden])');
+       g.hidden = !show;
+       if (show) visible++;
+     });
+@@ -155,12 +361,20 @@ const groups = groupEvents(await getEvents());
+     if (empty) empty.hidden = visible > 0;
+   }
+ 
+-  filterBtns.forEach(btn => {
+-    btn.addEventListener('click', () => {
+-      filterBtns.forEach(b => b.classList.remove('active'));
+-      btn.classList.add('active');
+-      apply(btn.getAttribute('data-filter') ?? 'Tümü');
+-    });
++  segBtns.forEach((btn) => btn.addEventListener('click', () => {
++    segBtns.forEach((b) => b.classList.toggle('active', b === btn));
++    state.time = btn.dataset.filter ?? 'Tümü';
++    apply();
++  }));
++  catBtns.forEach((btn) => btn.addEventListener('click', () => {
++    catBtns.forEach((b) => b.classList.toggle('active', b === btn));
++    state.cat = btn.dataset.cat ?? '';
++    apply();
++  }));
++  freeBtn?.addEventListener('click', () => {
++    state.free = !state.free;
++    freeBtn.setAttribute('aria-pressed', String(state.free));
++    apply();
+   });
+-  apply('Bu Hafta');
++  apply();
+ </script>
