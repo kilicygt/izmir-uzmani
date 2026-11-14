@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getAllEvents, getEvents, fmt, longDate, time, dayMonth, weekday, catColor, descriptionOf, type EventItem } from '../../lib/events';
+import { getAllEvents, getEvents, fmt, longDate, time, weekday, catColor, descriptionOf, type EventItem } from '../../lib/events';
 
 export async function getStaticPaths() {
   const [all, upcoming] = await Promise.all([getAllEvents(), getEvents()]);
@@ -64,14 +64,17 @@ const jsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 
   <section class="ev-header">
-    <div class="ev-container anim">
+    <div class="wrap anim">
       <p class="breadcrumb">
         <a href="/" class="bc-link">Ana Sayfa</a>
-        · <a href="/etkinlikler" class="bc-link">Etkinlikler</a>
-        {event.past && <>· <a href="/etkinlikler/gecmis" class="bc-link">Geçmiş Etkinlikler</a></>}
-        · {event.category}
+        <span>›</span> <a href="/etkinlikler" class="bc-link">Etkinlikler</a>
+        {event.past && <><span>›</span> <a href="/etkinlikler/gecmis" class="bc-link">Geçmiş Etkinlikler</a></>}
+        <span>›</span> {event.category.trim()}
       </p>
-      <span class="cat-badge" style={`background:${catColor(event.category)}`}>{event.category}</span>
+      <div class="badges">
+        <span class="tag" style={`background:${catColor(event.category)}`}>{event.category.trim()}</span>
+        {isFree && <span class="tag" style="background:#0b7a5c">Ücretsiz</span>}
+      </div>
       <h1 class="ev-title">{event.title}</h1>
       {event.organizer && <p class="ev-organizer">{event.organizer}</p>}
       <p class="ended-note" id="ended-note" hidden={!event.past}>
@@ -81,100 +84,116 @@ const jsonLd = {
   </section>
 
   <section class="ev-main">
-    <div class="ev-grid">
+    <div class="wrap ev-grid">
       {event.image && (
         <div class="ev-poster">
-          <img src={event.image} alt={`${event.title} afişi`} onerror="this.parentElement.style.display='none'" decoding="async" />
+          <img src={event.image} alt={`${event.title} afişi`} onerror="this.parentElement.style.display='none'" decoding="async" fetchpriority="high" />
         </div>
       )}
 
-      <aside class="ev-info">
-        <div class="info-block">
-          <p class="info-label">{shownSessions.length > 1 ? 'Seanslar' : 'Tarih'}</p>
-          <ul class="sessions">
-            {shownSessions.map((s) => (
-              <li data-end={s.end}>
-                {sameDay(s) ? (
-                  <><strong>{longDate(s.start)}</strong><span>{time(s.start)}</span></>
-                ) : (
-                  <strong>{fmt(s.start, rangeFmt)} – {fmt(s.end, rangeFmt)}</strong>
-                )}
-                {venues.length > 1 && s.venue && <span class="sess-venue">{s.venue}</span>}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {venues.length > 0 && (
-          <div class="info-block">
-            <p class="info-label">Mekân</p>
-            {venues.map((v) => (
-              <p class="info-value">{v} <a href={mapUrl(v)} target="_blank" rel="noopener" class="map-link">Haritada aç ↗</a></p>
-            ))}
+      <div class="ev-side">
+        <aside class="ev-info">
+          <div class="info-row">
+            <span class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <div>
+              <p class="info-label">{shownSessions.length > 1 ? 'Seanslar' : 'Tarih'}</p>
+              <ul class="sessions">
+                {shownSessions.map((s) => (
+                  <li data-end={s.end}>
+                    {sameDay(s) ? (
+                      <><strong>{longDate(s.start)}</strong><span>{time(s.start)}</span></>
+                    ) : (
+                      <strong>{fmt(s.start, rangeFmt)} – {fmt(s.end, rangeFmt)}</strong>
+                    )}
+                    {venues.length > 1 && s.venue && <span class="sess-venue">{s.venue}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        )}
 
-        {admissionLabel && (
-          <div class="info-block">
-            <p class="info-label">Giriş</p>
-            <p class="info-value">{admissionLabel}</p>
-          </div>
-        )}
+          {venues.length > 0 && (
+            <div class="info-row">
+              <span class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div>
+                <p class="info-label">Mekân</p>
+                {venues.map((v) => (
+                  <p class="info-value">{v} <a href={mapUrl(v)} target="_blank" rel="noopener" class="map-link">Haritada aç ↗</a></p>
+                ))}
+              </div>
+            </div>
+          )}
 
-        {event.ageLimit && (
-          <div class="info-block">
-            <p class="info-label">Yaş sınırı</p>
-            <p class="info-value">+{event.ageLimit}</p>
-          </div>
-        )}
+          {admissionLabel && (
+            <div class="info-row">
+              <span class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M14 8v10" stroke-dasharray="2 2.5"/></svg></span>
+              <div>
+                <p class="info-label">Giriş</p>
+                <p class="info-value">{admissionLabel}</p>
+              </div>
+            </div>
+          )}
 
-        {actionUrl && !event.past && (
-          <a href={actionUrl} target="_blank" rel="noopener" class="cta">
-            {event.ticketUrl ? 'Bilet al' : event.admission === 'free' ? 'Resmi etkinlik sayfası' : 'Bilet ve detaylar'} ↗
-          </a>
-        )}
-      </aside>
+          {event.ageLimit && (
+            <div class="info-row">
+              <span class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
+              <div>
+                <p class="info-label">Yaş sınırı</p>
+                <p class="info-value">+{event.ageLimit}</p>
+              </div>
+            </div>
+          )}
+
+          {actionUrl && !event.past && (
+            <a href={actionUrl} target="_blank" rel="noopener" class="cta">
+              {event.ticketUrl ? 'Bilet al' : event.admission === 'free' ? 'Resmi etkinlik sayfası' : 'Bilet ve detaylar'} ↗
+            </a>
+          )}
+        </aside>
+
+        <article class="ev-content">
+          <h2 class="about-title">Etkinlik hakkında</h2>
+          {Content ? <Content /> : paragraphs.map((p) => <p>{p}</p>)}
+          {truncated && actionUrl && (
+            <p class="more"><a href={actionUrl} target="_blank" rel="noopener">Etkinliğin tüm ayrıntıları için resmi sayfayı ziyaret edin ↗</a></p>
+          )}
+
+          {event.sourceUrl && (
+            <div class="source-box">
+              <p>
+                <strong>Kaynak:</strong> <a href={event.sourceUrl} target="_blank" rel="noopener">{event.sourceName ?? 'Etkinliğin resmi sayfası'}</a>
+              </p>
+              <p>Tarih, saat, mekân ve bilet bilgisi değişebilir. Güncel bilgi için etkinliğin resmi sayfasını kontrol edin.</p>
+            </div>
+          )}
+        </article>
+      </div>
     </div>
   </section>
 
-  <article class="ev-body">
-    <div class="ev-content">
-      {Content ? <Content /> : paragraphs.map((p) => <p>{p}</p>)}
-      {truncated && actionUrl && (
-        <p class="more"><a href={actionUrl} target="_blank" rel="noopener">Etkinliğin tüm ayrıntıları için resmi sayfayı ziyaret edin ↗</a></p>
-      )}
-
-      {event.sourceUrl && (
-        <div class="source-box">
-          <p>
-            <strong>Kaynak:</strong> <a href={event.sourceUrl} target="_blank" rel="noopener">{event.sourceName ?? 'Etkinliğin resmi sayfası'}</a>
-          </p>
-          <p>Tarih, saat, mekân ve bilet bilgisi değişebilir. Güncel bilgi için etkinliğin resmi sayfasını kontrol edin.</p>
-        </div>
-      )}
-    </div>
-  </article>
-
   {related.length > 0 && (
     <section class="related">
-      <div class="related-container">
+      <div class="wrap">
         <div class="related-head">
-          <h2 class="related-title">Yaklaşan Etkinlikler</h2>
-          <a href="/etkinlikler" class="see-all">Tümünü Gör →</a>
+          <h2 class="related-title">Yaklaşan etkinlikler</h2>
+          <a href="/etkinlikler" class="see-all">Tüm etkinlikler →</a>
         </div>
-        <div class="events-list">
+        <div class="rel-grid">
           {related.map((ev) => (
-            <a href={`/etkinlikler/${ev.slug}`} class="event-row">
-              <div class="event-date">
-                <p class="ev-date">{weekday(ev.next.start)} {dayMonth(ev.next.start)}</p>
-                <p class="ev-time">{time(ev.next.start)}</p>
+            <a href={`/etkinlikler/${ev.slug}`} class="rel-card">
+              <div class="rel-img">
+                {ev.image && <img src={ev.image} alt={ev.title} loading="lazy" decoding="async" />}
+                <div class="date-chip">
+                  <span class="dc-small">{weekday(ev.next.start)}</span>
+                  <span class="dc-day">{fmt(ev.next.start, { day: 'numeric' })}</span>
+                  <span class="dc-month">{fmt(ev.next.start, { month: 'short' })}</span>
+                </div>
+                <span class="rel-cat" style={`background:${catColor(ev.category)}`}>{ev.category.trim()}</span>
               </div>
-              <div class="event-divider"></div>
-              <div class="event-info">
-                <p class="ev-row-title">{ev.title}</p>
-                {ev.next.venue && <p class="ev-venue">{ev.next.venue}</p>}
+              <div class="rel-body">
+                <p class="rel-title">{ev.title}</p>
+                <p class="rel-meta">{ev.next.venue ?? 'İzmir'} · {time(ev.next.start)}</p>
               </div>
-              <span class="cat-badge small" style={`background:${catColor(ev.category)}`}>{ev.category}</span>
             </a>
           ))}
         </div>
@@ -185,100 +204,67 @@ const jsonLd = {
 
 <style>
   .anim { animation: fadeUp 0.5s ease both; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .tag { display: inline-block; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 999px; }
 
-  .ev-header { background: #fff9f3; padding: 48px 20px 0; }
-  .ev-container { max-width: 960px; margin: 0 auto; }
-  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 16px; }
-  .bc-link { color: #062f96; transition: opacity 0.15s; }
-  .bc-link:hover { opacity: 0.7; color: #062f96; }
-  .cat-badge {
-    display: inline-block; font-size: 11px; font-weight: 600;
-    padding: 4px 14px; border-radius: 20px; color: #fff; margin-bottom: 16px;
-  }
-  .cat-badge.small { margin-bottom: 0; padding: 4px 12px; white-space: nowrap; }
-  .ev-title {
-    font-size: clamp(24px,4vw,38px); font-weight: 600; color: #1a1a1a;
-    line-height: 1.25; margin-bottom: 8px;
-  }
-  .ev-organizer { font-size: 14px; color: #999; padding-bottom: 28px; border-bottom: 1px solid #ede5db; }
-  .ended-note {
-    margin-top: 20px; background: #f0e8df; border-radius: 10px;
-    padding: 12px 16px; font-size: 14px; color: #555;
-  }
+  .ev-header { background: linear-gradient(180deg, #fff9f3 0%, #f7ece0 100%); padding: clamp(28px, 5vw, 52px) 0 clamp(24px, 4vw, 36px); }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 16px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .bc-link { color: #062f96; }
+  .badges { display: flex; gap: 6px; margin-bottom: 14px; }
+  .ev-title { font-family: 'Fraunces', serif; font-weight: 800; color: #1a1a1a; font-size: clamp(28px, 4.4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; max-width: 900px; }
+  .ev-organizer { font-size: 14px; color: #888; }
+  .ended-note { margin-top: 18px; background: #fff; border: 1px solid #ecdccb; border-radius: 12px; padding: 12px 16px; font-size: 14px; color: #555; max-width: 720px; }
   .ended-note[hidden], .cta[hidden] { display: none; }
   .ended-note a { color: #062f96; text-decoration: underline; }
 
-  .ev-main { background: #fff9f3; padding: 32px 20px; }
-  .ev-grid {
-    max-width: 960px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start;
-  }
-  @media (min-width: 760px) {
-    .ev-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
-  }
-  .ev-poster {
-    background: #ede5db; border-radius: 14px; overflow: hidden;
-    display: flex; justify-content: center;
-  }
-  .ev-poster img { width: 100%; height: auto; max-height: 640px; object-fit: contain; display: block; }
+  .ev-main { background: #fff9f3; padding: clamp(24px, 4vw, 40px) 0 clamp(48px, 6vw, 72px); }
+  .ev-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  @media (min-width: 860px) { .ev-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 44px; } }
+  .ev-poster { border-radius: 22px; overflow: hidden; background: #ede5db; box-shadow: 0 30px 60px -34px rgba(90,58,26,0.6); }
+  @media (min-width: 860px) { .ev-poster { position: sticky; top: 90px; } }
+  .ev-poster img { width: 100%; height: auto; max-height: 780px; object-fit: contain; display: block; margin: 0 auto; }
+  .ev-side { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
 
-  .ev-info {
-    background: #fff; border-radius: 14px; padding: 24px;
-    border: 1px solid rgba(0,0,0,0.06);
-    display: flex; flex-direction: column; gap: 20px;
-  }
-  .info-label {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
-    text-transform: uppercase; color: #999; margin-bottom: 6px;
-  }
+  .ev-info { background: #fff; border-radius: 22px; padding: 22px; border: 1px solid #efe2d3; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 20px 40px -32px rgba(90,58,26,0.5); }
+  .info-row { display: flex; gap: 14px; align-items: flex-start; }
+  .info-icon { flex-shrink: 0; width: 38px; height: 38px; border-radius: 12px; background: #e8eefc; color: #062f96; display: flex; align-items: center; justify-content: center; }
+  .info-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #999; margin-bottom: 4px; }
   .info-value { font-size: 15px; color: #1a1a1a; line-height: 1.5; }
-  .sessions { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .sessions { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
   .sessions li { display: flex; flex-direction: column; font-size: 15px; color: #1a1a1a; line-height: 1.4; }
   .sessions li[hidden] { display: none; }
   .sessions strong { font-weight: 600; }
   .sessions span { font-size: 13px; color: #666; }
   .sessions .sess-venue { color: #999; }
-  .map-link { font-size: 13px; color: #062f96; white-space: nowrap; }
+  .map-link { font-size: 13px; color: #062f96; white-space: nowrap; font-weight: 500; }
   .map-link:hover { text-decoration: underline; }
-  .cta {
-    display: block; text-align: center;
-    background: #062f96; color: #fff; font-weight: 600; font-size: 15px;
-    padding: 14px 20px; border-radius: 10px; transition: opacity 0.15s;
-  }
-  .cta:hover { opacity: 0.88; color: #fff; }
+  .cta { display: block; text-align: center; background: #ff7c11; color: #fff; font-weight: 600; font-size: 15px; padding: 15px 20px; border-radius: 14px; transition: background 0.2s, transform 0.2s; box-shadow: 0 12px 24px -14px rgba(239,106,0,0.8); }
+  .cta:hover { background: #ef6a00; color: #fff; transform: translateY(-1px); }
 
-  .ev-body { background: #fff9f3; padding: 8px 20px 56px; }
-  .ev-content { max-width: 960px; margin: 0 auto; }
-  .ev-content > p, .ev-content :global(p) {
-    font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 14px; max-width: 720px;
-  }
+  .about-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; color: #1a1a1a; margin-bottom: 14px; }
+  .ev-content > p, .ev-content :global(p) { font-size: 16.5px; color: #333; line-height: 1.8; margin-bottom: 14px; }
   .more a, .source-box a { color: #062f96; text-decoration: underline; }
-  .source-box {
-    margin-top: 28px; max-width: 720px;
-    background: #f0e8df; border-radius: 12px; padding: 16px 20px;
-  }
+  .source-box { margin-top: 24px; background: #f0e8df; border-radius: 14px; padding: 16px 20px; }
   .source-box p { font-size: 13px !important; color: #555 !important; line-height: 1.6 !important; margin-bottom: 4px !important; }
 
-  .related { background: #f0e8df; padding: clamp(40px,5vw,64px) 20px; }
-  .related-container { max-width: 960px; margin: 0 auto; }
-  .related-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; gap: 12px; }
-  .related-title { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; }
-  .see-all { font-size: 13px; color: #062f96; font-weight: 500; white-space: nowrap; }
-  .events-list { background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); }
-  .event-row {
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-    padding: 16px 20px; border-bottom: 1px solid rgba(0,0,0,0.05);
-    transition: background 0.15s; color: inherit;
-  }
-  .event-row:last-child { border-bottom: none; }
-  .event-row:hover { background: #faf7f4; }
-  .event-date { flex-shrink: 0; min-width: 88px; }
-  .ev-date { font-size: 14px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
-  .ev-time { font-size: 12px; color: #999; margin-top: 1px; }
-  .event-divider { width: 1px; height: 32px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
-  .event-info { flex: 1; min-width: 160px; }
-  .ev-row-title { font-size: 15px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
-  .ev-venue { font-size: 12px; color: #999; }
+  .related { background: #f0e8df; padding: clamp(40px, 6vw, 72px) 0; }
+  .related-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 22px; gap: 12px; }
+  .related-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 30px); color: #1a1a1a; }
+  .see-all { font-size: 14px; color: #062f96; font-weight: 600; white-space: nowrap; }
+  .rel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (min-width: 860px) { .rel-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+  .rel-card { background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.25s, box-shadow 0.25s; }
+  .rel-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -22px rgba(90,58,26,0.45); color: inherit; }
+  .rel-img { position: relative; aspect-ratio: 4 / 5; background: #efe4d8; overflow: hidden; }
+  .rel-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .date-chip { position: absolute; top: 10px; left: 10px; background: #fff; border-radius: 12px; padding: 6px 10px 7px; min-width: 52px; line-height: 1.05; box-shadow: 0 6px 16px -6px rgba(0,0,0,0.35); display: flex; flex-direction: column; align-items: center; }
+  .dc-small { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #ff7c11; }
+  .dc-day { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 800; color: #1a1a1a; }
+  .dc-month { font-size: 11px; font-weight: 500; color: #666; text-transform: uppercase; }
+  .rel-cat { position: absolute; top: 12px; right: 10px; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+  .rel-body { padding: 12px 14px 14px; }
+  .rel-title { font-size: 14.5px; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 4px; }
+  .rel-meta { font-size: 12px; color: #888; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 </style>
 
 <script>

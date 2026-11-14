@@ -2,24 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import IzmirIcon from '../../components/IzmirIcon.astro';
 import { getCollection } from 'astro:content';
+import { THEMES, themeOf, postImage, shortDate } from '../../lib/themes';
 
 const allPosts = await getCollection('blog');
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-// The automation writes many near-duplicate categories; group them into a few themes for browsing.
-const THEMES = [
-  { key: 'gezi', label: 'Gezi Rotaları', icon: 'harita', color: '#062f96', desc: 'Gezilecek yerler, ilçeler ve günübirlik kaçamaklar', cats: ['Gezi Rehberi', 'Gezi', 'Rehber'] },
-  { key: 'tarih', label: 'Tarih ve Kültür', icon: 'saatkulesi', color: '#b45309', desc: 'Antik kentler, tarihi yapılar ve müzeler', cats: ['Tarih ve Kültür', 'Kültür', 'Tarih'] },
-  { key: 'sehir', label: 'Şehir Hayatı', icon: 'asansor', color: '#d6336c', desc: 'Semtler, sahil, kafeler ve şehirde gündelik hayat', cats: ['Şehir Rehberi', 'Semtler', 'Kafeler', 'Gece Hayatı'] },
-  { key: 'doga', label: 'Doğa ve Aile', icon: 'palmiye', color: '#0b7a5c', desc: 'Yürüyüş rotaları, piknik alanları ve çocuklarla gezi', cats: ['Doğa Rehberi', 'Aile Rehberi'] },
-  { key: 'ulasim', label: 'Ulaşım', icon: 'vapur', color: '#0e7490', desc: 'Nereye, nasıl gidilir?', cats: ['Ulaşım'] },
-] as const;
-const themeOf = (cat: string) => THEMES.find((t) => (t.cats as readonly string[]).includes(cat.trim())) ?? THEMES[0];
 
 const posts = sorted.map((p) => ({
   ...p,
   theme: themeOf(p.data.category),
-  img: p.data.image ?? `/images/blog/${p.slug}.webp`,
+  img: postImage(p),
   search: [p.data.title, p.data.description, p.data.category, ...(p.data.tags ?? [])].join(' ').toLocaleLowerCase('tr'),
 }));
 const counts = Object.fromEntries(THEMES.map((t) => [t.key, posts.filter((p) => p.theme.key === t.key).length]));
@@ -27,7 +19,6 @@ const themes = THEMES.filter((t) => counts[t.key] > 0);
 
 const [lead, ...restFeatured] = posts.slice(0, 3);
 const popular = ['Çeşme', 'Alaçatı', 'Urla', 'Efes', 'Bergama', 'Kemeraltı', 'Şirince', 'Seferihisar', 'Karşıyaka', 'Foça'];
-const shortDate = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 
 <Layout
@@ -388,5 +379,13 @@ const shortDate = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', m
     b.addEventListener('click', () => { if (q) q.value = b.dataset.q ?? ''; state.q = b.dataset.q ?? ''; apply(); jump(); }));
   q?.addEventListener('input', () => { state.q = q.value; apply(); });
   q?.addEventListener('keydown', (e) => { if (e.key === 'Enter') jump(); });
+
+  // Links from the homepage can preselect a search (?q=) or a theme (?tema=).
+  const params = new URLSearchParams(location.search);
+  const initialQ = params.get('q')?.trim() ?? '';
+  const initialTheme = params.get('tema') ?? '';
+  if (initialQ && q) { q.value = initialQ; state.q = initialQ; }
+  if (initialTheme && [...chips].some((b) => b.dataset.theme === initialTheme)) setTheme(initialTheme);
   apply();
+  if (initialQ || initialTheme) requestAnimationFrame(jump);
 </script>

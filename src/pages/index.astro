@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IzmirIcon from '../components/IzmirIcon.astro';
+import IzmirScene from '../components/IzmirScene.astro';
 import { getCollection } from 'astro:content';
 import siteConfig from '../data/site-config.json';
-import { getEvents, dayMonth, weekday, time, catColor as eventColor } from '../lib/events';
+import { getEvents, weekday, time, fmt, catColor as eventColor } from '../lib/events';
+import { THEMES, themeOf, postImage, shortDate } from '../lib/themes';
 
 const hero = siteConfig.hero;
 
@@ -11,98 +14,208 @@ const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate
 const istanbulDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul' }).format(d);
 const today = istanbulDay(new Date());
 const featuredPost = sorted.find(p => istanbulDay(p.data.pubDate) < today) ?? sorted[0];
-const recentPosts = sorted.filter(p => p.slug !== featuredPost?.slug).slice(0, 4);
-const gridPosts = sorted.slice(0, 3);
-const trendPosts = sorted.slice(0, 3);
+const sidePosts = sorted.filter(p => p.slug !== featuredPost?.slug).slice(0, 4);
+const shown = new Set([featuredPost?.slug, ...sidePosts.map(p => p.slug)]);
+const gridPosts = sorted.filter(p => !shown.has(p.slug)).slice(0, 6);
 
-function catColor(cat: string) {
-  const map: Record<string, string> = {
-    'Kafeler': '#ff7c11',
-    'Semtler': '#062f96',
-    'Gece Hayatı': '#ff7c11',
-    'Keşfet': '#062f96',
-    'Etkinlikler': '#062f96',
-  };
-  return map[cat] ?? '#062f96';
-}
+const counts = Object.fromEntries(THEMES.map(t => [t.key, sorted.filter(p => themeOf(p.data.category).key === t.key).length]));
+const themes = THEMES.filter(t => counts[t.key] > 0 && t.key !== 'ulasim');
 
-function formatDate(d: Date) {
-  return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
-}
+const allEvents = await getEvents();
+const events = [...allEvents.filter(e => !e.ongoing), ...allEvents.filter(e => e.ongoing)].slice(0, 4);
+const dayNum = (d: string) => fmt(d, { day: 'numeric' });
+const monthShort = (d: string) => fmt(d, { month: 'short' });
 
-const events = (await getEvents()).filter((e) => !e.ongoing).slice(0, 4);
+const transit = [
+  { label: 'Metro', href: '/toplu-tasima-saatleri/metro' },
+  { label: 'İZBAN', href: '/toplu-tasima-saatleri/izban' },
+  { label: 'Vapur', href: '/toplu-tasima-saatleri/vapur' },
+  { label: 'Otobüs', href: '/toplu-tasima-saatleri/otobus' },
+  { label: 'Tramvay', href: '/toplu-tasima-saatleri/tramvay' },
+];
 
-const igPosts = Array.from({ length: 10 }, (_, i) => ({
-  img: `/images/instagram/${i + 1}.webp?v=2`,
-  url: 'https://www.instagram.com/izmiruzmani/',
-}));
+const igPosts = Array.from({ length: 10 }, (_, i) => `/images/instagram/${i + 1}.webp?v=2`);
 ---
 
-<Layout title="İzmir Rehberi, Etkinlikler ve Ulaşım" description="İzmir'i yerel gözüyle keşfet — kafeler, etkinlikler, semtler ve daha fazlası.">
+<Layout title="İzmir Rehberi, Etkinlikler ve Ulaşım" description="İzmir'i yerel gözüyle keşfet: gezilecek yerler, semtler, tarihi mekanlar, güncel etkinlikler ve toplu taşıma saatleri tek yerde.">
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-blob-a"></div>
-    <div class="hero-blob-b"></div>
-    <div class="hero-blob-c"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">{hero.eyebrow}</p>
-      <h1 class="hero-title" set:html={hero.title.replace(/\n/g, '<br/>')} />
-      <p class="hero-subtitle">{hero.subtitle}</p>
-      <div class="hero-cta">
-        <a href="/rehberler" class="btn-primary">{hero.ctaPrimary}</a>
-        <a href="#etkinlikler" class="btn-outline">{hero.ctaSecondary}</a>
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">{hero.eyebrow}</p>
+        <h1 class="hero-title" set:html={hero.title.replace(/\n/g, '<br/>')} />
+        <p class="hero-sub">{hero.subtitle}</p>
+        <form class="search" action="/rehberler" method="get" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input name="q" type="search" placeholder="Nereyi keşfetmek istersin?" autocomplete="off" aria-label="Rehberlerde ara" />
+          <button type="submit">Ara</button>
+        </form>
+        <div class="hero-cta">
+          <a href="/rehberler" class="link-pill">{hero.ctaPrimary} →</a>
+          <a href="/etkinlikler" class="link-pill">{hero.ctaSecondary} →</a>
+        </div>
+      </div>
+      <div class="hero-art"><IzmirScene /></div>
+    </div>
+  </section>
+
+  <!-- TRANSIT QUICK LINKS -->
+  <nav class="quick" aria-label="Toplu taşıma saatleri">
+    <div class="container quick-inner">
+      <span class="quick-label">
+        <IzmirIcon name="vapur" size={28} />
+        Sefer saatleri
+      </span>
+      <div class="quick-links">
+        {transit.map(t => <a href={t.href} class="quick-link">{t.label}</a>)}
+      </div>
+    </div>
+  </nav>
+
+  <!-- FEATURED -->
+  {featuredPost && (
+    <section class="featured">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title">Öne çıkanlar</h2>
+          <a href="/rehberler" class="see-all">Tüm rehberler →</a>
+        </div>
+        <div class="feat-grid">
+          <a href={`/rehberler/${featuredPost.slug}`} class="feat-lead">
+            <img src={postImage(featuredPost)} alt={featuredPost.data.imageAlt || featuredPost.data.title} loading="eager" fetchpriority="high" decoding="async" />
+            <div class="feat-overlay">
+              <span class="tag" style={`background:${themeOf(featuredPost.data.category).color}`}>{themeOf(featuredPost.data.category).label}</span>
+              <h3 class="feat-title">{featuredPost.data.title}</h3>
+              <p class="feat-desc">{featuredPost.data.description}</p>
+              <p class="feat-meta">{shortDate(featuredPost.data.pubDate)} · {featuredPost.data.readTime} okuma</p>
+            </div>
+          </a>
+          <div class="feat-side">
+            {sidePosts.map(p => (
+              <a href={`/rehberler/${p.slug}`} class="feat-small">
+                <div class="fs-img"><img src={postImage(p)} alt={p.data.imageAlt || p.data.title} loading="lazy" decoding="async" /></div>
+                <div>
+                  <span class="tag sm" style={`background:${themeOf(p.data.category).color}`}>{themeOf(p.data.category).label}</span>
+                  <h3 class="fs-title">{p.data.title}</h3>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- THEMES -->
+  <section class="themes">
+    <div class="container">
+      <h2 class="sec-title">Ne keşfetmek istersin?</h2>
+      <div class="theme-chips">
+        {themes.map(t => (
+          <a href={`/rehberler?tema=${t.key}#tum-rehberler`} class="chip"><span class="dot" style={`background:${t.color}`}></span>{t.label}</a>
+        ))}
+      </div>
+      <div class="theme-grid">
+        {themes.map(t => (
+          <a href={`/rehberler?tema=${t.key}#tum-rehberler`} class="theme" style={`--c:${t.color}`}>
+            <span class="theme-icon"><IzmirIcon name={t.icon} size={72} /></span>
+            <span class="theme-name">{t.label}</span>
+            <span class="theme-desc">{t.desc}</span>
+            <span class="theme-count">{counts[t.key]} rehber →</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- FEATURED -->
-  <section id="featured" class="featured-section">
+  <!-- EVENTS -->
+  {events.length > 0 && (
+    <section class="events" id="etkinlikler">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title">Bu hafta İzmir’de</h2>
+          <a href="/etkinlikler" class="see-all">Tüm etkinlikler →</a>
+        </div>
+        <div class="ev-grid">
+          {events.map(ev => {
+            const free = ev.admission === 'free' || ev.admission === 'free-ticket';
+            return (
+              <a href={`/etkinlikler/${ev.slug}`} class="ev-card">
+                <div class="ev-img">
+                  {ev.image ? <img src={ev.image} alt={ev.title} loading="lazy" decoding="async" /> : <div class="img-ph"><IzmirIcon name="bilet" size={70} /></div>}
+                  <div class="date-chip">
+                    {ev.ongoing ? (
+                      <><span class="dc-small green">son gün</span><span class="dc-day">{dayNum(ev.next.end)}</span><span class="dc-month">{monthShort(ev.next.end)}</span></>
+                    ) : (
+                      <><span class="dc-small">{weekday(ev.next.start)}</span><span class="dc-day">{dayNum(ev.next.start)}</span><span class="dc-month">{monthShort(ev.next.start)}</span></>
+                    )}
+                  </div>
+                  <span class="cat-tag" style={`background:${eventColor(ev.category)}`}>{ev.category.trim()}</span>
+                  {free && <span class="free-tag">Ücretsiz</span>}
+                </div>
+                <div class="ev-body">
+                  <h3 class="ev-title">{ev.title}</h3>
+                  <p class="ev-meta">{ev.next.venue ?? 'İzmir'}{!ev.ongoing && ` · ${time(ev.next.start)}`}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- LATEST GRID -->
+  {gridPosts.length > 0 && (
+    <section class="latest">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="sec-title">Son rehberler</h2>
+          <a href="/rehberler" class="see-all">Tümünü gör →</a>
+        </div>
+        <div class="card-grid">
+          {gridPosts.map(post => {
+            const t = themeOf(post.data.category);
+            return (
+              <a href={`/rehberler/${post.slug}`} class="card">
+                <div class="card-img">
+                  <img src={postImage(post)} alt={post.data.imageAlt || post.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <span class="tag on-img" style={`background:${t.color}`}>{t.label}</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="card-title">{post.data.title}</h3>
+                  <p class="card-desc">{post.data.description}</p>
+                  <p class="card-meta">{shortDate(post.data.pubDate)} · {post.data.readTime} okuma <span class="arrow">→</span></p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- INSTAGRAM -->
+  <section class="ig">
     <div class="container">
-      <p class="section-eyebrow">Öne Çıkan</p>
-      <div class="featured-grid">
-        <!-- Big card -->
-        {featuredPost && (
-          <article>
-            <a href={`/rehberler/${featuredPost.slug}`} class="featured-card-link">
-              <div class="card-img-lg">
-                <img
-                  src={featuredPost.data.image ?? `/images/blog/${featuredPost.slug}.webp`}
-                  alt={featuredPost.data.imageAlt || featuredPost.data.title}
-                  class="card-photo"
-                  onerror="this.style.display='none'"
-                  loading="eager"
-                  decoding="async"
-                />
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              </div>
-              <span class="cat-badge" style={`background:${catColor(featuredPost.data.category)};margin-bottom:14px`}>{featuredPost.data.category}</span>
-              <h2 class="featured-title">{featuredPost.data.title}</h2>
-              <p class="featured-desc">{featuredPost.data.description}</p>
-              <p class="card-meta">{formatDate(featuredPost.data.pubDate)} · {featuredPost.data.readTime} okuma</p>
-            </a>
-          </article>
-        )}
-        <!-- Recent list -->
-        <div class="recent-list">
-          {recentPosts.map(post => (
-            <a href={`/rehberler/${post.slug}`} class="recent-item">
-              <div class="recent-thumb">
-                <img
-                  src={post.data.image ?? `/images/blog/${post.slug}.webp`}
-                  alt={post.data.imageAlt || post.data.title}
-                  class="card-photo"
-                  onerror="this.style.display='none'"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              </div>
-              <div class="recent-body">
-                <span class="cat-badge" style={`background:${catColor(post.data.category)};font-size:10px;padding:3px 10px;margin-bottom:7px`}>{post.data.category}</span>
-                <p class="recent-title">{post.data.title}</p>
-                <p class="recent-date">{formatDate(post.data.pubDate)}</p>
-              </div>
+      <div class="ig-card">
+        <div class="ig-head">
+          <div>
+            <p class="ig-eyebrow">Instagram</p>
+            <h2 class="ig-title">İzmir’in güncel hali, her gün akışında.</h2>
+          </div>
+          <a href="https://instagram.com/izmiruzmani" target="_blank" rel="noopener" class="ig-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+            @izmiruzmani
+          </a>
+        </div>
+        <div class="ig-grid">
+          {igPosts.map(src => (
+            <a href="https://www.instagram.com/izmiruzmani/" target="_blank" rel="noopener" class="ig-cell">
+              <img src={src} alt="İzmir Uzmanı Instagram gönderisi" loading="lazy" decoding="async" />
             </a>
           ))}
         </div>
@@ -110,113 +223,14 @@ const igPosts = Array.from({ length: 10 }, (_, i) => ({
     </div>
   </section>
 
-  <!-- CATEGORY BAND -->
-  <section class="cat-band">
-    <div class="container">
-      <div class="cat-scroll" id="cat-scroll">
-        {['Tümü', 'Kafeler', 'Etkinlikler', 'Semtler', 'Gece Hayatı', 'Keşfet'].map((c, i) => (
-          <button class:list={['cat-btn', { active: i === 0 }]} data-cat={c}>{c}</button>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- TREND -->
-  <section class="trend-section">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Şu An Trend</h2>
-        <span style="font-size:18px;line-height:1">🔥</span>
-      </div>
-      <div class="trend-grid">
-        {trendPosts.map((post, i) => (
-          <a href={`/rehberler/${post.slug}`} class="trend-card">
-            <span class="trend-num">0{i + 1}</span>
-            <div class="trend-body">
-              <span class="cat-badge" style={`background:${catColor(post.data.category)};font-size:10px;padding:3px 10px;margin-bottom:8px`}>{post.data.category}</span>
-              <p class="trend-title">{post.data.title}</p>
-            </div>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="9 18 15 12 9 6"/></svg>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- GUIDES GRID -->
-  <section class="guides-section" id="rehberler">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Son Rehberler</h2>
-        <a href="/rehberler" class="see-all">Tümünü Gör →</a>
-      </div>
-      <div class="card-grid" id="card-grid">
-        {gridPosts.map(post => (
-          <article class="guide-card" data-cat={post.data.category}>
-            <a href={`/rehberler/${post.slug}`}>
-              <div class="card-img-sm">
-                <img
-                  src={post.data.image ?? `/images/blog/${post.slug}.webp`}
-                  alt={post.data.imageAlt || post.data.title}
-                  class="card-photo"
-                  onerror="this.style.display='none'"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bfb3a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              </div>
-              <div class="card-body">
-                <span class="cat-badge" style={`background:${catColor(post.data.category)};margin-bottom:12px`}>{post.data.category}</span>
-                <h3 class="card-title">{post.data.title}</h3>
-                <p class="card-desc">{post.data.description}</p>
-                <p class="card-meta">{formatDate(post.data.pubDate)} · {post.data.readTime} okuma</p>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTS -->
-  <section id="etkinlikler" class="events-section">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Bu Hafta İzmir'de</h2>
-        <a href="/etkinlikler" class="see-all">Tümünü Gör →</a>
-      </div>
-      <div class="events-list">
-        {events.map(ev => (
-          <a href={`/etkinlikler/${ev.slug}`} class="event-row">
-            <div class="event-date">
-              <p class="event-day-num">{dayMonth(ev.next.start)}</p>
-              <p class="event-day-name">{weekday(ev.next.start)} · {time(ev.next.start)}</p>
-            </div>
-            <div class="event-divider"></div>
-            <p class="event-title">{ev.title}</p>
-            <span class="cat-badge" style={`background:${eventColor(ev.category)};font-size:11px`}>{ev.category}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <section class="ig-section">
-    <div class="container">
-      <div class="ig-header">
-        <h2 class="ig-heading">Instagram'da Takip Et</h2>
-        <a href="https://instagram.com/izmiruzmani" target="_blank" class="ig-handle">@izmiruzmani</a>
-      </div>
-      <div class="ig-embed-grid">
-        {igPosts.map(post => (
-          <a href={post.url} target="_blank" rel="noopener" class="ig-cell">
-            <img src={post.img} alt="Instagram gönderisi" class="ig-img" loading="lazy" decoding="async" />
-            <div class="ig-overlay">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
-            </div>
-          </a>
-        ))}
+  <!-- ABOUT TEASER -->
+  <section class="about">
+    <div class="container about-inner">
+      <IzmirIcon name="saatkulesi" size={110} />
+      <div>
+        <h2 class="sec-title">İzmir’i yerel gözüyle anlatıyoruz.</h2>
+        <p class="about-text">İzmir Uzmanı; şehrin gezilecek yerlerini, semtlerini, etkinliklerini ve gündelik hayatını sade ve samimi bir dille anlatan bağımsız bir şehir rehberi.</p>
+        <a href="/hakkinda" class="see-all">Hikayemizi oku →</a>
       </div>
     </div>
   </section>
@@ -225,262 +239,143 @@ const igPosts = Array.from({ length: 10 }, (_, i) => ({
 
 <style>
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #062f96; margin-bottom: 16px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
+  .sec-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(24px, 3vw, 32px); color: #1a1a1a; letter-spacing: -0.01em; line-height: 1.2; }
+  .themes .sec-title { margin-bottom: 22px; }
+  .see-all { font-size: 14px; font-weight: 600; color: #062f96; white-space: nowrap; }
+  .see-all:hover { color: #041e6e; }
+  .tag { display: inline-block; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 999px; }
+  .tag.sm { font-size: 10px; padding: 3px 9px; }
 
   /* HERO */
-  .hero {
-    position: relative;
-    overflow: hidden;
-    padding: clamp(72px, 14vw, 128px) 20px clamp(64px, 10vw, 96px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(180deg, #fff9f3 0%, #f5e8d8 60%, #fff9f3 100%);
-    background-size: 100% 200%;
-    animation: heroGrad 16s ease infinite;
+  .hero { position: relative; overflow: hidden; background: linear-gradient(180deg, #fff9f3 0%, #f5e8d8 100%); padding: clamp(36px, 6vw, 80px) 0 clamp(36px, 5vw, 64px); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(64px); pointer-events: none; }
+  .blob-a { top: -80px; right: -80px; width: 460px; height: 460px; background: rgba(255,124,17,0.12); animation: floatA 10s ease-in-out infinite; }
+  .blob-b { bottom: -120px; left: -80px; width: 420px; height: 420px; background: rgba(6,47,150,0.08); animation: floatB 13s ease-in-out infinite; }
+  .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: center; }
+  .hero-grid > * { min-width: 0; }
+  @media (min-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; } }
+  .hero-text { animation: fadeUp 0.6s ease both; }
+  .hero-title { font-family: 'Fraunces', serif; font-weight: 800; color: #1a1a1a; font-size: clamp(42px, 6.6vw, 80px); line-height: 1.02; letter-spacing: -0.03em; margin-bottom: 20px; }
+  .hero-sub { font-size: 17px; color: #555; line-height: 1.75; max-width: 500px; margin-bottom: 26px; }
+  .search {
+    display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid #e4d9cd; border-radius: 16px;
+    padding: 6px 6px 6px 16px; max-width: 520px; color: #062f96; box-shadow: 0 14px 34px -20px rgba(90,58,26,0.45);
   }
-  .hero-blob-a {
-    position: absolute; top: -60px; right: -60px;
-    width: clamp(280px,44vw,500px); height: clamp(280px,44vw,500px);
-    border-radius: 50%; background: rgba(255,124,17,0.10);
-    filter: blur(64px); pointer-events: none; animation: floatA 10s ease-in-out infinite;
-  }
-  .hero-blob-b {
-    position: absolute; bottom: -80px; left: -60px;
-    width: clamp(240px,38vw,440px); height: clamp(240px,38vw,440px);
-    border-radius: 50%; background: rgba(6,47,150,0.07);
-    filter: blur(56px); pointer-events: none; animation: floatB 13s ease-in-out infinite;
-  }
-  .hero-blob-c {
-    position: absolute; top: 30%; right: 8%;
-    width: clamp(100px,14vw,180px); height: clamp(100px,14vw,180px);
-    border-radius: 50%; background: rgba(255,124,17,0.06);
-    filter: blur(30px); pointer-events: none;
-  }
-  .hero-content { position: relative; z-index: 1; max-width: 680px; }
-  .hero-eyebrow {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #062f96; margin-bottom: 20px;
-    animation: fadeUp 0.5s ease both 0.05s;
-  }
-  .hero-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(48px, 9vw, 92px);
-    font-weight: 800;
-    color: #1a1a1a;
-    line-height: 1.02;
-    letter-spacing: -0.03em;
-    margin-bottom: 28px;
-    animation: fadeUp 0.6s ease both 0.15s;
-  }
-  .hero-subtitle {
-    font-size: 17px; color: #666; max-width: 420px; margin: 0 auto 40px;
-    line-height: 1.75; animation: fadeUp 0.6s ease both 0.28s;
-  }
-  .hero-cta {
-    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-    animation: fadeUp 0.6s ease both 0.4s;
-  }
-  .btn-primary {
-    background: #062f96; color: #fff; font-size: 14px; font-weight: 500;
-    padding: 13px 26px; border-radius: 8px; display: inline-block;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: #041e6e; color: #fff; }
-  .btn-outline {
-    background: transparent; color: #1a1a1a; font-size: 14px; font-weight: 500;
-    padding: 12px 26px; border-radius: 8px; display: inline-block;
-    border: 1.5px solid #d4ccc4; transition: border-color 0.2s;
-  }
-  .btn-outline:hover { border-color: #999; color: #1a1a1a; }
+  .search:focus-within { border-color: #062f96; }
+  .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 15px 'Poppins', sans-serif; color: #1a1a1a; padding: 10px 0; }
+  .search button { font: 600 14px 'Poppins', sans-serif; background: #062f96; color: #fff; border: 0; border-radius: 11px; padding: 11px 20px; cursor: pointer; }
+  .search button:hover { background: #041e6e; }
+  .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .link-pill { font-size: 14px; font-weight: 500; color: #1a1a1a; padding: 9px 16px; border-radius: 999px; background: rgba(255,255,255,0.7); border: 1px solid #ecdccb; }
+  .link-pill:hover { border-color: #062f96; color: #062f96; }
+  @media (max-width: 700px) { .hero-art { max-width: 340px; margin: 0 auto; width: 100%; } }
+
+  /* QUICK */
+  .quick { background: #062f96; color: #fff; }
+  .quick-inner { display: flex; align-items: center; gap: 16px; padding-top: 12px; padding-bottom: 12px; }
+  .quick-label { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .quick-label :global(svg) { background: #fff; border-radius: 8px; padding: 2px; }
+  .quick-links { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .quick-links::-webkit-scrollbar { display: none; }
+  .quick-link { font-size: 13px; font-weight: 500; color: #fff; padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.3); white-space: nowrap; transition: background 0.2s; }
+  .quick-link:hover { background: rgba(255,255,255,0.15); color: #fff; }
 
   /* FEATURED */
-  .featured-section { background: #f0e8df; padding: clamp(48px,6vw,72px) 20px; }
-  .section-eyebrow {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: #999; margin-bottom: 28px;
-  }
-  .featured-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  @media (min-width: 768px) {
-    .featured-grid { grid-template-columns: 1fr 340px; gap: 56px; }
-  }
-  .card-img-lg {
-    background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
-    border-radius: 14px; aspect-ratio: 16/10; margin-bottom: 20px;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden; position: relative;
-  }
-  .featured-card-link { display: block; color: inherit; }
-  .featured-title {
-    font-size: clamp(20px,2.5vw,28px); font-weight: 600; color: #1a1a1a;
-    line-height: 1.3; margin-bottom: 10px;
-  }
-  .featured-desc { font-size: 14px; color: #666; line-height: 1.65; margin-bottom: 14px; }
-  .card-meta { font-size: 12px; color: #999; }
+  .featured { background: #fff9f3; padding: clamp(40px, 6vw, 72px) 0 clamp(24px, 4vw, 40px); }
+  .feat-grid { display: grid; gap: 16px; }
+  @media (min-width: 900px) { .feat-grid { grid-template-columns: 1.5fr 1fr; gap: 20px; } }
+  .feat-lead { position: relative; border-radius: 24px; overflow: hidden; min-height: 380px; display: block; background: #ddd0c4; }
+  .feat-lead img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .feat-lead:hover img { transform: scale(1.03); }
+  .feat-lead:hover { color: #fff; }
+  .feat-overlay { position: absolute; inset: auto 0 0 0; padding: 90px 26px 24px; color: #fff; background: linear-gradient(180deg, transparent 0%, rgba(10,14,30,0.55) 35%, rgba(10,14,30,0.88) 100%); }
+  .feat-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 32px); line-height: 1.2; margin: 10px 0 8px; }
+  .feat-desc { font-size: 14px; line-height: 1.6; opacity: 0.88; max-width: 560px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .feat-meta { font-size: 12px; opacity: 0.75; margin-top: 10px; }
+  .feat-side { display: grid; gap: 12px; }
+  .feat-small { display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: center; background: #fff; border-radius: 16px; padding: 10px; border: 1px solid #efe2d3; transition: transform 0.25s, box-shadow 0.25s; }
+  .feat-small:hover { transform: translateY(-2px); box-shadow: 0 16px 32px -22px rgba(90,58,26,0.5); color: inherit; }
+  .fs-img { aspect-ratio: 1; border-radius: 12px; overflow: hidden; background: #ede5db; }
+  .fs-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .fs-title { font-size: 14.5px; font-weight: 600; line-height: 1.4; margin-top: 6px; color: #1a1a1a; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-  .recent-list { display: flex; flex-direction: column; }
-  .recent-item {
-    display: flex; gap: 14px; align-items: flex-start;
-    padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
-    transition: opacity 0.15s;
+  /* THEMES */
+  .themes { background: #fff9f3; padding: clamp(24px, 4vw, 40px) 0 clamp(48px, 6vw, 72px); }
+  .theme-grid { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  @media (min-width: 900px) { .theme-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+  .theme { background: #fff; border: 1px solid #efe2d3; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 4px; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+  .theme:hover { transform: translateY(-3px); border-color: var(--c); box-shadow: 0 18px 36px -22px rgba(90,58,26,0.5); color: inherit; }
+  .theme-icon { width: 84px; height: 84px; border-radius: 22px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; background: linear-gradient(145deg, #fff 0%, #f3e6d6 100%); box-shadow: inset 0 2px 0 #fff, 0 8px 20px -12px rgba(90,58,26,0.4); }
+  .theme-name { font-size: 16px; font-weight: 600; color: #1a1a1a; }
+  .theme-desc { font-size: 13px; color: #777; line-height: 1.5; }
+  .theme-count { font-size: 12px; font-weight: 600; color: var(--c); margin-top: 6px; }
+  .theme-chips { display: none; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 2px 0; }
+  .theme-chips::-webkit-scrollbar { display: none; }
+  .chip { font-size: 13px; font-weight: 500; color: #555; white-space: nowrap; padding: 7px 15px; border-radius: 999px; border: 1.5px solid #e4d9cd; background: #fff; display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  @media (max-width: 600px) {
+    .themes { padding: 8px 0 40px; }
+    .themes .sec-title { font-size: 20px; margin-bottom: 12px; }
+    .theme-grid { display: none; }
+    .theme-chips { display: flex; }
   }
-  .recent-item:hover { opacity: 0.7; }
-  .recent-thumb {
-    width: 68px; height: 68px; flex-shrink: 0;
-    background: linear-gradient(135deg,#ede5db,#ddd0c4);
-    border-radius: 10px; display: flex; align-items: center; justify-content: center;
-    overflow: hidden; position: relative;
-  }
-  .recent-body { flex: 1; min-width: 0; }
-  .recent-title { font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.4; margin-bottom: 5px; }
-  .recent-date { font-size: 12px; color: #999; }
-
-  /* CATEGORY BAND */
-  .cat-band {
-    background: #fff9f3; padding: 20px;
-    border-bottom: 1px solid #ede5db;
-  }
-  .cat-scroll {
-    display: flex; gap: 8px; overflow-x: auto;
-    padding-bottom: 2px; scrollbar-width: none; -ms-overflow-style: none;
-  }
-  .cat-scroll::-webkit-scrollbar { display: none; }
-  .cat-btn {
-    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
-    padding: 8px 18px; border-radius: 20px; cursor: pointer; white-space: nowrap;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-    background: #fff; color: #555; border: 1.5px solid #e0d8d0;
-  }
-  .cat-btn.active { background: #062f96; color: #fff; border-color: #062f96; }
-  .cat-btn:hover:not(.active) { border-color: #999; }
-
-  /* TREND */
-  .trend-section { background: #fff9f3; padding: clamp(40px,5vw,64px) 20px; }
-  .section-head {
-    display: flex; align-items: center; gap: 8px; margin-bottom: 28px;
-  }
-  .section-title { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; }
-  .see-all { font-size: 14px; color: #062f96; font-weight: 500; transition: opacity 0.15s; margin-left: auto; }
-  .see-all:hover { opacity: 0.7; color: #062f96; }
-  .trend-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 700px) { .trend-grid { grid-template-columns: 1fr 1fr 1fr; } }
-  .trend-card {
-    display: flex; align-items: center; gap: 20px;
-    background: #f0e8df; border-radius: 12px; padding: 20px 24px;
-    transition: box-shadow 0.2s;
-  }
-  .trend-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); color: inherit; }
-  .trend-num {
-    font-size: clamp(36px,5vw,52px); font-weight: 700;
-    color: rgba(6,47,150,0.15); font-family: 'Fraunces', serif;
-    line-height: 1; flex-shrink: 0; min-width: 56px;
-  }
-  .trend-body { flex: 1; min-width: 0; }
-  .trend-title { font-size: 15px; font-weight: 500; color: #1a1a1a; line-height: 1.4; }
-
-  /* GUIDES GRID */
-  .guides-section { background: #fff9f3; padding: clamp(48px,6vw,72px) 20px; }
-  .card-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-  @media (min-width: 700px) { .card-grid { grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 1024px) { .card-grid { grid-template-columns: 1fr 1fr 1fr; } }
-  .guide-card {
-    background: #fff; border-radius: 14px; overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .guide-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
-  .guide-card a { display: block; color: inherit; }
-  .card-img-sm {
-    background: linear-gradient(135deg,#ede5db 0%,#ddd0c4 100%);
-    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
-    overflow: hidden; position: relative;
-  }
-  .card-photo {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover;
-  }
-  .card-body { padding: 20px; }
-  .card-title { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.45; margin-bottom: 8px; }
-  .card-desc { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 16px; }
 
   /* EVENTS */
-  .events-section { background: #f0e8df; padding: clamp(48px,6vw,72px) 20px; }
-  .events-list {
-    background: #fff; border-radius: 14px; overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-  .event-row {
-    display: flex; align-items: center; gap: 20px;
-    padding: 18px 24px; border-bottom: 1px solid rgba(0,0,0,0.05);
-    transition: background 0.15s; color: inherit;
-  }
-  .event-row:last-child { border-bottom: none; }
-  .event-row:hover { background: #faf7f4; }
-  .event-date { flex-shrink: 0; min-width: 88px; text-align: center; }
-  .event-day-num { font-size: 16px; font-weight: 600; color: #1a1a1a; line-height: 1.2; }
-  .event-day-name { font-size: 11px; color: #999; margin-top: 2px; }
-  .event-divider { width: 1px; height: 36px; background: rgba(0,0,0,0.08); flex-shrink: 0; }
-  .event-title { flex: 1; font-size: 15px; font-weight: 500; color: #1a1a1a; min-width: 0; }
+  .events { background: #f0e8df; padding: clamp(48px, 6vw, 72px) 0; }
+  .ev-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (min-width: 900px) { .ev-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+  .ev-card { background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+  .ev-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -22px rgba(90,58,26,0.45); color: inherit; }
+  .ev-img { position: relative; aspect-ratio: 4 / 5; background: #efe4d8; overflow: hidden; }
+  .ev-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .img-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .date-chip { position: absolute; top: 10px; left: 10px; background: #fff; border-radius: 12px; padding: 6px 10px 7px; min-width: 52px; line-height: 1.05; box-shadow: 0 6px 16px -6px rgba(0,0,0,0.35); display: flex; flex-direction: column; align-items: center; }
+  .dc-small { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #ff7c11; }
+  .dc-small.green { color: #0b7a5c; }
+  .dc-day { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 800; color: #1a1a1a; }
+  .dc-month { font-size: 11px; font-weight: 500; color: #666; text-transform: uppercase; }
+  .cat-tag { position: absolute; top: 12px; right: 10px; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+  .free-tag { position: absolute; bottom: 10px; left: 10px; background: #0b7a5c; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+  .ev-body { padding: 12px 14px 14px; }
+  .ev-title { font-size: 14.5px; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 4px; }
+  .ev-meta { font-size: 12px; color: #888; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* LATEST */
+  .latest { background: #fff9f3; padding: clamp(48px, 6vw, 72px) 0; }
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 700px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .card-grid { grid-template-columns: 1fr 1fr 1fr; gap: 24px; } }
+  .card { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -24px rgba(90,58,26,0.45); color: inherit; }
+  .card-img { position: relative; aspect-ratio: 16 / 10; background: linear-gradient(135deg, #ede5db 0%, #ddd0c4 100%); overflow: hidden; }
+  .card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .card:hover .card-img img { transform: scale(1.04); }
+  .tag.on-img { position: absolute; top: 12px; left: 12px; }
+  .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+  .card-title { font-size: 16px; font-weight: 600; color: #1a1a1a; line-height: 1.4; margin-bottom: 8px; }
+  .card-desc { font-size: 13.5px; color: #666; line-height: 1.65; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-meta { font-size: 12px; color: #999; margin-top: 14px; display: flex; gap: 6px; align-items: center; }
+  .arrow { margin-left: auto; color: #062f96; font-size: 16px; }
 
   /* INSTAGRAM */
-  .ig-section { background: #fff9f3; padding: clamp(48px,6vw,72px) 20px; }
-  .ig-header { text-align: center; margin-bottom: 32px; }
-  .ig-heading { font-size: clamp(18px,2vw,22px); font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
-  .ig-handle {
-    font-size: 13px; color: #062f96; font-weight: 500; display: inline-block;
-  }
-  .ig-handle:hover { opacity: 0.75; color: #062f96; }
-  .ig-embed-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-  @media (min-width: 640px) {
-    .ig-embed-grid { grid-template-columns: repeat(5, 1fr); }
-  }
-  .ig-cell {
-    position: relative;
-    aspect-ratio: 1;
-    overflow: hidden;
-    display: block;
-    background: #ede5db;
-  }
-  .ig-img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .ig-cell:hover .ig-img { transform: scale(1.05); }
-  .ig-overlay {
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,0);
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s;
-  }
-  .ig-overlay svg { opacity: 0; transition: opacity 0.2s; }
-  .ig-cell:hover .ig-overlay { background: rgba(0,0,0,0.35); }
-  .ig-cell:hover .ig-overlay svg { opacity: 1; }
+  .ig { background: #fff9f3; padding: 0 0 clamp(48px, 6vw, 72px); }
+  .ig-card { border-radius: 28px; padding: clamp(24px, 4vw, 44px); background: linear-gradient(135deg, #f58529 0%, #dd2a7b 45%, #8134af 75%, #515bd4 100%); box-shadow: 0 30px 60px -30px rgba(129,52,175,0.6); }
+  .ig-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+  .ig-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 8px; }
+  .ig-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(24px, 3.4vw, 38px); line-height: 1.12; color: #fff; max-width: 560px; }
+  .ig-btn { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #1a1a1a; font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 999px; transition: transform 0.2s; }
+  .ig-btn:hover { transform: translateY(-2px); color: #dd2a7b; }
+  .ig-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  @media (max-width: 700px) { .ig-grid { grid-template-columns: repeat(3, 1fr); } .ig-cell:nth-child(n+10) { display: none; } }
+  .ig-cell { border-radius: 14px; overflow: hidden; aspect-ratio: 1; border: 3px solid rgba(255,255,255,0.9); box-shadow: 0 10px 20px -10px rgba(0,0,0,0.4); transition: transform 0.25s; }
+  .ig-cell:hover { transform: translateY(-3px) rotate(-1deg); }
+  .ig-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ABOUT */
+  .about { background: #f0e8df; padding: clamp(40px, 6vw, 64px) 0; }
+  .about-inner { display: flex; gap: 28px; align-items: center; max-width: 860px; }
+  .about-text { color: #555; font-size: 15.5px; line-height: 1.75; margin: 10px 0 12px; }
+  @media (max-width: 600px) { .about-inner { flex-direction: column; align-items: flex-start; gap: 8px; } }
 </style>
-
-<script>
-  // Category filter
-  const catBtns = document.querySelectorAll('.cat-btn');
-  const cards = document.querySelectorAll('.guide-card');
-
-  catBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      catBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.getAttribute('data-cat');
-      cards.forEach(card => {
-        const cardCat = card.getAttribute('data-cat');
-        (card as HTMLElement).style.display = (cat === 'Tümü' || cat === cardCat) ? '' : 'none';
-      });
-    });
-  });
-</script>
