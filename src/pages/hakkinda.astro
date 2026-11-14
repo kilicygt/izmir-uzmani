@@ -1,31 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import IzmirIcon from '../components/IzmirIcon.astro';
-import { getCollection } from 'astro:content';
-import otobus from '../data/ulasim/otobus.json';
-import izban from '../data/ulasim/izban.json';
-import metro from '../data/ulasim/metro.json';
-import vapur from '../data/ulasim/vapur.json';
-
-const now = new Date();
-const guideCount = (await getCollection('blog')).filter((p) => p.data.pubDate <= now).length;
-
-const stats = [
-  { value: otobus.lines.length, label: 'ESHOT otobüs hattı' },
-  { value: izban.stations.length, label: 'İZBAN istasyonu' },
-  { value: metro.stations.length, label: 'metro istasyonu' },
-  { value: guideCount, label: 'şehir rehberi' },
-];
 
 const services = [
   {
-    icon: 'metro', href: '/toplu-tasima-saatleri', title: 'Toplu Taşıma Saatleri',
-    desc: 'ESHOT otobüsleri, İzmir Metro, tramvay, İZBAN ve vapur sefer saatleri tek yerde. Her gün otomatik olarak güncellenir.',
-    cta: 'Saatlere bak',
-  },
-  {
     icon: 'saatkulesi', href: '/rehberler', title: 'Gezi Rehberleri',
-    desc: 'Kemeraltı’ndan Kadifekale’ye, Efes’ten Şirince’ye; tarihi, ulaşımı ve ziyaret ipuçlarıyla gezilecek yerler.',
+    desc: 'Kemeraltı’ndan Kadifekale’ye, Efes’ten Şirince’ye; hikayesi, ziyaret ipuçları ve gezi rotalarıyla gezilecek yerler.',
     cta: 'Rehberleri oku',
   },
   {
@@ -38,27 +18,32 @@ const services = [
     desc: 'Alsancak, Karşıyaka, Urla, Çeşme… Yürüyüş rotaları, günübirlik kaçamaklar ve sakin hafta sonu planları.',
     cta: 'Rota bul',
   },
+  {
+    icon: 'vapur', href: '/toplu-tasima-saatleri', title: 'Şehirde Ulaşım',
+    desc: 'Gideceğin yere nasıl ulaşacağını da düşündük: metro, İZBAN, vapur ve otobüs saatleri bir tık uzağında.',
+    cta: 'Ulaşıma göz at',
+  },
 ] as const;
 
 const values = [
-  { t: 'Yerel bakış', d: 'İzmir’de yaşayan, bu şehrin sokaklarını bilen insanların gözünden yazıyoruz.' },
-  { t: 'Güncel bilgi', d: 'Sefer saatleri ve etkinlikler İzmir Büyükşehir Belediyesi açık verisinden her gün yenilenir.' },
-  { t: 'Sade ve hızlı', d: 'Durağa yürürken telefondan açıp saniyeler içinde aradığını bulabilmen için.' },
+  { t: 'Yerel bakış', d: 'Bu şehrin sokaklarını, sahillerini ve hikayelerini bilen insanların gözünden yazıyoruz.' },
+  { t: 'Her gün yeni içerik', d: 'Yeni rehberler, güncel etkinlikler ve şehirden haberler; İzmir Uzmanı her gün biraz daha büyüyor.' },
+  { t: 'Sade ve samimi', d: 'Uzun reklam metinleri yok. Bir arkadaşına anlatır gibi, işine yarayacak olanı yazıyoruz.' },
   { t: 'Herkese ücretsiz', d: 'Üyelik yok, uygulama indirmek yok. İzmir Uzmanı herkese açık ve ücretsizdir.' },
 ];
 
 const faqs = [
   {
     q: 'İzmir Uzmanı nedir?',
-    a: 'İzmir Uzmanı; İzmir toplu taşıma saatlerini, gezi rehberlerini ve şehirdeki etkinlikleri bir araya getiren bağımsız bir yerel şehir rehberidir. 2024’ten beri İzmir’i yaşayanların ve ziyaret edenlerin işine yarayacak bilgileri sade bir dille paylaşıyoruz.',
+    a: 'İzmir Uzmanı; İzmir’in gezilecek yerlerini, semtlerini, etkinliklerini ve şehir hayatını yerel gözüyle anlatan bağımsız bir şehir rehberidir. 2024’ten beri İzmir’i yaşayanların ve ziyaret edenlerin işine yarayacak bilgileri sade bir dille paylaşıyoruz.',
   },
   {
-    q: 'Toplu taşıma saatleri ne sıklıkla güncelleniyor?',
-    a: 'ESHOT otobüs, İzmir Metro, tramvay, İZBAN ve İzdeniz vapur saatleri İzmir Büyükşehir Belediyesi’nin açık veri servislerinden her gün otomatik olarak çekilir. Bayram ve özel günlerde sefer düzeni değişebileceği için yolculuk öncesinde resmi duyuruları da kontrol etmenizi öneririz.',
+    q: 'Hangi konularda içerik yayınlıyorsunuz?',
+    a: 'İzmir ve çevresinde gezilecek yerler, semtler, tarihi mekanlar, doğa rotaları, günübirlik kaçamaklar ve şehirdeki etkinlikler hakkında rehberler yayınlıyoruz. Ayrıca gideceğiniz yere kolayca ulaşabilmeniz için toplu taşıma saatlerini de sitede bulabilirsiniz.',
   },
   {
     q: 'İzmir Uzmanı resmi bir kurum mu?',
-    a: 'Hayır. İzmir Uzmanı herhangi bir belediye ya da ulaşım kuruluşuna bağlı değildir. Resmi kaynaklardaki bilgileri derleyip daha kolay okunur hale getiren bağımsız bir platformuz.',
+    a: 'Hayır. İzmir Uzmanı herhangi bir belediye ya da ulaşım kuruluşuna bağlı değildir. İzmir’i seven insanların hazırladığı bağımsız bir şehir rehberiyiz.',
   },
   {
     q: 'Bir mekan ya da etkinlik önermek istiyorum, nasıl ulaşabilirim?',
@@ -106,7 +91,7 @@ const jsonLd = {
 <Layout
   title="Hakkımızda"
   activePage="hakkinda"
-  description="İzmir Uzmanı; İzmir toplu taşıma saatlerini, gezi rehberlerini ve etkinlikleri yerel gözüyle bir araya getiren bağımsız şehir rehberi. Hikayemizi ve neler yaptığımızı keşfedin."
+  description="İzmir Uzmanı; İzmir’in gezilecek yerlerini, semtlerini, etkinliklerini ve şehir hayatını yerel gözüyle anlatan bağımsız şehir rehberi. Hikayemizi ve neler yaptığımızı keşfedin."
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
@@ -120,8 +105,8 @@ const jsonLd = {
         <p class="eyebrow">Hakkımızda</p>
         <h1 class="hero-title">İzmir’i yerel gözüyle anlatıyoruz.</h1>
         <p class="hero-sub">
-          İzmir Uzmanı, şehirde yaşayanların ve İzmir’e yolu düşenlerin en çok aradığı bilgileri tek bir yerde
-          toplayan bağımsız bir şehir rehberi: toplu taşıma saatleri, gezi rehberleri ve etkinlikler.
+          Kordon’da gün batımından Kemeraltı’nın ara sokaklarına, Urla’nın bağlarından şehrin konser takvimine…
+          İzmir Uzmanı, bu şehri yaşayanların ve keşfetmek isteyenlerin bağımsız şehir rehberi.
         </p>
         <div class="hero-cta">
           <a href="/rehberler" class="btn-primary">Rehberleri keşfet</a>
@@ -146,40 +131,26 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="container stats-grid">
-      {stats.map((s) => (
-        <div class="stat">
-          <span class="stat-num">{s.value}</span>
-          <span class="stat-label">{s.label}</span>
-        </div>
-      ))}
-    </div>
-    <p class="stats-note">Veriler her gün İzmir Büyükşehir Belediyesi açık veri servislerinden güncellenir.</p>
-  </section>
-
   <!-- STORY -->
   <section class="story">
     <div class="container story-grid">
       <div>
         <p class="eyebrow">Hikayemiz</p>
-        <h2 class="h2">Durakta beklerken aklına gelen soruya cevap olmak için kurulduk.</h2>
+        <h2 class="h2">İzmir’i ezbere bilenlerin anlattığı bir şehir rehberi olmak için kurulduk.</h2>
       </div>
       <div class="story-body">
         <p>
-          “Vapur kaçta kalkıyor?”, “Bu otobüs Konak’tan geçer mi?”, “Hafta sonu nereye gidelim?” İzmir’de yaşayan
-          herkesin gün içinde defalarca sorduğu sorular bunlar. Cevaplar ise çoğu zaman farklı sitelere, uygulamalara
-          ve PDF tarifelere dağılmış durumda.
+          Şehir rehberlerinin çoğu aynı mekanları, aynı rotaları tekrar eder. Oysa İzmir çok daha derin: her semtin
+          kendine ait bir ritmi, her sokağın ayrı bir hikayesi var. Alsancak’ın akşamları, Karşıyaka çarşısının telaşı,
+          Kemeraltı’nın hanları, Çeşme’nin rüzgarı ve Şirince’nin sakinliği aynı şehrin farklı yüzleri.
         </p>
         <p>
-          İzmir Uzmanı’nı 2024’te bu dağınıklığı toplamak için kurduk. Önce toplu taşımayı tek bir yerde, sade ve hızlı
-          açılan sayfalarla düzenledik. Ardından şehri gerçekten bilenlerin gözünden gezi rehberleri ve güncel etkinlik
-          takvimi ekledik.
+          İzmir Uzmanı’nı 2024’te bu hikayeleri anlatmak için kurduk. Gezilecek yerleri, tarihi mekanları, doğa
+          rotalarını ve günübirlik kaçamakları; şehri gerçekten yaşayan insanların gözünden, sade ve samimi bir dille yazıyoruz.
         </p>
         <p>
-          Bugün işe giderken, vapura yetişirken ya da hafta sonu planı yaparken İzmir Uzmanı’nı açan İzmirlilerin sayısı her gün artıyor.
-          Amacımız basit: İzmir’de bir şey arıyorsan ilk aklına gelen yer olmak.
+          Amacımız basit: İzmir’de yaşıyorsan şehrini yeniden keşfetmene, ilk kez geliyorsan buranın tadını en iyi şekilde
+          çıkarmana yardımcı olmak. Kısacası, İzmir’le ilgili bir şey arıyorsan aklına ilk gelen yer olmak.
         </p>
       </div>
     </div>
@@ -232,7 +203,7 @@ const jsonLd = {
         <div class="ig-text">
           <p class="ig-eyebrow">Instagram</p>
           <h2 class="ig-title">İzmir’in güncel hali,<br />her gün akışında.</h2>
-          <p class="ig-desc">Yeni rehberler, etkinlik duyuruları, ulaşım değişiklikleri ve şehirden kareler. @izmiruzmani’yi takip et, İzmir’de olan biteni kaçırma.</p>
+          <p class="ig-desc">Yeni rehberler, etkinlik önerileri, gizli köşeler ve şehirden kareler. @izmiruzmani’yi takip et, İzmir’de olan biteni kaçırma.</p>
           <a href="https://instagram.com/izmiruzmani" target="_blank" rel="noopener" class="ig-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
             Takip et: @izmiruzmani
@@ -348,15 +319,6 @@ const jsonLd = {
   @keyframes sail { 0%,100% { transform: translate(0,0) rotate(0); } 50% { transform: translate(-10px,-4px) rotate(-2deg); } }
   @keyframes fly { 0%,100% { transform: translate(0,0); } 50% { transform: translate(18px,-10px); } }
   @media (prefers-reduced-motion: reduce) { :global(.art), .blob { animation: none !important; } }
-
-  /* STATS */
-  .stats { background: #062f96; color: #fff; padding: 40px 0 28px; }
-  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
-  .stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .stat-num { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(36px, 5vw, 52px); line-height: 1; color: #ffb26b; }
-  .stat-label { font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 8px; }
-  .stats-note { text-align: center; font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 24px; padding: 0 20px; }
 
   /* STORY */
   .story { background: #fff9f3; padding: clamp(56px, 8vw, 104px) 0; }
