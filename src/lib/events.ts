@@ -106,9 +106,9 @@ export const longDate = (d: string) => fmt(d, { day: 'numeric', month: 'long', y
 export function catColor(cat: string) {
   const map: Record<string, string> = {
     Konser: '#062f96', Tiyatro: '#ff7c11', Sergi: '#0b7a5c', Sinema: '#8a2be2',
-    Festival: '#ff7c11', Çocuk: '#d6336c',
+    Festival: '#ff7c11', Çocuk: '#d6336c', 'Toplantı / Panel': '#6b4fa0', Diğer: '#6b7280',
   };
-  return map[cat] ?? '#062f96';
+  return map[cat.trim()] ?? '#062f96';
 }
 
 const META_LINE = /^(📍\s*)?(yer|mekân|mekan|saat|tarih)\s*[:：]/i;
