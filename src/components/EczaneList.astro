@@ -1,0 +1,235 @@
+---
+// List of on-duty pharmacies. Rendered from the daily data at build time (for search engines) and
+// refreshed in the browser from the live İzBB API when a newer duty day is available.
+import data from '../data/eczane.json';
+import { ilceSlug } from '../lib/eczane-core.mjs';
+
+interface Props {
+  /** District to show; omit to show every district in its own group. */
+  ilce?: string;
+}
+const { ilce } = Astro.props;
+
+type Ph = (typeof data.pharmacies)[number];
+const all = data.pharmacies as Ph[];
+const groups: [string, Ph[]][] = ilce
+  ? [[ilce, all.filter((p) => p.ilceler.includes(ilce))]]
+  : [...new Set(all.flatMap((p) => p.ilceler))]
+      .sort((a, b) => a.localeCompare(b, 'tr'))
+      .map((i) => [i, all.filter((p) => p.ilceler.includes(i))]);
+
+const mapsUrl = (p: Ph) => p.lat != null
+  ? `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name} ${p.address} İzmir`)}`;
+---
+
+<div class="ecz" data-ilce={ilce ?? ''} data-duty={data.dutyStart}>
+  <div class="ecz-tools">
+    <button type="button" class="near-btn" data-near>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
+      Bana en yakın nöbetçi eczaneler
+    </button>
+    {!ilce && (
+      <label class="ecz-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Eczane, semt veya sokak ara…" data-search aria-label="Nöbetçi eczanelerde ara" />
+      </label>
+    )}
+    <p class="live" data-live hidden></p>
+  </div>
+
+  <section class="near" data-near-list hidden>
+    <h2 class="grp-title">Sana en yakın nöbetçi eczaneler</h2>
+    <div class="cards" data-near-cards></div>
+  </section>
+
+  <div data-groups>
+    {groups.map(([name, list]) => (
+      <section class="grp" data-grp>
+        {!ilce && (
+          <h2 class="grp-title">
+            <a href={`/nobetci-eczaneler/${ilceSlug(name)}/`}>{name} nöbetçi eczaneleri</a>
+            <span class="grp-count">{list.length}</span>
+          </h2>
+        )}
+        <div class="cards">
+          {list.map((p) => (
+            <article class="card" data-card data-text={`${p.name} ${p.region} ${p.address} ${name}`.toLocaleLowerCase('tr')}>
+              <div class="card-top">
+                <span class="badge" aria-hidden="true">E</span>
+                <div class="card-head">
+                  <h3 class="card-name">{p.name}</h3>
+                  <p class="card-region">{p.region}{p.ilceler.length > 1 && ` · ${p.ilceler.join(' / ')}`}</p>
+                </div>
+              </div>
+              <p class="card-addr">{p.address}</p>
+              {p.note && <p class="card-note">{p.note}</p>}
+              <div class="card-actions">
+                {p.phone && <a class="act act-call" href={`tel:${p.phone.tel}`}>Ara · {p.phone.label}</a>}
+                <a class="act act-map" href={mapsUrl(p)} target="_blank" rel="noopener">Yol tarifi</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+  {groups.every(([, l]) => l.length === 0) && (
+    <p class="empty" data-empty>Bugünkü listede bu ilçe için nöbetçi eczane görünmüyor. Yakındaki ilçelere ya da yukarıdaki “Bana en yakın” butonuna göz atın.</p>
+  )}
+  <p class="empty" data-noresult hidden>Aramanla eşleşen nöbetçi eczane yok.</p>
+
+  <script type="application/json" data-all set:html={JSON.stringify(all).replace(/</g, '\\u003c')} />
+</div>
+
+<style>
+  .ecz-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 26px; }
+  .near-btn {
+    display: inline-flex; align-items: center; gap: 8px; font: 600 14px 'Poppins', sans-serif; color: #fff; cursor: pointer;
+    background: #d0021b; border: 0; border-radius: 999px; padding: 12px 20px; box-shadow: 0 10px 22px -12px rgba(208,2,27,0.8);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .near-btn:hover { background: #b00017; transform: translateY(-1px); }
+  .near-btn[disabled] { opacity: 0.7; cursor: wait; }
+  .ecz-search { flex: 1; min-width: 220px; display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid #e4d9cd; border-radius: 999px; padding: 0 16px; color: #062f96; }
+  .ecz-search:focus-within { border-color: #062f96; }
+  .ecz-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 14px 'Poppins', sans-serif; padding: 12px 0; }
+  .live { width: 100%; font-size: 12.5px; color: #0b7a5c; }
+  .live[hidden], .near[hidden], [data-grp][hidden], [data-card][hidden], .empty[hidden] { display: none; }
+
+  .grp + .grp, .near + div .grp:first-child { margin-top: 36px; }
+  .near { margin-bottom: 36px; scroll-margin-top: 84px; }
+  .grp-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 25px); color: #1a1a1a; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .grp-title a:hover { color: #062f96; }
+  .grp-count { font: 600 12px 'Poppins', sans-serif; color: #d0021b; background: #ffe9ea; border-radius: 999px; padding: 3px 10px; }
+
+  .cards { display: grid; gap: 14px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1080px) { .cards { grid-template-columns: 1fr 1fr 1fr; } }
+  .cards :global(.card) {
+    background: #fff; border: 1px solid #efe2d3; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px;
+    box-shadow: 0 18px 36px -30px rgba(90,58,26,0.5);
+  }
+  .cards :global(.card-top) { display: flex; gap: 12px; align-items: center; }
+  .cards :global(.badge) { flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; border: 2.5px solid #d0021b; color: #d0021b; font: 800 20px 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; background: #fff; }
+  .cards :global(.card-name) { font-size: 16.5px; font-weight: 600; color: #1a1a1a; line-height: 1.3; }
+  .cards :global(.card-region) { font-size: 12.5px; color: #888; }
+  .cards :global(.card-addr) { font-size: 14px; color: #444; line-height: 1.55; }
+  .cards :global(.card-note) { font-size: 12.5px; color: #8a5a00; background: #fff4dc; border-radius: 10px; padding: 7px 10px; line-height: 1.45; }
+  .cards :global(.card-dist) { font-size: 12px; font-weight: 600; color: #062f96; background: #e8eefc; border-radius: 999px; padding: 3px 10px; align-self: flex-start; }
+  .cards :global(.card-actions) { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+  .cards :global(.act) { flex: 1; min-width: 120px; text-align: center; font-size: 13.5px; font-weight: 600; border-radius: 12px; padding: 10px 12px; white-space: nowrap; }
+  .cards :global(.act-call) { background: #0b7a5c; color: #fff; }
+  .cards :global(.act-call:hover) { background: #086349; color: #fff; }
+  .cards :global(.act-map) { background: #f0e6da; color: #1a1a1a; }
+  .cards :global(.act-map:hover) { background: #e6d8c8; color: #1a1a1a; }
+  .empty { background: #fff; border: 1px dashed #e4d9cd; border-radius: 16px; padding: 18px; color: #666; font-size: 14.5px; line-height: 1.6; }
+</style>
+
+<script>
+  import { normalizePharmacies, ilceSlug } from '../lib/eczane-core.mjs';
+
+  type Ph = { name: string; region: string; note: string | null; address: string; phone: { tel: string; label: string } | null; lat: number | null; lng: number | null; ilceler: string[] };
+
+  const root = document.querySelector<HTMLElement>('.ecz');
+  if (root) {
+    const ilce = root.dataset.ilce ?? '';
+    let all: Ph[] = JSON.parse(root.querySelector('[data-all]')?.textContent ?? '[]');
+    const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+    const mapsUrl = (p: Ph) => p.lat != null
+      ? `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name} ${p.address} İzmir`)}`;
+    const card = (p: Ph, group: string, km?: number) => `
+      <article class="card" data-card data-text="${esc(`${p.name} ${p.region} ${p.address} ${group}`.toLocaleLowerCase('tr'))}">
+        <div class="card-top">
+          <span class="badge" aria-hidden="true">E</span>
+          <div class="card-head">
+            <h3 class="card-name">${esc(p.name)}</h3>
+            <p class="card-region">${esc(p.region)}${p.ilceler.length > 1 ? ` · ${esc(p.ilceler.join(' / '))}` : ''}</p>
+          </div>
+        </div>
+        ${km != null ? `<span class="card-dist">${km < 1 ? `${Math.round(km * 1000)} m` : `${km.toFixed(1).replace('.', ',')} km`} uzaklıkta</span>` : ''}
+        <p class="card-addr">${esc(p.address)}</p>
+        ${p.note ? `<p class="card-note">${esc(p.note)}</p>` : ''}
+        <div class="card-actions">
+          ${p.phone ? `<a class="act act-call" href="tel:${p.phone.tel}">Ara · ${p.phone.label}</a>` : ''}
+          <a class="act act-map" href="${mapsUrl(p)}" target="_blank" rel="noopener">Yol tarifi</a>
+        </div>
+      </article>`;
+
+    // Live refresh: duty changes at 08:00 and the daily rebuild lands a few minutes later.
+    // Only ask the API once the built list has expired, so normal visits make no extra requests.
+    const live = root.querySelector<HTMLElement>('[data-live]');
+    const builtUntil = root.dataset.duty ? new Date(`${root.dataset.duty.slice(0, 19)}+03:00`).getTime() + 86_400_000 : 0;
+    if (Date.now() >= builtUntil) fetch('https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler', { signal: AbortSignal.timeout(15000) })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((raw) => {
+        if (!Array.isArray(raw) || !raw.length) return;
+        const fresh = normalizePharmacies(raw);
+        if (fresh.dutyStart === root.dataset.duty) return;
+        all = fresh.pharmacies as Ph[];
+        const groupsEl = root.querySelector('[data-groups]')!;
+        const names = ilce ? [ilce] : [...new Set(all.flatMap((p) => p.ilceler))].sort((a, b) => a.localeCompare(b, 'tr'));
+        groupsEl.innerHTML = names.map((n) => {
+          const list = all.filter((p) => p.ilceler.includes(n));
+          const head = ilce ? '' : `<h2 class="grp-title"><a href="/nobetci-eczaneler/${ilceSlug(n)}/">${esc(n)} nöbetçi eczaneleri</a><span class="grp-count">${list.length}</span></h2>`;
+          return `<section class="grp" data-grp>${head}<div class="cards">${list.map((p) => card(p, n)).join('')}</div></section>`;
+        }).join('');
+        root.querySelector('[data-empty]')?.toggleAttribute('hidden', all.some((p) => !ilce || p.ilceler.includes(ilce)));
+        document.querySelectorAll<HTMLElement>('[data-duty-label]').forEach((el) => { el.textContent = dutyLabel(fresh.dutyStart); });
+        if (live) { live.hidden = false; live.textContent = '● Liste az önce İzmir Büyükşehir Belediyesi’nden güncellendi.'; }
+      })
+      .catch(() => {});
+
+    function dutyLabel(start: string | null) {
+      if (!start) return '';
+      const s = new Date(`${start.slice(0, 19)}+03:00`);
+      const e = new Date(s.getTime() + 86_400_000);
+      const f = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', weekday: 'long', timeZone: 'Europe/Istanbul' });
+      return `${f(s)} 08:00 – ${f(e)} 08:00`;
+    }
+
+    // Nearest pharmacies by the visitor's location (never sent anywhere).
+    const nearBtn = root.querySelector<HTMLButtonElement>('[data-near]');
+    nearBtn?.addEventListener('click', () => {
+      if (!('geolocation' in navigator)) return alert('Tarayıcın konum özelliğini desteklemiyor.');
+      nearBtn.disabled = true;
+      navigator.geolocation.getCurrentPosition((pos) => {
+        nearBtn.disabled = false;
+        const { latitude: la, longitude: lo } = pos.coords;
+        const R = 6371, rad = (x: number) => (x * Math.PI) / 180;
+        const dist = (p: Ph) => {
+          if (p.lat == null || p.lng == null) return Infinity;
+          const a = Math.sin(rad(p.lat - la) / 2) ** 2 + Math.cos(rad(la)) * Math.cos(rad(p.lat)) * Math.sin(rad(p.lng - lo) / 2) ** 2;
+          return 2 * R * Math.asin(Math.sqrt(a));
+        };
+        const nearest = all.map((p) => ({ p, d: dist(p) })).filter((x) => Number.isFinite(x.d)).sort((a, b) => a.d - b.d).slice(0, 6);
+        const box = root.querySelector<HTMLElement>('[data-near-list]')!;
+        box.querySelector('[data-near-cards]')!.innerHTML = nearest.map(({ p, d }) => card(p, p.ilceler[0] ?? '', d)).join('');
+        box.hidden = false;
+        box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, () => {
+        nearBtn.disabled = false;
+        alert('Konumuna erişilemedi. Tarayıcı ayarlarından konum iznini açıp tekrar deneyebilirsin.');
+      }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 });
+    });
+
+    // Search across all groups (hub page).
+    const q = root.querySelector<HTMLInputElement>('[data-search]');
+    q?.addEventListener('input', () => {
+      const terms = q.value.toLocaleLowerCase('tr').split(/\s+/).filter(Boolean);
+      let shown = 0;
+      root.querySelectorAll<HTMLElement>('[data-grp]').forEach((g) => {
+        let n = 0;
+        g.querySelectorAll<HTMLElement>('[data-card]').forEach((c) => {
+          const ok = terms.every((t) => (c.dataset.text ?? '').includes(t));
+          c.hidden = !ok;
+          if (ok) n++;
+        });
+        g.hidden = n === 0;
+        shown += n;
+      });
+      root.querySelector('[data-noresult]')?.toggleAttribute('hidden', shown > 0);
+    });
+  }
+</script>

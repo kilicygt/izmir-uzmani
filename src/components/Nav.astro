@@ -6,12 +6,12 @@ interface Props {
   activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda';
 }
 const { activePage } = Astro.props;
-const WM = 'dalga' as const;
 
 const menuLinks = [
   { key: 'rehberler', href: '/rehberler', label: 'Rehberler', sub: 'Gezilecek yerler ve rotalar', icon: 'harita' },
   { key: 'etkinlikler', href: '/etkinlikler', label: 'Etkinlikler', sub: 'Bu hafta şehirde neler var?', icon: 'bilet' },
   { key: 'ulasim', href: '/toplu-tasima-saatleri', label: 'Toplu Taşıma', sub: 'Sefer saatleri tek yerde', icon: 'vapur' },
+  { key: 'eczane', href: '/nobetci-eczaneler', label: 'Nöbetçi Eczaneler', sub: 'Bugün açık eczaneler, ilçe ilçe', icon: 'eczane' },
   { key: 'hakkinda', href: '/hakkinda', label: 'Hakkında', sub: 'İzmir Uzmanı kimdir?', icon: 'saatkulesi' },
 ] as const;
 
@@ -27,7 +27,7 @@ const transit = [
 <nav id="site-nav">
   <div class="nav-inner">
     <a href="/" class="logo" aria-label="İzmir Uzmanı ana sayfa">
-      <Wordmark variant={WM} />
+      <Wordmark />
     </a>
     <div class="nav-right">
       <div class="desktop-links">
@@ -50,7 +50,7 @@ const transit = [
 <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menü" aria-hidden="true">
   <div class="mm-head">
     <a href="/" class="logo" aria-label="İzmir Uzmanı ana sayfa">
-      <Wordmark variant={WM} />
+      <Wordmark />
     </a>
     <button id="menu-close" class="mm-close" aria-label="Menüyü kapat">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
