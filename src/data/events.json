@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-14T10:35:32.977Z",
+  "fetchedAt": "2026-11-15T11:05:05.695Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -398,7 +398,7 @@
       "category": "Tiyatro",
       "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
       "ageLimit": null,
-      "admission": null,
+      "admission": "paid",
       "image": "/images/etkinlikler/otomatik/596d0fea-640050a0.webp",
       "summary": [
         "Cervantes'in Don Kişot'undan hareketle, çağdaş bir masal...",
@@ -448,7 +448,7 @@
         {
           "start": "2026-11-29T15:00:00+03:00",
           "end": "2026-11-29T16:00:00+03:00",
-          "venue": null
+          "venue": "İzBBŞT İsmet İnönü Sahnesi"
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/don-kisot/596d0fea-6bab-44b4-f89c-08de33e55467",
