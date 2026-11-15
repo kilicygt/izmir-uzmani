@@ -1,7 +1,7 @@
 ---
 // Clay-style "3D" illustrations of İzmir symbols, drawn as inline SVG so they stay sharp and light.
 interface Props {
-  name: 'saatkulesi' | 'asansor' | 'vapur' | 'marti' | 'palmiye' | 'metro' | 'bilet' | 'harita' | 'nota' | 'maske' | 'otobus' | 'eczane';
+  name: 'saatkulesi' | 'asansor' | 'vapur' | 'marti' | 'palmiye' | 'metro' | 'bilet' | 'harita' | 'nota' | 'maske' | 'otobus' | 'eczane' | 'deprem' | 'toplanma';
   size?: number;
   class?: string;
 }
@@ -301,6 +301,42 @@ const id = `ii-${name}-${g.__izmirIconSeq}`;
       <circle cx="86" cy="26" r="9" fill="#062f96" />
       <path d="M86 21.5a4.5 4.5 0 1 0 3.6 7.2 5.5 5.5 0 1 1-3.6-7.2z" fill="#ffd27a" />
       <path d="M32 26c0-3 2-5 5-5" stroke="#fff" stroke-opacity=".8" stroke-width="3" stroke-linecap="round" />
+    </g>
+  )}
+  {name === 'deprem' && (
+    <g>
+      <defs>
+        <linearGradient id={`${id}-dc`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#eef2fd" />
+        </linearGradient>
+        <linearGradient id={`${id}-dl`} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff9a3c" /><stop offset="1" stop-color="#e0301e" />
+        </linearGradient>
+      </defs>
+      <ellipse cx="60" cy="108" rx="38" ry="5" fill={`url(#${id}-sh)`} />
+      <rect x="20" y="24" width="84" height="76" rx="16" fill="#c9cfdc" transform="translate(4 4)" />
+      <rect x="16" y="22" width="84" height="76" rx="16" fill={`url(#${id}-dc)`} />
+      <path d="M26 74h80" stroke="#dfe5f5" stroke-width="2" />
+      <path d="M24 60h14l5-14 7 30 7-42 7 46 6-30 5 10h18" fill="none" stroke={`url(#${id}-dl)`} stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="88" cy="34" r="5" fill="#062f96" />
+      <path d="M24 30c0-3 2-5 5-5" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+    </g>
+  )}
+
+  {name === 'toplanma' && (
+    <g>
+      <defs>
+        <linearGradient id={`${id}-tg`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#4cc38a" /><stop offset="1" stop-color="#0b7a5c" />
+        </linearGradient>
+      </defs>
+      <ellipse cx="60" cy="108" rx="34" ry="5" fill={`url(#${id}-sh)`} />
+      <rect x="56" y="40" width="7" height="66" rx="3" fill="#7d8aa6" />
+      <rect x="22" y="14" width="76" height="52" rx="12" fill="#086349" transform="translate(4 4)" />
+      <rect x="22" y="14" width="76" height="52" rx="12" fill={`url(#${id}-tg)`} />
+      <circle cx="45" cy="30" r="5" fill="#fff" /><circle cx="60" cy="27" r="5" fill="#fff" /><circle cx="75" cy="30" r="5" fill="#fff" />
+      <path d="M38 52c0-9 4-14 7-14s7 5 7 14zM53 52c0-10 4-16 7-16s7 6 7 16zM68 52c0-9 4-14 7-14s7 5 7 14z" fill="#fff" />
+      <path d="M30 22c0-3 2-5 5-5" stroke="#fff" stroke-opacity=".6" stroke-width="3" stroke-linecap="round" />
     </g>
   )}
 </svg>

@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IzmirIcon from '../../components/IzmirIcon.astro';
+import NearestToplanma from '../../components/NearestToplanma.astro';
+import { fetchQuakes, magClass, type Quake } from '../../lib/deprem';
+import toplanma from '../../data/toplanma.json';
+import { ilceSlug } from '../../lib/eczane-core.mjs';
+
+// Rendered on request (cached at the edge for a minute) so search engines always see the latest list.
+export const prerender = false;
+Astro.response.headers.set('Cache-Control', 'public, max-age=30, s-maxage=60, stale-while-revalidate=300');
+
+let quakes: Quake[] = [];
+let failed = false;
+try {
+  quakes = await fetchQuakes(7);
+} catch {
+  failed = true;
+}
+
+const now = Date.now();
+// Default view: everything in İzmir province, plus quakes of 3.0+ nearby that people in İzmir may feel.
+const relevant = (q: Quake) => q.province === 'İzmir' || q.mag >= 3;
+const shown = quakes.filter(relevant);
+const DAY = 86_400_000;
+const last24 = shown.filter((q) => now - Date.parse(q.time) < DAY);
+const biggest = [...shown].sort((a, b) => b.mag - a.mag)[0];
+const latest = shown[0];
+const tz = { timeZone: 'Europe/Istanbul' } as const;
+const when = (iso: string) => new Date(iso).toLocaleString('tr-TR', { ...tz, day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+const clock = new Date().toLocaleTimeString('tr-TR', { ...tz, hour: '2-digit', minute: '2-digit' });
+const ilceCount = new Set(toplanma.areas.map((a) => a.i)).size;
+const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.localeCompare(b, 'tr'));
+---
+
+<Layout
+  title="İzmir Son Depremler · AFAD Verisi"
+  description="İzmir ve çevresinde son 24 saat ve son 7 günde olan depremler: büyüklük, yer, derinlik ve saat. AFAD verisiyle her dakika güncellenir. En yakın afet toplanma alanını da bul."
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span>Deprem</p>
+        <h1 class="title">İzmir Son Depremler</h1>
+        <p class="desc">İzmir’de son 7 günde kaydedilen depremler ve çevrede İzmir’den hissedilebilecek 3.0 ve üstü sarsıntılar. Veriler AFAD’dan alınır, sayfa açıkken her dakika yenilenir.</p>
+        <p class="live"><span class="dot"></span>Canlı · son güncelleme <span data-updated>{clock}</span></p>
+      </div>
+      <div class="hero-icon" aria-hidden="true"><IzmirIcon name="deprem" size={140} /></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="container">
+      <div class="stats" data-stats>
+        <div class="stat">
+          <p class="stat-label">Son deprem</p>
+          {latest ? (
+            <>
+              <p class="stat-big"><span class:list={['mag', magClass(latest.mag)]}>{latest.mag.toFixed(1)}</span> <span data-ago={latest.time}>{when(latest.time)}</span></p>
+              <p class="stat-sub">{latest.place}</p>
+            </>
+          ) : <p class="stat-sub">—</p>}
+        </div>
+        <div class="stat">
+          <p class="stat-label">Son 24 saatte İzmir’de</p>
+          <p class="stat-big">{last24.filter((q) => q.province === 'İzmir').length} <small>deprem</small></p>
+          <p class="stat-sub">Çevrede 3.0 ve üstü: {last24.filter((q) => q.province !== 'İzmir').length}</p>
+        </div>
+        <div class="stat">
+          <p class="stat-label">7 günün en büyüğü</p>
+          {biggest ? (
+            <>
+              <p class="stat-big"><span class:list={['mag', magClass(biggest.mag)]}>{biggest.mag.toFixed(1)}</span> <small>{when(biggest.time)}</small></p>
+              <p class="stat-sub">{biggest.place}</p>
+            </>
+          ) : <p class="stat-sub">—</p>}
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="seg" role="group" aria-label="Zaman aralığı">
+          <button class="seg-btn active" data-range="1">Son 24 saat</button>
+          <button class="seg-btn" data-range="7">Son 7 gün</button>
+        </div>
+        <div class="chips" role="group" aria-label="Büyüklük">
+          <button class="chip active" data-min="0">Tümü</button>
+          <button class="chip" data-min="2">2.0+</button>
+          <button class="chip" data-min="3">3.0+</button>
+        </div>
+        <label class="only"><input type="checkbox" data-all /> Çevre illerdeki küçük depremleri de göster</label>
+      </div>
+
+      {failed && <p class="warn" data-failed>AFAD verisine şu an ulaşılamıyor. Sayfa birazdan kendiliğinden tekrar deneyecek.</p>}
+
+      <ol class="list" data-list>
+        {quakes.map((q) => (
+          <li class="row" data-time={q.time} data-mag={q.mag} data-izmir={q.province === 'İzmir' ? '1' : '0'}>
+            <span class:list={['mag', magClass(q.mag)]}>{q.mag.toFixed(1)}</span>
+            <div class="row-main">
+              <p class="row-place">{q.place}</p>
+              <p class="row-meta"><span data-ago={q.time}>{when(q.time)}</span> · {q.depth.toFixed(1).replace('.', ',')} km derinlik · {q.magType}</p>
+            </div>
+            <a class="row-map" href={`https://www.google.com/maps/search/?api=1&query=${q.lat},${q.lng}`} target="_blank" rel="noopener" aria-label="Haritada gör">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </a>
+          </li>
+        ))}
+      </ol>
+      <p class="empty" data-empty hidden>Bu filtrelerle eşleşen deprem yok.</p>
+      <p class="legend">
+        <span><i class="mag m1"></i>1–2</span><span><i class="mag m2"></i>2–3</span><span><i class="mag m3"></i>3–4</span><span><i class="mag m4"></i>4–5</span><span><i class="mag m5"></i>5+</span>
+      </p>
+
+      <!-- ASSEMBLY AREAS -->
+      <section class="block toplanma">
+        <div class="block-head">
+          <span class="block-icon"><IzmirIcon name="toplanma" size={72} /></span>
+          <div>
+            <h2 class="block-title">En yakın afet toplanma alanı</h2>
+            <p class="block-desc">İzmir’in {ilceCount} ilçesindeki {toplanma.areas.length.toLocaleString('tr-TR')} resmi toplanma alanı arasından sana en yakın üçünü bul. Deprem olmadan önce bir kez bakıp ailene söylemen yeterli.</p>
+          </div>
+        </div>
+        <NearestToplanma />
+        <details class="ilce-box">
+          <summary>İlçe ilçe tüm toplanma alanları</summary>
+          <div class="ilce-grid">
+            {ilceler.map((i) => <a href={`/deprem/toplanma-alanlari/${ilceSlug(i)}/`}>{i}</a>)}
+          </div>
+        </details>
+      </section>
+
+      <!-- PREPAREDNESS -->
+      <section class="block">
+        <h2 class="block-title">Deprem anında ve öncesinde</h2>
+        <div class="prep">
+          <div class="prep-card">
+            <p class="prep-title">Deprem anında: Çök, Kapan, Tutun</p>
+            <ul>
+              <li>Sağlam bir masa ya da koltuğun yanına <strong>çök</strong>.</li>
+              <li>Başını ve enseni kollarınla <strong>kapan</strong>.</li>
+              <li>Sarsıntı bitene kadar sabit bir yere <strong>tutun</strong>.</li>
+              <li>Merdiven ve asansörü kullanma; pencere ve dolaplardan uzak dur.</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <p class="prep-title">Deprem çantası</p>
+            <ul>
+              <li>Su, uzun ömürlü yiyecek, düdük ve el feneri</li>
+              <li>Pilli radyo, yedek pil ve powerbank</li>
+              <li>İlk yardım malzemesi ve düzenli kullanılan ilaçlar</li>
+              <li>Kimlik fotokopileri, biraz nakit, battaniye ve yedek kıyafet</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <p class="prep-title">Resmi kaynaklar</p>
+            <ul class="links">
+              <li><a href="tel:112"><strong>112</strong> Acil Çağrı Merkezi</a></li>
+              <li><a href="https://deprem.afad.gov.tr/last-earthquakes" target="_blank" rel="noopener">AFAD son depremler</a></li>
+              <li><a href="https://www.turkiye.gov.tr/afet-ve-acil-durum-yonetimi-acil-toplanma-alani-sorgulama" target="_blank" rel="noopener">e-Devlet toplanma alanı sorgulama</a></li>
+              <li><a href="https://www.afad.gov.tr/" target="_blank" rel="noopener">AFAD resmî sitesi</a> (aile afet planı ve deprem çantası rehberleri)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <p class="note">
+        Deprem bilgileri AFAD (Afet ve Acil Durum Yönetimi Başkanlığı) verisidir; ilk değerlendirmeler birkaç dakika gecikebilir ve sonradan güncellenebilir. Liste İzmir ve çevresini (körfez, kıyı ve komşu iller) kapsar. Toplanma alanları İzmir Büyükşehir Belediyesi açık verisinden alınır. Resmî açıklamalar için AFAD’ı takip edin.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .hero { background: linear-gradient(180deg, #fff9f3 0%, #eef2fd 100%); padding: clamp(28px, 5vw, 52px) 0 clamp(26px, 4vw, 40px); }
+  .hero-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 14px; display: flex; gap: 6px; }
+  .breadcrumb a { color: #062f96; }
+  .title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 54px); line-height: 1.05; letter-spacing: -0.02em; color: #1a1a1a; margin-bottom: 12px; }
+  .desc { font-size: 15.5px; color: #555; line-height: 1.7; max-width: 600px; margin-bottom: 14px; }
+  .live { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; background: #fff; border: 1px solid #dfe5f5; border-radius: 999px; padding: 7px 14px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #0b7a5c; box-shadow: 0 0 0 4px rgba(11,122,92,0.15); animation: pulse 2s infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(11,122,92,0.05); } }
+  .hero-icon { flex-shrink: 0; width: 160px; height: 160px; border-radius: 38px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #fff 0%, #e8eefc 100%); box-shadow: inset 0 2px 0 #fff, 0 20px 40px -24px rgba(6,47,150,0.5); }
+  @media (max-width: 700px) { .hero-icon { display: none; } }
+
+  .main { background: #fff9f3; padding: clamp(24px, 4vw, 40px) 0 clamp(48px, 6vw, 72px); }
+  .stats { display: grid; gap: 12px; grid-template-columns: 1fr; margin-bottom: 22px; }
+  @media (min-width: 760px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+  .stat { background: #fff; border: 1px solid #efe2d3; border-radius: 20px; padding: 16px 18px; }
+  .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 6px; }
+  .stat-big { font-family: 'Fraunces', serif; font-weight: 800; font-size: 26px; color: #1a1a1a; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .stat-big small, .stat-big [data-ago] { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #555; }
+  .stat-sub { font-size: 13px; color: #777; margin-top: 4px; }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+  .seg { display: inline-flex; background: #efe4d8; border-radius: 999px; padding: 4px; }
+  .seg-btn { font: 500 13px 'Poppins', sans-serif; color: #555; padding: 7px 16px; border-radius: 999px; border: 0; background: transparent; cursor: pointer; }
+  .seg-btn.active { background: #062f96; color: #fff; }
+  .chips { display: flex; gap: 6px; }
+  .chip { font: 500 13px 'Poppins', sans-serif; color: #555; padding: 6px 14px; border-radius: 999px; border: 1.5px solid #e4d9cd; background: #fff; cursor: pointer; }
+  .chip.active { background: #1a1a1a; border-color: #1a1a1a; color: #fff; }
+  .only { font-size: 13px; color: #555; display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+  .warn { background: #fff4dc; color: #8a5a00; border-radius: 14px; padding: 12px 16px; font-size: 14px; margin-bottom: 12px; }
+
+  .list { list-style: none; padding: 0; margin: 0; background: #fff; border: 1px solid #efe2d3; border-radius: 20px; overflow: hidden; }
+  .list :global(.row) { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #f3ebe1; }
+  .list :global(.row:last-child) { border-bottom: 0; }
+  .list :global(.row[hidden]) { display: none; }
+  :global(.mag) { flex-shrink: 0; min-width: 48px; height: 40px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font: 700 16px 'Poppins', sans-serif; color: #fff; }
+  :global(.m1) { background: #9aa6bd; } :global(.m2) { background: #e0a500; } :global(.m3) { background: #f07b10; } :global(.m4) { background: #e0301e; } :global(.m5) { background: #8f0f12; }
+  .list :global(.row-main) { flex: 1; min-width: 0; }
+  .list :global(.row-place) { font-size: 15px; font-weight: 600; color: #1a1a1a; line-height: 1.35; }
+  .list :global(.row-meta) { font-size: 12.5px; color: #888; margin-top: 2px; }
+  .list :global(.row-map) { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: #f0e6da; color: #062f96; display: flex; align-items: center; justify-content: center; }
+  .list :global(.row-map:hover) { background: #e6d8c8; color: #062f96; }
+  .empty { background: #fff; border: 1px dashed #e4d9cd; border-radius: 16px; padding: 16px; color: #666; font-size: 14px; margin-top: -1px; }
+  .empty[hidden] { display: none; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; font-size: 12px; color: #888; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i.mag { min-width: 14px; width: 14px; height: 14px; border-radius: 4px; }
+
+  .block { margin-top: 44px; }
+  .block-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 28px); color: #1a1a1a; margin-bottom: 8px; }
+  .toplanma { background: #effaf5; border: 1px solid #d7eee4; border-radius: 24px; padding: clamp(18px, 3vw, 28px); }
+  .block-head { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; }
+  .block-icon { flex-shrink: 0; width: 84px; height: 84px; border-radius: 22px; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -14px rgba(11,122,92,0.6); }
+  @media (max-width: 560px) { .block-icon { display: none; } }
+  .block-desc { font-size: 14.5px; color: #555; line-height: 1.65; }
+  .ilce-box { margin-top: 18px; }
+  .ilce-box summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #062f96; }
+  .ilce-grid { display: grid; gap: 6px; grid-template-columns: repeat(2, 1fr); margin-top: 12px; }
+  @media (min-width: 640px) { .ilce-grid { grid-template-columns: repeat(5, 1fr); } }
+  .ilce-grid a { background: #fff; border: 1px solid #d7eee4; border-radius: 12px; padding: 8px 12px; font-size: 13.5px; }
+  .ilce-grid a:hover { border-color: #0b7a5c; color: #0b7a5c; }
+
+  .prep { display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 12px; }
+  @media (min-width: 860px) { .prep { grid-template-columns: repeat(3, 1fr); } }
+  .prep-card { background: #fff; border: 1px solid #efe2d3; border-radius: 20px; padding: 18px; }
+  .prep-title { font-weight: 600; font-size: 15.5px; margin-bottom: 10px; color: #1a1a1a; }
+  .prep-card ul { padding-left: 18px; display: grid; gap: 6px; }
+  .prep-card li { font-size: 14px; color: #444; line-height: 1.55; }
+  .prep-card .links { list-style: none; padding: 0; }
+  .prep-card .links a { color: #062f96; text-decoration: underline; text-underline-offset: 3px; }
+  .note { margin-top: 32px; background: #f0e8df; border-radius: 16px; padding: 14px 18px; font-size: 13px; color: #555; line-height: 1.65; }
+</style>
+
+<script>
+  type Q = { id: string; time: string; mag: number; magType: string; depth: number; lat: number; lng: number; place: string; province: string | null };
+  const list = document.querySelector<HTMLOListElement>('[data-list]')!;
+  const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+  const state = { range: 1, min: 0, all: false };
+  const DAY = 86_400_000;
+  const magClass = (m: number) => (m >= 5 ? 'm5' : m >= 4 ? 'm4' : m >= 3 ? 'm3' : m >= 2 ? 'm2' : 'm1');
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const tz = { timeZone: 'Europe/Istanbul' } as const;
+  const when = (iso: string) => new Date(iso).toLocaleString('tr-TR', { ...tz, day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  const ago = (iso: string) => {
+    const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+    if (m < 1) return 'az önce';
+    if (m < 60) return `${m} dk önce`;
+    if (m < 1440) return `${Math.floor(m / 60)} sa ${m % 60} dk önce`;
+    return when(iso);
+  };
+
+  function apply() {
+    let shown = 0;
+    list.querySelectorAll<HTMLElement>('.row').forEach((r) => {
+      const ok = Date.now() - Date.parse(r.dataset.time!) < state.range * DAY && Number(r.dataset.mag) >= state.min && (state.all || r.dataset.izmir === '1' || Number(r.dataset.mag) >= 3);
+      r.hidden = !ok;
+      if (ok) shown++;
+    });
+    empty.hidden = shown > 0;
+    document.querySelectorAll<HTMLElement>('[data-ago]').forEach((el) => { el.textContent = ago(el.dataset.ago!); });
+  }
+
+  function render(quakes: Q[]) {
+    list.innerHTML = quakes.map((q) => `
+      <li class="row" data-time="${q.time}" data-mag="${q.mag}" data-izmir="${q.province === 'İzmir' ? '1' : '0'}">
+        <span class="mag ${magClass(q.mag)}">${q.mag.toFixed(1)}</span>
+        <div class="row-main">
+          <p class="row-place">${esc(q.place)}</p>
+          <p class="row-meta"><span data-ago="${q.time}">${when(q.time)}</span> · ${q.depth.toFixed(1).replace('.', ',')} km derinlik · ${esc(q.magType)}</p>
+        </div>
+        <a class="row-map" href="https://www.google.com/maps/search/?api=1&query=${q.lat},${q.lng}" target="_blank" rel="noopener" aria-label="Haritada gör"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></a>
+      </li>`).join('');
+  }
+
+  async function refresh() {
+    try {
+      const r = await fetch('/api/depremler.json', { cache: 'no-store' });
+      if (!r.ok) return;
+      const { quakes, updatedAt } = await r.json();
+      render(quakes);
+      document.querySelector('[data-failed]')?.remove();
+      const u = document.querySelector('[data-updated]');
+      if (u) u.textContent = new Date(updatedAt).toLocaleTimeString('tr-TR', { ...tz, hour: '2-digit', minute: '2-digit' });
+      apply();
+    } catch {}
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-range]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-range]').forEach((x) => x.classList.toggle('active', x === b));
+    state.range = Number(b.dataset.range);
+    apply();
+  }));
+  document.querySelectorAll<HTMLButtonElement>('[data-min]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-min]').forEach((x) => x.classList.toggle('active', x === b));
+    state.min = Number(b.dataset.min);
+    apply();
+  }));
+  document.querySelector<HTMLInputElement>('[data-all]')?.addEventListener('change', (e) => {
+    state.all = (e.target as HTMLInputElement).checked;
+    apply();
+  });
+
+  apply();
+  setInterval(refresh, 60_000);
+  setInterval(apply, 30_000);
+</script>
