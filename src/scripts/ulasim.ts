@@ -63,6 +63,15 @@ document.querySelectorAll<HTMLElement>('[data-tabs]').forEach((group) => {
   const panels = [...document.querySelectorAll<HTMLElement>(`[data-panel-of="${group.dataset.tabs}"]`)];
   const show = (id: string, isToday: boolean) => {
     buttons.forEach((b) => b.classList.toggle('active', b.dataset.tab === id));
+    // On phones the day tabs scroll sideways; keep the selected one in view.
+    const active = buttons.find((b) => b.dataset.tab === id);
+    const centre = () => {
+      if (!active || group.scrollWidth <= group.clientWidth) return;
+      const g = group.getBoundingClientRect(), a = active.getBoundingClientRect();
+      group.scrollLeft += a.left + a.width / 2 - (g.left + g.width / 2);
+    };
+    centre();
+    document.fonts?.ready.then(centre);
     panels.forEach((p) => {
       p.hidden = p.dataset.panel !== id;
       if (!p.hidden && isToday) liveScopes.add(p); else liveScopes.delete(p);

@@ -1,0 +1,25 @@
+{
+  "name": "İzmir Uzmanı",
+  "short_name": "İzmir Uzmanı",
+  "description": "İzmir toplu taşıma saatleri, nöbetçi eczaneler, etkinlikler ve gezi rehberleri.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "/?kaynak=uygulama",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF9F3",
+  "theme_color": "#FFF9F3",
+  "categories": ["travel", "navigation", "lifestyle"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Toplu Taşıma Saatleri", "short_name": "Saatler", "url": "/toplu-tasima-saatleri/?kaynak=uygulama", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Nöbetçi Eczaneler", "short_name": "Eczaneler", "url": "/nobetci-eczaneler/?kaynak=uygulama", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Etkinlikler", "url": "/etkinlikler/?kaynak=uygulama", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Rehberler", "url": "/rehberler/?kaynak=uygulama", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
