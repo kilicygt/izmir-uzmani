@@ -1,12 +1,11 @@
 ---
-import Wordmark from './Wordmark.astro';
 const year = new Date().getFullYear();
 ---
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="brand-row" aria-label="İzmir Uzmanı ana sayfa"><Wordmark tone="dark" /></a>
+        <a href="/" class="brand-row" aria-label="İzmir Uzmanı ana sayfa"><img src="/images/logo-izmir-uzmani-acik.png" alt="İzmir Uzmanı" width="308" height="190" class="brand-logo" /></a>
         <p>İzmir’in gezilecek yerlerini, semtlerini, etkinliklerini ve şehir hayatını yerel gözüyle anlatan bağımsız şehir rehberi.</p>
         <a href="https://instagram.com/izmiruzmani" target="_blank" rel="noopener" class="ig-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -51,6 +50,7 @@ const year = new Date().getFullYear();
   .footer-top { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 44px; }
   .footer-brand { max-width: 340px; }
   .brand-row { display: inline-flex; margin-bottom: 16px; }
+  .brand-logo { height: 72px; width: auto; display: block; }
   .footer-brand p { font-size: 14px; color: #aab2c8; line-height: 1.75; margin-bottom: 18px; }
   .ig-btn {
     display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #fff;
