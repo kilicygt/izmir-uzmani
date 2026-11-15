@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IzmirIcon from '../../components/IzmirIcon.astro';
+import EczaneList from '../../components/EczaneList.astro';
+import { eczane, ilceList, ilceSlug, countIn, dutyLabel, dutyShort, pharmacyJsonLd } from '../../lib/eczane';
+
+const pageUrl = 'https://www.izmiruzmani.com/nobetci-eczaneler/';
+const jsonLd = pharmacyJsonLd(eczane.pharmacies, pageUrl, `İzmir nöbetçi eczaneler · ${dutyShort()}`);
+---
+
+<Layout
+  title={`İzmir Nöbetçi Eczaneler · ${dutyShort()}`}
+  description={`İzmir'de bugün açık nöbetçi eczaneler: ${eczane.pharmacies.length} eczanenin adresi, telefonu ve yol tarifi ilçe ilçe. Liste her gün İzmir Büyükşehir Belediyesi verisiyle güncellenir.`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span>Nöbetçi Eczaneler</p>
+        <p class="eyebrow">Bugün açık eczaneler</p>
+        <h1 class="title">İzmir Nöbetçi Eczaneler</h1>
+        <p class="duty"><span class="dot"></span><span data-duty-label>{dutyLabel()}</span></p>
+        <p class="desc">İzmir’in 30 ilçesinde bugün nöbet tutan {eczane.pharmacies.length} eczane. Adres, telefon ve yol tarifi tek dokunuşta; konumuna en yakın olanı da bulabilirsin.</p>
+      </div>
+      <div class="hero-icon" aria-hidden="true"><IzmirIcon name="eczane" size={150} /></div>
+    </div>
+  </section>
+
+  <section class="ilce-sec">
+    <div class="container">
+      <h2 class="sec-title">İlçeni seç</h2>
+      <div class="ilce-grid">
+        {ilceList.map((i) => (
+          <a href={`/nobetci-eczaneler/${ilceSlug(i)}/`} class="ilce">
+            <span>{i}</span><span class="ilce-n">{countIn(i)}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="list-sec">
+    <div class="container">
+      <EczaneList />
+      <div class="info">
+        <p><strong>Nöbet saatleri:</strong> Nöbetçi eczaneler sabah 08:00’den ertesi sabah 08:00’e kadar hizmet verir. Bazı bölgelerde gece belli bir saatten sonra nöbet komşu bölgedeki eczaneye devredilir; bu durum kartlarda sarı notla belirtilir.</p>
+        <p><strong>Kaynak:</strong> Liste İzmir Büyükşehir Belediyesi açık veri servisinden her gün alınır ve sayfa açıldığında yeniden kontrol edilir. Gitmeden önce eczaneyi telefonla aramanı öneririz.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .hero { background: linear-gradient(180deg, #fff9f3 0%, #fbe9e6 100%); padding: clamp(28px, 5vw, 52px) 0 clamp(26px, 4vw, 40px); }
+  .hero-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 14px; display: flex; gap: 6px; }
+  .breadcrumb a { color: #062f96; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #d0021b; margin-bottom: 10px; }
+  .title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 54px); line-height: 1.05; letter-spacing: -0.02em; color: #1a1a1a; margin-bottom: 14px; }
+  .duty { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #1a1a1a; background: #fff; border: 1px solid #f0d6d2; border-radius: 999px; padding: 7px 14px; margin-bottom: 14px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #0b7a5c; box-shadow: 0 0 0 4px rgba(11,122,92,0.15); animation: pulse 2s infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(11,122,92,0.05); } }
+  .desc { font-size: 15.5px; color: #555; line-height: 1.7; max-width: 620px; }
+  .hero-icon { flex-shrink: 0; width: 170px; height: 170px; border-radius: 40px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #fff 0%, #fde8e6 100%); box-shadow: inset 0 2px 0 #fff, 0 20px 40px -24px rgba(208,2,27,0.5); }
+  @media (max-width: 700px) { .hero-icon { display: none; } }
+
+  .ilce-sec { background: #fff9f3; padding: clamp(24px, 4vw, 36px) 0 8px; }
+  .sec-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 25px); margin-bottom: 14px; }
+  .ilce-grid { display: grid; gap: 8px; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 640px) { .ilce-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 1024px) { .ilce-grid { grid-template-columns: repeat(6, 1fr); } }
+  .ilce { display: flex; justify-content: space-between; align-items: center; gap: 8px; background: #fff; border: 1px solid #efe2d3; border-radius: 14px; padding: 11px 14px; font-size: 14px; font-weight: 500; transition: border-color 0.2s, transform 0.2s; }
+  .ilce:hover { border-color: #d0021b; transform: translateY(-2px); color: inherit; }
+  .ilce-n { font-size: 12px; font-weight: 600; color: #d0021b; background: #ffe9ea; border-radius: 999px; padding: 2px 8px; }
+
+  .list-sec { background: #fff9f3; padding: clamp(28px, 4vw, 44px) 0 clamp(48px, 6vw, 72px); }
+  .info { margin-top: 36px; background: #f0e8df; border-radius: 16px; padding: 16px 20px; display: grid; gap: 8px; }
+  .info p { font-size: 13.5px; color: #555; line-height: 1.65; }
+</style>

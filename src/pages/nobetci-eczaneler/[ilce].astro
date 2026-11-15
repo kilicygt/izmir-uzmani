@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IzmirIcon from '../../components/IzmirIcon.astro';
+import EczaneList from '../../components/EczaneList.astro';
+import { eczane, ilceList, ilceSlug, countIn, dutyLabel, dutyShort, nearbyIlce, pharmacyJsonLd } from '../../lib/eczane';
+
+export function getStaticPaths() {
+  return ilceList.map((ilce) => ({ params: { ilce: ilceSlug(ilce) }, props: { ilce } }));
+}
+const { ilce } = Astro.props as { ilce: string };
+const list = eczane.pharmacies.filter((p) => p.ilceler.includes(ilce));
+const pageUrl = `https://www.izmiruzmani.com/nobetci-eczaneler/${ilceSlug(ilce)}/`;
+const jsonLd = pharmacyJsonLd(list, pageUrl, `${ilce} nöbetçi eczaneler · ${dutyShort()}`);
+const nearby = nearbyIlce(ilce);
+---
+
+<Layout
+  title={`${ilce} Nöbetçi Eczane · ${dutyShort()}`}
+  description={`${ilce}'da bugün açık nöbetçi eczaneler${list.length ? `: ${list.slice(0, 3).map((p) => p.name).join(', ')}` : ''}. Adres, telefon ve yol tarifi; liste her gün güncellenir.`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span><a href="/nobetci-eczaneler/">Nöbetçi Eczaneler</a><span>›</span>{ilce}</p>
+        <h1 class="title">{ilce} Nöbetçi Eczaneler</h1>
+        <p class="duty"><span class="dot"></span><span data-duty-label>{dutyLabel()}</span></p>
+        <p class="desc">{list.length > 0 ? `${ilce}’da bugün ${list.length} nöbetçi eczane var.` : `Bugünkü listede ${ilce} için nöbetçi eczane görünmüyor.`} Telefonla arayabilir ya da tek dokunuşla yol tarifi alabilirsin.</p>
+      </div>
+      <div class="hero-icon" aria-hidden="true"><IzmirIcon name="eczane" size={130} /></div>
+    </div>
+  </section>
+
+  <section class="list-sec">
+    <div class="container">
+      <EczaneList ilce={ilce} />
+
+      <div class="nearby">
+        <h2 class="sec-title">Yakındaki ilçeler</h2>
+        <div class="chips">
+          {nearby.map((i) => <a href={`/nobetci-eczaneler/${ilceSlug(i)}/`} class="chip">{i} <span>{countIn(i)}</span></a>)}
+          <a href="/nobetci-eczaneler/" class="chip chip-all">Tüm İzmir →</a>
+        </div>
+      </div>
+
+      <div class="info">
+        <p><strong>Nöbet saatleri:</strong> Nöbetçi eczaneler sabah 08:00’den ertesi sabah 08:00’e kadar hizmet verir. Gece belli bir saatten sonra nöbet komşu bölgeye devrediliyorsa kartta sarı notla belirtilir.</p>
+        <p><strong>Kaynak:</strong> İzmir Büyükşehir Belediyesi açık veri servisi; liste her gün alınır ve sayfa açıldığında yeniden kontrol edilir. Gitmeden önce eczaneyi aramanı öneririz.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .hero { background: linear-gradient(180deg, #fff9f3 0%, #fbe9e6 100%); padding: clamp(28px, 5vw, 52px) 0 clamp(26px, 4vw, 40px); }
+  .hero-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 14px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .breadcrumb a { color: #062f96; }
+  .title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(30px, 4.8vw, 50px); line-height: 1.05; letter-spacing: -0.02em; color: #1a1a1a; margin-bottom: 14px; }
+  .duty { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #1a1a1a; background: #fff; border: 1px solid #f0d6d2; border-radius: 999px; padding: 7px 14px; margin-bottom: 14px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #0b7a5c; box-shadow: 0 0 0 4px rgba(11,122,92,0.15); }
+  .desc { font-size: 15.5px; color: #555; line-height: 1.7; max-width: 620px; }
+  .hero-icon { flex-shrink: 0; width: 150px; height: 150px; border-radius: 36px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #fff 0%, #fde8e6 100%); box-shadow: inset 0 2px 0 #fff, 0 20px 40px -24px rgba(208,2,27,0.5); }
+  @media (max-width: 700px) { .hero-icon { display: none; } }
+  .list-sec { background: #fff9f3; padding: clamp(28px, 4vw, 44px) 0 clamp(48px, 6vw, 72px); }
+  .nearby { margin-top: 40px; }
+  .sec-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 25px); margin-bottom: 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: 14px; font-weight: 500; background: #fff; border: 1px solid #efe2d3; border-radius: 999px; padding: 9px 16px; display: inline-flex; gap: 8px; align-items: center; }
+  .chip span { font-size: 12px; font-weight: 600; color: #d0021b; }
+  .chip:hover { border-color: #d0021b; color: inherit; }
+  .chip-all { background: #062f96; color: #fff; border-color: #062f96; }
+  .chip-all:hover { color: #fff; }
+  .info { margin-top: 32px; background: #f0e8df; border-radius: 16px; padding: 16px 20px; display: grid; gap: 8px; }
+  .info p { font-size: 13.5px; color: #555; line-height: 1.65; }
+</style>
