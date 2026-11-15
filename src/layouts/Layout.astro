@@ -3,19 +3,27 @@ import Nav from '../components/Nav.astro';
 import WeatherStrip from '../components/WeatherStrip.astro';
 import Footer from '../components/Footer.astro';
 import CookieBanner from '../components/CookieBanner.astro';
-import InstallPrompt from '../components/InstallPrompt.astro';
 
 interface Props {
   title: string;
   description?: string;
   activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda';
+  /** Share image (site-relative or absolute); defaults to the brand card. */
+  image?: string;
+  imageAlt?: string;
+  /** ISO date for articles, used by link previews. */
+  published?: string;
 }
 
 const {
   title,
   description = "İzmir'i yerel gözüyle keşfet — kafeler, etkinlikler, semtler ve daha fazlası.",
   activePage,
+  image,
+  imageAlt,
+  published,
 } = Astro.props;
+const ogImage = new URL((image ?? '/images/og-default.jpg').replace(/\?.*$/, ''), Astro.site).href;
 
 const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site);
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
@@ -36,12 +44,6 @@ const websiteJsonLd = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-    <meta name="theme-color" content="#FFF9F3" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="İzmir Uzmanı" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
@@ -52,6 +54,15 @@ const websiteJsonLd = {
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={isHome ? 'website' : 'article'} />
     <meta property="og:locale" content="tr_TR" />
+    <meta property="og:image" content={ogImage} />
+    {!image && <meta property="og:image:width" content="1200" />}
+    {!image && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={imageAlt ?? title} />
+    {published && <meta property="article:published_time" content={published} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     {isHome && (
       <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
     )}
@@ -84,6 +95,8 @@ const websiteJsonLd = {
       rel="stylesheet"
     />
     <style is:global>
+      :root { --nav-h: 64px; }
+      @media (min-width: 768px) { :root { --nav-h: 78px; } }
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       body {
         background: #fff9f3;
@@ -128,6 +141,5 @@ const websiteJsonLd = {
     <slot />
     <Footer />
     <CookieBanner />
-    <InstallPrompt />
   </body>
 </html>
