@@ -60,7 +60,7 @@ const jsonLd = {
 };
 ---
 
-<Layout title={event.title} description={metaDescription} activePage="etkinlikler">
+<Layout title={event.title} description={metaDescription} activePage="etkinlikler" image={event.image ?? undefined} imageAlt={`${event.title} afişi`}>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 
   <section class="ev-header">
