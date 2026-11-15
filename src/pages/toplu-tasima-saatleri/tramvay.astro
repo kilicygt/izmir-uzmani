@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import UlasimHeader from '../../components/UlasimHeader.astro';
+import NearbyGuides from '../../components/NearbyGuides.astro';
 import '../../styles/ulasim.css';
 import { BASE, TARIFFS, tramvay, every, updatedAt } from '../../lib/ulasim';
 
@@ -39,6 +40,8 @@ const lines = tramvay.lines as (Line & { frequencies: Record<string, { from: str
           </div>
         ))}
       </div>
+
+      <NearbyGuides places={['Karşıyaka', 'Bostanlı', 'Alsancak', 'Konak', 'Çiğli', 'Mavişehir']} heading="Tramvay hattı boyunca keşfet" />
 
       <p class="tt-note">
         Tablodaki süreler iki tramvay arasındaki ortalama bekleme süresidir. Kaynak: İzmir Metro A.Ş., İzmir Büyükşehir Belediyesi açık veri portalı. Güncel duyurular için <a href="https://www.tramizmir.com/" target="_blank" rel="noopener">tramizmir.com</a> adresini kontrol edin.

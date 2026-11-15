@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import UlasimHeader from '../../../components/UlasimHeader.astro';
+import NearbyGuides from '../../../components/NearbyGuides.astro';
 import '../../../styles/ulasim.css';
 import { BASE, WEEKDAYS, vapur, updatedAt } from '../../../lib/ulasim';
 
@@ -57,6 +58,8 @@ const others = vapur.piers.filter((p) => p.slug !== pier.slug);
           </div>
         </div>
       ))}
+
+      <NearbyGuides places={[pier.name]} />
 
       <div class="tt-section" style="margin-top:40px">
         <p class="tt-label">Diğer iskeleler</p>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import UlasimHeader from '../../components/UlasimHeader.astro';
+import NearbyGuides from '../../components/NearbyGuides.astro';
 import '../../styles/ulasim.css';
 import { BASE, TARIFFS, metro, every, updatedAt } from '../../lib/ulasim';
 
@@ -42,6 +43,8 @@ const last = metro.stations[metro.stations.length - 1];
           <p class="tt-text">{metro.stations.join(' → ')}</p>
         </div>
       </div>
+
+      <NearbyGuides places={metro.stations} heading="Metro hattı boyunca keşfet" />
 
       <p class="tt-note">
         Tablodaki süreler iki tren arasındaki ortalama bekleme süresidir. Kaynak: İzmir Metro A.Ş., İzmir Büyükşehir Belediyesi açık veri portalı. Güncel duyurular için <a href="https://www.izmirmetro.com.tr/" target="_blank" rel="noopener">izmirmetro.com.tr</a> adresini kontrol edin.

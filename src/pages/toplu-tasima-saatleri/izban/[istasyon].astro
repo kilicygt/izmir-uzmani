@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import UlasimHeader from '../../../components/UlasimHeader.astro';
+import NearbyGuides from '../../../components/NearbyGuides.astro';
 import '../../../styles/ulasim.css';
 import { BASE, izban, longDay } from '../../../lib/ulasim';
 
@@ -44,6 +45,8 @@ const day = longDay(izban.date);
           </div>
         ))}
       </div>
+
+      <NearbyGuides places={[station.name]} />
 
       <div class="tt-section" style="margin-top:40px">
         <p class="tt-label">Komşu istasyonlar</p>

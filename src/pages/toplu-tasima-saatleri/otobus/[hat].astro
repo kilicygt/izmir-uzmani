@@ -1,6 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import UlasimHeader from '../../../components/UlasimHeader.astro';
+import NearbyGuides from '../../../components/NearbyGuides.astro';
 import '../../../styles/ulasim.css';
 import { BASE, TARIFFS, otobus, updatedAt } from '../../../lib/ulasim';
 
@@ -56,6 +57,8 @@ const weekday = sched['1'];
           </div>
         </div>
       ))}
+
+      <NearbyGuides places={[line.to, line.from]} />
 
       {line.note && <p class="tt-note">{line.note}</p>}
       <p class="tt-note">

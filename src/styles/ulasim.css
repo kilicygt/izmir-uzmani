@@ -24,11 +24,12 @@
   color: #999; margin-bottom: 12px;
 }
 
-.tt-tabs { display: inline-flex; gap: 2px; flex-wrap: wrap; margin-bottom: 20px; background: #efe4d8; border-radius: 999px; padding: 4px; }
+.tt-tabs { display: inline-flex; gap: 2px; flex-wrap: nowrap; max-width: 100%; overflow-x: auto; scrollbar-width: none; margin-bottom: 20px; background: #efe4d8; border-radius: 999px; padding: 4px; }
+.tt-tabs::-webkit-scrollbar { display: none; }
 .tt-tab {
   font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
   padding: 8px 18px; border-radius: 999px; cursor: pointer;
-  background: transparent; color: #555; border: 0; transition: background 0.2s, color 0.2s;
+  background: transparent; color: #555; border: 0; transition: background 0.2s, color 0.2s; white-space: nowrap; flex-shrink: 0;
 }
 .tt-tab.active { background: #062f96; color: #fff; box-shadow: 0 4px 10px -4px rgba(6,47,150,0.5); }
 .tt-panel[hidden] { display: none; }
@@ -101,3 +102,18 @@ a.tt-row:hover .tt-arrow { transform: translateX(3px); }
   display: block; width: 100%; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
   color: #062f96; background: #f6f1eb; border: none; border-radius: 8px; padding: 10px; margin-bottom: 8px; cursor: pointer;
 }
+
+/* Live countdown to the next departure */
+.tt-cd { background: linear-gradient(135deg, #062f96 0%, #2a4fc0 100%); color: #fff; border-radius: 22px; padding: 16px 18px 18px; margin-bottom: 18px; box-shadow: 0 22px 40px -26px rgba(6,47,150,0.9); }
+.tt-cd[hidden] { display: none; }
+.tt-cd-head { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 10px; }
+.tt-cd-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 4px rgba(74,222,128,0.25); animation: ttPulse 2s infinite; }
+@keyframes ttPulse { 50% { box-shadow: 0 0 0 7px rgba(74,222,128,0.05); } }
+.tt-cd-grid { display: grid; gap: 10px; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .tt-cd-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); } }
+.tt-cd-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 12px 14px; }
+.tt-cd-label { font-size: 13px; color: rgba(255,255,255,0.85); margin-bottom: 2px; }
+.tt-cd-big { font-family: 'Fraunces', serif; font-weight: 800; font-size: 38px; line-height: 1.1; color: #ffb26b; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.tt-cd-big span { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #fff; }
+.tt-cd-time { font-size: 12.5px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+.tt-cd-done { font-size: 14px; color: rgba(255,255,255,0.9); }

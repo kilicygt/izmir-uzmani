@@ -1,0 +1,106 @@
+---
+// "Bu civarda gezilecek yerler": links a timetable page to guides about the same area.
+import { getCollection } from 'astro:content';
+import { themeOf, postImage } from '../lib/themes';
+
+interface Props {
+  /** Place names for this page, most specific first (e.g. pier, station or line ends). */
+  places: string[];
+  /** Name used in the heading; defaults to the first place. */
+  label?: string;
+  /** Full heading to use instead of "{label} civarında keşfet". */
+  heading?: string;
+}
+const { places, label, heading } = Astro.props;
+
+// Extra search words for places whose guides use a different name.
+const ALIASES: Record<string, string[]> = {
+  'Konak': ['Kemeraltı', 'Saat Kulesi', 'Agora'],
+  'Pasaport': ['Kordon', 'Alsancak'],
+  'Alsancak': ['Kordon', 'Kıbrıs Şehitleri'],
+  'Bostanlı': ['Karşıyaka'],
+  'Karantina': ['Göztepe', 'Karataş', 'Asansör'],
+  'Üçkuyular': ['Narlıdere', 'Balçova'],
+  'Göztepe': ['Karataş', 'Asansör'],
+  'Selçuk': ['Efes', 'Şirince', 'Meryem Ana'],
+  'Belevi': ['Selçuk', 'Efes'],
+  'Adnan Menderes Havalimanı': ['Havalimanı'],
+  'Basmane': ['Kemeraltı', 'Agora', 'Kadifekale'],
+  'Çankaya': ['Kemeraltı'],
+  'Üçyol': ['Asansör', 'Karataş'],
+  'Hatay': ['Asansör'],
+  'Halkapınar': ['Otogar'],
+  'Mavişehir': ['Karşıyaka', 'Bostanlı'],
+  'Menemen': ['Foça'],
+  'Aliağa': ['Foça', 'Bergama'],
+  'Cumaovası': ['Menderes'],
+};
+const IGNORE = /^(iskele|aktarma|merkezi|meydanı|kavşağı|caddesi|cad\.?|mah\.?|hattı|istasyonu|terminali|garajı)$/i;
+// First words too common to stand for a place on their own ("Cumhuriyet Meydanı", "Ege Üniversitesi").
+const GENERIC = new Set(['cumhuriyet', 'atatürk', 'gazi', 'yeni', 'eski', 'ege', 'dokuz', 'güzel', 'semt', 'evka', '100.', 'büyük', 'küçük']);
+
+const termsFor = (place: string) => {
+  const words = place.split(/\s+/).filter((w) => !IGNORE.test(w));
+  const first = words.length > 1 && !GENERIC.has(words[0].toLocaleLowerCase('tr')) ? words[0] : null;
+  return [...new Set([place, first, ...(ALIASES[place] ?? []), ...(first ? ALIASES[first] ?? [] : [])]
+    .filter((t): t is string => !!t && t.length > 2)
+    .map((t) => t.toLocaleLowerCase('tr')))];
+};
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const scoreFor = (terms: string[]) => (p: (typeof posts)[number]) => {
+  const has = (s: string) => terms.filter((t) => s.toLocaleLowerCase('tr').includes(t)).length;
+  return has(p.data.title) * 3 + has((p.data.tags ?? []).join(' ')) * 2 + has(p.data.description);
+};
+const rank = (terms: string[]) => posts.map((p) => ({ p, s: scoreFor(terms)(p) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s).map((x) => x.p);
+
+// Name the heading after the first place that actually has guides.
+const matchedPlace = places.find((pl) => rank(termsFor(pl)).length > 0);
+const matched = rank(places.flatMap(termsFor));
+const picks = matched.length
+  ? matched.slice(0, 3)
+  : posts.filter((p) => themeOf(p.data.category).key !== 'ulasim').slice(0, 3);
+const title = matched.length ? heading ?? `${label ?? matchedPlace ?? places[0]} civarında keşfet` : 'İzmir’de keşfetmeye değer';
+---
+
+{picks.length > 0 && (
+  <section class="ng">
+    <div class="ng-head">
+      <h2 class="ng-title">{title}</h2>
+      <a href="/rehberler" class="ng-all">Tüm rehberler →</a>
+    </div>
+    <div class="ng-grid">
+      {picks.map((p) => {
+        const t = themeOf(p.data.category);
+        return (
+          <a href={`/rehberler/${p.slug}`} class="ng-card">
+            <div class="ng-img"><img src={postImage(p)} alt={p.data.imageAlt || p.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
+            <div class="ng-body">
+              <span class="ng-tag" style={`color:${t.color}`}>{t.label}</span>
+              <p class="ng-name">{p.data.title}</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+)}
+
+<style>
+  .ng { margin-top: 40px; }
+  .ng-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .ng-title { font-family: 'Fraunces', serif; font-size: clamp(20px, 2.4vw, 24px); font-weight: 700; color: #1a1a1a; }
+  .ng-all { font-size: 13.5px; font-weight: 600; color: #062f96; white-space: nowrap; }
+  .ng-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .ng-grid { grid-template-columns: repeat(3, 1fr); } }
+  .ng-card { display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid #efe2d3; border-radius: 18px; padding: 10px; transition: transform 0.2s, box-shadow 0.2s; }
+  @media (min-width: 720px) { .ng-card { flex-direction: column; align-items: stretch; padding: 0; overflow: hidden; } }
+  .ng-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px rgba(90,58,26,0.5); color: inherit; }
+  .ng-img { flex-shrink: 0; width: 92px; aspect-ratio: 1; border-radius: 12px; overflow: hidden; background: #ede5db; }
+  @media (min-width: 720px) { .ng-img { width: 100%; aspect-ratio: 16 / 9; border-radius: 0; } }
+  .ng-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ng-body { min-width: 0; }
+  @media (min-width: 720px) { .ng-body { padding: 12px 14px 14px; } }
+  .ng-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .ng-name { font-size: 14.5px; font-weight: 600; color: #1a1a1a; line-height: 1.4; margin-top: 2px; }
+</style>
