@@ -2,11 +2,12 @@
 import IzmirIcon from './IzmirIcon.astro';
 
 interface Props {
-  activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda';
+  activePage?: 'rehberler' | 'etkinlikler' | 'ulasim' | 'hakkinda' | 'bulten';
 }
 const { activePage } = Astro.props;
 
 const menuLinks = [
+  { key: 'bulten', href: '/bulten/', label: 'İzmir’de Bugün', sub: 'Günlük bülten: duyurular ve uyarılar', icon: 'saatkulesi' },
   { key: 'rehberler', href: '/rehberler', label: 'Rehberler', sub: 'Gezilecek yerler ve rotalar', icon: 'harita' },
   { key: 'etkinlikler', href: '/etkinlikler', label: 'Etkinlikler', sub: 'Bu hafta şehirde neler var?', icon: 'bilet' },
   { key: 'ulasim', href: '/toplu-tasima-saatleri', label: 'Toplu Taşıma', sub: 'Sefer saatleri tek yerde', icon: 'vapur' },
@@ -29,6 +30,7 @@ const transit = [
     </a>
     <div class="nav-right">
       <div class="desktop-links">
+        <a href="/bulten/" class:list={['nav-link', { active: activePage === 'bulten' }]}>Bülten</a>
         <a href="/rehberler" class:list={['nav-link', { active: activePage === 'rehberler' }]}>Rehberler</a>
         <a href="/etkinlikler" class:list={['nav-link', { active: activePage === 'etkinlikler' }]}>Etkinlikler</a>
         <a href="/toplu-tasima-saatleri" class:list={['nav-link', { active: activePage === 'ulasim' }]}>Toplu Taşıma</a>
@@ -97,9 +99,9 @@ const transit = [
   nav.scrolled { background: rgba(255,249,243,0.97); box-shadow: 0 10px 30px -18px rgba(15,20,40,0.35); }
   .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; }
   .logo { display: flex; align-items: center; flex-shrink: 0; padding-top: 3px; transition: transform 0.2s; color: inherit; }
-  .logo-img { height: 50px; width: auto; display: block; }
-  @media (min-width: 768px) { .logo-img { height: 62px; } }
-  .mm-head .logo-img { height: 46px; }
+  .logo-img { height: 42px; width: auto; display: block; }
+  @media (min-width: 768px) { .logo-img { height: 50px; } }
+  .mm-head .logo-img { height: 40px; }
   .nav-right { display: flex; align-items: center; gap: 4px; }
   .desktop-links { display: none; align-items: center; gap: 4px; margin-right: 10px; }
   @media (min-width: 768px) { .desktop-links { display: flex; } }

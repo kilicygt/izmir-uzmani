@@ -1,0 +1,235 @@
+---
+import IzmirIcon from './IzmirIcon.astro';
+import { type Bulletin, issueNo, longDate, clock, weatherText, isTransport, bulletins } from '../lib/bulten';
+
+interface Props { b: Bulletin; isToday: boolean }
+const { b, isToday } = Astro.props;
+
+const transportNews = b.izbb.filter((n) => isTransport(`${n.title} ${n.summary}`));
+const cityNews = b.izbb.filter((n) => !transportNews.includes(n));
+const [lead, ...restNews] = cityNews;
+const newEshot = b.eshot.filter((e) => e.isNew);
+const oldEshot = b.eshot.filter((e) => !e.isNew);
+const archive = bulletins.filter((x) => x.date !== b.date).slice(0, 14);
+const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
+---
+
+<article class="bl">
+  <header class="mast">
+    <div class="wrap">
+      <p class="mast-top"><span>Sayı {issueNo(b)}</span><span>{longDate(b.date)}</span></p>
+      <h1 class="mast-title">İzmir’de Bugün</h1>
+      <p class="mast-sub">Şehirden resmi duyurular, ulaşım uyarıları ve günün özeti. Her sabah hazırlanır.</p>
+    </div>
+  </header>
+
+  <div class="wrap body">
+    <!-- AT A GLANCE -->
+    <section class="glance" aria-label="Bugün kısaca">
+      {b.weather && (
+        <div class="g">
+          <p class="g-label">Hava</p>
+          <p class="g-big">{b.weather.max}° <small>/ {b.weather.min}°</small></p>
+          <p class="g-sub">{weatherText(b.weather.code)}{b.weather.rain >= 30 ? ` · %${b.weather.rain} yağış` : ''}</p>
+        </div>
+      )}
+      <a class="g" href="/toplu-tasima-saatleri/">
+        <p class="g-label">Ulaşım</p>
+        <p class="g-big">{transportNews.length + newEshot.length} <small>yeni uyarı</small></p>
+        <p class="g-sub">{b.eshot.length} aktif otobüs duyurusu</p>
+      </a>
+      <a class="g" href="/etkinlikler/">
+        <p class="g-label">Etkinlik</p>
+        <p class="g-big">{b.events.length} <small>bugün</small></p>
+        <p class="g-sub">Konser, sergi, tiyatro</p>
+      </a>
+      <a class="g" href="/deprem/">
+        <p class="g-label">Deprem · 24 saat</p>
+        <p class="g-big">{b.quakes?.count ?? '—'} <small>İzmir’de</small></p>
+        <p class="g-sub">{b.quakes?.max ? `En büyüğü ${b.quakes.max.mag.toFixed(1)}` : 'Kayda değer deprem yok'}</p>
+      </a>
+      <a class="g" href="/nobetci-eczaneler/">
+        <p class="g-label">Nöbetçi eczane</p>
+        <p class="g-big g-link">Listeyi gör →</p>
+        <p class="g-sub">08:00’de yenilenir</p>
+      </a>
+    </section>
+
+    <!-- TRANSPORT -->
+    {(transportNews.length > 0 || b.eshot.length > 0 || b.izdeniz.length > 0) && (
+      <section class="sec">
+        <h2 class="sec-title"><IzmirIcon name="otobus" size={34} /> Ulaşım uyarıları</h2>
+        {transportNews.map((n) => (
+          <a class="alert" href={n.url} target="_blank" rel="noopener">
+            <span class="src">İzmir Büyükşehir Belediyesi</span>
+            <p class="alert-title">{n.title}</p>
+            <p class="alert-text">{n.summary}</p>
+          </a>
+        ))}
+        {b.izdeniz.map((n) => (
+          <a class="alert" href={n.url} target="_blank" rel="noopener">
+            <span class="src">İZDENİZ</span>
+            <p class="alert-title">{n.title}</p>
+          </a>
+        ))}
+        {b.eshot.length > 0 && (
+          <div class="eshot">
+            <p class="eshot-head">ESHOT hat duyuruları <span>{b.eshot.length} aktif</span></p>
+            <ul>
+              {[...newEshot, ...oldEshot].map((e, i) => (
+                <li class:list={{ more: i >= 8 }}>
+                  <div class="eshot-lines">{e.lines.slice(0, 6).map((l) => <a href={busUrl(l)}>{l}</a>)}{e.lines.length > 6 && <span>+{e.lines.length - 6}</span>}</div>
+                  <div class="eshot-text">
+                    <p>{e.title}{e.isNew && <span class="new">Yeni</span>}</p>
+                    <p class="eshot-date">{e.start.split('-').reverse().slice(0, 2).join('.')} – {e.end.split('-').reverse().slice(0, 2).join('.')}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            {b.eshot.length > 8 && <button type="button" class="more-btn" data-more>Tüm {b.eshot.length} duyuruyu göster</button>}
+            <p class="src-note">Kaynak: ESHOT, İzmir Büyükşehir Belediyesi açık verisi</p>
+          </div>
+        )}
+      </section>
+    )}
+
+    <!-- CITY NEWS -->
+    {cityNews.length > 0 && (
+      <section class="sec">
+        <h2 class="sec-title"><IzmirIcon name="saatkulesi" size={34} /> Şehirden haberler</h2>
+        {lead && (
+          <a class="lead" href={lead.url} target="_blank" rel="noopener">
+            <span class="src">İzmir Büyükşehir Belediyesi · {lead.date === b.date ? 'Bugün' : 'Dün'}</span>
+            <h3 class="lead-title">{lead.title}</h3>
+            <p class="lead-text">{lead.summary}</p>
+            <span class="go">Habere git ↗</span>
+          </a>
+        )}
+        <div class="news">
+          {restNews.map((n) => (
+            <a class="news-item" href={n.url} target="_blank" rel="noopener">
+              <h3 class="news-title">{n.title}</h3>
+              <p class="news-text">{n.summary}</p>
+              <span class="news-meta">İzBB · {n.date === b.date ? 'Bugün' : 'Dün'}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- EVENTS -->
+    {b.events.length > 0 && (
+      <section class="sec">
+        <h2 class="sec-title"><IzmirIcon name="bilet" size={34} /> Bugün şehirde</h2>
+        <div class="ev">
+          {b.events.slice(0, 6).map((e) => (
+            <a class="ev-item" href={`/etkinlikler/${e.slug}/`}>
+              <span class="ev-time">{clock(e.start)}</span>
+              <div>
+                <p class="ev-title">{e.title}</p>
+                <p class="ev-meta">{e.category}{e.venue ? ` · ${e.venue}` : ''}{e.free ? ' · Ücretsiz' : ''}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        <a class="sec-more" href="/etkinlikler/">Haftanın tüm etkinlikleri →</a>
+      </section>
+    )}
+
+    <p class="foot">
+      {isToday ? `Bülten bugün ${clock(b.generatedAt)}’de hazırlandı.` : `Bu bülten ${longDate(b.date)} tarihlidir; bilgiler o güne aittir.`}
+      Yalnızca resmi kaynaklar kullanılır: İzmir Büyükşehir Belediyesi, ESHOT, İZDENİZ, AFAD ve Open-Meteo. Her haber kaynağına bağlantı verir.
+    </p>
+
+    {archive.length > 0 && (
+      <nav class="archive" aria-label="Önceki bültenler">
+        <p class="archive-title">Önceki sayılar</p>
+        <div class="archive-list">
+          {archive.map((x) => <a href={`/bulten/${x.date}/`}>{longDate(x.date)}</a>)}
+        </div>
+      </nav>
+    )}
+  </div>
+</article>
+
+<style>
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+  .mast { background: #fff9f3; border-bottom: 3px double #1a1a1a; padding: clamp(26px, 5vw, 48px) 0 clamp(18px, 3vw, 26px); text-align: center; }
+  .mast-top { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #777; border-bottom: 1px solid #e4d9cd; padding-bottom: 10px; margin-bottom: 14px; }
+  .mast-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(40px, 7vw, 72px); line-height: 1; letter-spacing: -0.03em; color: #062f96; }
+  .mast-sub { font-size: 14.5px; color: #666; margin-top: 10px; }
+  .body { padding-top: 24px; padding-bottom: 56px; }
+
+  .glance { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); margin-bottom: 30px; }
+  @media (min-width: 760px) { .glance { grid-template-columns: repeat(5, 1fr); } }
+  .g { background: #fff; border: 1px solid #efe2d3; border-radius: 16px; padding: 12px 14px; display: block; color: inherit; }
+  a.g:hover { border-color: #062f96; color: inherit; }
+  .g-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; }
+  .g-big { font-family: 'Fraunces', serif; font-weight: 800; font-size: 24px; color: #1a1a1a; margin-top: 4px; }
+  .g-big small { font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 12.5px; color: #777; }
+  .g-link { font-size: 16px; color: #062f96; }
+  .g-sub { font-size: 12px; color: #888; margin-top: 2px; }
+
+  .sec { margin-top: 30px; }
+  .sec-title { display: flex; align-items: center; gap: 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 27px); color: #1a1a1a; padding-bottom: 10px; border-bottom: 1px solid #e4d9cd; margin-bottom: 14px; }
+  .src { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #062f96; }
+
+  .alert { display: block; background: #fff4e5; border: 1px solid #ffd9a8; border-left: 4px solid #ff7c11; border-radius: 0 14px 14px 0; padding: 12px 16px; margin-bottom: 10px; color: inherit; }
+  .alert:hover { color: inherit; border-color: #ff7c11; }
+  .alert-title { font-weight: 600; font-size: 15.5px; margin-top: 2px; }
+  .alert-text { font-size: 14px; color: #555; line-height: 1.6; margin-top: 4px; }
+
+  .eshot { background: #fff; border: 1px solid #efe2d3; border-radius: 16px; padding: 14px 16px; margin-top: 12px; }
+  .eshot-head { font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .eshot-head span { font-size: 12px; color: #062f96; background: #e8eefc; border-radius: 999px; padding: 2px 9px; }
+  .eshot ul { list-style: none; padding: 0; margin: 0; }
+  .eshot li { display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid #f3ebe1; align-items: flex-start; }
+  .eshot li.more { display: none; }
+  .eshot.open li.more { display: flex; }
+  .eshot-lines { display: flex; flex-wrap: wrap; gap: 4px; width: 112px; flex-shrink: 0; }
+  @media (max-width: 560px) { .eshot-lines { width: auto; max-width: 92px; } }
+  .eshot-lines a, .eshot-lines span { font-size: 12px; font-weight: 700; color: #fff; background: #062f96; border-radius: 7px; padding: 3px 7px; }
+  .eshot-lines span { background: #9aa6bd; }
+  .eshot-text p { font-size: 14px; line-height: 1.45; }
+  .eshot-date { font-size: 12px !important; color: #888; margin-top: 2px; }
+  .new { font-size: 10.5px; font-weight: 700; color: #fff; background: #ff7c11; border-radius: 999px; padding: 2px 8px; margin-left: 6px; vertical-align: 1px; }
+  .more-btn { width: 100%; margin-top: 8px; font: 600 13px 'Poppins', sans-serif; color: #062f96; background: #f6f1eb; border: 0; border-radius: 10px; padding: 10px; cursor: pointer; }
+  .src-note { font-size: 11.5px; color: #999; margin-top: 8px; }
+
+  .lead { display: block; padding: 4px 0 18px; border-bottom: 1px solid #efe2d3; color: inherit; }
+  .lead:hover { color: inherit; }
+  .lead:hover .lead-title { color: #062f96; }
+  .lead-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.15; margin: 6px 0 8px; }
+  .lead-text { font-size: 16px; color: #444; line-height: 1.7; }
+  .go { display: inline-block; margin-top: 8px; font-size: 13.5px; font-weight: 600; color: #062f96; }
+  .news { display: grid; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .news { grid-template-columns: 1fr 1fr; column-gap: 28px; } }
+  .news-item { display: block; padding: 14px 0; border-bottom: 1px solid #efe2d3; color: inherit; }
+  .news-item:hover { color: inherit; }
+  .news-item:hover .news-title { color: #062f96; }
+  .news-title { font-size: 16px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; }
+  .news-text { font-size: 13.5px; color: #666; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .news-meta { display: block; font-size: 11.5px; color: #999; margin-top: 6px; }
+
+  .ev { display: grid; gap: 8px; }
+  .ev-item { display: flex; gap: 14px; align-items: center; background: #fff; border: 1px solid #efe2d3; border-radius: 14px; padding: 10px 14px; color: inherit; }
+  .ev-item:hover { border-color: #062f96; color: inherit; }
+  .ev-time { font-family: 'Fraunces', serif; font-weight: 800; font-size: 20px; color: #ff7c11; min-width: 58px; }
+  .ev-title { font-weight: 600; font-size: 15px; }
+  .ev-meta { font-size: 12.5px; color: #888; }
+  .sec-more { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; color: #062f96; }
+
+  .foot { margin-top: 34px; font-size: 12.5px; color: #888; line-height: 1.65; border-top: 3px double #1a1a1a; padding-top: 14px; }
+  .archive { margin-top: 22px; }
+  .archive-title { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .archive-list a { font-size: 13px; background: #fff; border: 1px solid #efe2d3; border-radius: 999px; padding: 6px 12px; }
+  .archive-list a:hover { border-color: #062f96; color: #062f96; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-more]').forEach((b) => b.addEventListener('click', () => {
+    b.closest('.eshot')?.classList.add('open');
+    b.remove();
+  }));
+</script>
