@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BultenView from '../../components/BultenView.astro';
+import { bulletins, latest, longDate, type Bulletin } from '../../lib/bulten';
+
+// Today's issue lives at /bulten/; earlier issues keep their own dated page.
+export function getStaticPaths() {
+  return bulletins.filter((b) => b.date !== latest.date).map((b) => ({ params: { tarih: b.date }, props: { b } }));
+}
+const { b } = Astro.props as { b: Bulletin };
+---
+
+<Layout
+  title={`İzmir’de Bugün · ${longDate(b.date)}`}
+  activePage="bulten"
+  description={`${longDate(b.date)} İzmir günlük bülteni: resmi duyurular, ulaşım uyarıları ve günün özeti.`}
+>
+  <BultenView b={b} isToday={false} />
+</Layout>

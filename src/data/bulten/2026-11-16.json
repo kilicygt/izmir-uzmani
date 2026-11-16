@@ -1,0 +1,551 @@
+{
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T19:47:42.521Z",
+  "weather": {
+    "code": 3,
+    "max": 20,
+    "min": 12,
+    "rain": 0,
+    "wind": 8
+  },
+  "izbb": [
+    {
+      "title": "İZBAN’da seferler normale döndü",
+      "date": "2026-11-16",
+      "summary": "İZBAN’da sabah saatlerinde yaşanan teknik arıza giderildi. Alsancak İstasyonu’nda katener telinin kopması nedeniyle yaşanan arıza sonucu geçici süreyle işletime kapatılan Alsancak ve Hilal istasyonları tekrar hizmete alındı. Hattı kullanan trenler saat 11.56 itibarıyla normal işletme düzenine döndü.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izban-da-seferler-normale-dondu/59822/156",
+      "id": 59822
+    },
+    {
+      "title": "İZBAN’da Alsancak ve Hilal istasyonları geçici süreyle kapatıldı",
+      "date": "2026-11-16",
+      "summary": "İZBAN’da sabah saatlerinde yaşanan teknik arıza nedeniyle Alsancak ve Hilal istasyonları geçici olarak işletime kapatıldı. Onarım çalışmaları sürerken İzmir Büyükşehir Belediyesi tarafından Halkapınar-Alsancak arasında otobüs ve tramvaylarla alternatif ulaşım sağlanıyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izban-da-alsancak-ve-hilal-istasyonlari-gecici-sureyle-kapatildi/59821/156",
+      "id": 59821
+    },
+    {
+      "title": "İzmir, Kosova ile ticaret ve kültür köprüsü kuruyor",
+      "date": "2026-11-16",
+      "summary": "İzmir Büyükşehir Belediyesi, 20-21 Kasım’da Kosova Günleri ve İzmir–Kosova Ticaret ve Yatırım Köprüsü Forumu’na ev sahipliği yapacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-kosova-ile-ticaret-ve-kultur-koprusu-kuruyor/59818/156",
+      "id": 59818
+    },
+    {
+      "title": "Gençlik Merkezlerinde hem öğreniyorlar hem sosyalleşiyorlar",
+      "date": "2026-11-16",
+      "summary": "İzmir Büyükşehir Belediyesi’nin dört farklı noktada hizmet veren Gençlik Merkezleri, 15-30 yaş arasındaki gençlere ücretsiz eğitim, atölye ve gezi programlarıyla hem kendilerini geliştirme hem de sosyalleşme fırsatı sunuyor. Yabancı dilden müziğe, dijital becerilerden sanata kadar pek çok alanda düz",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/genclik-merkezlerinde-hem-ogreniyorlar-hem-sosyallesiyorlar/59817/156",
+      "id": 59817
+    },
+    {
+      "title": "Emek’in yeni buluşma noktası",
+      "date": "2026-11-16",
+      "summary": "İzmir Büyükşehir Belediyesi tarafından yenilenip dönüştürülen Bayraklı Emek Mahallesi’ndeki hizmet binası, Emek Semt Evi ve Kütüphanesi adıyla faaliyetlerine başladı. Tanışma etkinliğinde mahalle sakinlerinin kayıtları alınırken kadınlar, çocuklar ve gençlere yönelik renkli çalışmalar yapıldı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/emek-in-yeni-bulusma-noktasi/59816/156",
+      "id": 59816
+    },
+    {
+      "title": "Balıkçıya destek, sofralara tazelik",
+      "date": "2026-11-16",
+      "summary": "İzmir Büyükşehir Belediyesi, küçük ölçekli balıkçıların yükünü azaltmak ve gıda güvenliğini sağlamak için su ürünleri kooperatiflerine yaprak buz makinesi desteği sağladı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/balikciya-destek-sofralara-tazelik/59815/156",
+      "id": 59815
+    },
+    {
+      "title": "AASSM’de Mikis Theodorakis’in ölümsüz eserleri yankılandı",
+      "date": "2026-11-15",
+      "summary": "Mikis Theodorakis, doğumunun 101. yılında İzmir’de düzenlenen “Mikis Theodorakis ile Bir Yüzyıl” konseriyle anıldı. AASSM’deki gecede sanatçının yaşamı, müziği ve barış mücadelesi anlatılırken, ölümsüz eserleri sanatseverlerle buluştu.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/aassm-de-mikis-theodorakis-in-olumsuz-eserleri-yankilandi/59814/156",
+      "id": 59814
+    },
+    {
+      "title": "Dayı yeğen 41 yıl sonra Şaşal’da buluştu",
+      "date": "2026-11-15",
+      "summary": "Şaşal Su Fabrikası’ndan 41 yıl önce emekli olan Saffet Erçetin ile bugün aynı üretim bandında görev yapan yeğeni Hasan Ergenekon, fabrikada bir araya geldi. Yıllar sonra Şaşal’ı ziyaret eden Erçetin, yeğeniyle birlikte fabrikayı gezerek anılarını tazeledi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/dayi-yegen-41-yil-sonra-sasal-da-bulustu/59813/156",
+      "id": 59813
+    },
+    {
+      "title": "Ödemiş’in incisi Birgi’nin yolları yenilendi",
+      "date": "2026-11-15",
+      "summary": "İzmir Büyükşehir Belediyesi, Ödemiş’in UNESCO Dünya Mirası Geçici Listesi’nde yer alan tarihi mahallesi Birgi’de altyapı çalışmalarının ardından üstyapı yenilemesini de tamamladı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/odemis-in-incisi-birgi-nin-yollari-yenilendi-/59812/156",
+      "id": 59812
+    },
+    {
+      "title": "Meslek Fabrikası kendi rekorunu kırdı: Her gün iki kişi istihdam ediliyor",
+      "date": "2026-11-15",
+      "summary": "İzmir Büyükşehir Belediyesi Meslek Fabrikası, ekim ayında her gün iki kişinin istihdam edilmesine aracılık ederek kendi rekorunu kırdı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/meslek-fabrikasi-kendi-rekorunu-kirdi-her-gun-iki-kisi-istihdam-ediliyor/59811/156",
+      "id": 59811
+    },
+    {
+      "title": "İzmir İtfaiyesi’ne arazi yangınlarında güçlü takviye",
+      "date": "2026-11-15",
+      "summary": "İzmir Büyükşehir Belediyesi, orman köyleri ve ulaşılması güç bölgelerde yangınlara daha etkili müdahale etmek için itfaiye filosuna 10 arazi tipi arazöz ekledi. Yüzde 100 yerli üretim araçlar, güçlü teknik donanımları ve yüksek su kapasiteleriyle zorlu arazi koşullarında görev yapacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-itfaiyesi-ne-arazi-yanginlarinda-guclu-takviye/59810/156",
+      "id": 59810
+    },
+    {
+      "title": "Seferihisar’da taşkınlara karşı 150 milyon liralık yatırım",
+      "date": "2026-11-15",
+      "summary": "İzmir Büyükşehir Belediyesi İZSU Genel Müdürlüğü, Seferihisar’da taşkın riskini azaltmak için Kokarazmak Deresi’nde çalışma başlattı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/seferihisar-da-taskinlara-karsi-150-milyon-liralik-yatirim/59809/156",
+      "id": 59809
+    },
+    {
+      "title": "İzmir İtfaiyesi’nden İsa Hatipoğlu’na vefa",
+      "date": "2026-11-15",
+      "summary": "İzmir İtfaiyesi’nin emektarı İsa Hatipoğlu’nun adı, Bayraklı İtfaiye İstasyonu’na verilecek. Görevi başında hayatını kaybeden Hatipoğlu’nun anısı, mesleğe katkılarıyla gelecek kuşaklara aktarılacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-itfaiyesi-nden-isa-hatipoglu-na-vefa/59808/156",
+      "id": 59808
+    },
+    {
+      "title": "Zeytin dalında umut, sofralarda bereket",
+      "date": "2026-11-15",
+      "summary": "İzmir Büyükşehir Belediyesi’nin Zeytin Hasadı Şenliği’nde, zeytin dallarına uzanan eller bu kez yalnızca meyveleri değil, mutluluğu da topladı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/zeytin-dalinda-umut-sofralarda-bereket-/59807/156",
+      "id": 59807
+    }
+  ],
+  "eshot": [
+    {
+      "title": "8 No.lu hat geçici durak hizmet dışı",
+      "lines": [
+        "8"
+      ],
+      "start": "2026-11-16",
+      "end": "2026-11-22",
+      "isNew": true
+    },
+    {
+      "title": "42 ve 441 No.lu hatlarda geçici güzergah değişikliği",
+      "lines": [
+        "42",
+        "441"
+      ],
+      "start": "2026-11-16",
+      "end": "2026-11-23",
+      "isNew": true
+    },
+    {
+      "title": "82 No.lu hat geçici durak kullanım dışı",
+      "lines": [
+        "82"
+      ],
+      "start": "2026-11-16",
+      "end": "2026-11-22",
+      "isNew": true
+    },
+    {
+      "title": "738 No.lu hat geçici durak değişikliği",
+      "lines": [
+        "738"
+      ],
+      "start": "2026-11-16",
+      "end": "2026-11-22",
+      "isNew": true
+    },
+    {
+      "title": "2580 sokak üzerinde yapılan altyapı çalışmaları nedeniyle 46 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "46"
+      ],
+      "start": "2026-11-13",
+      "end": "2026-11-23",
+      "isNew": true
+    },
+    {
+      "title": "774 güzergah değişikliği",
+      "lines": [
+        "774"
+      ],
+      "start": "2026-11-13",
+      "end": "2026-11-23",
+      "isNew": true
+    },
+    {
+      "title": "817 No.lu hat geçici güzergah değişikliği",
+      "lines": [
+        "817"
+      ],
+      "start": "2026-11-13",
+      "end": "2026-11-23",
+      "isNew": true
+    },
+    {
+      "title": "Gaziemir kavşak çalışması (73+80 sk.)",
+      "lines": [
+        "152",
+        "353",
+        "491",
+        "510",
+        "691",
+        "828",
+        "910"
+      ],
+      "start": "2026-11-11",
+      "end": "2026-11-30",
+      "isNew": false
+    },
+    {
+      "title": "Konak, umurbey mahallesi, 1525 sokak izsu çalışması",
+      "lines": [
+        "253"
+      ],
+      "start": "2026-11-09",
+      "end": "2027-01-21",
+      "isNew": false
+    },
+    {
+      "title": "Karakuyu barbaros ay cd. doğalgaz çalışması",
+      "lines": [
+        "786"
+      ],
+      "start": "2026-11-09",
+      "end": "2026-11-23",
+      "isNew": false
+    },
+    {
+      "title": "842 No.lu hattımızda güzergah değişikliğine gidilmiştir",
+      "lines": [
+        "842"
+      ],
+      "start": "2026-11-09",
+      "end": "2026-11-27",
+      "isNew": false
+    },
+    {
+      "title": "247 ve 447 No.lu hatlarda geçici güzergah değişikliği",
+      "lines": [
+        "247",
+        "447"
+      ],
+      "start": "2026-11-06",
+      "end": "2026-11-30",
+      "isNew": false
+    },
+    {
+      "title": "430 No.lu hatta geçici güzergah değişikliği",
+      "lines": [
+        "430"
+      ],
+      "start": "2026-11-06",
+      "end": "2026-11-30",
+      "isNew": false
+    },
+    {
+      "title": "346-446-810 No.lu hatlarımızda geçici güzergah değişikliği",
+      "lines": [
+        "346",
+        "446",
+        "810"
+      ],
+      "start": "2026-11-05",
+      "end": "2026-11-20",
+      "isNew": false
+    },
+    {
+      "title": "Çayırlı (16061 ıd.li) durağın geçıcı olarak hızmet dışı kalması",
+      "lines": [
+        "743"
+      ],
+      "start": "2026-11-05",
+      "end": "2026-12-07",
+      "isNew": false
+    },
+    {
+      "title": "989 No.lu orhanlı - seferihisar hattında geçici güzergah değişikliği",
+      "lines": [
+        "989"
+      ],
+      "start": "2026-11-04",
+      "end": "2026-11-23",
+      "isNew": false
+    },
+    {
+      "title": "Bayraklı ilçesi, 1637/17 sokak ve 1615/7 sokaklarda yol yüzeyindeki deformasyon nedeniyle 503 ve 513 nolu hatlarımızda geçici güzergâh değişikliğine gidilmiştir.",
+      "lines": [
+        "503",
+        "513"
+      ],
+      "start": "2026-11-02",
+      "end": "2026-12-06",
+      "isNew": false
+    },
+    {
+      "title": "849 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "849"
+      ],
+      "start": "2026-11-02",
+      "end": "2026-12-02",
+      "isNew": false
+    },
+    {
+      "title": "34-39-41-42-44-45-46 ve 234 No.lu hatlarımızda geçici güzergah değişiklikleri",
+      "lines": [
+        "34",
+        "39",
+        "41",
+        "42",
+        "44",
+        "45",
+        "46",
+        "234"
+      ],
+      "start": "2026-10-30",
+      "end": "2027-10-31",
+      "isNew": false
+    },
+    {
+      "title": "5712 sokak tedaş çalışması geçici güzergah değişikliği",
+      "lines": [
+        "89"
+      ],
+      "start": "2026-10-24",
+      "end": "2026-11-20",
+      "isNew": false
+    },
+    {
+      "title": "651 No.lu hat geçici güzergah değişikliği",
+      "lines": [
+        "651"
+      ],
+      "start": "2026-10-23",
+      "end": "2027-01-01",
+      "isNew": false
+    },
+    {
+      "title": "41-42-46 ve 475 No.lu hatlarımızda geçici güzergah değişiklikleri",
+      "lines": [
+        "41",
+        "42",
+        "46",
+        "475"
+      ],
+      "start": "2026-10-22",
+      "end": "2026-11-30",
+      "isNew": false
+    },
+    {
+      "title": "78-137-537 geçici güzergah değişikliği",
+      "lines": [
+        "78",
+        "137",
+        "537"
+      ],
+      "start": "2026-10-19",
+      "end": "2026-11-23",
+      "isNew": false
+    },
+    {
+      "title": "Harmandalı geçici güzergah değişikliği",
+      "lines": [
+        "295",
+        "608",
+        "695",
+        "820",
+        "827"
+      ],
+      "start": "2026-10-19",
+      "end": "2026-11-23",
+      "isNew": false
+    },
+    {
+      "title": "801 No.lu hattın geçici güzergah değişikliği",
+      "lines": [
+        "801"
+      ],
+      "start": "2026-10-01",
+      "end": "2026-12-06",
+      "isNew": false
+    },
+    {
+      "title": "751 No.lu hatta geçici güzergah değişikliği",
+      "lines": [
+        "751"
+      ],
+      "start": "2026-09-30",
+      "end": "2026-11-16",
+      "isNew": false
+    },
+    {
+      "title": "32 No.lu hat geçici güzergah değişikliği",
+      "lines": [
+        "32"
+      ],
+      "start": "2026-09-24",
+      "end": "2026-11-27",
+      "isNew": false
+    },
+    {
+      "title": "817 No.lu hatta geçici güzergah değişikliği",
+      "lines": [
+        "817"
+      ],
+      "start": "2026-09-16",
+      "end": "2026-11-23",
+      "isNew": false
+    },
+    {
+      "title": "177 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "177"
+      ],
+      "start": "2026-09-14",
+      "end": "2026-11-23",
+      "isNew": false
+    },
+    {
+      "title": "829 No.lu hattımızın geçicı güzergahında yenı bır düzenleme yapılacaktır.",
+      "lines": [
+        "829"
+      ],
+      "start": "2026-08-13",
+      "end": "2027-01-28",
+      "isNew": false
+    },
+    {
+      "title": "31192 ıd mustafa kemal lisesı durağı geçici olarak hizmet dışı kalması hakkında",
+      "lines": [
+        "249",
+        "498",
+        "570"
+      ],
+      "start": "2026-08-07",
+      "end": "2027-12-10",
+      "isNew": false
+    },
+    {
+      "title": "743,770,783 geçicı güzergah değışıklığı (vatan caddesı)",
+      "lines": [
+        "743",
+        "770",
+        "783"
+      ],
+      "start": "2026-08-04",
+      "end": "2026-11-30",
+      "isNew": false
+    },
+    {
+      "title": "829 No.lu hat geçici güzergah değişikliği",
+      "lines": [
+        "829"
+      ],
+      "start": "2026-07-24",
+      "end": "2026-12-31",
+      "isNew": false
+    },
+    {
+      "title": "889 No.lu hat geçici güzergah değişiklik duyurusu",
+      "lines": [
+        "889"
+      ],
+      "start": "2026-06-04",
+      "end": "2026-11-30",
+      "isNew": false
+    },
+    {
+      "title": "Yağışlı havalarda geçerli olmak üzere, izmir bayraklı şehir hastanesi yerleşkesi içerisinde bulunan taşıt yollarının fiziki durumunun trafik güvenliği açısından risk oluşturması nedeniyle, hastane içerisinde hizmet veren hatlarımız üst kotta bulunan poliklinik 1 girişine yakın konumda geçici duraktan hizmet verecek olup, poliklinik 1 ve poliklinik 2 durakları kullanılmayacaktır.",
+      "lines": [
+        "399",
+        "532",
+        "533",
+        "534",
+        "535",
+        "536",
+        "537",
+        "598"
+      ],
+      "start": "2026-04-29",
+      "end": "2035-04-29",
+      "isNew": false
+    },
+    {
+      "title": "İzsu - ozan abay caddesi - 1. etap altyapı çalışması",
+      "lines": [
+        "328",
+        "338",
+        "359",
+        "539"
+      ],
+      "start": "2026-04-24",
+      "end": "2026-12-18",
+      "isNew": false
+    },
+    {
+      "title": "10814 ıd No.lu ayrancılar un fabrikası durağının geçici olarak hizmet dışı kalması",
+      "lines": [
+        "697",
+        "701",
+        "712",
+        "806",
+        "858"
+      ],
+      "start": "2025-10-27",
+      "end": "2027-01-01",
+      "isNew": false
+    },
+    {
+      "title": "Kent meydanı ve otopark projesi kapsamında geçici güzergah değişiklikleri",
+      "lines": [
+        "701",
+        "712",
+        "713",
+        "714",
+        "719",
+        "721",
+        "722",
+        "724",
+        "727",
+        "763",
+        "770",
+        "780",
+        "781",
+        "782",
+        "783",
+        "784",
+        "785",
+        "786",
+        "795",
+        "798"
+      ],
+      "start": "2023-09-06",
+      "end": "2027-03-01",
+      "isNew": false
+    },
+    {
+      "title": "Seferihisar ilçesi, doğanbey mevkiinde tsk tarafından yıl içerisinde planlı ya da plansız icra edilen tatbikatlar nedeni ile 986 ve 987 No.lu hatlarımızın güzergahlarında değişikliklere gidilmektedir.",
+      "lines": [
+        "986",
+        "987"
+      ],
+      "start": "2021-10-28",
+      "end": "2032-12-31",
+      "isNew": false
+    },
+    {
+      "title": "Seferihisar tsk tatbikatları nedeni ile güzergah değişikliği",
+      "lines": [
+        "986",
+        "987"
+      ],
+      "start": "2021-10-28",
+      "end": "2032-12-31",
+      "isNew": false
+    }
+  ],
+  "izdeniz": [],
+  "events": [
+    {
+      "title": "Aziz Vukolos'ta Akustik Günler",
+      "slug": "aziz-vukolos-ta-akustik-gunler-1d6385",
+      "category": "Konser",
+      "start": "2026-11-16T20:00:00+03:00",
+      "venue": "Aziz Vukolos Kilisesi Kültür Merkezi",
+      "image": "/images/etkinlikler/otomatik/1d638578-447e1f3a.webp",
+      "free": true
+    }
+  ]
+}

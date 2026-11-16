@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BultenView from '../../components/BultenView.astro';
+import { latest, shortDate } from '../../lib/bulten';
+---
+
+<Layout
+  title={`İzmir’de Bugün · ${shortDate(latest.date)}`}
+  activePage="bulten"
+  description={`${shortDate(latest.date)} İzmir günlük bülteni: Büyükşehir Belediyesi duyuruları, ESHOT ve İZBAN ulaşım uyarıları, hava durumu, deprem özeti ve bugünkü etkinlikler.`}
+>
+  <BultenView b={latest} isToday={true} />
+</Layout>
