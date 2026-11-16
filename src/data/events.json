@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-15T11:05:05.695Z",
+  "fetchedAt": "2026-11-16T11:34:05.039Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -1304,7 +1304,7 @@
       "organizer": "Kültür ve Sanat Şube Müdürlüğü",
       "ageLimit": null,
       "admission": "free",
-      "image": "/images/etkinlikler/otomatik/e5ed9b60-9e90cd50.webp",
+      "image": "/images/etkinlikler/otomatik/e5ed9b60-61893f65.webp",
       "summary": [
         "Etkinliğimiz 23 - 24 Kasım tarihlerinde Elhamra Sahnesinde gerçekleşecektir. Filmlerle ilgili tüm bilgiler açıklama kısmında yer almaktadır."
       ],
@@ -1643,8 +1643,8 @@
       "category": "Konser",
       "organizer": "AASSM Şube Müdürlüğü",
       "ageLimit": 5,
-      "admission": null,
-      "image": "/images/etkinlikler/otomatik/66d0be51-6fef0f67.webp",
+      "admission": "paid",
+      "image": "/images/etkinlikler/otomatik/66d0be51-5ea11ac3.webp",
       "summary": [
         "28 Kasım 2026 Cumartesi günü saat 20.00'de, Trio Vecando Konseri (Veriko Tchumburidze “Keman”, Dorukhan Doruk “Viyolonsel”, Can Çakmur “Piyano”) Ahmed Adnan Saygun Sanat Merkezi'nde gerçekleştirilecek."
       ],
@@ -1656,7 +1656,7 @@
         {
           "start": "2026-11-28T20:00:00+03:00",
           "end": "2026-11-28T21:30:00+03:00",
-          "venue": "Ahmed Adnan Saygun Sanat Merkezi"
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi Küçük Salon"
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/trio-vecando-konseri/66d0be51-7a81-4e38-a0eb-ab0fb2506eca",
