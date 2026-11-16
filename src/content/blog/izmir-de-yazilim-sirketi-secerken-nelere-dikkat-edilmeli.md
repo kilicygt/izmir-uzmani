@@ -15,7 +15,7 @@ seoDescription: "İzmir'de yazılım şirketi mi arıyorsunuz? Özel yazılım, 
 
 İzmir; limanı, ihracatçı sanayisi, turizmi, lojistik ağı ve üniversiteleriyle Türkiye'nin en hareketli iş şehirlerinden biri. Bu çeşitlilik, şehirdeki işletmelerin yazılım ihtiyaçlarını da çeşitlendiriyor: bir otel rezervasyon akışını, bir ihracat firması stok ve sevkiyat takibini, bir klinik hasta randevularını, bir e-ticaret markası da sipariş ve kargo entegrasyonunu dijitalleştirmek istiyor. Son iki yılda bunlara bir de **yapay zeka ve otomasyon** başlığı eklendi.
 
-Bu rehberde, **İzmir'de yazılım şirketi** arayan bir işletmenin hangi soruları sorması gerektiğini, özel yazılımın ne zaman mantıklı olduğunu ve yapay zekanın işletmelerde gerçekte nerede işe yaradığını anlatıyoruz. Yazının sonunda İzmir'den bir yazılım şirketini de örnek olarak tanıtıyoruz.
+Bu rehberde, **İzmir'de yazılım şirketi** arayan bir işletmenin hangi soruları sorması gerektiğini, özel yazılımın ne zaman mantıklı olduğunu ve yapay zekanın işletmelerde gerçekte nerede işe yaradığını anlatıyoruz. Yazı boyunca ve sonunda, Bayraklı merkezli <a href="https://www.pryazilim.com/" target="_blank" rel="sponsored noopener">PR Yazılım</a>'ın projelerinden örnekler veriyoruz.
 
 ## İzmir'de yazılım şirketine en çok hangi işler için gidiliyor?
 
@@ -27,7 +27,7 @@ Bu rehberde, **İzmir'de yazılım şirketi** arayan bir işletmenin hangi sorul
 - **Kurumsal web siteleri ve e-ticaret:** Pazaryerleri, ödeme ve kargo altyapılarıyla konuşan satış kanalları.
 - **Yapay zeka ve otomasyon:** Tekrarlayan manuel işlerin akıllı sistemlere devredilmesi.
 
-Şehrin ekonomik yapısı bu talepleri doğrudan şekillendiriyor. Örneğin ihracat ve lojistik firmaları için gümrük, sevkiyat ve stok takibi; turizm işletmeleri için rezervasyon ve misafir iletişimi; üretim tesisleri için iş emri ve kalite takibi en sık dijitalleştirilen süreçler arasında.
+Şehrin ekonomik yapısı bu talepleri doğrudan şekillendiriyor. Örneğin ihracat ve lojistik firmaları için gümrük, sevkiyat ve stok takibi; turizm işletmeleri için rezervasyon ve misafir iletişimi; üretim tesisleri için iş emri ve kalite takibi en sık dijitalleştirilen süreçler arasında. Örneğin İzmirli PR Yazılım'ın geliştirdiği Deliverigo mobil uygulaması, teslimat operasyonlarının sahadan tek bir uygulamayla yönetilmesine odaklanıyor.
 
 ## İzmir özel yazılım mı, hazır paket mi?
 
@@ -38,7 +38,7 @@ Her işletmenin özel yazılıma ihtiyacı yok. Muhasebe, bordro ya da basit bir
 3. **Büyüdükçe mevcut araçlar yetmemeye başladıysa.** Şube ya da ekip sayısı arttıkça tablolarla yönetilen takipler kontrolden çıkar.
 4. **Yazılım, rekabet avantajınızın bir parçasıysa.** Müşterinize sunduğunuz deneyim rakiplerinizden farklıysa, bunu taşıyacak yazılımın da size ait olması gerekir.
 
-İyi bir yazılım şirketi, ilk görüşmede size her zaman "özel yazılım yapalım" demez; bazen hazır bir çözümü doğru kurmanın yeteceğini de söyler. Bu dürüstlük, doğru firmayı seçtiğinizin ilk işaretlerinden biridir.
+İyi bir yazılım şirketi, ilk görüşmede size her zaman "özel yazılım yapalım" demez; bazen hazır bir çözümü doğru kurmanın yeteceğini de söyler. Bu dürüstlük, doğru firmayı seçtiğinizin ilk işaretlerinden biridir. PR Yazılım gibi firmaların projelere kod yazmadan önce iş süreci analiziyle başlaması da bu kararı birlikte vermeyi kolaylaştırıyor.
 
 ## İzmir'de yapay zeka işletmelere gerçekte ne kazandırıyor?
 
@@ -51,6 +51,8 @@ Her işletmenin özel yazılıma ihtiyacı yok. Muhasebe, bordro ya da basit bir
 - **İş akışı otomasyonu:** Bir sistemde oluşan kaydın diğer sistemlerde ilgili işlemleri başlatması; örneğin onaylanan siparişin faturasının kesilmesi ve kargoya bildirilmesi.
 
 Yapay zeka projelerinde başarının anahtarı genellikle teknoloji değil, **sürecin doğru analiz edilmesi**. Hangi işin otomatikleşeceği, hangi noktada insan onayının şart olduğu ve verinin nerede tutulacağı en baştan netleşmelidir. Kişisel veri işleyen projelerde KVKK uyumu da bu analizin bir parçası olmalıdır.
+
+Bu yaklaşımın İzmir'den bir örneği, PR Yazılım'ın web sitesindeki yapay zeka asistanı **Owwwl**: projenizi birkaç cümleyle anlattığınızda size ilk yol haritasını çıkarıyor. Yani yapay zeka burada satış ekibinin yerini almıyor, ilk analiz adımını hızlandırıyor.
 
 ## İzmir yazılım şirketi seçerken sorulacak 8 soru
 
@@ -75,7 +77,7 @@ Teklif toplarken firmalara şu soruları sormanızı öneririz:
 - Yapay zeka bileşenlerinin olup olmadığı ve kullanılacak servislerin maliyeti
 - Yayından sonraki bakım ve geliştirme ihtiyacı
 
-Bu yüzden doğru bir teklif almanın yolu, firmayla bir ön analiz görüşmesi yapmaktır. Kapsamı netleşmemiş bir proje için verilen hızlı fiyatlar, ileride ek maliyet olarak geri dönebilir.
+Bu yüzden doğru bir teklif almanın yolu, firmayla bir ön analiz görüşmesi yapmaktır. Kapsamı netleşmemiş bir proje için verilen hızlı fiyatlar, ileride ek maliyet olarak geri dönebilir. PR Yazılım da dahil olmak üzere bazı İzmir yazılım şirketleri bu ön analiz görüşmesini ücretsiz yapıyor.
 
 ## İzmir'den bir örnek: PR Yazılım
 
