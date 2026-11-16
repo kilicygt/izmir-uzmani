@@ -1,6 +1,6 @@
 // Builds today's "İzmir'de Bugün" bulletin from official sources only and writes src/data/bulten/YYYY-MM-DD.json.
 // Sources: İzmir Büyükşehir Belediyesi news, ESHOT line announcements (open data), İZDENİZ announcements,
-// Open-Meteo forecast and AFAD earthquakes. Every item keeps a link to its source.
+// and the Open-Meteo forecast. Every item keeps a link to its source.
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -52,8 +52,11 @@ const izbb = await safe('izbb', async () => {
     const title = clean(m[1].match(/<h3>([\s\S]*?)<\/h3>/)?.[1] ?? '');
     const [d, mo, y] = (m[1].match(/<span>(\d{2})\.(\d{2})\.(\d{4})<\/span>/) ?? []).slice(1);
     const summary = clean(m[1].match(/<p>([\s\S]*?)<\/p>/)?.[1] ?? '');
-    if (title && y) items.push({ title, date: `${y}-${mo}-${d}`, summary, url: `https://www.izmir.bel.tr${m[2]}` });
+    const id = Number(m[2].match(/\/(\d+)\/\d+$/)?.[1] ?? 0);
+    if (title && y) items.push({ title, date: `${y}-${mo}-${d}`, summary, url: `https://www.izmir.bel.tr${m[2]}`, id });
   }
+  // Newest first. The archive gives no time of day, but the news id grows with each published story.
+  items.sort((a, b) => b.date.localeCompare(a.date) || b.id - a.id);
   if (!items.length) throw new Error('no news parsed');
   // Today's and yesterday's news (morning bulletins would otherwise be nearly empty).
   return items.filter((n) => n.date >= daysAgo(1));
@@ -97,17 +100,6 @@ const weather = await safe('weather', async () => {
   return { code: d.weathercode[0], max: Math.round(d.temperature_2m_max[0]), min: Math.round(d.temperature_2m_min[0]), rain: d.precipitation_probability_max[0], wind: Math.round(d.windspeed_10m_max[0]) };
 }, null);
 
-// ── Earthquakes in İzmir province, last 24 hours (AFAD) ──────────────────────
-const quakes = await safe('afad', async () => {
-  const fmt = (d) => d.toISOString().slice(0, 19);
-  const end = new Date(), start = new Date(end.getTime() - 86_400_000);
-  const qs = new URLSearchParams({ start: fmt(start), end: fmt(end), minlat: '37.75', maxlat: '39.45', minlon: '25.9', maxlon: '28.5', minmag: '1', orderby: 'timedesc' });
-  const list = await get(`https://servisnet.afad.gov.tr/apigateway/deprem/apiv2/event/filter?${qs}`, 'json');
-  const izmir = list.filter((q) => q.province === 'İzmir');
-  const big = [...izmir].sort((a, b) => Number(b.magnitude) - Number(a.magnitude))[0];
-  return { count: izmir.length, max: big ? { mag: Number(big.magnitude), place: big.location } : null };
-}, null);
-
 // ── Today's events (already fetched daily from İzBB Kültürsanat into src/data/events.json) ──
 const events = await safe('events', async () => {
   const data = JSON.parse(await readFile(path.join(ROOT, 'src/data/events.json'), 'utf8'));
@@ -119,7 +111,7 @@ const events = await safe('events', async () => {
   return out.sort((a, b) => a.start.localeCompare(b.start));
 }, []);
 
-const bulletin = { date: today, generatedAt: new Date().toISOString(), weather, quakes, izbb, eshot, izdeniz, events };
+const bulletin = { date: today, generatedAt: new Date().toISOString(), weather, izbb, eshot, izdeniz, events };
 await mkdir(OUT_DIR, { recursive: true });
 await writeFile(path.join(OUT_DIR, `${today}.json`), JSON.stringify(bulletin, null, 2) + '\n');
 console.log(`Bülten ${today}: ${izbb.length} haber, ${eshot.length} ESHOT duyurusu, ${izdeniz.length} İZDENİZ duyurusu, ${events.length} etkinlik`);

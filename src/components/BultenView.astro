@@ -43,11 +43,6 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
         <p class="g-big">{b.events.length} <small>bugün</small></p>
         <p class="g-sub">Konser, sergi, tiyatro</p>
       </a>
-      <a class="g" href="/deprem/">
-        <p class="g-label">Deprem · 24 saat</p>
-        <p class="g-big">{b.quakes?.count ?? '—'} <small>İzmir’de</small></p>
-        <p class="g-sub">{b.quakes?.max ? `En büyüğü ${b.quakes.max.mag.toFixed(1)}` : 'Kayda değer deprem yok'}</p>
-      </a>
       <a class="g" href="/nobetci-eczaneler/">
         <p class="g-label">Nöbetçi eczane</p>
         <p class="g-big g-link">Listeyi gör →</p>
@@ -138,7 +133,7 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
 
     <p class="foot">
       {isToday ? `Bülten bugün ${clock(b.generatedAt)}’de hazırlandı.` : `Bu bülten ${longDate(b.date)} tarihlidir; bilgiler o güne aittir.`}
-      Yalnızca resmi kaynaklar kullanılır: İzmir Büyükşehir Belediyesi, ESHOT, İZDENİZ, AFAD ve Open-Meteo. Her haber kaynağına bağlantı verir.
+      Yalnızca resmi kaynaklar kullanılır: İzmir Büyükşehir Belediyesi, ESHOT ve İZDENİZ; hava durumu Open-Meteo’dan alınır. Her haber kaynağına bağlantı verir.
     </p>
 
     {archive.length > 0 && (
@@ -161,7 +156,7 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
   .body { padding-top: 24px; padding-bottom: 56px; }
 
   .glance { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); margin-bottom: 30px; }
-  @media (min-width: 760px) { .glance { grid-template-columns: repeat(5, 1fr); } }
+  @media (min-width: 760px) { .glance { grid-template-columns: repeat(4, 1fr); } }
   .g { background: #fff; border: 1px solid #efe2d3; border-radius: 16px; padding: 12px 14px; display: block; color: inherit; }
   a.g:hover { border-color: #062f96; color: inherit; }
   .g-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; }

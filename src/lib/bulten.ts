@@ -3,8 +3,7 @@ export interface Bulletin {
   date: string;
   generatedAt: string;
   weather: { code: number; max: number; min: number; rain: number; wind: number } | null;
-  quakes: { count: number; max: { mag: number; place: string } | null } | null;
-  izbb: { title: string; date: string; summary: string; url: string }[];
+  izbb: { title: string; date: string; summary: string; url: string; id?: number }[];
   eshot: { title: string; lines: string[]; start: string; end: string; isNew: boolean }[];
   izdeniz: { title: string; date: string; url: string }[];
   events: { title: string; slug: string; category: string; start: string; venue: string | null; image: string | null; free: boolean }[];
