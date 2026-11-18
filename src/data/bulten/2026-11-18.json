@@ -1,14 +1,63 @@
 {
   "date": "2026-11-18",
-  "generatedAt": "2026-11-17T22:29:07.976Z",
+  "generatedAt": "2026-11-18T13:09:52.669Z",
   "weather": {
-    "code": 61,
-    "max": 21,
-    "min": 16,
-    "rain": 8,
-    "wind": 27
+    "code": 3,
+    "max": 22,
+    "min": 17,
+    "rain": 3,
+    "wind": 28
   },
   "izbb": [
+    {
+      "title": "Başkan Tugay’dan açıklama",
+      "date": "2026-11-18",
+      "summary": "İzmir Büyükşehir Belediye Başkanı Dr. Cemil Tugay, Yeni Parti İstanbul İl Başkanı Özgür Çelik’in CHP’nin Kurultay Ceza Davası kapsamında yaptığı savunmada ortaya attığı iddialara yanıt verdi. Başkan Tugay yaptığı açıklamada şu ifadeleri kullandı:",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/baskan-tugay-dan-aciklama/59837/156",
+      "id": 59837
+    },
+    {
+      "title": "Dönüşüme Evde Başla projesi COP31 gündemine taşındı",
+      "date": "2026-11-18",
+      "summary": "İzmir Büyükşehir Belediyesi iştiraki İzdoğa, evsel atıkların kaynağında ayrıştırılmasından yeni tesis yatırımlarına kadar yürüttüğü çalışmaları COP31 katılımcılarıyla paylaştı. Hanelerde başlayan atık ayrıştırmanın doğal kaynakların korunması ve iklim mücadelesindeki rolüne dikkat çekildi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/donusume-evde-basla-projesi-cop31-gundemine-tasindi/59836/156",
+      "id": 59836
+    },
+    {
+      "title": "Başkan Tugay’dan Menderes’te hizmet mesajı: Hiçbir mahallemizi diğerinden ayırmayacağız",
+      "date": "2026-11-18",
+      "summary": "İzmir Büyükşehir Belediye Başkanı Dr. Cemil Tugay, Menderes ilçesindeki Küner ve Tekeli mahallelerinde halkla bir araya geldi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/baskan-tugay-dan-menderes-te-hizmet-mesaji-hicbir-mahallemizi-digerinden-ayirmayacagiz/59835/156",
+      "id": 59835
+    },
+    {
+      "title": "İzmirli Kahve yeni şubesiyle Buca Halk Park’ta",
+      "date": "2026-11-18",
+      "summary": "İzmir Büyükşehir Belediyesi tarafından kaliteli ve uygun fiyatlı hizmet sunmak amacıyla kurulan İzmirli Kahve, kentin dört bir yanına yayılıyor. İzmirlilerin sahiplendiği markanın Buca Halk Park’ta açılan yeni şubesiyle birlikte toplam şube sayısı 14’e yükseldi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmirli-kahve-yeni-subesiyle-buca-halk-park-ta/59834/156",
+      "id": 59834
+    },
+    {
+      "title": "İzmir Bridal Week ile moda sektöründe yeni sezon heyecanı",
+      "date": "2026-11-18",
+      "summary": "Gelinlik sektörünün yeni sezon koleksiyonları, İzmir’de ilk kez düzenlenecek İzmir Bridal Week ile uluslararası moda dünyasının karşısına çıkacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-bridal-week-ile-moda-sektorunde-yeni-sezon-heyecani/59833/156",
+      "id": 59833
+    },
+    {
+      "title": "“Hey Gidinin Efesi” izleyiciyle buluştu",
+      "date": "2026-11-18",
+      "summary": "İzmir Büyükşehir Belediyesi’nin zeybek geleneğini yaygınlaştırmak amacıyla hayata geçirdiği “İzmir’de Zeybek Bilmeyen Kalmasın” projesinde eğitim alan 550 kursiyer, yaklaşık bir buçuk aylık çalışmanın ardından “Hey Gidinin Efesi” gösterisini sahneledi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/hey-gidinin-efesi-izleyiciyle-bulustu/59832/156",
+      "id": 59832
+    },
+    {
+      "title": "İzmir’in su tasarrufu projeleri COP31’de anlatıldı",
+      "date": "2026-11-18",
+      "summary": "İzmir Büyükşehir Belediyesi, Antalya’da düzenlenen COP31 kapsamında iklim krizinin su kaynakları üzerindeki etkilerine karşı geliştirdiği uygulamaları anlattı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-in-su-tasarrufu-projeleri-cop31-de-anlatildi/59831/156",
+      "id": 59831
+    },
     {
       "title": "Tugay’dan 2027 mesajları: Suya ve ulaşıma zam yok",
       "date": "2026-11-17",
@@ -60,6 +109,62 @@
     }
   ],
   "eshot": [
+    {
+      "title": "648 No.lu hatta geçici güzergah değişikliği duyurusu",
+      "lines": [
+        "648"
+      ],
+      "start": "2026-11-18",
+      "end": "2026-12-11",
+      "isNew": true
+    },
+    {
+      "title": "(ata-aöf) 2026 kasım 412 hat duyurusu",
+      "lines": [
+        "171",
+        "277",
+        "290",
+        "304",
+        "353",
+        "390",
+        "412",
+        "465",
+        "470",
+        "471",
+        "472",
+        "476",
+        "490",
+        "515",
+        "676",
+        "690",
+        "878"
+      ],
+      "start": "2026-11-17",
+      "end": "2026-11-22",
+      "isNew": true
+    },
+    {
+      "title": "Sınav ata aöf kasım 2026",
+      "lines": [
+        "290",
+        "390",
+        "412",
+        "596",
+        "690"
+      ],
+      "start": "2026-11-17",
+      "end": "2026-11-22",
+      "isNew": true
+    },
+    {
+      "title": "Yds sınav duyuru 2026 kasım",
+      "lines": [
+        "596"
+      ],
+      "start": "2026-11-17",
+      "end": "2026-11-22",
+      "isNew": true
+    },
     {
       "title": "Urla sanayi 2-3 durakları geçici kullanım dışı",
       "lines": [
