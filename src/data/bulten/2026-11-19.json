@@ -1,14 +1,56 @@
 {
   "date": "2026-11-19",
-  "generatedAt": "2026-11-18T22:07:47.437Z",
+  "generatedAt": "2026-11-19T13:22:31.792Z",
   "weather": {
     "code": 3,
-    "max": 24,
+    "max": 25,
     "min": 19,
     "rain": 0,
-    "wind": 18
+    "wind": 16
   },
   "izbb": [
+    {
+      "title": "İzmir Oda Orkestrası konserine sanatseverlerden yoğun ilgi",
+      "date": "2026-11-19",
+      "summary": "İzmir Oda Orkestrası’nın ücretsiz konser programı kapsamında Ahmed Adnan Saygun Sanat Merkezi’nde (AASSM) düzenlediği “Oda Müziği Konserleri Serisi” sürüyor. Keman, viyola ve viyolonsel sanatçılarından oluşan yaylı çalgılar dörtlüsü, seslendirdiği eserlerle dinleyicilere unutulmaz bir akşam yaşattı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-oda-orkestrasi-konserine-sanatseverlerden-yogun-ilgi/59843/156",
+      "id": 59843
+    },
+    {
+      "title": "İzmir’de çocukların da sözü var",
+      "date": "2026-11-19",
+      "summary": "İzmir Çocuk Meclisi’nde yeni dönem başladı. Görüşlerini, ihtiyaçlarını ve önerilerini meclis aracılığıyla ilgili kurumlara iletecek çocuklar, ilk toplantılarında 20 Kasım Dünya Çocuk Hakları Günü’nü ele aldı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-de-cocuklarin-da-sozu-var/59842/156",
+      "id": 59842
+    },
+    {
+      "title": "İzmir’de sivrisineğe karşı kış mesaisi",
+      "date": "2026-11-19",
+      "summary": "İzmir Büyükşehir Belediyesi, sivrisinek ve diğer zararlılarla mücadelesini yılın 12 ayı sürdürüyor. Kış aylarında üreme alanlarına odaklanan ekipler, larvaları henüz oluşum aşamasındayken kontrol altına alarak yaz aylarında yaşanabilecek sivrisinek yoğunluğunu önlemeyi hedefliyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-de-sivrisinege-karsi-kis-mesaisi/59841/156",
+      "id": 59841
+    },
+    {
+      "title": "Ara tatilin en güzel molası: İzmir Doğal Yaşam Parkı",
+      "date": "2026-11-19",
+      "summary": "İzmir Doğal Yaşam Parkı, ara tatilde çocuklar ve ailelerin en gözde buluşma noktalarından biri haline geldi. Yeşillikler arasında yürüyüş yapan ziyaretçiler, filler, zebralar, aslanlar ve çok sayıda hayvan türünü yakından görmenin heyecanını yaşarken, parkta keyifli vakit geçirdi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/ara-tatilin-en-guzel-molasi-izmir-dogal-yasam-parki/59840/156",
+      "id": 59840
+    },
+    {
+      "title": "İzmir’in meraları canlanıyor üretim güçleniyor",
+      "date": "2026-11-19",
+      "summary": "İzmir Büyükşehir Belediyesi ve İzmir İl Tarım ve Orman Müdürlüğü’nün iş birliğiyle şehrin meraları yeniden canlandırılacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-in-meralari-canlaniyor-uretim-gucleniyor/59839/156",
+      "id": 59839
+    },
+    {
+      "title": "Anafartalar Caddesi’nde tarihi dönüşüm başladı",
+      "date": "2026-11-19",
+      "summary": "İzmir Büyükşehir Belediyesi, kentin tarihi ticaret merkezlerinden Anafartalar Caddesi’nde maliyeti 170 milyon lirayı bulan dönüşüm çalışmalarını başlattı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/anafartalar-caddesi-nde-tarihi-donusum-basladi/59838/156",
+      "id": 59838
+    },
     {
       "title": "Başkan Tugay’dan açıklama",
       "date": "2026-11-18",
@@ -60,6 +102,15 @@
     }
   ],
   "eshot": [
+    {
+      "title": "738 geçici güzergah değişikliği",
+      "lines": [
+        "738"
+      ],
+      "start": "2026-11-19",
+      "end": "2026-12-04",
+      "isNew": true
+    },
     {
       "title": "Menderes mandalina festivali",
       "lines": [
