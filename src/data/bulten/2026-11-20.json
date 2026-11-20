@@ -1,14 +1,70 @@
 {
   "date": "2026-11-20",
-  "generatedAt": "2026-11-19T22:17:33.135Z",
+  "generatedAt": "2026-11-20T13:02:33.506Z",
   "weather": {
-    "code": 80,
-    "max": 24,
+    "code": 61,
+    "max": 25,
     "min": 20,
-    "rain": 43,
+    "rain": 33,
     "wind": 29
   },
   "izbb": [
+    {
+      "title": "İzmir ve Kosova’dan ekonomik iş birliği için güçlü mesaj",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi ev sahipliğinde düzenlenen “İzmir’de Kosova Günleri” kapsamında yapılan “İzmir–Kosova Ticaret ve Yatırım Köprüsü Forumu”nda, iki ülke arasındaki ekonomik ve ticari ilişkilerin geliştirilmesi ele alındı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-ve-kosova-dan-ekonomik-is-birligi-icin-guclu-mesaj/59851/156",
+      "id": 59851
+    },
+    {
+      "title": "Tugay: İzmir ve Kosova’nın ortak bir geleceği var",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi, İzmir ile Kosova arasındaki tarihsel, kültürel ve ekonomik bağları güçlendirmek amacıyla 20-21 Kasım tarihlerinde “İzmir’de Kosova Günleri”ne ev sahipliği yapıyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/tugay-izmir-ve-kosova-nin-ortak-bir-gelecegi-var/59850/156",
+      "id": 59850
+    },
+    {
+      "title": "İzmirli çocuklardan Ata’ya saygı çelengi",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi İzmir Çocuk Meclisi ve Çocuk Merkezleri üyesi çocuklar, 20 Kasım Dünya Çocuk Hakları Günü’nde Cumhuriyet Meydanı’ndaki Atatürk Anıtı’na çelenk sundu. Türk bayrağı ve pankart taşıyan çocuklar, törenin sonunda “Hayat Bayram Olsa” şarkısı eşliğinde günlerini kutladı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmirli-cocuklardan-ata-ya-saygi-celengi/59849/156",
+      "id": 59849
+    },
+    {
+      "title": "Renkli Harfler Projesi büyüyor",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi, okuma-yazma sürecinde güçlük yaşayan ilkokul öğrencilerini desteklemek amacıyla yürüttüğü Renkli Harfler Projesi’ni 2026-2027 eğitim-öğretim yılında da sürdürüyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/renkli-harfler-projesi-buyuyor/59848/156",
+      "id": 59848
+    },
+    {
+      "title": "Çocuklardan yolcuları şaşırtan etkinlik: Tek tek haklarını haykırdılar",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi İzmir Çocuk Meclisi üyeleri, 20 Kasım Dünya Çocuk Hakları Günü kapsamında Konak-Karşıyaka vapur seferinde dikkat çeken bir farkındalık çalışmasına imza attı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/cocuklardan-yolculari-sasirtan-etkinlik-tek-tek-haklarini-haykirdilar/59847/156",
+      "id": 59847
+    },
+    {
+      "title": "Bergama Vapuru ile İzmir Körfezi’nde tarih turu",
+      "date": "2026-11-20",
+      "summary": "İZDENİZ’in yoğun ilgi gören Bergama Vapuru Rehberli Körfez Turu, 22 Kasım Pazar günü yeniden düzenlenecek. Konak İskelesi’nden saat 14.00’te hareket edecek vapurda katılımcılar, rehber anlatımı eşliğinde İzmir’in tarihini denizden keşfedecek.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/bergama-vapuru-ile-izmir-korfezi-nde-tarih-turu/59846/156",
+      "id": 59846
+    },
+    {
+      "title": "İzmir’in iklime dirençli altyapı çalışmaları COP31’de dünyaya anlatıldı",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi, COP31’de düzenlenen iki ayrı panelde kentin kuraklıkla mücadele, su yönetimi, atık su altyapısı ve Körfez’in korunmasına yönelik çalışmalarını uluslararası katılımcılarla paylaştı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-in-iklime-direncli-altyapi-calismalari-cop31-de-dunyaya-anlatildi/59845/156",
+      "id": 59845
+    },
+    {
+      "title": "Kuşçular Caddesi’ne 7 kilometrelik dokunuş",
+      "date": "2026-11-20",
+      "summary": "İzmir Büyükşehir Belediyesi kent genelinde ulaşım konforunu artırmaya yönelik çalışmalar kapsamında Urla’nın önemli bağlantı yollarından Kuşçular Caddesi’ni baştan sona yeniledi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/kuscular-caddesi-ne-7-kilometrelik-dokunus/59844/156",
+      "id": 59844
+    },
     {
       "title": "İzmir Oda Orkestrası konserine sanatseverlerden yoğun ilgi",
       "date": "2026-11-19",
@@ -53,6 +109,15 @@
     }
   ],
   "eshot": [
+    {
+      "title": "2577 sokak'ta yapılacak olan çalışmalar nedeniyle 46 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "46"
+      ],
+      "start": "2026-11-20",
+      "end": "2026-11-22",
+      "isNew": true
+    },
     {
       "title": "738 geçici güzergah değişikliği",
       "lines": [
@@ -274,17 +339,6 @@
       ],
       "start": "2026-11-06",
       "end": "2026-11-30",
-      "isNew": false
-    },
-    {
-      "title": "346-446-810 No.lu hatlarımızda geçici güzergah değişikliği",
-      "lines": [
-        "346",
-        "446",
-        "810"
-      ],
-      "start": "2026-11-05",
-      "end": "2026-11-20",
       "isNew": false
     },
     {
