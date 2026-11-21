@@ -13,7 +13,9 @@ const allPosts = await getCollection('blog');
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const istanbulDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul' }).format(d);
 const today = istanbulDay(new Date());
-const featuredPost = sorted.find(p => istanbulDay(p.data.pubDate) < today) ?? sorted[0];
+// Ana sayfadaki büyük yazı: site-config.json'daki featuredSlug, yoksa en son yayımlanan yazı
+const pinnedPost = siteConfig.featuredSlug ? sorted.find(p => p.slug === siteConfig.featuredSlug) : undefined;
+const featuredPost = pinnedPost ?? sorted.find(p => istanbulDay(p.data.pubDate) < today) ?? sorted[0];
 const sidePosts = sorted.filter(p => p.slug !== featuredPost?.slug).slice(0, 4);
 const shown = new Set([featuredPost?.slug, ...sidePosts.map(p => p.slug)]);
 const gridPosts = sorted.filter(p => !shown.has(p.slug)).slice(0, 6);
