@@ -1,8 +1,21 @@
 {
   "date": "2026-11-21",
-  "generatedAt": "2026-11-21T12:45:02.735Z",
-  "weather": null,
+  "generatedAt": "2026-11-21T20:36:07.199Z",
+  "weather": {
+    "code": 80,
+    "max": 22,
+    "min": 13,
+    "rain": 58,
+    "wind": 20
+  },
   "izbb": [
+    {
+      "title": "İzmir mandalinası Kültürpark’ta tüketiciyle buluşuyor",
+      "date": "2026-11-21",
+      "summary": "İzmir Büyükşehir Belediyesi tarafından Kültürpark’ta 21-22 Kasım’da düzenlenen Mandalina Üretici Günleri başladı. İzmir’in Seferihisar ilçesinden gelen mandalina üreticileri, ürünlerini doğrudan tüketiciye sunuyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-mandalinasi-kulturpark-ta-tuketiciyle-bulusuyor/59859/156",
+      "id": 59859
+    },
     {
       "title": "Babasının mirasını denizde yaşatıyor, kadınlara ilham oluyor",
       "date": "2026-11-21",
@@ -110,16 +123,6 @@
     }
   ],
   "eshot": [
-    {
-      "title": "27 ve 556 No.lu hat izmirgaz çalışması",
-      "lines": [
-        "27",
-        "556"
-      ],
-      "start": "2026-11-20",
-      "end": "2026-11-21",
-      "isNew": true
-    },
     {
       "title": "2577 sokak'ta yapılacak olan çalışmalar nedeniyle 46 No.lu hattımızda geçici güzergah değişikliği",
       "lines": [
