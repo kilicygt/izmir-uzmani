@@ -1,0 +1,34 @@
+name: Aylık verileri güncelle
+
+on:
+  schedule:
+    # 1st of every month, 06:41 İzmir time (03:41 UTC)
+    - cron: '41 3 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Fetch disaster assembly areas from openfiles.izmir.bel.tr
+        run: node scripts/fetch-toplanma.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/toplanma.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Afet toplanma alanlarını güncelle"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main

@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-  "node": "24.x"
-},
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,7 +13,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^7.8.2",
-    "astro": "^4.16.0"
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/vercel": "^8.2.11",
+    "astro": "^5.18.2"
   }
 }

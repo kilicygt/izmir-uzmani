@@ -1,0 +1,39 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import UlasimHeader from '../../../components/UlasimHeader.astro';
+import '../../../styles/ulasim.css';
+import { BASE, otobus, updatedAt } from '../../../lib/ulasim';
+---
+
+<Layout title="İzmir Otobüs Saatleri (ESHOT)" activePage="ulasim" description={`ESHOT otobüs hareket saatleri: İzmir'deki ${otobus.lines.length} otobüs hattının hafta içi, cumartesi ve pazar kalkış saatleri. Hat numarası veya durak adıyla arayın.`}>
+  <UlasimHeader
+    title="Otobüs Saatleri"
+    desc="ESHOT otobüs hatlarının hafta içi, cumartesi ve pazar hareket saatleri. Hat numarasını ya da gideceğiniz yeri yazarak arayın."
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }]}
+    chips={[`${otobus.lines.length} hat`, ...(updatedAt('otobus') ? [`Güncelleme: ${updatedAt('otobus')}`] : [])]}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <input type="search" class="tt-search" placeholder="Hat no veya yer ara: 202, Bornova, Havalimanı…" aria-label="Otobüs hattı ara" data-search />
+      <div class="tt-list">
+        {otobus.lines.map((l) => (
+          <a href={`${BASE}/otobus/${l.no}/`} class="tt-row" data-search-text={`${l.no} ${l.name} ${l.route}`}>
+            <span class="tt-badge">{l.no}</span>
+            <div class="tt-row-main">
+              <p class="tt-row-title">{l.name}</p>
+              {l.route && <p class="tt-row-sub">{l.route}</p>}
+            </div>
+            <span class="tt-arrow">→</span>
+          </a>
+        ))}
+      </div>
+      <p class="tt-empty" data-search-empty hidden>Aramanızla eşleşen hat bulunamadı.</p>
+      <p class="tt-note">Kaynak: ESHOT Genel Müdürlüğü, İzmir Büyükşehir Belediyesi açık veri portalı. Saatler hat başlangıç ve bitiş noktalarından kalkış saatleridir; ara duraklara varış saatleri trafiğe göre değişir.</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../../../scripts/ulasim';
+</script>

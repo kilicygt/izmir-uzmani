@@ -33,7 +33,7 @@ const jsonLd = {
     {
       '@type': 'BlogPosting',
       headline: post.data.title,
-      description: post.data.description,
+      description: post.data.seoDescription ?? post.data.description,
       image: new URL(img.replace(/\?.*$/, ''), Astro.site).href,
       datePublished: post.data.pubDate.toISOString(),
       inLanguage: 'tr-TR',
@@ -59,9 +59,12 @@ const jsonLd = {
 ---
 
 <Layout
-  title={post.data.title}
-  description={post.data.description}
+  title={post.data.seoTitle ?? post.data.title}
+  description={post.data.seoDescription ?? post.data.description}
   activePage="rehberler"
+  image={img}
+  imageAlt={post.data.imageAlt || post.data.title}
+  published={post.data.pubDate.toISOString()}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 
@@ -74,6 +77,7 @@ const jsonLd = {
         <span>›</span> {theme.label}
       </p>
       <span class="tag" style={`background:${theme.color}`}>{theme.label}</span>
+      {post.data.sponsored && <span class="sp-badge">Sponsorlu içerik</span>}
       <h1 class="art-title">{post.data.title}</h1>
       <p class="art-lead">{post.data.description}</p>
       <div class="art-meta">
@@ -192,6 +196,7 @@ const jsonLd = {
     font-size: clamp(30px, 4.6vw, 52px); line-height: 1.1; letter-spacing: -0.02em; margin: 16px 0 16px;
   }
   .art-lead { font-size: clamp(16px, 1.6vw, 19px); color: #555; line-height: 1.7; margin-bottom: 22px; }
+  .sp-badge { display: inline-block; margin-left: 8px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #fff3e6; color: #b45309; border: 1px solid #f5d0a9; vertical-align: middle; }
   .art-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: #888; }
   .author { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #1a1a1a; }
   .avatar { width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 1px solid #ecdccb; display: inline-flex; align-items: center; justify-content: center; }

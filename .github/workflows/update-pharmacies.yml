@@ -2,8 +2,10 @@ name: Nöbetçi eczaneleri güncelle
 
 on:
   schedule:
-    # Duty shifts change at 08:00 İzmir time; run at 08:12 (05:12 UTC).
+    # Duty shifts change at 08:00 İzmir time; run at 08:12 (05:12 UTC) and again at 10:12
+    # in case the city's list was published late. The second run commits nothing if unchanged.
     - cron: '12 5 * * *'
+    - cron: '12 7 * * *'
   workflow_dispatch:
 
 permissions:

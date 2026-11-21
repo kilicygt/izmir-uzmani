@@ -1,0 +1,69 @@
+---
+---
+
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Çerez tercihleri" hidden>
+  <p class="cookie-text">
+    Sitemizi nasıl kullandığınızı anlamak için analiz çerezleri (Google Analytics) kullanıyoruz. Bu çerezler yalnızca onay verirseniz çalışır. Ayrıntılar için <a href="/cerez-politikasi">Çerez Politikası</a>.
+  </p>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn" data-consent="denied">Reddet</button>
+    <button type="button" class="cookie-btn primary" data-consent="granted">Kabul et</button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var KEY = 'cerez-tercihi';
+    var banner = document.getElementById('cookie-banner');
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+
+    function clearGaCookies() {
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name.indexOf('_ga') !== 0) return;
+        ['', '; domain=.izmiruzmani.com', '; domain=www.izmiruzmani.com'].forEach(function (d) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+        });
+      });
+    }
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: value });
+      if (value === 'granted' && window.loadGA) window.loadGA();
+      if (value === 'denied') clearGaCookies();
+      banner.hidden = true;
+    }
+
+    banner.querySelectorAll('[data-consent]').forEach(function (btn) {
+      btn.addEventListener('click', function () { choose(btn.getAttribute('data-consent')); });
+    });
+    window.openCookiePrefs = function () { banner.hidden = false; };
+    document.querySelectorAll('[data-cookie-prefs]').forEach(function (el) {
+      el.addEventListener('click', function (e) { e.preventDefault(); window.openCookiePrefs(); });
+    });
+    if (stored !== 'granted' && stored !== 'denied') banner.hidden = false;
+  })();
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 1000;
+    max-width: 720px; margin: 0 auto;
+    background: #fff; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    padding: 18px 20px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  }
+  .cookie-banner[hidden] { display: none; }
+  .cookie-text { flex: 1 1 320px; font-size: 13px; color: #444; line-height: 1.6; }
+  .cookie-text a { color: #062f96; text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 8px; flex: 0 0 auto; }
+  .cookie-btn {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600;
+    padding: 10px 20px; border-radius: 10px; cursor: pointer;
+    background: #fff; color: #1a1a1a; border: 1.5px solid #d8d0c8;
+  }
+  .cookie-btn.primary { background: #062f96; color: #fff; border-color: #062f96; }
+  .cookie-btn:hover { opacity: 0.88; }
+</style>

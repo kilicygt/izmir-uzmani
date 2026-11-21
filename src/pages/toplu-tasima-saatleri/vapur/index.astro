@@ -1,0 +1,32 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import UlasimHeader from '../../../components/UlasimHeader.astro';
+import '../../../styles/ulasim.css';
+import { BASE, vapur, updatedAt } from '../../../lib/ulasim';
+---
+
+<Layout title="İzmir Vapur Saatleri (İzdeniz)" activePage="ulasim" description="İzdeniz vapur saatleri: Konak, Karşıyaka, Bostanlı, Pasaport, Alsancak, Göztepe ve Üçkuyular iskelelerinden kalkan vapurların güncel sefer saatleri.">
+  <UlasimHeader
+    title="Vapur Saatleri"
+    desc="İzdeniz vapurlarının iskele iskele kalkış saatleri. İskeleyi seçin, haftanın her günü için seferleri görün."
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }]}
+    chips={[`${vapur.piers.length} iskele`, ...(updatedAt('vapur') ? [`Güncelleme: ${updatedAt('vapur')}`] : [])]}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <div class="tt-list">
+        {vapur.piers.map((p) => (
+          <a href={`${BASE}/vapur/${p.slug}/`} class="tt-row">
+            <div class="tt-row-main">
+              <p class="tt-row-title">{p.name} Vapur Saatleri</p>
+              <p class="tt-row-sub">{p.carFerry ? 'Yolcu ve arabalı vapur iskelesi' : 'Yolcu vapuru iskelesi'}</p>
+            </div>
+            <span class="tt-arrow">→</span>
+          </a>
+        ))}
+      </div>
+      <p class="tt-note">Urla, Güzelbahçe ve Mordoğan gibi mevsimlik iskelelerin seferleri, sefer dönemi başladığında bu listeye kendiliğinden eklenir. Kaynak: İzdeniz, İzmir Büyükşehir Belediyesi açık veri portalı.</p>
+    </div>
+  </section>
+</Layout>

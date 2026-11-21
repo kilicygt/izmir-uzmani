@@ -50,10 +50,10 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
       </a>
     </section>
 
-    <!-- TRANSPORT -->
-    {(transportNews.length > 0 || b.eshot.length > 0 || b.izdeniz.length > 0) && (
+    <!-- ALERTS -->
+    {(transportNews.length > 0 || b.izdeniz.length > 0) && (
       <section class="sec">
-        <h2 class="sec-title"><IzmirIcon name="otobus" size={34} /> Ulaşım uyarıları</h2>
+        <h2 class="sec-title"><IzmirIcon name="otobus" size={34} /> Uyarılar</h2>
         {transportNews.map((n) => (
           <a class="alert" href={n.url} target="_blank" rel="noopener">
             <span class="src">İzmir Büyükşehir Belediyesi</span>
@@ -67,24 +67,25 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
             <p class="alert-title">{n.title}</p>
           </a>
         ))}
-        {b.eshot.length > 0 && (
-          <div class="eshot">
-            <p class="eshot-head">ESHOT hat duyuruları <span>{b.eshot.length} aktif</span></p>
-            <ul>
-              {[...newEshot, ...oldEshot].map((e, i) => (
-                <li class:list={{ more: i >= 8 }}>
-                  <div class="eshot-lines">{e.lines.slice(0, 6).map((l) => <a href={busUrl(l)}>{l}</a>)}{e.lines.length > 6 && <span>+{e.lines.length - 6}</span>}</div>
-                  <div class="eshot-text">
-                    <p>{e.title}{e.isNew && <span class="new">Yeni</span>}</p>
-                    <p class="eshot-date">{e.start.split('-').reverse().slice(0, 2).join('.')} – {e.end.split('-').reverse().slice(0, 2).join('.')}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            {b.eshot.length > 8 && <button type="button" class="more-btn" data-more>Tüm {b.eshot.length} duyuruyu göster</button>}
-            <p class="src-note">Kaynak: ESHOT, İzmir Büyükşehir Belediyesi açık verisi</p>
-          </div>
-        )}
+      </section>
+    )}
+
+    <!-- EVENTS -->
+    {b.events.length > 0 && (
+      <section class="sec">
+        <h2 class="sec-title"><IzmirIcon name="bilet" size={34} /> Etkinlikler</h2>
+        <div class="ev">
+          {b.events.slice(0, 6).map((e) => (
+            <a class="ev-item" href={`/etkinlikler/${e.slug}/`}>
+              <span class="ev-time">{clock(e.start)}</span>
+              <div>
+                <p class="ev-title">{e.title}</p>
+                <p class="ev-meta">{e.category}{e.venue ? ` · ${e.venue}` : ''}{e.free ? ' · Ücretsiz' : ''}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+        <a class="sec-more" href="/etkinlikler/">Haftanın tüm etkinlikleri →</a>
       </section>
     )}
 
@@ -112,22 +113,28 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
       </section>
     )}
 
-    <!-- EVENTS -->
-    {b.events.length > 0 && (
+    <!-- TRANSPORT ANNOUNCEMENTS -->
+    {b.eshot.length > 0 && (
       <section class="sec">
-        <h2 class="sec-title"><IzmirIcon name="bilet" size={34} /> Bugün şehirde</h2>
-        <div class="ev">
-          {b.events.slice(0, 6).map((e) => (
-            <a class="ev-item" href={`/etkinlikler/${e.slug}/`}>
-              <span class="ev-time">{clock(e.start)}</span>
-              <div>
-                <p class="ev-title">{e.title}</p>
-                <p class="ev-meta">{e.category}{e.venue ? ` · ${e.venue}` : ''}{e.free ? ' · Ücretsiz' : ''}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-        <a class="sec-more" href="/etkinlikler/">Haftanın tüm etkinlikleri →</a>
+        <h2 class="sec-title"><IzmirIcon name="metro" size={34} /> Ulaşım</h2>
+        {b.eshot.length > 0 && (
+          <div class="eshot">
+            <p class="eshot-head">ESHOT hat duyuruları <span>{b.eshot.length} aktif</span></p>
+            <ul>
+              {[...newEshot, ...oldEshot].map((e, i) => (
+                <li class:list={{ more: i >= 8 }}>
+                  <div class="eshot-lines">{e.lines.slice(0, 6).map((l) => <a href={busUrl(l)}>{l}</a>)}{e.lines.length > 6 && <span>+{e.lines.length - 6}</span>}</div>
+                  <div class="eshot-text">
+                    <p>{e.title}{e.isNew && <span class="new">Yeni</span>}</p>
+                    <p class="eshot-date">{e.start.split('-').reverse().slice(0, 2).join('.')} – {e.end.split('-').reverse().slice(0, 2).join('.')}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            {b.eshot.length > 8 && <button type="button" class="more-btn" data-more>Tüm {b.eshot.length} duyuruyu göster</button>}
+            <p class="src-note">Kaynak: ESHOT, İzmir Büyükşehir Belediyesi açık verisi</p>
+          </div>
+        )}
       </section>
     )}
 

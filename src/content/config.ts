@@ -10,7 +10,9 @@ const blog = defineCollection({
     readTime: z.string(),
     tags: z.array(z.string()).optional().default([]),
     featured: z.boolean().optional().default(false),
+    sponsored: z.boolean().optional().default(false),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
     excerpt: z.string().optional(),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
@@ -25,4 +27,30 @@ const sayfalar = defineCollection({
   }),
 });
 
-export const collections = { blog, sayfalar };
+// "2026-11-08 20:00" is read as İzmir time. YAML turns unquoted dates into UTC Dates, so those are read the same way.
+const istanbulTime = z.union([z.string(), z.date()]).transform((v) => {
+  const s = typeof v === 'string' ? v.trim().replace(' ', 'T') : v.toISOString().slice(0, 19);
+  if (/[+-]\d\d:\d\d$|Z$/.test(s)) return new Date(s).toISOString();
+  return new Date(`${s.length === 10 ? `${s}T00:00` : s.slice(0, 16)}:00+03:00`).toISOString();
+});
+
+const etkinlikler = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    category: z.string(),
+    start: istanbulTime,
+    end: istanbulTime.optional(),
+    venue: z.string(),
+    image: z.string().optional(),
+    organizer: z.string().optional(),
+    organizerUrl: z.string().url().optional(),
+    performer: z.string().optional(),
+    admission: z.enum(['free', 'free-ticket', 'paid']).optional(),
+    ticketUrl: z.string().url().optional(),
+    sourceUrl: z.string().url().optional(),
+    sourceName: z.string().optional(),
+  }),
+});
+
+export const collections = { blog, sayfalar, etkinlikler };

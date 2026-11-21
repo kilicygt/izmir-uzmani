@@ -2,6 +2,7 @@
 title: "Karşıyaka Rehberi: Yerelden Gözüyle Mahalle Turu"
 description: "Vapur iskalesinden çarşıya, mahallenin kalbini tanımak için bir günlük plan."
 pubDate: 2026-07-22
+image: "/images/blog/karsiyaka-rehberi.webp"
 category: "Semtler"
 readTime: "7 dk"
 tags: ["Karşıyaka", "Semtler", "İzmir", "Mahalle"]

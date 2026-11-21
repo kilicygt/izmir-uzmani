@@ -1,0 +1,63 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import IzmirIcon from '../../../components/IzmirIcon.astro';
+import NearestToplanma from '../../../components/NearestToplanma.astro';
+import data from '../../../data/toplanma.json';
+import { ilceSlug } from '../../../lib/eczane-core.mjs';
+
+const counts = new Map<string, number>();
+for (const a of data.areas) counts.set(a.i, (counts.get(a.i) ?? 0) + 1);
+const ilceler = [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0], 'tr'));
+const total = data.areas.length.toLocaleString('tr-TR');
+---
+
+<Layout
+  title="İzmir Afet ve Acil Durum Toplanma Alanları"
+  description={`İzmir'in 30 ilçesindeki ${total} resmi afet ve acil durum toplanma alanı. Konumuna en yakın toplanma alanını bul, yürüyerek yol tarifi al.`}
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="breadcrumb"><a href="/">Ana Sayfa</a><span>›</span><a href="/deprem/">Deprem</a><span>›</span>Toplanma Alanları</p>
+        <h1 class="title">İzmir Afet Toplanma Alanları</h1>
+        <p class="desc">Deprem ya da başka bir afet anında gidilecek {total} resmi toplanma alanı, ilçe ve mahalle mahalle. En yakın olanı bir kez öğren, ailenle paylaş.</p>
+        <NearestToplanma />
+      </div>
+      <div class="hero-icon" aria-hidden="true"><IzmirIcon name="toplanma" size={130} /></div>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="container">
+      <h2 class="sec-title">İlçeni seç</h2>
+      <div class="ilce-grid">
+        {ilceler.map(([i, n]) => (
+          <a href={`/deprem/toplanma-alanlari/${ilceSlug(i)}/`} class="ilce"><span>{i}</span><span class="n">{n}</span></a>
+        ))}
+      </div>
+      <p class="note">Liste İzmir Büyükşehir Belediyesi açık verisinden alınır. Resmî sorgulama için <a href="https://www.turkiye.gov.tr/afet-ve-acil-durum-yonetimi-acil-toplanma-alani-sorgulama" target="_blank" rel="noopener">e-Devlet toplanma alanı sorgulama</a> hizmetini de kullanabilirsin. <a href="/deprem/">İzmir son depremler →</a></p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  .hero { background: linear-gradient(180deg, #fff9f3 0%, #e7f6ef 100%); padding: clamp(28px, 5vw, 52px) 0 clamp(26px, 4vw, 40px); }
+  .hero-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .breadcrumb { font-size: 12px; color: #999; margin-bottom: 14px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .breadcrumb a { color: #062f96; }
+  .title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(30px, 4.8vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .desc { font-size: 15.5px; color: #555; line-height: 1.7; max-width: 600px; margin-bottom: 18px; }
+  .hero-icon { flex-shrink: 0; width: 150px; height: 150px; border-radius: 36px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #fff 0%, #dff3ea 100%); box-shadow: inset 0 2px 0 #fff, 0 20px 40px -24px rgba(11,122,92,0.5); }
+  @media (max-width: 700px) { .hero-icon { display: none; } }
+  .main { background: #fff9f3; padding: clamp(28px, 4vw, 44px) 0 clamp(48px, 6vw, 72px); }
+  .sec-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 25px); margin-bottom: 14px; }
+  .ilce-grid { display: grid; gap: 8px; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 640px) { .ilce-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 1000px) { .ilce-grid { grid-template-columns: repeat(5, 1fr); } }
+  .ilce { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #efe2d3; border-radius: 14px; padding: 11px 14px; font-size: 14px; font-weight: 500; transition: border-color 0.2s, transform 0.2s; }
+  .ilce:hover { border-color: #0b7a5c; transform: translateY(-2px); color: inherit; }
+  .n { font-size: 12px; font-weight: 600; color: #0b7a5c; background: #e3f5ee; border-radius: 999px; padding: 2px 8px; }
+  .note { margin-top: 28px; background: #f0e8df; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #555; line-height: 1.65; }
+  .note a { color: #062f96; text-decoration: underline; }
+</style>

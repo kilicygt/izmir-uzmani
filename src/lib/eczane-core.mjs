@@ -54,7 +54,7 @@ const fixEscapes = (s) => (s ?? '').replace(/u([0-9a-fA-F]{4})/g, (_, h) => Stri
 // The source is often typed without a Turkish keyboard ("YENI MAH."). A plain "I" is read as "i"
 // unless the same word also has "İ"/"ı", which shows its author did distinguish the two.
 const lowerWord = (w) => (/[İı]/.test(w) ? w.toLocaleLowerCase('tr-TR') : w.replace(/I/g, 'i').toLocaleLowerCase('tr-TR'));
-const title = (s) => fixEscapes(s).replace(/\s+/g, ' ').trim()
+export const title = (s) => fixEscapes(s).replace(/\s+/g, ' ').trim()
   .split(/(\s+)/).map(lowerWord).join('')
   .replace(/(^|[\s(/.-])(\p{L})/gu, (_, p, c) => p + c.toLocaleUpperCase('tr-TR'));
 const phone = (s) => {

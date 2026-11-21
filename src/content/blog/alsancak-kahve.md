@@ -2,6 +2,7 @@
 title: "Alsancak'ın En İyi Kahve Duraklarına Kapsamlı Bir Bakış"
 description: "Sabah molasından çalışma maratonuna, şehrin kahve ruhunu keşfet."
 pubDate: 2026-07-28
+image: "/images/blog/alsancak-kahve.webp"
 category: "Kafeler"
 readTime: "5 dk"
 tags: ["Alsancak", "Kafeler", "İzmir", "KahveRehberi"]

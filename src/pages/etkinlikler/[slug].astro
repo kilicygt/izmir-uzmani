@@ -54,14 +54,15 @@ const jsonLd = {
     url: event.ticketUrl ?? event.sourceUrl ?? pageUrl,
     ...(isFree && { price: 0 }),
     priceCurrency: 'TRY',
-    ...(!event.past && { availability: 'https://schema.org/InStock' }),
+    availability: 'https://schema.org/InStock',
   },
   url: pageUrl,
 };
 ---
 
-<Layout title={event.title} description={metaDescription} activePage="etkinlikler">
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+<Layout title={event.title} description={metaDescription} activePage="etkinlikler" image={event.image ?? undefined} imageAlt={`${event.title} afişi`}>
+  {/* Ended events are no longer eligible for event results, so they carry no Event markup. */}
+  {!event.past && <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />}
 
   <section class="ev-header">
     <div class="wrap anim">

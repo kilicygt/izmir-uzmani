@@ -1,0 +1,40 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import UlasimHeader from '../../../components/UlasimHeader.astro';
+import '../../../styles/ulasim.css';
+import { BASE, izban, updatedAt } from '../../../lib/ulasim';
+
+const stations = [...izban.stations].reverse();
+---
+
+<Layout title="İZBAN Saatleri: İstasyon İstasyon Sefer Saatleri" activePage="ulasim" description={`İZBAN banliyö tren saatleri: ${izban.northEnd}'dan ${izban.southEnd}'a ${izban.stations.length} istasyonun güncel kalkış saatleri, iki yön için.`}>
+  <UlasimHeader
+    title="İZBAN Saatleri"
+    desc={`${izban.northEnd} – ${izban.southEnd} hattındaki istasyonlardan iki yöne kalkan trenlerin saatleri. İstasyonu seçin.`}
+    crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }]}
+    chips={[`${izban.stations.length} istasyon`, ...(updatedAt('izban') ? [`Güncelleme: ${updatedAt('izban')}`] : [])]}
+  />
+
+  <section class="tt-main">
+    <div class="tt-container">
+      <input type="search" class="tt-search" placeholder="İstasyon ara: Karşıyaka, Alsancak, Havalimanı…" aria-label="İstasyon ara" data-search />
+      <div class="tt-list">
+        {stations.map((s) => (
+          <a href={`${BASE}/izban/${s.slug}/`} class="tt-row" data-search-text={s.name}>
+            <div class="tt-row-main">
+              <p class="tt-row-title">{s.name}</p>
+              <p class="tt-row-sub">{s.north.length + s.south.length} günlük sefer</p>
+            </div>
+            <span class="tt-arrow">→</span>
+          </a>
+        ))}
+      </div>
+      <p class="tt-empty" data-search-empty hidden>Aramanızla eşleşen istasyon bulunamadı.</p>
+      <p class="tt-note">Kaynak: İZBAN, İzmir Büyükşehir Belediyesi açık veri portalı. Saatler her sabah o günün tarifesine göre güncellenir.</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../../../scripts/ulasim';
+</script>

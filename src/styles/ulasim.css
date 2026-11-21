@@ -24,7 +24,7 @@
   color: #999; margin-bottom: 12px;
 }
 
-.tt-tabs { position: relative; display: inline-flex; gap: 2px; flex-wrap: nowrap; max-width: 100%; overflow-x: auto; scrollbar-width: none; margin-bottom: 20px; background: #efe4d8; border-radius: 999px; padding: 4px; }
+.tt-tabs { display: inline-flex; gap: 2px; flex-wrap: nowrap; max-width: 100%; overflow-x: auto; scrollbar-width: none; margin-bottom: 20px; background: #efe4d8; border-radius: 999px; padding: 4px; }
 .tt-tabs::-webkit-scrollbar { display: none; }
 .tt-tab {
   font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;

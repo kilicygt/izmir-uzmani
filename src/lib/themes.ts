@@ -4,7 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 export const THEMES = [
   { key: 'gezi', label: 'Gezi Rotaları', icon: 'harita', color: '#062f96', desc: 'Gezilecek yerler, ilçeler ve günübirlik kaçamaklar', cats: ['Gezi Rehberi', 'Gezi', 'Rehber'] },
   { key: 'tarih', label: 'Tarih ve Kültür', icon: 'saatkulesi', color: '#b45309', desc: 'Antik kentler, tarihi yapılar ve müzeler', cats: ['Tarih ve Kültür', 'Kültür', 'Tarih'] },
-  { key: 'sehir', label: 'Şehir Hayatı', icon: 'asansor', color: '#d6336c', desc: 'Semtler, sahil, kafeler ve şehirde gündelik hayat', cats: ['Şehir Rehberi', 'Semtler', 'Kafeler', 'Gece Hayatı'] },
+  { key: 'sehir', label: 'Şehir Hayatı', icon: 'asansor', color: '#d6336c', desc: 'Semtler, sahil, kafeler ve şehirde gündelik hayat', cats: ['Şehir Rehberi', 'Semtler', 'Kafeler', 'Gece Hayatı', 'Sponsorlu'] },
   { key: 'doga', label: 'Doğa ve Aile', icon: 'palmiye', color: '#0b7a5c', desc: 'Yürüyüş rotaları, piknik alanları ve çocuklarla gezi', cats: ['Doğa Rehberi', 'Aile Rehberi'] },
   { key: 'ulasim', label: 'Ulaşım', icon: 'vapur', color: '#0e7490', desc: 'Nereye, nasıl gidilir?', cats: ['Ulaşım'] },
 ] as const;

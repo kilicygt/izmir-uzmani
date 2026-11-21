@@ -1,0 +1,80 @@
+---
+// "Bana en yakın toplanma alanları": loads the area list on demand and sorts by the visitor's location.
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+
+<div class:list={['nt', { compact }]} data-nt>
+  <button type="button" class="nt-btn" data-nt-btn>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
+    Bana en yakın toplanma alanları
+  </button>
+  <p class="nt-note">Konumun yalnızca telefonunda kullanılır, hiçbir yere gönderilmez.</p>
+  <div class="nt-list" data-nt-list hidden></div>
+</div>
+
+<style>
+  .nt-btn {
+    display: inline-flex; align-items: center; gap: 8px; font: 600 15px 'Poppins', sans-serif; color: #fff; cursor: pointer;
+    background: #0b7a5c; border: 0; border-radius: 999px; padding: 13px 22px; box-shadow: 0 12px 24px -14px rgba(11,122,92,0.9);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nt-btn:hover { background: #086349; transform: translateY(-1px); }
+  .nt-btn[disabled] { opacity: 0.7; cursor: wait; }
+  .nt-note { font-size: 12px; color: #888; margin-top: 8px; }
+  .nt-list { display: grid; gap: 10px; margin-top: 16px; }
+  .nt-list[hidden] { display: none; }
+  @media (min-width: 760px) { .nt-list { grid-template-columns: repeat(3, 1fr); } }
+  .nt-list :global(.nt-card) { background: #fff; border: 1px solid #d7eee4; border-radius: 18px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .nt-list :global(.nt-dist) { align-self: flex-start; font-size: 12px; font-weight: 700; color: #0b7a5c; background: #e3f5ee; border-radius: 999px; padding: 3px 10px; }
+  .nt-list :global(.nt-name) { font-size: 15.5px; font-weight: 600; color: #1a1a1a; }
+  .nt-list :global(.nt-addr) { font-size: 13px; color: #666; line-height: 1.5; }
+  .nt-list :global(.nt-go) { margin-top: 4px; text-align: center; font-size: 13.5px; font-weight: 600; color: #fff; background: #062f96; border-radius: 12px; padding: 9px 12px; }
+  .nt-list :global(.nt-go:hover) { background: #041e6e; color: #fff; }
+  .nt-list :global(.nt-msg) { font-size: 14px; color: #555; }
+</style>
+
+<script>
+  type Area = { i: string; m: string; n: string; s: string; la: number; lo: number };
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  let areas: Promise<Area[]> | null = null;
+
+  document.querySelectorAll<HTMLElement>('[data-nt]').forEach((root) => {
+    const btn = root.querySelector<HTMLButtonElement>('[data-nt-btn]')!;
+    const list = root.querySelector<HTMLElement>('[data-nt-list]')!;
+    const say = (msg: string) => { list.hidden = false; list.innerHTML = `<p class="nt-msg">${msg}</p>`; };
+    btn.addEventListener('click', () => {
+      if (!('geolocation' in navigator)) return say('Tarayıcın konum özelliğini desteklemiyor.');
+      btn.disabled = true;
+      areas ??= fetch('/deprem/toplanma-alanlari.json').then((r) => r.json());
+      navigator.geolocation.getCurrentPosition(async (pos) => {
+        try {
+          const { latitude: la, longitude: lo } = pos.coords;
+          const rad = (x: number) => (x * Math.PI) / 180;
+          const dist = (a: Area) => {
+            const h = Math.sin(rad(a.la - la) / 2) ** 2 + Math.cos(rad(la)) * Math.cos(rad(a.la)) * Math.sin(rad(a.lo - lo) / 2) ** 2;
+            return 2 * 6371 * Math.asin(Math.sqrt(h));
+          };
+          const near = (await areas!).map((a) => ({ a, d: dist(a) })).sort((x, y) => x.d - y.d).slice(0, 3);
+          if (!near.length || near[0].d > 60) return say('Yakınında İzmir’e ait bir toplanma alanı bulunamadı. Bu liste yalnızca İzmir ilini kapsıyor.');
+          list.hidden = false;
+          list.innerHTML = near.map(({ a, d }) => `
+            <div class="nt-card">
+              <span class="nt-dist">${d < 1 ? `${Math.round(d * 1000)} m` : `${d.toFixed(1).replace('.', ',')} km`}</span>
+              <p class="nt-name">${esc(a.n)}</p>
+              <p class="nt-addr">${esc([a.s, `${a.m} Mah.`, a.i].filter(Boolean).join(', '))}</p>
+              <a class="nt-go" href="https://www.google.com/maps/dir/?api=1&destination=${a.la},${a.lo}&travelmode=walking" target="_blank" rel="noopener">Yürüyerek yol tarifi</a>
+            </div>`).join('');
+          list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch {
+          say('Toplanma alanları yüklenemedi. Biraz sonra tekrar dene.');
+        } finally {
+          btn.disabled = false;
+        }
+      }, () => {
+        btn.disabled = false;
+        say('Konumuna erişilemedi. Tarayıcı ayarlarından konum iznini açıp tekrar deneyebilirsin.');
+      }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 });
+    });
+  });
+</script>

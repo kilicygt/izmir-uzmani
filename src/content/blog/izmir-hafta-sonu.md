@@ -2,6 +2,7 @@
 title: "İzmir'de Hafta Sonu: Cuma'dan Pazar Sabahına"
 description: "Kordon yürüyüşü, caz barlar ve sabah kahvaltısı mekanlarıyla eksiksiz rehber."
 pubDate: 2026-07-15
+image: "/images/blog/izmir-hafta-sonu.webp"
 category: "Gece Hayatı"
 readTime: "6 dk"
 tags: ["Gece Hayatı", "Hafta Sonu", "Alsancak", "İzmir"]

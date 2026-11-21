@@ -95,13 +95,13 @@ const mapsUrl = (p: Ph) => p.lat != null
   .ecz-search:focus-within { border-color: #062f96; }
   .ecz-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 500 14px 'Poppins', sans-serif; padding: 12px 0; }
   .live { width: 100%; font-size: 12.5px; color: #0b7a5c; }
-  .live[hidden], .near[hidden], [data-grp][hidden], [data-card][hidden], .empty[hidden] { display: none; }
+  .live[hidden], .near[hidden], .empty[hidden], :global([data-grp][hidden]), :global([data-card][hidden]) { display: none; }
 
-  .grp + .grp, .near + div .grp:first-child { margin-top: 36px; }
+  :global(.grp + .grp) { margin-top: 36px; }
   .near { margin-bottom: 36px; scroll-margin-top: 84px; }
-  .grp-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 25px); color: #1a1a1a; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-  .grp-title a:hover { color: #062f96; }
-  .grp-count { font: 600 12px 'Poppins', sans-serif; color: #d0021b; background: #ffe9ea; border-radius: 999px; padding: 3px 10px; }
+  :global(.grp-title) { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 25px); color: #1a1a1a; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  :global(.grp-title a:hover) { color: #062f96; }
+  :global(.grp-count) { font: 600 12px 'Poppins', sans-serif; color: #d0021b; background: #ffe9ea; border-radius: 999px; padding: 3px 10px; }
 
   .cards { display: grid; gap: 14px; grid-template-columns: 1fr; }
   @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
