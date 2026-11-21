@@ -3,30 +3,308 @@ import Layout from '../../../layouts/Layout.astro';
 import UlasimHeader from '../../../components/UlasimHeader.astro';
 import '../../../styles/ulasim.css';
 import { BASE, vapur, updatedAt } from '../../../lib/ulasim';
+
+type Dep = { time: string; to: string[]; car: boolean; note: string | null; cancelled: boolean };
+const piers = vapur.piers.map((p) => ({ ...p, days: p.days as Record<string, Dep[]> }));
+const active = (list: Dep[] | undefined) => (list ?? []).filter((d) => !d.cancelled);
+
+// Seferler hizmet sırasıyla listeleniyor; gece yarısından sonraki seferler (00:45 gibi) listenin sonunda.
+const toMin = (t: string) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+const span = (list: Dep[]) => (list.length ? { first: list[0].time, last: list[list.length - 1].time, count: list.length } : null);
+
+const DAY_GROUPS = [
+  { id: '1', label: 'Hafta içi' },
+  { id: '6', label: 'Cumartesi' },
+  { id: '7', label: 'Pazar' },
+] as const;
+
+const pierRows = piers.map((p) => ({
+  name: p.name, slug: p.slug, carFerry: p.carFerry,
+  spans: DAY_GROUPS.map((g) => span(active(p.days[g.id]))),
+  dests: [...new Set(active(p.days['1']).flatMap((d) => d.to))],
+}));
+
+// Popüler güzergahlar: hafta içi en çok sefer olan iskele → varış çiftleri
+type Route = { from: string; fromSlug: string; to: string; times: string[] };
+const routeMap = new Map<string, Route>();
+for (const p of piers) for (const d of active(p.days['1'])) for (const to of d.to) {
+  const key = `${p.slug}>${to}`;
+  if (!routeMap.has(key)) routeMap.set(key, { from: p.name, fromSlug: p.slug, to, times: [] });
+  routeMap.get(key)!.times.push(d.time);
+}
+const routes = [...routeMap.values()].filter((r) => r.times.length >= 20).sort((a, b) => b.times.length - a.times.length).slice(0, 8)
+  .map((r) => {
+    const mins = r.times.map(toMin).map((m, i, arr) => (i > 0 && m < arr[0] ? m + 1440 : m));
+    const gap = Math.round((mins[mins.length - 1] - mins[0]) / (mins.length - 1) / 5) * 5;
+    return { ...r, first: r.times[0], last: r.times[r.times.length - 1], count: r.times.length, gap };
+  });
+
+// Arabalı vapur (Bostanlı ↔ Üçkuyular)
+const carPiers = piers.filter((p) => p.carFerry).map((p) => {
+  const cars = active(p.days['1']).filter((d) => d.car);
+  const carsWe = active(p.days['7']).filter((d) => d.car);
+  return { name: p.name, slug: p.slug, to: [...new Set(cars.flatMap((d) => d.to))], wd: span(cars), we: span(carsWe) };
+}).filter((c) => c.wd);
+
+// SSS için özetler
+const wdFirst = pierRows.filter((r) => r.spans[0]).sort((a, b) => toMin(a.spans[0]!.first) - toMin(b.spans[0]!.first))[0];
+const lateKey = (t: string) => (toMin(t) < 240 ? toMin(t) + 1440 : toMin(t));
+const latest = (i: number) => pierRows.filter((r) => r.spans[i]).sort((a, b) => lateKey(b.spans[i]!.last) - lateKey(a.spans[i]!.last))[0];
+const wdLast = latest(0);
+const satLast = latest(1);
+const weekendPiers = pierRows.filter((r) => r.spans[2]).map((r) => r.name);
+const weekdayOnly = pierRows.filter((r) => r.spans[0] && !r.spans[2]).map((r) => r.name);
+const updated = updatedAt('vapur');
+const firstList = (() => {
+  const others = ['Konak', 'Bostanlı', 'Üçkuyular', 'Alsancak'].map((n) => pierRows.find((r) => r.name === n && r.spans[0])).filter(Boolean) as typeof pierRows;
+  return others.length ? `Diğer iskelelerden ilk seferler: ${others.map((r) => `${r.name} ${r.spans[0]!.first}`).join(', ')}.` : '';
+})();
+const carGap = carPiers.length ? Math.round((toMin(carPiers[0].wd!.last) - toMin(carPiers[0].wd!.first)) / Math.max(1, carPiers[0].wd!.count - 1)) : 0;
+
+const faqs = [
+  wdFirst && { q: "İzmir'de ilk vapur kaçta kalkıyor?", a: `Hafta içi ilk vapur ${wdFirst.spans[0]!.first}'da ${wdFirst.name} iskelesinden kalkıyor. ${firstList} Her iskelenin ilk vapuru yukarıdaki tabloda.` },
+  wdLast && { q: 'Son vapur kaçta?', a: `Hafta içi en geç vapur ${wdLast.spans[0]!.last}'te ${wdLast.name} iskelesinden kalkıyor.${satLast ? ` Hafta sonu gece seferleri daha geç saatlere uzanıyor; cumartesi en son vapur ${satLast.spans[1]!.last}'te ${satLast.name} iskelesinden.` : ''} Tüm iskelelerin son sefer saatlerini yukarıdaki tabloda görebilirsiniz.` },
+  { q: 'Hafta sonu vapur seferi var mı?', a: `Evet. Cumartesi ve pazar ${weekendPiers.join(', ')} iskelelerinden vapur kalkıyor; sefer sayısı hafta içine göre daha az.${weekdayOnly.length ? ` ${weekdayOnly.join(' ve ')} iskelelerinden yalnızca hafta içi sefer var.` : ''}` },
+  carPiers.length && { q: 'Arabalı vapur hangi iskeleler arasında çalışıyor?', a: `Arabalı vapur ${carPiers.map((c) => c.name).join(' ile ')} arasında çalışıyor. Hafta içi ilk arabalı sefer ${carPiers[0].wd!.first}, son sefer ${carPiers[0].wd!.last}; seferler ortalama ${carGap} dakikada bir.` },
+  { q: 'Vapur saatleri ne kadar güncel?', a: `Saatler İzmir Büyükşehir Belediyesi açık veri portalındaki İzdeniz tarifesinden alınıyor${updated ? ` (son güncelleme: ${updated})` : ''}. Hava muhalefeti ve bayramlarda seferler değişebilir; anlık duyurular için izdeniz.com.tr adresine bakın.` },
+].filter(Boolean) as { q: string; a: string }[];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
+// Canlı pano için sıkıştırılmış veri: iskele → gün → [saat, varış, arabalı]
+const live = piers.map((p) => ({
+  n: p.name, s: p.slug,
+  d: Object.fromEntries(Object.entries(p.days).map(([k, v]) => [k, active(v).map((d) => [d.time, d.to.join(' · '), d.car ? 1 : 0])])),
+}));
 ---
 
-<Layout title="İzmir Vapur Saatleri (İzdeniz)" activePage="ulasim" description="İzdeniz vapur saatleri: Konak, Karşıyaka, Bostanlı, Pasaport, Alsancak, Göztepe ve Üçkuyular iskelelerinden kalkan vapurların güncel sefer saatleri.">
+<Layout
+  title="İzmir Vapur Saatleri: Güncel İzdeniz Seferleri"
+  activePage="ulasim"
+  description={`İzmir vapur saatleri: Konak, Karşıyaka, Bostanlı, Pasaport, Alsancak ve Üçkuyular iskelelerinden şu an kalkan vapurlar, ilk ve son vapur saatleri, arabalı vapur seferleri.`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+
   <UlasimHeader
-    title="Vapur Saatleri"
-    desc="İzdeniz vapurlarının iskele iskele kalkış saatleri. İskeleyi seçin, haftanın her günü için seferleri görün."
+    title="İzmir Vapur Saatleri"
+    desc="İzdeniz vapurlarının güncel sefer saatleri: şu an hangi iskeleden ne zaman vapur var, ilk ve son vapur kaçta, arabalı vapur ne sıklıkla kalkıyor."
     crumbs={[{ href: `${BASE}/`, label: 'Toplu Taşıma Saatleri' }]}
-    chips={[`${vapur.piers.length} iskele`, ...(updatedAt('vapur') ? [`Güncelleme: ${updatedAt('vapur')}`] : [])]}
+    chips={[`${piers.length} iskele`, ...(updated ? [`Güncelleme: ${updated}`] : [])]}
   />
 
   <section class="tt-main">
     <div class="tt-container">
-      <div class="tt-list">
-        {vapur.piers.map((p) => (
-          <a href={`${BASE}/vapur/${p.slug}/`} class="tt-row">
-            <div class="tt-row-main">
-              <p class="tt-row-title">{p.name} Vapur Saatleri</p>
-              <p class="tt-row-sub">{p.carFerry ? 'Yolcu ve arabalı vapur iskelesi' : 'Yolcu vapuru iskelesi'}</p>
-            </div>
-            <span class="tt-arrow">→</span>
-          </a>
-        ))}
+
+      <!-- CANLI PANO -->
+      <div class="tt-section">
+        <h2 class="tt-h2">Sıradaki vapurlar</h2>
+        <p class="vp-live-head" data-vp-now>Her iskeleden kalkacak ilk iki vapur</p>
+        <div class="vp-board" data-vp-board>
+          {pierRows.filter((r) => r.spans[0]).map((r) => (
+            <a href={`${BASE}/vapur/${r.slug}/`} class="vp-card" data-vp-pier={r.slug}>
+              <p class="vp-pier">{r.name}{r.carFerry && <span class="tt-tag">Arabalı</span>}</p>
+              <div class="vp-next" data-vp-next>
+                <p class="vp-dep"><span class="vp-t">{r.spans[0]!.first}</span><span class="vp-to">İlk vapur (hafta içi)</span></p>
+                <p class="vp-dep"><span class="vp-t">{r.spans[0]!.last}</span><span class="vp-to">Son vapur (hafta içi)</span></p>
+              </div>
+              <span class="vp-more">Tüm saatler →</span>
+            </a>
+          ))}
+        </div>
       </div>
-      <p class="tt-note">Urla, Güzelbahçe ve Mordoğan gibi mevsimlik iskelelerin seferleri, sefer dönemi başladığında bu listeye kendiliğinden eklenir. Kaynak: İzdeniz, İzmir Büyükşehir Belediyesi açık veri portalı.</p>
+
+      <!-- İLK / SON VAPUR TABLOSU -->
+      <div class="tt-section">
+        <h2 class="tt-h2">İskele iskele ilk ve son vapur saatleri</h2>
+        <div class="vp-table-wrap">
+          <table class="vp-table">
+            <thead>
+              <tr><th>İskele</th>{DAY_GROUPS.map((g) => <th>{g.label}</th>)}</tr>
+            </thead>
+            <tbody>
+              {pierRows.map((r) => (
+                <tr>
+                  <th scope="row"><a href={`${BASE}/vapur/${r.slug}/`}>{r.name}</a></th>
+                  {r.spans.map((s) => (
+                    <td>{s ? <><strong>{s.first} – {s.last}</strong><span>{s.count} sefer</span></> : <span class="vp-none">Sefer yok</span>}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="tt-note">Saatler iskeleden kalkış saatleridir. Gece yarısından sonraki seferler (ör. 00:45) bir önceki günün tarifesine aittir.</p>
+      </div>
+
+      <!-- POPÜLER GÜZERGAHLAR -->
+      <div class="tt-section">
+        <h2 class="tt-h2">En çok sefer yapılan güzergahlar</h2>
+        <div class="vp-routes">
+          {routes.map((r) => (
+            <a href={`${BASE}/vapur/${r.fromSlug}/`} class="vp-route">
+              <p class="vp-route-name">{r.from} <span>→</span> {r.to}</p>
+              <p class="vp-route-meta">Hafta içi {r.count} sefer · ilk {r.first}, son {r.last}{r.gap > 0 && ` · ortalama ${r.gap} dk'da bir`}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- ARABALI VAPUR -->
+      {carPiers.length > 0 && (
+        <div class="tt-section">
+          <h2 class="tt-h2">Arabalı vapur saatleri</h2>
+          <div class="tt-card vp-car">
+            <p>İzmir Körfezi'nde arabalı vapur <strong>{carPiers.map((c) => c.name).join(' – ')}</strong> hattında çalışıyor. Araçla Karşıyaka yakası ile Narlıdere–Güzelbahçe yakası arasında körfezi geçmenin en kısa yolu.</p>
+            <ul>
+              {carPiers.map((c) => (
+                <li><a href={`${BASE}/vapur/${c.slug}/`}>{c.name} → {c.to.join(', ')}</a>: hafta içi {c.wd!.count} sefer ({c.wd!.first} – {c.wd!.last}){c.we && `, pazar ${c.we.count} sefer (${c.we.first} – ${c.we.last})`}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
+      <!-- İSKELELER -->
+      <div class="tt-section">
+        <h2 class="tt-h2">İskeleye göre vapur saatleri</h2>
+        <div class="tt-list">
+          {pierRows.map((r) => (
+            <a href={`${BASE}/vapur/${r.slug}/`} class="tt-row">
+              <div class="tt-row-main">
+                <p class="tt-row-title">{r.name} Vapur Saatleri</p>
+                <p class="tt-row-sub">{r.dests.length ? `${r.dests.slice(0, 5).join(', ')} seferleri` : 'Yolcu vapuru iskelesi'}{r.carFerry && ' · arabalı vapur'}</p>
+              </div>
+              <span class="tt-arrow">→</span>
+            </a>
+          ))}
+        </div>
+        <p class="tt-note">Urla, Güzelbahçe ve Mordoğan gibi mevsimlik iskelelerin seferleri, sefer dönemi başladığında bu listeye kendiliğinden eklenir. Vapurla gidilebilecek yerler için <a href="/rehberler/izmir-de-vapurla-nerelere-gidilir/">İzmir'de vapurla nerelere gidilir?</a> rehberimize göz atın.</p>
+      </div>
+
+      <!-- SSS -->
+      <div class="tt-section">
+        <h2 class="tt-h2">Sık sorulan sorular</h2>
+        <div class="vp-faq">
+          {faqs.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+        <p class="tt-note">Kaynak: İzdeniz, İzmir Büyükşehir Belediyesi açık veri portalı. Hava muhalefeti ve bayramlarda seferler değişebilir; güncel duyurular için <a href="https://www.izdeniz.com.tr/" target="_blank" rel="noopener">izdeniz.com.tr</a> adresini kontrol edin.</p>
+      </div>
     </div>
   </section>
 </Layout>
+
+<script type="application/json" id="vp-data" set:html={JSON.stringify(live)} />
+
+<script>
+  type Row = [string, string, number];
+  type Pier = { n: string; s: string; d: Record<string, Row[]> };
+  const data: Pier[] = JSON.parse(document.getElementById('vp-data')!.textContent || '[]');
+
+  const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+  const WD: Record<string, number> = { Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6, Sun: 7 };
+  const toMin = (t: string) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+
+  // Bir günün seferlerini dakikaya çevir; listenin sonundaki gece yarısı sonrası seferler +1440
+  function minutes(rows: Row[]) {
+    let prev = -1;
+    return rows.map((r) => { let m = toMin(r[0]); if (m < prev - 600) m += 1440; prev = m; return { m, to: r[1], car: !!r[2], t: r[0] }; });
+  }
+
+  function render() {
+    const parts = Object.fromEntries(fmt.formatToParts(new Date()).map((p) => [p.type, p.value]));
+    const day = WD[parts.weekday];
+    const now = Number(parts.hour) * 60 + Number(parts.minute);
+    const yday = day === 1 ? 7 : day - 1;
+    const head = document.querySelector<HTMLElement>('[data-vp-now]');
+    if (head) head.innerHTML = `<span class="tt-cd-dot"></span>Canlı · şu an ${parts.hour}:${parts.minute}`;
+
+    data.forEach((p) => {
+      const card = document.querySelector<HTMLElement>(`[data-vp-pier="${p.s}"]`);
+      if (!card) return;
+      const late = minutes(p.d[yday] ?? []).filter((x) => x.m >= 1440 && x.m - 1440 >= now).map((x) => ({ ...x, m: x.m - 1440 }));
+      const next = [...late, ...minutes(p.d[day] ?? []).filter((x) => x.m >= now)].slice(0, 2);
+      const box = card.querySelector<HTMLElement>('[data-vp-next]')!;
+      if (!next.length) {
+        const none = !(p.d[day] ?? []).length && !late.length;
+        box.innerHTML = `<p class="vp-done">${none ? 'Bugün bu iskeleden sefer yok' : 'Bugünkü seferler tamamlandı'}</p>`;
+        card.classList.add('is-done');
+        card.parentElement?.appendChild(card);
+        return;
+      }
+      card.classList.remove('is-done');
+      box.innerHTML = next.map((x, i) => {
+        const diff = x.m - now;
+        const when = diff <= 0 ? 'kalkıyor' : diff < 60 ? `${diff} dk sonra` : `${Math.floor(diff / 60)} sa ${diff % 60} dk sonra`;
+        return `<p class="vp-dep${i === 0 ? ' first' : ''}"><span class="vp-t">${x.t}</span><span class="vp-to">${x.to || '—'}${x.car ? ' · arabalı' : ''}</span><span class="vp-in">${when}</span></p>`;
+      }).join('');
+    });
+  }
+  render();
+  setInterval(render, 30000);
+</script>
+
+<style>
+  .vp-live-head { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #777; margin: -6px 0 14px; }
+  .vp-board { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .vp-board { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 960px) { .vp-board { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .vp-card { min-width: 0; display: flex; flex-direction: column; gap: 10px; background: #fff; border: 1px solid #efe2d3; border-radius: 20px; padding: 16px 18px; color: inherit; box-shadow: 0 18px 36px -30px rgba(90,58,26,0.5); transition: transform .15s, box-shadow .15s; }
+  .vp-card:hover { transform: translateY(-2px); box-shadow: 0 22px 40px -28px rgba(90,58,26,0.6); }
+  .vp-card.is-done { opacity: .7; }
+  .vp-pier { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: #1a1a1a; display: flex; align-items: center; gap: 8px; }
+  .vp-next { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; min-width: 0; }
+  .vp-next :global(.vp-dep) { min-width: 0; display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #555; }
+  .vp-next :global(.vp-t) { min-width: 56px; text-align: center; flex-shrink: 0; font-weight: 600; font-variant-numeric: tabular-nums; background: #f6f1eb; color: #1a1a1a; border-radius: 9px; padding: 4px 9px; }
+  .vp-next :global(.vp-dep.first .vp-t) { background: #ff7c11; color: #fff; }
+  .vp-next :global(.vp-to) { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .vp-next :global(.vp-in) { font-size: 12px; font-weight: 600; color: #062f96; white-space: nowrap; }
+  .vp-next :global(.vp-done) { font-size: 13.5px; color: #999; }
+  .vp-more { font-size: 12.5px; font-weight: 500; color: #062f96; margin-top: auto; }
+
+  .vp-table-wrap { overflow-x: auto; background: #fff; border: 1px solid #efe2d3; border-radius: 20px; box-shadow: 0 18px 36px -30px rgba(90,58,26,0.5); }
+  .vp-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+  .vp-table th, .vp-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,.05); vertical-align: top; }
+  .vp-table thead th { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #999; background: #fcf8f3; }
+  .vp-table tbody tr:last-child th, .vp-table tbody tr:last-child td { border-bottom: 0; }
+  .vp-table tbody th a { color: #1a1a1a; font-weight: 600; }
+  .vp-table tbody th a:hover { color: #062f96; }
+  .vp-table td strong { display: block; font-weight: 600; color: #1a1a1a; font-variant-numeric: tabular-nums; }
+  .vp-table td span { font-size: 12px; color: #999; }
+  .vp-table .vp-none { color: #bbb; }
+  @media (max-width: 560px) {
+    .vp-table { min-width: 0; font-size: 12.5px; }
+    .vp-table th, .vp-table td { padding: 10px 8px; }
+    .vp-table th:first-child { padding-left: 14px; }
+    .vp-table thead th { font-size: 10.5px; letter-spacing: .03em; }
+    .vp-table td span { font-size: 11px; }
+  }
+
+  .vp-routes { display: grid; gap: 10px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .vp-routes { grid-template-columns: 1fr 1fr; } }
+  .vp-route { background: #fff; border: 1px solid #efe2d3; border-radius: 16px; padding: 14px 16px; color: inherit; }
+  .vp-route:hover { background: #faf7f4; }
+  .vp-route-name { font-weight: 600; color: #1a1a1a; font-size: 15px; }
+  .vp-route-name span { color: #ff7c11; margin: 0 4px; }
+  .vp-route-meta { font-size: 13px; color: #777; margin-top: 3px; }
+
+  .vp-car p { font-size: 15px; color: #444; line-height: 1.7; }
+  .vp-car ul { margin: 10px 0 0 18px; font-size: 14.5px; color: #444; line-height: 1.8; }
+  .vp-car a { color: #062f96; font-weight: 500; }
+
+  .vp-faq { display: grid; gap: 10px; }
+  .vp-faq details { background: #fff; border: 1px solid #efe2d3; border-radius: 16px; padding: 14px 18px; }
+  .vp-faq summary { cursor: pointer; font-weight: 600; color: #1a1a1a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  .vp-faq summary::-webkit-details-marker { display: none; }
+  .vp-faq summary::after { content: '+'; color: #ff7c11; font-size: 20px; line-height: 1; }
+  .vp-faq details[open] summary::after { content: '–'; }
+  .vp-faq details p { margin-top: 10px; font-size: 14.5px; color: #555; line-height: 1.7; }
+</style>
