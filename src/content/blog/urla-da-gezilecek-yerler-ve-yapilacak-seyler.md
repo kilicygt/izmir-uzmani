@@ -2,9 +2,10 @@
 title: "Urla’da Gezilecek Yerler ve Yapılacak Şeyler"
 description: "Urla’da deniz, tarih, köyler ve gastronomi odağında gezilecek yerleri ve günü nasıl planlayabileceğinizi pratik bir rehberle derledik."
 pubDate: 2026-11-13
+updatedDate: 2026-11-23
 category: "Gezi Rehberi"
 readTime: "8 dk"
-tags: ["İzmir", "Urla", "Gezi Rehberi", "Urla gezilecek yerler"]
+tags: ["İzmir", "Urla", "Gezi Rehberi", "Urla gezilecek yerler", "Gastronomi", "Bağ Yolu"]
 featured: false
 image: "/images/blog/urla-da-gezilecek-yerler-ve-yapilacak-seyler.webp"
 imageAlt: "Urla İskele'deki marina, mendirek ve kıyıdaki evlerin havadan görünümü"
@@ -88,6 +89,8 @@ Burada önemli nokta şu: Her köyü “turistik durak” gibi düşünmek yerin
 
 Bu yüzden Urla’da gezilecek yerler listesi yaparken 15 nokta sıralamak yerine, gününüzün ritmine uyan 3-4 bölge seçmek daha işlevsel olur.
 
+İlk kez gidenler için iki köy özellikle iyi bir başlangıç: **Barbaros**, taş evleri, dut ağaçları ve bağ aralarındaki patikalarıyla sakin kırsal Ege dokusunu en iyi yansıtan yerlerden biri. **Bademler** ise köy tiyatrosu geleneğiyle bilinen ve köy meydanında oturup çay içerek vakit geçirilebilecek bir durak.
+
 ## 7) Plajlar: yaz aylarında deniz odaklı plan yapılabilir
 
 Urla Belediyesi’nin gezi sayfalarında Altınköy Plajı, Demircili Plajı ve Kum Denizi Plajı gibi sahil noktaları da yer alıyor. Yazın Urla’ya gidiliyorsa plajları listenin dışında bırakmak zor. Ancak bu bölüm mevsime çok bağlı.
@@ -112,6 +115,12 @@ Urla Bağ Yolu daha çok şu tip ziyaretçilere hitap eder:
 - Yarım günlük ya da tam günlük tematik rota isteyenler
 
 Burada önemli ayrım şu: Bu deneyim merkezde yürüyerek yapılan geziye benzemez. Duraklar dağınık olabileceği için araç planı, rezervasyon ve zaman yönetimi gerekir.
+
+Bağ rotası için en canlı dönem **eylül–ekim**. Bağ bozumu bu aylarda yapılıyor ve bazı bağevleri hasat etkinlikleri düzenliyor; tarihleri bağevlerinin kendi duyurularından takip etmek gerekiyor.
+
+## 9) Urla mutfağı: enginardan ot yemeklerine
+
+Ege mutfağının en sade hâli Urla’da yaşıyor: zeytinyağlı otlar, deniz börülcesi, semizotu, körfezden gelen taze balık ve köylerde kendi bahçesinden ürün kullanan lokantalar. İlçenin simgesi ise **Urla enginarı**. Enginar mevsimi olan nisan–mayıs aylarında tezgâhlar enginarla doluyor, mezelerde ve ana yemeklerde her yerde karşınıza çıkıyor; bu dönemde ilçede enginar festivali de düzenleniyor. İskele çevresindeki balık lokantaları ve merkezdeki küçük esnaf lokantaları, gastronomi rotasına bağ yolu dışında eklenebilecek en kolay duraklar.
 
 ## Urla’da ne yapılır?
 
@@ -145,6 +154,17 @@ Kısa bir gezi için pratik kurgu şöyle olabilir:
 - Sabah erken: merkez veya tarih durağı
 - Öğleden sonra: plaj
 - Akşam: sahil tarafında yürüyüş
+
+## Urla’ya ne zaman gidilmeli?
+
+- **İlkbahar (nisan–haziran):** Bağlar yeşeriyor, enginar mevsimi yaşanıyor ve hava henüz bunaltıcı değil. Urla’yı tüm yönleriyle görmek için en dengeli dönem.
+- **Yaz:** Deniz ve plaj odaklı plan için ideal; ancak hafta sonları sahil ve plajlar kalabalık.
+- **Sonbahar (eylül–ekim):** Bağ bozumu dönemi; gastronomi rotası için en canlı zaman.
+- **Kış:** Sakin ve kalabalıksız; merkez, köyler ve tarih durakları için hâlâ iyi bir seçenek.
+
+## Urla’ya nasıl gidilir?
+
+İzmir merkezden araçla otoyol üzerinden yaklaşık 35–45 dakikada Urla merkeze ulaşılıyor. Toplu taşımayla gitmek de mümkün; ESHOT otobüsleriyle merkeze kolayca varılıyor. Hat ve aktarma seçeneklerini [İzmir’den Urla’ya toplu taşımayla nasıl gidilir](/rehberler/urla-ya-toplu-tasimayla-nasil-gidilir/) yazımızda adım adım anlattık. Köyleri, koyları ve bağ rotasını gezecekseniz araç büyük kolaylık sağlar; duraklar birbirinden uzak.
 
 ## Urla gezisinde dikkat edilmesi gerekenler
 

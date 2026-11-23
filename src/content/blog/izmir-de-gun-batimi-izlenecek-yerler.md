@@ -2,9 +2,10 @@
 title: "İzmir’de Gün Batımı İzlenecek Yerler"
 description: "Körfez manzarası, sahil yürüyüşü ve seyir noktalarıyla İzmir’de gün batımı izlemek için öne çıkan yerleri derledik."
 pubDate: 2026-11-03
+updatedDate: 2026-11-23
 category: "Şehir Rehberi"
-readTime: "6 dk"
-tags: ["İzmir", "Gün Batımı", "Şehir Rehberi"]
+readTime: "7 dk"
+tags: ["İzmir", "Gün Batımı", "Şehir Rehberi", "Seyir Noktası", "Kadifekale", "Kordon"]
 featured: false
 image: "/images/blog/izmir-de-gun-batimi-izlenecek-yerler.webp"
 imageAlt: "Bostanlı Seyir Terası'nda gün batımını izleyen insanlar"
@@ -94,6 +95,24 @@ Karataş hattında, deniz kenarında daha sakin bir durak arayanlar için kıyı
 
 Bu hat, özellikle sahil boyunca yürüyüp daha az bilinen kısa duraklar arayanlar için iyi olabilir. Ancak burası Bostanlı kadar “tek başına destinasyon” niteliğinde değil; daha çok rota üstünde keşfedilecek bir alternatif.
 
+## 8) Kadifekale
+
+Şehrin içinden, yüksekten ve tarihi bir çerçeveyle gün batımı izlemek isteyenler için Kadifekale ayrı bir seçenek. Pagos Tepesi’ndeki kalenin sur dibinden körfezin tamamı, Konak’tan Karşıyaka’ya uzanan şehir silueti ve batıdaki dağlar aynı karede görünüyor. Güneş körfezin ardına inerken şehrin ışıklarının yavaş yavaş yanması burada ayrı bir keyif.
+
+**Pratik not:** Konak’tan otobüs ya da taksiyle 15–20 dakikada çıkılıyor. Gün batımından 30–45 dakika önce orada olmak, hem iyi bir yer bulmayı hem ışığın değişimini izlemeyi sağlar. Tarihini ve ziyaret bilgisini [Kadifekale rehberimizde](/rehberler/kadifekale-nin-tarihi-ve-ziyaret-rehberi/) anlattık.
+
+## 9) Körfez vapuru
+
+Gün batımını bir noktadan değil, suyun üzerinden izlemek de mümkün. Gün batımı saatine denk gelen bir Konak–Karşıyaka ya da Alsancak–Karşıyaka seferinde, güvertede (ya da arka bölümde) yer alırsanız körfezi geçerken güneşin batışını hareket hâlinde izlersiniz. Hem ucuz hem şehirde yaşayanların bile sık yapmadığı bir deneyim. Sefer saatleri için [vapur saatleri](/toplu-tasima-saatleri/vapur/) sayfamıza bakabilirsiniz.
+
+## Şehir dışında gün batımı için
+
+Şehir merkezinin dışına çıkmaya vaktiniz varsa, güneşin doğrudan açık denize battığı noktalar başka bir deneyim sunuyor:
+
+- **Çeşme Kalesi ve marina çevresi:** Kalenin denize bakan tarafı ve marina kenarı, Çeşme’de akşam planına kolayca eklenen bir gün batımı noktası.
+- **Karaburun Yarımadası:** Yarımadanın batı kıyısında güneş, önünde ne kara ne şehir silueti olmadan doğrudan Ege’ye gömülüyor. Mordoğan ve Karaburun merkez arasındaki kıyı yolu bu manzaranın en güzel izlendiği hat; ulaşım için araç gerekiyor.
+- **Foça:** Eski Foça’daki küçük koylarda ve balıkçı teknelerinin bağlandığı kıyıda gün batımını beklemek, şehirden uzaklaşmanın en sade ödüllerinden biri. Foça için ayrıntılar [Eski Foça rehberimizde](/rehberler/eski-foca-da-bir-gun-nasil-gecirilir/).
+
 ## Hangi semtte hangi gün batımı daha iyi?
 
 ### Şehir merkezinde kalacaksanız
@@ -110,6 +129,7 @@ Bu hat, özellikle sahil boyunca yürüyüp daha az bilinen kısa duraklar araya
 
 ### Yüksekten panoramik manzara istiyorsanız
 - **Balçova Teleferik**
+- **Kadifekale**
 
 ## Kısa karşılaştırma
 
@@ -122,26 +142,29 @@ Bu hat, özellikle sahil boyunca yürüyüp daha az bilinen kısa duraklar araya
 | İnciraltı | Daha ferah kıyı deneyimi | Sakin akşamüstü isteyenler |
 | Balçova Teleferik | Panoramik açı | Yüksekten manzara sevenler |
 | Karataş kıyısı | Daha sakin sahil durakları | Alternatif rota arayanlar |
+| Kadifekale | Tarihi çerçeve, şehir silueti | Yüksekten şehir manzarası isteyenler |
+| Körfez vapuru | Hareket hâlinde manzara | Farklı bir deneyim arayanlar |
 
 ## Gitmeden önce işinizi kolaylaştıracak küçük notlar
 
-- Körfez hattındaki açık alanlarda en iyi deneyim için gün batımından biraz önce gitmek faydalı olur.
+- Körfez hattındaki açık alanlarda en iyi deneyim için gün batımından biraz önce gitmek faydalı olur. Güneşin ufka inmesi 30–40 dakikalık bir süreç; en güzel renkler çoğu zaman güneş battıktan sonraki 10–20 dakikada çıkıyor, hemen kalkmayın.
+- Fotoğraf için en iyi ışık, gün batımından önceki yaklaşık bir saatlik “altın saat”. Tamamen açık günler net bir silüet verir; parçalı bulutlu günlerde ise gökyüzü çok daha renkli olabilir.
 - Teleferik gibi işletme saatine bağlı yerlerde güncel saat kontrolü şarttır.
 - Kordon, Pasaport ve Bostanlı gibi noktalarda gün batımı sonrası yürüyüş ve yeme-içme planı yapmak kolaydır.
 
 ## SSS
 
-## İzmir’de gün batımı izlemek için en popüler yer neresi?
+### İzmir’de gün batımı izlemek için en popüler yer neresi?
 
 En bilinen noktalardan biri **Bostanlı Gün Batımı Terası**. Hem adıyla doğrudan bu deneyime odaklanıyor hem de yerel rehberlerde öne çıkıyor.
 
-## Gün batımı için Kordon mu, Bostanlı mı?
+### Gün batımı için Kordon mu, Bostanlı mı?
 
 Sahilde yürüyüş ve merkezde kalma açısından **Kordon**, tek noktada oturup gün batımına odaklanma açısından ise **Bostanlı** daha güçlü bir tercih olabilir. Bu, biraz da akşam planınıza bağlı.
 
-## Yüksekten gün batımı manzarası için nereye gidilir?
+### Yüksekten gün batımı manzarası için nereye gidilir?
 
-Bu amaçla en belirgin seçenekler **Tarihi Asansör** ve **Balçova Teleferik**. Biri şehir merkezinde tarihi bir seyir noktası, diğeri daha geniş panoramik açı sunan bir manzara hattıdır.
+Bu amaçla en belirgin seçenekler **Tarihi Asansör**, **Kadifekale** ve **Balçova Teleferik**. Asansör ve Kadifekale şehir merkezinde tarihi seyir noktaları, teleferik ise daha geniş panoramik açı sunan bir manzara hattıdır.
 
 ## Kaynaklar
 

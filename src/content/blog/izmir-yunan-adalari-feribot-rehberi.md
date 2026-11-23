@@ -4,9 +4,10 @@ seoTitle: "İzmir'den Yunan Adalarına Feribot Rehberi"
 seoDescription: "İzmir'den Yunan adalarına feribot seferleri, vize bilgileri, Çeşme-Sakız ve Ayvalık-Midilli hatları için kapsamlı pratik rehber."
 description: "Çeşme-Sakız, Ayvalık-Midilli ve diğer feribot hatları üzerinden Yunan adalarına nasıl gidilir? Vize, rezervasyon ve gezi rehberi."
 pubDate: 2026-08-02
+updatedDate: 2026-11-23
 category: "Rehber"
 readTime: "7 dk"
-tags: ["Feribot", "Yunan Adaları", "Çeşme Sakız", "Ayvalık Midilli", "Vize", "Seyahat"]
+tags: ["Feribot", "Yunan Adaları", "Çeşme Sakız", "Ayvalık Midilli", "Vize", "Seyahat", "Midilli", "Sakız"]
 featured: false
 image: "/images/blog/izmir-yunan-adalari-feribot-rehberi.webp"
 imageAlt: "Çeşme limanından Sakız Adası'na kalkan feribot"
@@ -33,13 +34,22 @@ Her iki hat da sezonluk olarak çalışıyor; yaz aylarında sefer sayısı art�
 
 Bilet rezervasyonu için Çeşme'deki lokal seyahat acentelerine ya da bazı dönemlerde online platformlara başvurabilirsiniz. Yoğun sezon öncesinde — özellikle uzun hafta sonları ve tatil dönemlerinde — biletler hızlı dolabiliyor. En az 2-3 gün önceden rezervasyon yaptırmak en güvenlisi.
 
-Fiyatlar yıllık olarak değişiyor; araçlı geçiş araçsız geçişe göre çok daha pahalı. Araç götürmeyecekseniz ada içinde taksi ya da kiraç araç kullanabilirsiniz.
+Fiyatlar yıllık olarak değişiyor; araçlı geçiş araçsız geçişe göre çok daha pahalı. Araç götürmeyecekseniz ada içinde taksi ya da kiralık araç kullanabilirsiniz.
 
 ### Sakız'da Ne Yapılır?
 
-Sakız, Ortaçağ'dan kalma köyleri, kristalize sakız kültürü ve sakin limanıyla küçük ama zengin bir ada. Pyrgi köyündeki geometrik cepheler dünyada benzeri olmayan bir görsel. Nea Moni Manastırı UNESCO korumasında. Emporios'un siyah çakıl sahili berraklığıyla hayranlık uyandırıyor.
+Sakız (Chios), ortaçağdan kalma köyleri, sakız (mastika) kültürü ve sakin limanıyla küçük ama zengin bir ada. Adaya adını veren sakız reçinesi yalnızca adanın güneyindeki “sakız köyleri”nde (Mastichochoria) yetişen ağaçlardan elde ediliyor; likörden tatlıya, kozmetikten sakıza kadar pek çok üründe kullanılıyor ve adanın en bilinen hediyeliği.
 
-Tek gün yetebilir mi? Evet, ama yetmez. Sakız'ı doğru görmek için bir gece kalmanızı öneririm.
+Öne çıkan duraklar:
+
+- **Chios kenti (Chora):** Feribotun yanaştığı liman çevresi, tavernalar, kale içi ve çarşı; günübirlik gelenlerin ana üssü.
+- **Pyrgi:** Evlerinin cepheleri siyah-beyaz geometrik desenlerle (xysta) süslenmiş, benzeri olmayan bir sakız köyü.
+- **Mesta:** Dar sokakları ve surlarla çevrili yapısıyla iyi korunmuş bir ortaçağ köyü.
+- **Nea Moni Manastırı:** 11. yüzyıla ait Bizans mozaikleriyle UNESCO Dünya Mirası Listesi’nde.
+- **Emporios (Mavra Volia):** Siyah volkanik çakıllı, berrak sulu bir koy.
+- **Volissos:** Adanın kuzeyinde, taş evleri ve kalesiyle sakin bir köy.
+
+Tek gün yetebilir mi? Liman çevresi ve bir-iki köy için evet; ama Sakız'ı doğru görmek için bir gece kalmanızı öneririz.
 
 ## Ayvalık – Midilli Hattı
 
@@ -49,7 +59,15 @@ Ayvalık, İzmir'e yaklaşık 2,5-3 saat uzaklıkta. İzmir'den Ayvalık'a otob�
 
 ### Midilli'de Ne Yapılır?
 
-Midilli (Lesbos), Ege'nin üçüncü büyük adası. Büyüklüğü nedeniyle tek günde gezmek mümkün değil. Molivos'un ortaçağ kalesi, Plomari'nin ouzo fabrikaları, Petra köyünün kayaya oyulmuş merdivenleri ve adanın zeytinlikleri ayrı ayrı ilgi çekici noktalar. En az iki gece planlayın.
+Midilli (Lesbos), yaklaşık 1.600 km²’lik yüzölçümüyle Ege'nin en büyük adalarından biri ve Ayvalık–Dikili kıyısının hemen karşısında. Büyüklüğü nedeniyle tek günde gezmek mümkün değil; en az iki gece planlayın.
+
+Öne çıkan duraklar:
+
+- **Midilli kenti (Mytilini):** Feribotun yanaştığı liman, büyük kale, çarşı ve deniz kenarındaki kafeler.
+- **Molivos (Mithymna):** Adanın kuzeyinde, tepesindeki ortaçağ kalesi ve denize inen taş evleriyle adanın en fotojenik kasabası.
+- **Petra:** Kayaya oyulmuş merdivenlerle çıkılan kilisesi ve uzun kumsalıyla Molivos’un hemen yanında bir sahil köyü.
+- **Plomari:** Güneyde, ünlü uzo (ouzo) üreticileriyle bilinen ve damıtımevlerinin gezilebildiği bir kasaba.
+- **Zeytinlikler:** Ada, Ege’nin en yoğun zeytinliklerine sahip; zeytinyağı ve yerel peynirler en iyi hediyelikler.
 
 ## Vize ve Pasaport Bilgileri
 
@@ -61,11 +79,11 @@ Türk vatandaşları Yunanistan'a — dolayısıyla Yunan adalarına — gitmek 
 
 ### Ada Geçişlerinde Kolaylık (Güncel Bilgiyi Doğrulayın)
 
-Son yıllarda bazı dönemlerde yakın adalara özel kolaylaştırılmış geçiş uygulamaları gündeme geldi. Ancak bu uygulamalar değişkenlik gösteriyor ve mevzuat güncelleniyor. Gitmeden önce mutlaka güncel resmi kaynaklardan bilgi alın.
+Yunanistan, 2024'ten bu yana Midilli ve Sakız'ın da aralarında bulunduğu bazı Doğu Ege adalarında Türk vatandaşlarına sezonluk "kapıda vize" (ekspres vize) uygulaması yürütüyor. Bu uygulama yalnızca belirli adalar ve belirli dönemler için geçerli, kısa süreli kalışlara izin veriyor ve koşulları her yıl yeniden belirleniyor. Uygulamanın o yıl devam edip etmediğini, hangi limanlarda geçerli olduğunu ve gereken belgeleri gitmeden mutlaka feribot firmasından ya da resmî kaynaklardan kontrol edin.
 
 ## Gümrük ve Alışveriş
 
-Yunan adaları AB üyesi. Türkiye'den giriş yapacaksanız bir miktar döviz (Euro) bulundurun. AB standartlarında ürün çeşitliliği, farklı markalar ve yerel Yunan ürünler alışveriş deneyimini çeşitlendiriyor.
+Yunan adaları AB üyesi ve para birimi Euro. Kart çoğu yerde geçiyor; ancak küçük taverna, kafe ve köy dükkânları için bir miktar nakit Euro bulundurun. AB standartlarında ürün çeşitliliği, farklı markalar ve yerel Yunan ürünler alışveriş deneyimini çeşitlendiriyor.
 
 **Dikkat:** Geri dönüşte Türk gümrüğünden geçerken beyan yükümlülükleriniz var. Belirli miktarın üzerinde getirilen mallar vergilendirilebiliyor.
 
@@ -73,7 +91,7 @@ Yunan adaları AB üyesi. Türkiye'den giriş yapacaksanız bir miktar döviz (E
 
 ### Günübirlik Gezi
 
-Sabah erken feribotla hareket edin. Limana indiğinizde önce güzergah belirleyin: Sakız için küçük araç kiralayabilir ya da mini turbaşına katılabilirsiniz. Akşam son seferle dönün — son sefer saatini önceden öğrenin ve bu saati atlamamaya özen gösterin.
+Sabah erken feribotla hareket edin. Limana indiğinizde önce güzergah belirleyin: Sakız için küçük araç kiralayabilir ya da günübirlik bir ada turuna katılabilirsiniz. Akşam son seferle dönün — son sefer saatini önceden öğrenin ve bu saati atlamamaya özen gösterin.
 
 ### Geceleme ile Gezi
 
@@ -81,7 +99,7 @@ Bir gece kalırsanız adayı çok daha rahat görürsünüz. Otel rezervasyonunu
 
 ### Dil
 
-Yunan adalarında İngilizce yaygın biçimde konuşuluyor. Temel Yunancan nezaket ifadeleri (teşekkürler: efharisto, günaydın: kalimera) takdir görüyor.
+Yunan adalarında İngilizce yaygın biçimde konuşuluyor. Temel Yunanca nezaket ifadeleri (teşekkürler: efharisto, günaydın: kalimera) takdir görüyor.
 
 ## Sonuç
 

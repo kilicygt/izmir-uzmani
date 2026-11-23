@@ -2,9 +2,10 @@
 title: "Eski Foça’da Bir Gün Nasıl Geçirilir?"
 description: "Eski Foça’da günübirlik gezi planı arayanlar için deniz, tarih ve kısa yürüyüş duraklarını bir araya getiren pratik bir rota."
 pubDate: 2026-11-02
+updatedDate: 2026-11-23
 category: "Gezi Rehberi"
 readTime: "6 dk"
-tags: ["İzmir", "Eski Foça", "Foça", "Gezi Rehberi"]
+tags: ["İzmir", "Eski Foça", "Foça", "Gezi Rehberi", "Deniz Foku", "Antik Kent"]
 featured: false
 image: "/images/blog/eski-foca-da-bir-gun-nasil-gecirilir.webp"
 imageAlt: "Eski Foça'nın havadan görünümü: tarihi kale surları, turkuaz deniz, limandaki tekneler ve kasaba"
@@ -18,6 +19,12 @@ Eski Foça’da bir günü verimli geçirmek için en iyi plan, sabah sahilde k�
 # Eski Foça bir günde gezilir mi?
 
 Evet. Eski Foça’nın merkezindeki ana duraklar birbirine yakın olduğu için bir günde keyifli bir rota çıkarılabilir. Özellikle liman çevresi, çarşı içi sokaklar, taş evlerin bulunduğu bölümler ve Beşkapılar Kalesi çevresi yürüyerek gezmeye uygundur. Foça’nın tarihi dokusu, doğal liman yapısı ve kıyı yerleşimi günübirlik planı kolaylaştırır.
+
+## Kısaca Foça’nın hikâyesi
+
+Foça, antik çağdaki adıyla **Phokaia**, İyon kentlerinden biriydi ve antik dünyanın en cesur denizci toplumlarından birine ev sahipliği yaptı. Phokaialılar Batı Akdeniz’de koloniler kurdu; bugünkü Fransa’nın Marsilya kenti (Massalia) bunların en ünlüsü. MÖ 6. yüzyılın ortasında Persler kenti kuşattığında halkın büyük kısmı gemilere binip batıya göç etti; antik kaynaklarda anlatılan bu toplu göç, Foça’nın hikâyesinin en çarpıcı bölümü.
+
+Antik kentin kalıntılarının büyük bölümü bugünkü yerleşimin altında kalıyor; bu yüzden Foça’da tarih, tek bir ören yerinden çok surlar, kale ve yerleşimin dokusu üzerinden okunuyor. İlçe bugün Cittaslow (Yavaş Şehir) ağının da üyesi; zincir mağazaların az, küçük esnafın ve balıkçılığın baskın olduğu yapısı da bunu yansıtıyor.
 
 ## Bu rota kimler için uygun?
 
@@ -53,9 +60,11 @@ Burayı gezi planına eklemek için iyi nedenler:
 
 Bu noktada beklentiyi doğru kurmak gerekir: Eski Foça’da gezi deneyimi tek tek çok sayıda “anıt gezmekten” çok, tarihî doku içinde dolaşma hissine dayanır.
 
+Yürürken Foça’nın iki limanını da görmeyi unutmayın: **Küçükdeniz**, balıkçı teknelerinin, taş evlerin ve kıyı lokantalarının sıralandığı daha dar ve atmosferli koy; **Büyükdeniz** ise daha geniş, daha sakin ve yerleşimin öbür yüzünü gösteren liman. İkisinin arası kısa bir yürüyüş; Foça’nın karakterini en iyi bu iki kıyı arasında dolaşırken hissedersiniz.
+
 ## 3. Öğle: Çarşı içinde yemek molası
 
-Öğle saatlerinde merkez çarşı ve sahil hattına dönmek en pratik seçimdir. Eski Foça’da yeme-içme düzeni büyük ölçüde kıyı ve merkez sokaklar etrafında toplanır. Balık restoranları Foça ile güçlü biçimde özdeşleşse de günübirlik gezi için uzun bir yemek yerine kısa bir mola da tercih edilebilir. Kaymakamlık ve resmî tanıtım sayfalarında da Küçükdeniz kıyısındaki balıkçı lokantaları özellikle anılır.
+Öğle saatlerinde merkez çarşı ve sahil hattına dönmek en pratik seçimdir. Eski Foça’da yeme-içme düzeni büyük ölçüde kıyı ve merkez sokaklar etrafında toplanır. Balık restoranları Foça ile güçlü biçimde özdeşleşse de günübirlik gezi için uzun bir yemek yerine kısa bir mola da tercih edilebilir. Kaymakamlık ve resmî tanıtım sayfalarında da Küçükdeniz kıyısındaki balıkçı lokantaları özellikle anılır. Menüde genellikle mevsimin balığı, çipura, levrek, kalamar ve Ege mezeleri bulunur; fiyatı sormadan sipariş vermemek, özellikle tartıyla satılan balıkta iyi bir alışkanlık.
 
 Öğle için iki mantıklı seçenek var:
 
@@ -72,6 +81,8 @@ Bu noktada beklentiyi doğru kurmak gerekir: Eski Foça’da gezi deneyimi tek t
 ## Seçenek 1: Tekne turu ile koylar ve adalar hattı
 
 Eski Foça’da günü farklılaştıran en güçlü seçeneklerden biri günübirlik tekne turudur. Resmî İzmir tanıtım içeriklerinde Foça’da tekne turlarıyla ada ve koyların gezilebildiği, şanslı olunursa Siren Kayalıkları çevresinde koruma altındaki Akdeniz foklarının uzaktan görülebileceği belirtilir.
+
+Foçaları özel kılan şey nadirlikleri: **Akdeniz foku** (Monachus monachus), dünyada nesli en çok tehlike altındaki deniz memelilerinden biri ve Foça kıyılarındaki deniz mağaraları bu hayvanların barınma ve üreme alanları arasında. Bu nedenle Foça ve çevresi Özel Çevre Koruma Bölgesi ilan edilmiş durumda. Turda fok görmek bir garanti değil, şanslı bir karşılaşma; görürseniz de uzaktan izlemek ve rahatsız etmemek gerekiyor.
 
 Burada önemli nokta şu: Siren Kayalıkları ve Orak Adası çevresi hassas koruma alanlarıyla ilişkilidir. Resmî kaynaklarda, fokların yoğun görüldüğü bölgelerde bazı faaliyetlere sınırlama getirildiği açıkça belirtilir. Bu yüzden tekne turu düşünüyorsanız, rotayı ve kuralları turu düzenleyen işletmeden net biçimde teyit etmek gerekir.
 
@@ -102,6 +113,14 @@ Bu liste, “müze müze gezi” mantığından çok, Foça’nın tarihî ve k�
 # Akşam için en iyi plan
 
 Eski Foça’da günü kapatmanın en mantıklı yolu yeniden sahile dönmektir. Merkez, gün batımı saatinde ikinci kez canlanan bir yerleşimdir; bu yüzden akşam programını ayrıca uzak bir noktaya taşımaya çoğu zaman gerek kalmaz. Sahilde kısa bir yürüyüş, hafif bir akşam yemeği ya da sadece deniz kenarında oturmak bir günlük planı tamamlamak için yeterlidir.
+
+# Eski Foça’ya nasıl gidilir?
+
+Eski Foça, İzmir merkeze yaklaşık 70 kilometre uzaklıkta; araçla Menemen ve Aliağa yönü üzerinden yaklaşık bir saat sürüyor. Toplu taşımayla gitmek isteyenler için İzmir’den Foça’ya düzenli otobüs seferleri bulunuyor; güncel hat ve saatleri yola çıkmadan kontrol etmek gerekir.
+
+# Ne zaman gidilmeli?
+
+Temmuz–ağustos Foça’nın en kalabalık dönemi. **Haziran başı ve eylül** hem deniz hem kalabalık açısından en iyi zaman: deniz ılık, koylar sakin, pansiyonlarda yer bulmak kolay. İlkbaharda tekne turları henüz başlamamış olabilir ama sokaklarda yürümek ve sahilde oturmak için hava çok uygun.
 
 # Bir günde Eski Foça gezerken dikkat edilmesi gerekenler
 
