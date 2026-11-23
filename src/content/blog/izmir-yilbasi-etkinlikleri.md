@@ -6,7 +6,7 @@ category: "Şehir Rehberi"
 readTime: "8 dk"
 tags: ["İzmir", "Yılbaşı", "Noel Pazarı", "Etkinlik", "Konser", "Aralık"]
 featured: false
-image: "/images/blog/izmir-yilbasi-etkinlikleri.webp"
+image: "/images/blog/izmir-yilbasi-etkinlikleri-kapak.webp"
 imageAlt: "Havai fişekler ve yılbaşı ışıkları altında İzmir Saat Kulesi illüstrasyonu"
 seoTitle: "İzmir Yılbaşı Etkinlikleri 2027: Noel Pazarları ve Konserler"
 seoDescription: "İzmir'de yılbaşı 2027: Christmas Town, Hilltown ve Konak yılbaşı pazarları, kilise Noel konserleri, 31 Aralık gecesi konser ve galaları, tarih ve fiyatlarla."
