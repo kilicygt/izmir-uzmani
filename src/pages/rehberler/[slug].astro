@@ -25,6 +25,7 @@ const related = [...sameTheme, ...others.filter(p => !sameTheme.includes(p))].sl
 
 const toc = headings.filter(h => h.depth === 2);
 const pubDateStr = post.data.pubDate.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+const updatedDateStr = post.data.updatedDate?.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 const pageUrl = new URL(`/rehberler/${post.slug}/`, Astro.site).href;
 
 const jsonLd = {
@@ -36,6 +37,7 @@ const jsonLd = {
       description: post.data.seoDescription ?? post.data.description,
       image: new URL(img.replace(/\?.*$/, ''), Astro.site).href,
       datePublished: post.data.pubDate.toISOString(),
+      dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
       inLanguage: 'tr-TR',
       mainEntityOfPage: pageUrl,
       author: { '@type': 'Organization', name: 'İzmir Uzmanı', url: 'https://www.izmiruzmani.com/' },
@@ -65,6 +67,7 @@ const jsonLd = {
   image={img}
   imageAlt={post.data.imageAlt || post.data.title}
   published={post.data.pubDate.toISOString()}
+  modified={post.data.updatedDate?.toISOString()}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
 
@@ -86,7 +89,7 @@ const jsonLd = {
           İzmir Uzmanı
         </span>
         <span class="sep"></span>
-        <span>{pubDateStr}</span>
+        <span>{updatedDateStr ? `Güncellendi: ${updatedDateStr}` : pubDateStr}</span>
         <span class="sep"></span>
         <span>{post.data.readTime} okuma</span>
       </div>

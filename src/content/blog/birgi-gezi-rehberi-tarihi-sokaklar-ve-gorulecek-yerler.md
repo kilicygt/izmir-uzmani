@@ -2,9 +2,10 @@
 title: "Birgi Gezi Rehberi: Tarihi Sokaklar ve Görülecek Yerler"
 description: "Birgi’de gezilecek yerleri, tarihi sokaklarda nasıl rota kurabileceğinizi ve ilk kez gidecekler için öne çıkan durakları derledik."
 pubDate: 2026-11-08
+updatedDate: 2026-11-23
 category: "Gezi Rehberi"
 readTime: "6 dk"
-tags: ["İzmir", "Birgi", "Ödemiş", "Gezi Rehberi"]
+tags: ["İzmir", "Birgi", "Ödemiş", "Gezi Rehberi", "Bozdağ", "İç Ege"]
 featured: false
 image: "/images/blog/birgi-gezi-rehberi-tarihi-sokaklar-ve-gorulecek-yerler.webp"
 imageAlt: "Birgi'de cumbalı tarihi konaklar, ahşap evler ve arkada cami minaresi"
@@ -23,7 +24,7 @@ Birgi’nin farkı, tek bir anıt yapıyla değil, bütüncül tarihi doku ile �
 
 ### 1) Çakırağa Konağı
 
-Birgi’nin en bilinen yapısı. 19. yüzyıla tarihlenen konak, ahşap işçiliği ve kalem işleriyle öne çıkıyor. Kültür ve Turizm Bakanlığı kaynaklarında Ege Bölgesi Osmanlı sivil mimarisinin dikkat çekici örneklerinden biri olarak anılıyor. Birgi’ye ilk kez gidiyorsanız, rotaya burada başlamak en pratik seçeneklerden biri.
+Birgi’nin en bilinen yapısı. 19. yüzyıla tarihlenen konak, ahşap işçiliği ve kalem işleriyle öne çıkıyor. Kültür ve Turizm Bakanlığı kaynaklarında Ege Bölgesi Osmanlı sivil mimarisinin dikkat çekici örneklerinden biri olarak anılıyor. İç mekânda duvarları süsleyen kalem işi manzara resimleri, ahşap tavanlar, dolap ve sedir düzeni, dönemin varlıklı bir ailesinin yaşamını neredeyse bozulmadan gösteriyor. Birgi’ye ilk kez gidiyorsanız, rotaya burada başlamak en pratik seçeneklerden biri.
 
 ### 2) Aydınoğlu Mehmet Bey Camii (Ulu Cami)
 
@@ -73,6 +74,26 @@ Birgi, antik dönemden Osmanlı’ya uzanan katmanlar taşısa da bugünkü gör
 - Tarihi evler ve sokak dokusunu sevenler
 - Beylikler dönemi yapılarıyla ilgilenenler
 - Ödemiş çevresini daha kapsamlı gezmek isteyenler
+
+## Birgi’ye nasıl gidilir?
+
+Birgi, İzmir merkeze yaklaşık 110 kilometre uzaklıkta ve Ödemiş’in yaklaşık 10 kilometre doğusunda, Bozdağ’ın eteğinde bulunuyor. Araçla Torbalı–Bayındır ya da Tire üzerinden yaklaşık 1,5 saat sürüyor. Toplu taşımayla önce Ödemiş’e (otobüs ya da Basmane’den kalkan bölgesel trenle) ulaşıp oradan minibüs ya da taksiyle yaklaşık 15–20 dakikada Birgi’ye geçmek mümkün; tren ve minibüs saatlerini yola çıkmadan kontrol etmek gerekir.
+
+## Ne zaman gidilmeli?
+
+- **İlkbahar (nisan–mayıs):** Küçük Menderes Ovası yeşil, hava yürüyüşe çok uygun.
+- **Sonbahar (ekim–kasım):** Bozdağ’ın kestane hasadı ve yaprak renkleriyle Birgi ve çevresi en güzel hâlinde.
+- **Yaz:** Ova sıcak olur; Birgi gezisini sabaha alıp öğleden sonra serinlemek için Bozdağ’a çıkmak iyi bir kombinasyon.
+- **Kış:** Kar yağdığında Bozdağ’da kayak, Birgi’de ise kalabalıksız bir gezi mümkün.
+
+## Birgi’yi Ödemiş ve Bozdağ ile birleştirin
+
+Birgi’ye kadar gitmişken günü çevresiyle tamamlamak kolay:
+
+- **Ödemiş merkez:** Küçük Menderes Vadisi’nin merkezi olan ilçede çarşı, haftalık pazar ve çevreden çıkan arkeolojik ve etnografik eserlerin sergilendiği Ödemiş Müzesi görülebilir. Büyük turizm baskısından uzak, yerel ritmiyle yaşayan bir ilçe.
+- **Bozdağ:** Birgi’nin hemen üstündeki dağ, yazın serin yayla havası ve kestane–meşe ormanlarındaki yürüyüşleriyle, kışın da İzmir’in tek kayak merkezi olan Bozdağ Kayak Merkezi’yle biliniyor. Yol üstündeki Gölcük Gölü de kısa bir mola için güzel bir durak.
+
+İzmir’in iç kesimlerinde benzer bir gün için [Tire Salı Pazarı rehberimize](/rehberler/tire-sali-pazari-ve-tarihi-doku/) de göz atabilirsiniz.
 
 ## Birgi gezisinde ne beklemeli, ne beklememeli?
 

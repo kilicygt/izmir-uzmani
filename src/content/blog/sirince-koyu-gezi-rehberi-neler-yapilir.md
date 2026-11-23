@@ -2,9 +2,10 @@
 title: "Şirince Köyü Gezi Rehberi: Neler Yapılır?"
 description: "Şirince’de gezilecek yerler, kısa rota önerisi, ulaşım seçenekleri ve dikkat edilmesi gerekenler bu rehberde."
 pubDate: 2026-11-05
+updatedDate: 2026-11-23
 category: "Gezi Rehberi"
 readTime: "7 dk"
-tags: ["İzmir", "Şirince", "Selçuk", "Gezi Rehberi"]
+tags: ["İzmir", "Şirince", "Selçuk", "Gezi Rehberi", "Meyve Şarabı", "Ege Köyü"]
 featured: false
 image: "/images/blog/sirince-koyu-gezi-rehberi-neler-yapilir.webp"
 imageAlt: "Şirince köyünün kırmızı kiremitli evleri, minaresi ve arkadaki tepeler"
@@ -19,7 +20,11 @@ imageSearchQuery: "Sirince village Izmir"
 
 Şirince, Selçuk’un kuzeyinde, vadinin içine kurulmuş eski bir mübadele köyü. Kaynaklarda köyün geçmişte Rumların yaşadığı bir yerleşim olduğu, 1923 nüfus mübadelesinden sonra bugünkü sosyal yapısına kavuştuğu belirtiliyor. Bugün burayı özel kılan şey yalnızca tek tek yapılar değil; **beyaz cepheli evler, eğimli sokaklar, zeytin ve meyve bahçeleriyle birlikte korunan bütünlüklü doku**.
 
-Köyün “Çirkince”den “Şirince”ye uzanan adının hikâyesini, Rum mirasını ve kiliselerin geçmişini merak ediyorsanız [Şirince Köyü: Tarihi, Kültürü ve Gezi Rehberi](/rehberler/sirince-koyu-rehberi/) yazımızda daha ayrıntılı bulabilirsiniz.
+### Çirkince’den Şirince’ye: adın hikâyesi
+
+Köyün adıyla ilgili en çok anlatılan rivayet şu: Eski sakinler, buraya başkaları gelip yerleşmesin diye köye “Çirkince” demiş. Ad, Cumhuriyet’in ilk yıllarında köyün güzelliğine yakışır biçimde “Şirince” olarak değiştirildi. Hikâyenin ne kadarının gerçek olduğu bilinmiyor; ama köyde size mutlaka anlatılacak.
+
+Mübadeleden önce köyde kalabalık bir Ortodoks Rum topluluğu yaşıyordu. Bugün ayakta kalan kiliseler ve iki katlı taş evler o dönemin izleri. Mübadeleyle gelen yeni sakinler bağcılığı ve bahçe kültürünü sürdürdü; köyün bugünkü meyve şarabı ve zeytinyağı geleneği de bu süreklilikten besleniyor. Bugün birkaç yüz kişinin yaşadığı köy, yaz sezonunda ve hafta sonlarında günde binlerce ziyaretçi ağırlıyor.
 
 ## Şirince gezilecek yerler
 
@@ -55,11 +60,15 @@ Köyde öne çıkan bir diğer dini-tarihi yapı da **Vaftizci Yahya Kilisesi**.
 
 ### Kahvaltı veya kısa yemek molası verin
 
-Selçuk Belediyesi’nin tanıtımında Şirince özellikle **köy kahvaltısı** ile anılıyor. Bu yüzden sabah saatlerinde gelen ziyaretçiler için kahvaltı, öğleden sonra gelenler için ise kahve-tatlı veya kısa yemek molası mantıklı bir tercih.
+Selçuk Belediyesi’nin tanıtımında Şirince özellikle **köy kahvaltısı** ile anılıyor. Bu yüzden sabah saatlerinde gelen ziyaretçiler için kahvaltı, öğleden sonra gelenler için ise kahve-tatlı veya kısa yemek molası mantıklı bir tercih. Köydeki küçük lokantalarda Ege mutfağının sade yüzü hâkim: zeytinyağlılar, otlu yemekler, gözleme ve ev böreği. Vadiye bakan teraslı mekânlar, özellikle kahvaltıda, manzarayla birlikte daha keyifli.
+
+### Meyve şaraplarını tadın
+
+Şirince, Türkiye’de meyve şarabıyla özdeşleşmiş bir köy. Çilek, vişne, böğürtlen, ayva, nar, şeftali gibi meyvelerden yapılan şaraplar çarşıdaki dükkânların ana ürünü ve çoğu dükkânda tadım yapılabiliyor. Kalite üreticiden üreticiye ciddi biçimde değişiyor: bazıları geleneksel yöntemle, bazıları daha endüstriyel üretiyor. Almadan önce birkaç dükkânda tatmak ve şekerli tatlı şaraplarla daha sek olanlar arasındaki farkı denemek en iyisi.
 
 ### Yerel ürün dükkânlarına göz atın
 
-Köy çarşısı, Şirince deneyiminin önemli parçası. Ancak burada en iyi yaklaşım, “her dükkânda aynı şeyi görmek” yerine ürünleri karşılaştırarak gezmek. Satın alma düşünüyorsanız, fiyat ve içerik bilgilerini dükkân bazında ayrı sormakta fayda var.
+Köy çarşısı, Şirince deneyiminin önemli parçası. Zeytinyağı, reçeller, kuru meyveler, sabunlar, el işi tekstil ve seramikler en sık görülen ürünler. Burada en iyi yaklaşım, “her dükkânda aynı şeyi görmek” yerine ürünleri karşılaştırarak gezmek. Satın alma düşünüyorsanız, fiyat ve içerik bilgilerini dükkân bazında ayrı sormakta fayda var.
 
 ### Yakın çevreyle birlikte plan yapın
 
@@ -87,6 +96,10 @@ Bu plan, Şirince’nin yapısına uygun çünkü köy genelde **saatlerce müze
 Şirince, Selçuk ilçe merkezine yaklaşık 8 kilometre mesafede. Resmî turizm ve belediye kaynakları da bu uzaklığı doğruluyor. İzmir’den toplu taşıma ile gitmek isteyenler için ana iskelet genelde **önce Selçuk’a ulaşmak**, ardından Şirince yönüne devam etmek şeklinde kuruluyor. İZBAN’ın Aliağa-Selçuk hattında işletme yaptığı ve Selçuk’un hat üzerinde yer aldığı resmî İZBAN bilgisinde görülüyor.
 
 Selçuk tarafında ESHOT durak bilgilerinde **Şirince Yolu** ve **Selçuk Torbalı Aktarma Merkezi** gibi noktalar görünüyor; ancak hat numarası, saat ve sefer sıklığı değişebildiği için bunları burada sabit bilgi gibi vermek doğru olmaz. Güncel plan için ESHOT’un resmî saat ekranı ve gerekiyorsa yerel minibüs/dolmuş bilgileri kontrol edilmeli. TUHİM belgelerinde Selçuk-Şirince güzergâhında faaliyet gösteren araç tarifesine ilişkin kayıt da bulunuyor.
+
+## Şirince’ye ne zaman gidilmeli?
+
+İlkbahar ve sonbahar Şirince için en iyi dönem: bahçeler yeşil, hava yürüyüşe uygun. Temmuz–ağustos ile bayram ve hafta sonlarında dar sokaklar çok kalabalıklaşıyor. Hafta içi sabah erken (09.00–11.00 arası) gelip öğle kalabalığı başlamadan çarşıyı gezmek, köyü en sakin hâliyle görmenin yolu. Kışın köy sessizleşir; bazı dükkân ve pansiyonlar kapalı olabilir ama kalabalıksız bir gezi için iyi bir seçenek.
 
 ## Gitmeden önce bilinmesi gerekenler
 

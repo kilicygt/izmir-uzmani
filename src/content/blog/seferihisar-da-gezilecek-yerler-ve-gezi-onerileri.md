@@ -2,9 +2,10 @@
 title: "Seferihisar’da Gezilecek Yerler ve Gezi Önerileri"
 description: "Sığacık’tan Teos’a, Akkum’dan Ulamış’a uzanan bu rehberde Seferihisar’da gezilecek yerleri ve rota önerilerini pratik biçimde bulabilirsiniz."
 pubDate: 2026-11-12
+updatedDate: 2026-11-23
 category: "Gezi Rehberi"
 readTime: "7 dk"
-tags: ["İzmir", "Seferihisar", "Sığacık", "Teos"]
+tags: ["İzmir", "Seferihisar", "Sığacık", "Teos", "Doğanbey", "Yavaş Şehir"]
 featured: false
 image: "/images/blog/seferihisar-da-gezilecek-yerler-ve-gezi-onerileri.webp"
 imageAlt: "Sığacık limanında balıkçı tekneleri ve arkada kale surları"
@@ -19,6 +20,10 @@ Seferihisar gezilecek yerler denince ilk bakılması gereken hat; **Sığacık, 
 
 Seferihisar, günübirlik kaçamakla hafta sonu planı arasında iyi bir denge kuran ilçelerden biri. İlçenin öne çıkan tarafı sadece deniz değil; **antik kent, kale içi sokaklar, marina çevresi, kıyı durakları ve daha yerel bir köy dokusu** aynı bölgede toplanıyor. Resmî tanıtım kaynaklarında da Sığacık, Teos ve kıyı güzergâhı ilçenin temel ziyaret alanları arasında gösteriliyor.
 
+### Türkiye’nin ilk “yavaş şehri”
+
+Seferihisar, 2009’da Türkiye’den Cittaslow (Yavaş Şehir) ağına katılan ilk ilçe oldu. 1999’da İtalya’da başlayan bu ağ; yerel üretimi, geleneksel yaşamı, doğal çevreyi ve kentsel özgünlüğü korumayı hedefliyor ve üyelik belirli kıstaslara göre denetleniyor. İlçede bunun izleri gündelik hayatta görülüyor: yerel üreticiyi öne çıkaran pazarlar, küçük esnaf ve tarımsal üretime verilen önem. Seferihisar’ı “acele etmeden” gezmenin önerilmesinin nedeni de bu.
+
 ## Seferihisar’da gezilecek başlıca yerler
 
 ### 1) Sığacık
@@ -32,7 +37,7 @@ Kale, Seferihisar gezisinin en karakteristik duraklarından biri. Kale içi soka
 ### 3) Teos Antik Kenti
 Seferihisar’daki en güçlü tarih durağı Teos. Kültür ve Turizm Bakanlığı kaynaklarına göre Sığacık Mahallesi’ndeki Teos, **12 İon kentinden biri** ve antik dönemde önemli bir liman kenti. İzmir Büyükşehir Belediyesi kaynaklarında da kentin sanat ve oyuncular birliğiyle ilişkilendirilen tarihî kimliği özellikle vurgulanıyor.
 
-Bugün Teos’ta görülebilen alanlar arasında sur izleri, liman çevresi, agora kalıntıları ve geniş bir arkeolojik peyzaj var. Tek bir anıtsal yapıdan çok, **alanın bütünü** etkileyici. Bu yüzden Teos’u hızlıca “uğrayıp çıkılacak” bir nokta gibi değil, yürüyerek gezilecek bir durak olarak planlamak daha doğru.
+Bugün Teos’ta görülebilen alanlar arasında Dionysos Tapınağı kalıntıları, tiyatro, sur izleri, liman çevresi, agora kalıntıları ve zeytinlikler arasına yayılan geniş bir arkeolojik peyzaj var. Büyük antik kentler kadar kalabalık olmaması, özellikle sabah saatlerinde alanı çok daha sakin gezmeyi sağlıyor. Tek bir anıtsal yapıdan çok, **alanın bütünü** etkileyici. Bu yüzden Teos’u hızlıca “uğrayıp çıkılacak” bir nokta gibi değil, yürüyerek gezilecek bir durak olarak planlamak daha doğru.
 
 ### 4) Akkum Plajı
 Deniz molası eklemek isteyenler için en bilinen duraklardan biri Akkum. İzmir Büyükşehir Belediyesi’ne göre Akkum, Sığacık bölgesinde yer alıyor; berrak denizi ve sörfe uygun yapısıyla biliniyor. Üstelik Teos’a yürüyüş mesafesiyle ilişkilendirilen nadir kıyı noktalarından biri.
@@ -45,15 +50,18 @@ Yaz döneminde tarih + deniz kombinasyonu yapmak isteyenler için en mantıklı 
 ### 5) Akarca sahili
 Daha geniş kıyı hissi arayanlar için Akarca değerlendirilebilir. Seferihisar Belediyesi’nin 2026 sezonu Mavi Bayrak açıklamasında Akarca Halk Plajı ilçenin öne çıkan plajları arasında yer alıyor. Sığacık kadar turistik yoğunluk istemeyenler için daha rahat bir sahil alternatifi olabilir.
 
-### 6) Doğanbey kıyı hattı
-Seferihisar’ın daha sakin, daha az merkezî hissedilen tarafını görmek isteyenler için Doğanbey çevresi dikkate değer. Belediyenin Mavi Bayrak duyurusunda Doğanbey Sakız Ağacı Mevkii Halk Plajı da 2026 sezonunda öne çıkan alanlar arasında sayılıyor. Özellikle kalabalıktan uzak deniz planı yapanlar için alternatif oluşturur.
+### 6) Doğanbey köyü ve kıyı hattı
+Seferihisar’ın daha sakin, daha az merkezî hissedilen tarafını görmek isteyenler için Doğanbey çevresi dikkate değer. İki ayrı yüzü var:
+
+- **Eski Doğanbey köyü:** Mübadeleden önce Rumların yaşadığı, sonrasında uzun yıllar büyük ölçüde boş kalan taş evli köy, son yıllarda evlerin restore edilmesiyle yeniden canlandı. Restore edilen taş evlerin bir kısmı bugün pansiyon, kafe ya da atölye olarak kullanılıyor. Köyde yapılacaklar sınırlı; asıl keyif dar sokaklarda yürümek, bir kafede oturmak ve çevredeki tepelerden manzaraya bakmak.
+- **Doğanbey kıyıları:** Belediyenin Mavi Bayrak duyurusunda Doğanbey Sakız Ağacı Mevkii Halk Plajı da 2026 sezonunda öne çıkan alanlar arasında sayılıyor. Özellikle kalabalıktan uzak deniz planı yapanlar için alternatif oluşturur.
 
 ### 7) Ulamış
 Seferihisar ilçe dokusunu sadece sahilden ibaret görmek istemeyenler için Ulamış farklı bir durak. Resmî il kültür sayfalarında Ulamış Köyü Hamamı gibi tarihî unsurlar anılıyor; bölge genel olarak daha yerel, daha iç kesim karakteri taşıyor. Köy havası, kısa araç rotası ve farklı bir Seferihisar katmanı görmek isteyenler için anlamlı olabilir.
 
 ## İlk kez gidecekler için kısa rota önerileri
 
-## 1 günde Seferihisar rotası
+### 1 günde Seferihisar rotası
 Zamanınız sınırlıysa en verimli plan şu olur:
 
 1. Sabah Seferihisar merkezden Sığacık’a geçin.  
@@ -64,7 +72,7 @@ Zamanınız sınırlıysa en verimli plan şu olur:
 
 Bu rota, ilçenin en güçlü üç temasını aynı gün içinde toplar: **tarih, sahil, yavaş tempo**.
 
-## Hafta sonu için daha dengeli plan
+### Hafta sonu için daha dengeli plan
 İki güne yaymak isterseniz:
 
 **1. gün**
@@ -82,6 +90,14 @@ Bu plan, tek bir noktaya sıkışmadan ilçenin farklı yüzlerini görmenizi sa
 ## Seferihisar’da deniz mi, tarih mi daha baskın?
 
 Bu sorunun cevabı gezi tarzınıza bağlı. Eğer ilk kez gidiyorsanız, Seferihisar’ı sadece “plaj ilçesi” gibi okumak eksik kalır. İlçeyi farklılaştıran asıl şey, **Sığacık ve Teos’un kıyı ile birleşmesi**. Sadece yüzmek için gidiyorsanız Akarca, Akkum ve çevre sahiller yeterli olabilir. Ama Seferihisar’ı neden bu kadar çok kişinin tekrar ziyaret ettiğini anlamak istiyorsanız, tarih ve mahalle dokusunu da mutlaka plana ekleyin.
+
+## Seferihisar’a ne zaman gidilmeli?
+
+İlkbahar ve sonbahar en rahat mevsimler. Yazın Sığacık ve plajlar kalabalıklaşıyor; Doğanbey ve iç kesimler daha sakin kalıyor. Kasım–aralık ise ayrı bir dönem: Seferihisar’ın ünlü mandalinasının hasadı bu aylarda yapılıyor, pazar tezgâhları mandalinayla doluyor ve aynı dönemde zeytin hasadı da sürüyor. Bölgenin zeytinyağını, salamura zeytinini ve mandalinasını küçük üreticilerden doğrudan almak için en iyi zaman bu. Kışın bölge sessizleşir ama hayat durmaz; kalabalıksız bir gezi için kış da iyi bir seçenek.
+
+## Seferihisar’a nasıl gidilir?
+
+İzmir merkezden araçla yaklaşık 45–60 dakika sürüyor. Toplu taşımayla gitmek isteyenler için Seferihisar ve Sığacık yönüne ESHOT ve yerel minibüs bağlantıları var; Doğanbey gibi daha uzak noktaları rahat gezmek içinse araç büyük avantaj. Sığacık için ayrıntılı ulaşım seçeneklerini [Sığacık’a toplu taşımayla nasıl gidilir](/rehberler/sigacik-a-toplu-tasimayla-nasil-gidilir/) yazımızda anlattık.
 
 ## Pratik bilgiler
 
