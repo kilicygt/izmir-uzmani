@@ -1,14 +1,70 @@
 {
   "date": "2026-11-24",
-  "generatedAt": "2026-11-24T01:44:29.772Z",
+  "generatedAt": "2026-11-24T14:56:28.135Z",
   "weather": {
     "code": 2,
     "max": 18,
-    "min": 5,
+    "min": 6,
     "rain": 28,
-    "wind": 14
+    "wind": 16
   },
   "izbb": [
+    {
+      "title": "İzmir Bridal Week kapılarını açtı: İzmir üretecek, Türkiye kazanacak",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi ev sahipliğinde, İZFAŞ tarafından 24-26 Kasım tarihlerinde ilk kez düzenlenen İzmir Bridal Week, gelinlik, damatlık ve abiye giyim sektörünü uluslararası alıcılarla buluşturuyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-bridal-week-kapilarini-acti-izmir-uretecek-turkiye-kazanacak/59881/156",
+      "id": 59881
+    },
+    {
+      "title": "Yuvamız İzmir’de Öğretmenler Günü sürprizi",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi’nin Yuvamız İzmir Sosyal Hizmet Etkinlik Merkezleri’nde görev yapan öğretmenlere, 24 Kasım Öğretmenler Günü kapsamında hediye setleri verildi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/yuvamiz-izmir-de-ogretmenler-gunu-surprizi/59880/156",
+      "id": 59880
+    },
+    {
+      "title": "Ayrımcılığa karşı sinemayla farkındalık",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi’nin 25 Kasım Kadına Yönelik Şiddete Karşı Uluslararası Mücadele Günü etkinlikleri kapsamında düzenlediği Ayrımcılığa Karşı Sinema Günleri başladı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/ayrimciliga-karsi-sinemayla-farkindalik/59879/156",
+      "id": 59879
+    },
+    {
+      "title": "Başkan Tugay: 2027 yılı İzmir tarihine geçecek",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi’nin 2027 Mali Yılı Bütçesi, 20 yıl aradan sonra ilk kez oy birliğiyle kabul edildi. Başkan Dr. Cemil Tugay, bütçenin yüzde 40’ının yatırımlara ayrıldığını belirterek, “Bu bütçe aslanlar gibi gerçekleşecek” dedi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/baskan-tugay-2027-yili-izmir-tarihine-gececek/59878/156",
+      "id": 59878
+    },
+    {
+      "title": "En büyük pay ulaşıma",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi’nin 183,5 milyar TL’lik 2027 bütçesinde yatırımların payı yüzde 40’a yükseldi. Her 100 liranın yaklaşık 40 lirası yatırıma ayrıldı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/en-buyuk-pay-ulasima/59877/156",
+      "id": 59877
+    },
+    {
+      "title": "Büyükşehir’den Bostanlı’ya kış sezonu için buz pisti",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi, Bostanlı’da bulunan tenis kortlarından ikisini aralık, ocak ve şubat aylarında geçici buz pistine dönüştürecek. Böylece çocuklar, gençler ve aileler için alternatif bir sportif ve sosyal aktivite alanı oluşturulacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/buyuksehir-den-bostanli-ya-kis-sezonu-icin-buz-pisti/59876/156",
+      "id": 59876
+    },
+    {
+      "title": "İzmir’den dünyaya uzanan “Doğal Yaşam” karesi",
+      "date": "2026-11-24",
+      "summary": "İzmir Doğal Yaşam Parkı, bu kez bir fotoğraf karesiyle dünya sahnesine çıktı. Park Müdürü Biyolog Serkan Eğrilmez’in çektiği “Yansıma” adlı fotoğraf, 820 bini aşkın eserin yarıştığı Huawei XMAGE Awards 2026’da dünyanın en iyi 100 fotoğrafı arasına girdi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-den-dunyaya-uzanan-dogal-yasam-karesi/59875/156",
+      "id": 59875
+    },
+    {
+      "title": "Kuşakları buluşturan Öğretmenler Günü kutlaması",
+      "date": "2026-11-24",
+      "summary": "İzmir Büyükşehir Belediyesi, 24 Kasım Öğretmenler Günü kapsamında Zübeyde Hanım Huzurevi’nde yaşayan emekli öğretmenlerle Yuvamız İzmir Çocuk Etkinlik Merkezleri ve Büyükşehir Belediyesi’nin farklı birimlerinde görev yapan öğretmenleri bir araya getirdi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/kusaklari-bulusturan-ogretmenler-gunu-kutlamasi/59874/156",
+      "id": 59874
+    },
     {
       "title": "Zabıtada dijital dönem",
       "date": "2026-11-23",
@@ -53,6 +109,24 @@
     }
   ],
   "eshot": [
+    {
+      "title": "Asfalt serim çalışmaları nedeniyle 34 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "34"
+      ],
+      "start": "2026-11-24",
+      "end": "2026-11-30",
+      "isNew": true
+    },
+    {
+      "title": "838 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "838"
+      ],
+      "start": "2026-11-24",
+      "end": "2026-11-30",
+      "isNew": true
+    },
     {
       "title": "Gümrük hatları izsu çalışması",
       "lines": [
