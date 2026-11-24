@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T12:59:28.176Z",
+  "fetchedAt": "2026-11-24T13:51:34.905Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -1350,7 +1350,7 @@
       "sessions": [
         {
           "start": "2026-11-23T18:30:00+03:00",
-          "end": "2026-11-23T22:00:00+03:00",
+          "end": "2026-11-24T22:00:00+03:00",
           "venue": "Elhamra Sahnesi"
         }
       ],
@@ -1561,6 +1561,31 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/efesten-mimasa-giden-yol-meryem-anadan-kolophana-fotograf-sergisi/688ebb2e-b032-4bc4-9405-5a7c860a4710",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "6838d035-4380-45a7-9146-de91d5de583f",
+      "slug": "gecmisten-bugune-nazim-hikmet-6838d0",
+      "title": "Geçmişten Bugüne : NAZIM HİKMET",
+      "category": "Toplantı / Panel ",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/6838d035-02738d88.webp",
+      "summary": [
+        "26 Kasım 2026",
+        "YER: Atlas Pavyonu",
+        "SAAT: 19.00-21.00"
+      ],
+      "body": [],
+      "sessions": [
+        {
+          "start": "2026-11-26T19:00:00+03:00",
+          "end": "2026-11-26T21:00:00+03:00",
+          "venue": "Atlas Pavyonu"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/gecmisten-bugune-nazim-hikmet/6838d035-4380-45a7-9146-de91d5de583f",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
@@ -1884,6 +1909,35 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/izbb-rengahenk-korosu/04a74eb4-c2c4-4144-bc77-fa7039cd7649",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "99b515e3-8746-4ce6-8c7d-79382f2e1572",
+      "slug": "yuzeyin-otesi-beyond-the-surface-resim-sergisi-99b515",
+      "title": "“YÜZEYİN ÖTESİ | BEYOND THE SURFACE” Resim Sergisi",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/99b515e3-ad8330c3.webp",
+      "summary": [
+        "2-31 Aralık 2026",
+        "YER: Ahmed Adnan Saygun Sanat Merkezi Alt Kat Galeri",
+        "SAAT: 16.00"
+      ],
+      "body": [
+        "YÜZEYİN ÖTESİ | BEYOND THE SURFACE Görünmeyenin Katmanlarında Bir Keşif İlk bakışta karşılaştığımız her yüzey, aslında altında sakladığı derinliğin yalnızca bir örtüsüdür. “Yüzeyin Ötesi” (Beyond The Surface), izleyiciyi tuvalin ilk katmanını aralamaya, yırtılan, aşınan ve üst üste binen dokuların ardındaki saklı anlatılarla yüzleşmeye davet ediyor.",
+        "Serginin görsel kimliğini oluşturan bu özel kompozisyon; sergide yer alan 22 sanatçıyı temsilen 22 farklı rengin ve 22 özgün fırça darbesinin bir araya gelişiyle şekillenen kolektif bir ritmi yansıtıyor. Her bir fırça izi ayrı bir sanatçının karakterini ve sanatsal tavrını, her bir renk tonu ise farklı bir duygu durumunu ve bakış açısını simgeliyor. Toprak tonlarının dinginliği, derin mavilerin ve turkuazın enerjisi, kiremit kırmızılarının sıcaklığı ile altın ve bakır varakların zamansız ışıltısı; yırtılmış kağıt katmanlarının arasında organik bir bütünlük kuruyor. Yoğun boya dokularının (impasto) ve diyagonal yırtıkların yarattığı rölyef etkisi, düzlem algısını kırarak yüzeyi çok boyutlu bir deneyim alanına dönüştürüyor.",
+        "Katmanlar aralandıkça ortaya çıkan her bir darbe, bize ortak bir gerçeği fısıldıyor: Sanat, yalnızca yüzeyde görünen değil; o yüzey kazındığında, yırtıldığında ve katmanları aralandığında geriye kalan izlerin bütünüdür. 22 sanatçının farklı ses, renk ve dokunuşlarının ortak bir zeminde buluştuğu “Yüzeyin Ötesi” karma sergisi, 2–31 Aralık 2026 tarihleri arasında Ahmed Adnan Saygun Sanat Merkezi’nde sanatseverlerle buluşuyor."
+      ],
+      "sessions": [
+        {
+          "start": "2026-12-02T16:00:00+03:00",
+          "end": "2026-12-31T17:30:00+03:00",
+          "venue": "Ahmed Adnan Saygun Sanat Merkezi Alt Kat Galeri"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/yuzeyin-otesi-beyond-the-surface-resim-sergisi/99b515e3-8746-4ce6-8c7d-79382f2e1572",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
