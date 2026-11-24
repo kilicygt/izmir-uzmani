@@ -1,1102 +1,1102 @@
 {
-  "fetchedAt": "2026-11-23T19:14:17.122Z",
-  "dutyStart": "2026-11-23T08:00:00",
+  "fetchedAt": "2026-11-24T15:47:29.042Z",
+  "dutyStart": "2026-11-24T08:00:00",
   "source": "https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler",
   "pharmacies": [
     {
-      "name": "Şeyma Mintaş Eczanesi",
+      "name": "Ege Şifa Eczanesi",
       "region": "Aliağa",
       "note": null,
-      "address": "Yeni Mah. Samurlu Cad. No:49/A",
+      "address": "Yeni Mah. Mehmet Akif Cad. No:94/B",
       "phone": {
-        "tel": "+902327072239",
-        "label": "0232 707 22 39"
+        "tel": "+902326163595",
+        "label": "0232 616 35 95"
       },
-      "lat": 38.787728,
-      "lng": 26.983896,
+      "lat": 38.787185,
+      "lng": 26.983196,
       "ilceler": [
         "Aliağa"
       ]
     },
     {
-      "name": "Yeni Şakran Eczanesi",
+      "name": "Yazal Eczanesi",
       "region": "Yeni Şakran",
       "note": "Saat 21:00 sonrası icap nöbeti (kapıdaki numarayı arayın)",
-      "address": "Sayfiye Mah. N.Kemal Cad. No:79/B",
+      "address": "Sayfiye Mah. Kazim Dirik Cad.No:58/Ayeni Sakran-Aliaga/İzmir",
       "phone": {
-        "tel": "+902326288828",
-        "label": "0232 628 88 28"
+        "tel": "+902326287143",
+        "label": "0232 628 71 43"
       },
-      "lat": 38.888971,
-      "lng": 27.065727,
+      "lat": 38.889168,
+      "lng": 27.065746,
       "ilceler": [
         "Aliağa"
       ]
     },
     {
-      "name": "Yeşildere Eczanesi",
+      "name": "Ülkücan Eczanesi",
       "region": "Balçova",
       "note": null,
-      "address": "Onur Mah.Manolya Sok. No.42",
+      "address": "Eğitim Mah. Ziya Gökalp Sok. No:20/A",
       "phone": {
-        "tel": "+902322792242",
-        "label": "0232 279 22 42"
+        "tel": "+902322773929",
+        "label": "0232 277 39 29"
       },
-      "lat": 38.391557,
-      "lng": 27.0516,
+      "lat": 38.395265,
+      "lng": 27.061149,
       "ilceler": [
         "Balçova"
       ]
     },
     {
-      "name": "Başgöl Eczanesi",
+      "name": "İlica Eczanesi",
       "region": "Balçova 2",
       "note": null,
-      "address": "Korutürk Mah. Mithatpaşa Cad. No:259/B",
+      "address": "Korutürk Mah. Özagaç Sok. 12/A",
       "phone": {
-        "tel": "+902322792213",
-        "label": "0232 279 22 13"
+        "tel": "+902322595917",
+        "label": "0232 259 59 17"
       },
-      "lat": 38.393939,
-      "lng": 27.038725,
+      "lat": 38.392583,
+      "lng": 27.043022,
       "ilceler": [
         "Balçova"
       ]
     },
     {
-      "name": "Büyük Bayindir Eczanesi",
+      "name": "Sağlik Eczanesi",
       "region": "Bayındır",
       "note": null,
-      "address": "Sadikpasa Mah. Atatürk Cad. 104/A",
+      "address": "Mithatpaşa Mah. Hastane Cad. No:24/A",
       "phone": {
-        "tel": "+902325817516",
-        "label": "0232 581 75 16"
+        "tel": "+902325813113",
+        "label": "0232 581 31 13"
       },
-      "lat": 38.21452,
-      "lng": 27.648052,
+      "lat": 38.221175,
+      "lng": 27.649563,
       "ilceler": [
         "Bayındır"
       ]
     },
     {
-      "name": "Koçer Eczanesi",
+      "name": "Menekşe Eczanesi",
       "region": "Bayraklı",
       "note": null,
-      "address": "Anadolu Cad. No:99/3-C Bayrakli",
+      "address": "Tepekule Mh.2084/8 Sk. No:43/A",
       "phone": {
-        "tel": "+902323458955",
-        "label": "0232 345 89 55"
+        "tel": "+902323713133",
+        "label": "0232 371 31 33"
       },
-      "lat": 38.464583,
-      "lng": 27.163323,
+      "lat": 38.464985,
+      "lng": 27.179341,
       "ilceler": [
         "Bayraklı"
       ]
     },
     {
-      "name": "Koç Eczanesi",
+      "name": "Yildirim Eczanesi",
       "region": "Gümüşpala",
       "note": "Saat 24:00 sonrası: Karşiyaka 4 bölgesindeki eczane",
-      "address": "Org.Nafiz Gürman Mah.7020 Sok.No:133/A",
+      "address": "Gümüşpala Mah. 7068 Sok. No:13/A",
       "phone": {
-        "tel": "+902323655494",
-        "label": "0232 365 54 94"
+        "tel": "+902325394099",
+        "label": "0232 539 40 99"
       },
-      "lat": 38.473034,
-      "lng": 27.138562,
+      "lat": 38.471289,
+      "lng": 27.136717,
       "ilceler": [
         "Bayraklı",
         "Karşıyaka"
       ]
     },
     {
-      "name": "Duygu Eczanesi",
+      "name": "İstanbul Eczanesi",
       "region": "Bergama",
       "note": null,
-      "address": "Ertuğrul Mah. Mustafa Yazici Cad. No:9/A",
+      "address": "Kurtuluş Mah. Kestel Cad. No:65/15",
       "phone": {
-        "tel": "+902326313200",
-        "label": "0232 631 32 00"
+        "tel": "+902326322828",
+        "label": "0232 632 28 28"
       },
-      "lat": 39.115881,
-      "lng": 27.176833,
+      "lat": 39.119171,
+      "lng": 27.198587,
       "ilceler": [
         "Bergama"
       ]
     },
     {
-      "name": "İncir Eczanesi",
+      "name": "Aktepe Eczanesi",
       "region": "Beydağ",
       "note": "Saat 01:00 sonrası icap nöbeti (kapıdaki numarayı arayın)",
-      "address": "Atatürk Mah. Yusuf Doğan Cad. No:21",
+      "address": "Cumhuriyet Mah.Ulus Meydani No:20/A Beydag",
       "phone": {
-        "tel": "+902325929810",
-        "label": "0232 592 98 10"
+        "tel": "+902325927649",
+        "label": "0232 592 76 49"
       },
-      "lat": 38.085121,
-      "lng": 28.20933,
+      "lat": 38.085323,
+      "lng": 28.208369,
       "ilceler": [
         "Beydağ"
       ]
     },
     {
-      "name": "Karakaş Eczanesi",
+      "name": "Eczane Evren Eczanesi",
       "region": "Altındağ",
       "note": "Saat 24:00 sonrası: Çamdibi bölgesindeki eczane",
-      "address": "Serintepe Mah. 4310 Sokak No:22/A",
+      "address": "Serintepe Mh. 4321 Sk. No:2/C",
       "phone": {
-        "tel": "+902324496151",
-        "label": "0232 449 61 51"
+        "tel": "+902324691762",
+        "label": "0232 469 17 62"
       },
-      "lat": 38.423916,
-      "lng": 27.196723,
+      "lat": 38.422834,
+      "lng": 27.19537,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "Özgecan Eczanesi",
+      "name": "Demirkol Eczanesi",
       "region": "Atatürk",
       "note": null,
-      "address": "Atatürk Mah. Ziya Gökalp Cad. No:101",
+      "address": "Hürriyet Cad. No:129 Atatürk Mah.",
       "phone": {
-        "tel": "+902329999353",
-        "label": "0232 999 93 53"
+        "tel": "+902323887962",
+        "label": "0232 388 79 62"
       },
-      "lat": 38.475002,
-      "lng": 27.203556,
+      "lat": 38.477957,
+      "lng": 27.206349,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "Özlemin Eczanesi",
+      "name": "İlknur Coşkun Eczanesi",
       "region": "Atatürk Osmangazi",
       "note": null,
-      "address": "Atatürk Mah. Yavuz Cad. No:88/A",
+      "address": "Osmangazi Mah. Yavuz Cad. No:350/C",
       "phone": {
-        "tel": "+902323441111",
-        "label": "0232 344 11 11"
+        "tel": "+902323470303",
+        "label": "0232 347 03 03"
       },
-      "lat": 38.4728,
-      "lng": 27.201424,
+      "lat": 38.466497,
+      "lng": 27.18605,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "Öz İsil Eczanesi",
+      "name": "Aylin Eczanesi",
       "region": "Bornova 1",
       "note": null,
-      "address": "454 Sok. No:1/B",
+      "address": "Ergene Mah. 454 Sok. No:10/B",
       "phone": {
-        "tel": "+902323742683",
-        "label": "0232 374 26 83"
+        "tel": "+902323395008",
+        "label": "0232 339 50 08"
       },
-      "lat": 38.467833,
-      "lng": 27.219408,
+      "lat": 38.46826,
+      "lng": 27.219405,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "İlgisu Eczanesi",
+      "name": "Tarimci Eczanesi",
       "region": "Bornova 2",
       "note": null,
-      "address": "Kazim Dirik Mah. Üniversite Cad. No:30/A Bornova",
+      "address": "Kazimdirik Mah. Üniversite Cad. No:18/A",
       "phone": {
-        "tel": "+902323390545",
-        "label": "0232 339 05 45"
+        "tel": "+902323420504",
+        "label": "0232 342 05 04"
       },
-      "lat": 38.457559,
-      "lng": 27.208609,
+      "lat": 38.457852,
+      "lng": 27.20912,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "Lila Eczanesi",
+      "name": "Yeni Başar Eczanesi",
       "region": "Bornova 3",
       "note": null,
-      "address": "Mansuroğlu Mah. 273/6 Sok. No:6/C",
+      "address": "Adalet Mah. Şehit Pilot Üsteğmen Türker Aydin Sok. No:35",
       "phone": {
-        "tel": "+902322253777",
-        "label": "0232 225 37 77"
+        "tel": "+902323485151",
+        "label": "0232 348 51 51"
       },
-      "lat": 38.457011,
-      "lng": 27.189742,
+      "lat": 38.458849,
+      "lng": 27.182226,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "Eligür Eczanesi",
+      "name": "Doğanlar Eczanesi",
       "region": "Bornova 4",
       "note": null,
-      "address": "Naldöken Mah. Atatürk Cad. No:38",
+      "address": "Doğanlar Mah. 1454/1 Sok. No:1",
       "phone": {
-        "tel": "+902324784508",
-        "label": "0232 478 45 08"
+        "tel": "+902324781403",
+        "label": "0232 478 14 03"
       },
-      "lat": 38.454471,
-      "lng": 27.2679,
+      "lat": 38.452856,
+      "lng": 27.250367,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "İncir Eczanesi",
+      "name": "Palmiye Eczanesi",
       "region": "Çamdibi",
       "note": null,
-      "address": "Mersinli Mah. 2812 Sok. No:10/A",
+      "address": "Yeşilova Mah. 4174 Sok. No:101/A",
       "phone": {
-        "tel": "+902324354341",
-        "label": "0232 435 43 41"
+        "tel": "+902325279511",
+        "label": "0232 527 95 11"
       },
-      "lat": 38.437516,
-      "lng": 27.174183,
+      "lat": 38.431413,
+      "lng": 27.208101,
       "ilceler": [
         "Bornova",
         "Konak"
       ]
     },
     {
-      "name": "Pinarbaşi Eczanesi",
+      "name": "Karadeniz Eczanesi",
       "region": "Pınarbaşı",
       "note": "Saat 24:00 sonrası: Çamdibi bölgesindeki eczane",
-      "address": "Kemal Paşa Mah. 7055 Sok. No:34/A Pinarbaşi",
+      "address": "Gürpinar Mah. 7058 Sok. No:14a Pinarbaşi",
       "phone": {
-        "tel": "+902324791702",
-        "label": "0232 479 17 02"
+        "tel": "+902324786606",
+        "label": "0232 478 66 06"
       },
-      "lat": 38.429891,
-      "lng": 27.269923,
+      "lat": 38.429856,
+      "lng": 27.273705,
       "ilceler": [
         "Bornova"
       ]
     },
     {
-      "name": "Nevin Eczanesi",
+      "name": "Handan Eczanesi",
       "region": "Buca 1",
       "note": null,
-      "address": "Basari Cad. Yaylacik Mah. No:69/B",
+      "address": "Özmen Cad. No:40",
       "phone": {
-        "tel": "+902324407211",
-        "label": "0232 440 72 11"
+        "tel": "+902324405636",
+        "label": "0232 440 56 36"
       },
-      "lat": 38.389314,
-      "lng": 27.176366,
+      "lat": 38.382896,
+      "lng": 27.173003,
       "ilceler": [
         "Buca"
       ]
     },
     {
-      "name": "Baran Eczanesi",
+      "name": "Okyanus Eczanesi",
       "region": "Buca 2",
       "note": null,
-      "address": "Buca Koop Mah. 1413 Sok. No:10/A-A",
+      "address": "Atatürk Mh. 63/3 Sk. No:13/E",
       "phone": {
-        "tel": "+902325047384",
-        "label": "0232 504 73 84"
+        "tel": "+902324201615",
+        "label": "0232 420 16 15"
       },
-      "lat": 38.368022,
-      "lng": 27.181665,
+      "lat": 38.379091,
+      "lng": 27.178324,
       "ilceler": [
         "Buca"
       ]
     },
     {
-      "name": "Buca Sude Eczanesi",
+      "name": "Köşe Buca Eczanesi",
       "region": "Evka 1",
       "note": "Saat 24:00 sonrası: Buca 1 bölgesindeki eczane",
-      "address": "Ufuk Mah. 1003 Sok. No:19",
+      "address": "Adatepe Mah. 3 Sok. No:39/A",
       "phone": {
-        "tel": "+902324489945",
-        "label": "0232 448 99 45"
+        "tel": "+902326833238",
+        "label": "0232 683 32 38"
       },
-      "lat": 38.400869,
-      "lng": 27.167599,
+      "lat": 38.384805,
+      "lng": 27.184072,
       "ilceler": [
         "Buca"
       ]
     },
     {
-      "name": "Ümran Eczanesi",
+      "name": "Nermin Eczanesi",
       "region": "Gediz",
       "note": "Saat 01:00 sonrası: Şirinyer bölgesindeki eczane",
-      "address": "Göksu Mh. Gazateci Yazar İsmail Sivri Bulv. No:356/A",
+      "address": "İnönü Mh. 672 Sk. No:97/A",
       "phone": {
-        "tel": "+902322758600",
-        "label": "0232 275 86 00"
+        "tel": "+902322768994",
+        "label": "0232 276 89 94"
       },
-      "lat": 38.362637,
-      "lng": 27.148668,
+      "lat": 38.356217,
+      "lng": 27.14287,
       "ilceler": [
         "Buca",
         "Karabağlar"
       ]
     },
     {
-      "name": "Şakakli Eczanesi",
+      "name": "Belgin Çirak Eczanesi",
       "region": "Şirinyer",
       "note": null,
-      "address": "Hürriyet Mah. 507 Sok. No:13/A",
+      "address": "Hürriyet Mah. Menderes Cad. No:311/B",
       "phone": {
-        "tel": "+902324380433",
-        "label": "0232 438 04 33"
+        "tel": "+902329995513",
+        "label": "0232 999 55 13"
       },
-      "lat": 38.396366,
-      "lng": 27.144478,
+      "lat": 38.396214,
+      "lng": 27.148537,
       "ilceler": [
         "Buca"
       ]
     },
     {
-      "name": "Mert Eczanesi",
+      "name": "Gözde Eczanesi",
       "region": "Çeşme",
       "note": null,
-      "address": "Celal Bayar Mah. 5152 Sok. No:24/B",
+      "address": "İnkilap Cad.2001 Sok.No:107/E",
       "phone": {
-        "tel": "+902322030203",
-        "label": "0232 203 02 03"
+        "tel": "+902327120440",
+        "label": "0232 712 04 40"
       },
-      "lat": 38.305533,
-      "lng": 26.367741,
+      "lat": 38.326756,
+      "lng": 26.310576,
       "ilceler": [
         "Çeşme"
       ]
     },
     {
-      "name": "Çiftlikköy Elvan Eczanesi",
+      "name": "Rüzgar Eczanesi",
       "region": "Çeşme",
       "note": null,
-      "address": "Çiftlik Mah. 44 Sok. No:8/B",
+      "address": "Alaçati Mh. Alaçati Atatürk Cd. No:23/A",
       "phone": {
-        "tel": "+902327221172",
-        "label": "0232 722 11 72"
+        "tel": "+902327160828",
+        "label": "0232 716 08 28"
       },
-      "lat": 38.293155,
-      "lng": 26.278257,
+      "lat": 38.288356,
+      "lng": 26.375845,
       "ilceler": [
         "Çeşme"
       ]
     },
     {
-      "name": "Soyder Eczanesi",
+      "name": "Gümüsigne Eczanesi",
       "region": "Çiğli",
       "note": null,
-      "address": "8050 Sokak No:26/A Çigli-İzmir",
+      "address": "Köyiçi Mah. Dere Cad. No:16 Çigli-İzmir",
       "phone": {
-        "tel": "+902323864099",
-        "label": "0232 386 40 99"
+        "tel": "+902323861337",
+        "label": "0232 386 13 37"
       },
-      "lat": 38.497084,
-      "lng": 27.06158,
+      "lat": 38.492768,
+      "lng": 27.065505,
       "ilceler": [
         "Çiğli"
       ]
     },
     {
-      "name": "Yeşim Eczanesi",
+      "name": "Yeni Mahalle Eczanesi",
       "region": "Çiğli",
       "note": null,
-      "address": "Anadolu Cad. No:830/B",
+      "address": "8034 Sk. No:51/A",
       "phone": {
-        "tel": "+902323291731",
-        "label": "0232 329 17 31"
+        "tel": "+902323766377",
+        "label": "0232 376 63 77"
       },
-      "lat": 38.493654,
-      "lng": 27.062845,
+      "lat": 38.495988,
+      "lng": 27.055858,
       "ilceler": [
         "Çiğli"
       ]
     },
     {
-      "name": "Begüm Eczanesi",
+      "name": "Duru Su Eczanesi",
       "region": "Çiğli",
       "note": null,
-      "address": "Uğur Mumcu Mh. 8968/1 Sk. No:1/A",
+      "address": "Uğur Mumcu Mah. 8968 Sok. No:11/A",
       "phone": {
-        "tel": "+902328392233",
-        "label": "0232 839 22 33"
+        "tel": "+902328390004",
+        "label": "0232 839 00 04"
       },
-      "lat": 38.522667,
-      "lng": 27.043334,
+      "lat": 38.523019,
+      "lng": 27.043884,
       "ilceler": [
         "Çiğli"
       ]
     },
     {
-      "name": "Okyanus Eczanesi",
+      "name": "Oran Eczanesi",
       "region": "Çandarlı",
       "note": null,
-      "address": "Çandarli Mh.Bergama Cd. No:1/C",
+      "address": "İslam Mah. Hürriyet Meydani No:22/2 Çandarli-İzmir",
       "phone": {
-        "tel": "+902326732026",
-        "label": "0232 673 20 26"
+        "tel": "+902326731088",
+        "label": "0232 673 10 88"
       },
-      "lat": 38.93613,
-      "lng": 26.934701,
+      "lat": 38.935683,
+      "lng": 26.934613,
       "ilceler": [
         "Dikili"
       ]
     },
     {
-      "name": "Ceren Eczanesi",
+      "name": "Duygu Eczanesi",
       "region": "Dikili",
       "note": null,
-      "address": "Salimbey Mah. 42/1 Sok. No:1/A",
+      "address": "İsmetpaşa Mah. 8 Sok. No:21/A",
       "phone": {
-        "tel": "+902326718475",
-        "label": "0232 671 84 75"
+        "tel": "+902326757050",
+        "label": "0232 675 70 50"
       },
-      "lat": 39.065722,
-      "lng": 26.892003,
+      "lat": 39.074685,
+      "lng": 26.892186,
       "ilceler": [
         "Dikili"
       ]
     },
     {
-      "name": "Begüm Eczanesi",
+      "name": "Sude Eczanesi",
       "region": "Eski Foça",
       "note": null,
-      "address": "Atatürk Mah. 115 Sok. No:32",
+      "address": "Atatürk Mah. Reha Midilli Cad. No:17/A Foça",
       "phone": {
-        "tel": "+902328126035",
-        "label": "0232 812 60 35"
+        "tel": "+902328127219",
+        "label": "0232 812 72 19"
       },
-      "lat": 38.668328,
-      "lng": 26.754356,
+      "lat": 38.667541,
+      "lng": 26.754681,
       "ilceler": [
         "Foça"
       ]
     },
     {
-      "name": "Yenice Eczanesi",
+      "name": "Yagmur Eczanesi",
       "region": "Yeni Foça",
       "note": "Saat 24:00 sonrası icap nöbeti (kapıdaki numarayı arayın)",
-      "address": "Hilal Sok No 2/A Yenifoça",
+      "address": "Atatürk Mah. İzmir Cad. No:87/D",
       "phone": {
-        "tel": "+902328147146",
-        "label": "0232 814 71 46"
+        "tel": "+902328148615",
+        "label": "0232 814 86 15"
       },
-      "lat": 38.746184,
-      "lng": 26.830172,
+      "lat": 38.738804,
+      "lng": 26.838447,
       "ilceler": [
         "Foça"
       ]
     },
     {
-      "name": "Meşekalkan Eczanesi",
+      "name": "Merve Ünlü Eczanesi",
       "region": "Gaziemir",
       "note": null,
-      "address": "Dokuz Eylül Mh. Havacilar Cd. No:3/D",
+      "address": "Sevgi Mah. 663 Sok. No:18/A",
       "phone": {
-        "tel": "+902329998500",
-        "label": "0232 999 85 00"
+        "tel": "+902322742356",
+        "label": "0232 274 23 56"
       },
-      "lat": 38.324887,
-      "lng": 27.138648,
+      "lat": 38.31267,
+      "lng": 27.13273,
       "ilceler": [
         "Gaziemir"
       ]
     },
     {
-      "name": "Balkan Eczanesi",
+      "name": "Sarniç Eczanesi",
       "region": "Sarnıç",
       "note": "Saat 24:00 sonrası: Gaziemir bölgesindeki eczane",
-      "address": "Fatih Mah. 1099 Sok. No:70/C",
+      "address": "Menderes Cd.80/B",
       "phone": {
-        "tel": "+902328851923",
-        "label": "0232 885 19 23"
+        "tel": "+902322812343",
+        "label": "0232 281 23 43"
       },
-      "lat": 38.302099,
-      "lng": 27.173426,
+      "lat": 38.297236,
+      "lng": 27.167904,
       "ilceler": [
         "Gaziemir"
       ]
     },
     {
-      "name": "Güzelbahçe Saglik Eczanesi",
+      "name": "Ayşe Çiğdem Eczanesi",
       "region": "Güzelbahçe",
       "note": null,
-      "address": "Yali Mah. Mithatpasa Cad.No:126/B Güzelbahçe/İzmir",
+      "address": "Yali Mah.Mithatpasa Cad.No:433/A Güzelbahçe/İzmir",
       "phone": {
-        "tel": "+902322341713",
-        "label": "0232 234 17 13"
+        "tel": "+902322346256",
+        "label": "0232 234 62 56"
       },
-      "lat": 38.37792,
-      "lng": 26.890067,
+      "lat": 38.377402,
+      "lng": 26.88846,
       "ilceler": [
         "Güzelbahçe"
       ]
     },
     {
-      "name": "Deniz Eczanesi",
+      "name": "Basin Sitesi Eczanesi",
       "region": "Basın Sitesi",
       "note": null,
-      "address": "Adnan Süvari Mah. Polat Cd. No:212/A",
+      "address": "Basınsitesi Mh. 216 Sk. No:6/A",
       "phone": {
-        "tel": "+902322475996",
-        "label": "0232 247 59 96"
+        "tel": "+902322449119",
+        "label": "0232 244 91 19"
       },
-      "lat": 38.391724,
-      "lng": 27.097026,
+      "lat": 38.399383,
+      "lng": 27.102769,
       "ilceler": [
         "Karabağlar"
       ]
     },
     {
-      "name": "Rümeysa Harman Eczanesi",
+      "name": "Bozyaka Ezgi Eczanesi",
       "region": "Bozyaka",
       "note": null,
-      "address": "Bozyaka Mah. Eskiizmir Cad. No:205/A",
+      "address": "Çalikuşu Mah. Eski İzmir Cad. No:87/A",
       "phone": {
-        "tel": "+902322566687",
-        "label": "0232 256 66 87"
+        "tel": "+902322629922",
+        "label": "0232 262 99 22"
       },
-      "lat": 38.391207,
-      "lng": 27.124923,
+      "lat": 38.397269,
+      "lng": 27.127751,
       "ilceler": [
         "Karabağlar"
       ]
     },
     {
-      "name": "Doruk Eczanesi",
+      "name": "Sabir Eczanesi",
       "region": "Eskiizmir-Cennetçeşme",
       "note": "Saat 24:00 sonrası: Bozyaka bölgesindeki eczane",
-      "address": "3965 Sok. No:1 Uzundere",
+      "address": "Umut Mah.Eskiizmir Cad.No.644/A Karabaglar-İzmir",
       "phone": {
-        "tel": "+902322721676",
-        "label": "0232 272 16 76"
+        "tel": "+902322713550",
+        "label": "0232 271 35 50"
       },
-      "lat": 38.352461,
-      "lng": 27.098826,
+      "lat": 38.372002,
+      "lng": 27.107084,
       "ilceler": [
         "Karabağlar"
       ]
     },
     {
-      "name": "Özgen Eczanesi",
+      "name": "Özge Eczanesi",
       "region": "Karabağlar",
       "note": null,
-      "address": "Yunus Emre Mah. 4237 Sok. No:14/A",
+      "address": "Günaltay Mah. 4811 Sokak. No14/A Eski Çağdaş Eğitim Kolleji Karşisi /6/ Nolu Aile Sağliği Merkezi 0535 467 95 37",
       "phone": {
-        "tel": "+902323426027",
-        "label": "0232 342 60 27"
+        "tel": "+902322655417",
+        "label": "0232 265 54 17"
       },
-      "lat": 38.370449,
-      "lng": 27.128637,
+      "lat": 38.375789,
+      "lng": 27.119073,
       "ilceler": [
         "Karabağlar"
       ]
     },
     {
-      "name": "Behnaz Eczanesi",
+      "name": "Yeşilyurt Eczanesi",
       "region": "Yeşilyurt",
       "note": "Saat 24:00 sonrası: Basin Sitesi bölgesindeki eczane",
-      "address": "Kazim Karabekir Mah. Yildiz Cad. No:99-103a",
+      "address": "Esenlik Mh.9054 Sok.No.16",
       "phone": {
-        "tel": "+902322505464",
-        "label": "0232 250 54 64"
+        "tel": "+902322322200",
+        "label": "0232 232 22 00"
       },
-      "lat": 38.394132,
-      "lng": 27.113278,
+      "lat": 38.396778,
+      "lng": 27.112395,
       "ilceler": [
         "Karabağlar"
       ]
     },
     {
-      "name": "Yeni Karaburun Eczanesi",
+      "name": "Saadet Eczanesi",
       "region": "Karaburun",
       "note": "Saat 19:00 sonrası icap nöbeti (kapıdaki numarayı arayın)",
-      "address": "Merkez Mah.No:1 Karaburun",
+      "address": "İskele Mh. Kepez Cd. No:19/A",
       "phone": {
-        "tel": "+902327312403",
-        "label": "0232 731 24 03"
+        "tel": "+902327313397",
+        "label": "0232 731 33 97"
       },
-      "lat": 38.636037,
-      "lng": 26.510373,
+      "lat": 38.634972,
+      "lng": 26.522727,
       "ilceler": [
         "Karaburun"
       ]
     },
     {
-      "name": "Aras Eczanesi",
+      "name": "Mordogan Ege Eczanesi",
       "region": "Mordoğan",
       "note": "Saat 19:00 sonrası icap nöbeti (kapıdaki numarayı arayın)",
-      "address": "Mordoğan Mah. Namik Kemal Cad. No:51/A",
+      "address": "Mordoğan Mh. Fatih Cd. No:10",
       "phone": {
-        "tel": "+902327755505",
-        "label": "0232 775 55 05"
+        "tel": "+902327375520",
+        "label": "0232 737 55 20"
       },
-      "lat": 38.508136,
-      "lng": 26.625728,
+      "lat": 38.517947,
+      "lng": 26.625422,
       "ilceler": [
         "Karaburun"
       ]
     },
     {
-      "name": "Çağri Eczanesi",
+      "name": "Ceylan Eczanesi",
       "region": "Karşıyaka 1",
       "note": null,
-      "address": "Aksoy Mah. 1767 Sok. No:24/A",
+      "address": "Alaybey Mah. 1690 Sok. No:134/A",
       "phone": {
-        "tel": "+902323645911",
-        "label": "0232 364 59 11"
+        "tel": "+902323232324",
+        "label": "0232 323 23 24"
       },
-      "lat": 38.456815,
-      "lng": 27.110394,
+      "lat": 38.459945,
+      "lng": 27.120724,
       "ilceler": [
         "Karşıyaka"
       ]
     },
     {
-      "name": "Okyanus Eczanesi",
+      "name": "Gizem Eczanesi",
       "region": "Karşıyaka 2",
       "note": null,
-      "address": "Bahriye Üçok Mah. Latife Hanim Sok. No:22/A",
+      "address": "Bahriye Üçok Mh Atatürk Bulv No:40",
       "phone": {
-        "tel": "+902323697234",
-        "label": "0232 369 72 34"
+        "tel": "+902323676797",
+        "label": "0232 367 67 97"
       },
-      "lat": 38.458769,
-      "lng": 27.113422,
+      "lat": 38.46276,
+      "lng": 27.110481,
       "ilceler": [
         "Karşıyaka"
       ]
     },
     {
-      "name": "Güneş Eczanesi",
+      "name": "Altinirmak Eczanesi",
       "region": "Karşıyaka 3",
       "note": null,
-      "address": "Bostanli Mh. 1735 Sk. No:177/A",
+      "address": "2031 Sokak No:7/A Bostanli Karsiyaka/İzmir",
       "phone": {
-        "tel": "+902323369944",
-        "label": "0232 336 99 44"
+        "tel": "+902323620376",
+        "label": "0232 362 03 76"
       },
-      "lat": 38.45888,
-      "lng": 27.098532,
+      "lat": 38.463321,
+      "lng": 27.089253,
       "ilceler": [
         "Karşıyaka"
       ]
     },
     {
-      "name": "Fatoş Eczanesi",
+      "name": "Barişin Eczanesi",
       "region": "Karşıyaka 4",
       "note": null,
-      "address": "Demirköprü Mah. 6182 Sok. No:2/A",
+      "address": "Dedebaşi Mah. Ali Alp Böke Cad. No:111/A",
       "phone": {
-        "tel": "+902323361155",
-        "label": "0232 336 11 55"
+        "tel": "+902326353766",
+        "label": "0232 635 37 66"
       },
-      "lat": 38.467656,
-      "lng": 27.097189,
+      "lat": 38.465941,
+      "lng": 27.106189,
       "ilceler": [
         "Karşıyaka"
       ]
     },
     {
-      "name": "Yeni Merkez Eczanesi",
+      "name": "Yasin Eczanesi",
       "region": "Kemalpaşa",
       "note": null,
-      "address": "Soğukpinar Mah. Atatürk Bulvari No:12/4",
+      "address": "Soğukpinar Mah. İnönü Cad. No:38/A",
       "phone": {
-        "tel": "+902328781890",
-        "label": "0232 878 18 90"
+        "tel": "+902325990078",
+        "label": "0232 599 00 78"
       },
-      "lat": 38.426981,
-      "lng": 27.418128,
+      "lat": 38.425029,
+      "lng": 27.423145,
       "ilceler": [
         "Kemalpaşa"
       ]
     },
     {
-      "name": "Çalikuşu Eczanesi",
+      "name": "Özçimenli Eczanesi",
       "region": "Kınık",
       "note": null,
-      "address": "Poyracik Mah. Bergama Cad. No:19/A",
+      "address": "Türkcedit Mah. Atatürk Cad. No:144/Akinik/İzmir",
       "phone": {
-        "tel": "+902326880030",
-        "label": "0232 688 00 30"
+        "tel": "+902326874342",
+        "label": "0232 687 43 42"
       },
-      "lat": 39.090668,
-      "lng": 27.348205,
+      "lat": 39.087112,
+      "lng": 27.383226,
       "ilceler": [
         "Kınık"
       ]
     },
     {
-      "name": "Orhanlar Eczanesi",
+      "name": "Özyilmaz Eczanesi",
       "region": "Kiraz",
       "note": null,
-      "address": "Cumhuriyet Mh.Sabit Arli Cad. 46b",
+      "address": "İstiklal Mahallei Sabit Arli Caddesi No 57 Kiraz İzmir",
       "phone": {
-        "tel": "+902325724366",
-        "label": "0232 572 43 66"
+        "tel": "+902325723549",
+        "label": "0232 572 35 49"
       },
-      "lat": 38.231383,
-      "lng": 28.206862,
+      "lat": 38.231587,
+      "lng": 28.207126,
       "ilceler": [
         "Kiraz"
       ]
     },
     {
-      "name": "Erengin Eczanesi",
+      "name": "Özlem Eczanesi",
       "region": "Alsancak",
       "note": null,
-      "address": "Kültür Mh.Talatpaşa Blv.No:64/A Alsancak",
+      "address": "Alsancak Mh. Kibris Şehitleri Cd. No:53/B",
       "phone": {
-        "tel": "+902324224440",
-        "label": "0232 422 44 40"
+        "tel": "+902323672597",
+        "label": "0232 367 25 97"
       },
-      "lat": 38.435495,
-      "lng": 27.144736,
+      "lat": 38.436442,
+      "lng": 27.142883,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Sibel Atlas Eczanesi",
+      "name": "Elif Eczanesi",
       "region": "Alsancak-Basmane",
       "note": null,
-      "address": "İsmet Kaptan Mah. Sezer Doğan Sok. No:8/B",
+      "address": "Gaziosmanpasa Bulv. 84/A",
       "phone": {
-        "tel": "+902323881335",
-        "label": "0232 388 13 35"
+        "tel": "+902324845283",
+        "label": "0232 484 52 83"
       },
-      "lat": 38.425523,
-      "lng": 27.137553,
+      "lat": 38.421299,
+      "lng": 27.137029,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Nazilli Eczanesi",
+      "name": "Burkay Eczanesi",
       "region": "Eşrefpaşa",
       "note": null,
-      "address": "Esrefpasa Cad.No.364/A",
+      "address": "Atila Mh. 464 Sk.No.41",
       "phone": {
-        "tel": "+902322503284",
-        "label": "0232 250 32 84"
+        "tel": "+902322623491",
+        "label": "0232 262 34 91"
       },
-      "lat": 38.405176,
-      "lng": 27.128534,
+      "lat": 38.406033,
+      "lng": 27.126785,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Can Ata Eczanesi",
+      "name": "Yeni Zeytinlik Eczanesi",
       "region": "Gültepe",
       "note": "Saat 24:00 sonrası: Yenişehir bölgesindeki eczane",
-      "address": "Millet Mah. Hızırreis Cad. No:66/A",
+      "address": "Levent Mah. Barbaros Hayrettin Paşa Cad. No:12/A",
       "phone": {
-        "tel": "+902324562577",
-        "label": "0232 456 25 77"
+        "tel": "+902324330707",
+        "label": "0232 433 07 07"
       },
-      "lat": 38.415852,
-      "lng": 27.181625,
+      "lat": 38.419611,
+      "lng": 27.167068,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Mavi Eczanesi",
+      "name": "Venüs Eczanesi",
       "region": "Hatay",
       "note": null,
-      "address": "Muammer Akar Mah. İnönü Cad. No:815/A",
+      "address": "Fahrettin Altay Mah. 65/12 Sok. No:45/C",
       "phone": {
-        "tel": "+902322242021",
-        "label": "0232 224 20 21"
+        "tel": "+902329994363",
+        "label": "0232 999 43 63"
       },
-      "lat": 38.395045,
-      "lng": 27.075367,
+      "lat": 38.394315,
+      "lng": 27.069541,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Karantina Eczanesi",
+      "name": "Ata Mert Eczanesi",
       "region": "Mithatpaşa",
       "note": null,
-      "address": "Mithatpasa Cad.No:525/A Küçükyali",
+      "address": "Güzelyali Mah. Mithatpaşa Cad. No:1176/A",
       "phone": {
-        "tel": "+902322443187",
-        "label": "0232 244 31 87"
+        "tel": "+902322855143",
+        "label": "0232 285 51 43"
       },
-      "lat": 38.406981,
-      "lng": 27.105044,
+      "lat": 38.398983,
+      "lng": 27.079653,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Marti Eczanesi",
+      "name": "Eczane Bade Eczanesi",
       "region": "Üçyol",
       "note": null,
-      "address": "Altintaş Mah. İnönü Cad. No:74/A Üçyol",
+      "address": "Kiliç Reis Mh. Şehit Kemal Keser Sk. No:52/C",
       "phone": {
-        "tel": "+902322593075",
-        "label": "0232 259 30 75"
+        "tel": "+902322615557",
+        "label": "0232 261 55 57"
       },
-      "lat": 38.40813,
-      "lng": 27.125596,
+      "lat": 38.406814,
+      "lng": 27.119418,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "Çinkılıç Eczanesi",
+      "name": "Nefes Eczanesi",
       "region": "Yenişehir",
       "note": null,
-      "address": "Gaziler Cd. No:353/2e",
+      "address": "Yenişehir Mah. Gaziler Cad. No:341/B",
       "phone": {
-        "tel": "+902322642909",
-        "label": "0232 264 29 09"
+        "tel": "+902324579637",
+        "label": "0232 457 96 37"
       },
-      "lat": 38.424606,
-      "lng": 27.167898,
+      "lat": 38.424391,
+      "lng": 27.167213,
       "ilceler": [
         "Konak"
       ]
     },
     {
-      "name": "İpek Eczanesi",
+      "name": "Betül Eczanesi",
       "region": "Menderes",
       "note": null,
-      "address": "Kemalpaşa Mah. Atatürk Cad. No:62/D",
+      "address": "Cüneytbey Mah. 683 Sok. No:1/C",
       "phone": {
-        "tel": "+902325022025",
-        "label": "0232 502 20 25"
+        "tel": "+902327824917",
+        "label": "0232 782 49 17"
       },
-      "lat": 38.254398,
-      "lng": 27.131018,
+      "lat": 38.239367,
+      "lng": 27.135654,
       "ilceler": [
         "Menderes"
       ]
     },
     {
-      "name": "Fatih Eczanesi",
+      "name": "Tutkun Eczanesi",
       "region": "Menemen",
       "note": null,
-      "address": "Esatpaşa Mah. Abdi İpekçi Cad. No:9/D",
+      "address": "Kasimpaşa Mah. Bahriye Üçok Cad. No:7/A",
       "phone": {
-        "tel": "+902328323532",
-        "label": "0232 832 35 32"
+        "tel": "+902328314001",
+        "label": "0232 831 40 01"
       },
-      "lat": 38.605717,
-      "lng": 27.075566,
+      "lat": 38.606533,
+      "lng": 27.078371,
       "ilceler": [
         "Menemen"
       ]
     },
     {
-      "name": "Nesrin Eczanesi",
+      "name": "Ege Seyhan Eczanesi",
       "region": "Menemen 2",
       "note": "Saat 24:00’e kadar açık",
-      "address": "Ulukent 30 Agustos Mah. 7122 Sokak No:7/A-H Menemen",
+      "address": "30 Agustos Mah. 7124 Sok No:4/C/A",
       "phone": {
-        "tel": "+902328381180",
-        "label": "0232 838 11 80"
+        "tel": "+902328383676",
+        "label": "0232 838 36 76"
       },
-      "lat": 38.556285,
-      "lng": 27.049517,
+      "lat": 38.55254,
+      "lng": 27.049669,
       "ilceler": [
         "Menemen"
       ]
     },
     {
-      "name": "Köprübaşi Eczanesi",
+      "name": "Bayram Eczanesi",
       "region": "Narlıdere",
       "note": null,
-      "address": "Mithatpasa Cad.244/A",
+      "address": "Çamtepe Mah. Mithatpaşa Cad. No:241/A",
       "phone": {
-        "tel": "+902322383607",
-        "label": "0232 238 36 07"
+        "tel": "+902322394939",
+        "label": "0232 239 49 39"
       },
-      "lat": 38.394631,
-      "lng": 27.005095,
+      "lat": 38.394069,
+      "lng": 27.010639,
       "ilceler": [
         "Narlıdere"
       ]
     },
     {
-      "name": "Yasam Eczanesi",
+      "name": "Balci Eczanesi",
       "region": "Ödemiş",
       "note": null,
-      "address": "Akincilar Mh. Hürriyet Cd.58",
+      "address": "Atatürk Mh.Saraçoglu Cd.12",
       "phone": {
-        "tel": "+902325453532",
-        "label": "0232 545 35 32"
+        "tel": "+902325445577",
+        "label": "0232 544 55 77"
       },
-      "lat": 38.229416,
-      "lng": 27.97116,
+      "lat": 38.229785,
+      "lng": 27.975483,
       "ilceler": [
         "Ödemiş"
       ]
     },
     {
-      "name": "Şanli Eczanesi",
-      "region": "Gümüldür-Özdere",
-      "note": null,
-      "address": "Gümüldür Fevzi Çakmak Mh. Gazi Mustafa Kemal Paşa Blv.146/C",
-      "phone": {
-        "tel": "+902327974363",
-        "label": "0232 797 43 63"
-      },
-      "lat": 38.072965,
-      "lng": 27.017854,
-      "ilceler": [
-        "Seferihisar"
-      ]
-    },
-    {
-      "name": "Melike Eczanesi",
+      "name": "Asli Eczanesi",
       "region": "Seferihisar",
       "note": null,
-      "address": "Turabiye Mah. 52/4 Sok. No:64/B",
+      "address": "Hidirlik Mah.Atatürk Cd.41/A",
       "phone": {
-        "tel": "+902327432520",
-        "label": "0232 743 25 20"
+        "tel": "+902327433747",
+        "label": "0232 743 37 47"
       },
-      "lat": 38.196006,
-      "lng": 26.84424,
+      "lat": 38.194902,
+      "lng": 26.836549,
       "ilceler": [
         "Seferihisar"
       ]
     },
     {
-      "name": "Teos Eczanesi",
+      "name": "Siğacik Eczanesi",
       "region": "Seferihisar-Sığacık Bölgesi",
       "note": null,
-      "address": "Sigacik Mah. Akkum Cad No 35/A",
+      "address": "Siğacik Mah. Akkum Cad. No:9/C",
       "phone": {
-        "tel": "+902323939831",
-        "label": "0232 393 98 31"
+        "tel": "+902327432233",
+        "label": "0232 743 22 33"
       },
-      "lat": 38.19121,
-      "lng": 26.784998,
+      "lat": 38.192633,
+      "lng": 26.785834,
       "ilceler": [
         "Seferihisar"
       ]
     },
     {
-      "name": "Keskin Eczanesi",
+      "name": "Çağla Eczanesi",
+      "region": "Ürkmez",
+      "note": null,
+      "address": "Mersinalanı Mah. Cumhuriyet Cad. No:49/A",
+      "phone": {
+        "tel": "+902327422000",
+        "label": "0232 742 20 00"
+      },
+      "lat": 38.079549,
+      "lng": 26.957288,
+      "ilceler": [
+        "Seferihisar"
+      ]
+    },
+    {
+      "name": "Yunus Emre Eczanesi",
       "region": "Selçuk",
       "note": null,
-      "address": "Atatürk Mh. Kizilay Cd.22/B",
+      "address": "Atatürk Mah. Lienz Sokak 15/A",
       "phone": {
-        "tel": "+902328926275",
-        "label": "0232 892 62 75"
+        "tel": "+902328923393",
+        "label": "0232 892 33 93"
       },
-      "lat": 37.949355,
-      "lng": 27.370781,
+      "lat": 37.949625,
+      "lng": 27.370951,
       "ilceler": [
         "Selçuk"
       ]
     },
     {
-      "name": "Gülbin Eczanesi",
+      "name": "Öykü Beril Eczanesi",
       "region": "Tire",
       "note": null,
-      "address": "Hürriyet Mah. Faik Tokluoglu Bulv.No:10/A",
+      "address": "Atatürk Mah.Samanyolu Sok.No.2/C",
       "phone": {
-        "tel": "+902325110102",
-        "label": "0232 511 01 02"
+        "tel": "+902325124581",
+        "label": "0232 512 45 81"
       },
-      "lat": 38.095852,
-      "lng": 27.728659,
+      "lat": 38.100177,
+      "lng": 27.724447,
       "ilceler": [
         "Tire"
       ]
     },
     {
-      "name": "Türkmenköy Eczanesi",
+      "name": "Yildirim Eczanesi",
       "region": "Ayrancılar",
       "note": null,
-      "address": "Türkmenköy Mh. 209 Sk. No:36/A",
+      "address": "Fevzi Çakmak Mah. Bariş Manço Cad.No:44/D",
       "phone": {
-        "tel": "+902328541657",
-        "label": "0232 854 16 57"
+        "tel": "+902328547202",
+        "label": "0232 854 72 02"
       },
-      "lat": 38.247668,
-      "lng": 27.261863,
+      "lat": 38.241138,
+      "lng": 27.281958,
       "ilceler": [
         "Torbalı"
       ]
     },
     {
-      "name": "Bulvar Eczanesi",
+      "name": "Uysal Eczanesi",
       "region": "Torbalı",
       "note": null,
-      "address": "Alp Kent Mh. Cemali Tuncer Cd. No:22/A",
+      "address": "Ertuğrul Mah. Mithatpaşa Cad. No:67/B",
       "phone": {
-        "tel": "+902328560112",
-        "label": "0232 856 01 12"
+        "tel": "+902328561024",
+        "label": "0232 856 10 24"
       },
-      "lat": 38.164885,
-      "lng": 27.35621,
+      "lat": 38.154897,
+      "lng": 27.357927,
       "ilceler": [
         "Torbalı"
       ]
     },
     {
-      "name": "Çarşi Eczanesi",
+      "name": "Torbali Eczanesi",
       "region": "Torbalı",
       "note": null,
-      "address": "Tepeköy Mah. Kazim Dirik Cad. No:26/B",
+      "address": "Torbali Mh. Metropolis Blv.No:70 Torbalı/İzmir",
       "phone": {
-        "tel": "+902328555058",
-        "label": "0232 855 50 58"
+        "tel": "+902328562514",
+        "label": "0232 856 25 14"
       },
-      "lat": 38.151609,
-      "lng": 27.36177,
+      "lat": 38.17593,
+      "lng": 27.350985,
       "ilceler": [
         "Torbalı"
       ]
     },
     {
-      "name": "Bengi Eczanesi",
+      "name": "Umut Eczanesi",
       "region": "Çeşmealtı-İskele",
       "note": null,
-      "address": "Güvendik Mah. Mehmet Ali Aygüven Cad. No:140/A",
+      "address": "Denizli Mah. 113 Sok. No:6/A",
       "phone": {
-        "tel": "+902327552332",
-        "label": "0232 755 23 32"
+        "tel": "+902327554249",
+        "label": "0232 755 42 49"
       },
-      "lat": 38.393619,
-      "lng": 26.747363,
+      "lat": 38.390722,
+      "lng": 26.747033,
       "ilceler": [
         "Urla"
       ]
     },
     {
-      "name": "Tezcan Eczanesi",
+      "name": "Melek Eczanesi",
       "region": "Urla",
       "note": null,
-      "address": "Torasan Mah. Özbek Yolu Cad. No:4/4",
+      "address": "Yaka Mah. Erdoğan Ker Cad. No:112/B",
       "phone": {
-        "tel": "+902327120259",
-        "label": "0232 712 02 59"
+        "tel": "+902322538369",
+        "label": "0232 253 83 69"
       },
-      "lat": 38.329426,
-      "lng": 26.74831,
+      "lat": 38.325355,
+      "lng": 26.753182,
       "ilceler": [
         "Urla"
       ]
     },
     {
-      "name": "Zeytinalanı Eczanesi",
+      "name": "Urla Basar Eczanesi",
       "region": "Zeytinalanı",
       "note": null,
-      "address": "İsmet İnönü Cad.No:4/2 Zeytinalani Mah.",
+      "address": "M.Fevzi Çakmak Mah. N. Kemal Bulv. No:27/13",
       "phone": {
-        "tel": "+902327664043",
-        "label": "0232 766 40 43"
+        "tel": "+902327663516",
+        "label": "0232 766 35 16"
       },
-      "lat": 38.368004,
-      "lng": 26.836762,
+      "lat": 38.368106,
+      "lng": 26.837361,
       "ilceler": [
         "Urla"
       ]
