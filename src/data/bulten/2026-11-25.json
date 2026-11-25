@@ -1,8 +1,70 @@
 {
   "date": "2026-11-25",
-  "generatedAt": "2026-11-24T23:33:16.424Z",
-  "weather": null,
+  "generatedAt": "2026-11-25T14:30:49.456Z",
+  "weather": {
+    "code": 0,
+    "max": 14,
+    "min": 4,
+    "rain": 0,
+    "wind": 10
+  },
   "izbb": [
+    {
+      "title": "Büyükşehir’den 25 Kasım’da “Bir Aradayız” mesajı",
+      "date": "2026-11-25",
+      "summary": "İzmir’de toplu ulaşım noktaları kadına yönelik şiddete karşı farkındalık mesajlarıyla donatıldı. “Bir Durak, Bir Gerçek” kampanyası kapsamında hazırlanan afişlerde şiddetin farklı türlerine dikkat çekilirken QR kodlarla kadınların destek mekanizmalarına ulaşması hedefleniyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/buyuksehir-den-25-kasim-da-bir-aradayiz-mesaji/59889/156",
+      "id": 59889
+    },
+    {
+      "title": "Başkan Tugay’dan İzmir’e yatırım müjdeleri: 2027’de büyük dönüşüm başlıyor",
+      "date": "2026-11-25",
+      "summary": "Körfez temizliğinden kentsel dönüşüme, ulaşımdan altyapıya kadar pek çok alanda yeni projeleri açıklayan İzmir Büyükşehir Belediye Başkanı Dr. Cemil Tugay, 2027’nin yatırım yılı olacağını söyledi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/baskan-tugay-dan-izmir-e-yatirim-mujdeleri-2027-de-buyuk-donusum-basliyor/59888/156",
+      "id": 59888
+    },
+    {
+      "title": "İzmir Bridal Week podyumda moda şöleni yaşatıyor",
+      "date": "2026-11-25",
+      "summary": "İzmir Büyükşehir Belediyesi ev sahipliğinde, İZFAŞ tarafından 24-26 Kasım tarihlerinde ilk kez düzenlenen İzmir Bridal Week, ilk gününde üç defileyle moda dünyasını buluşturdu.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-bridal-week-podyumda-moda-soleni-yasatiyor/59887/156",
+      "id": 59887
+    },
+    {
+      "title": "İzmir’de Öğretmenler Günü müzikle kutlandı",
+      "date": "2026-11-25",
+      "summary": "İzmir Büyükşehir Belediyesi, 24 Kasım Öğretmenler Günü’nü Konak Atatürk Meydanı’nda düzenlediği konserle kutladı. İzmir Büyükşehir Belediyesi Bando Orkestrası ve solistlerin sahne aldığı etkinlikte Türk ve dünya müziklerinden sevilen eserler seslendirildi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-de-ogretmenler-gunu-muzikle-kutlandi/59886/156",
+      "id": 59886
+    },
+    {
+      "title": "APİKAM’da Karaburun Yarımadası’nın tarihî ve kültürel mirası konuşulacak",
+      "date": "2026-11-25",
+      "summary": "İzmir Büyükşehir Belediyesi Ahmet Piriştina Kent Arşivi ve Müzesi’nin (APİKAM) düzenlediği Kent Söyleşileri’nde, “Yerleşim Tarihi ve Kültürel Mirasıyla Karaburun Yarımadası” başlığı ele alınacak.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/apikam-da-karaburun-yarimadasi-nin-tarih&#238;-ve-kulturel-mirasi-konusulacak/59885/156",
+      "id": 59885
+    },
+    {
+      "title": "Kadına yönelik şiddete karşı sıfır tolerans",
+      "date": "2026-11-25",
+      "summary": "İzmir Büyükşehir Belediyesi, kadına yönelik şiddetle mücadele kapsamında kadınlara psikolojik ve hukuki danışmanlık, sosyal hizmet desteği ve sığınma evi hizmeti sunuyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/kadina-yonelik-siddete-karsi-sifir-tolerans/59884/156",
+      "id": 59884
+    },
+    {
+      "title": "Sinema sevgisi engel tanımadı: İşaret diliyle film heyecanını yaşadılar",
+      "date": "2026-11-25",
+      "summary": "İzmir Büyükşehir Belediyesi’nin beşinci kez düzenlediği Ayrımcılığa Karşı Sinema Günleri kapsamında, işitme engelli izleyiciler için Türk İşaret Dili çevirisiyle film gösterimi yapıldı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/sinema-sevgisi-engel-tanimadi-isaret-diliyle-film-heyecanini-yasadilar/59883/156",
+      "id": 59883
+    },
+    {
+      "title": "Ulaşıma rekor destek, filoya büyük yatırım",
+      "date": "2026-11-25",
+      "summary": "ESHOT’un İzmir Büyükşehir Belediye Meclisi’nde oy birliğiyle kabul edilen 37 milyar 600 milyon liralık 2027 yılı bütçesi ve performans programında filo yatırımları öne çıktı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/ulasima-rekor-destek-filoya-buyuk-yatirim/59882/156",
+      "id": 59882
+    },
     {
       "title": "İzmir Bridal Week kapılarını açtı: İzmir üretecek, Türkiye kazanacak",
       "date": "2026-11-24",
@@ -61,6 +123,53 @@
     }
   ],
   "eshot": [
+    {
+      "title": "Ales kasım 2026 412 hat duyurusu",
+      "lines": [
+        "171",
+        "277",
+        "290",
+        "304",
+        "353",
+        "390",
+        "412",
+        "465",
+        "470",
+        "471",
+        "472",
+        "476",
+        "490",
+        "515",
+        "676",
+        "690",
+        "878"
+      ],
+      "start": "2026-11-25",
+      "end": "2026-11-29",
+      "isNew": true
+    },
+    {
+      "title": "Ales 3 kasım 2026",
+      "lines": [
+        "290",
+        "390",
+        "412",
+        "596",
+        "690"
+      ],
+      "start": "2026-11-25",
+      "end": "2026-11-29",
+      "isNew": true
+    },
+    {
+      "title": "810 No.lu hattımızda geçici güzergah değişikliği",
+      "lines": [
+        "810"
+      ],
+      "start": "2026-11-25",
+      "end": "2026-12-04",
+      "isNew": true
+    },
     {
       "title": "Asfalt serim çalışmaları nedeniyle 34 No.lu hattımızda geçici güzergah değişikliği",
       "lines": [
