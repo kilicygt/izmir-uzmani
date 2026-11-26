@@ -1,8 +1,42 @@
 {
   "date": "2026-11-26",
-  "generatedAt": "2026-11-25T23:11:20.393Z",
-  "weather": null,
+  "generatedAt": "2026-11-26T13:58:19.386Z",
+  "weather": {
+    "code": 3,
+    "max": 17,
+    "min": 3,
+    "rain": 0,
+    "wind": 7
+  },
   "izbb": [
+    {
+      "title": "Su faturalarındaki indirim İzmirlileri sevindirdi",
+      "date": "2026-11-26",
+      "summary": "İzmir Büyükşehir Belediyesi İZSU Genel Müdürlüğü’nce uygulanacak 2027 yılı su ve atık su tarifelerinde yüzde 70’e varan indirim İzmirliler tarafından memnuniyetle karşılandı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/su-faturalarindaki-indirim-izmirlileri-sevindirdi/59894/156",
+      "id": 59894
+    },
+    {
+      "title": "Alsancak’ın kalbi yeni bir çehreye kavuşacak",
+      "date": "2026-11-26",
+      "summary": "İzmir Büyükşehir Belediyesi’nin Alsancak Kıbrıs Şehitleri Caddesi’nde yürüttüğü yenileme çalışmalarının yüzde 64’ü tamamlandı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/alsancak-in-kalbi-yeni-bir-cehreye-kavusacak/59893/156",
+      "id": 59893
+    },
+    {
+      "title": "İzmir’de kadına yönelik şiddetle mücadele için ortak adım",
+      "date": "2026-11-26",
+      "summary": "İzmir Büyükşehir Belediyesi’nin düzenlediği “Kadına Yönelik Şiddete Karşı İzmir İş Birliği” buluşmasında, kadına yönelik şiddetle mücadelede ortak çalışma olanakları ve 2027 yılında atılması gereken adımlar ele alındı. Kamu kurumları, sivil toplum kuruluşları ve yerel yönetim temsilcileri deneyimler",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmir-de-kadina-yonelik-siddetle-mucadele-icin-ortak-adim/59892/156",
+      "id": 59892
+    },
+    {
+      "title": "“Büyükşehir bizi yalnız bırakmadı”",
+      "date": "2026-11-26",
+      "summary": "İzmir Büyükşehir Belediyesi, kentin en uzak köylerinde yurttaşların kapısını çalarak ihtiyaçlarını dinliyor, hayatlarına dokunuyor. Bergama’da yürütülen saha çalışmasında vatandaşlar, kendilerini yalnız bırakmayan Büyükşehir Belediyesi’ne teşekkür etti.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/buyuksehir-bizi-yalniz-birakmadi/59891/156",
+      "id": 59891
+    },
     {
       "title": "İzmir’de indirimli su dönemi başlıyor",
       "date": "2026-11-25",
@@ -238,16 +272,11 @@
     {
       "title": "Gaziemir kavşak çalışması (73+80 sk.)",
       "lines": [
-        "152",
-        "353",
         "491",
-        "510",
-        "691",
-        "828",
-        "910"
+        "828"
       ],
       "start": "2026-11-11",
-      "end": "2026-11-30",
+      "end": "2026-12-31",
       "isNew": false
     },
     {
