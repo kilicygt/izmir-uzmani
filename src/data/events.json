@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T13:04:38.154Z",
+  "fetchedAt": "2026-11-26T12:45:10.221Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -72,6 +72,36 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/izmir-mutfak-muzesi-aclsa-dogru-sergisi/6c42f24c-82ac-471c-835d-cc1f9af29c91",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "ec3ca89f-cad1-46ca-daa6-08deed55fa49",
+      "slug": "iki-akinti-arasinda-ec3ca8",
+      "title": "İki Akıntı Arasında",
+      "category": "Sergi",
+      "organizer": "Kültür ve Sanat Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/ec3ca89f-1b046a75.webp",
+      "summary": [
+        "17 Temmuz-31 Ekim 2026",
+        "YER: Karşıyaka İskele Galeri"
+      ],
+      "body": [
+        "İki Akıntı Arasında, Clarissa Pinkola Estés’in Kurtlarla Koşan Kadınlar kitabında yer alan İskelet Kadın masalının açtığı metaforik alanı, Karşıyaka Vapur İskelesi’nin gündelik hareketi ve geçiş halleriyle buluşturuyor. Denizin dibine atılan, unutulan ve yeniden yüzeye çıkan İskelet Kadın; ölüm ve yaşam, kayıp ve dönüşüm, görünmezlik ve yeniden ortaya çıkış arasında salınan kadim bir anlatının taşıyıcısıdır. Sergi, masalın kendisini yeniden anlatmaktan çok, onun açtığı çağrışım alanını iskele mekânının kendine özgü ritmiyle ilişkilendiriyor.",
+        "Deniz ile kara arasındaki bu geçiş mekânı, her gün binlerce yolcunun geliş ve gidişlerine tanıklık ediyor. Bekleme, ayrılma, kavuşma, yola çıkma ve geri dönme halleri burada sürekli yeniden üretiliyor. İskelet Kadın’ın suyun derinliklerinden yüzeye çıkışıyla iskelenin taşıdığı bu geçiş deneyimi arasında şiirsel bir yakınlık kuruluyor.",
+        "2024 yılında Kentler Arası Misafir Sanatçı Programı kapsamında bir araya gelen ve Misi Köyü’nün kültürel mirası etrafında ortak bir bellek deneyimi paylaşan Ayça Su Değirmenci, Çiğdem Üçüncü, Damla Yalçın ve Yekateryna Grygorenko, bu kez İskele Sergileri kapsamında yeniden bir araya geliyor. Farklı üretim pratiklerini ortak bir duygu alanında buluşturan bu sergide sanatçılar, ortak bir hikâyeyi açıklamayı ya da tek bir kavramsal çerçeve üretmeyi değil; İskelet Kadın anlatısının çağrıştırdığı imgelerin, duyguların ve dönüşüm ihtimallerinin farklı üretim biçimleri aracılığıyla nasıl karşılık bulduğunu araştırıyor.",
+        "Kumaş, dikiş, fotoğraf, güneş baskı, ahşap ve yerleştirme pratikleri aracılığıyla şekillenen çalışmalar; suyun dönüştürücü gücü, hafızanın katmanları, kırılganlık, direnç, eşik deneyimi ve yeniden var olma ihtimali etrafında dolaşıyor. Her bir iş kendi dilini korurken, birlikte düşünüldüğünde ortak bir atmosfer ve duygu alanı oluşturuyor.",
+        "İki Akıntı Arasında, gündelik yaşamın akışı içinde karşılaşılan bir anlatıdan çok, içinden geçilen bir deneyim öneriyor. İskeleyi kullanan yolcuları, deniz ile kara arasında olduğu kadar; geçmiş ile şimdi, kayıp ile dönüşüm, görünür olan ile suyun altında kalmış olan arasında kurulan ilişkilere davet ediyor."
+      ],
+      "sessions": [
+        {
+          "start": "2026-07-17T16:00:00+03:00",
+          "end": "2026-12-31T17:00:00+03:00",
+          "venue": "Karşıyaka İskele Galeri"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/iki-aknt-arasnda/ec3ca89f-cad1-46ca-daa6-08deed55fa49",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
