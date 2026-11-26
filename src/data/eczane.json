@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T15:04:42.358Z",
+  "fetchedAt": "2026-11-26T17:42:55.424Z",
   "dutyStart": "2026-11-26T08:00:00",
   "source": "https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler",
   "pharmacies": [
@@ -1054,6 +1054,21 @@
       "lng": 27.371018,
       "ilceler": [
         "Torbalı"
+      ]
+    },
+    {
+      "name": "Urla Bahar Eczanesi",
+      "region": "Çeşmealtı-İskele",
+      "note": null,
+      "address": "Güvendik Mah. Mehmet Ali Aygüven Cad. No:150/A",
+      "phone": {
+        "tel": "+902327550102",
+        "label": "0232 755 01 02"
+      },
+      "lat": 38.394472,
+      "lng": 26.746962,
+      "ilceler": [
+        "Urla"
       ]
     },
     {
