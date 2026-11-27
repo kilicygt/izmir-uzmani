@@ -7,7 +7,12 @@ readTime: "7 dk"
 tags: ["İzmir", "Aralık", "Kış", "Etkinlikler", "Sergi", "Konser", "Şehir Rehberi"]
 featured: false
 image: "/images/blog/izmir-de-aralik-ta-ne-yapilir.webp"
-imageAlt: "Kış günü İzmir Kordon ve körfez"
+imageAlt: "İzmir Körfezi’nde bir Aralık akşamı gün batımı"
+imageCredit:
+  author: "Riabinok / Wikimedia Commons"
+  license: "CC BY-SA 3.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/deed.tr"
+  source: "https://commons.wikimedia.org/wiki/File:Dec2010_-_panoramio_(5).jpg"
 seoTitle: "İzmir’de Aralık’ta Ne Yapılır? 2026 Rehberi"
 seoDescription: "Aralık 2026’da İzmir’de ne yapılır? Ayın konser ve tiyatroları, ücretsiz sergiler, Bozdağ’da kar, kaplıcalar ve yılbaşı programları tek rehberde."
 imageSearchQuery: "Izmir Kordon winter"

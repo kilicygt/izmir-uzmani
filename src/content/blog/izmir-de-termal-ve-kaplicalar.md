@@ -7,7 +7,12 @@ readTime: "8 dk"
 tags: ["İzmir", "Termal", "Kaplıca", "Balçova", "Çeşme", "Bergama", "Dikili", "Kış"]
 featured: false
 image: "/images/blog/izmir-de-termal-ve-kaplicalar.webp"
-imageAlt: "İzmir’de bir termal kaynak"
+imageAlt: "Çeşme Ilıca’da termal kaynakların denizle buluştuğu kumsal"
+imageCredit:
+  author: "Raicem / Wikimedia Commons"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.tr"
+  source: "https://commons.wikimedia.org/wiki/File:Il%C4%B1ca_Beach_in_%C3%87e%C5%9Fme,_%C4%B0zmir.jpg"
 seoTitle: "İzmir’de Termal ve Kaplıcalar Rehberi"
 seoDescription: "İzmir’de kaplıca nerede? Balçova, Çeşme Ilıca ve Şifne, Seferihisar Cumalı, Dikili Nebiler ve Bergama Geyiklidağ için sıcaklık, tesis ve ulaşım bilgileri."
 imageSearchQuery: "Balcova thermal Izmir"
