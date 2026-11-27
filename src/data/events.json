@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-26T12:45:10.221Z",
+  "fetchedAt": "2026-11-27T12:36:24.297Z",
   "source": "https://kultursanat.izmir.bel.tr",
   "events": [
     {
@@ -1945,7 +1945,7 @@
       "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
       "ageLimit": null,
       "admission": "free",
-      "image": "/images/etkinlikler/otomatik/04a74eb4-728c8283.webp",
+      "image": "/images/etkinlikler/otomatik/04a74eb4-64722b8c.webp",
       "summary": [
         "Müziğin birleştirici gücü ve kalplere dokunan ezgilerle dolu özel bir akşam...",
         "Değerli koro şefimiz Pelin Kadıoğlu önderliğinde İzBB Rengahenk Korosu, \"Bir Şarkı Bin Duygu\" konseriyle duygularımıza tercüman olmaya hazırlanıyor. Tarihi atmosferde gerçekleşecek bu muazzam müzik şölenine tüm hemşehrilerimiz davetlidir."
@@ -2029,6 +2029,29 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "f4e43878-fc61-4087-8146-3b675e6a70c6",
+      "slug": "izbb-aliaga-turk-halk-muzigi-koro-konseri-f4e438",
+      "title": "İzBB Aliağa Türk Halk Müziği Koro Konseri",
+      "category": "Konser",
+      "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/f4e43878-e6a43879.webp",
+      "summary": [
+        "İzmir Büyükşehir Belediyesi tarafından düzenlenen \"İzBB Aliağa Türk Halk Müziği Koro Konseri\", 5 Aralık 2026 Cumartesi günü saat 20.00’de Aliağa Tüpraş Halk Eğitimi Merkezi Konser Salonu’nda izleyiciyle buluşacak. Şef Hasan Karar yönetimindeki konserde, koro türkülerden oluşan seçkisini müzikseverlerle buluşturacak. Ücretsiz olarak gerçekleştirilecek konsere tüm vatandaşlar davetlidir."
+      ],
+      "body": [],
+      "sessions": [
+        {
+          "start": "2026-12-05T20:00:00+03:00",
+          "end": "2026-12-05T21:30:00+03:00",
+          "venue": null
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/izbb-aliaga-turk-halk-muzigi-koro-konseri/f4e43878-fc61-4087-8146-3b675e6a70c6",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "59e145f0-8377-49c8-af7d-cd34ba0d16e8",
       "slug": "aziz-vukolos-ta-akustik-gunler-59e145",
       "title": "Aziz Vukolos'ta Akustik Günler",
@@ -2089,6 +2112,49 @@
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
+      "id": "7f67784a-771f-42d2-9fa9-6bb301396d8d",
+      "slug": "bir-sehnaz-oyun-ordu-buyuksehir-belediyesi-karadeniz-tiyatrosu-7f6778",
+      "title": "Bir Şehnaz Oyun- Ordu Büyükşehir Belediyesi Karadeniz Tiyatrosu",
+      "category": "Tiyatro",
+      "organizer": "Şehir Tiyatroları Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/7f67784a-8d08283e.webp",
+      "summary": [
+        "Turgut Özakman’ın kaleminden çıkan, Türk tiyatrosunun en seçkin müzikal oyunlarından biri olan \"Bir Şehnaz Oyun\", izleyiciyi 1914 yılının İstanbul’una, payitahtın son demlerine davet ediyor. Bir yanda pavyon şarkıcısı Şehnaz ile Dahililiye Nezaretinden saf delikanlı Müştak’ın imkansız aşkı, diğer yanda ise I. Dünya Savaşı’nın eşiğinde dönen güç oyunları... Kurulan dağılan ittifaklar ile gider Alamanı gelir İngilizi, arada kalan bocalayan hep ahali !",
+        "Geleneksel Türk tiyatrosunun renkli dokusuyla modern bir eleştirinin harmanlandığı bu muazzam eser, kahkahalarla dolu bir tarih dersi sunuyor.",
+        "- Mutlu son için denk olmalı taraflar! Hayatın raconu bu! Yoksa birinden biri okkanın altına gider. Muhabbette de böyle, siyasette de…"
+      ],
+      "body": [
+        "Yazan: Turgut ÖZAKMAN",
+        "Yöneten: A. Emrah ÖZDİLEK",
+        "Müzik: Cem İDİZ",
+        "Müzik Direktörü: Zafer BOZDAĞ",
+        "Işık Tasarımı: İmdat AKYILDIZ",
+        "Sahne Tasarımı: Cemal ARSLAN - Murat ÇAVUŞ",
+        "Koreograf: Gizem KANTARCI",
+        "Oyuncular: Gizem KANTARCI, Emrullah YAZICI, A. Emrah ÖZDİLEK, İlker TAZE, Selin Deniz ATALAY, Ömer TEMİZ, İbrahim ÇAPKIN, Bülent REİSOĞLU, Zişan Buse TINKAOĞLU, Gamze Gül KABADAŞ, Doğukan EKİNCİ, Cemil GÜNDÜZ, A. Rıfat ÇOL, Mücteba MURTAZAOĞLU",
+        "Yönetmen Yardımcısı: Zişan Buse TINKAOĞLU",
+        "Sahne Amiri: Ali Can TAZE",
+        "Işık Kumanda: Ulaş ÖCALAN",
+        "Ses Kumanda: Ender AYDIN",
+        "Işık Tasarım: İmdat AKYILDIZ",
+        "Orkestra: Zafer BOZDAĞ - Arda KANTARCI - Kamil AYDIN",
+        "Reji Asistanı: Gamze Gül KABADAŞ",
+        "Grafik Tasarım: Merve BAYHAN - Zarife AYKUT - Talip KORKMAZ - Ahmet Metin SEZER",
+        "Genel Sanat Yönetmeni: A. Emrah ÖZDİLEK"
+      ],
+      "sessions": [
+        {
+          "start": "2026-12-10T20:00:00+03:00",
+          "end": "2026-12-10T22:00:00+03:00",
+          "venue": null
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/bir-sehnaz-oyun-ordu-buyuksehir-belediyesi-karadeniz-tiyatrosu/7f67784a-771f-42d2-9fa9-6bb301396d8d",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
       "id": "104722ab-f99a-4df5-a254-7136101c6b31",
       "slug": "aziz-vukolos-ta-akustik-gunler-104722",
       "title": "Aziz Vukolos'ta Akustik Günler",
@@ -2115,6 +2181,29 @@
         }
       ],
       "sourceUrl": "https://kultursanat.izmir.bel.tr/event/aziz-vukolosta-akustik-gunler/104722ab-f99a-4df5-a254-7136101c6b31",
+      "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
+    },
+    {
+      "id": "4cef9728-98b0-4b56-98d7-f7cc654e7cb2",
+      "slug": "yedi-iklim-yedi-dans-izbb-turk-muzigi-korosu-4cef97",
+      "title": "Yedi İklim Yedi Dans İzBB Türk Müziği Korosu",
+      "category": "Konser",
+      "organizer": "Etkinlik ve Organizasyon Şube Müdürlüğü",
+      "ageLimit": null,
+      "admission": null,
+      "image": "/images/etkinlikler/otomatik/4cef9728-dca0a2e8.webp",
+      "summary": [
+        "İzmir Büyükşehir Belediyesi tarafından düzenlenen \"Yedi İklim Yedi Dans – Türkülerle, Oyunlarla Anadolu’nun Renkleri\" etkinliği, 16 Aralık 2026 Çarşamba günü saat 20.00’de Elhamra Sahnesi’nde izleyiciyle buluşacak. Koro şefi Öznur Korkmaz yönetimindeki programda, İzBB Türk Halk Müziği Korosu ve İzBB Halk Dansları Topluluğu Anadolu’nun farklı yörelerinden türküleri ve halk oyunlarını sahneye taşıyacak. Ücretsiz olarak gerçekleştirilecek etkinliğe tüm sanatseverler davetlidir."
+      ],
+      "body": [],
+      "sessions": [
+        {
+          "start": "2026-12-16T20:00:00+03:00",
+          "end": "2026-12-16T21:30:00+03:00",
+          "venue": "Elhamra Sahnesi"
+        }
+      ],
+      "sourceUrl": "https://kultursanat.izmir.bel.tr/event/yedi-iklim-yedi-dans-izbb-turk-muzigi-korosu/4cef9728-98b0-4b56-98d7-f7cc654e7cb2",
       "sourceName": "İzmir Büyükşehir Belediyesi Kültürsanat"
     },
     {
