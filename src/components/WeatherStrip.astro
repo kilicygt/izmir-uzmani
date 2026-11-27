@@ -23,9 +23,12 @@
     overflow: hidden;
   }
   .weather-inner { max-width: 1200px; margin: 0 auto; }
+  /* Fixed height: the skeleton, the loaded days and the error message all take the same space,
+     so filling the strip never pushes the page down (layout shift). 88px fits one day card. */
   .weather-strip {
+    height: 88px;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-evenly;
     overflow-x: auto;
     scrollbar-width: none;

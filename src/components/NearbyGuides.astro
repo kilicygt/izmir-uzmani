@@ -90,7 +90,7 @@ const title = matched.length ? heading ?? `${label ?? matchedPlace ?? places[0]}
 <style>
   .ng { margin-top: 40px; }
   .ng-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
-  .ng-title { font-family: 'Fraunces', serif; font-size: clamp(20px, 2.4vw, 24px); font-weight: 700; color: #1a1a1a; }
+  .ng-title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(20px, 2.4vw, 24px); font-weight: 700; color: #1a1a1a; }
   .ng-all { font-size: 13.5px; font-weight: 600; color: #062f96; white-space: nowrap; }
   .ng-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
   @media (min-width: 720px) { .ng-grid { grid-template-columns: repeat(3, 1fr); } }

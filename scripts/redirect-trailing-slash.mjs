@@ -24,6 +24,10 @@ config.routes = config.routes ?? [];
 if (!config.routes.some((r) => r.headers?.['X-Content-Type-Options'])) {
   config.routes.unshift({ src: '/(.*)', headers: SECURITY_HEADERS, continue: true });
 }
+// Self-hosted fonts never change under the same name (a new font gets a new file name), so let browsers keep them for a year.
+if (!config.routes.some((r) => r.src === '^/fonts/(.*)$')) {
+  config.routes.unshift({ src: '^/fonts/(.*)$', headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }, continue: true });
+}
 
 writeFileSync(path, JSON.stringify(config, null, 2));
 console.log(`redirect-trailing-slash: widened ${changed} redirect route(s)`);

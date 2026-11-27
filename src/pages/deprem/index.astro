@@ -28,6 +28,18 @@ const biggest = [...shown].sort((a, b) => b.mag - a.mag)[0];
 const latest = shown[0];
 const tz = { timeZone: 'Europe/Istanbul' } as const;
 const when = (iso: string) => new Date(iso).toLocaleString('tr-TR', { ...tz, day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+// Relative time, same wording as the client script, so the text does not change width when the script runs.
+const ago = (iso: string) => {
+  const m = Math.round((now - Date.parse(iso)) / 60000);
+  if (m < 1) return 'az önce';
+  if (m < 60) return `${m} dk önce`;
+  if (m < 1440) return `${Math.floor(m / 60)} sa ${m % 60} dk önce`;
+  return when(iso);
+};
+// Rows outside the default filter (last 24 hours, relevant quakes) start hidden, as the client script would hide them;
+// rendering them visible and hiding them on load shifted the whole page.
+const visibleByDefault = (q: Quake) => now - Date.parse(q.time) < DAY && relevant(q);
+const defaultCount = quakes.filter(visibleByDefault).length;
 const clock = new Date().toLocaleTimeString('tr-TR', { ...tz, hour: '2-digit', minute: '2-digit' });
 const ilceCount = new Set(toplanma.areas.map((a) => a.i)).size;
 const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.localeCompare(b, 'tr'));
@@ -56,7 +68,7 @@ const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.lo
           <p class="stat-label">Son deprem</p>
           {latest ? (
             <>
-              <p class="stat-big"><span class:list={['mag', magClass(latest.mag)]}>{latest.mag.toFixed(1)}</span> <span data-ago={latest.time}>{when(latest.time)}</span></p>
+              <p class="stat-big"><span class:list={['mag', magClass(latest.mag)]}>{latest.mag.toFixed(1)}</span> <span data-ago={latest.time}>{ago(latest.time)}</span></p>
               <p class="stat-sub">{latest.place}</p>
             </>
           ) : <p class="stat-sub">—</p>}
@@ -94,11 +106,11 @@ const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.lo
 
       <ol class="list" data-list>
         {quakes.map((q) => (
-          <li class="row" data-time={q.time} data-mag={q.mag} data-izmir={q.province === 'İzmir' ? '1' : '0'}>
+          <li class="row" hidden={!visibleByDefault(q)} data-time={q.time} data-mag={q.mag} data-izmir={q.province === 'İzmir' ? '1' : '0'}>
             <span class:list={['mag', magClass(q.mag)]}>{q.mag.toFixed(1)}</span>
             <div class="row-main">
               <p class="row-place">{q.place}</p>
-              <p class="row-meta"><span data-ago={q.time}>{when(q.time)}</span> · {q.depth.toFixed(1).replace('.', ',')} km derinlik · {q.magType}</p>
+              <p class="row-meta"><span data-ago={q.time}>{ago(q.time)}</span> · {q.depth.toFixed(1).replace('.', ',')} km derinlik · {q.magType}</p>
             </div>
             <a class="row-map" href={`https://www.google.com/maps/search/?api=1&query=${q.lat},${q.lng}`} target="_blank" rel="noopener" aria-label="Haritada gör">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
@@ -106,7 +118,7 @@ const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.lo
           </li>
         ))}
       </ol>
-      <p class="empty" data-empty hidden>Bu filtrelerle eşleşen deprem yok.</p>
+      <p class="empty" data-empty hidden={defaultCount > 0}>Bu filtrelerle eşleşen deprem yok.</p>
       <p class="legend">
         <span><i class="mag m1"></i>1–2</span><span><i class="mag m2"></i>2–3</span><span><i class="mag m3"></i>3–4</span><span><i class="mag m4"></i>4–5</span><span><i class="mag m5"></i>5+</span>
       </p>
@@ -176,7 +188,7 @@ const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.lo
   .hero-grid { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .breadcrumb { font-size: 12px; color: #999; margin-bottom: 14px; display: flex; gap: 6px; }
   .breadcrumb a { color: #062f96; }
-  .title { font-family: 'Fraunces', serif; font-weight: 800; font-size: clamp(32px, 5vw, 54px); line-height: 1.05; letter-spacing: -0.02em; color: #1a1a1a; margin-bottom: 12px; }
+  .title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 800; font-size: clamp(32px, 5vw, 54px); line-height: 1.05; letter-spacing: -0.02em; color: #1a1a1a; margin-bottom: 12px; }
   .desc { font-size: 15.5px; color: #555; line-height: 1.7; max-width: 600px; margin-bottom: 14px; }
   .live { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; background: #fff; border: 1px solid #dfe5f5; border-radius: 999px; padding: 7px 14px; }
   .dot { width: 9px; height: 9px; border-radius: 50%; background: #0b7a5c; box-shadow: 0 0 0 4px rgba(11,122,92,0.15); animation: pulse 2s infinite; }
@@ -189,8 +201,8 @@ const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.lo
   @media (min-width: 760px) { .stats { grid-template-columns: repeat(3, 1fr); } }
   .stat { background: #fff; border: 1px solid #efe2d3; border-radius: 20px; padding: 16px 18px; }
   .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 6px; }
-  .stat-big { font-family: 'Fraunces', serif; font-weight: 800; font-size: 26px; color: #1a1a1a; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .stat-big small, .stat-big [data-ago] { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #555; }
+  .stat-big { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 800; font-size: 26px; color: #1a1a1a; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .stat-big small, .stat-big [data-ago] { font-family: 'Poppins', 'Poppins Fallback', sans-serif; font-size: 14px; font-weight: 500; color: #555; }
   .stat-sub { font-size: 13px; color: #777; margin-top: 4px; }
 
   .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
@@ -221,7 +233,7 @@ const ilceler = [...new Set(toplanma.areas.map((a) => a.i))].sort((a, b) => a.lo
   .legend i.mag { min-width: 14px; width: 14px; height: 14px; border-radius: 4px; }
 
   .block { margin-top: 44px; }
-  .block-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 28px); color: #1a1a1a; margin-bottom: 8px; }
+  .block-title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 700; font-size: clamp(22px, 2.8vw, 28px); color: #1a1a1a; margin-bottom: 8px; }
   .toplanma { background: #effaf5; border: 1px solid #d7eee4; border-radius: 24px; padding: clamp(18px, 3vw, 28px); }
   .block-head { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; }
   .block-icon { flex-shrink: 0; width: 84px; height: 84px; border-radius: 22px; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -14px rgba(11,122,92,0.6); }
