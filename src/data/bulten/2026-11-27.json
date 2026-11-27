@@ -1,14 +1,70 @@
 {
   "date": "2026-11-27",
-  "generatedAt": "2026-11-26T23:05:43.711Z",
+  "generatedAt": "2026-11-27T13:57:03.419Z",
   "weather": {
-    "code": 45,
-    "max": 19,
-    "min": 5,
+    "code": 3,
+    "max": 18,
+    "min": 6,
     "rain": 0,
-    "wind": 9
+    "wind": 8
   },
   "izbb": [
+    {
+      "title": "Minik eller geleceğe fidan dikti",
+      "date": "2026-11-27",
+      "summary": "İzmir Büyükşehir Belediyesi’nin çocuklarda iklim krizi ve çevre bilinci oluşturmak amacıyla yürüttüğü eğitim programının beşinci durağı Bayındır oldu.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/minik-eller-gelecege-fidan-dikti/59902/156",
+      "id": 59902
+    },
+    {
+      "title": "İzBBŞT’nin yeni oyunu “Yenilmez” seyirciyle buluştu",
+      "date": "2026-11-27",
+      "summary": "İzmir Şehir Tiyatroları, sezonun ikinci yeni prodüksiyonu “Yenilmez”i prömiyerle sahneye taşıdı. Oyun İsmet İnönü Sahnesi’ndeki ilk gösteriminde izleyiciden tam not aldı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izbbst-nin-yeni-oyunu-yenilmez-seyirciyle-bulustu/59901/156",
+      "id": 59901
+    },
+    {
+      "title": "Genç tasarımcı adaylarının gelinlikleri İzmir Bridal Week’te sergilendi",
+      "date": "2026-11-27",
+      "summary": "İzmir Bridal Week’te, Ödemiş Zübeyde Hanım Mesleki ve Teknik Anadolu Lisesi öğrencilerinin hazırladığı gelinlik tasarımları sergilendi.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/genc-tasarimci-adaylarinin-gelinlikleri-izmir-bridal-week-te-sergilendi/59900/156",
+      "id": 59900
+    },
+    {
+      "title": "Alsancak’ta su baskınlarına karşı 250 milyon liralık yatırım",
+      "date": "2026-11-27",
+      "summary": "İzmir Büyükşehir Belediyesi İZSU Genel Müdürlüğü, Alsancak’ta yıllardır yaşanan su baskınlarını önlemek için 250 milyon liralık altyapı yatırımını sürdürüyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/alsancak-ta-su-baskinlarina-karsi-250-milyon-liralik-yatirim/59899/156",
+      "id": 59899
+    },
+    {
+      "title": "İzmirli süt üreticisine soğutma tankı",
+      "date": "2026-11-27",
+      "summary": "İzmir Büyükşehir Belediyesi, süt üretiminde Türkiye’yi zirveye taşıma hedefiyle küçük üreticilere yönelik desteklerini sürdürüyor.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/izmirli-sut-ureticisine-sogutma-tanki--/59898/156",
+      "id": 59898
+    },
+    {
+      "title": "Gençler, İzmir’in tarihini ve kültürünü Körfez turuyla keşfetti",
+      "date": "2026-11-27",
+      "summary": "İzmir’de yaşayan gençler, İzmir Büyükşehir Belediyesi ve Gençlik ve Spor Bakanlığı Gençlik Merkezleri iş birliğiyle Tarihi Bergama Vapuru’nda İzmir’in tarihi ve kültürel mirasıyla buluştu.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/gencler-izmir-in-tarihini-ve-kulturunu-korfez-turuyla-kesfetti/59897/156",
+      "id": 59897
+    },
+    {
+      "title": "Depremden kimyasal tehdide İzmir’de tam kapsamlı tatbikat",
+      "date": "2026-11-27",
+      "summary": "İzmir Büyükşehir Belediyesi, olası afet ve acil durumlara karşı hazırlık çalışmalarını sürdürüyor. Kültürpark’taki tatbikatta deprem, yangın ve şüpheli paket senaryoları eş zamanlı canlandırıldı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/depremden-kimyasal-tehdide-izmir-de-tam-kapsamli-tatbikat/59896/156",
+      "id": 59896
+    },
+    {
+      "title": "Motosikletli ekipler görev başında",
+      "date": "2026-11-27",
+      "summary": "İzmir Büyükşehir Belediyesi, zabıta hizmetlerinde hız ve etkinliği artırmak için motosikletli ekipleri göreve başlattı.",
+      "url": "https://www.izmir.bel.tr/tr/Haberler/motosikletli-ekipler-gorev-basinda/59895/156",
+      "id": 59895
+    },
     {
       "title": "Su faturalarındaki indirim İzmirlileri sevindirdi",
       "date": "2026-11-26",
@@ -39,6 +95,74 @@
     }
   ],
   "eshot": [
+    {
+      "title": "Bornova, yıldırım beyazıt caddesi izmirgaz a.ş. altyapı çalışması",
+      "lines": [
+        "54",
+        "119",
+        "555"
+      ],
+      "start": "2026-11-27",
+      "end": "2026-12-04",
+      "isNew": true
+    },
+    {
+      "title": "Karya durağı geçici olarak kullanımdışı kalacaktır",
+      "lines": [
+        "229",
+        "322",
+        "327",
+        "423",
+        "428",
+        "429",
+        "442",
+        "443",
+        "445",
+        "446",
+        "447",
+        "547",
+        "595",
+        "777",
+        "820",
+        "827"
+      ],
+      "start": "2026-11-27",
+      "end": "2027-01-08",
+      "isNew": true
+    },
+    {
+      "title": "Güncelleme: konak, umurbey mahallesi, 1525 sokak izsu çalışması",
+      "lines": [
+        "253"
+      ],
+      "start": "2026-11-27",
+      "end": "2027-01-29",
+      "isNew": true
+    },
+    {
+      "title": "Gaziosman paşa ve gazi bulvarı kesişim izsu çalışması",
+      "lines": [
+        "470",
+        "680",
+        "681",
+        "691",
+        "910",
+        "940",
+        "950"
+      ],
+      "start": "2026-11-27",
+      "end": "2026-12-07",
+      "isNew": true
+    },
+    {
+      "title": "810 No.lu hatlarımızda geçici güzergah değişikliği",
+      "lines": [
+        "810"
+      ],
+      "start": "2026-11-27",
+      "end": "2026-12-08",
+      "isNew": true
+    },
     {
       "title": "Ales kasım 2026 412 hat duyurusu",
       "lines": [
@@ -185,24 +309,6 @@
       ],
       "start": "2026-11-11",
       "end": "2026-12-31",
-      "isNew": false
-    },
-    {
-      "title": "Konak, umurbey mahallesi, 1525 sokak izsu çalışması",
-      "lines": [
-        "253"
-      ],
-      "start": "2026-11-09",
-      "end": "2027-01-21",
-      "isNew": false
-    },
-    {
-      "title": "842 No.lu hattımızda güzergah değişikliğine gidilmiştir",
-      "lines": [
-        "842"
-      ],
-      "start": "2026-11-09",
-      "end": "2026-11-27",
       "isNew": false
     },
     {
