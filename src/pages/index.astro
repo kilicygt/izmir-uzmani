@@ -1,4 +1,5 @@
 ---
+import { isPublished } from '../lib/posts';
 import Layout from '../layouts/Layout.astro';
 import IzmirIcon from '../components/IzmirIcon.astro';
 import IzmirScene from '../components/IzmirScene.astro';
@@ -10,7 +11,7 @@ import { imgSize } from '../lib/imgsize';
 
 const hero = siteConfig.hero;
 
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog', isPublished);
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const istanbulDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul' }).format(d);
 const today = istanbulDay(new Date());

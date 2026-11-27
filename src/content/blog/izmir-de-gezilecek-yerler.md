@@ -1,7 +1,7 @@
 ---
 title: "İzmir’de Gezilecek Yerler: Merkezden Günübirliğe Tam Liste"
 description: "İzmir’de gezilecek yerleri ulaşım süresine göre derledik: merkezde yürüyerek gezilecekler, toplu taşımayla yarım günlük duraklar ve günübirlik rotalar."
-pubDate: 2026-11-28
+pubDate: 2026-11-28T07:00:00+03:00
 category: "Şehir Rehberi"
 readTime: "11 dk"
 tags: ["İzmir", "Gezilecek Yerler", "Şehir Rehberi", "Kemeraltı", "Kordon", "Efes", "Günübirlik"]

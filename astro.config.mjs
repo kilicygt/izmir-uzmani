@@ -3,6 +3,7 @@ import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import rehypeStripUtm from './src/lib/rehype-strip-utm.mjs';
 import rehypeDemoteH1 from './src/lib/rehype-demote-h1.mjs';
+import rehypeUnlinkScheduled from './src/lib/rehype-unlink-scheduled.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
 
 // lastmod for the sitemap: guides use their update (or publish) date; pages rebuilt from daily data use the build date.
@@ -50,6 +51,6 @@ export default defineConfig({
       return item;
     },
   })],
-  markdown: { rehypePlugins: [rehypeStripUtm, rehypeDemoteH1] },
+  markdown: { rehypePlugins: [rehypeStripUtm, rehypeDemoteH1, rehypeUnlinkScheduled] },
   adapter: vercel(),
 });

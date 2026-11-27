@@ -1,7 +1,7 @@
 ---
 title: "İzmir’de Kar Yağan Yerler: Bozdağ, Gölcük ve Yakın Rotalar"
 description: "İzmir’de kar görmek için nereye gidilir? Bozdağ, Gölcük, Yamanlar ve Kiraz yaylaları; ne zaman kar yağar, nasıl gidilir ve yolda nelere dikkat edilir."
-pubDate: 2026-11-28
+pubDate: 2026-11-28T17:00:00+03:00
 category: "Doğa Rehberi"
 readTime: "7 dk"
 tags: ["İzmir", "Kar", "Bozdağ", "Gölcük", "Ödemiş", "Kış", "Doğa Rehberi"]

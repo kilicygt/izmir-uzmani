@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/redirect-trailing-slash.mjs",
+    "build": "node scripts/clear-content-cache.mjs && astro build && node scripts/redirect-trailing-slash.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
