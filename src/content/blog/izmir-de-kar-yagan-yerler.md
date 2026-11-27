@@ -7,7 +7,12 @@ readTime: "7 dk"
 tags: ["İzmir", "Kar", "Bozdağ", "Gölcük", "Ödemiş", "Kış", "Doğa Rehberi"]
 featured: false
 image: "/images/blog/izmir-de-kar-yagan-yerler.webp"
-imageAlt: "Karla kaplı Bozdağ yamaçları ve çam ağaçları"
+imageAlt: "Ovadan görünen karla kaplı Bozdağlar zirveleri"
+imageCredit:
+  author: "SerhatKocaman / Wikimedia Commons"
+  license: "CC0"
+  licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
+  source: "https://commons.wikimedia.org/wiki/File:Bozda%C4%9Flar_Tmolos.jpg"
 seoTitle: "İzmir’de Kar Yağan Yerler: Bozdağ ve Gölcük Rehberi"
 seoDescription: "İzmir’de kar nerede yağar? Bozdağ, Gölcük, Yamanlar ve Kiraz için kar zamanı, ulaşım, kayak merkezi durumu ve yol güvenliği bilgileri."
 imageSearchQuery: "Bozdag Odemis snow winter"
