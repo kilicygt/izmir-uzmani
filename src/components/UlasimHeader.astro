@@ -14,7 +14,21 @@ const icon = path.includes('/vapur') ? 'vapur'
   : path.includes('/otobus') ? 'otobus'
   : path.includes('/metro') || path.includes('/tramvay') || path.includes('/izban') ? 'metro'
   : 'harita';
+
+// Same trail as the visible breadcrumb, as BreadcrumbList structured data.
+const abs = (href: string) => new URL(href.replace(/\/?$/, '/'), Astro.site).href;
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { href: '/', label: 'Ana Sayfa' },
+    ...crumbs,
+    { href: path, label: title },
+  ].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: abs(c.href) })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd).replace(/</g, '\\u003c')} />
 
 <section class="tt-header">
   <div class="tt-container tt-head-grid">

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { imgSize } from '../../lib/imgsize';
 import IzmirIcon from '../../components/IzmirIcon.astro';
 import { getCollection } from 'astro:content';
 import { themeOf, postImage, shortDate } from '../../lib/themes';
@@ -101,6 +102,7 @@ const jsonLd = {
     <figure class="art-img">
       <img
         src={img}
+        {...imgSize(img)}
         alt={post.data.imageAlt || post.data.title}
         onerror="this.style.display='none'"
         loading="eager"
@@ -166,7 +168,7 @@ const jsonLd = {
             return (
               <a href={`/rehberler/${rp.slug}`} class="card">
                 <div class="card-img">
-                  <img src={postImage(rp)} alt={rp.data.imageAlt || rp.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <img src={postImage(rp)} {...imgSize(postImage(rp))} alt={rp.data.imageAlt || rp.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
                   <span class="tag on-img" style={`background:${t.color}`}>{t.label}</span>
                 </div>
                 <div class="card-body">

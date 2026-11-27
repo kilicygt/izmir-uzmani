@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { imgSize } from '../../lib/imgsize';
 import { getAllEvents, getEvents, fmt, longDate, time, weekday, catColor, descriptionOf, type EventItem } from '../../lib/events';
 
 export async function getStaticPaths() {
@@ -88,7 +89,7 @@ const jsonLd = {
     <div class="wrap ev-grid">
       {event.image && (
         <div class="ev-poster">
-          <img src={event.image} alt={`${event.title} afişi`} onerror="this.parentElement.style.display='none'" decoding="async" fetchpriority="high" />
+          <img src={event.image} {...imgSize(event.image)} alt={`${event.title} afişi`} onerror="this.parentElement.style.display='none'" decoding="async" fetchpriority="high" />
         </div>
       )}
 
@@ -183,7 +184,7 @@ const jsonLd = {
           {related.map((ev) => (
             <a href={`/etkinlikler/${ev.slug}`} class="rel-card">
               <div class="rel-img">
-                {ev.image && <img src={ev.image} alt={ev.title} loading="lazy" decoding="async" />}
+                {ev.image && <img src={ev.image} {...imgSize(ev.image)} alt={ev.title} loading="lazy" decoding="async" />}
                 <div class="date-chip">
                   <span class="dc-small">{weekday(ev.next.start)}</span>
                   <span class="dc-day">{fmt(ev.next.start, { day: 'numeric' })}</span>

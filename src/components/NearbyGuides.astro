@@ -2,6 +2,7 @@
 // "Bu civarda gezilecek yerler": links a timetable page to guides about the same area.
 import { getCollection } from 'astro:content';
 import { themeOf, postImage } from '../lib/themes';
+import { imgSize } from '../lib/imgsize';
 
 interface Props {
   /** Place names for this page, most specific first (e.g. pier, station or line ends). */
@@ -74,7 +75,7 @@ const title = matched.length ? heading ?? `${label ?? matchedPlace ?? places[0]}
         const t = themeOf(p.data.category);
         return (
           <a href={`/rehberler/${p.slug}`} class="ng-card">
-            <div class="ng-img"><img src={postImage(p)} alt={p.data.imageAlt || p.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
+            <div class="ng-img"><img src={postImage(p)} {...imgSize(postImage(p))} alt={p.data.imageAlt || p.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" /></div>
             <div class="ng-body">
               <span class="ng-tag" style={`color:${t.color}`}>{t.label}</span>
               <p class="ng-name">{p.data.title}</p>

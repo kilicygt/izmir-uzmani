@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { imgSize } from '../../lib/imgsize';
 import IzmirIcon from '../../components/IzmirIcon.astro';
 import { getEvents, groupEvents, dayMonth, weekday, time, fmt, catColor } from '../../lib/events';
 
@@ -88,7 +89,7 @@ const monthShort = (d: string) => fmt(d, { month: 'short' });
                   >
                     <div class="card-img">
                       {ev.image ? (
-                        <img src={ev.image} alt={ev.title} loading={gi === 0 && i < 4 ? 'eager' : 'lazy'} decoding="async" />
+                        <img src={ev.image} {...imgSize(ev.image)} alt={ev.title} loading={gi === 0 && i < 4 ? 'eager' : 'lazy'} decoding="async" />
                       ) : (
                         <div class="img-ph"><IzmirIcon name="bilet" size={80} /></div>
                       )}

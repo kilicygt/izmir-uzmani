@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import siteConfig from '../data/site-config.json';
 import { getEvents, weekday, time, fmt, catColor as eventColor } from '../lib/events';
 import { THEMES, themeOf, postImage, shortDate } from '../lib/themes';
+import { imgSize } from '../lib/imgsize';
 
 const hero = siteConfig.hero;
 
@@ -87,7 +88,7 @@ const igPosts = Array.from({ length: 10 }, (_, i) => `/images/instagram/${i + 1}
         </div>
         <div class="feat-grid">
           <a href={`/rehberler/${featuredPost.slug}`} class="feat-lead">
-            <img src={postImage(featuredPost)} alt={featuredPost.data.imageAlt || featuredPost.data.title} loading="eager" fetchpriority="high" decoding="async" />
+            <img src={postImage(featuredPost)} {...imgSize(postImage(featuredPost))} alt={featuredPost.data.imageAlt || featuredPost.data.title} loading="eager" fetchpriority="high" decoding="async" />
             <div class="feat-overlay">
               <span class="tag" style={`background:${themeOf(featuredPost.data.category).color}`}>{themeOf(featuredPost.data.category).label}</span>
               <h3 class="feat-title">{featuredPost.data.title}</h3>
@@ -98,7 +99,7 @@ const igPosts = Array.from({ length: 10 }, (_, i) => `/images/instagram/${i + 1}
           <div class="feat-side">
             {sidePosts.map(p => (
               <a href={`/rehberler/${p.slug}`} class="feat-small">
-                <div class="fs-img"><img src={postImage(p)} alt={p.data.imageAlt || p.data.title} loading="lazy" decoding="async" /></div>
+                <div class="fs-img"><img src={postImage(p)} {...imgSize(postImage(p))} alt={p.data.imageAlt || p.data.title} loading="lazy" decoding="async" /></div>
                 <div>
                   <span class="tag sm" style={`background:${themeOf(p.data.category).color}`}>{themeOf(p.data.category).label}</span>
                   <h3 class="fs-title">{p.data.title}</h3>
@@ -147,7 +148,7 @@ const igPosts = Array.from({ length: 10 }, (_, i) => `/images/instagram/${i + 1}
             return (
               <a href={`/etkinlikler/${ev.slug}`} class="ev-card">
                 <div class="ev-img">
-                  {ev.image ? <img src={ev.image} alt={ev.title} loading="lazy" decoding="async" /> : <div class="img-ph"><IzmirIcon name="bilet" size={70} /></div>}
+                  {ev.image ? <img src={ev.image} {...imgSize(ev.image)} alt={ev.title} loading="lazy" decoding="async" /> : <div class="img-ph"><IzmirIcon name="bilet" size={70} /></div>}
                   <div class="date-chip">
                     {ev.ongoing ? (
                       <><span class="dc-small green">son gün</span><span class="dc-day">{dayNum(ev.next.end)}</span><span class="dc-month">{monthShort(ev.next.end)}</span></>
@@ -184,7 +185,7 @@ const igPosts = Array.from({ length: 10 }, (_, i) => `/images/instagram/${i + 1}
             return (
               <a href={`/rehberler/${post.slug}`} class="card">
                 <div class="card-img">
-                  <img src={postImage(post)} alt={post.data.imageAlt || post.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <img src={postImage(post)} {...imgSize(postImage(post))} alt={post.data.imageAlt || post.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
                   <span class="tag on-img" style={`background:${t.color}`}>{t.label}</span>
                 </div>
                 <div class="card-body">
@@ -217,7 +218,7 @@ const igPosts = Array.from({ length: 10 }, (_, i) => `/images/instagram/${i + 1}
         <div class="ig-grid">
           {igPosts.map(src => (
             <a href="https://www.instagram.com/izmiruzmani/" target="_blank" rel="noopener" class="ig-cell">
-              <img src={src} alt="İzmir Uzmanı Instagram gönderisi" loading="lazy" decoding="async" />
+              <img src={src} {...imgSize(src)} alt="İzmir Uzmanı Instagram gönderisi" loading="lazy" decoding="async" />
             </a>
           ))}
         </div>

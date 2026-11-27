@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { imgSize } from '../../lib/imgsize';
 import { getPastEvents, fmt, dayMonth, weekday, time, catColor, type EventItem } from '../../lib/events';
 
 const events = await getPastEvents();
@@ -33,7 +34,7 @@ const isRange = (e: EventItem) => dayKey(e.sessions[0].start) !== dayKey(e.sessi
             <div class="events-list">
               {list.map(ev => (
                 <a href={`/etkinlikler/${ev.slug}`} class="event-row">
-                  <div class="thumb">{ev.image && <img src={ev.image} alt="" loading="lazy" decoding="async" />}</div>
+                  <div class="thumb">{ev.image && <img src={ev.image} {...imgSize(ev.image)} alt="" loading="lazy" decoding="async" />}</div>
                   <div class="event-date">
                     {isRange(ev) ? (
                       <>

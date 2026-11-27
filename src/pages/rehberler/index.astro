@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import IzmirIcon from '../../components/IzmirIcon.astro';
 import { getCollection } from 'astro:content';
 import { THEMES, themeOf, postImage, shortDate } from '../../lib/themes';
+import { imgSize } from '../../lib/imgsize';
 
 const allPosts = await getCollection('blog');
 const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -88,7 +89,7 @@ const popular = ['Çeşme', 'Alaçatı', 'Urla', 'Efes', 'Bergama', 'Kemeraltı'
         <h2 class="sec-title">Yeni eklenenler</h2>
         <div class="feat-grid">
           <a href={`/rehberler/${lead.slug}`} class="feat-lead">
-            <img src={lead.img} alt={lead.data.imageAlt || lead.data.title} loading="eager" decoding="async" />
+            <img src={lead.img} {...imgSize(lead.img)} alt={lead.data.imageAlt || lead.data.title} loading="eager" decoding="async" />
             <div class="feat-overlay">
               <span class="tag" style={`background:${lead.theme.color}`}>{lead.theme.label}</span>
               <h3 class="feat-title">{lead.data.title}</h3>
@@ -99,7 +100,7 @@ const popular = ['Çeşme', 'Alaçatı', 'Urla', 'Efes', 'Bergama', 'Kemeraltı'
           <div class="feat-side">
             {restFeatured.map((p) => (
               <a href={`/rehberler/${p.slug}`} class="feat-small">
-                <div class="fs-img"><img src={p.img} alt={p.data.imageAlt || p.data.title} loading="eager" decoding="async" /></div>
+                <div class="fs-img"><img src={p.img} {...imgSize(p.img)} alt={p.data.imageAlt || p.data.title} loading="eager" decoding="async" /></div>
                 <div>
                   <span class="tag" style={`background:${p.theme.color}`}>{p.theme.label}</span>
                   <h3 class="fs-title">{p.data.title}</h3>
@@ -133,7 +134,7 @@ const popular = ['Çeşme', 'Alaçatı', 'Urla', 'Efes', 'Bergama', 'Kemeraltı'
         {posts.map((post, i) => (
           <a href={`/rehberler/${post.slug}`} class="card" data-theme={post.theme.key} data-search={post.search} data-featured={i < 3 ? '1' : undefined}>
             <div class="card-img">
-              <img src={post.img} alt={post.data.imageAlt || post.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
+              <img src={post.img} {...imgSize(post.img)} alt={post.data.imageAlt || post.data.title} loading="lazy" decoding="async" onerror="this.style.display='none'" />
               <span class="tag on-img" style={`background:${post.theme.color}`}>{post.theme.label}</span>
             </div>
             <div class="card-body">

@@ -29,7 +29,9 @@ const ogImage = new URL((image ?? '/images/og-default.jpg').replace(/\?.*$/, '')
 
 const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), Astro.site);
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
-const fullTitle = isHome ? `İzmir Uzmanı — ${title}` : `${title} — İzmir Uzmanı`;
+// Search results cut titles at roughly 60 characters, so drop the brand suffix when it would push past that.
+const suffixed = `${title} — İzmir Uzmanı`;
+const fullTitle = isHome ? `İzmir Uzmanı — ${title}` : suffixed.length <= 60 ? suffixed : title;
 // Google uses the WebSite structured data on the homepage to pick the site name in search results.
 const websiteJsonLd = {
   '@context': 'https://schema.org',

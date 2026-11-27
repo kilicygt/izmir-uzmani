@@ -12,5 +12,18 @@ for (const route of config.routes ?? []) {
     changed++;
   }
 }
+// Security headers for every response. The adapter writes the Build Output API config directly,
+// so vercel.json "headers" would not apply; a leading continue route adds them to all routes.
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'Permissions-Policy': 'camera=(), microphone=(), payment=(), geolocation=(self)',
+};
+config.routes = config.routes ?? [];
+if (!config.routes.some((r) => r.headers?.['X-Content-Type-Options'])) {
+  config.routes.unshift({ src: '/(.*)', headers: SECURITY_HEADERS, continue: true });
+}
+
 writeFileSync(path, JSON.stringify(config, null, 2));
 console.log(`redirect-trailing-slash: widened ${changed} redirect route(s)`);

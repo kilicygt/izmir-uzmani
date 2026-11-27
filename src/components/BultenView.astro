@@ -1,6 +1,6 @@
 ---
 import IzmirIcon from './IzmirIcon.astro';
-import { type Bulletin, issueNo, longDate, clock, weatherText, isTransport, bulletins } from '../lib/bulten';
+import { type Bulletin, issueNo, longDate, clock, weatherText, isTransport, bulletins, latest } from '../lib/bulten';
 
 interface Props { b: Bulletin; isToday: boolean }
 const { b, isToday } = Astro.props;
@@ -147,7 +147,8 @@ const busUrl = (no: string) => `/toplu-tasima-saatleri/otobus/${no}/`;
       <nav class="archive" aria-label="Önceki bültenler">
         <p class="archive-title">Önceki sayılar</p>
         <div class="archive-list">
-          {archive.map((x) => <a href={`/bulten/${x.date}/`}>{longDate(x.date)}</a>)}
+          {/* The latest issue is published at /bulten/, not under its date. */}
+          {archive.map((x) => <a href={x.date === latest.date ? '/bulten/' : `/bulten/${x.date}/`}>{longDate(x.date)}</a>)}
         </div>
       </nav>
     )}
