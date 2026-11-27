@@ -7,7 +7,12 @@ readTime: "11 dk"
 tags: ["İzmir", "Gezilecek Yerler", "Şehir Rehberi", "Kemeraltı", "Kordon", "Efes", "Günübirlik"]
 featured: false
 image: "/images/blog/izmir-de-gezilecek-yerler.webp"
-imageAlt: "Konak Meydanı’nda İzmir Saat Kulesi ve arkasında körfez"
+imageAlt: "Konak Meydanı’nda İzmir Saat Kulesi, palmiyeler ve Yalı Camii"
+imageCredit:
+  author: "Koray / Wikimedia Commons"
+  license: "CC BY-SA 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.tr"
+  source: "https://commons.wikimedia.org/wiki/File:%C4%B0zmir_Clock_Tower,_2026.jpg"
 seoTitle: "İzmir’de Gezilecek Yerler: Merkez ve Günübirlik Rehberi"
 seoDescription: "İzmir’de gezilecek yerler: Kemeraltı, Kordon, Kadifekale, Efes, Şirince, Alaçatı ve daha fazlası. Her yer için ulaşım, süre ve detaylı rehber."
 imageSearchQuery: "Izmir clock tower Konak square"

@@ -14,6 +14,8 @@ const blog = defineCollection({
     sponsored: z.boolean().optional().default(false),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
+    /** Photo credit for licensed cover images (e.g. CC BY / CC BY-SA): who took it, the license and where it came from. */
+    imageCredit: z.object({ author: z.string(), license: z.string(), licenseUrl: z.string().url(), source: z.string().url() }).optional(),
     excerpt: z.string().optional(),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
