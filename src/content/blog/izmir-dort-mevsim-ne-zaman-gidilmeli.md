@@ -115,3 +115,5 @@ Ortalama 10-14°C, gündüzleri zaman zaman 16-18°C'ye çıkabiliyor. Yağmurlu
 Antik kent ve kültürel turizm için Nisan-Mayıs veya Eylül-Ekim en ideal. Deniz tatili için Haziran sonu ile Eylül başı arası altın pencere. Bütçe seyahati ve sessizlik arayanlar için Kasım-Mart en avantajlı dönem.
 
 İzmir, yılın her döneminde bir şeyler sunuyor. Hangi mevsimi seçerseniz seçin, şehrin kendi karakteri — açık havası, ışığı, insanının sıcaklığı — değişmiyor.
+
+Kışın kar görmek isteyenler için Bozdağ ve Gölcük’ü anlattığımız [İzmir’de kar yağan yerler](/rehberler/izmir-de-kar-yagan-yerler/) rehberine bakabilirsiniz.

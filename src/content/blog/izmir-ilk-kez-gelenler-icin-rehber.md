@@ -73,3 +73,5 @@ Kemeraltı içindeki küçük lokantalar en otantik yemeği en uygun fiyata sunu
 Şehirde İngilizce konuşan gençlerle ve turizm odaklı işletmelerde kolayca iletişim kurabilirsiniz. Ancak Kemeraltı ve eski mahalle lokantalarında Türkçe birkaç kelime işinizi kolaylaştıracak.
 
 İzmir, hem hızlı bir hafta sonu kaçamağı hem de birkaç haftalık derin bir keşif için ideal. Şehrin bıraktığı etki — o Ege neşesi, körfezin mavisi, lokantalardaki samimilik — genellikle beklentilerin çok ötesinde çıkıyor.
+
+Şehirde nereleri göreceğinizi tek listede, ulaşım süreleriyle birlikte görmek için [İzmir’de gezilecek yerler](/rehberler/izmir-de-gezilecek-yerler/) rehberimize bakabilirsiniz.

@@ -93,3 +93,5 @@ Sabah erken çıkış, her rota için altın kural. Yaz aylarında sıcak ve kal
 Araçsız seyahat mümkün ama toplu taşımada aktarma ve bekleme süreleri günübirlik planı sıkıştırabiliyor. Birden fazla kişiyseniz araç kiralamak hem maliyet hem özgürlük açısından kazandırıyor.
 
 İzmir, bulunduğu coğrafya sayesinde bir merkezden sekiz ayrı dünyaya kapı aralıyor. Bu fırsat, şehrin en büyük güçlerinden biri.
+
+Şehir merkezindeki duraklarla birlikte tam listeyi [İzmir’de gezilecek yerler](/rehberler/izmir-de-gezilecek-yerler/) rehberimizde bulabilirsiniz.

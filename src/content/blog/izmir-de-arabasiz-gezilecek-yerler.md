@@ -130,6 +130,9 @@ Daha manzara odaklı alternatif ise şöyle olabilir:
 3. **Teleferik’e çık**
 4. **Dönüşte Kordon veya Alsancak ekle**
 
+
+Arabayla ya da günübirlik turla gidilebilecek yerlerle birlikte tam liste için [İzmir’de gezilecek yerler](/rehberler/izmir-de-gezilecek-yerler/) rehberine göz atın.
+
 ## Sık sorulan soru: İzmir’de araba olmadan gezilir mi?
 
 Evet. Özellikle merkez ilçelerde ve sahil hattında araba olmadan gezmek oldukça kolay. Metro, tramvay, vapur, İZBAN ve otobüs bağlantıları sayesinde birçok nokta tek araçla ya da kısa aktarmalarla ulaşılabilir. Üstelik Kordon, Kemeraltı, Tarihi Asansör çevresi, Karşıyaka sahili ve Bostanlı gibi yerler yürüyerek gezmeye daha uygun alanlardır.

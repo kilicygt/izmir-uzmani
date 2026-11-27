@@ -109,6 +109,9 @@ Vaktiniz kısıtlıysa şu sıralama iş görür:
 - İmam-ı Birgivi Medresesi
 - Tarihi sokaklar ve geleneksel Birgi evleri
 
+
+Kışın Birgi’ye gidiyorsanız aynı yol üzerindeki Bozdağ ve Gölcük’ü de ekleyebilirsiniz: [İzmir’de kar yağan yerler](/rehberler/izmir-de-kar-yagan-yerler/).
+
 ## Kaynaklar
 
 - [Kültür Portalı – Birgi](https://kulturportali.gov.tr/turkiye/izmir/gezilecekyer/odemis---birgi)
